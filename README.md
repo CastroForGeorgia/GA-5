@@ -1,3 +1,7 @@
+layout: page
+title: "Home"
+permalink: /
+
 # 🌟 Andres Castro for Georgia's 5th Congressional District
 
 ![Campaign Banner](./resources/media/banner.jpg "Campaign Banner: Andres Castro for Georgia's 5th Congressional District")
