@@ -1,9 +1,9 @@
 #-------------------------------
 # Site Settings
-title: Renva
+title: Andres Castro
 logo: '/images/logo.png' # You can add own logo. For example '/images/logo.png'.
 logo_dark: '/images/logo.png'
-description: Renva is a creative portfolio theme for Jekyll.
+description: Andres Castro, a champion for the people in Georgia's 5th Congressional District. 
 color_scheme: auto # You can choose three modes auto, light, and dark. By default, the auto mode is set, which means the user can choose the light or dark mode themself.
 
 
@@ -38,10 +38,10 @@ author:
 # Hero Settings
 hero:
   enable: true
-  hero_role: Artist ∙ Designer ∙ Thinker
-  hero_title: Hi! I’m James <img src="/images/01-1.jpg" alt="James Brown's Picture" loading="lazy"> <br> I Create Things That Work for Your Business
+  hero_role: Advocate ∙ Community Leader ∙ Innovator
+  hero_title: Hi! I’m Andres <img src="/images/01-1.jpg" alt="Andres Castro Picture" loading="lazy"> <br> For Georgia's 5th District
   hero_description:
-  hero_button_text: Let’s make dream together
+  hero_button_text: Join the Movement
   hero_button_link: "/contact/"
 
 
@@ -90,8 +90,8 @@ blog:
 about:
   enable: true
   about_image: '/images/01.jpg'
-  about_title: Short Story About Me
-  about_description: I find inspiration in the everyday moments and the extraordinary experiences that shape our world. My journey began with a passion for visual storytelling, which led me to explore various mediums and techniques.
+  about_title: Resist With Me
+  about_description: Join me in the fight to create a fair economy and ensure social justice for every family in Georgia’s 5th District. Together, we can build a government that truly serves the people, not the elite.
 
 
 #-------------------------------
