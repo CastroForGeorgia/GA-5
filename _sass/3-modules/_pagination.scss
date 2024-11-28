@@ -1,0 +1,13 @@
+/* Pagination */
+.pagination {
+  margin-top: 28px;
+  text-align: center;
+
+  @media (max-width: $desktop) {
+    margin-top: 8px;
+  }
+
+  @media (max-width: $mobile) {
+    margin-top: 0;
+  }
+}

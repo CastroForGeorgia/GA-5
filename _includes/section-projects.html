@@ -1,0 +1,49 @@
+{% if site.data.settings.projects.enable == true %}
+<div class="container-big">
+  <!-- begin section projects -->
+  <section class="section projects">
+    <div class="container">
+      <div class="row">
+        <div class="col col-12">
+
+          <div class="projects__inner splide">
+            <div class="splide__track animate">
+              <div class="splide__list">
+                {% assign sorted = site.projects | sort: 'date' | reverse %}
+                {% for project in sorted limit:8 %}
+                <article class="project col-3 col-d-6 col-t-12 splide__slide">
+                  <div class="project-content">
+                    <a href="{{ project.url }}" class="project__image">
+                      <img class="lazy" data-src="{{ project.image }}" alt="{{ project.title }}">
+                    </a>
+                    <div class="project__info">
+                      {% if project.label %}
+                        <div class="project__label">{{ project.label }}</div>
+                      {% endif %}
+                      <h2 class="project__title">
+                        <a href="{{ project.url }}">{{ project.title }}</a>
+                      </h2>
+                    </div>
+                  </div>
+                </article>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+
+          <div class="section__info">
+            {% if site.data.settings.projects.projects_title %}
+              <h2 class="section__title">{{ site.data.settings.projects.projects_title }}</h2>
+            {% endif %}
+            {% if site.data.settings.projects.projects_description %}
+              <p class="section__description">{{ site.data.settings.projects.projects_description }}</p>
+            {% endif %}
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end section projects -->
+</div>
+{% endif %}

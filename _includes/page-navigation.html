@@ -1,0 +1,45 @@
+{% if page.previous.url or page.next.url %}
+<div class="page__navigation">
+  {% if page.previous.url %}
+  <div class="page__prev">
+    {% if page.previous.image %}
+    <a href="{{ page.previous.url | relative_url }}" class="prev__image">
+      {% if page.previous.image and page.previous.video_embed %}
+      <div class="video-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+          <polygon points="40,30 70,50 40,70"></polygon>
+        </svg>
+      </div>
+      {% endif %}
+      <img class="lazy" data-src="{{ page.previous.image | relative_url }}" alt="{{ page.title }}">
+    </a>
+    {% endif %}
+    <div class="prev__box">
+      <span class="page__nav page__nav__prev">Previous page</span>
+      <h2 class="page__nav__title"><a href="{{ page.previous.url | relative_url }}">{{ page.previous.title }}</a></h2>
+    </div>
+  </div>
+  {% endif %}
+
+  {% if page.next.url %}
+  <div class="page__next">
+    <div class="next__box">
+      <span class="page__nav page__nav__next">Next page</span>
+      <h2 class="page__nav__title"><a href="{{ page.next.url | relative_url }}">{{ page.next.title }}</a></h2>
+    </div>
+    {% if page.next.image %}
+    <a href="{{ page.next.url | relative_url }}" class="next__image">
+      {% if page.next.image and page.next.video_embed %}
+      <div class="video-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+          <polygon points="40,30 70,50 40,70"></polygon>
+        </svg>
+      </div>
+      {% endif %}
+      <img class="lazy" data-src="{{ page.next.image | relative_url }}" alt="{{ page.title }}">
+    </a>
+    {% endif %}
+  </div>
+  {% endif %}
+</div>
+{% endif %}

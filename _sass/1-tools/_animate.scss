@@ -1,0 +1,13 @@
+/* Animate */
+.animate {
+  animation: animateElement 1s ease;
+
+  @keyframes animateElement {
+    0% {
+      transform:  translate(0px, 40px);
+    }
+    100% {
+      transform:  translate(0px, 0px);
+    }
+  }
+}

@@ -1,0 +1,133 @@
+/* Subscribe */
+.subscribe__inner {
+  position: relative;
+  padding: 32px;
+  border-radius: 60px;
+  overflow: hidden;
+
+  .subscribe__head {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 30px;
+    background: var(--background-color);
+
+    .subscribe__title {
+      margin-bottom: 20px;
+      font-size: 48px;
+    }
+
+    .subscribe__description {
+      margin-bottom: 0;
+    }
+
+    .subscribe__title,
+    .subscribe__description {
+      max-width: 960px;
+    }
+  }
+
+  .subscribe-form {
+    position: relative;
+    border-radius: 60px;
+    overflow: hidden;
+
+    .subscribe-email {
+      width: 100%;
+      height: 84px;
+      padding: 16px 32px;
+      font-size: 24px;
+      line-height: 1;
+      border: none;
+      border-radius: 60px;
+      outline: 0;
+      color: var(--heading-font-color);
+      background: var(--background-color);
+
+      &::placeholder {
+        color: var(--heading-font-color);
+      }
+
+      &:focus {
+        &::placeholder {
+          color: var(--text-alt-color);
+        }
+      }
+    }
+
+    .subscribe-button {
+      position: absolute;
+      top: 9px;
+      right: 9px;
+    }
+  }
+
+  .subscribe__bg {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--background-alt-color);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  @media (max-width: $desktop) {
+    .subscribe__head {
+      .subscribe__title {
+        font-size: 40px;
+      }
+    }
+
+    .subscribe-form {
+      .subscribe-email {
+        height: 80px;
+        font-size: 22px;
+      }
+    }
+  }
+
+  @media (max-width: $tablet) {
+    .subscribe-form {
+      .subscribe-email {
+        height: 78px;
+        font-size: 20px;
+      }
+    }
+  }
+
+  @media (max-width: $mobile) {
+    padding: 20px;
+    border-radius: 40px;
+
+    .subscribe__head {
+      margin-bottom: 16px;
+
+      .subscribe__title {
+        margin-bottom: 12px;
+        font-size: 28px;
+      }
+    }
+
+    .subscribe-form {
+      border-radius: 0;
+
+      .subscribe-email {
+        height: 52px;
+        padding: 16px 20px;
+        font-size: inherit;
+      }
+
+      .subscribe-button {
+        position: static;
+        width: 100%;
+        margin-top: 8px;
+      }
+    }
+  }
+}

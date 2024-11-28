@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include head.html %}
+
+<body class="{% if page.url == '/' %}home-page{% endif %}">
+
+  {% if site.data.settings.google-analytics %}
+    {% include google-analytics.html %}
+  {% endif %}
+
+  <!-- begin global wrap -->
+  <div class="global-wrap">
+
+    {% include header.html %}
+
+    <!-- begin content -->
+    <main class="content" aria-label="Content">
+      {{ content }}
+    </main>
+    <!-- end content -->
+
+    {% include subscribe.html %}
+
+    {% include footer.html %}
+  </div>
+  <!-- end global wrap -->
+
+  <script src="{{ '/js/scripts.js' | relative_url }}"></script>
+  <script src="{{ '/js/common.js' | relative_url }}"></script>
+  <script>
+    SimpleJekyllSearch({
+      searchInput: document.getElementById("js-search-input"),
+      resultsContainer: document.getElementById("js-results-container"),
+      json: "{{ '/search.json' | relative_url }}",
+      searchResultTemplate: '<div class="search-results__item"><a href="{url}" class="search-results__image" style="background-image: url({image})"></a> <a href="{url}" class="search-results__link"><time class="search-results-date" datetime="{date}">{date}</time><div class="search-results-title">{title}</div></a></div>',
+      noResultsText: '<div class="no-results">No matches found</div>'
+    });
+  </script>
+</body>
+
+</html>

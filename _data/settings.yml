@@ -1,0 +1,161 @@
+#-------------------------------
+# Site Settings
+title: Renva
+logo: '/images/logo.png' # You can add own logo. For example '/images/logo.png'.
+logo_dark: '/images/logo.png'
+description: Renva is a creative portfolio theme for Jekyll.
+color_scheme: auto # You can choose three modes auto, light, and dark. By default, the auto mode is set, which means the user can choose the light or dark mode themself.
+
+
+#-------------------------------
+# Navigation Settings
+menu_settings:
+  menu_items:
+    - title: 'Home'
+      url: '/'
+    - title: 'Projects'
+      url: '/projects/'
+    - title: 'Blog'
+      url: '/blog/'
+    - title: 'About'
+      url: '/about/'
+    - title: 'Contact'
+      url: '/contact/'
+    - title: 'Pages'
+      submenu:
+      - url: '/elements/'
+        title: 'Elements'
+
+
+#-------------------------------
+# Author Settings
+author:
+  author_name: James Brown
+  author_avatar: '/images/01-1.jpg'
+
+
+#-------------------------------
+# Hero Settings
+hero:
+  enable: true
+  hero_role: Artist ∙ Designer ∙ Thinker
+  hero_title: Hi! I’m James <img src="/images/01-1.jpg" alt="James Brown's Picture" loading="lazy"> <br> I Create Things That Work for Your Business
+  hero_description:
+  hero_button_text: Let’s make dream together
+  hero_button_link: "/contact/"
+
+
+#-------------------------------
+# Projects Section Settings
+projects:
+  enable: true
+  projects_title: Selected Works
+  projects_description: This series celebrates cultural diversity and heritage through intricate, detailed designs. Drawing inspiration from various cultures and traditions, I create artworks that tell stories of identity and community. The pieces are rich in symbolism and patterns, offering a deep, visual narrative. By honoring cultural histories, the series fosters a sense of connection and appreciation for global diversity.
+
+
+#-------------------------------
+# Testimonials Section Settings
+testimonials:
+  enable: true
+  testimonials_title: What People Say?
+  testimonials_description: Hear from those who have experienced the transformative power of my artistry and design. These testimonials showcase the success stories born from our collaborative partnerships.
+  testimonials_info: Loved by 50+ customers
+  testimonial_items:
+    - name: "John Smith"
+      image: "/images/client-1.jpg"
+      designation: "CEO of Creative Innovations"
+      content : "Collaborating was a seamless experience. The creativity and execution brought our project to life in ways we couldn't have imagined."
+
+    - name: "David Wilson"
+      image: "/images/client-2.jpg"
+      designation: "Senior Designer at Elegance Studios"
+      content : "The elegant and modern design aesthetic was exactly what we needed. The work was both inspiring and flawlessly executed."
+
+    - name: "Sarah Davis"
+      image: "/images/client-3.jpg"
+      designation: "Director of FutureTech Labs"
+      content : "The blend of technology and art was masterful. Every piece showcased a deep understanding of both disciplines."
+
+
+#-------------------------------
+# Blog Section Settings
+blog:
+  enable: true
+  blog_title: From My Blog
+  blog_description: Dive into a world of creativity and inspiration through my blog. Here, I share insights into my artistic process, design trends, and the stories behind my latest projects.
+
+
+#-------------------------------
+# About Section Settings
+about:
+  enable: true
+  about_image: '/images/01.jpg'
+  about_title: Short Story About Me
+  about_description: I find inspiration in the everyday moments and the extraordinary experiences that shape our world. My journey began with a passion for visual storytelling, which led me to explore various mediums and techniques.
+
+
+#-------------------------------
+# Faq (Frequently asked questions) Settings
+faq:
+  enable: true
+  faq_title: Need Some Answers?
+  faq_description:
+  faq_items:
+    - title: What is your creative process?
+      description: My creative process is both structured and flexible, allowing for creativity and precision. It begins with an initial consultation where I gather information about your vision and goals. I then move to the brainstorming and conceptualization phase, where ideas are sketched out and refined. After your approval, I proceed with the creation phase, followed by final adjustments based on your feedback. This collaborative approach ensures that the final product is exactly what you envisioned.
+    - title: How do you handle custom design requests?
+      description: Handling custom design requests involves a personalized approach where I work closely with clients to understand their unique needs and preferences. The process begins with an in-depth consultation to discuss ideas, inspirations, and project goals. Based on this discussion, I create initial concepts and share them for feedback. Throughout the project, I maintain open communication, providing updates and making necessary adjustments to ensure the final outcome exceeds expectations.
+    - title: How do you stay inspired and current with design trends?
+      description: Staying inspired and up-to-date with design trends requires continuous learning and exploration. I regularly attend industry conferences, workshops, and exhibitions to gain fresh insights and perspectives. Additionally, I follow leading design blogs, publications, and social media channels to stay informed about the latest trends and innovations. Personal projects and experimentation also play a crucial role in keeping my creative skills sharp and evolving.
+    - title: What is your typical turnaround time for a project?
+      description: The turnaround time for a project varies depending on its complexity and scope. Typically, smaller projects like single illustrations or simple graphic designs can be completed within a week. More intricate projects, such as full branding packages or detailed custom artworks, may take several weeks to a few months. I always provide a clear timeline at the outset and ensure regular communication to keep clients updated on progress and any potential adjustments.
+    - title: What payment methods do you accept?
+      description: I accept a variety of payment methods to accommodate different preferences and needs. These include major credit cards, bank transfers, and digital payment platforms like PayPal. Payment terms and schedules are discussed and agreed upon at the start of the project, ensuring transparency and convenience for both parties. A deposit is typically required to begin work, with the balance due upon project completion.
+    - title: What types of projects do you specialize in?
+      description: I specialize in a wide range of creative projects, including graphic design, illustration, photography, and poster art. My portfolio encompasses branding, editorial design, and bespoke artwork tailored for both commercial and personal use. Whether it's a corporate identity project or a custom illustration, I bring a unique blend of artistic flair and technical expertise to every project. My goal is to deliver visually compelling solutions that resonate with the target audience.
+
+
+#-------------------------------
+# Newsletter Settings
+mailchimp:
+  enable: true
+  mailchimp_title: "Stay Inspired Weekly: Your Path to Resilience and Community"
+  mailchimp_description: "Join me every on building a more inclusive and transparent society through technology and community support."
+  mailchimp_identifier: gmail.us21.list-manage.com/subscribe/post?u=8aeb9c31a5c97a3a5f9ff2740&amp;id=0e31fd7793&amp # Add your MailChimp form identifier. For example - gmail.us21.list-manage.com/subscribe/post?u=8aeb9c31a5c97a3a5f9ff2740&amp;id=0e31fd7793&amp
+  mailchimp_input_text: Enter your email address to subscribe...
+  mailchimp_button_text: Join the Movement
+  mailchimp_background_image: '/images/subscribe-bg.jpg'
+
+
+#-------------------------------
+# Social Links
+social:
+- {icon: "fa-brands fa-facebook", name: "Facebook", link: "https://facebook.com"}
+- {icon: "fa-brands fa-x-twitter", name: "Twitter", link: "https://twitter.com"}
+- {icon: "fa-brands fa-tiktok", name: "Tiktok", link: "https://tiktok.com"}
+- {icon: "fa-brands fa-instagram", name: "Instagram", link: "https://instagram.com"}
+- {icon: "fa-brands fa-vimeo-v", name: "Vimeo", link: "https://vimeo.com"}
+- {icon: "fa-brands fa-github", name: "Github", link: "https://github.com"}
+
+# Example of adding a new link to the footer - {icon: "fa-brands fa-mastodon", name: "Mastodon", link: "https://mastodon.social"}
+# Other icons can be found at https://fontawesome.com/icons
+
+
+#-------------------------------
+# Contact Settings
+contact:
+  contact_email: your@email.com # Add your form_id
+  contact_button_text: Send Message
+
+# NOTE
+# Renva theme comes with a contact form built-in. You can use this form with Formspree (https://formspree.io/) service and get up to 50 submissions for free. Also, you can easily switch to another service if you want.
+
+
+#-------------------------------
+# Comment Section (Disqus)
+disqus-identifier: anvod-studio-test # Add your shortname for Disqus Comment. For example anvod-studio-test
+
+
+#-------------------------------
+# Google Analytics
+google-analytics: # Add your GA Tracking Id

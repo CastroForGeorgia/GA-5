@@ -1,0 +1,14 @@
+---
+layout: null
+---
+[
+  {% assign items = site.posts | concat: site.projects %}
+  {% for item in items %}
+    {
+      "title"  : "{{ item.title | escape }}",
+      "url"    : "{{ site.baseurl }}{{ item.url }}",
+      "date"   : "{{ item.date | date_to_long_string }}",
+      "image"  : "{{ item.image }}"
+    } {% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]
