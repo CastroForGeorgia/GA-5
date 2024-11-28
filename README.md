@@ -1,6 +1,7 @@
+---
 layout: page
-title: "Home"
 permalink: /
+---
 
 # 🌟 Andres Castro for Georgia's 5th Congressional District
 
