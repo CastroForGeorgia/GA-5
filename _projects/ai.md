@@ -3,7 +3,7 @@ title: Artificial General Intelligence (AGI)
 description: Artificial intelligence (AI) and robotics is an unstoppable force reshaping our economy and society
 date: 2024-11-28 00:00:00 +0000
 label: Policy
-image: '/images/project-1.jpg'
+image: '/images/agi.jpg'
 ---
 
 # Artificial General Intelligence Policy
