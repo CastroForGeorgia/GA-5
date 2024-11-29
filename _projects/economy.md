@@ -1,3 +1,11 @@
+---
+title: Economy
+description: We believe in an economy that works for everyone, not just the wealthy few.
+date: 2024-11-28 00:00:00 +0000
+label: Policy
+image: '/images/project-1.jpg'
+---
+
 # Our Economic Plan
 
 ## Why This Matters
@@ -80,10 +88,6 @@ We’re tired of an economy that only benefits the rich and leaves hardworking f
 6. **Make Housing Affordable**
    - Increase funding for affordable housing projects to ensure everyone has a safe place to live.
    - Implement rent control measures to prevent skyrocketing rents and displacement.
-
-7. **Engage with Our Community**
-   - Hold regular town halls and forums to listen to your concerns and ideas.
-   - Work with local groups to make sure our policies meet the real needs of our community.
 
 ---
 

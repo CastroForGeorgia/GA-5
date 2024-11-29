@@ -1,3 +1,11 @@
+---
+title: Housing
+description: We reject the idea that only a few should have comfortable homes.
+date: 2024-11-28 00:00:00 +0000
+label: Policy
+image: '/images/project-1.jpg'
+---
+
 # 🏠 Everyone Deserves a Home
 
 ## Why Housing Matters

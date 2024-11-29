@@ -1,3 +1,11 @@
+---
+title: Immigration
+description: Deportation is neither necessary nor beneficial for our nation's growth and diversity.
+date: 2024-11-28 00:00:00 +0000
+label: Policy
+image: '/images/project-1.jpg'
+---
+
 # Immigration Policy
 
 ## Overview

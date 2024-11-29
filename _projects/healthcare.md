@@ -1,3 +1,11 @@
+---
+title: Healthcare
+description: We know that advancements like AI and automation can revolutionize care, but we’re also here to protect our jobs and ensure everyone benefits from these changes.
+date: 2024-11-28 00:00:00 +0000
+label: Policy
+image: '/images/project-1.jpg'
+---
+
 # Our Vision for Better Healthcare
 
 ## Why We’re Fighting for Healthcare

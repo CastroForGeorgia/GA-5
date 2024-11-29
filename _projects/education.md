@@ -1,3 +1,11 @@
+---
+title: Education
+description: Together, we can create an education system that works for everyone.
+date: 2024-11-28 00:00:00 +0000
+label: Policy
+image: '/images/project-1.jpg'
+---
+
 # Education Policy
 
 ## Our Vision
