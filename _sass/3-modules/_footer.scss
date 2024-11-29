@@ -1,0 +1,109 @@
+/* Footer */
+.footer {
+  margin-top: 80px;
+  margin-bottom: 40px;
+
+  .footer__inner {
+    padding: 60px 0 48px;
+    border-top: 1px solid var(--background-alt-color);
+  }
+
+  .social {
+    .social__list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      column-gap: 32px;
+      row-gap: 16px;
+
+      .social__item {
+        margin-bottom: 0;
+        line-height: 1.2;
+
+        .social__link {
+          text-decoration: underline;
+          text-decoration-thickness: 1px;
+          text-underline-offset: 2px;
+          text-decoration-color: transparent;
+          color: var(--heading-font-color);
+
+          &:hover {
+            text-decoration-color: var(--link-color);
+            color: var(--link-color);
+          }
+
+          i {
+            transform: translateY(1.5px);
+            margin-right: 8px;
+            font-size: 24px;
+            color: var(--link-color);
+          }
+        }
+      }
+
+    }
+  }
+
+  .copyright {
+    font-size: 16px;
+    text-align: center;
+
+    a {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+      text-decoration-color: transparent;
+      color: var(--heading-font-color);
+
+      &:hover {
+        text-decoration-color: var(--heading-font-color);
+        color: var(--heading-font-color);
+      }
+    }
+  }
+
+  @media (max-width: $desktop) {
+    margin-top: 60px;
+
+    .social {
+      .social__list {
+        column-gap: 20px;
+
+        .social__item {
+          .social__link {
+            i {
+              font-size: 22px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: $mobile) {
+    margin-top: 40px;
+
+    .footer__inner {
+      padding: 40px 0 24px;
+    }
+
+    .social {
+      .social__list {
+        .social__item {
+          .social__link {
+            i {
+              transform: translateY(0.5px);
+              margin-right: 6px;
+              font-size: 18px;
+            }
+          }
+        }
+      }
+    }
+
+    .copyright {
+      font-size: 15px;
+    }
+  }
+}

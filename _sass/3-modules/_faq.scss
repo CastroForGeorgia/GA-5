@@ -1,0 +1,107 @@
+/* FAQ (Frequently asked questions) */
+.faq {
+  max-width: 960px;
+  margin: 0 auto;
+
+  .faq__item {
+    padding: 0 40px;
+    margin-bottom: 12px;
+    border-radius: 40px;
+    outline: none;
+    background: var(--background-alt-color);
+    transition: $global-transition;
+    cursor: pointer;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      background: var(--background-alt-color-2);
+    }
+
+    &[data-name='open'] {
+      background: var(--background-alt-color-2);
+
+      .faq__title {
+        svg {
+          transform: rotate(45deg) translateZ(0px);
+        }
+      }
+
+      .faq__description {
+        max-height: 400px;
+        opacity: 1;
+        transition: $global-transition;
+      }
+    }
+  }
+
+  .faq__title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 0;
+    margin-bottom: 0;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: normal;
+
+    svg {
+      min-width: 15px;
+      margin-left: 12px;
+      transition: $global-transition;
+    }
+  }
+
+  .faq__description {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: $global-transition;
+    will-change: opacity, max-height;
+
+    p {
+      padding: 20px;
+      margin-bottom: 40px;
+      font-size: 18px;
+      border-radius: 12px;
+      background: var(--background-color);
+    }
+  }
+
+  @media (max-width: $tablet) {
+    .faq__item {
+      padding: 0 32px;
+      border-radius: 30px;
+
+      .faq__title {
+        padding: 20px 0;
+        font-size: 20px;
+        line-height: 1.2;
+      }
+
+      .faq__description {
+        p {
+          padding: 16px;
+          margin-bottom: 32px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: $mobile) {
+    .faq__item {
+      padding: 0 20px;
+    }
+
+    .faq__description {
+      p {
+        margin-bottom: 20px;
+        font-size: inherit;
+      }
+    }
+  }
+}

@@ -1,0 +1,138 @@
+#-------------------------------
+# Site Settings
+title: Andres Castro
+logo: '/images/logo.png' # You can add own logo. For example '/images/logo.png'.
+logo_dark: '/images/logo.png'
+description: Andres Castro, a champion for the people in Georgia's 5th Congressional District. 
+color_scheme: auto # You can choose three modes auto, light, and dark. By default, the auto mode is set, which means the user can choose the light or dark mode themself.
+
+
+#-------------------------------
+# Navigation Settings
+menu_settings:
+  menu_items:
+    - title: 'Home'
+      url: '/'
+    - title: 'Policies'
+      url: '/projects/'
+    - title: 'About'
+      url: '/about/'
+
+
+#-------------------------------
+# Author Settings
+author:
+  author_name: James Brown
+  author_avatar: '/images/01-1.jpg'
+
+
+#-------------------------------
+# Hero Settings
+hero:
+  enable: true
+  hero_role: Resilient ∙ Community Leader ∙ Innovator
+  hero_title: Hi! I’m Andres <img src="/images/01-1.jpg" alt="Andres Castro Picture" loading="lazy"> <br> For Georgia's 5th District
+  hero_description:
+  hero_button_text: Join the Movement
+  hero_button_link: "/contact/"
+
+
+#-------------------------------
+# Projects Section Settings
+projects:
+  enable: true
+  projects_title: Policies
+  projects_description: As a dedicated candidate for Georgia’s 5th Congressional District, I will fight for fair wages and good-paying jobs, ensure quality education for all, and provide affordable healthcare. I am committed to comprehensive immigration reform, protecting women’s rights, and securing affordable housing for every family. Together, we can build a more just, equitable, and thriving community.
+
+
+#-------------------------------
+# Testimonials Section Settings
+testimonials:
+  enable: false
+  testimonials_title: What People Say?
+  testimonials_description: Hear from those who have experienced the transformative power of my artistry and design. These testimonials showcase the success stories born from our collaborative partnerships.
+  testimonials_info: Loved by 50+ customers
+  testimonial_items:
+    - name: "John Smith"
+      image: "/images/client-1.jpg"
+      designation: "CEO of Creative Innovations"
+      content : "Collaborating was a seamless experience. The creativity and execution brought our project to life in ways we couldn't have imagined."
+
+#-------------------------------
+# Blog Section Settings
+blog:
+  enable: false
+  blog_title: From My Blog
+  blog_description: Dive into a world of creativity and inspiration through my blog. Here, I share insights into my artistic process, design trends, and the stories behind my latest projects.
+
+
+#-------------------------------
+# About Section Settings
+about:
+  enable: true
+  about_image: '/images/01.jpg'
+  about_title: Resist With Me
+  about_description: Join me in the fight to create a fair economy and ensure social justice for every family in Georgia’s 5th District. Together, we can build a government that truly serves the people, not the elite.
+
+
+#-------------------------------
+# Faq (Frequently asked questions) Settings
+faq:
+  enable: true
+  faq_title: Need Some Answers?
+  faq_description: Get to know Andres Castro and his commitment to creating a fairer, more inclusive community in Georgia's 5th Congressional District.
+  faq_items:
+    - title: What motivated Andres Castro to run for office?
+      description: Andres Castro was driven to run for office out of frustration with the current Democratic leadership, which he feels no longer prioritizes the needs of the people but instead serves its own agenda. The leadership’s refusal to listen to the public and their cowardly behavior in fighting for the community have compelled Andres to take action and stand up for the residents of Georgia’s 5th Congressional District.
+    - title: Who is Andres Castro?
+      description: Andres Castro is a dedicated community advocate and candidate for U.S. Representative in Georgia’s 5th Congressional District. Growing up in Marietta and Powder Springs, he developed strong values of hard work and community solidarity, driving his commitment to public service and comprehensive policy reform.
+    - title: What are Andres Castro's main policy priorities?
+      description: Andres Castro's main policy priorities focus on education reform, economic growth, and criminal justice reform. He aims to restore public education, support local businesses, combat automation's negative impacts, implement the $200k Housing Program, and ensure fair taxation to create a thriving and inclusive community.
+    - title: What is the $200k Housing Program?
+      description: The $200k Housing Program is Andres Castro’s initiative aimed at addressing the housing affordability crisis in Georgia’s 5th Congressional District. By constructing affordable homes priced around $200,000, the program seeks to create thousands of construction jobs, stimulate related industries, and provide safe, stable housing for all residents.
+    - title: How does Andres Castro plan to eliminate tax loopholes for companies extracting jobs from the community?
+      description: Andres Castro plans to eliminate tax loopholes by removing unfair tax breaks for international companies and those that relocate more than 1% of their workforce annually. Additionally, he will increase taxes on the wealthy and large corporations to ensure everyone pays their fair share, thereby supporting local businesses and funding essential community services.
+    - title: How can supporters get involved with Andres Castro's campaign?
+      description: Supporters can get involved by volunteering for canvassing, phone banking, and event organization, attending community meetings, sharing campaign messages on social media, and subscribing to the campaign newsletter. Your participation is crucial in driving meaningful change for Georgia's 5th Congressional District.
+#-------------------------------
+# Newsletter Settings
+mailchimp:
+  enable: true
+  mailchimp_title: "Stay Inspired Weekly: Your Path to Resilience and Community"
+  mailchimp_description: "Join me every on building a more inclusive and transparent society through technology and community support."
+  mailchimp_identifier: https://andrescastro.us15.list-manage.com/subscribe/post?u=f9aaec6c1108d51e24be57043&amp;id=56cf4f5fef&amp;f_id=009f8de0f0
+  mailchimp_input_text: Enter your email address to subscribe...
+  mailchimp_button_text: Join the Movement
+  mailchimp_background_image: '/images/subscribe-bg.jpg'
+
+
+#-------------------------------
+# Social Links
+social:
+- {icon: "fa-brands fa-facebook", name: "Facebook", link: "https://facebook.com"}
+- {icon: "fa-brands fa-instagram", name: "Instagram", link: "https://instagram.com"}
+- {icon: "fa-brands fa-github", name: "Github", link: "https://github.com"}
+- {icon: "fa-brands fa-bluesky", name: "Bluesky", link: "https://github.com"}
+
+# Example of adding a new link to the footer - {icon: "fa-brands fa-mastodon", name: "Mastodon", link: "https://mastodon.social"}
+# Other icons can be found at https://fontawesome.com/icons
+
+
+#-------------------------------
+# Contact Settings
+contact:
+  contact_email: your@email.com # Add your form_id
+  contact_button_text: Send Message
+
+# NOTE
+# Renva theme comes with a contact form built-in. You can use this form with Formspree (https://formspree.io/) service and get up to 50 submissions for free. Also, you can easily switch to another service if you want.
+
+
+#-------------------------------
+# Comment Section (Disqus)
+disqus-identifier: anvod-studio-test # Add your shortname for Disqus Comment. For example anvod-studio-test
+
+
+#-------------------------------
+# Google Analytics
+google-analytics: # Add your GA Tracking Id

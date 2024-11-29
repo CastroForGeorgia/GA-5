@@ -1,0 +1,84 @@
+{% if site.data.settings.testimonials.enable == true %}
+<!-- begin testimonials -->
+<section class="section testimonials">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+
+        <div class="section__info">
+          {% if site.data.settings.testimonials.testimonials_title %}
+            <h2 class="section__title">{{ site.data.settings.testimonials.testimonials_title }}</h2>
+          {% endif %}
+          {% if site.data.settings.testimonials.testimonials_description %}
+           <p class="section__description">{{ site.data.settings.testimonials.testimonials_description }}</p>
+          {% endif %}
+
+          <div class="client-list">
+            <div class="client-list__box">
+              {% assign item = site.data.settings.testimonials.testimonial_items %}
+              {% for testimonial_item in item limit:4 %}
+              <div class="client-list__image">
+                <img class="client-list__avatar lazy" data-src="{{ testimonial_item.image | relative_url }}" alt="{{ testimonial_item.name }}">
+              </div>
+              {% endfor %}
+            </div>
+            <div class="client-list__meta">
+              {% if site.data.settings.testimonials.testimonials_info %}
+                <p class="client-list__info">{{ site.data.settings.testimonials.testimonials_info }}</p>
+              {% endif %}
+              <svg xmlns="http://www.w3.org/2000/svg" width="108" height="20" fill="none"><path fill="#FFC71D" stroke="#FFC71D" stroke-linecap="round" stroke-linejoin="round" stroke-width=".68" d="m10 1.666 2.575 5.218 5.759.841-4.168 4.059.984 5.732L10 14.81l-5.15 2.707.984-5.732-4.168-4.059 5.759-.841L10 1.666Z"/><path fill="#FFC71D" stroke="#FFC71D" stroke-linecap="round" stroke-linejoin="round" stroke-width=".68" d="m32 1.666 2.575 5.218 5.758.841-4.167 4.059.984 5.732L32 14.81l-5.15 2.707.983-5.732-4.167-4.059 5.759-.841L32 1.666Z"/><path fill="#FFC71D" stroke="#FFC71D" stroke-linecap="round" stroke-linejoin="round" stroke-width=".68" d="m54 1.666 2.575 5.218 5.758.841-4.167 4.059.984 5.732L54 14.81l-5.15 2.707.983-5.732-4.167-4.059 5.759-.841L54 1.666Z"/><path fill="#FFC71D" stroke="#FFC71D" stroke-linecap="round" stroke-linejoin="round" stroke-width=".68" d="m76 1.666 2.575 5.218 5.758.841-4.167 4.059.984 5.732L76 14.81l-5.15 2.707.984-5.732-4.168-4.059 5.759-.841L76 1.666Z"/><path fill="#FFC71D" stroke="#FFC71D" stroke-linecap="round" stroke-linejoin="round" stroke-width=".68" d="m98 1.666 2.575 5.218 5.759.841-4.168 4.059.984 5.732L98 14.81l-5.15 2.707.984-5.732-4.168-4.059 5.759-.841L98 1.666Z"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonials__slider splide">
+          <div class="splide__arrows slider-controls">
+            <button class="splide__arrow--prev prev">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button class="splide__arrow--next next">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+
+          <div class="splide__track">
+            <div class="splide__list">
+            {% for testimonial_item in site.data.settings.testimonials.testimonial_items %}
+              <div class="testimonial-item splide__slide">
+                <div class="testimonial-content">
+
+                  <div class="testimonial-left">
+                    {% if testimonial_item.image %}
+                    <div class="client-image">
+                      <img class="lazy" data-src="{{ testimonial_item.image | relative_url }}" alt="{{ testimonial_item.name }}">
+                    </div>
+                    {% endif %}
+                  </div>
+
+                  <div class="testimonial-right">
+                    <div class="client-info">
+                      {% if testimonial_item.content %}
+                        <p class="client-text">{{ testimonial_item.content }}</p>
+                      {% endif %}
+                      {% if testimonial_item.name %}
+                        <h3 class="client-name">{{ testimonial_item.name }}</h3>
+                      {% endif %}
+                      {% if testimonial_item.designation %}
+                        <span class="client-designation">{{ testimonial_item.designation }}</span>
+                      {% endif %}
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            {% endfor %}
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end testimonials -->
+{% endif %}

@@ -1,0 +1,133 @@
+/* Page Navigation */
+.page__navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 0 60px;
+  border-bottom: 1px solid var(--border-color);
+
+  .page__prev,
+  .page__next {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 50%;
+    border: none;
+  }
+
+  .prev__image,
+  .next__image {
+    position: relative;
+    transform: translate(0);
+    display: block;
+    min-width: 260px;
+    aspect-ratio: 4/3;
+    border-radius: 40px;
+    overflow: hidden;
+    background-color: var(--background-alt-color);
+    transition: transform .2s ease;
+
+    @supports not (aspect-ratio: 4/3) {
+      padding-top: 31%;
+    }
+
+    &:hover {
+      transform: translateY(-3px);
+
+      .video-icon {
+        transform: translate(-50%, -50%) scale(1.05);
+      }
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .video-icon {
+      width: 60px;
+      height: 60px;
+      will-change: transform;
+    }
+  }
+
+  .page__nav {
+    display: inline-block;
+    margin-bottom: 4px;
+    font-size: 16px;
+  }
+
+  .page__nav__title {
+    margin-bottom: 0;
+    font-size: 28px;
+
+    a {
+      text-decoration: underline;
+      text-decoration-color: transparent;
+      text-decoration-thickness: 1.4px;
+      text-underline-offset: 2px;
+
+      &:hover {
+        text-decoration-color: var(--link-color-hover);
+      }
+    }
+  }
+
+  .page__next {
+    text-align: right;
+    margin-left: auto;
+  }
+
+  @media (max-width: $wide) {
+    .prev__image,
+    .next__image {
+      min-width: 240px;
+
+      @supports not (aspect-ratio: 4/3) {
+        padding-top: 40%;
+      }
+    }
+
+    .page__nav__title {
+      font-size: 24px;
+    }
+  }
+
+  @media (max-width: $desktop) {
+    padding: 0 0 40px;
+
+    .page__prev,
+    .page__next {
+      align-items: normal;
+      flex-direction: column;
+    }
+
+    .prev__box,
+    .next__box {
+      order: 1;
+    }
+
+  }
+
+  @media (max-width: $mobile) {
+    flex-wrap: wrap;
+
+    .page__prev,
+    .page__next {
+      width: 100%;
+    }
+
+    .prev__image,
+    .next__image {
+      border-radius: 30px;
+    }
+
+    .page__nav__title {
+      font-size: 22px;
+    }
+  }
+}
