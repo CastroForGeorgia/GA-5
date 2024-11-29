@@ -56,7 +56,7 @@ projects:
 #-------------------------------
 # Testimonials Section Settings
 testimonials:
-  enable: true
+  enable: false
   testimonials_title: What People Say?
   testimonials_description: Hear from those who have experienced the transformative power of my artistry and design. These testimonials showcase the success stories born from our collaborative partnerships.
   testimonials_info: Loved by 50+ customers
@@ -65,17 +65,6 @@ testimonials:
       image: "/images/client-1.jpg"
       designation: "CEO of Creative Innovations"
       content : "Collaborating was a seamless experience. The creativity and execution brought our project to life in ways we couldn't have imagined."
-
-    - name: "David Wilson"
-      image: "/images/client-2.jpg"
-      designation: "Senior Designer at Elegance Studios"
-      content : "The elegant and modern design aesthetic was exactly what we needed. The work was both inspiring and flawlessly executed."
-
-    - name: "Sarah Davis"
-      image: "/images/client-3.jpg"
-      designation: "Director of FutureTech Labs"
-      content : "The blend of technology and art was masterful. Every piece showcased a deep understanding of both disciplines."
-
 
 #-------------------------------
 # Blog Section Settings
@@ -131,11 +120,9 @@ mailchimp:
 # Social Links
 social:
 - {icon: "fa-brands fa-facebook", name: "Facebook", link: "https://facebook.com"}
-- {icon: "fa-brands fa-x-twitter", name: "Twitter", link: "https://twitter.com"}
-- {icon: "fa-brands fa-tiktok", name: "Tiktok", link: "https://tiktok.com"}
 - {icon: "fa-brands fa-instagram", name: "Instagram", link: "https://instagram.com"}
-- {icon: "fa-brands fa-vimeo-v", name: "Vimeo", link: "https://vimeo.com"}
 - {icon: "fa-brands fa-github", name: "Github", link: "https://github.com"}
+- {icon: "fa-brands fa-bluesky", name: "Bluesky", link: "https://github.com"}
 
 # Example of adding a new link to the footer - {icon: "fa-brands fa-mastodon", name: "Mastodon", link: "https://mastodon.social"}
 # Other icons can be found at https://fontawesome.com/icons
