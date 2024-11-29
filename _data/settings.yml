@@ -17,6 +17,8 @@ menu_settings:
       url: '/projects/'
     - title: 'About'
       url: '/about/'
+    - title: 'Contact'
+      url: 'https://us15.list-manage.com/contact-form?u=f9aaec6c1108d51e24be57043&form_id=11ff946fda32b44911eccb81f6ed70e6'
 
 
 #-------------------------------
