@@ -1,5 +1,5 @@
 ---
-title: "Immigration Policy: Embracing Amnesty for a Better Future"
+title: "Immigration"
 description: "Amnesty is the compassionate and practical path forward for our nation's growth and diversity. We advocate for comprehensive immigration reform centered on Amnesty, supporting and integrating immigrants into our community without mass deportations or detention camps."
 date: 2024-11-28 00:00:00 +0000
 label: "Policy"
