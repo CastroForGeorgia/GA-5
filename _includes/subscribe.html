@@ -13,15 +13,73 @@
               <p class="subscribe__description">{{ site.data.settings.mailchimp.mailchimp_description }}</p>
             {% endif %}
           </div>
-          <form class="subscribe-form validate"
-            action="{% if site.data.settings.mailchimp.mailchimp_identifier %}//{{site.data.settings.mailchimp.mailchimp_identifier}}{% else %}#{% endif %}" method="POST" id="membedded-subscribe-form" name="membedded-subscribe-form" target="_blank" novalidate>
-            <label class="screen-reader-text" for="mce-EMAIL">Email address</label>
-            <input class="subscribe-email required email" id="mce-EMAIL" type="text" name="EMAIL" placeholder="{% if site.data.settings.mailchimp.mailchimp_input_text %}{{ site.data.settings.mailchimp.mailchimp_input_text }}{% else %}Email address{% endif %}">
-            <button class="button button--primary subscribe-button" id="membedded-subscribe" type="submit" name="subscribe">{{ site.data.settings.mailchimp.mailchimp_button_text }}</button>
-          </form>
+          
+          <!-- Mailchimp Signup Form -->
+          <div id="mc_embed_signup">
+            <form action="https://andrescastro.us15.list-manage.com/subscribe/post?u=f9aaec6c1108d51e24be57043&amp;id=56cf4f5fef" 
+                  method="post" 
+                  id="mc-embedded-subscribe-form" 
+                  name="mc-embedded-subscribe-form" 
+                  class="subscribe-form validate" 
+                  target="_blank" 
+                  novalidate>
+              
+              <div id="mc_embed_signup_scroll">
+                <!-- Email Input -->
+                <label class="screen-reader-text" for="mce-EMAIL">Email address</label>
+                <input type="email" 
+                       value="" 
+                       name="EMAIL" 
+                       class="required email subscribe-email" 
+                       id="mce-EMAIL" 
+                       placeholder="{% if site.data.settings.mailchimp.mailchimp_input_text %}{{ site.data.settings.mailchimp.mailchimp_input_text }}{% else %}Email address{% endif %}" 
+                       required>
+                
+                <!-- Hidden Anti-Bot Field -->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                  <input type="text" name="b_f9aaec6c1108d51e24be57043_56cf4f5fef" tabindex="-1" value="">
+                </div>
+                
+                <!-- Submit Button -->
+                <div class="clear">
+                  <button type="submit" 
+                          name="subscribe" 
+                          id="mc-embedded-subscribe" 
+                          class="button button--primary subscribe-button">
+                    {{ site.data.settings.mailchimp.mailchimp_button_text }}
+                  </button>
+                </div>
+                
+                <!-- Response Messages -->
+                <div id="mce-responses" class="clear">
+                  <div class="response" id="mce-error-response" style="display:none"></div>
+                  <div class="response" id="mce-success-response" style="display:none"></div>
+                </div>
+              </div>
+            </form>
+            
+            <!-- Mailchimp Validation Script -->
+            <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+            <script type="text/javascript">
+              (function($) {
+                window.fnames = new Array(); 
+                window.ftypes = new Array();
+                fnames[0] = 'EMAIL';
+                ftypes[0] = 'email';
+                // Add additional fields if necessary
+                $(document).ready(function() {
+                  // Initialize Mailchimp validation or add custom JS if needed
+                });
+              }(jQuery));
+              var $mcj = jQuery.noConflict(true);
+            </script>
+          </div>
+          <!-- End Mailchimp Signup Form -->
+
+          <!-- Background Image -->
           <div class="subscribe__bg">
             {% if site.data.settings.mailchimp.mailchimp_background_image %}
-              <img class="lazy" data-src="{{site.data.settings.mailchimp.mailchimp_background_image}}" alt>
+              <img class="lazy" data-src="{{ site.data.settings.mailchimp.mailchimp_background_image }}" alt="Subscribe Background">
             {% endif %}
           </div>
         </div>
@@ -31,3 +89,16 @@
 </section>
 <!-- end subscribe -->
 {% endif %}
+
+<style type="text/css">
+  /* Center the response messages within the subscribe form */
+  #mc_embed_signup #mce-responses {
+    text-align: center; /* Centers the text horizontally */
+    margin-top: 10px;   /* Adds some spacing above the messages */
+  }
+
+  #mc_embed_signup #mce-responses .response {
+    display: inline-block; /* Ensures the message boxes shrink to fit their content */
+    max-width: 100%;       /* Prevents overflow on smaller screens */
+  }
+</style>
