@@ -17,6 +17,8 @@ menu_settings:
       url: '/projects/'
     - title: 'About'
       url: '/about/'
+    - title: 'Contact'
+      url: 'https://us15.list-manage.com/contact-form?u=f9aaec6c1108d51e24be57043&form_id=11ff946fda32b44911eccb81f6ed70e6'
 
 
 #-------------------------------
@@ -101,7 +103,7 @@ mailchimp:
   mailchimp_title: "Stay Inspired Weekly: Your Path to Resilience and Community"
   mailchimp_description: "Join me every on building a more inclusive and transparent society through technology and community support."
   mailchimp_identifier: https://andrescastro.us15.list-manage.com/subscribe/post?u=f9aaec6c1108d51e24be57043&amp;id=56cf4f5fef&amp;f_id=009f8de0f0
-  mailchimp_input_text: Enter your email address to subscribe...
+  mailchimp_input_text: Enter your email...
   mailchimp_button_text: Join the Movement
   mailchimp_background_image: '/images/subscribe-bg.jpg'
 
@@ -110,9 +112,9 @@ mailchimp:
 # Social Links
 social:
 - {icon: "fa-brands fa-facebook", name: "Facebook", link: "https://facebook.com"}
-- {icon: "fa-brands fa-instagram", name: "Instagram", link: "https://instagram.com"}
-- {icon: "fa-brands fa-github", name: "Github", link: "https://github.com"}
-- {icon: "fa-brands fa-bluesky", name: "Bluesky", link: "https://github.com"}
+- {icon: "fa-brands fa-instagram", name: "Instagram", link: "https://www.instagram.com/castroforgeorgia/"}
+- {icon: "fa-brands fa-github", name: "Github", link: "https://github.com/CastroForGeorgia/GA-5"}
+- {icon: "fa-brands fa-bluesky", name: "Bluesky", link: "https://bsky.app/profile/castroforgeorgia.bsky.social"}
 
 # Example of adding a new link to the footer - {icon: "fa-brands fa-mastodon", name: "Mastodon", link: "https://mastodon.social"}
 # Other icons can be found at https://fontawesome.com/icons
@@ -135,4 +137,4 @@ disqus-identifier: anvod-studio-test # Add your shortname for Disqus Comment. Fo
 
 #-------------------------------
 # Google Analytics
-google-analytics: # Add your GA Tracking Id
+google-analytics: G-8XLD5HNY8Q
