@@ -3,7 +3,7 @@ title: "Immigration"
 description: "Amnesty is the compassionate and practical path forward for our nation's growth and diversity. We advocate for comprehensive immigration reform centered on Amnesty, supporting and integrating immigrants into our community without mass deportations or detention camps."
 date: 2024-11-28 00:00:00 +0000
 label: "Policy"
-image: "/images/immigration-policy-header.jpg"
+image: "/images/immigration-policy-header.webp"
 keywords: [Immigration Policy, Amnesty, Comprehensive Immigration Reform, Pathway to Citizenship, Family Unity, Economic Growth, Fair Treatment of Immigrants, Georgia 5th Congressional District, Immigrant Rights, Humane Immigration Policies, Community Integration, Personal Experience]
 ---
 

@@ -3,14 +3,8 @@ title: "Economy"
 description: "We believe in an economy that protects local jobs, supports affordable housing, and eliminates unfair tax loopholes that drain our community. Our plan focuses on combating automation's negative impacts, implementing the $200k Housing Program, and ensuring fair taxation for sustainable growth in Georgia's 5th District."
 date: 2024-11-28 00:00:00 +0000
 label: "Policy"
-image: "/images/economy-policy-header.jpg" # Ensure this image reflects the policy focus
+image: "/images/economy-policy-header.webp" # Ensure this image reflects the policy focus
 keywords: [Economy Policy, Automation, $200k Housing Program, Tax Loopholes, Job Protection, Georgia 5th Congressional District, Fair Taxation, Affordable Housing, Local Jobs, Economic Growth]
-og:
-  title: "Economy Policy: Protecting Jobs and Building Our Future"
-  description: "We believe in an economy that protects local jobs, supports affordable housing, and eliminates unfair tax loopholes that drain our community. Our plan focuses on combating automation's negative impacts, implementing the $200k Housing Program, and ensuring fair taxation for sustainable growth in Georgia's 5th District."
-  image: "/images/economy-policy-header.jpg"
-  url: "https://yourwebsite.com/economy-policy/"
-  type: "article"
 ---
     
 # Economy Policy: Protecting Jobs and Building Our Future

@@ -3,14 +3,8 @@ title: "Housing"
 description: "We believe that everyone deserves a safe and affordable home. Our '200k Home Initiative' aims to revolutionize housing in Georgia's 5th Congressional District by building affordable homes, providing jobs, and empowering communities."
 date: 2024-11-28 00:00:00 +0000
 label: "Policy"
-image: "/images/housing-policy-header.jpg"
+image: "/images/housing-policy-header.webp"
 keywords: [200k Home Initiative, Affordable Housing, Homelessness Prevention, Job Works Program, Build Baby Build, Georgia 5th Congressional District, Housing Policy, Government Housing Initiatives, Homeownership, Economic Growth, Housing Affordability]
-og:
-  title: "Housing"
-  description: "We believe that everyone deserves a safe and affordable home. Our '200k Home Initiative' aims to revolutionize housing in Georgia's 5th Congressional District by building affordable homes, providing jobs, and empowering communities."
-  image: "/images/housing-policy-header.jpg"
-  url: "https://yourwebsite.com/housing-policy/"
-  type: "article"
 ---
 
 # 🏠 Everyone Deserves a Home

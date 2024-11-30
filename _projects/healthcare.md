@@ -3,7 +3,7 @@ title: "Healthcare"
 description: "We are committed to implementing Medicare for All, enhanced by AI technology to streamline administrative tasks and improve patient care. Our vision is a healthcare system where doctors and nurses can focus on people, not paperwork."
 date: 2024-11-28 00:00:00 +0000
 label: "Policy"
-image: "/images/medicare-for-all-header.jpg" # Updated image path for relevance
+image: "/images/medicare-for-all-header.webp" # Updated image path for relevance
 keywords: [Medicare for All, AI in Healthcare, Healthcare Policy, Georgia 5th Congressional District, Healthcare Automation, Patient Care, Public Health Prediction, Healthcare Efficiency, Affordable Healthcare, Comprehensive Healthcare]
 ---
 

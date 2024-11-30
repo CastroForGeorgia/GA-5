@@ -3,7 +3,7 @@ title: Criminal Justice Reform
 description: Empowering our community with after-school programs, job training, and alternatives to incarceration to reduce recidivism and ensure justice for all.
 date: 2024-11-28 00:00:00 +0000
 label: "Policy"
-image: '/images/criminal-justice-reform.jpg'
+image: '/images/criminal-justice-reform.webp'
 ---
 
 # Transforming Criminal Justice: Building Safer Communities Through Opportunity

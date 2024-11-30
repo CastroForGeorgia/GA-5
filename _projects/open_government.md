@@ -3,7 +3,7 @@ title: "Open Government"
 description: "We believe that transparency and accountability are the bedrocks of a trustworthy government that genuinely serves its people. Our commitment to Open Government ensures that every decision and policy is accessible and understandable to all residents."
 date: 2024-11-28 00:00:00 +0000
 label: "Policy"
-image: "/images/open-government-header.jpg" # Updated image path for relevance
+image: "/images/open-government-header.webp" # Updated image path for relevance
 keywords: [Open Government, Government Transparency, Accountability, Georgia 5th Congressional District, Public Participation, Collaborative Governance, Transparent Budgeting, Community Engagement, Open-Source Platforms, Trustworthy Government]
 ---
     

@@ -3,7 +3,7 @@ layout: page
 title: About Andres Castro
 description: Explore Andres Castro's inspiring journey of resilience, education, and commitment to fostering an inclusive and transparent society through technology and community support.
 permalink: /about/
-image: '/images/about-andres-castro.jpg' # Update with your preferred header image path
+image: '/images/logo-district.png' # Update with your preferred header image path
 keywords: [Andres Castro, Resilience, Community Support, Inclusive Society, Technology for Good, Transparency, Education, Computer Science, Oakland City, Atlanta]
 ---
 

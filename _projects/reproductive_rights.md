@@ -3,14 +3,8 @@ title: "Reproductive Rights"
 description: "Reproductive rights are fundamental human rights. We are committed to protecting and expanding women's access to comprehensive reproductive healthcare and empowering them to make informed decisions about their bodies."
 date: 2024-11-28 00:00:00 +0000
 label: "Policy"
-image: "/images/reproductive-rights-header.jpg" # Updated image path for relevance
+image: "/images/reproductive-rights-header.webp" # Updated image path for relevance
 keywords: [Reproductive Rights, Women's Health, Georgia 5th Congressional District, Healthcare Access, Reproductive Healthcare, Policy for Women, Inclusive Healthcare, Women's Rights, Federal Legislation, Health Equity]
-og:
-  title: "Reproductive Rights"
-  description: "Reproductive rights are fundamental human rights. We are committed to protecting and expanding women's access to comprehensive reproductive healthcare and empowering them to make informed decisions about their bodies."
-  image: "/images/reproductive-rights-header.jpg"
-  url: "https://yourwebsite.com/reproductive-rights/"
-  type: "article"
 ---
 
 # Women's Reproductive Rights and Care Policy
