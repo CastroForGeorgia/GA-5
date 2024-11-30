@@ -3,7 +3,7 @@ title: Civil Rights and Equality
 description: We are committed to fostering an inclusive community where everyone has the opportunity to thrive and participate fully in society.
 date: 2024-11-28 00:00:00 +0000
 label: Policy
-image: '/images/project-1.jpg'
+image: '/images/civil-rights-equality.webp'
 ---
 
 # Civil Rights and Equality Policy

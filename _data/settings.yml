@@ -24,7 +24,7 @@ menu_settings:
 #-------------------------------
 # Author Settings
 author:
-  author_name: James Brown
+  author_name: Andres Castro
   author_avatar: '/images/01-1.jpg'
 
 
@@ -33,7 +33,7 @@ author:
 hero:
   enable: true
   hero_role: Resilient ∙ Community Leader ∙ Innovator
-  hero_title: Hi! I’m Andres <img src="/images/01-1.jpg" alt="Andres Castro Picture" loading="lazy"> <br> For Georgia's 5th District
+  hero_title: Hi! I’m Andres <img src="/images/logo.png" alt="Andres Castro Picture" loading="lazy"> <br> For Georgia's 5th District
   hero_description:
   hero_button_text: Join the Movement
   hero_button_link: "/contact/"
@@ -72,7 +72,7 @@ blog:
 # About Section Settings
 about:
   enable: true
-  about_image: '/images/01.jpg'
+  about_image: '/images/logo-district.png'
   about_title: Resist With Me
   about_description: Join me in the fight to create a fair economy and ensure social justice for every family in Georgia’s 5th District. Together, we can build a government that truly serves the people, not the elite.
 
@@ -101,7 +101,7 @@ faq:
 mailchimp:
   enable: true
   mailchimp_title: "Stay Inspired Weekly: Your Path to Resilience and Community"
-  mailchimp_description: "Join me every on building a more inclusive and transparent society through technology and community support."
+  mailchimp_description: "Join me on building a more inclusive and transparent society through technology and community support."
   mailchimp_identifier: https://andrescastro.us15.list-manage.com/subscribe/post?u=f9aaec6c1108d51e24be57043&amp;id=56cf4f5fef&amp;f_id=009f8de0f0
   mailchimp_input_text: Enter your email...
   mailchimp_button_text: Join the Movement

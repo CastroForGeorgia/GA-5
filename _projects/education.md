@@ -3,14 +3,8 @@ title: "Education"
 description: "Together, we can create an education system that works for everyone by restoring public education, supporting our teachers, and ensuring equitable funding for all schools."
 date: 2024-11-28 00:00:00 +0000
 label: "Policy"
-image: "/images/education-policy-header.jpg" # Updated image path for relevance
+image: "/images/education-policy-header.webp" # Updated image path for relevance
 keywords: [Public Education, Teacher Support, Education Funding, Georgia 5th Congressional District, Affordable Education, Education Reform, No Private School Funding, Teacher Salaries, Education Policy, Community Schools]
-og:
-  title: "Education Policy: Restoring Public Education for a Brighter Future"
-  description: "Together, we can create an education system that works for everyone by restoring public education, supporting our teachers, and ensuring equitable funding for all schools."
-  image: "/images/education-policy-header.jpg"
-  url: "https://yourwebsite.com/education-policy/"
-  type: "article"
 ---
     
 # Education Policy: Restoring Public Education for a Brighter Future
