@@ -17,6 +17,8 @@ menu_settings:
       url: '/projects/'
     - title: 'About'
       url: '/about/'
+    - title: 'Blog'
+      url: '/blog/'
     - title: 'Contact'
       url: 'https://us15.list-manage.com/contact-form?u=f9aaec6c1108d51e24be57043&form_id=11ff946fda32b44911eccb81f6ed70e6'
 
@@ -63,9 +65,10 @@ testimonials:
 #-------------------------------
 # Blog Section Settings
 blog:
-  enable: false
-  blog_title: From My Blog
-  blog_description: Dive into a world of creativity and inspiration through my blog. Here, I share insights into my artistic process, design trends, and the stories behind my latest projects.
+  enable: true
+  blog_title: Blog
+  blog_description: Let’s build a future that works for all of us.
+
 
 
 #-------------------------------
