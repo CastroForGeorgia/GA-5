@@ -1,6 +1,6 @@
 #-------------------------------
 # Site Settings
-title: Andres Castro
+title: CastroForGeorgia
 logo: '/images/logo.png' # You can add own logo. For example '/images/logo.png'.
 logo_dark: '/images/logo.png'
 description: Andres Castro, a champion for the people in Georgia's 5th Congressional District. 
@@ -34,7 +34,7 @@ author:
 # Hero Settings
 hero:
   enable: true
-  hero_role: Resilient ∙ Community Leader ∙ Innovator
+  hero_role: Resilient ∙ Technical Leader ∙ Innovator
   hero_title: Hi! I’m Andres <img src="/images/about-me-photo.jpg" alt="Andres Castro Picture" loading="lazy"> <br> For Georgia's 5th District
   hero_description:
   hero_button_text: Join the Movement
