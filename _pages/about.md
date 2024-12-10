@@ -81,7 +81,7 @@ Becoming a **Home Owner** was the culmination of not just my hard work, but the 
 
 ### Professional Endeavors and Vision
 
-As a **Staff Software Engineer**, I have honed the skills needed to navigate complex challenges with precision and innovation. My career is defined by leading projects with multimillion-dollar budgets and designing systems that impact millions of users daily. These experiences have prepared me to bring the same level of strategic thinking, problem-solving, and accountability to Washington.
+As a **Staff Software Engineer**, I have honed the skills needed to navigate complex challenges with precision and innovation. My career is defined by leading projects and designing systems that impact millions of users daily. These experiences have prepared me to bring the same level of strategic thinking, problem-solving, and accountability to Washington.
 
 My expertise includes crafting scalable system architectures, optimizing operational efficiency, and deploying modern cloud-based solutions. Beyond technical implementation, I am deeply committed to fostering collaboration and mentorship, building teams that thrive on innovation and excellence.
 
