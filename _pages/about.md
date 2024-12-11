@@ -91,6 +91,9 @@ In Washington, I will apply the same rigor and forward-thinking approach to crea
 
 [For more details on my professional achievements, please visit my LinkedIn profile: **[Andres Castro - LinkedIn](https://www.linkedin.com/in/acastr7/)**.]
 
+### Why I'm running
+Check out my blog post on **[why I'm running](https://andrescastro.us/blog/why-im-running/)**.
+
 ---
 
 > Let’s get to work.
