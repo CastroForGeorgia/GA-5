@@ -29,7 +29,7 @@ menu_settings:
 # Author Settings
 author:
   author_name: Andres Castro
-  author_avatar: '/images/about-me-photo-zoom.jpeg'
+  author_avatar: '/images/about-me-photo-zoom.jpg'
 
 
 #-------------------------------
@@ -37,7 +37,7 @@ author:
 hero:
   enable: true
   hero_role: Resilient ∙ Technical Leader ∙ Innovator
-  hero_title: Hi! I’m Andres <img src="/images/about-me-photo.jpg" alt="Andres Castro Picture" loading="lazy"> <br> For Georgia's 5th District
+  hero_title: Hi! I’m Andres <img src="/images/about-me-photo-zoom.jpg" alt="Andres Castro Picture" loading="lazy"> <br> For Georgia's 5th District
   hero_description:
   hero_button_text: Join the Movement
   hero_button_link: "/contact/"
