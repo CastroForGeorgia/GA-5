@@ -7,7 +7,7 @@ image: '/images/party_reform.jpeg'
 categories: [Politics, Reform, Progressivism]
 ---
 
-The Democratic Party stands at a crossroads. To truly serve the people and rise to the challenges of our time, we must confront uncomfortable truths: outdated leadership, legacy-driven politics, and a system that too often puts personal ambition above the needs of everyday Americans. It’s time for bold reforms that redefine what it means to be a Democrat—reforms that align with the values of leaders like Alexandria Ocasio-Cortez, Bernie Sanders, and other champions of progressive change.  
+The Democratic Party stands at a crossroads. To truly serve the people and rise to the challenges of our time, we must confront uncomfortable truths: outdated leadership, legacy-driven politics, and a system that too often puts personal ambition above the needs of everyday Americans. It’s time for bold reforms that redefine what it means to be a Democrat—reforms that align with the values of leaders like Alexandria Ocasio-Cortez, Bernie Sanders, and other champions of working-class change.
 
 ## What Are Legacy Democrats?  
 
@@ -26,9 +26,13 @@ This is not about erasing legacies but about learning from them. The Democratic 
 
 Here’s what we need to do to ensure the Democratic Party is a true force for progress and the people:  
 
-### 1. Age Limits on Leadership: Tie Candidacy to Social Security Retirement Age  
+### 1. Age Limits on Candidacy: Tie Candidacy to Social Security Retirement Age
 
-Our democracy deserves leaders who are not only experienced but also energetic and forward-thinking. By linking candidacy eligibility to the Social Security retirement age, we ensure that leadership reflects the vigor and adaptability required for these times. This reform prevents political stagnation and ensures seamless transitions, avoiding crises when leaders cannot serve their full terms.  
+Leadership in a democracy demands both experience and energy. Tying candidacy for elected office to the Social Security retirement age ensures that leaders approach their roles with a sense of purpose and urgency, knowing they are preparing the way for the next generation.
+
+This is not about excluding older leaders from contributing—far from it. Those over the retirement age can still play vital roles in advisory positions, mentoring emerging leaders, or shaping policy outside of elected office. But by encouraging a natural transition in leadership, we ensure stability and reduce risks of sudden vacancies or crises when leaders cannot complete their terms.
+
+Our focus should be on fostering a dynamic political process where leaders not only bring wisdom but also embrace innovation and forward-thinking policies.
 
 ### 2. End Billionaire-Funded Super PACs  
 
