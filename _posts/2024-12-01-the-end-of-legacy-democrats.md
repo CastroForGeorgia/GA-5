@@ -16,7 +16,7 @@ Legacy Democrats can be defined in two ways:
 1. **Nostalgic Leadership:** Leaders who cling to outdated policies, believing the solutions of the early 2000s still apply to today’s complex realities.  
 2. **Personal Legacy Over Progress:** Politicians who, despite groundbreaking contributions in their prime, hold onto power too long, leaving their constituents with uncertainty and missed opportunities for change.  
 
-We’ve seen this in figures like Ruth Bader Ginsburg, Dianne Feinstein, and even Bernie Sanders—trailblazers whose contributions shaped our nation but who, at the end of their careers, struggled to “learn how to say goodbye.” Their hesitancy to pass the torch left us grappling with political and institutional disarray.  
+We’ve seen this in figures like Ruth Bader Ginsburg, Dianne Feinstein, Bernie Sanders, and Nancy Pelosi—trailblazers who helped shape the party but who, at the end of their careers, struggled to “learn how to say goodbye.” Their contributions are undeniable, but their hesitancy to pass the torch has often created unnecessary challenges for the Democratic Party and the country.
 
 >Their hesitancy to pass the torch left us grappling with political and institutional disarray. 
 
