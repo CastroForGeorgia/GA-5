@@ -43,7 +43,7 @@ These challenges require leaders who can blend **progressive values with technic
 My campaign is about **empowerment and opportunity** for every resident of Georgia’s 5th District.  
 
 ### 🏠 **Affordable Housing**  
-- Expand housing access through innovative initiatives like **The Workers’ Housing Guarantee** (formerly the $200k Home Program) to provide affordable, sustainable homes for working families.  
+- Expand housing access through innovative initiatives like **The Workers’ Housing Guarantee** to provide affordable, sustainable homes for working families.  
 
 ### 💼 **Economic Justice**  
 - Prepare for the **future of work** by investing in reskilling programs and ensuring that automation benefits workers, not just corporations.  

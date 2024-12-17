@@ -1,133 +1,142 @@
-/* Subscribe */
-.subscribe__inner {
+/* Action Network Form Styling - Compact Version */
+
+// Variables
+$primary-color: var(--primary-color);
+$secondary-color: var(--secondary-color);
+$background-color: var(--background-color);
+$border-color: var(--border-color);
+$button-hover: var(--button-background-hover);
+$text-color: var(--text-color);
+
+/* General Form Container */
+#can-form-area-subscribe-form .can_embed {
   position: relative;
-  padding: 32px;
-  border-radius: 60px;
-  overflow: hidden;
+  padding: 16px; /* Reduced overall padding */
+  border-radius: 20px; /* Smaller corners */
+  background: $background-color;
+  margin: 0 auto;
 
-  .subscribe__head {
-    margin-bottom: 20px;
-    padding: 20px;
-    border-radius: 30px;
-    background: var(--background-color);
+  h2 {
+    font-size: 28px; /* Smaller title size */
+    text-align: center;
+    margin-bottom: 8px;
+    color: $text-color;
+  }
 
-    .subscribe__title {
-      margin-bottom: 20px;
-      font-size: 48px;
-    }
+  h4 {
+    font-size: 16px; /* Smaller subtitle */
+    text-align: center;
+    margin-bottom: 12px;
+    color: $text-color;
+  }
 
-    .subscribe__description {
-      margin-bottom: 0;
-    }
+  /* Input Fields */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="zip"] {
+    width: 100%;
+    padding: 8px 12px; /* Reduced padding */
+    margin-bottom: 8px; /* Tighter spacing between fields */
+    border: 1px solid $border-color;
+    border-radius: 8px; /* Smaller corners */
+    font-size: 14px;
+    background-color: $background-color;
+    color: $text-color;
 
-    .subscribe__title,
-    .subscribe__description {
-      max-width: 960px;
+    &::placeholder {
+      color: $text-color;
     }
   }
 
-  .subscribe-form {
-    position: relative;
-    border-radius: 60px;
-    overflow: hidden;
+  /* Submit Button */
+  input[type="submit"] {
+    width: 100%;
+    padding: 12px 16px; /* Compact button padding */
+    font-size: 16px;
+    font-weight: bold;
+    background-color: $primary-color;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
 
-    .subscribe-email {
-      width: 100%;
-      height: 84px;
-      padding: 16px 32px;
+    &:hover {
+      background-color: $button-hover;
+    }
+  }
+
+  /* Checkbox Section */
+  label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 12px;
+    color: $text-color;
+
+    input[type="checkbox"] {
+      margin-right: 6px;
+      accent-color: $primary-color;
+      transform: scale(0.9); /* Slightly smaller checkboxes */
+    }
+  }
+
+  /* Footer Info */
+  #action_info {
+    margin-top: 12px;
+    font-size: 12px;
+    color: var(--text-color);
+    text-align: center;
+
+    strong {
+      color: $text-color;
+    }
+
+    a {
+      color: $text-color;
+      text-decoration: none;
+      font-weight: bold;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  #can-form-area-subscribe-form .can_embed {
+    padding: 12px;
+
+    h2 {
       font-size: 24px;
-      line-height: 1;
-      border: none;
-      border-radius: 60px;
-      outline: 0;
-      color: var(--heading-font-color);
-      background: var(--background-color);
-
-      &::placeholder {
-        color: var(--heading-font-color);
-      }
-
-      &:focus {
-        &::placeholder {
-          color: var(--text-alt-color);
-        }
-      }
     }
 
-    .subscribe-button {
-      position: absolute;
-      top: 9px;
-      right: 9px;
+    input[type="text"],
+    input[type="email"] {
+      padding: 6px 10px;
+      font-size: 12px;
+    }
+
+    input[type="submit"] {
+      font-size: 14px;
     }
   }
+}
 
-  .subscribe__bg {
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--background-alt-color);
+@media (max-width: 480px) {
+  #can-form-area-subscribe-form .can_embed {
+    padding: 8px;
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-
-  @media (max-width: $desktop) {
-    .subscribe__head {
-      .subscribe__title {
-        font-size: 40px;
-      }
+    h2 {
+      font-size: 20px;
     }
 
-    .subscribe-form {
-      .subscribe-email {
-        height: 80px;
-        font-size: 22px;
-      }
-    }
-  }
-
-  @media (max-width: $tablet) {
-    .subscribe-form {
-      .subscribe-email {
-        height: 78px;
-        font-size: 20px;
-      }
-    }
-  }
-
-  @media (max-width: $mobile) {
-    padding: 20px;
-    border-radius: 40px;
-
-    .subscribe__head {
-      margin-bottom: 16px;
-
-      .subscribe__title {
-        margin-bottom: 12px;
-        font-size: 28px;
-      }
-    }
-
-    .subscribe-form {
-      border-radius: 0;
-
-      .subscribe-email {
-        height: 52px;
-        padding: 16px 20px;
-        font-size: inherit;
-      }
-
-      .subscribe-button {
-        position: static;
-        width: 100%;
-        margin-top: 8px;
-      }
+    input[type="submit"] {
+      padding: 10px 12px;
+      font-size: 14px;
     }
   }
 }
