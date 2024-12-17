@@ -77,7 +77,7 @@ Our shared experiences and struggles bind us together. No matter who you are or 
 ### **If you are LGBTQ+** – *We are family!*  
 ### **If you worry for your partner’s reproductive rights** – *We are family!*  
 ### **If you have to use the prison system for mental healthcare** – *We are family!*  
-### **If your family immigrated from Mexico** – *We are family!*  
+### **If you immigrated from Mexico** – *We are family!*  
 ### **If you grew up learning to be a man without a father** –  
 
 >**WE ARE FAMILY!**
