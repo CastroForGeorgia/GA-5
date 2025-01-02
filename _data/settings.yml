@@ -36,11 +36,11 @@ author:
 # Hero Settings
 hero:
   enable: true
-  hero_role: "Resilient ∙ Technical Leader ∙ Community Advocate"
+  hero_role: "Candidate for U.S. House (GA-05) ∙ Fighting for working families, affordable housing, and economic dignity"
   hero_title: "Hi! I’m Andres <img src=\"/images/about-me-photo-zoom.jpg\" alt=\"Andres Castro Picture\" loading=\"lazy\"> <br> Fighting for Georgia's 5th District"
   hero_description: "Together, we can build a future that works for everyone—where equity, justice, and opportunity are more than promises, they’re realities. Let’s create meaningful change for Georgia’s working families."
   hero_button_text: "Join the Movement"
-  hero_button_link: "/contact/"
+  hero_button_link: "https://actionnetwork.org/forms/connect-with-andres-share-your-vision"
 
 #-------------------------------
 # Projects Section Settings
@@ -51,26 +51,11 @@ projects:
 
 
 #-------------------------------
-# Testimonials Section Settings
-testimonials:
-  enable: false
-  testimonials_title: What People Say?
-  testimonials_description: Hear from those who have experienced the transformative power of my artistry and design. These testimonials showcase the success stories born from our collaborative partnerships.
-  testimonials_info: Loved by 50+ customers
-  testimonial_items:
-    - name: "John Smith"
-      image: "/images/client-1.jpg"
-      designation: "CEO of Creative Innovations"
-      content : "Collaborating was a seamless experience. The creativity and execution brought our project to life in ways we couldn't have imagined."
-
-#-------------------------------
 # Blog Section Settings
 blog:
   enable: true
   blog_title: Blog
   blog_description: Let’s build a future that works for all of us.
-
-
 
 #-------------------------------
 # About Section Settings
@@ -101,19 +86,6 @@ faq:
       description: "Supporters can get involved by volunteering for canvassing, phone banking, and organizing events, attending town halls and community meetings, and sharing campaign messages across social media platforms. You can also subscribe to the campaign newsletter to stay informed and take action. Your support and participation are critical to driving meaningful change for Georgia's 5th Congressional District."
 
 #-------------------------------
-
-# Newsletter Settings
-mailchimp:
-  enable: true
-  mailchimp_title: "Stay Inspired Weekly: Your Path to Resilience and Community"
-  mailchimp_description: "Join me on building a more inclusive and transparent society through technology and community support."
-  mailchimp_identifier: https://andrescastro.us15.list-manage.com/subscribe/post?u=f9aaec6c1108d51e24be57043&amp;id=56cf4f5fef&amp;f_id=009f8de0f0
-  mailchimp_input_text: Enter your email...
-  mailchimp_button_text: Join the Movement
-  mailchimp_background_image: '/images/subscribe-bg.jpg'
-
-
-#-------------------------------
 # Social Links
 social:
 - {icon: "fa-brands fa-instagram", name: "Instagram", link: "https://www.instagram.com/castroforgeorgia/"}
@@ -123,22 +95,6 @@ social:
 
 # Example of adding a new link to the footer - {icon: "fa-brands fa-mastodon", name: "Mastodon", link: "https://mastodon.social"}
 # Other icons can be found at https://fontawesome.com/icons
-
-
-#-------------------------------
-# Contact Settings
-contact:
-  contact_email: your@email.com # Add your form_id
-  contact_button_text: Send Message
-
-# NOTE
-# Renva theme comes with a contact form built-in. You can use this form with Formspree (https://formspree.io/) service and get up to 50 submissions for free. Also, you can easily switch to another service if you want.
-
-
-#-------------------------------
-# Comment Section (Disqus)
-# disqus-identifier: anvod-studio-test # Add your shortname for Disqus Comment. For example anvod-studio-test
-
 
 #-------------------------------
 # Google Analytics
