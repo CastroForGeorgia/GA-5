@@ -2,8 +2,11 @@
 layout: post
 title: "AI for the People: Ensuring Ethical Development"
 description: "Ethical AI development can create jobs, enhance public services, and safeguard workers' rights. Here’s how we ensure AI benefits everyone, not just a select few."
-date: 2025-01-01
+date: 2024-12-19
 image: '/images/agi-header.webp'
+
+redirect_from:
+  - /2025-01-01-ai-for-the-people/
 ---
 
 Artificial intelligence is transforming the way we live and work, with the potential to revolutionize public services, create jobs, and improve everyday life. But if developed irresponsibly, AI can deepen inequalities, displace workers, and erode public trust. That’s why ethical AI development isn’t just a technical concern—it’s a societal one.

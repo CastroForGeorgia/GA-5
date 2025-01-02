@@ -2,8 +2,11 @@
 layout: post
 title: "Why 'We Are Family' Defines My Campaign"
 description: "Whether you’re a working parent, a veteran, an immigrant, or someone just trying to make ends meet, I believe we’re all connected. My campaign is built on the belief that we must uplift one another like family—because that’s how we create real change."
-date: 2025-01-01
+date: 2024-12-17
 image: '/images/housing-policy-header.webp'
+
+redirect_from:
+  - /2025-01-01-we-are-family-campaign/
 ---
 
 When I think about the challenges we face as a community, one thing becomes clear: we can’t tackle them alone. Whether it’s the struggle to find affordable housing, access healthcare, or make ends meet, these challenges affect us all. And just like in a family, the only way to overcome them is by looking out for one another, lifting each other up, and fighting for a better future together.

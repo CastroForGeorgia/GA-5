@@ -2,8 +2,11 @@
 layout: post
 title: "The Mantle Platform: A Tool for Empowerment"
 description: "The Mantle Platform is the centerpiece of my campaign's vision for accessibility, transparency, and empowerment. This tool simplifies access to vital resources like housing, healthcare, and legal services, while prioritizing privacy and safety."
-date: 2025-01-01
+date: 2024-12-23
 image: '/images/agi-header.webp'
+
+redirect_from:
+  - /2025-01-01-mantle-platform-tool-for-empowerment/
 ---
 
 In a world where navigating government systems can feel overwhelming and impersonal, technology offers a powerful opportunity to connect people with the resources they need. That’s why I’m proud to introduce the **Mantle Platform**, a centerpiece of my campaign’s vision for accessibility, transparency, and empowerment.

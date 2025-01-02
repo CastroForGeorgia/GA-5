@@ -2,8 +2,11 @@
 layout: post
 title: "Open Government: Transparency Through Technology"
 description: "By leveraging tools like GitHub and interactive dashboards, we can give voters real-time insights into policy progress and public spending, making government more transparent and accessible."
-date: 2025-01-01
+date: 2024-12-16
 image: '/images/open-government-header.webp'
+
+redirect_from:
+  - /2025-01-01-open-government-transparency-through-technology/
 ---
 
 Government should be open, transparent, and accountable to the people it serves. Yet, too often, the inner workings of our systems are shrouded in bureaucracy and complexity, leaving voters in the dark about how decisions are made and where their tax dollars go.

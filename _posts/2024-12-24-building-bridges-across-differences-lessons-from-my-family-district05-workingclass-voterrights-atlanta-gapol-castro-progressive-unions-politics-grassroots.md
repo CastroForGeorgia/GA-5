@@ -2,8 +2,11 @@
 layout: post
 title: "Building Bridges Across Differences: Lessons from My Family"
 description: "My family, with its mix of progressive and conservative values, taught me the importance of listening and finding common ground. This ability to connect with people across divides shapes my approach to advocacy and leadership."
-date: 2025-01-01
+date: 2024-12-24
 image: '/images/open-government-header.webp'
+
+redirect_from:
+  - /2025-01-01-building-bridges/
 ---
 
 Growing up in a family that spanned a wide spectrum of beliefs and values was both a challenge and a gift. On one side, I had relatives who were feminists queer advocates, and activists who fought for justice and equality. On the other, I had conservative family members, including staunch Trump supporters, who valued tradition and stability. The conversations weren’t always easy, but they were always meaningful.

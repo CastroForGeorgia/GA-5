@@ -23,7 +23,7 @@ I’m running for Congress to fight for:
 This campaign is about **you**, your family, and building a future where everyone can thrive.
 
 ## Learn More About My Story and Vision:
-- [Why I’m Running for Congress](/blog/why-im-running/)
+- [Why I’m Running for Congress](/blog/leadership-grounded-in-experience-why-im-running-for-congress-district05-unions-voterrights-grassroots-progressive-workingclass-atlanta-politics-castro-gapol/)
 - [The Workers’ Housing Guarantee: Affordable Homes for All](/project/housing-community/)
 - [Healthcare is a Human Right: My Plan for Medicare for All](/project/healthcare/)
 - [Civil Rights and Equality: Standing Up for Justice](/project/civil-rights-equality)

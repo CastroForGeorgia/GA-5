@@ -2,8 +2,11 @@
 layout: post
 title: "How the 2008 Financial Crisis Opened My Eyes to Broken Systems"
 description: "The 2008 crisis devastated families like mine, while the wealthy escaped accountability. Watching the system fail to protect everyday people was a turning point for me—it’s why I fight for policies that hold the powerful accountable and empower working families."
-date: 2025-01-01
+date: 2024-12-28
 image: '/images/criminal-justice-reform.webp'
+
+redirect_from:
+  - /2025-01-01-2008-financial-crisis/
 ---
 
 The 2008 financial crisis was more than a headline—it was a turning point for millions of families, including mine. I watched as hardworking people lost their homes, their savings, and their sense of security, while the wealthy and powerful walked away unscathed. It was a wake-up call that opened my eyes to the deep flaws in our systems—systems that prioritize profits over people and protect the powerful while leaving working families to fend for themselves.

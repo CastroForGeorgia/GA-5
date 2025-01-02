@@ -2,8 +2,11 @@
 layout: post
 title: "The Journey to Leadership: Turning Challenges into Strengths"
 description: "Life’s challenges taught me the importance of resilience and perspective. From navigating economic struggles to balancing cultural divides, these experiences shaped my leadership philosophy: to lead with empathy, act boldly, and never leave anyone behind."
-date: 2025-01-01
+date: 2024-12-14
 image: '/images/open-government-header.webp'
+
+redirect_from:
+  - /2025-01-01-journey-to-leadership/
 ---
 
 Leadership isn’t something you’re born with—it’s something you grow into. For me, the journey to leadership has been shaped by life’s challenges: navigating economic struggles, bridging cultural divides, and finding my voice in a world that often felt overwhelming. These experiences didn’t just test me—they taught me resilience, empathy, and the importance of acting boldly for those who need it most.

@@ -2,8 +2,11 @@
 layout: post
 title: "A Legacy of Grit: How My Family’s Story Shapes My Values"
 description: "My family’s Grit in the face of adversity taught me to never back down from a challenge. It’s this legacy that drives my commitment to fighting for justice, equity, and opportunity for all."
-date: 2025-01-01
+date: 2024-12-25
 image: '/images/immigration-policy-header.webp'
+
+redirect_from:
+  - /2025-01-01-legacy-of-grit/
 ---
 
 Grit isn’t something you’re born with—it’s something you learn through experience, through struggle, and through the examples of the people who come before you. For me, that example was my family. Their grit in the face of adversity shaped not only who I am but also the values I carry with me every day. 

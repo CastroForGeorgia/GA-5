@@ -2,8 +2,11 @@
 layout: post
 title: "From Misunderstood Kid to Public Advocate: My Journey"
 description: "I’ve always been the nerdy, introverted kid who questioned the status quo. Over time, I found my voice—not just for myself but for others who’ve felt overlooked. My journey is a testament to the power of understanding and persistence in creating change."
-date: 2025-01-01
+date: 2024-12-21
 image: '/images/education-policy-header.webp'
+
+redirect_from:
+  - /2025-01-01-from-misunderstood-to-advocate/
 ---
 
 Growing up, I was always a little different. I was the nerdy, introverted kid who loved books, tinkering with ideas, and asking questions about how things worked—and why they worked that way. I wasn’t the loudest voice in the room or the most popular person in school. And while I embraced my curiosity, I often felt like I didn’t belong.

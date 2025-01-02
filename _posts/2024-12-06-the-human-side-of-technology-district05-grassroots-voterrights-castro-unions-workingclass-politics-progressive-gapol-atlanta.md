@@ -2,8 +2,11 @@
 layout: post
 title: "The Human Side of Technology"
 description: "Technology isn’t just about innovation—it’s about understanding the human context behind every system. This perspective guides my policies and helps me connect with the people I serve."
-date: 2025-01-01
+date: 2024-12-06
 image: '/images/agi-header.webp'
+
+redirect_from:
+  - /2025-01-01-human-side-of-technology/
 ---
 
 Technology is often celebrated for its ability to innovate, disrupt, and revolutionize—but at its core, it’s about people. It’s about how the tools we build shape lives, create opportunities, and solve problems. This human context is too often overlooked in conversations about technology, yet it’s the most important part of the equation.

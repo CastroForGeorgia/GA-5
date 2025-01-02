@@ -2,8 +2,11 @@
 layout: post
 title: "The Role of Grit in Overcoming Life’s Challenges"
 description: "Growing up without a father and navigating economic struggles taught me grit. It’s this perseverance that drives me to fight for working families and ensure no one is left behind by the systems that are meant to serve us."
-date: 2025-01-01 00:00:00
+date: 2024-12-18 00:00:00
 image: '/images/party_reform.jpeg'
+
+redirect_from:
+  - /2025-01-01-role-of-grit/
 ---
 
 Life doesn’t always hand us the tools we need to succeed. Sometimes, we have to build those tools ourselves. For me, growing up without a father and facing economic struggles taught me one of the most important lessons in life: grit.

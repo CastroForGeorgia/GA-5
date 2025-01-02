@@ -2,8 +2,11 @@
 layout: post
 title: "A Campaign Powered by Technology"
 description: "Technology is at the heart of my campaign. Here’s how tools like the Mantle Platform are helping us engage voters, listen to their concerns, and build an inclusive, future-ready movement."
-date: 2025-01-01
+date: 2024-12-12
 image: '/images/agi-header.webp'
+
+redirect_from:
+  - /2025-01-01-campaign-powered-by-technology/
 ---
 
 Campaigns have always been about connection—about meeting people where they are, listening to their concerns, and building a shared vision for the future. But in today’s world, technology has transformed how we connect, giving us new tools to reach more people, hear more voices, and make the democratic process more inclusive.

@@ -2,8 +2,11 @@
 layout: post
 title: "What Coding Taught Me About People and Systems"
 description: "As an engineer, I don’t just see the lines of code—I try to understand the context: the deadlines, the culture, and the challenges of the person who wrote it. This perspective shapes how I tackle issues in society—with empathy, not blame, and a focus on fixing broken systems."
-date: 2025-01-01
+date: 2024-12-03
 image: '/images/agi-header.webp'
+
+redirect_from:
+  - /2025-01-01-coding-and-systems/
 ---
 
 When I first started coding, I thought it was all about writing perfect lines of logic—systems that worked exactly as intended with no bugs, no hiccups, and no errors. But as I gained more experience, I realized that coding isn’t just about the code. It’s about people—their ideas, their struggles, and the context in which the work is done.

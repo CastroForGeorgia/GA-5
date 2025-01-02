@@ -2,8 +2,11 @@
 layout: post
 title: "From Overlooked to Empowered: My Commitment to Representation"
 description: "Growing up, I often felt like my voice didn’t matter. That experience fuels my belief that leadership should reflect the people it serves. My mission is to ensure everyone—especially the overlooked—has a voice in the decisions that shape their lives."
-date: 2025-01-01
+date: 2024-12-15
 image: '/images/civil-rights-equality.webp'
+
+redirect_from:
+  - /2025-01-01-from-overlooked-to-empowered/
 ---
 
 Growing up, I often felt like my voice didn’t matter. Whether it was because of my quiet nature, my family’s economic struggles, or the systemic barriers that seemed insurmountable, there were times when I felt invisible—overlooked by the systems and people who were supposed to help. 

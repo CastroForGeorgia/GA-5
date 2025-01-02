@@ -2,8 +2,11 @@
 layout: post
 title: "Data Privacy and Security in the Digital Age"
 description: "In the digital age, protecting citizens’ data is paramount. My policies prioritize privacy, accountability, and transparency to ensure technological advancement doesn’t come at the cost of personal security."
-date: 2025-01-01
+date: 2024-12-09
 image: '/images/agi-header.webp'
+
+redirect_from:
+  - /2025-01-01-data-privacy-and-security/
 ---
 
 As technology becomes increasingly integrated into our lives, the need for strong data privacy and security protections has never been greater. From social media platforms to government systems, our personal data is constantly collected, stored, and, in some cases, misused. For too long, policymakers have lagged behind the tech industry, leaving citizens vulnerable to breaches, exploitation, and surveillance.

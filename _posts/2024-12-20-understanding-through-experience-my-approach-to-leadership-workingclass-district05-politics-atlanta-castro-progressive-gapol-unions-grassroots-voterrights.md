@@ -2,8 +2,11 @@
 layout: post
 title: "Understanding Through Experience: My Approach to Leadership"
 description: "Whether in my engineering career or community advocacy, I’ve learned that true understanding comes from lived experience. I approach leadership with a focus on listening, learning, and finding solutions that address real-world struggles."
-date: 2025-01-01
+date: 2024-12-20
 image: '/images/open-government-header.webp'
+
+redirect_from:
+  - /2025-01-01-understanding-through-experience/
 ---
 
 Leadership isn’t about knowing everything—it’s about understanding the struggles of the people you serve and finding ways to make their lives better. Whether in my engineering career or my work as a community advocate, I’ve learned that true understanding comes from experience: listening to people’s stories, learning from their challenges, and addressing the systems that shape their lives.

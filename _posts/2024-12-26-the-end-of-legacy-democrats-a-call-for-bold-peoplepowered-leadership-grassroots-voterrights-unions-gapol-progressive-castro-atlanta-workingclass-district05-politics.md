@@ -2,9 +2,12 @@
 layout: post
 title: "The End of Legacy Democrats: A Call for Bold, People-Powered Leadership"
 description: "To build a stronger, more progressive future, the Democratic Party must move beyond legacy politics and prioritize people-driven leadership, equity, and bold reform."
-date: 2024-12-01
+date: 2024-12-26
 image: '/images/party_reform.jpeg'
 categories: [Politics, Reform, Progressivism]
+
+redirect_from:
+  - /2024-12-01-the-end-of-legacy-democrats/
 ---
 
 The Democratic Party stands at a crossroads. To truly serve the people and tackle the urgent crises of our time, we must confront uncomfortable truths: outdated leadership, legacy-driven politics, and a system that has too often prioritized political inertia over bold, people-powered change.  

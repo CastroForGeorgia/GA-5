@@ -2,8 +2,11 @@
 layout: post
 title: "From Junior Engineer to Staff Engineer: Building Systems, Solving Problems"
 description: "How Andres Castro's career as a software engineer shaped his leadership approach, focusing on understanding systems, empowering others, and delivering impactful results for communities."
-date: 2025-01-01 00:00:00 +0000
+date: 2024-12-13 00:00:00 +0000
 image: '/images/education-policy-header.webp'
+
+redirect_from:
+  - /2025-01-01-career-journey/
 ---
 
 Every journey begins with a single step. For me, that step was as a junior engineer, eager to learn, solve problems, and prove myself in a field that demanded precision and innovation. Over the years, I worked my way up to staff engineer, leading projects that weren’t just about technology but about people—improving lives, solving real-world challenges, and delivering results that mattered.

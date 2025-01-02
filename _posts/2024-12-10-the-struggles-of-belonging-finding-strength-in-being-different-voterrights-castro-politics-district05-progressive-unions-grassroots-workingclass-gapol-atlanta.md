@@ -2,8 +2,11 @@
 layout: post
 title: "The Struggles of Belonging: Finding Strength in Being Different"
 description: "As a nerdy, quiet kid who often felt misunderstood, I struggled to find my place. Those experiences shaped my resilience and taught me to connect with people who feel unseen or left behind—a perspective that fuels my fight for equity and inclusion."
-date: 2025-01-01
+date: 2024-12-10
 image: '/images/housing-policy-header.webp'
+
+redirect_from:
+  - /2025-01-01-struggles-of-belonging/
 ---
 
 I didn’t always feel like I belonged. As a quiet, nerdy kid, I often found myself sitting on the sidelines, feeling misunderstood and out of place. While others seemed to fit into groups effortlessly, I wrestled with the question of where I belonged—or if I even did.

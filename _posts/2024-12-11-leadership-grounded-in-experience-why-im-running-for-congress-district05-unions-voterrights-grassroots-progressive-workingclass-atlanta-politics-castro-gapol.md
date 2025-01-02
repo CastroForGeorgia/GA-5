@@ -2,8 +2,11 @@
 layout: post
 title: "Leadership Grounded in Experience: Why I’m Running for Congress"
 description: "My journey—shaped by personal struggles, professional achievements, and a commitment to service—has prepared me to lead. I’m running for Congress to bring a voice for the people who are too often left out of the conversation."
-date: 2024-12-09
+date: 2024-12-11
 image: '/images/about-me-photo.jpg'
+
+redirect_from:
+  - /blog/why-im-running/
 ---
 
 Leadership isn’t about where you start—it’s about the journey that brings you to the moment where you’re ready to serve. My journey has been shaped by personal struggles, professional achievements, and an unwavering commitment to service. It’s a path that’s taught me resilience, empathy, and the importance of standing up for what’s right.

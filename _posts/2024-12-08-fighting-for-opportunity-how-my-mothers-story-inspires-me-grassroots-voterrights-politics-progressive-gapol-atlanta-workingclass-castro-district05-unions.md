@@ -2,8 +2,11 @@
 layout: post
 title: "Fighting for Opportunity: How My Mother’s Story Inspires Me"
 description: "My mother’s journey to citizenship taught me the transformative power of opportunity. Her determination inspires my fight for policies that honor immigrant families, promote equity, and create pathways for success."
-date: 2025-01-01
+date: 2024-12-08
 image: '/images/immigration-policy-header.webp'
+
+redirect_from:
+  - /2025-01-01-fighting-for-opportunity/
 ---
 
 When I think about the power of opportunity, I think of my mother. Her journey to citizenship wasn’t easy—it was a story of grit, determination, and faith in a better future. Watching her navigate the challenges of being an immigrant while raising a family taught me lessons I carry with me every day. Her story is a testament to how transformative opportunity can be when it’s paired with hard work and hope.

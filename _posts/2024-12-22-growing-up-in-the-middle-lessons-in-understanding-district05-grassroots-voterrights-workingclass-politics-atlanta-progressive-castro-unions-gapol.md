@@ -2,8 +2,11 @@
 layout: post
 title: "Growing Up in the Middle: Lessons in Understanding"
 description: "I grew up navigating the space between cultures, identities, and ideologies. This experience taught me to listen, empathize, and build bridges. It’s this understanding that drives my belief in leadership that unites rather than divides."
-date: 2025-01-01
+date: 2024-12-22
 image: '/images/civil-rights-equality.webp'
+
+redirect_from:
+  - /2025-01-01-growing-up-in-the-middle/
 ---
 
 I’ve often felt like I grew up in the middle—between cultures, identities, and ideologies. My family’s roots in Mexico and my wife’s family that spans both feminists and conservative Trump-supporting members created a dynamic, often challenging environment.

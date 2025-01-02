@@ -2,8 +2,11 @@
 layout: post
 title: "Why Technology is My Superpower"
 description: "My journey in tech, from solving complex coding problems to leading transformative projects, has equipped me to navigate systemic challenges with empathy and precision."
-date: 2025-01-01
+date: 2024-12-07
 image: '/images/agi-header.webp'
+
+redirect_from:
+  - /2025-01-01-why-technology-is-my-superpower/
 ---
 
 Technology has always been more than a career for me—it’s been a way to solve problems, connect people, and create opportunities. From the first time I wrote a simple program to my work leading transformative projects, I’ve seen firsthand how technology can be a powerful tool for change. It’s taught me to think critically, act decisively, and always consider the human impact of the systems we build.

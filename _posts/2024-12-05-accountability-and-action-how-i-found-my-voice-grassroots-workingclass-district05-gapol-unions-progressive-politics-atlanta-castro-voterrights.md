@@ -2,8 +2,11 @@
 layout: post
 title: "Accountability and Action: How I Found My Voice"
 description: "Witnessing political inaction during moments of crisis showed me the importance of stepping up. I found my voice by learning to act decisively, speak up for others, and demand better from those in power—principles that drive me to this day."
-date: 2025-01-01
+date: 2024-12-05
 image: '/images/civil-rights-equality.webp'
+
+redirect_from:
+  - /2025-01-01-accountability-and-action/
 ---
 
 For much of my life, I believed that change came from trusting the systems in place—that the leaders we elect would take action when we needed it most. But time and time again, I witnessed political inaction during moments of crisis. I saw how decisions made—or not made—by those in power could devastate communities while leaving the most vulnerable to fend for themselves.

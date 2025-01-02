@@ -2,8 +2,11 @@
 layout: post
 title: "Learning by Doing: How My Career Shaped My Leadership"
 description: "My engineering career wasn’t just about solving technical problems—it was about understanding people, systems, and context. Those lessons guide how I approach the challenges facing our communities, always seeking solutions that uplift everyone."
-date: 2025-01-01
+date: 2024-12-31
 image: '/images/economy-policy-header.webp'
+
+redirect_from:
+  - /2025-01-01-learning-by-doing/
 ---
 
 When I began my career as an engineer, I thought the job was all about solving technical problems—writing code, debugging systems, and making things work. But as I grew in my career, I realized that engineering isn’t just about technology. It’s about people. It’s about understanding the systems we build, the context in which they operate, and the human challenges they aim to solve.

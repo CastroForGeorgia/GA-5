@@ -2,8 +2,11 @@
 layout: post
 title: "My Mother’s Journey: How Amnesty Changed Our Lives"
 description: "My mother’s path to citizenship through Reagan’s Amnesty program didn’t just change her life—it set the foundation for my own opportunities. Her determination to create a better future inspires my fight for policies that honor immigrants and uplift families."
-date: 2025-01-01 00:00:00 +0001
+date: 2024-12-27 00:00:00 +0001
 image: '/images/immigration-policy-header.webp'
+
+redirect_from:
+  - /2025-01-01-mothers-journey-amnesty/
 ---
 For me, immigration is more than a policy debate—it’s a deeply personal story. It’s the story of my mother, a courageous woman who risked everything to give her family a better life. Her journey didn’t just change her life; it changed mine. It gave me the opportunities that have shaped who I am today and fuels my fight for policies that honor the dignity of immigrants and uplift working families.
 

@@ -4,6 +4,9 @@ title: "Lessons from a Diverse Family: Bridging Divides"
 description: "With a family that spans diverse identities and ideologies, I’ve learned how to listen and build understanding across differences. This ability to connect with people from all walks of life is at the core of my leadership and advocacy."
 date: 2025-01-01
 image: '/images/civil-rights-equality.webp'
+
+redirect_from:
+  - /2025-01-01-lessons-from-diverse-family/
 ---
 
 Family shapes us in profound ways. Mine has taught me how to navigate diversity—not just of culture but of values, identities, and ideologies. With a family that spans a wide spectrum—from immigrants to veterans, feminists to conservative Trump supporters, and queer relatives to deeply religious ones—I’ve had to learn how to listen, empathize, and connect with people who see the world differently.

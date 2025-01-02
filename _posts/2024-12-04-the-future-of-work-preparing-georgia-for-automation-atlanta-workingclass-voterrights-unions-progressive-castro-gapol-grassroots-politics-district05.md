@@ -2,8 +2,11 @@
 layout: post
 title: "The Future of Work: Preparing Georgia for Automation"
 description: "Automation and AI are transforming the workforce. By investing in reskilling programs, pro-worker AI standards, and collaborative innovation, we can ensure Georgia thrives in the future of work."
-date: 2025-01-01
+date: 2024-12-04
 image: '/images/agi-header.webp'
+
+redirect_from:
+  - /2025-01-01-future-of-work-preparing-georgia/
 ---
 
 Automation and AI are no longer the future—they’re here, transforming industries and redefining the way we work. While these advancements bring incredible opportunities, they also pose significant challenges, particularly for workers in industries at high risk of automation.

@@ -2,8 +2,11 @@
 layout: post
 title: "Digital Literacy for Civic Engagement"
 description: "Digital literacy is essential for democracy. Let’s equip residents—and leaders—with the skills to engage with government platforms, access resources, and participate in decision-making online."
-date: 2025-01-01
+date: 2024-12-30
 image: '/images/agi-header.webp'
+
+redirect_from:
+  - /2025-01-01-digital-literacy-civic-engagement/
 ---
 
 In today’s digital age, civic engagement increasingly depends on the ability to navigate online platforms, access resources, and participate in decision-making processes. Yet, for many, barriers to digital literacy prevent full participation in democracy. From understanding how to use government websites to knowing how to fact-check information, these skills are essential for ensuring every voice is heard.

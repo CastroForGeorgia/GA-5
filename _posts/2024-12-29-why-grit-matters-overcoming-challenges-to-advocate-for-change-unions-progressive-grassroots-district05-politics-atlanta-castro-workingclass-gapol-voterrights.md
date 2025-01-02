@@ -2,8 +2,11 @@
 layout: post
 title: "Why Grit Matters: Overcoming Challenges to Advocate for Change"
 description: "Growing up in a family that faced economic struggles instilled in me a deep sense of determination. This grit fuels my commitment to fight for policies that uplift working families and give everyone a fair shot at success."
-date: 2025-01-01
+date: 2024-12-29
 image: '/images/civil-rights-equality.webp'
+
+redirect_from:
+  - /2025-01-01-why-grit-matters/
 ---
 
 Growing up, I learned early on what it meant to face challenges. My family’s economic struggles shaped every aspect of our lives, from the jobs we worked to the dreams we dared to pursue. It wasn’t easy, but those experiences instilled in me something invaluable: grit.

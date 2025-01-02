@@ -2,8 +2,11 @@
 layout: post
 title: "Bridging the Digital Divide in Georgia’s 5th District"
 description: "The digital divide impacts education, job opportunities, and civic participation in Georgia’s 5th District. Let’s expand affordable broadband and create community tech hubs to ensure everyone can thrive in the digital age."
-date: 2025-01-01
+date: 2024-12-02
 image: '/images/agi-header.webp'
+
+redirect_from:
+  - /2025-01-01-bridging-digital-divide/
 ---
 
 In today’s world, digital access is more than a convenience—it’s a necessity. From education to job opportunities to civic participation, our ability to thrive often depends on reliable internet and access to technology. Yet, in Georgia’s 5th District, far too many families are left behind by the growing digital divide.
