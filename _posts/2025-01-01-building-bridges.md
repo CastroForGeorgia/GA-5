@@ -6,7 +6,7 @@ date: 2025-01-01
 image: '/images/open-government-header.webp'
 ---
 
-Growing up in a family that spanned a wide spectrum of beliefs and values was both a challenge and a gift. On one side, I had relatives who were radically progressive—feminists, queer advocates, and activists who fought for justice and equality. On the other, I had conservative family members, including staunch Trump supporters, who valued tradition and stability. The conversations weren’t always easy, but they were always meaningful.
+Growing up in a family that spanned a wide spectrum of beliefs and values was both a challenge and a gift. On one side, I had relatives who were feminists queer advocates, and activists who fought for justice and equality. On the other, I had conservative family members, including staunch Trump supporters, who valued tradition and stability. The conversations weren’t always easy, but they were always meaningful.
 
 My family taught me one of the most important lessons I carry with me today: the power of listening and the importance of finding common ground. It’s a lesson that shapes how I approach advocacy, leadership, and the way I connect with people across divides.
 

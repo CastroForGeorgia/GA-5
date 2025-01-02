@@ -6,7 +6,7 @@ date: 2025-01-01
 image: '/images/civil-rights-equality.webp'
 ---
 
-Family shapes us in profound ways. Mine has taught me how to navigate diversity—not just of culture but of values, identities, and ideologies. With a family that spans a wide spectrum—from immigrants to veterans, radical feminists to conservative Trump supporters, and queer relatives to deeply religious ones—I’ve had to learn how to listen, empathize, and connect with people who see the world differently.
+Family shapes us in profound ways. Mine has taught me how to navigate diversity—not just of culture but of values, identities, and ideologies. With a family that spans a wide spectrum—from immigrants to veterans, feminists to conservative Trump supporters, and queer relatives to deeply religious ones—I’ve had to learn how to listen, empathize, and connect with people who see the world differently.
 
 These lessons didn’t just help me build understanding within my family; they’ve become the foundation of my leadership and advocacy. They’ve shown me that real progress doesn’t come from avoiding our differences but from bridging them.
 

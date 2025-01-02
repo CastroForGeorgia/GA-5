@@ -16,7 +16,7 @@ Those experiences forced me to develop resilience. They taught me to keep going 
 
 ## Balancing Cultural Divides
 
-Coming from a multicultural family, I’ve spent much of my life navigating different identities and perspectives. On one hand, there were the traditions and values of my immigrant roots. On the other, the expectations and realities of living in America. Add to that the diverse ideologies within my extended family—radical feminists, conservative Trump supporters, queer relatives, and deeply religious members—and you have a dynamic, often challenging environment.
+Coming from a multicultural family, I’ve spent much of my life navigating different identities and perspectives. On one hand, there were the traditions and values of my immigrant roots. On the other, the expectations and realities of living in America. Add to that the diverse ideologies within my extended family—feminists, conservative Trump supporters, queer relatives, and deeply religious members—and you have a dynamic, often challenging environment.
 
 These cultural divides weren’t always easy to balance, but they taught me how to listen, empathize, and connect with people from all walks of life. They showed me that leadership isn’t about choosing one side—it’s about finding common ground and building bridges that unite us.
 

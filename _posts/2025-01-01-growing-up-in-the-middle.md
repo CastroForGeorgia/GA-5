@@ -6,7 +6,7 @@ date: 2025-01-01
 image: '/images/civil-rights-equality.webp'
 ---
 
-I’ve often felt like I grew up in the middle—between cultures, identities, and ideologies. My family’s roots in Mexico and my wife’s family that spans both radically feminist and conservative Trump-supporting members created a dynamic, often challenging environment.
+I’ve often felt like I grew up in the middle—between cultures, identities, and ideologies. My family’s roots in Mexico and my wife’s family that spans both feminists and conservative Trump-supporting members created a dynamic, often challenging environment.
 
 This wasn’t a childhood where everything fit neatly into boxes. It was one of constant negotiation, where I had to listen, empathize, and navigate opposing views with care. While this sometimes left me feeling like I didn’t fully belong anywhere, it also gave me a gift: the ability to see the world from many perspectives.
 
@@ -18,7 +18,7 @@ Each of these layers shaped my worldview. They taught me that people’s experie
 
 ## Understanding Diverse Perspectives
 
-It wasn’t just cultural divides I had to navigate. My wife’s family added another dimension to my understanding of the world. On one side, there were her radically feminist relatives and her gay uncles, who taught me about fighting for justice and equality. On the other side were her conservative Trump-supporting family members, who voiced concerns about tradition and stability in a rapidly changing world.
+It wasn’t just cultural divides I had to navigate. My wife’s family added another dimension to my understanding of the world. On one side, there were her feminists relatives and her gay uncles, who taught me about fighting for justice and equality. On the other side were her conservative Trump-supporting family members, who voiced concerns about tradition and stability in a rapidly changing world.
 
 Instead of dismissing these perspectives, I learned to listen. I didn’t always agree, but I tried to understand where they were coming from. I saw their fears, their frustrations, and—most importantly—their humanity.
 
