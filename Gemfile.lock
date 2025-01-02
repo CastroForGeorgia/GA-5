@@ -290,6 +290,8 @@ DEPENDENCIES
   github-pages (~> 232)
   jekyll
   jekyll-paginate
+  jekyll-redirect-from
+  jekyll-seo-tag
   jekyll-sitemap
 
 BUNDLED WITH

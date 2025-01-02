@@ -16,7 +16,7 @@ menu_settings:
     - title: 'About'
       url: '/about/'
     - title: "Why I'm Running"
-      url: '/blog/why-im-running/'
+      url: '/blog/leadership-grounded-in-experience-why-im-running-for-congress-district05-unions-voterrights-grassroots-progressive-workingclass-atlanta-politics-castro-gapol'
     - title: 'Policies'
       url: '/projects/'
     - title: 'Blog'
@@ -117,8 +117,9 @@ mailchimp:
 # Social Links
 social:
 - {icon: "fa-brands fa-instagram", name: "Instagram", link: "https://www.instagram.com/castroforgeorgia/"}
-- {icon: "fa-brands fa-github", name: "Github", link: "https://github.com/CastroForGeorgia/GA-5"}
+- {icon: "fa-brands fa-github", name: "Github", link: "https://github.com/CastroForGeorgia"}
 - {icon: "fa-brands fa-bluesky", name: "Bluesky", link: "https://bsky.app/profile/castroforgeorgia.bsky.social"}
+- {icon: "fa-brands fa-huggingface", name: "Huggingface", link: "https://huggingface.co/CastroForGeorgia"}
 
 # Example of adding a new link to the footer - {icon: "fa-brands fa-mastodon", name: "Mastodon", link: "https://mastodon.social"}
 # Other icons can be found at https://fontawesome.com/icons
@@ -136,7 +137,7 @@ contact:
 
 #-------------------------------
 # Comment Section (Disqus)
-disqus-identifier: anvod-studio-test # Add your shortname for Disqus Comment. For example anvod-studio-test
+# disqus-identifier: anvod-studio-test # Add your shortname for Disqus Comment. For example anvod-studio-test
 
 
 #-------------------------------
