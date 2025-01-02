@@ -6,13 +6,13 @@ date: 2025-01-01
 image: '/images/civil-rights-equality.webp'
 ---
 
-I’ve often felt like I grew up in the middle—between cultures, identities, and ideologies. My family’s roots in Mexico, my connection to marginalized communities like Palestine through my niece’s father, and my wife’s family that spans both radically feminist and conservative Trump-supporting members created a dynamic, often challenging environment.
+I’ve often felt like I grew up in the middle—between cultures, identities, and ideologies. My family’s roots in Mexico and my wife’s family that spans both radically feminist and conservative Trump-supporting members created a dynamic, often challenging environment.
 
 This wasn’t a childhood where everything fit neatly into boxes. It was one of constant negotiation, where I had to listen, empathize, and navigate opposing views with care. While this sometimes left me feeling like I didn’t fully belong anywhere, it also gave me a gift: the ability to see the world from many perspectives.
 
 ## Living Between Cultures
 
-On one hand, my family’s Mexican heritage was a source of pride, tradition, and community. On the other, I grew up trying to balance this with the experience of living in America—a place that often treated immigrants as outsiders. Then, through my niece’s connection to Palestine, I gained a deeper understanding of what it means to live on the margins, to fight for recognition, and to find resilience in struggle.
+On one hand, my family’s Mexican heritage was a source of pride, tradition, and community. On the other, I grew up trying to balance this with the experience of living in America—a place that often treated immigrants as outsiders. I gained a deeper understanding of what it means to live on the margins, to fight for recognition, and to find resilience in struggle.
 
 Each of these layers shaped my worldview. They taught me that people’s experiences aren’t simple or singular—they’re shaped by culture, history, and circumstances that run deep.
 
