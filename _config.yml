@@ -16,6 +16,15 @@ plugins:
 paginate: 7
 paginate_path: "/blog/page/:num"
 
+#-------------------------------
+# Localization Settings
+languages:
+  default: "en"
+  supported:
+  - lang_code: en
+    lang_name: "English (US)"
+  - lang_code: es
+    lang_name: "Español (MX)"
 
 #-------------------------------
 # Collections
