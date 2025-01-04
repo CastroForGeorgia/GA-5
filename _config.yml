@@ -19,12 +19,16 @@ paginate_path: "/blog/page/:num"
 #-------------------------------
 # Localization Settings
 languages:
-  default: "en"
+  default: "ko"
   supported:
   - lang_code: en
     lang_name: "English (US)"
   - lang_code: es
     lang_name: "Español (MX)"
+  - lang_code: vi
+    lang_name: "Vietnamese (VN)"
+  - lang_code: ko
+    lang_name: "Korean (KR)"
 
 #-------------------------------
 # Collections
