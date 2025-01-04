@@ -19,7 +19,7 @@ paginate_path: "/blog/page/:num"
 #-------------------------------
 # Localization Settings
 languages:
-  default: "ko"
+  default: "en"
   supported:
   - lang_code: en
     lang_name: "English (US)"
