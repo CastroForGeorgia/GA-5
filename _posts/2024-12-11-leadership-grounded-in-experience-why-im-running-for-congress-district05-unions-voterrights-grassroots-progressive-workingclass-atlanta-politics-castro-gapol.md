@@ -1,56 +1,61 @@
 ---
 layout: post
-title: "Leadership Grounded in Experience: Why I’m Running for Congress"
-description: "My journey—shaped by personal struggles, professional achievements, and a commitment to service—has prepared me to lead. I’m running for Congress to bring a voice for the people who are too often left out of the conversation."
-date: 2024-12-11
+title: "The Democratic Party Has Lost Its Way: Why I’m Running for Congress"
+description: "The failures of the Democratic Party, corrupted by corporate influence, have pushed me to fight for its return to its roots."
+date: 2025-01-12
 image: '/images/about-me-photo.jpg'
 
 redirect_from:
   - /blog/why-im-running/
 ---
 
-Leadership isn’t about where you start—it’s about the journey that brings you to the moment where you’re ready to serve. My journey has been shaped by personal struggles, professional achievements, and an unwavering commitment to service. It’s a path that’s taught me resilience, empathy, and the importance of standing up for what’s right.
+# The Democratic Party Has Lost Its Way
 
-I’m running for Congress because I believe in a future where no one is left behind. I believe in leadership that listens, learns, and acts decisively to create opportunity and justice for all. Most importantly, I’m running to bring a voice for the people who are too often left out of the conversation.
+The Democratic Party has strayed from its roots as the champion of the working class and become a vehicle for corporate interests. This corruption has shattered the party’s base, leaving millions of Americans—myself included—disillusioned and demanding change. I’m running for Congress because I can no longer stand by and watch the party I love fail the very people it claims to represent.
 
-## A Journey Shaped by Struggles and Resilience
+## I Am Not From the Left or the Right—I’m From the Bottom
 
-Growing up in a working-class family, I experienced the challenges so many Americans face. I watched my mother work multiple jobs to provide for us, my sister navigate the struggles of being a teen mom, and my family wrestle with a system that often felt stacked against us. These experiences gave me a firsthand understanding of the barriers working families face and the grit it takes to overcome them.
+As someone who has been working class all my life, I understand the struggles of everyday people in a way the current establishment never will. **I will not be taking corporate money now or ever.** My loyalty lies with the people—not the corporations, not the lobbyists, and not the political elite who have allowed themselves to be bought.
 
-But those challenges also taught me something else: the importance of community, resilience, and the need for systems that work for everyone—not just the privileged few.
+The failures of the Democratic Party are why we don’t have [universal healthcare](https://www.fec.gov/data/receipts/?cycle=2024&data_type=processed&committee_id=C00752584&contributor_name=C00197228&two_year_transaction_period=2024&line_number=F3-11C). They are why your [home insurance is skyrocketing](https://www.fec.gov/data/receipts/?cycle=2024&data_type=processed&committee_id=C00752584&contributor_name=C00040253&two_year_transaction_period=2024&line_number=F3-11C), [your gas bill keeps climbing](https://www.fec.gov/data/receipts/?cycle=2024&data_type=processed&committee_id=C00752584&contributor_name=gas&two_year_transaction_period=2024&line_number=F3-11C), and your Georgia [power bill goes up](https://www.fec.gov/data/receipts/?cycle=2024&data_type=processed&committee_id=C00752584&contributor_name=C00119776&two_year_transaction_period=2024&line_number=F3-11C). Instead of fighting for the people, party leaders have aligned themselves with the highest bidders. Their votes show complicity, not courage. Their actions prioritize corporate profits over your well-being.
 
-## Building Solutions Through Experience
+## A Party That Has Lost Its Way
 
-My professional journey as an engineer has been about more than solving technical problems—it’s been about understanding people, systems, and the challenges they face. I learned how to listen, how to ask the right questions, and how to design solutions that meet real needs. These lessons have shaped my approach to leadership.
+In my journey as a Democrat—and now as a candidate in GA-05—I’ve noticed two groups in our party:
 
-Whether addressing economic inequality, housing insecurity, or systemic injustice, I approach every challenge with the same mindset: listen to the people impacted, understand the root causes, and build solutions that create lasting change.
+- **Those for whom progressive change is essential.** Their freedoms, livelihoods, and survival depend on it. For them, the fight for justice and equity is deeply personal.
 
-## A Commitment to Service
+- **Those for whom progressive change is a nice idea.** Something they support in principle but that doesn’t impact their well-being. For them, politics is about optics, not survival.
 
-Service has always been at the heart of my journey. From advocating for immigrant families to fighting for equitable education and housing, I’ve worked to ensure that every voice is heard and every person has the opportunity to thrive. My commitment to service is grounded in the belief that leadership is about empowering others—not holding power for its own sake.
+The challenge arises when these two groups collide, especially when the latter holds power. **The establishment has cemented its heels on the side of corporate influence.** For them, the status quo is comfortable, their privilege intact. But when a new voice emerges to challenge this system, it’s seen as disruptive—not because it threatens their freedoms, but because it threatens their hold on power.
 
-This commitment is why I’m running for Congress. I believe that real leadership isn’t about talking over people—it’s about creating a platform for them to be heard.
+## We Can’t Let Leadership Be Bought
 
-## Bringing a Voice for the Overlooked
+My opponent, [Representative Nikema Williams](https://www.opensecrets.org/members-of-congress/nikema-williams/summary?cid=N00047361), has consistently benefited from campaign contributions by industries like health insurance, pharmaceuticals, and Wall Street banks—industries that give not out of goodwill, but to secure influence. Leaders who rely on these contributions cannot be trusted to fight the battles that matter most to working families. **Their refusal to take bold stances shows that this is not about doing what’s right but about following the money and influence.**
 
-Too many people in our communities feel unheard, unseen, and left behind. Whether it’s working families struggling to make ends meet, immigrants navigating an unjust system, or students fighting for a fair shot at success, their voices are too often ignored by those in power. I’m running to change that.
+For example, [Nikema Williams’s OpenSecrets profile](https://www.opensecrets.org/members-of-congress/nikema-williams/summary?cid=N00047361) reveals contributions from companies like:
 
-A people-centered campaign means putting those voices at the forefront. It means listening to the needs of our community and translating those needs into bold, actionable policies that uplift everyone.
+- [Elevance Health, Inc. PAC (formerly Anthem)](https://www.fec.gov/data/receipts/?cycle=2024&data_type=processed&committee_id=C00752584&contributor_name=C00197228&two_year_transaction_period=2024&line_number=F3-11C), which contributed $4,000.
+- [Aflac PAC](https://www.fec.gov/data/receipts/?cycle=2024&data_type=processed&committee_id=C00752584&contributor_name=C00034157&two_year_transaction_period=2024&line_number=F3-11C), which donated over $5,000.
+- [Truist Financial PAC](https://www.fec.gov/data/receipts/?cycle=2024&data_type=processed&committee_id=C00752584&contributor_name=C00386524&two_year_transaction_period=2024&line_number=F3-11C), which contributed $5,000.
+- [BlackRock PAC](https://www.fec.gov/data/receipts/?cycle=2024&data_type=processed&committee_id=C00752584&contributor_name=C00479246&two_year_transaction_period=2024&line_number=F3-11C), which maxed out their donation at $10,000.
 
-## My Vision for Leadership
+Even more concerning is the role of lobbying groups like AIPAC, which heavily influence elections. **AIPAC and its affiliates spent over $25 million** to unseat progressive voices like Jamaal Bowman (D-N.Y.) and Cori Bush (D-Mo.), who challenged the status quo ([Politico](https://www.politico.com/news/2024/08/13/progressives-aipac-elections-threat-00173709)). By accepting contributions from these organizations, [Representative Williams](https://www.opensecrets.org/members-of-congress/nikema-williams/summary?cid=N00047361) contributes to a system designed to suppress progressives advocating for the working class and equity.
 
-I believe in leadership that:
+> **This is how influence works: by taking their money, you show your allegiances.**
 
-- **Listens First**: Engaging directly with the people impacted by decisions to ensure their needs shape the policies we create.  
-- **Acts Boldly**: Fighting for transformative solutions, from universal healthcare to affordable housing, that address systemic barriers and create opportunity for all.  
-- **Builds Coalitions**: Bringing people together across differences to create solutions that reflect our shared humanity.  
+## My Vision for Change: A Political Multiplier
 
-My vision for leadership is rooted in experience and action. It’s about creating systems that reflect the values of equity, justice, and opportunity for everyone.
+I will not sit around and wait for votes to come. **My vision for change is to be a political multiplier—a leader who doesn’t just represent their district but empowers others to fight for change at every level of government.** I will look to my district, to my state, and beyond to support those who stand up to the current establishment and demand accountability. Together, we will return the Democratic Party to its roots as the party of the working class.
 
-## Why This Matters
+We will use every tool at our disposal, including cutting-edge technology, to organize, mobilize, and build a movement for real change. This is not just about winning one seat; **it’s about transforming a broken system.**
 
-We’re at a pivotal moment. The challenges we face—economic inequality, climate change, systemic injustice—require leaders who are ready to act boldly and decisively. My journey has prepared me to be that leader, and I’m ready to bring my experience, my values, and my commitment to service to Congress.
+## Time for a Political Revolution
+
+The corporate takeover of the Democratic Party has shattered its foundation. Instead of causing “good trouble” as the late John Lewis advocated, too many Democrats play it safe, choosing their battles based on the highest payer. **It’s time to clean house, to root out the corruption, and to make way for leaders who will fight for the people—not the powerful.**
+
+This is why I’m running. **This campaign is not about me; it’s about us.** It’s about building a movement that empowers the working class, uplifts marginalized communities, and restores integrity to the Democratic Party. Together, we can create a future where justice, equity, and opportunity are not just ideals, but realities.
 
 ---
 
-**This is why I’m running: to bring a voice for the overlooked, to create systems that work for everyone, and to lead with the empathy and resilience my journey has taught me. Together, we can build a future that reflects the strength of our communities and the power of our shared determination.**
+## **I will not hold back. I will not be bought. Join me, and let’s fight together to take back our party and our future.**
