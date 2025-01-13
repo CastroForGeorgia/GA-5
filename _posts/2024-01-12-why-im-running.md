@@ -31,16 +31,16 @@ The challenge arises when these two groups collide, especially when the latter h
 
 ## We Can’t Let Leadership Be Bought
 
-My opponent, [Representative Nikema Williams](https://www.opensecrets.org/members-of-congress/nikema-williams/summary?cid=N00047361), has consistently benefited from campaign contributions by industries like health insurance, pharmaceuticals, and Wall Street banks—industries that give not out of goodwill, but to secure influence. Leaders who rely on these contributions cannot be trusted to fight the battles that matter most to working families. **Their refusal to take bold stances shows that this is not about doing what’s right but about following the money and influence.**
+My opponent, [Representative Nikema Williams](https://www.opensecrets.org/members-of-congress/nikema-williams/summary?cid=N00047361&cycle=CAREER), has consistently benefited from campaign contributions by industries like health insurance, pharmaceuticals, and Wall Street banks—industries that give not out of goodwill, but to secure influence. Leaders who rely on these contributions cannot be trusted to fight the battles that matter most to working families. **Their refusal to take bold stances shows that this is not about doing what’s right but about following the money and influence.**
 
-For example, [Nikema Williams’s OpenSecrets profile](https://www.opensecrets.org/members-of-congress/nikema-williams/summary?cid=N00047361) reveals contributions from companies like:
+For example, [Nikema Williams’s OpenSecrets profile](https://www.opensecrets.org/members-of-congress/nikema-williams/summary?cid=N00047361&cycle=CAREER) reveals contributions from companies like:
 
 - [Elevance Health, Inc. PAC (formerly Anthem)](https://www.fec.gov/data/receipts/?cycle=2024&data_type=processed&committee_id=C00752584&contributor_name=C00197228&two_year_transaction_period=2024&line_number=F3-11C), which contributed $4,000.
 - [Aflac PAC](https://www.fec.gov/data/receipts/?cycle=2024&data_type=processed&committee_id=C00752584&contributor_name=C00034157&two_year_transaction_period=2024&line_number=F3-11C), which donated over $5,000.
 - [Truist Financial PAC](https://www.fec.gov/data/receipts/?cycle=2024&data_type=processed&committee_id=C00752584&contributor_name=C00386524&two_year_transaction_period=2024&line_number=F3-11C), which contributed $5,000.
 - [BlackRock PAC](https://www.fec.gov/data/receipts/?cycle=2024&data_type=processed&committee_id=C00752584&contributor_name=C00479246&two_year_transaction_period=2024&line_number=F3-11C), which maxed out their donation at $10,000.
 
-Even more concerning is the role of lobbying groups like AIPAC, which heavily influence elections. **AIPAC and its affiliates spent over $25 million** to unseat progressive voices like Jamaal Bowman (D-N.Y.) and Cori Bush (D-Mo.), who challenged the status quo ([Politico](https://www.politico.com/news/2024/08/13/progressives-aipac-elections-threat-00173709)). By accepting contributions from these organizations, [Representative Williams](https://www.opensecrets.org/members-of-congress/nikema-williams/summary?cid=N00047361) contributes to a system designed to suppress progressives advocating for the working class and equity.
+Even more concerning is the role of lobbying groups like AIPAC, which heavily influence elections. **AIPAC and its affiliates spent over $25 million** to unseat progressive voices like Jamaal Bowman (D-N.Y.) and Cori Bush (D-Mo.), who challenged the status quo ([Politico](https://www.politico.com/news/2024/08/13/progressives-aipac-elections-threat-00173709)). By accepting contributions from these organizations, [Representative Williams](https://www.opensecrets.org/members-of-congress/nikema-williams/summary?cid=N00047361&cycle=CAREER) contributes to a system designed to suppress progressives advocating for the working class and equity.
 
 > **This is how influence works: by taking their money, you show your allegiances.**
 
