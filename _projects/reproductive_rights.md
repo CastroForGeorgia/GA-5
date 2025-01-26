@@ -1,7 +1,7 @@
 ---
 title: "Reproductive Rights"
 description: "Protecting every woman’s right to make her own healthcare decisions and ensuring access to comprehensive reproductive care without barriers"
-date: 2024-11-28 00:00:00 +0000
+date: 2025-01-22 00:00:00 +0000
 label: "Policy"
 image: "/images/reproductive-rights-header.webp" # Updated image path for relevance
 keywords: [Reproductive Rights, Women's Health, Georgia 5th Congressional District, Healthcare Access, Reproductive Healthcare, Policy for Women, Inclusive Healthcare, Women's Rights, Federal Legislation, Health Equity]

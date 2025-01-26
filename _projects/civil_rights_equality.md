@@ -1,7 +1,7 @@
 ---
 title: "Civil Rights and Equality"
 description: "Building an inclusive society where every person has equal rights, opportunities, and protections to thrive and participate fully in their community."
-date: 2024-11-28 00:00:00 +0000
+date: 2025-01-25 00:00:00 +0000
 label: "Policy"
 image: "/images/civil-rights-equality.webp" # Relevant image for equality and inclusion
 keywords: [Civil Rights, Equality Policy, Anti-Discrimination, Georgia 5th Congressional District, Marginalized Communities, Diversity, Inclusion, LGBTQ+ Rights, Disability Rights, Gender Equality, Economic Justice, Policy for All]

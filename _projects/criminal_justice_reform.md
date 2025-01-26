@@ -1,7 +1,7 @@
 ---
 title: "Criminal Justice Reform"
 description: "Transforming our justice system to eliminate inequities, reduce incarceration, and build safer, opportunity-driven communities for all."
-date: 2024-11-28 00:00:00 +0000
+date: 2025-01-24 00:00:00 +0000
 label: "Policy"
 image: "/images/criminal-justice-reform.webp"
 keywords: [Criminal Justice Reform, Restorative Justice, Racial Equity, Reentry Programs, Georgia 5th Congressional District, Policing Reform, Alternatives to Incarceration, Mental Health Support, Job Training, Fair Sentencing, Community Safety]

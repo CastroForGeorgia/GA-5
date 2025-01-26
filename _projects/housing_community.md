@@ -1,7 +1,7 @@
 ---
 title: "The Workers’ Housing Guarantee"
 description: "A bold initiative to build and modernize affordable homes, create good-paying jobs, and empower families in Georgia's 5th Congressional District without displacing communities or burdening the environment."
-date: 2024-11-28 00:00:00 +0000
+date: 2025-01-23 00:00:00 +0000
 label: "Policy"
 image: "/images/housing-policy-header.webp"
 keywords: [Affordable Housing, Workers’ Housing Guarantee, Housing Modernization, Job Works Program, Build Baby Build, Georgia 5th Congressional District, Housing Policy, Homeownership, Sustainable Development, Housing Affordability]
