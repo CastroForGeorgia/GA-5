@@ -1,7 +1,7 @@
 ---
 title: "Healthcare "
 description: "Implementing Medicare for All to ensure every resident receives affordable, high-quality healthcare while leveraging technology to assist—not replace—human care."
-date: 2024-11-28 00:00:00 +0000
+date: 2025-02-19 00:00:00 +0000
 label: "Policy"
 image: "/images/medicare-for-all-header.webp"
 keywords: [Medicare for All, Healthcare Policy, Affordable Healthcare, Georgia 5th Congressional District, Universal Healthcare, Patient Care, Mental Health Support, Prescription Drug Costs, Public Health, Human-Centered Care]
