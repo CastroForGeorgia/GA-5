@@ -39,40 +39,4 @@ layout: default
     {% include share-buttons.html %}
   </div>
 
-  {% include page-navigation.html %}
-
-  {% assign project-collection = site[page.collection] | sample:5 %}
-  {% assign filtered-projects = project-collection | where_exp: "project", "project.url != page.url" %}
-  {% if filtered-projects.size > 0 %}
-  <div class="page__related is-related">
-    <h2 class="page__related__title">You Might Also Like</h2>
-    <div class="row">
-    {% assign relatedCount = 0 %}
-    {% for project in project-collection %}
-      {% if project.url != page.url %}
-      <article class="project col col-3 col-d-6 col-t-12">
-        <div class="project-content">
-          <a href="{{ project.url }}" class="project__image">
-            <img class="lazy" data-src="{{ project.image }}" alt="{{ project.title }}">
-          </a>
-          <div class="project__info">
-            {% if project.label %}
-              <div class="project__label">{{ project.label }}</div>
-            {% endif %}
-            <h2 class="project__title">
-              <a href="{{ project.url }}">{{ project.title }}</a>
-            </h2>
-          </div>
-        </div>
-      </article>
-      {% assign relatedCount = relatedCount | plus: 1 %}
-      {% if relatedCount >= 4 %}
-        {% break %}
-      {% endif %}
-      {% endif %}
-    {% endfor %}
-    </div>
-  </div>
-  {% endif %}
-
 </div>
