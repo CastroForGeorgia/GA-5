@@ -113,7 +113,3 @@ Our economic vision for **Georgia's 5th Congressional District** is simple: **fa
 We believe in an economy where **wealth is shared, not hoarded**, where local jobs are protected, and where no one is left behind in the face of economic change.  
 
 **Stand with us as we build a fairer, stronger, and more resilient economy for Georgia’s 5th District.**
-
----
-
-**#WorkersHousingGuarantee #FairTaxation #JobsForAll #AutomationJustice #EconomicJustice**

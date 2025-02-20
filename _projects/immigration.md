@@ -137,5 +137,3 @@ Amnesty is **not just about immigration—it’s about human dignity, economic g
 ### **Join the Fight for Immigration Justice**  
 
 It’s time to demand an immigration system that reflects **compassion, fairness, and common sense**.  
-
-**#AmnestyNow #ImmigrationReform #FamilyUnity #EndDetention #Georgia5thDistrict**

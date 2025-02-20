@@ -125,7 +125,3 @@ keywords: [Public Education, Teacher Pay, Education Equity, Georgia 5th Congress
 In **Georgia's 5th District**, we will fight to restore and strengthen public education. By investing in teachers, modernizing schools, and prioritizing equity, we can build a brighter, fairer future for our children, families, and communities.  
 
 **Join us in the fight for strong public schools. Together, we’ll deliver on the promise of education for all.**
-
----
-
-**#PublicEducation #TeacherPay #ModernSchools #EducationJustice #SupportOurStudents #Georgia5thDistrict**
