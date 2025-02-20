@@ -1,115 +1,128 @@
 ---
-title: "Economy"
-description: "Creating fair opportunities by protecting local jobs, building affordable housing, and closing unfair tax loopholes to foster a thriving, equitable economy in Georgia's 5th District."
-date: 2024-11-28 00:00:00 +0000
+title: "An Economy That Works for Everyone"
+description: "Strengthening local jobs, building affordable housing, and ensuring fair taxation to create a thriving and equitable economy in Georgia’s 5th Congressional District."
+date: 2025-02-16 00:00:00 +0000
 label: "Policy"
 image: "/images/economy-policy-header.webp"
-keywords: [Economic Policy, Fair Taxation, Automation, Affordable Housing, Workers’ Housing Guarantee, Local Jobs, Job Creation, Georgia 5th Congressional District, Economic Justice, Wealth Inequality]
 ---
 
-# Building an Economy That Works for Everyone
+# **Building an Economy That Works for Everyone**  
 
-## Overview
+## **A Fair Economy Starts with the Working Class**  
 
-In **Georgia's 5th Congressional District**, working families form the backbone of our economy. Yet, they shoulder an unfair tax burden, face housing instability, and grapple with the disruptive impacts of automation. Our economic policy will **level the playing field**, safeguard local jobs, and build a future where every resident has access to housing, opportunities, and a fair shot at prosperity.
+The economy isn’t working for everyone. **While corporations dodge taxes and billionaires grow richer, working families struggle with stagnant wages, housing costs, and job instability.** In **Georgia’s 5th Congressional District**, we’re building an economy that puts people first—**protecting workers, ensuring fair taxation, and expanding economic opportunities.**  
 
----
-
-## **Our Economic Goals**
-
-### 🛡️ **1. Protect Workers from Corporate Greed**
-- **End Offshore Loopholes**: Eliminate tax havens and penalties that allow corporations to outsource jobs and hide profits overseas.
-- **Penalize Job Outsourcing**: Companies relocating **over 1% of their workforce annually** will face financial penalties to discourage mass layoffs.
-- **Close Stock Leveraging Loopholes**: Wealthy investors must pay their fair share when leveraging stock as liquid income.
+It’s time to **end corporate handouts, invest in affordable housing, and create a future where every family has a real chance at prosperity.**  
 
 ---
 
-### 🏗️ **2. Guarantee Affordable Housing for Workers**
-**The Workers’ Housing Guarantee** is a cornerstone of our plan to tackle housing insecurity and drive economic growth.
+## **The Challenges We Must Address**  
 
-- **Create Thousands of Jobs**:  
-  Building affordable housing stimulates industries like **construction, manufacturing, and local services**, generating sustainable employment opportunities.
+### ❌ **Working Families Shoulder the Tax Burden While the Wealthy Pay Less**  
+- Billionaires and corporations **exploit loopholes** to avoid taxes while working people foot the bill.  
+- Stock-based wealth goes **untaxed**, even when used like income.  
 
-- **Build Affordable Homes**:  
-  Invest in **safe, accessible housing** that ensures every worker can afford a stable home, improving financial security and community well-being.
+### ❌ **Housing Costs Are Out of Control**  
+- Wages haven’t kept up with rising **rent and home prices**.  
+- Public investments in **affordable housing have lagged**, leaving families vulnerable.  
 
-- **Strengthen Local Economies**:  
-  Stable housing allows families to save, invest locally, and support small businesses—boosting economic vitality.
-
----
-
-### 🤝 **3. Fair Taxation for Sustainable Growth**
-We will close loopholes and ensure billionaires and corporations pay their fair share:
-
-- **Tax Stock Leveraging as Income**:  
-  When stocks are used as collateral for loans or other liquidity, they will be taxed as **income**, just like workers' paychecks.
-
-- **End Corporate Greed Loopholes**:  
-  - Prevent tax avoidance through offshore accounts.  
-  - Eliminate incentives for companies to replace workers with automation without a plan to retrain or redeploy those employees.  
-
-- **Support Working Families**:  
-  Fair taxation allows us to reinvest in programs like affordable housing, education, and infrastructure that benefit everyone.
+### ❌ **Jobs Are Being Replaced by Automation Without Worker Protections**  
+- Corporations cut costs with automation **while leaving workers behind**.  
+- Training programs and safety nets **aren’t keeping up** with job displacement.  
 
 ---
 
-### ⚙️ **4. Address Automation’s Impact on Workers**
-Automation can be a tool for progress—but not at the cost of workers' livelihoods.
+## **A Bold Plan for Economic Justice**  
 
-- **Regulate Job-Stealing Automation**:  
-  Implement safeguards to ensure **new technologies complement workers**, rather than replace them entirely.
-
-- **Job Training and Career Transition**:  
-  - Fund **retraining programs** for workers displaced by automation.  
-  - Provide career counseling and resources to help workers secure sustainable, future-ready jobs.
-
-- **Support Collaborative Automation**:  
-  Incentivize businesses that use automation to boost productivity while protecting or expanding job opportunities for employees.
+### 🏛️ **1. Close Tax Loopholes and Make Corporations Pay Their Fair Share**  
+- **Tax Stock Leveraging Like Wages**  
+  - If the wealthy **borrow against stocks like income, they should be taxed like workers’ wages.**  
+- **End Corporate Tax Havens**  
+  - Stop companies from **hiding profits offshore** to avoid contributing to the economy.  
+- **Penalize Job Outsourcing**  
+  - Companies that move **over 1% of their workforce overseas per year** should face tax penalties.  
 
 ---
 
-## **How Our Plan Benefits the 5th District**
-
-### 📈 **Economic Growth Through Fair Policies**
-- Closing tax loopholes and reinvesting in affordable housing will spur **job creation** and lift local economies.
-- Fair taxation ensures the wealthy contribute their share, reducing burdens on working families.
-
-### 🏘️ **Housing Stability for All**
-- The **Workers’ Housing Guarantee** ensures affordable housing for families, improving financial security and quality of life.
-- Building housing creates thousands of local jobs across industries.
-
-### 🤖 **Future-Proofing Jobs**
-- By addressing automation’s challenges head-on, workers will have access to training, support, and protections that ensure **no one is left behind**.
-
-### 💪 **Stronger Local Communities**
-- Housing stability, job creation, and fair tax policies empower families to **save, invest locally, and thrive**—driving vibrant community growth.
+### 🏗️ **2. Expand Affordable Housing Through the Workers’ Housing Guarantee**  
+- **Build Affordable Homes for Working Families**  
+  - Invest in **energy-efficient, mixed-income housing** to make homeownership and renting more affordable.  
+- **Create Jobs Through Housing Construction**  
+  - Infrastructure projects will **stimulate industries** like construction, manufacturing, and local services.  
+- **Protect Longtime Residents from Displacement**  
+  - Introduce **tenant protections** to prevent unfair evictions and skyrocketing rent increases.  
 
 ---
 
-## **Action Plan**
-
-✅ **1. Legislation to Close Tax Loopholes**
-- Introduce laws to tax stock leveraging as income and end offshore tax avoidance.  
-- Penalize corporations that outsource jobs without reinvesting in local communities.
-
-✅ **2. Investment in Housing and Jobs**
-- Launch **The Workers’ Housing Guarantee** to build affordable homes and create thousands of construction jobs.  
-- Fund infrastructure projects that create lasting employment opportunities and improve community resources.
-
-✅ **3. Protect Workers from Automation**
-- Implement regulations that require businesses to adopt **worker-friendly automation**.  
-- Establish federally funded retraining programs for displaced workers to ensure they have the skills to succeed in evolving industries.
-
-✅ **4. Support Local Economic Growth**
-- Partner with small businesses to strengthen local job creation.  
-- Invest in programs that expand access to education, vocational training, and affordable childcare.
+### 🤖 **3. Regulate Automation to Protect Jobs**  
+- **Ensure AI and Robotics Work for Workers, Not Just CEOs**  
+  - Companies must **prove that automation benefits employees** before implementing mass layoffs.  
+- **Fund Job Retraining and Career Transitions**  
+  - Establish **free or low-cost reskilling programs** for workers impacted by automation.  
+- **Support Small Businesses Adopting Worker-Friendly Technology**  
+  - Offer tax incentives for **businesses that integrate automation while protecting jobs**.  
 
 ---
 
-## Conclusion
+### 💼 **4. Invest in Local Jobs and Small Business Growth**  
+- **Expand Access to Capital for Small Businesses**  
+  - Provide **grants and low-interest loans** to local businesses and worker-owned cooperatives.  
+- **Strengthen Worker Protections and Unions**  
+  - Guarantee **fair wages, paid leave, and collective bargaining rights** for all workers.  
+- **Invest in Infrastructure That Creates Jobs**  
+  - Fund **transportation, broadband, and clean energy projects** that boost local employment.  
 
-Our economic vision for **Georgia's 5th Congressional District** is simple: **fairness, opportunity, and prosperity for all**. By closing corporate loopholes, protecting workers, and building affordable housing, we will create an economy where every family has a chance to thrive.
+---
 
-We believe in an economy where **wealth is shared, not hoarded**, where local jobs are protected, and where no one is left behind in the face of economic change.  
+## **How This Plan Benefits Georgia’s 5th District**  
 
-**Stand with us as we build a fairer, stronger, and more resilient economy for Georgia’s 5th District.**
+### 📈 **Economic Growth Through Fair Policies**  
+- Closing tax loopholes **raises revenue for public investments** and eases the burden on working families.  
+- Investing in **housing and local businesses** keeps money circulating in the community.  
+
+### 🏘️ **Stable and Affordable Housing for Workers**  
+- The **Workers’ Housing Guarantee** ensures housing is **affordable and accessible** for all.  
+- Construction projects **create thousands of jobs** across multiple industries.  
+
+### 🤝 **Future-Proofing Jobs in an Automated Economy**  
+- Training programs prepare workers for **sustainable, high-paying careers** in **tech, clean energy, and skilled trades**.  
+- Regulating automation ensures **workers aren’t sacrificed for corporate profit margins**.  
+
+### 💪 **Stronger Communities, Thriving Families**  
+- When people have stable **jobs and homes**, they can **save, invest, and participate in their communities**—leading to a stronger economy for everyone.  
+
+---
+
+## **Action Plan: An Economy That Works for the Many, Not the Few**  
+
+✅ **1. Close Corporate Tax Loopholes**  
+- Tax stock leveraging as income and **end offshore tax avoidance schemes**.  
+- Penalize **companies that offshore jobs without reinvesting in local workers**.  
+
+✅ **2. Build Housing and Strengthen Tenant Protections**  
+- Expand affordable housing through **The Workers’ Housing Guarantee**.  
+- Strengthen **renter protections** against predatory landlords.  
+
+✅ **3. Protect Workers from Automation-Driven Layoffs**  
+- Require companies to **retrain and transition workers** before replacing jobs with automation.  
+- Incentivize **collaborative automation models** that improve jobs rather than eliminate them.  
+
+✅ **4. Invest in Local Business Growth**  
+- Provide **small business grants and cooperative ownership funding**.  
+- Invest in **public infrastructure projects** that create jobs and boost local economies.  
+
+---
+
+## **Conclusion: A Fair Economy for Georgia’s 5th District**  
+
+**The economy isn’t broken—it’s rigged.** It’s rigged to benefit corporations, billionaires, and Wall Street while working families struggle. We’re here to **change that**.  
+
+By **closing tax loopholes, investing in affordable housing, and ensuring automation serves workers—not just CEOs—we will build an economy that works for everyone, not just the wealthy few.**  
+
+This is about **fair wages, stable jobs, and secure homes.** This is about **restoring economic power to the people.**  
+
+---
+
+### **Join the Fight for Economic Justice**  
+
+It’s time to demand an economy that works for the **many, not the few**. Stand with us.
