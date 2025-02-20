@@ -1,6 +1,6 @@
 ---
 title: "Civil Rights and Equality"
-description: "Fighting systemic discrimination, protecting marginalized communities, and ensuring equal rights, opportunities, and justice for all."
+description: "Stopping government overreach, protecting marginalized communities, and ensuring equal rights and justice for all."
 date: 2025-02-17 00:00:00 +0000
 label: "Policy"
 image: "/images/civil-rights-equality.webp"
