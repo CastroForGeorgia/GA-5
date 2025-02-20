@@ -1,22 +1,20 @@
 {% if site.data.settings.hero.enable == true %}
 <!-- begin hero -->
 <section class="hero">
-  <div class="container">
-    <div class="row">
-      <div class="col col-12">
-        <div class="hero__overlay"></div>
+  <div class="row">
+    <div class="col col-12">
+      <div class="hero__overlay"></div>
 
-        <div class="hero__content">
-          {% if site.data.settings.hero.hero_role %}
-          <span class="hero__subtitle">{{ site.data.settings.hero.hero_role }}</span>
-          {% endif %}
-          {% if site.data.settings.hero.hero_title %}
-          <h1 class="hero__title">{{ site.data.settings.hero.hero_title }}</h1>
-          {% endif %}
-          {% if site.data.settings.hero.hero_description %}
-          <p class="hero__description">{{ site.data.settings.hero.hero_description }}</p>
-          {% endif %}
-        </div>
+      <div class="hero__content">
+        {% if site.data.settings.hero.hero_role %}
+        <span class="hero__subtitle">{{ site.data.settings.hero.hero_role }}</span>
+        {% endif %}
+        {% if site.data.settings.hero.hero_title %}
+        <h1 class="hero__title">{{ site.data.settings.hero.hero_title }}</h1>
+        {% endif %}
+        {% if site.data.settings.hero.hero_description %}
+        <p class="hero__description">{{ site.data.settings.hero.hero_description }}</p>
+        {% endif %}
       </div>
     </div>
   </div>
