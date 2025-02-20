@@ -4,9 +4,11 @@
   <div class="container">
     <div class="row">
       <div class="col col-12">
-        <div class="hero__inner">
+        <div class="hero__overlay"></div>
+
+        <div class="hero__content">
           {% if site.data.settings.hero.hero_role %}
-          <span class="hero__role">{{ site.data.settings.hero.hero_role }}</span>
+          <span class="hero__subtitle">{{ site.data.settings.hero.hero_role }}</span>
           {% endif %}
           {% if site.data.settings.hero.hero_title %}
           <h1 class="hero__title">{{ site.data.settings.hero.hero_title }}</h1>
