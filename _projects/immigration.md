@@ -1,6 +1,6 @@
 ---
 title: "Immigration"
-description: "A humane and practical immigration reform centered on Amnesty, integrating immigrants, protecting families, and strengthening our communities without detention camps or mass deportations."
+description: "Integrating immigrants, protecting families, and strengthening our communities without detention camps or mass deportations."
 date: 2024-11-28 00:00:00 +0000
 label: "Policy"
 image: "/images/immigration-policy-header.webp"
