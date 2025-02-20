@@ -19,8 +19,6 @@ menu_settings:
       url: '/blog/why-im-running'
     - title: 'Policies'
       url: '/projects/'
-    - title: 'Blog'
-      url: '/blog/'
     - title: 'Contact'
       url: 'https://actionnetwork.org/forms/connect-with-andres-share-your-vision'
 

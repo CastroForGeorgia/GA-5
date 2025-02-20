@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The End of Legacy Democrats: A Call for Bold, People-Powered Leadership"
-description: "To build a stronger, more progressive future, the Democratic Party must move beyond legacy politics and prioritize people-driven leadership, equity, and bold reform."
+description: "To build a stronger, more working-class future, the Democratic Party must move beyond legacy politics and prioritize people-driven leadership, equity, and bold reform."
 date: 2024-12-26
 image: '/images/party_reform.jpeg'
 ---
@@ -32,7 +32,7 @@ It’s time to **listen to our base**, fight relentlessly for everyday people, a
 2. **Personal Legacy Over Progress**  
    Leaders who once made significant strides but now delay the emergence of new energy and ideas, unwilling to step aside despite changing circumstances.
 
-Icons like Dianne Feinstein, Ruth Bader Ginsburg, Bernie Sanders, and Nancy Pelosi paved the way for many of our current rights. But true leadership also means **knowing when to pass the torch**, ensuring emerging leaders can address **modern crises** with **fresh urgency**.
+Icons like Dianne Feinstein, Ruth Bader Ginsburg, Nancy Pelosi, and even Bernie Sanders paved the way for many of our current rights. But true leadership also means **knowing when to pass the torch**, ensuring emerging leaders can address **modern crises** with **fresh urgency**.
 
 ---
 
