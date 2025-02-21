@@ -32,7 +32,7 @@ It’s time to **listen to our base**, fight relentlessly for everyday people, a
 2. **Personal Legacy Over Progress**  
    Leaders who once made significant strides but now delay the emergence of new energy and ideas, unwilling to step aside despite changing circumstances.
 
-Icons like Dianne Feinstein, Ruth Bader Ginsburg, Nancy Pelosi, and even Bernie Sanders paved the way for many of our current rights. But true leadership also means **knowing when to pass the torch**, ensuring emerging leaders can address **modern crises** with **fresh urgency**.
+I deeply respect icons like Dianne Feinstein, Ruth Bader Ginsburg, Nancy Pelosi, and even Bernie Sanders—they paved the way for many of the rights we have today. But it pains me to say that they’re now holding us back. True leadership also means **knowing when to pass the torch**, ensuring emerging leaders can address **modern crises** with **fresh urgency**.
 
 ---
 
