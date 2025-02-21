@@ -47,15 +47,15 @@
           <div class="nav-button">
             <ul class="nav__list list-reset">
               <li class="nav__item dropdown">
-                {% assign current_lang_code = site.languages.default %}
-                {% assign current_lang = site.languages.supported | where: "lang_code", current_lang_code | first %}
+                {% assign current_lang_code = site.data.settings.languages.default %}
+                {% assign current_lang = site.data.settings.languages.supported | where: "lang_code", current_lang_code | first %}
               
                 <a href="#" class="nav__link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
                   <i class="fa fa-language" aria-hidden="true"></i>
                   <i class="fa-solid fa-chevron-down"></i>
                 </a>
                 <div class="dropdown-menu" aria-label="Language options">
-                  {% for lang in site.languages.supported %}
+                  {% for lang in site.data.settings.languages.supported %}
                     {% if lang.lang_code == "en" %}
                       <a href="https://andrescastro.us{{ page.url | prepend: '/' | remove_first: '/' }}" class="nav__link{% if current_lang_code == lang.lang_code %} active-link{% endif %}">
                         {{ lang.lang_name }}
