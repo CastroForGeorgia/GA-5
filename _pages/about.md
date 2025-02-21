@@ -3,33 +3,27 @@ layout: page
 title: About Andres Castro
 description: Meet Andres Castro, a working-class leader and software engineer running for Congress in Georgia’s 5th District to fight for families, equality, and bold, people-powered solutions.
 permalink: /about/
-image: '/images/about-me-photo.jpg'
----
-Here's the rewritten version of your "About Andres Castro" page using the **inverted pyramid** journalism style, which prioritizes the most important information first:  
+image: '/images/about-me.jpg'
 
 ---
 
-# About Andres Castro  
+# About Me
 
-**Andres Castro is a working-class leader and software engineer running for Congress in Georgia’s 5th District, fighting for economic justice, universal healthcare, and civil rights.**  
+**I’m Andres Castro—a working-class leader, software engineer, and community advocate running for Congress in Georgia’s 5th District. My core mission is to fight for economic justice, Medicare for All, and civil rights, ensuring that working families have a real voice in Washington.**
 
-Born to an immigrant mother from Acapulco, Mexico, Andres grew up in **Marietta and Powder Springs**, facing poverty, racism, and systemic barriers. Despite these challenges, he earned a **Computer Science degree** from Kennesaw State University and built a successful engineering career, becoming a **homeowner in Oakland City, Atlanta**.  
+I know firsthand what it’s like to struggle. Growing up in **Marietta and Powder Springs** with an immigrant mother from **Acapulco, Mexico**, I faced poverty, racism, and systemic barriers. Determination carried me through **Kennesaw State University**, where I earned a **Computer Science degree** while juggling jobs to pay the bills. Today, I’m proud to be a **homeowner in Oakland City, Atlanta**, a testament to the resilience of working people everywhere.
 
-Now, he's running for Congress to ensure no one is left behind. His platform focuses on:  
-- **Economic Justice** – Living wages, strong unions, and affordable housing.  
-- **Medicare for All** – Universal healthcare as a human right.  
-- **Civil Rights** – Fighting for equality, including LGBTQ+ and marginalized communities.  
-- **Open Government** – Transparency and accountability to the people.  
-- **Tech for Good** – Ensuring AI and innovation serve people, not corporate greed.  
+But no accomplishment matters without the people we love. **My wife**, a committed feminist advocate, has taught me the value of standing firm—even when facing political divides. Her parents and I don’t always see eye to eye politically, but we share a deep commitment to strong family ties and hard work. **My younger brother**, who is finishing his last year of service in the Coast Guard, and **my older sister**, a small business owner now helping me campaign, remind me every day why we need a government that respects and rewards hard work. And **my niece**, on the verge of graduating from **Georgia State University** with a game design degree, shows the promise that comes when we invest in young people’s futures.
 
-Andres believes in **bold, people-powered solutions** to build a fairer future for all.  
+Keeping family close has always been one of my greatest priorities—so much so that I was fortunate enough to buy **two side-by-side homes** for us. Now, I’m running for Congress to make sure families across our district have the same opportunity to thrive, no matter their background.
 
-## Learn More About His Vision:  
+## Learn More About My Vision
 - [Why I’m Running for Congress](/blog/why-im-running/)  
 - [The Workers’ Housing Guarantee: Affordable Homes for All](/project/housing-community/)  
 - [Healthcare is a Human Right: My Plan for Medicare for All](/project/healthcare/)  
 - [Civil Rights and Equality: Standing Up for Justice](/project/civil-rights-equality)  
 - [Technology for People: My Vision for Ethical AI](/project/ai/)  
 
-This campaign is about **you**—your family, your future, and the fight for justice.  
-Let’s get to work. **[Join Us Today](https://actionnetwork.org/forms/subscribe-form)**
+I believe that **we** have the power to demand better—better wages, better healthcare, better schools, and a better future for all. Let’s stand together to create a Congress that champions the working class and protects every family’s right to thrive.
+
+**Let’s get to work. [Join Us Today](https://actionnetwork.org/forms/subscribe-form)**
