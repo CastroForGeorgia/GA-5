@@ -11,14 +11,12 @@ color_scheme: auto # You can choose three modes auto, light, and dark. By defaul
 # Navigation Settings
 menu_settings:
   menu_items:
-    - title: 'Home'
-      url: '/'
+    - title: "Donate"
+      url: 'https://secure.actblue.com/donate/castroforgeorgia'
     - title: 'About'
       url: '/about/'
     - title: "Why I'm Running"
       url: '/blog/why-im-running'
-    - title: "Donate"
-      url: 'https://secure.actblue.com/donate/castroforgeorgia'
     - title: 'Policies'
       url: '/projects/'
     - title: 'Contact'
