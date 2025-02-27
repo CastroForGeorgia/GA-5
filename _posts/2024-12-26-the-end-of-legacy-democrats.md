@@ -69,4 +69,4 @@ Legacy-driven politics clings to the past while **people-driven leadership** for
 
 This is a call to **restore faith in democracy** by creating a Democratic Party that truly represents and empowers everyday people. We stand at a defining moment—will we cling to outdated leadership or embrace the next wave of bold, grassroots-driven reform?  
 
-**The future of the Democratic Party is in our hands.** Let’s seize it together.
+**The future of the Democratic Party is in our hands.** Let’s seize it together. [Donate Today!](https://secure.actblue.com/donate/castroforgeorgia)
