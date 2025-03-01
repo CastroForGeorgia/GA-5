@@ -47,7 +47,6 @@
 
 .main-nav {
   display: flex;
-  flex: 1 0;
   align-items: center;
 
   @media (max-width: $desktop) {
@@ -127,27 +126,30 @@
   }
 }
 
+/* Remove old first nav item styling as the donate button is now in its own container */
+/*
+.nav__list {
+  > .nav__item:first-child:not(.dropdown) > .nav__link {
+    background-color: #2E8B57;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    &:hover {
+      background-color: lighten(#2E8B57, 10%);
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      text-decoration: none;
+    }
+  }
+}
+*/
 
 .nav__list {
   display: flex;
   align-items: center;
-    // Style for the first nav item only
-    > .nav__item:first-child:not(.dropdown) > .nav__link {
-      background-color: #2E8B57;
-      color: #fff;
-      padding: 12px 24px;
-      border-radius: 16px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: background-color 0.2s ease, transform 0.2s ease;
-  
-      &:hover {
-        background-color: lighten(#2E8B57, 10%);
-        transform: scale(1.05);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        text-decoration: none;
-      }
-    }
 
   .nav__item {
     display: inline-block;
@@ -230,15 +232,37 @@
         }
       }
     }
-
   }
 }
 
 .home-page .nav__item .nav__link.active-link {
   text-decoration-color: transparent;
-
   &:hover {
     text-decoration-color: var(--link-color);
+  }
+}
+
+/* New Donate Button Styling */
+.donate-container {
+  display: inline-block;
+  margin-right: 24px; // Space to separate it from the rest of the menu
+  margin-left: auto;
+}
+
+.donate-button {
+  background-color: #2E8B57;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  
+  &:hover {
+    background-color: lighten(#2E8B57, 10%);
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
   }
 }
 
@@ -350,7 +374,6 @@
     font-size: 20px;
     color: var(--link-color);
   }
-
 
   @media (max-width: $desktop) {
     padding: 6px 12px;
