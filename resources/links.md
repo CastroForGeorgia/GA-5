@@ -1,11 +1,11 @@
 # Useful Links
 
-- [Official Campaign Website](andrescastro.us)
-- [Volunteer Sign-Up](andrescastro.us)
-- [Policy Discussions](andrescastro.us)
+- [Official Campaign Website](castroforgeorgia.com)
+- [Volunteer Sign-Up](castroforgeorgia.com)
+- [Policy Discussions](castroforgeorgia.com)
 
 ## Contact Forms
 
-- [General Inquiries](andrescastro.us)
-- [Volunteer Registration](andrescastro.us)
-- [Policy Suggestions](andrescastro.us)
+- [General Inquiries](castroforgeorgia.com)
+- [Volunteer Registration](castroforgeorgia.com)
+- [Policy Suggestions](castroforgeorgia.com)

@@ -75,12 +75,12 @@
                 <div class="dropdown-menu" aria-label="Language options">
                   {% for lang in site.data.settings.languages.supported %}
                   {% if lang.lang_code == "en" %}
-                  <a href="https://andrescastro.us{{ page.url | prepend: '/' | remove_first: '/' }}"
+                  <a href="https://castroforgeorgia.com{{ page.url | prepend: '/' | remove_first: '/' }}"
                     class="nav__link{% if current_lang_code == lang.lang_code %} active-link{% endif %}">
                     {{ lang.lang_name }}
                   </a>
                   {% else %}
-                  <a href="https://{{ lang.lang_code }}.andrescastro.us{{ page.url | prepend: '/' | remove_first: '/' }}"
+                  <a href="https://{{ lang.lang_code }}.castroforgeorgia.com{{ page.url | prepend: '/' | remove_first: '/' }}"
                     class="nav__link{% if current_lang_code == lang.lang_code %} active-link{% endif %}">
                     {{ lang.lang_name }}
                   </a>
