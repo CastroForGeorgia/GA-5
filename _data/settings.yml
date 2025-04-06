@@ -88,7 +88,7 @@ faq:
 social:
 - {icon: "fa-brands fa-instagram", name: "Instagram", link: "https://www.instagram.com/castroforgeorgia/"}
 - {icon: "fa-brands fa-github", name: "Github", link: "https://github.com/CastroForGeorgia"}
-- {icon: "fa-brands fa-bluesky", name: "Bluesky", link: "https://bsky.app/profile/castroforgeorgia.bsky.social"}
+- {icon: "fa-brands fa-bluesky", name: "Bluesky", link: "https://bsky.app/profile/castroforgeorgia.com"}
 - {icon: "fa-brands fa-huggingface", name: "Huggingface", link: "https://huggingface.co/CastroForGeorgia"}
 
 # Example of adding a new link to the footer - {icon: "fa-brands fa-mastodon", name: "Mastodon", link: "https://mastodon.social"}
