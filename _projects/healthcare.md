@@ -3,7 +3,7 @@ title: "Medicare for All"
 description: "Affordable, high-quality healthcare for every resident—centered on people, not profits."
 date: 2025-02-19 00:00:00 +0000
 label: "Policy"
-image: "/images/medicare-for-all-header.webp"
+image: "/images/medicare-for-all-header.png"
 ---
 
 # **Healthcare for All: A Human Right, Not a Privilege**  

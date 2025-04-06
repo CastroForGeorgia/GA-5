@@ -3,7 +3,7 @@ title: "Artificial General Intelligence (AGI)"
 description: "Ensuring AI and automation empower workers, protect jobs, and promote ethical, people-first development."
 date: 2024-12-09 00:00:00 +0000
 label: "Policy"
-image: "/images/agi-header.webp"
+image: "/images/agi-header.png"
 ---
 
 # **Artificial Intelligence: Technology That Works for Workers**  
