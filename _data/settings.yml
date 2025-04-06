@@ -20,7 +20,7 @@ menu_settings:
     - title: 'Policies'
       url: '/projects/'
     - title: 'Contact'
-      url: 'https://actionnetwork.org/forms/connect-with-andres-share-your-vision'
+      url: '/contact/'
 
 
 #-------------------------------
