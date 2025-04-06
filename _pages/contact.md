@@ -14,9 +14,7 @@ Whether you're a volunteer, a voter with questions, or someone who's ready to or
 ---
 
 ## 📬 Campaign Contact
-**Email:** [hello@castroforgeorgia.com](mailto:hello@castroforgeorgia.com)  
-
----
+**Email:** [hello@castroforgeorgia.com](mailto:hello@castroforgeorgia.com)
 
 ## 🧰 Media & Press
 **Media Requests:** [press@castroforgeorgia.com](mailto:press@castroforgeorgia.com)
