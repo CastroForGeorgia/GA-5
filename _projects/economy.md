@@ -8,27 +8,40 @@ image: "/images/economy-policy-header.png"
 
 # **Building an Economy That Works for Everyone**  
 
+The economy isn’t broken—it’s rigged by a system that favors corporate donors and entrenched elites at the expense of working families. **While billionaires get tax breaks and exploit loopholes, everyday people face rising housing costs, stagnant wages, and looming threats from automation.** We’re here to flip the script: this is **our fight—an “us vs. the system” battle** for the soul of our economy.
+
+---
+
 ## **A Fair Economy Starts with the Working Class**  
 
-The economy isn’t working for everyone. **While corporations dodge taxes and billionaires grow richer, working families struggle with stagnant wages, housing costs, and job instability.** In **Georgia’s 5th Congressional District**, we’re building an economy that puts people first—**protecting workers, ensuring fair taxation, and expanding economic opportunities.**  
+**In Georgia’s 5th Congressional District**, we’re pushing back against the forces of corporate greed. Our plan doesn’t cater to lobbyists or powerful donors—it empowers the everyday people who drive our communities forward.
 
-It’s time to **end corporate handouts, invest in affordable housing, and create a future where every family has a real chance at prosperity.**  
+- We’re closing tax loopholes so **billionaires and corporations finally pay their fair share**.  
+- We’re investing in **affordable housing** to keep families stable and neighborhoods strong.  
+- We’re **regulating automation** so jobs aren’t replaced without a plan for workers.  
+- We’re **supporting small businesses** and local entrepreneurs, keeping more wealth in our neighborhoods.  
+
+It’s time to **stop turning our backs** on the folks who built this country. Let’s build an economy that puts people over profits.
 
 ---
 
 ## **The Challenges We Must Address**  
 
 ### ❌ **Working Families Shoulder the Tax Burden While the Wealthy Pay Less**  
-- Billionaires and corporations **exploit loopholes** to avoid taxes while working people foot the bill.  
-- Stock-based wealth goes **untaxed**, even when used like income.  
+- Billionaires and corporations exploit tax loopholes, offshore profits, and dodge accountability.  
+- “Stock leveraging” allows the ultra-wealthy to treat borrowed money like income—without paying income taxes.
 
 ### ❌ **Housing Costs Are Out of Control**  
-- Wages haven’t kept up with rising **rent and home prices**.  
-- Public investments in **affordable housing have lagged**, leaving families vulnerable.  
+- Skyrocketing rents force many to choose between **shelter, food, or healthcare**.  
+- Gentrification displaces longtime residents, destroying the fabric of our communities.  
 
 ### ❌ **Jobs Are Being Replaced by Automation Without Worker Protections**  
-- Corporations cut costs with automation **while leaving workers behind**.  
-- Training programs and safety nets **aren’t keeping up** with job displacement.  
+- Corporations push for cost-cutting automation while **leaving workers in the dust**.  
+- Retraining and safety nets **aren’t keeping up** with sudden industry changes.
+
+### ❌ **Small Businesses Struggle While Corporate Giants Get Handouts**  
+- Local entrepreneurs can’t access capital or resources as easily as big-box stores and tech giants.  
+- Declining labor protections leave workers with **less bargaining power and stagnant wages**.
 
 ---
 
@@ -36,93 +49,86 @@ It’s time to **end corporate handouts, invest in affordable housing, and creat
 
 ### 🏛️ **1. Close Tax Loopholes and Make Corporations Pay Their Fair Share**  
 - **Tax Stock Leveraging Like Wages**  
-  - If the wealthy **borrow against stocks like income, they should be taxed like workers’ wages.**  
+  - If billionaires borrow against their stocks to fund lavish lifestyles, those loans should be **taxed** like income.  
 - **End Corporate Tax Havens**  
-  - Stop companies from **hiding profits offshore** to avoid contributing to the economy.  
+  - Update and expand the **Stop Tax Haven Abuse Act** to **penalize companies** that shift profits offshore.  
 - **Penalize Job Outsourcing**  
-  - Companies that move **over 1% of their workforce overseas per year** should face tax penalties.  
+  - Corporations moving **over 1% of their workforce overseas** annually should face higher tax rates, deterring the offshoring of good-paying jobs.
+
+**Outcome for Working Families:** **Billions in reclaimed tax revenue** can fund public services—like better roads, schools, and healthcare—and shift the burden off working people.
 
 ---
 
-### 🏗️ **2. Expand Affordable Housing Through the Workers’ Housing Guarantee**  
-- **Build Affordable Homes for Working Families**  
-  - Invest in **energy-efficient, mixed-income housing** to make homeownership and renting more affordable.  
+### 🏗️ **2. Expand Affordable Housing and Combat Displacement**  
+- **Massively Invest in Affordable Housing**  
+  - Use the **Homes for All Act** or **Green New Deal for Public Housing** as models for large-scale, **energy-efficient housing** development.  
+- **Protect Longtime Residents**  
+  - Strengthen tenant rights through measures like the **Eviction Crisis Act**, **rent stabilization**, and **emergency rental assistance**.  
 - **Create Jobs Through Housing Construction**  
-  - Infrastructure projects will **stimulate industries** like construction, manufacturing, and local services.  
-- **Protect Longtime Residents from Displacement**  
-  - Introduce **tenant protections** to prevent unfair evictions and skyrocketing rent increases.  
+  - Tie new builds to **local hiring requirements**, boosting employment in underinvested communities.
+
+**Outcome for Working Families:** Secure, stable homes **anchor** strong communities. **No more families forced out** by predatory landlords or skyrocketing rents.
 
 ---
 
-### 🤖 **3. Regulate Automation to Protect Jobs**  
-- **Ensure AI and Robotics Work for Workers, Not Just CEOs**  
-  - Companies must **prove that automation benefits employees** before implementing mass layoffs.  
-- **Fund Job Retraining and Career Transitions**  
-  - Establish **free or low-cost reskilling programs** for workers impacted by automation.  
-- **Support Small Businesses Adopting Worker-Friendly Technology**  
-  - Offer tax incentives for **businesses that integrate automation while protecting jobs**.  
+### 🤖 **3. Regulate Automation to Protect Workers**  
+- **Mandate Transparency on Workplace AI**  
+  - Enact the **Algorithmic Accountability Act** to require **disclosure and oversight** of how AI systems replace or monitor workers.  
+- **Automation Transition Assistance Program**  
+  - Model new legislation on **Trade Adjustment Assistance (TAA)** so workers get **retraining, wage insurance**, and other supports when automation disrupts jobs.  
+- **Reward Ethical Automation Practices**  
+  - Offer **tax credits** to businesses that **upskill their workforce** before automating, ensuring no one is left behind.
+
+**Outcome for Working Families:** We can harness technology **for the common good**, rather than letting it serve only executive profits. Workers **gain new skills** and keep the dignity of stable employment.
 
 ---
 
 ### 💼 **4. Invest in Local Jobs and Small Business Growth**  
-- **Expand Access to Capital for Small Businesses**  
-  - Provide **grants and low-interest loans** to local businesses and worker-owned cooperatives.  
-- **Strengthen Worker Protections and Unions**  
-  - Guarantee **fair wages, paid leave, and collective bargaining rights** for all workers.  
-- **Invest in Infrastructure That Creates Jobs**  
-  - Fund **transportation, broadband, and clean energy projects** that boost local employment.  
+- **Empower Cooperative Ownership**  
+  - Expand the **Main Street Employee Ownership Act** to give **low-interest loans and grants** to worker-owned co-ops, especially in underserved areas.  
+- **Boost Community Infrastructure**  
+  - Increase **Community Development Block Grants (CDBG)** to rebuild roads, schools, and broadband in lower-income neighborhoods—**on the condition of local hiring**.  
+- **Strengthen Labor Laws**  
+  - Pass the **PRO Act** to **protect the right to organize** and ensure fair wages and benefits.
+
+**Outcome for Working Families:** Thriving local businesses, **equitable infrastructure spending**, and **fair labor practices** mean more money stays in the community, uplifting everyone.
 
 ---
 
 ## **How This Plan Benefits Georgia’s 5th District**  
 
-### 📈 **Economic Growth Through Fair Policies**  
-- Closing tax loopholes **raises revenue for public investments** and eases the burden on working families.  
-- Investing in **housing and local businesses** keeps money circulating in the community.  
+1. **Reclaims Tax Dollars for Public Good**  
+   - Ending corporate loopholes channels billions back into **essential services** like **healthcare, education**, and **infrastructure**.
 
-### 🏘️ **Stable and Affordable Housing for Workers**  
-- The **Workers’ Housing Guarantee** ensures housing is **affordable and accessible** for all.  
-- Construction projects **create thousands of jobs** across multiple industries.  
+2. **Provides Safe, Affordable Homes**  
+   - Large-scale housing investments **create jobs** and ensure working families **aren’t priced out** of their neighborhoods.
 
-### 🤝 **Future-Proofing Jobs in an Automated Economy**  
-- Training programs prepare workers for **sustainable, high-paying careers** in **tech, clean energy, and skilled trades**.  
-- Regulating automation ensures **workers aren’t sacrificed for corporate profit margins**.  
+3. **Future-Proofs Jobs in an Automated World**  
+   - By regulating AI, mandating retraining, and ensuring fair wages, we **safeguard livelihoods** as technology evolves.
 
-### 💪 **Stronger Communities, Thriving Families**  
-- When people have stable **jobs and homes**, they can **save, invest, and participate in their communities**—leading to a stronger economy for everyone.  
+4. **Strengthens Local Economies**  
+   - When small businesses and co-ops thrive, **wealth stays in the community**—not siphoned off by corporate headquarters.
 
 ---
 
-## **Action Plan: An Economy That Works for the Many, Not the Few**  
+## **Action Plan: The People Over Profits Agenda**  
 
-✅ **1. Close Corporate Tax Loopholes**  
-- Tax stock leveraging as income and **end offshore tax avoidance schemes**.  
-- Penalize **companies that offshore jobs without reinvesting in local workers**.  
+1. **Close Corporate Tax Loopholes**  
+   - Implement the **Stop Tax Haven Abuse Act**, tax stock leveraging, and **penalize outsourcing**.
 
-✅ **2. Build Housing and Strengthen Tenant Protections**  
-- Expand affordable housing through **The Workers’ Housing Guarantee**.  
-- Strengthen **renter protections** against predatory landlords.  
+2. **Build Sustainable, Affordable Housing**  
+   - Expand public housing initiatives, protect tenants from eviction, and **invest in local jobs** through housing projects.
 
-✅ **3. Protect Workers from Automation-Driven Layoffs**  
-- Require companies to **retrain and transition workers** before replacing jobs with automation.  
-- Incentivize **collaborative automation models** that improve jobs rather than eliminate them.  
+3. **Regulate Automation & Protect Workers**  
+   - Enforce **AI transparency**, provide **training and income support**, and **reward businesses** that upskill workers.
 
-✅ **4. Invest in Local Business Growth**  
-- Provide **small business grants and cooperative ownership funding**.  
-- Invest in **public infrastructure projects** that create jobs and boost local economies.  
+4. **Empower Small Businesses & Worker Co-ops**  
+   - Offer **grants and loans** to co-ops, invest in **community-driven infrastructure**, and pass the **PRO Act** for stronger labor rights.
 
 ---
 
-## **Conclusion: A Fair Economy for Georgia’s 5th District**  
+## **Standing Up for the Working Class**  
 
-**The economy isn’t broken—it’s rigged.** It’s rigged to benefit corporations, billionaires, and Wall Street while working families struggle. We’re here to **change that**.  
+**I refuse to be just another politician who makes empty promises and then turns a blind eye to the system’s failings.** We’re taking on the powerful interests that rig the rules against everyday people. This campaign is about **us—working families—versus a system built to enrich the wealthy few.**
 
-By **closing tax loopholes, investing in affordable housing, and ensuring automation serves workers—not just CEOs—we will build an economy that works for everyone, not just the wealthy few.**  
-
-This is about **fair wages, stable jobs, and secure homes.** This is about **restoring economic power to the people.**  
-
----
-
-### **Join the Fight for Economic Justice**  
-
-It’s time to demand an economy that works for the **many, not the few**. Stand with us.
+Together, we **can** create a fair economy that rewards hard work, ensures stable homes, and protects jobs in the face of rapid change. **Join the fight**, and let’s make an economy that truly serves **everyone**—not just the donor class or the privileged elite.
