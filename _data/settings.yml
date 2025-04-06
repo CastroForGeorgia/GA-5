@@ -15,12 +15,15 @@ menu_settings:
       url: 'https://secure.actblue.com/donate/castroforgeorgia'
     - title: 'About'
       url: '/about/'
-    - title: "Why I'm Running"
-      url: '/blog/why-im-running'
-    - title: 'Policies'
-      url: '/projects/'
     - title: 'Contact'
       url: '/contact/'
+    - title: 'Economy'
+      url: '/project/economy/'
+    - title: 'Healthcare'
+      url: '/project/healthcare/'
+    - title: 'Equality'
+      url: '/project/civil-rights-equality/'
+
 
 
 #-------------------------------
