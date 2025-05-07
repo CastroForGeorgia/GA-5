@@ -36,3 +36,10 @@ This campaign isn’t just about winning—it’s about building a movement. I w
 The corporate takeover of the Democratic Party has made it disconnected and out of touch. **It’s time to clean house.** We need representatives who are unapologetically loyal to their communities, not corporate donors.  
 
 I’m running in **GA-05** because this fight isn’t about me—it’s about all of us who’ve been ignored for too long. **I will not hold back. I will not be bought.** Join me, and let’s reclaim our party—and our future—together.
+
+## Learn More About My Vision
+- [Learn about me](/about/)
+- [The Workers' Housing Guarantee: Affordable Homes for All](/project/housing-community/)
+- [Healthcare is a Human Right: Medicare for All](/project/healthcare/)
+- [Civil Rights and Equality: Standing Up for Justice](/project/civil-rights-equality)
+- [Technology for People: Ethical and Accessible AI](/project/ai/)

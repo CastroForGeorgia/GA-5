@@ -1,71 +1,48 @@
-/* Full-page hero container with background image */
 .hero {
+  position: relative;
   width: 100%;
-  height: 100vh; /* Full viewport height */
-  position: relative; /* Needed for absolutely positioned child elements */
+  min-height: 100vh;
+  overflow: hidden;
   display: flex;
-  align-items: flex-end; /* Positions content near the bottom */
+  align-items: flex-end;
   justify-content: center;
   text-align: center;
-  background: url('/images/about-me-photo.jpg') no-repeat center center;
-  background-size: cover;
-  padding: 20px;
-  margin-top: 5px;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
 }
 
-/* 
-  Dedicated overlay element. 
-  This ensures we can control the gradient behind the text explicitly.
-*/
+/* the actual photo, filling the container */
+.hero__img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center bottom; /* ← anchor at bottom‑right */
+  z-index: 0;
+}
+
+/* dark overlay for contrast */
 .hero__overlay {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 80%; /* Adjust how much of the image gets the gradient */
-  /* A darker gradient for better text contrast at the bottom */
-  background: linear-gradient(to top, rgba(255,253,208, 0.9), transparent);
-  z-index: 1; /* Ensure overlay is behind the text container */
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.6) 25%,
+    rgba(0,0,0,0.3) 50%,
+    transparent 75%
+  );
+  pointer-events: none;
 }
 
-/* Text container above the overlay */
+/* your text lives above it… */
 .hero__content {
   position: relative;
-  z-index: 2; /* Higher stacking order than .hero__overlay */
-  color: #111016;
-  max-width: 600px;
+  z-index: 1;
+  max-width: 700px;
+  color: white;
+  margin-bottom: 2rem;
 }
 
-.hero__subtitle {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  font-weight: bolder;
-}
-
-.hero__title {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #111016;
-}
-
-.hero__description {
-  font-size: 1.2rem;
-  line-height: 1.4;
-  margin-bottom: 1.5rem;
-  font-weight: bold;
-}
-
-/* Responsive tweaks */
-@media (max-width: 768px) {
-  .hero {
-    height: 70vh; /* Shorten on smaller screens if desired */
-  }
-  
-  .hero__title {
-    font-size: 2rem;
-  }
-  
-  .hero__description {
-    font-size: 1rem;
-  }
+.hero__title{
+  color: white;
 }
