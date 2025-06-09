@@ -18,6 +18,7 @@ The economy isn’t broken—it’s rigged by a system that favors corporate don
 
 - We’re closing tax loopholes so **billionaires and corporations finally pay their fair share**.  
 - We’re investing in **affordable housing** to keep families stable and neighborhoods strong.  
+- We’re **raising the minimum wage** so **40 hours a week is enough to raise a family, buy a home, and build a future**.  
 - We’re **regulating automation** so jobs aren’t replaced without a plan for workers.  
 - We’re **supporting small businesses** and local entrepreneurs, keeping more wealth in our neighborhoods.  
 
@@ -34,6 +35,10 @@ It’s time to **stop turning our backs** on the folks who built this country. L
 ### ❌ **Housing Costs Are Out of Control**  
 - Skyrocketing rents force many to choose between **shelter, food, or healthcare**.  
 - Gentrification displaces longtime residents, destroying the fabric of our communities.  
+
+### ❌ **Wages Aren’t Keeping Up with the Cost of Living**  
+- The federal minimum wage hasn’t budged in years while inflation soars.  
+- Too many full-time workers are trapped in poverty despite working 40 hours a week.
 
 ### ❌ **Jobs Are Being Replaced by Automation Without Worker Protections**  
 - Corporations push for cost-cutting automation while **leaving workers in the dust**.  
@@ -71,7 +76,19 @@ It’s time to **stop turning our backs** on the folks who built this country. L
 
 ---
 
-### 🤖 **3. Regulate Automation to Protect Workers**  
+### 💵 **3. Raise the Minimum Wage and Guarantee Livable Wages**  
+- **Raise the Federal Minimum Wage to a Living Wage**  
+  - We will fight to raise the minimum wage so **40 hours of work can support a family and afford housing**—starting at **$17/hour** and indexed to inflation.  
+- **Support Stronger Local Minimum Wages**  
+  - Empower states and cities to set **even higher local minimum wages** based on their cost of living.  
+- **End Tipped Subminimum Wages**  
+  - Phase out the **tipped minimum wage** and ensure all workers receive **the full minimum wage with tips on top**, not as a substitute for fair pay.
+
+**Outcome for Working Families:** No more full-time workers living in poverty. **A fair day’s work will guarantee a fair day’s pay**—with dignity, stability, and opportunity.
+
+---
+
+### 🤖 **4. Regulate Automation to Protect Workers**  
 - **Mandate Transparency on Workplace AI**  
   - Enact the **Algorithmic Accountability Act** to require **disclosure and oversight** of how AI systems replace or monitor workers.  
 - **Automation Transition Assistance Program**  
@@ -83,7 +100,7 @@ It’s time to **stop turning our backs** on the folks who built this country. L
 
 ---
 
-### 💼 **4. Invest in Local Jobs and Small Business Growth**  
+### 💼 **5. Invest in Local Jobs and Small Business Growth**  
 - **Empower Cooperative Ownership**  
   - Expand the **Main Street Employee Ownership Act** to give **low-interest loans and grants** to worker-owned co-ops, especially in underserved areas.  
 - **Boost Community Infrastructure**  
@@ -103,10 +120,13 @@ It’s time to **stop turning our backs** on the folks who built this country. L
 2. **Provides Safe, Affordable Homes**  
    - Large-scale housing investments **create jobs** and ensure working families **aren’t priced out** of their neighborhoods.
 
-3. **Future-Proofs Jobs in an Automated World**  
+3. **Guarantees Livable Wages for All**  
+   - Raising the minimum wage means **no one working 40 hours a week will be trapped in poverty** again. Families can build stability and prosperity.
+
+4. **Future-Proofs Jobs in an Automated World**  
    - By regulating AI, mandating retraining, and ensuring fair wages, we **safeguard livelihoods** as technology evolves.
 
-4. **Strengthens Local Economies**  
+5. **Strengthens Local Economies**  
    - When small businesses and co-ops thrive, **wealth stays in the community**—not siphoned off by corporate headquarters.
 
 ---
@@ -119,10 +139,13 @@ It’s time to **stop turning our backs** on the folks who built this country. L
 2. **Build Sustainable, Affordable Housing**  
    - Expand public housing initiatives, protect tenants from eviction, and **invest in local jobs** through housing projects.
 
-3. **Regulate Automation & Protect Workers**  
+3. **Raise the Minimum Wage to a Living Wage**  
+   - Pass legislation to **raise the federal minimum wage to $25/hour**, end tipped subminimum wages, and **index wages to inflation**.
+
+4. **Regulate Automation & Protect Workers**  
    - Enforce **AI transparency**, provide **training and income support**, and **reward businesses** that upskill workers.
 
-4. **Empower Small Businesses & Worker Co-ops**  
+5. **Empower Small Businesses & Worker Co-ops**  
    - Offer **grants and loans** to co-ops, invest in **community-driven infrastructure**, and pass the **PRO Act** for stronger labor rights.
 
 ---
@@ -131,4 +154,4 @@ It’s time to **stop turning our backs** on the folks who built this country. L
 
 **I refuse to be just another politician who makes empty promises and then turns a blind eye to the system’s failings.** We’re taking on the powerful interests that rig the rules against everyday people. This campaign is about **us—working families—versus a system built to enrich the wealthy few.**
 
-Together, we **can** create a fair economy that rewards hard work, ensures stable homes, and protects jobs in the face of rapid change. **Join the fight**, and let’s make an economy that truly serves **everyone**—not just the donor class or the privileged elite.
+Together, we **can** create a fair economy that rewards hard work, ensures stable homes, **guarantees livable wages**, and protects jobs in the face of rapid change. **Join the fight**, and let’s make an economy that truly serves **everyone**—not just the donor class or the privileged elite.
