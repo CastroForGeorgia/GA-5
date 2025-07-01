@@ -21,8 +21,8 @@ menu_settings:
       url: '/policy/economy/'
     - title: 'Healthcare'
       url: '/policy/healthcare/'
-    - title: 'Equality'
-      url: '/policy/civil-rights-equality/'
+    - title: 'Housing'
+      url: '/policy/housing-community/'
 
 
 
