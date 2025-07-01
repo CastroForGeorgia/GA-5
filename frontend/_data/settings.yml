@@ -36,7 +36,6 @@ author:
 #-------------------------------
 # Hero Settings
 hero:
-  enable: true
   hero_role: "Candidate for U.S. House (GA-05) ∙ Fighting for working families, affordable housing, and economic dignity"
   hero_title: "Hi! I'm Andres <br> Fighting for Georgia's 5th District"
   hero_description: "Together, we can build a future that works for everyone—where equity, justice, and opportunity are more than promises, they're realities. Let's create meaningful change for Georgia's working families."
@@ -44,30 +43,14 @@ hero:
   hero_button_link: "https://actionnetwork.org/forms/connect-with-andres-share-your-vision"
 
 #-------------------------------
-# Projects Section Settings
-projects:
-  enable: true
-  projects_title: Campaign Projects
-  projects_description: See our ongoing initiatives and community projects that are making a difference in Georgia's 5th District.
-
-#-------------------------------
-# Policies Section Settings
-policies:
-  enable: true
-  policies_title: Policies
-  policies_description: Explore our vision for a fairer, more just Georgia's 5th District. Together, we'll build a thriving, equitable future.
-
-#-------------------------------
 # Blog Section Settings
 blog:
-  enable: true
   blog_title: Blog
   blog_description: Let's build a future that works for all of us.
 
 #-------------------------------
 # About Section Settings
 about:
-  enable: true
   about_image: 'about-me-photo.jpg'
   about_title: "Together for Change"
   about_description: "Let's build a future where every family in Georgia's 5th District has access to opportunity, equity, and justice. Join me in fighting for bold solutions that uplift working families, protect civil rights, and create a government that truly works for all of us."
@@ -76,7 +59,6 @@ about:
 #-------------------------------
 # Faq (Frequently Asked Questions) Settings
 faq:
-  enable: true
   faq_title: "Need Some Answers?"
   faq_description: "Get to know Andres Castro and his commitment to creating a fairer, more inclusive community in Georgia's 5th Congressional District."
   faq_items:

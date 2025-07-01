@@ -1,4 +1,4 @@
-{% if site.data.settings.about.enable == true %}
+{% if site.data.settings.about.about_image %}
 <div class="container-big">
   <!-- begin about -->
   <section class="section about">
@@ -7,21 +7,15 @@
         <div class="col col-12">
           <div class="about__inner">
 
-            {% if site.data.settings.about.about_image %}
             <div class="col col-6 col-t-8 col-m-10 push-3 push-t-2 push-m-1">
               <div class="about__image">
                 <img class="lazy" data-src="/{{ site.assets.images }}/{{ site.data.settings.about.about_image }}" alt="{{ site.data.settings.about.about_title }}">
               </div>
             </div>
-            {% endif %}
 
             <div class="section__info">
-              {% if site.data.settings.about.about_title %}
-                <h2 class="section__title">{{ site.data.settings.about.about_title }}</h2>
-              {% endif %}
-              {% if site.data.settings.about.about_description %}
-                <p class="section__description">{{ site.data.settings.about.about_description }}</p>
-              {% endif %}
+              <h2 class="section__title">{{ site.data.settings.about.about_title }}</h2>
+              <p class="section__description">{{ site.data.settings.about.about_description }}</p>
             </div>
 
           </div>

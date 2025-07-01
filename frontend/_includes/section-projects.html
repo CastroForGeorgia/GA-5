@@ -1,4 +1,4 @@
-{% if site.data.settings.projects.enable == true %}
+{% if site.projects.size > 0 %}
 <div class="container-big">
   <!-- begin section projects -->
   <section class="section projects">
@@ -30,12 +30,8 @@
           </div>
 
           <div class="section__info">
-            {% if site.data.settings.projects.projects_title %}
-              <h2 class="section__title">{{ site.data.settings.projects.projects_title }}</h2>
-            {% endif %}
-            {% if site.data.settings.projects.projects_description %}
-              <p class="section__description">{{ site.data.settings.projects.projects_description }}</p>
-            {% endif %}
+            <h2 class="section__title">Campaign Projects</h2>
+            <p class="section__description">See our ongoing initiatives and community projects that are making a difference in Georgia's 5th District.</p>
           </div>
 
         </div>
