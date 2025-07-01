@@ -153,6 +153,28 @@
   animation: pulse 3s ease-in-out infinite;
 }
 
+/* Collapsible Details Enhancements */
+details {
+  transition: all 0.3s ease;
+}
+
+details[open] summary ~ * {
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* Custom summary styling */
+summary {
+  transition: all 0.2s ease;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::marker {
+  display: none;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;

@@ -61,52 +61,17 @@
         </article>
         {% endfor %}
       </div>
-    </div>
-    {% endif %}
-
-    <!-- Other Policies - Compact Grid -->
-    {% assign other_policies = site.policies | where: "north_star", nil | sort: "date" | reverse %}
-    {% if other_policies.size > 0 %}
-    <div class="border-t border-gray-200 pt-16">
-      <div class="text-center mb-12">
-        <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-3">Additional Policy Positions</h3>
-        <p class="text-gray-600">Explore our comprehensive approach to the issues facing our district</p>
-      </div>
-      
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {% for policy in other_policies limit:8 %}
-        <article class="group">
-          <a href="{{ policy.url }}" class="block">
-            <div class="card p-4 hover:shadow-lg transition-all duration-200">
-              <!-- Small Policy Image -->
-              <div class="relative h-32 mb-4 overflow-hidden rounded-lg">
-                <img 
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
-                  src="{{ policy.image }}" 
-                  alt="{{ policy.title }}"
-                >
-              </div>
-              
-              <h5 class="font-semibold text-gray-900 mb-2 group-hover:text-campaign-primary transition-colors">
-                {{ policy.title }}
-              </h5>
-              <p class="text-sm text-gray-600 leading-relaxed">
-                {{ policy.description | truncate: 100 }}
-              </p>
-            </div>
-          </a>
-        </article>
-        {% endfor %}
-      </div>
       
       <!-- View All Policies Link -->
-      <div class="text-center mt-10">
+      <div class="text-center mt-12">
         <a href="/policies" class="btn btn-secondary">
           View All Policy Positions
         </a>
       </div>
     </div>
     {% endif %}
+
+
 
   </div>
 </section>
