@@ -11,17 +11,17 @@ module.exports = {
   ],
   theme: {
     extend: {
-      // Custom color palette for political campaign
+      // Original Castro Campaign color palette
       colors: {
         'campaign': {
-          'primary': '#1D4ED8',    // Strong blue for trust/reliability
-          'primary-dark': '#1E40AF',
-          'primary-light': '#3B82F6',
-          'secondary': '#DC2626',   // Red accent for urgency/action
-          'secondary-dark': '#B91C1C',
-          'secondary-light': '#EF4444',
-          'success': '#059669',     // Green for hope/progress
-          'warning': '#D97706',     // Orange for attention
+          'primary': '#2E8B57',    // Vibrant Verde (Forest Green)
+          'primary-dark': '#228B22', // Darker green for hover states
+          'primary-light': '#90EE90', // Lighter green for backgrounds
+          'secondary': '#C0392B',   // Bold Rojo (Deep Red)
+          'secondary-dark': '#A93226', // Darker red for hover states  
+          'secondary-light': '#E74C3C', // Lighter red for accents
+          'success': '#2E8B57',     // Use primary green for success
+          'warning': '#D97706',     // Keep orange for warnings
           'neutral': {
             50: '#F8FAFC',
             100: '#F1F5F9',
@@ -34,7 +34,12 @@ module.exports = {
             800: '#1E293B',
             900: '#0F172A',
           }
-        }
+        },
+        // Original campaign background colors
+        'cream': '#FFFDD0',      // Cream White
+        'peach': '#FFDAB9',      // Peach Georgia  
+        'sky': '#87CEEB',        // Sky Blue
+        'indigo': '#4B0082'      // Deep Indigo
       },
       
       // Typography scale

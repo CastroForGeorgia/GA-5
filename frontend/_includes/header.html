@@ -1,5 +1,5 @@
 <!-- begin header -->
-<header class="bg-white border-b border-gray-100 sticky top-0 z-50 backdrop-blur-sm bg-white/95">
+<header class="bg-cream border-b border-peach sticky top-0 z-50 backdrop-blur-sm" style="background-color: rgba(255, 253, 208, 0.95);">
   <div class="container-wide">
     <div class="flex items-center justify-between py-4">
       <!-- Logo -->
@@ -25,7 +25,7 @@
             <span>{{ item.title }}</span>
             <i class="fa-solid fa-chevron-down text-xs group-hover:rotate-180 transition-transform duration-200"></i>
           </button>
-          <div class="absolute top-full left-0 mt-1 w-56 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+          <div class="absolute top-full left-0 mt-1 w-56 border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50" style="background-color: var(--campaign-cream);">
             <div class="py-2">
               {% for submenu-item in item.submenu %}
               <a href="{{ submenu-item.url }}" 
@@ -55,7 +55,7 @@
             <i class="fa fa-language" aria-hidden="true"></i>
             <i class="fa-solid fa-chevron-down text-xs group-hover:rotate-180 transition-transform duration-200"></i>
           </button>
-          <div class="absolute top-full right-0 mt-1 w-40 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+          <div class="absolute top-full right-0 mt-1 w-40 border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50" style="background-color: var(--campaign-cream);">
             <div class="py-2">
               {% for lang in site.data.settings.languages.supported %}
               {% if lang.lang_code == "en" %}
@@ -97,7 +97,7 @@
     </div>
 
     <!-- Mobile Menu -->
-    <div class="lg:hidden border-t border-gray-100 bg-white" id="mobile-menu" style="display: none;">
+    <div class="lg:hidden border-t border-gray-100 bg-cream" id="mobile-menu" style="display: none;">
       <div class="py-4 space-y-2">
         {% for item in site.data.settings.menu_settings.menu_items offset:1 %}
         {% if item.submenu %}
@@ -107,7 +107,7 @@
             <span>{{ item.title }}</span>
             <i class="fa-solid fa-chevron-down text-sm transition-transform duration-200"></i>
           </button>
-          <div class="mobile-submenu bg-gray-50 border-t border-gray-100" style="display: none;">
+          <div class="mobile-submenu bg-peach border-t border-gray-100" style="display: none;">
             {% for submenu-item in item.submenu %}
             <a href="{{ submenu-item.url }}" 
                class="block px-8 py-3 text-sm text-gray-600 hover:text-campaign-primary hover:bg-gray-100 transition-colors duration-200 no-underline{% if page.url == submenu-item.url %} text-campaign-primary bg-gray-100{% endif %}">
