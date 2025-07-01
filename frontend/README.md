@@ -92,6 +92,7 @@ Sections automatically show/hide based on content availability:
 - Images: Place in `assets/images/`, reference by filename only
 - JavaScript: Place in `assets/js/`
 - CSS: Managed through SCSS in `_sass/`
+- Icons: Use Heroicons SVG icons directly in templates
 
 ## Adding New Content
 
@@ -178,6 +179,23 @@ frontend/
 - Images are lazy-loaded
 - CSS is compressed
 - JavaScript is minified
+
+### Icons
+We use Heroicons SVG icons directly in templates for simplicity and performance:
+
+```html
+<!-- Example: Arrow Right Icon -->
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+</svg>
+```
+
+**Benefits:**
+- No external dependencies
+- Perfect Tailwind CSS integration
+- Lightweight and fast
+- Easy to customize colors with `stroke="currentColor"`
+- Scalable with Tailwind size classes (`w-4 h-4`, `w-5 h-5`, etc.)
 
 ## Extending the System
 

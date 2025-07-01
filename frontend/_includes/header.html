@@ -23,7 +23,9 @@
         <div class="relative group">
           <button class="flex items-center space-x-1 px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary transition-colors duration-200">
             <span>{{ item.title }}</span>
-            <i class="fa-solid fa-chevron-down text-xs group-hover:rotate-180 transition-transform duration-200"></i>
+            <svg class="w-4 h-4 group-hover:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
           </button>
           <div class="absolute top-full left-0 mt-1 w-56 border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50" style="background-color: var(--campaign-cream);">
             <div class="py-2">
@@ -52,8 +54,10 @@
         <div class="relative group">
           {% assign current_lang_code = site.data.settings.languages.default %}
           <button class="flex items-center space-x-1 px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary transition-colors duration-200">
-            <i class="fa fa-language" aria-hidden="true"></i>
-            <i class="fa-solid fa-chevron-down text-xs group-hover:rotate-180 transition-transform duration-200"></i>
+            <span class="text-sm">🌐</span>
+            <svg class="w-4 h-4 group-hover:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
           </button>
           <div class="absolute top-full right-0 mt-1 w-40 border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50" style="background-color: var(--campaign-cream);">
             <div class="py-2">
@@ -76,7 +80,9 @@
 
         <!-- Search Button -->
         <button class="flex items-center space-x-2 px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary transition-colors duration-200" id="search-toggle">
-          <i class="fa-solid fa-magnifying-glass"></i>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
           <span class="hidden xl:inline">Search</span>
         </button>
 
@@ -105,7 +111,9 @@
         <div class="mobile-dropdown">
           <button class="flex items-center justify-between w-full px-4 py-3 text-base font-medium text-gray-700 hover:text-campaign-primary hover:bg-gray-50 transition-colors duration-200">
             <span>{{ item.title }}</span>
-            <i class="fa-solid fa-chevron-down text-sm transition-transform duration-200"></i>
+            <svg class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
           </button>
           <div class="mobile-submenu bg-peach border-t border-gray-100" style="display: none;">
             {% for submenu-item in item.submenu %}
@@ -127,7 +135,9 @@
         <!-- Mobile Actions -->
         <div class="border-t border-gray-100 pt-4 px-4 space-y-3">
           <button class="flex items-center space-x-3 w-full py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary transition-colors duration-200" id="mobile-search-toggle">
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
             <span>Search</span>
           </button>
           
