@@ -1,37 +1,72 @@
 {% assign faqs = site.faqs | sort: "order" %}
 {% if faqs.size > 0 %}
-<div class="container-big">
-  <!-- begin section faq -->
-  <section class="section faq" id="faq">
-    <div class="container">
-      <div class="row">
-        <div class="col col-12">
+<!-- begin faq section -->
+<section class="py-20 bg-cream" id="faq" aria-labelledby="faq-heading">
+  <div class="container-wide">
+    
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 id="faq-heading" class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Frequently Asked Questions
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        Get to know Andres Castro and his commitment to creating a fairer, more inclusive community in Georgia's 5th Congressional District.
+      </p>
+    </div>
 
-          <div class="section__info">
-            <h2 class="section__title">Need Some Answers?</h2>
-            <p class="section__description">Get to know Andres Castro and his commitment to creating a fairer, more inclusive community in Georgia's 5th Congressional District.</p>
-          </div>
-
-          <div class="faq__inner">
-            <div class="row">
-              {% for faq in faqs %}
-              <div class="col col-6 col-d-12">
-                <div class="faq__item">
-                  <h3 class="faq__title">
-                    <a href="{{ faq.url }}">{{ faq.title }}</a>
-                  </h3>
-                  <p class="faq__description">{{ faq.content | strip_html | truncatewords: 30 }}</p>
-                  <a href="{{ faq.url }}" class="faq__read-more">Read more →</a>
-                </div>
-              </div>
-              {% endfor %}
+    <!-- FAQ Accordion -->
+    <div class="max-w-4xl mx-auto space-y-4">
+      {% for faq in faqs %}
+      <details class="group/faq bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-200 hover:shadow-md">
+        <summary class="cursor-pointer list-none p-6 hover:bg-gray-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-campaign-primary focus:ring-offset-2">
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg md:text-xl font-semibold text-gray-900 pr-4 group-open/faq:text-campaign-primary transition-colors">
+              {{ faq.title }}
+            </h3>
+            <div class="flex-shrink-0 w-8 h-8 bg-campaign-primary/10 rounded-full flex items-center justify-center group-open/faq:bg-campaign-primary group-open/faq:text-white transition-all duration-200">
+              <i class="fa-solid fa-plus text-sm group-open/faq:rotate-45 transition-transform duration-200" aria-hidden="true"></i>
             </div>
           </div>
-
+        </summary>
+        
+        <div class="px-6 pb-6 pt-2 border-t border-gray-50 animate-fade-in">
+          <div class="prose prose-gray max-w-none">
+            <p class="text-gray-700 leading-relaxed mb-4">
+              {{ faq.content | strip_html | truncatewords: 50 }}
+            </p>
+            <a 
+              href="{{ faq.url }}" 
+              class="inline-flex items-center space-x-2 text-campaign-primary font-semibold hover:text-campaign-primary/80 transition-colors group"
+              aria-label="Read full answer for {{ faq.title }}"
+            >
+              <span>Read Full Answer</span>
+              <i class="fa-solid fa-arrow-right text-sm transition-transform group-hover:translate-x-1" aria-hidden="true"></i>
+            </a>
+          </div>
         </div>
+      </details>
+      {% endfor %}
+    </div>
+
+    <!-- Contact CTA -->
+    <div class="text-center mt-16 p-8 bg-gradient-to-r from-campaign-primary/5 to-campaign-secondary/5 rounded-2xl border border-campaign-primary/10">
+      <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-3">
+        Have More Questions?
+      </h3>
+      <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
+        Can't find what you're looking for? I'd love to hear from you directly and answer any questions about my campaign or policy positions.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="btn btn-primary">
+          Get in Touch
+        </a>
+        <a href="/about" class="btn btn-secondary">
+          Learn More About Andres
+        </a>
       </div>
     </div>
-  </section>
-  <!-- end section faq -->
-</div>
+
+  </div>
+</section>
+<!-- end faq section -->
 {% endif %}
