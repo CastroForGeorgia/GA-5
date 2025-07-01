@@ -36,6 +36,13 @@ collections:
   policies:
     output: true
     permalink: /policy/:slug/
+  sections:
+    output: false  # Sections are included, not standalone pages
+  faqs:
+    output: true
+    permalink: /faq/:slug/
+  testimonials:
+    output: false  # Testimonials are included, not standalone pages
 
 # Pages Path
 defaults:
@@ -63,6 +70,21 @@ defaults:
       type: "policies"
     values:
       layout: "policy"
+  - scope:
+      path: "content/_sections"
+      type: "sections"
+    values:
+      layout: "section"
+  - scope:
+      path: "content/_faqs"
+      type: "faqs"
+    values:
+      layout: "faq"
+  - scope:
+      path: "content/_testimonials"
+      type: "testimonials"
+    values:
+      layout: "testimonial"
 
 sass:
   sass_dir: _sass

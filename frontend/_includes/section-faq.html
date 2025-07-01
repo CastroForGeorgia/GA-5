@@ -1,23 +1,27 @@
-{% if site.data.settings.faq.faq_items.size > 0 %}
+{% assign faqs = site.faqs | sort: "order" %}
+{% if faqs.size > 0 %}
 <div class="container-big">
   <!-- begin section faq -->
-  <section class="section faq">
+  <section class="section faq" id="faq">
     <div class="container">
       <div class="row">
         <div class="col col-12">
 
           <div class="section__info">
-            <h2 class="section__title">{{ site.data.settings.faq.faq_title }}</h2>
-            <p class="section__description">{{ site.data.settings.faq.faq_description }}</p>
+            <h2 class="section__title">Need Some Answers?</h2>
+            <p class="section__description">Get to know Andres Castro and his commitment to creating a fairer, more inclusive community in Georgia's 5th Congressional District.</p>
           </div>
 
           <div class="faq__inner">
             <div class="row">
-              {% for item in site.data.settings.faq.faq_items %}
+              {% for faq in faqs %}
               <div class="col col-6 col-d-12">
                 <div class="faq__item">
-                  <h3 class="faq__title">{{ item.title }}</h3>
-                  <p class="faq__description">{{ item.description }}</p>
+                  <h3 class="faq__title">
+                    <a href="{{ faq.url }}">{{ faq.title }}</a>
+                  </h3>
+                  <p class="faq__description">{{ faq.content | strip_html | truncatewords: 30 }}</p>
+                  <a href="{{ faq.url }}" class="faq__read-more">Read more →</a>
                 </div>
               </div>
               {% endfor %}

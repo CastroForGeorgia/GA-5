@@ -1,5 +1,18 @@
+{% assign subscribe = site.sections | where: "section_type", "subscribe" | first %}
 <!-- begin subscribe -->
-<section class="section">
+<section class="section subscribe">
+  {% if subscribe %}
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+        <div class="section__info">
+          <h2 class="section__title">{{ subscribe.subscribe_title }}</h2>
+          <p class="section__description">{{ subscribe.subscribe_description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
   <link href='https://actionnetwork.org/css/style-embed-whitelabel-v3.css' rel='stylesheet' type='text/css' />
   <script src='https://actionnetwork.org/widgets/v5/form/subscribe-form?format=js&source=widget'></script>
   <div id='can-form-area-subscribe-form'><!-- this div is the target for our HTML insertion --></div>
