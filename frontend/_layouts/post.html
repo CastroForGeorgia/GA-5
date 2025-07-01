@@ -2,26 +2,26 @@
 layout: default
 ---
 
-<div class="container">
-  <div class="post-head">
+<div class="container mx-auto px-4 py-12 max-w-4xl">
+  <div class="post-head mb-12">
 
-    <div class="post-info">
+    <div class="post-info mb-8">
       {% if page.tags.size >= 1 %}
-      <div class="post-tags">
+      <div class="flex flex-wrap gap-2 mb-4">
         {% for tag in page.tags %}
-          <a href="{{ site.baseurl }}/tags/?tag={{ tag | downcase | url_encode }}" class="post__tag">{{ tag }}</a>
+          <a href="{{ site.baseurl }}/tags/?tag={{ tag | downcase | url_encode }}" class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-campaign-primary/10 text-campaign-primary hover:bg-campaign-primary/20 transition-colors duration-200 no-underline">{{ tag }}</a>
         {% endfor %}
       </div>
       {% endif %}
 
-      <div class="post-meta">
+      <div class="flex flex-wrap items-center gap-2 text-sm text-gray-500 mb-6">
         {% if site.data.settings.author.author_name %}
-        <a href="{{ '/about/' | relative_url }}" class="post-author">{{ site.data.settings.author.author_name }}</a>
-        ∙
+        <a href="{{ '/about/' | relative_url }}" class="text-campaign-primary hover:text-campaign-primary/80 font-medium no-underline">{{ site.data.settings.author.author_name }}</a>
+        <span class="text-gray-300">•</span>
         {% endif %}
-        <time class="post-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</time>
-        ∙
-        <span class="post-minutes">
+        <time class="text-gray-500" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</time>
+        <span class="text-gray-300">•</span>
+        <span class="text-gray-500">
           {% assign words = page.content | number_of_words %}
           {% if words < 360 %}
             1 min read
@@ -31,39 +31,39 @@ layout: default
         </span>
       </div>
 
-      <h1 class="post-title">{{ page.title | escape }}</h1>
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">{{ page.title | escape }}</h1>
 
       {% if page.description %}
-        <p class="post-description">{{ page.description }}</p>
+        <p class="text-xl text-gray-600 leading-relaxed">{{ page.description }}</p>
       {% endif %}
     </div>
 
     {% if page.video_embed %}
-    <div class="post-video">
-      <div class="post-video__wrap">
-        <iframe src="{{ page.video_embed }}" width="640" height="360" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    <div class="post-video mb-6">
+      <div class="relative aspect-video rounded-2xl overflow-hidden shadow-lg">
+        <iframe src="{{ page.video_embed }}" class="absolute inset-0 w-full h-full" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
       </div>
     </div>
     {% else %}
     {% if page.image %}
-    <div class="post-image">
-      <img class="lazy" data-src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+    <div class="post-image mb-6">
+      <img class="w-full h-64 md:h-96 object-cover rounded-2xl shadow-lg lazy" data-src="{{ page.image | relative_url }}" alt="{{ page.title }}">
     </div>
     {% endif %}
     {% endif %}
 
     {% if page.image_caption %}
-    <div class="post-image-caption">{{ page.image_caption | markdownify | replace: '<p>' | replace: '</p>' }}</div>
+    <div class="text-sm text-gray-500 text-center mt-2">{{ page.image_caption | markdownify | replace: '<p>' | replace: '</p>' }}</div>
     {% endif %}
 
   </div>
 </div>
 
 <!-- begin post -->
-<div class="container">
+<div class="container mx-auto px-4 pb-16 max-w-4xl">
 
   <article class="post">
-    <div class="post__content">
+    <div class="prose prose-lg prose-gray max-w-none prose-headings:text-gray-900 prose-headings:font-bold prose-p:text-gray-700 prose-p:leading-relaxed prose-a:text-campaign-primary prose-a:no-underline hover:prose-a:underline prose-strong:text-gray-900 prose-blockquote:border-campaign-primary prose-blockquote:text-gray-600">
       {{ content }}
 
       {% include share-buttons.html %}

@@ -2,38 +2,38 @@
 layout: default
 ---
 
-<div class="container">
+<div class="container mx-auto px-4 py-12 max-w-6xl">
 
-  <div class="policy-page">
-    <div class="policy-page__left">
+  <div class="grid lg:grid-cols-2 gap-12 items-start mb-12">
+    <div class="order-2 lg:order-1">
       {% if page.image %}
-      <div class="policy-page__image">
-        <img class="lazy" data-src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+      <div class="policy-page__image mb-6">
+        <img class="w-full h-64 md:h-80 object-cover rounded-2xl shadow-lg lazy" data-src="{{ page.image | relative_url }}" alt="{{ page.title }}">
       </div>
       {% endif %}
       {% if page.image_caption %}
-      <div class="page__image__caption">{{ page.image_caption | markdownify | replace: '<p>' | replace: '</p>' }}</div>
+      <div class="text-sm text-gray-500 text-center">{{ page.image_caption | markdownify | replace: '<p>' | replace: '</p>' }}</div>
       {% endif %}
     </div>
 
-    <div class="policy-page__right">
+    <div class="order-1 lg:order-2">
       <div class="policy-page__head">
-        <div class="policy-page__meta">
+        <div class="flex flex-wrap items-center gap-2 text-sm text-gray-500 mb-4">
         {% if page.label %}
-          <span class="policy-page__label">{{ page.label }}</span>
-          ∙
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-campaign-secondary/10 text-campaign-secondary">{{ page.label }}</span>
+          <span class="text-gray-300">•</span>
         {% endif %}
-          <time class="policy-page__date" datetime="{{ page.date | date_to_xmlschema }}">{% assign date_format = site.minima.date_format | default: "%d %-B, %Y" %}{{ page.date | date: date_format }}</time>
+          <time class="text-gray-500" datetime="{{ page.date | date_to_xmlschema }}">{% assign date_format = site.minima.date_format | default: "%d %-B, %Y" %}{{ page.date | date: date_format }}</time>
         </div>
-        <h1 class="policy-page__title">{{ page.title }}</h1>
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">{{ page.title }}</h1>
         {% if page.description %}
-          <p class="policy-page__description">{{ page.description }}</p>
+          <p class="text-xl text-gray-600 leading-relaxed">{{ page.description }}</p>
         {% endif %}
       </div>
     </div>
   </div>
 
-  <div class="policy__content">
+  <div class="prose prose-lg prose-gray max-w-none prose-headings:text-gray-900 prose-headings:font-bold prose-p:text-gray-700 prose-p:leading-relaxed prose-a:text-campaign-primary prose-a:no-underline hover:prose-a:underline prose-strong:text-gray-900 prose-blockquote:border-campaign-primary prose-blockquote:text-gray-600 prose-ul:text-gray-700 prose-ol:text-gray-700">
     {{ content }}
 
     {% include share-buttons.html %}

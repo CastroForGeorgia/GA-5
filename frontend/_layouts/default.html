@@ -3,19 +3,19 @@
 
 {% include head.html %}
 
-<body class="{% if page.url == '/' %}home-page{% endif %}">
+<body class="{% if page.url == '/' %}home-page{% endif %} min-h-screen bg-white text-gray-900 font-sans">
 
   {% if site.data.settings.google-analytics %}
     {% include google-analytics.html %}
   {% endif %}
 
   <!-- begin global wrap -->
-  <div class="global-wrap">
+  <div class="min-h-screen flex flex-col">
 
     {% include header.html %}
 
     <!-- begin content -->
-    <main class="content" aria-label="Content">
+    <main class="flex-1" aria-label="Content">
       {{ content }}
     </main>
     <!-- end content -->

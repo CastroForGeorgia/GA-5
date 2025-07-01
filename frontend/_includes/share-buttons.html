@@ -1,15 +1,59 @@
 <!-- begin share -->
-<!-- <div class="share">
-  <ul class="share__list list-reset">
-    <li class="share__item">
-      <a class="share__link share__facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ site.baseurl }}{{ page.url }}"
-        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
-        title="Share on Facebook" rel="nofollow"><i class="fa-brands fa-facebook"></i></a>
-    </li>
-    <li class="share__item">
-      <a class="share__link share__linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ site.baseurl }}{{ page.url }}&title={{ page.title | uri_escape }}&summary={{ page.description | uri_escape }}&source={{ site.title | uri_escape }}"
-      onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn" rel="nofollow"><i class="fa-brands fa-linkedin"></i></a>
-    </li>
-  </ul>
-</div> -->
+<div class="mt-12 pt-8 border-t border-gray-200">
+  <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+    <h3 class="text-lg font-semibold text-gray-900">Share This Article</h3>
+    
+    <div class="flex items-center space-x-3">
+      <!-- Facebook Share -->
+      <a class="flex items-center justify-center w-12 h-12 bg-blue-600 hover:bg-blue-700 text-white rounded-full transition-colors duration-200 group" 
+         href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ site.baseurl }}{{ page.url }}"
+         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+         title="Share on Facebook" rel="nofollow">
+        <i class="fa-brands fa-facebook text-lg group-hover:scale-110 transition-transform duration-200"></i>
+      </a>
+      
+      <!-- LinkedIn Share -->
+      <a class="flex items-center justify-center w-12 h-12 bg-blue-700 hover:bg-blue-800 text-white rounded-full transition-colors duration-200 group" 
+         href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ site.baseurl }}{{ page.url }}&title={{ page.title | uri_escape }}&summary={{ page.description | uri_escape }}&source={{ site.title | uri_escape }}"
+         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" 
+         title="Share on LinkedIn" rel="nofollow">
+        <i class="fa-brands fa-linkedin text-lg group-hover:scale-110 transition-transform duration-200"></i>
+      </a>
+      
+      <!-- Twitter Share -->
+      <a class="flex items-center justify-center w-12 h-12 bg-sky-500 hover:bg-sky-600 text-white rounded-full transition-colors duration-200 group" 
+         href="https://twitter.com/intent/tweet?url={{ site.url }}{{ site.baseurl }}{{ page.url }}&text={{ page.title | uri_escape }}&via=CastroForGA5"
+         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" 
+         title="Share on Twitter" rel="nofollow">
+        <i class="fa-brands fa-twitter text-lg group-hover:scale-110 transition-transform duration-200"></i>
+      </a>
+      
+      <!-- Copy Link -->
+      <button class="flex items-center justify-center w-12 h-12 bg-gray-600 hover:bg-gray-700 text-white rounded-full transition-colors duration-200 group" 
+              onclick="copyToClipboard('{{ site.url }}{{ site.baseurl }}{{ page.url }}')" 
+              title="Copy Link">
+        <i class="fa-solid fa-link text-lg group-hover:scale-110 transition-transform duration-200"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(function() {
+      // Show temporary success message
+      const button = event.target.closest('button');
+      const icon = button.querySelector('i');
+      const originalClass = icon.className;
+      
+      icon.className = 'fa-solid fa-check text-lg';
+      button.title = 'Copied!';
+      
+      setTimeout(() => {
+        icon.className = originalClass;
+        button.title = 'Copy Link';
+      }, 2000);
+    });
+  }
+</script>
 <!-- end share -->

@@ -1,101 +1,142 @@
 <!-- begin header -->
-<header class="header">
-  <div class="container-big">
-    <div class="row">
-      <div class="header__inner col col-12">
+<header class="bg-white border-b border-gray-100 sticky top-0 z-50 backdrop-blur-sm bg-white/95">
+  <div class="container-wide">
+    <div class="flex items-center justify-between py-4">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <a class="flex items-center space-x-3 no-underline" href="{{ site.baseurl }}/">
+          {% if site.data.settings.logo %}
+          <img class="h-12 w-auto transition-opacity hover:opacity-80" 
+               src="/{{ site.assets.images }}/{{ site.data.settings.logo }}"
+               alt="{{ site.data.settings.title }}">
+          {% else %}
+          <span class="text-xl font-bold text-gray-900">{{ site.data.settings.title }}</span>
+          {% endif %}
+        </a>
+      </div>
 
-        <div class="logo">
-          <a class="logo__link" href="{{ site.baseurl }}/">
-            {% if site.data.settings.logo %}
-            <img class="logo__image" src="/{{ site.assets.images }}/{{ site.data.settings.logo }}"
-              alt="{{ site.data.settings.title }}">
-            <img class="logo__image__dark" src="/{{ site.assets.images }}/{{ site.data.settings.logo_dark }}"
-              alt="{{ site.data.settings.title }}">
-            {% else %}
-            {{ site.data.settings.title }}
-            {% endif %}
-          </a>
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex items-center space-x-8" aria-label="Main menu">
+        {% for item in site.data.settings.menu_settings.menu_items offset:1 %}
+        {% if item.submenu %}
+        <!-- Dropdown Menu Item -->
+        <div class="relative group">
+          <button class="flex items-center space-x-1 px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary transition-colors duration-200">
+            <span>{{ item.title }}</span>
+            <i class="fa-solid fa-chevron-down text-xs group-hover:rotate-180 transition-transform duration-200"></i>
+          </button>
+          <div class="absolute top-full left-0 mt-1 w-56 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            <div class="py-2">
+              {% for submenu-item in item.submenu %}
+              <a href="{{ submenu-item.url }}" 
+                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary transition-colors duration-200 no-underline{% if page.url == submenu-item.url %} text-campaign-primary bg-gray-50{% endif %}">
+                {{ submenu-item.title }}
+              </a>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        {% else %}
+        <!-- Regular Menu Item -->
+        <a href="{{ item.url | relative_url }}" 
+           class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary transition-colors duration-200 no-underline{% if page.url == item.url %} text-campaign-primary{% endif %}">
+          {{ item.title }}
+        </a>
+        {% endif %}
+        {% endfor %}
+      </nav>
+
+      <!-- Desktop Actions -->
+      <div class="hidden lg:flex items-center space-x-4">
+        <!-- Language Dropdown -->
+        <div class="relative group">
+          {% assign current_lang_code = site.data.settings.languages.default %}
+          <button class="flex items-center space-x-1 px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary transition-colors duration-200">
+            <i class="fa fa-language" aria-hidden="true"></i>
+            <i class="fa-solid fa-chevron-down text-xs group-hover:rotate-180 transition-transform duration-200"></i>
+          </button>
+          <div class="absolute top-full right-0 mt-1 w-40 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            <div class="py-2">
+              {% for lang in site.data.settings.languages.supported %}
+              {% if lang.lang_code == "en" %}
+              <a href="https://castroforgeorgia.com{{ page.url | prepend: '/' | remove_first: '/' }}" 
+                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary transition-colors duration-200 no-underline{% if current_lang_code == lang.lang_code %} text-campaign-primary bg-gray-50{% endif %}">
+                {{ lang.lang_name }}
+              </a>
+              {% else %}
+              <a href="https://{{ lang.lang_code }}.castroforgeorgia.com{{ page.url | prepend: '/' | remove_first: '/' }}" 
+                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary transition-colors duration-200 no-underline{% if current_lang_code == lang.lang_code %} text-campaign-primary bg-gray-50{% endif %}">
+                {{ lang.lang_name }}
+              </a>
+              {% endif %}
+              {% endfor %}
+            </div>
+          </div>
         </div>
 
-        <!-- Donate button isolated in its own container for constant visibility -->
-        <div class="donate-container">
+        <!-- Search Button -->
+        <button class="flex items-center space-x-2 px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary transition-colors duration-200" id="search-toggle">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span class="hidden xl:inline">Search</span>
+        </button>
+
+        <!-- Donate Button -->
+        {% assign donate_item = site.data.settings.menu_settings.menu_items[0] %}
+        <a href="{{ donate_item.url | relative_url }}" 
+           class="btn btn-donate{% if page.url == donate_item.url %} opacity-80{% endif %}">
+          {{ donate_item.title }}
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button class="lg:hidden flex flex-col items-center justify-center w-8 h-8 space-y-1 group" id="mobile-menu-toggle">
+        <span class="block w-5 h-0.5 bg-gray-600 group-hover:bg-campaign-primary transition-colors duration-200 transform group-[.active]:rotate-45 group-[.active]:translate-y-1.5"></span>
+        <span class="block w-5 h-0.5 bg-gray-600 group-hover:bg-campaign-primary transition-colors duration-200 group-[.active]:opacity-0"></span>
+        <span class="block w-5 h-0.5 bg-gray-600 group-hover:bg-campaign-primary transition-colors duration-200 transform group-[.active]:-rotate-45 group-[.active]:-translate-y-1.5"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="lg:hidden border-t border-gray-100 bg-white" id="mobile-menu" style="display: none;">
+      <div class="py-4 space-y-2">
+        {% for item in site.data.settings.menu_settings.menu_items offset:1 %}
+        {% if item.submenu %}
+        <!-- Mobile Dropdown -->
+        <div class="mobile-dropdown">
+          <button class="flex items-center justify-between w-full px-4 py-3 text-base font-medium text-gray-700 hover:text-campaign-primary hover:bg-gray-50 transition-colors duration-200">
+            <span>{{ item.title }}</span>
+            <i class="fa-solid fa-chevron-down text-sm transition-transform duration-200"></i>
+          </button>
+          <div class="mobile-submenu bg-gray-50 border-t border-gray-100" style="display: none;">
+            {% for submenu-item in item.submenu %}
+            <a href="{{ submenu-item.url }}" 
+               class="block px-8 py-3 text-sm text-gray-600 hover:text-campaign-primary hover:bg-gray-100 transition-colors duration-200 no-underline{% if page.url == submenu-item.url %} text-campaign-primary bg-gray-100{% endif %}">
+              {{ submenu-item.title }}
+            </a>
+            {% endfor %}
+          </div>
+        </div>
+        {% else %}
+        <a href="{{ item.url | relative_url }}" 
+           class="block px-4 py-3 text-base font-medium text-gray-700 hover:text-campaign-primary hover:bg-gray-50 transition-colors duration-200 no-underline{% if page.url == item.url %} text-campaign-primary bg-gray-50{% endif %}">
+          {{ item.title }}
+        </a>
+        {% endif %}
+        {% endfor %}
+        
+        <!-- Mobile Actions -->
+        <div class="border-t border-gray-100 pt-4 px-4 space-y-3">
+          <button class="flex items-center space-x-3 w-full py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary transition-colors duration-200" id="mobile-search-toggle">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span>Search</span>
+          </button>
+          
           {% assign donate_item = site.data.settings.menu_settings.menu_items[0] %}
-          <a href="{{ donate_item.url | relative_url }}"
-            class="donate-button nav__link{% if page.url == donate_item.url %} active-link{% endif %}">
+          <a href="{{ donate_item.url | relative_url }}" 
+             class="btn btn-donate w-full text-center{% if page.url == donate_item.url %} opacity-80{% endif %}">
             {{ donate_item.title }}
           </a>
         </div>
-
-        <div class="hamburger">
-          <div></div>
-        </div>
-
-        <nav class="main-nav" aria-label="Main menu">
-
-
-          <div class="main-nav__box">
-            <ul class="nav__list list-reset">
-              {% for item in site.data.settings.menu_settings.menu_items offset:1 %}
-              {% if item.submenu %}
-              <li class="nav__item dropdown">
-                <a href="#" class="nav__link dropdown-toggle">
-                  {{ item.title }} <i class="fa-solid fa-chevron-down"></i>
-                </a>
-                <div class="dropdown-menu">
-                  {% for submenu-item in item.submenu %}
-                  <a href="{{ submenu-item.url }}"
-                    class="nav__link{% if page.url == submenu-item.url %} active-link{% endif %}">
-                    {{ submenu-item.title }}
-                  </a>
-                  {% endfor %}
-                </div>
-              </li>
-              {% else %}
-              <li class="nav__item">
-                <a href="{{ item.url | relative_url }}"
-                  class="nav__link{% if page.url == item.url %} active-link{% endif %}">
-                  {{ item.title }}
-                </a>
-              </li>
-              {% endif %}
-              {% endfor %}
-            </ul>
-          </div>
-
-          <div class="nav-button">
-            <ul class="nav__list list-reset">
-              <li class="nav__item dropdown">
-                {% assign current_lang_code = site.data.settings.languages.default %}
-                {% assign current_lang = site.data.settings.languages.supported | where: "lang_code", current_lang_code
-                | first %}
-                <a href="#" class="nav__link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
-                  <i class="fa fa-language" aria-hidden="true"></i>
-                  <i class="fa-solid fa-chevron-down"></i>
-                </a>
-                <div class="dropdown-menu" aria-label="Language options">
-                  {% for lang in site.data.settings.languages.supported %}
-                  {% if lang.lang_code == "en" %}
-                  <a href="https://castroforgeorgia.com{{ page.url | prepend: '/' | remove_first: '/' }}"
-                    class="nav__link{% if current_lang_code == lang.lang_code %} active-link{% endif %}">
-                    {{ lang.lang_name }}
-                  </a>
-                  {% else %}
-                  <a href="https://{{ lang.lang_code }}.castroforgeorgia.com{{ page.url | prepend: '/' | remove_first: '/' }}"
-                    class="nav__link{% if current_lang_code == lang.lang_code %} active-link{% endif %}">
-                    {{ lang.lang_name }}
-                  </a>
-                  {% endif %}
-                  {% endfor %}
-                </div>
-              </li>
-            </ul>
-            <div class="search-button">
-              <i class="search-button__icon fa-solid fa-magnifying-glass"></i>
-              <span class="search-button__text">Search</span>
-            </div>
-          </div>
-        </nav>
-
       </div>
     </div>
   </div>
@@ -103,3 +144,35 @@
 <!-- end header -->
 
 {% include search.html %}
+
+<script>
+  // Mobile menu toggle
+  document.getElementById('mobile-menu-toggle').addEventListener('click', function() {
+    const menu = document.getElementById('mobile-menu');
+    const button = this;
+    
+    if (menu.style.display === 'none' || menu.style.display === '') {
+      menu.style.display = 'block';
+      button.classList.add('active');
+    } else {
+      menu.style.display = 'none';
+      button.classList.remove('active');
+    }
+  });
+
+  // Mobile dropdown toggles
+  document.querySelectorAll('.mobile-dropdown button').forEach(button => {
+    button.addEventListener('click', function() {
+      const submenu = this.nextElementSibling;
+      const icon = this.querySelector('i');
+      
+      if (submenu.style.display === 'none' || submenu.style.display === '') {
+        submenu.style.display = 'block';
+        icon.style.transform = 'rotate(180deg)';
+      } else {
+        submenu.style.display = 'none';
+        icon.style.transform = 'rotate(0deg)';
+      }
+    });
+  });
+</script>

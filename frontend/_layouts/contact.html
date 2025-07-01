@@ -3,48 +3,56 @@
 
 {% include head.html %}
 
-<body class="contact-page">
+<body class="min-h-screen bg-white">
 
   {% if site.data.settings.google-analytics %}
     {% include google-analytics.html %}
   {% endif %}
 
   <!-- begin contact -->
-  <div class="contact">
-    <div class="contact__left">
+  <div class="min-h-screen flex">
+    <div class="hidden lg:flex lg:w-1/2 xl:w-2/5">
       {% if page.image %}
-      <div class="contact__image">
-        <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" decoding="async" loading="lazy">
+      <div class="w-full h-full relative overflow-hidden bg-gray-100">
+        <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="absolute inset-0 w-full h-full object-cover" decoding="async" loading="lazy">
       </div>
       {% endif %}
     </div>
 
-    <div class="contact__right">
-      <div class="contact__inner">
-        <a href="{{ '/' | relative_url }}" class="contact__link"><i class="fa-solid fa-arrow-left"></i> Back to home</a>
-        <div class="contact__head">
+    <div class="flex-1 lg:w-1/2 xl:w-3/5 flex items-center justify-center p-8 lg:p-12">
+      <div class="w-full max-w-lg">
+        <a href="{{ '/' | relative_url }}" class="inline-flex items-center gap-2 px-4 py-2 mb-10 text-sm font-medium text-gray-600 hover:text-campaign-primary border border-gray-200 rounded-xl hover:border-campaign-primary/30 transition-colors duration-200 no-underline">
+          <i class="fa-solid fa-arrow-left text-sm"></i>
+          Back to home
+        </a>
+        
+        <div class="mb-8">
           {% if page.title %}
-            <h1 class="contact__title">{{ page.title }}</h1>
+            <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">{{ page.title }}</h1>
           {% endif %}
           {% if page.description %}
-            <p class="contact__description">{{ page.description }}</p>
+            <p class="text-lg text-gray-600 leading-relaxed">{{ page.description }}</p>
           {% endif %}
         </div>
-        <form class="form" action="{% if site.data.settings.contact.contact_email %}https://formspree.io/f/{{site.data.settings.contact.contact_email}}{% else %}#{% endif %}" method="POST">
-          <div class="form__group">
-            <label class="form__label screen-reader-text" for="form-name">Your Name</label>
-            <input class="form__input" id="form-name" type="text" name="name" placeholder="Your name" required>
+        
+        <form class="space-y-6" action="{% if site.data.settings.contact.contact_email %}https://formspree.io/f/{{site.data.settings.contact.contact_email}}{% else %}#{% endif %}" method="POST">
+          <div>
+            <label class="sr-only" for="form-name">Your Name</label>
+            <input class="w-full px-6 py-4 text-lg bg-gray-50 border-0 rounded-2xl placeholder-gray-500 text-gray-900 focus:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-campaign-primary/20 transition-all duration-200" id="form-name" type="text" name="name" placeholder="Your name" required>
           </div>
-          <div class="form__group">
-            <label class="form__label screen-reader-text" for="form-email">Your Email</label>
-            <input class="form__input" id="form-email" type="email" name="_replyto" placeholder="Your email" required>
+          
+          <div>
+            <label class="sr-only" for="form-email">Your Email</label>
+            <input class="w-full px-6 py-4 text-lg bg-gray-50 border-0 rounded-2xl placeholder-gray-500 text-gray-900 focus:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-campaign-primary/20 transition-all duration-200" id="form-email" type="email" name="_replyto" placeholder="Your email" required>
           </div>
-          <div class="form__group">
-            <label class="form__label screen-reader-text" for="form-text">Your Message</label>
-            <textarea class="form__input" id="form-text" name="text" rows="5" placeholder="Your message" required></textarea>
+          
+          <div>
+            <label class="sr-only" for="form-text">Your Message</label>
+            <textarea class="w-full px-6 py-4 text-lg bg-gray-50 border-0 rounded-xl placeholder-gray-500 text-gray-900 focus:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-campaign-primary/20 transition-all duration-200 resize-y" id="form-text" name="text" rows="5" placeholder="Your message" required></textarea>
           </div>
-          <div class="form__group">
-            <button class="button button--primary" type="submit">{{ site.data.settings.contact.contact_button_text }}</button>
+          
+          <div>
+            <button class="btn btn-primary w-full" type="submit">{{ site.data.settings.contact.contact_button_text }}</button>
           </div>
         </form>
       </div>

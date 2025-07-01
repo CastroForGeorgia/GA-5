@@ -1,35 +1,50 @@
 {% assign testimonials = site.testimonials | where: "featured", true | sort: "order" %}
 {% if testimonials.size > 0 %}
 <!-- begin testimonials -->
-<section class="section testimonials">
-  <div class="container">
-    <div class="row">
-      <div class="col col-12">
+<section class="py-20 bg-gray-50">
+  <div class="container-narrow">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What People Are Saying</h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">Hear from community members who support Andres Castro's vision for Georgia's 5th Congressional District.</p>
+    </div>
 
-        <div class="section__info">
-          <h2 class="section__title">What People Are Saying</h2>
-          <p class="section__description">Hear from community members who support Andres Castro's vision for Georgia's 5th Congressional District.</p>
-        </div>
-
-        <div class="testimonials__grid">
-          <div class="row">
-            {% for testimonial in testimonials %}
-            <div class="col col-6 col-d-12">
-              <div class="testimonial-item">
-                <div class="testimonial-content">
-                  <blockquote class="testimonial-text">{{ testimonial.content }}</blockquote>
-                  <div class="testimonial-author">
-                    <h4 class="author-name">{{ testimonial.author }}</h4>
-                    <span class="author-role">{{ testimonial.role }}</span>
-                  </div>
-                </div>
-              </div>
+    <!-- Testimonials Grid -->
+    <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+      {% for testimonial in testimonials %}
+      <div class="card card-elevated p-8 hover:shadow-xl transition-shadow duration-300">
+        <div class="flex flex-col h-full">
+          <!-- Quote Icon -->
+          <div class="text-campaign-primary mb-4">
+            <i class="fa-solid fa-quote-left text-2xl"></i>
+          </div>
+          
+          <!-- Testimonial Content -->
+          <blockquote class="text-gray-700 text-lg leading-relaxed mb-6 flex-grow">
+            "{{ testimonial.content }}"
+          </blockquote>
+          
+          <!-- Author Info -->
+          <div class="flex items-center space-x-4 pt-4 border-t border-gray-100">
+            <div class="w-12 h-12 bg-campaign-primary/10 rounded-full flex items-center justify-center">
+              <span class="text-campaign-primary font-semibold text-lg">
+                {{ testimonial.author | slice: 0 }}
+              </span>
             </div>
-            {% endfor %}
+            <div>
+              <h4 class="font-semibold text-gray-900">{{ testimonial.author }}</h4>
+              <span class="text-sm text-gray-500">{{ testimonial.role }}</span>
+            </div>
           </div>
         </div>
-
       </div>
+      {% endfor %}
+    </div>
+
+    <!-- Call to Action -->
+    <div class="text-center mt-12">
+      <p class="text-gray-600 mb-6">Want to share your story?</p>
+      <a href="/contact" class="btn btn-primary">Get in Touch</a>
     </div>
   </div>
 </section>

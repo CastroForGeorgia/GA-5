@@ -2,41 +2,41 @@
 layout: default
 ---
 
-<div class="container">
+<div class="container mx-auto px-4 py-12 max-w-4xl">
 
-  <div class="page-head">
-    <div class="page-info">
-      <h1 class="page-title">{{ page.title | escape }}</h1>
+  <div class="page-head mb-12">
+    <div class="page-info mb-8">
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">{{ page.title | escape }}</h1>
       {% if page.description %}
-        <p class="page-description">{{ page.description }}</p>
+        <p class="text-xl text-gray-600 leading-relaxed">{{ page.description }}</p>
       {% endif %}
     </div>
 
     {% if page.video_embed %}
-    <div class="page-video">
-      <div class="page-video__wrap">
-        <iframe src="{{ page.video_embed }}" width="640" height="360" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    <div class="page-video mb-6">
+      <div class="relative aspect-video rounded-2xl overflow-hidden shadow-lg">
+        <iframe src="{{ page.video_embed }}" class="absolute inset-0 w-full h-full" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
       </div>
     </div>
     {% else %}
     {% if page.image %}
-    <div class="page-image">
-      <img class="lazy" data-src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+    <div class="page-image mb-6">
+      <img class="w-full h-64 md:h-96 object-cover rounded-2xl shadow-lg lazy" data-src="{{ page.image | relative_url }}" alt="{{ page.title }}">
     </div>
     {% endif %}
     {% endif %}
 
     {% if page.image_caption %}
-    <div class="page-image-caption">{{ page.image_caption | markdownify | replace: '<p>' | replace: '</p>' }}</div>
+    <div class="text-sm text-gray-500 text-center mt-2">{{ page.image_caption | markdownify | replace: '<p>' | replace: '</p>' }}</div>
     {% endif %}
   </div>
 
 </div>
 
 <!-- begin page -->
-<div class="container">
+<div class="container mx-auto px-4 pb-16 max-w-4xl">
   <article class="page">
-    <div class="page__content">
+    <div class="prose prose-lg prose-gray max-w-none prose-headings:text-gray-900 prose-headings:font-bold prose-p:text-gray-700 prose-p:leading-relaxed prose-a:text-campaign-primary prose-a:no-underline hover:prose-a:underline">
       {{ content }}
     </div>
   </article>
