@@ -1845,6 +1845,14 @@ select {
   height: 1.5rem;
 }
 
+.h-4 {
+  height: 1rem;
+}
+
+.h-2 {
+  height: 0.5rem;
+}
+
 .max-h-96 {
   max-height: 24rem;
 }
@@ -1901,6 +1909,22 @@ select {
   width: 6rem;
 }
 
+.w-0\.5 {
+  width: 0.125rem;
+}
+
+.w-4 {
+  width: 1rem;
+}
+
+.w-2 {
+  width: 0.5rem;
+}
+
+.w-3 {
+  width: 0.75rem;
+}
+
 .max-w-2xl {
   max-width: 42rem;
 }
@@ -1948,6 +1972,11 @@ select {
 
 .-translate-y-1\/2 {
   --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.rotate-45 {
+  --tw-rotate: 45deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -2214,6 +2243,14 @@ select {
   border-top-width: 1px;
 }
 
+.border-r-2 {
+  border-right-width: 2px;
+}
+
+.border-t-2 {
+  border-top-width: 2px;
+}
+
 .border-gray-100 {
   --tw-border-opacity: 1;
   border-color: rgb(243 244 246 / var(--tw-border-opacity, 1));
@@ -2248,6 +2285,11 @@ select {
 .border-gray-50 {
   --tw-border-opacity: 1;
   border-color: rgb(249 250 251 / var(--tw-border-opacity, 1));
+}
+
+.border-campaign-primary {
+  --tw-border-opacity: 1;
+  border-color: rgb(46 139 87 / var(--tw-border-opacity, 1));
 }
 
 .bg-black\/50 {
@@ -3586,9 +3628,19 @@ body {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.group\/faq[open] .group-open\/faq\:rotate-90 {
+  --tw-rotate: 90deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .group\/faq[open] .group-open\/faq\:bg-campaign-primary {
   --tw-bg-opacity: 1;
   background-color: rgb(46 139 87 / var(--tw-bg-opacity, 1));
+}
+
+.group\/faq[open] .group-open\/faq\:bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
 .group\/faq[open] .group-open\/faq\:text-campaign-primary {
@@ -3599,6 +3651,10 @@ body {
 .group\/faq[open] .group-open\/faq\:text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.group\/faq[open] .group-open\/faq\:opacity-0 {
+  opacity: 0;
 }
 
 .group:hover .group-hover\:visible {

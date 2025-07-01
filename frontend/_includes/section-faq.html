@@ -23,8 +23,14 @@
             <h3 class="text-lg md:text-xl font-semibold text-gray-900 pr-4 group-open/faq:text-campaign-primary transition-colors">
               {{ faq.title }}
             </h3>
-            <div class="flex-shrink-0 w-8 h-8 bg-campaign-primary/10 rounded-full flex items-center justify-center group-open/faq:bg-campaign-primary group-open/faq:text-white transition-all duration-200">
-              <i class="fa-solid fa-plus text-sm group-open/faq:rotate-45 transition-transform duration-200" aria-hidden="true"></i>
+            <div class="flex-shrink-0 w-8 h-8 bg-campaign-primary/10 rounded-full flex items-center justify-center group-open/faq:bg-campaign-primary transition-all duration-200">
+              <!-- CSS-only plus/minus icon -->
+              <div class="relative w-4 h-4">
+                <!-- Horizontal line (always visible) -->
+                <div class="absolute top-1/2 left-0 w-full h-0.5 bg-campaign-primary group-open/faq:bg-white transition-colors duration-200 transform -translate-y-1/2"></div>
+                <!-- Vertical line (hidden when open) -->
+                <div class="absolute left-1/2 top-0 w-0.5 h-full bg-campaign-primary group-open/faq:bg-white group-open/faq:rotate-90 group-open/faq:opacity-0 transition-all duration-200 transform -translate-x-1/2"></div>
+              </div>
             </div>
           </div>
         </summary>
@@ -40,7 +46,11 @@
               aria-label="Read full answer for {{ faq.title }}"
             >
               <span>Read Full Answer</span>
-              <i class="fa-solid fa-arrow-right text-sm transition-transform group-hover:translate-x-1" aria-hidden="true"></i>
+              <!-- CSS-only arrow -->
+              <div class="w-4 h-4 relative transition-transform group-hover:translate-x-1">
+                <div class="absolute top-1/2 left-0 w-3 h-0.5 bg-campaign-primary transform -translate-y-1/2"></div>
+                <div class="absolute top-1/2 right-0 w-2 h-2 border-r-2 border-t-2 border-campaign-primary transform rotate-45 -translate-y-1/2"></div>
+              </div>
             </a>
           </div>
         </div>
