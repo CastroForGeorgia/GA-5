@@ -5,13 +5,13 @@ description: Explore our vision for a fairer, more just Georgia's 5th District. 
 ---
 
 <!-- Page Header -->
-<div class="bg-gradient-to-br from-campaign-primary to-campaign-secondary text-white py-16 md:py-20">
+<div class="campaign-gradient text-white py-16 md:py-20">
   <div class="container-wide px-4">
     <div class="text-center max-w-4xl mx-auto">
       <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
         {{ page.title }}
       </h1>
-      <p class="text-xl md:text-2xl text-white/90 leading-relaxed">
+      <p class="text-xl md:text-2xl leading-relaxed opacity-90">
         {{ page.description }}
       </p>
     </div>
@@ -118,9 +118,7 @@ description: Explore our vision for a fairer, more just Georgia's 5th District. 
 {% endif %}
 
 <!-- All Other Policies -->
-{% assign other_policies = site.policies | where: "north_star", false | sort: "date" | reverse %}
-{% assign policies_without_north_star = site.policies | where: "north_star", nil | sort: "date" | reverse %}
-{% assign all_other_policies = other_policies | concat: policies_without_north_star %}
+{% assign all_other_policies = site.policies | where_exp: "policy", "policy.north_star != true" | sort: "date" | reverse %}
 
 {% if all_other_policies.size > 0 %}
 <section id="all-policies" class="py-16 md:py-20 bg-white">
@@ -199,25 +197,3 @@ description: Explore our vision for a fairer, more just Georgia's 5th District. 
   </div>
 </section>
 {% endif %}
-
-<!-- Newsletter Signup Section -->
-<section class="py-16 md:py-20 bg-gradient-to-r from-campaign-primary to-campaign-secondary text-white">
-  <div class="container-wide px-4">
-    <div class="text-center max-w-2xl mx-auto">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">Stay Updated on Our Policy Work</h2>
-      <p class="text-xl text-white/90 mb-8 leading-relaxed">
-        Get the latest updates on our policy positions and campaign progress delivered to your inbox.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-        <input 
-          type="email" 
-          placeholder="Enter your email" 
-          class="flex-1 px-4 py-3 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white"
-        >
-        <button class="px-6 py-3 bg-white text-campaign-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors">
-          Subscribe
-        </button>
-      </div>
-    </div>
-  </div>
-</section> 
