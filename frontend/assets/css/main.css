@@ -1745,6 +1745,10 @@ select {
   margin-top: 2rem;
 }
 
+.mr-1 {
+  margin-right: 0.25rem;
+}
+
 .block {
   display: block;
 }
@@ -1891,6 +1895,10 @@ select {
 
 .w-full {
   width: 100%;
+}
+
+.w-3 {
+  width: 0.75rem;
 }
 
 .max-w-2xl {
@@ -2066,6 +2074,10 @@ select {
   align-items: flex-start;
 }
 
+.items-end {
+  align-items: flex-end;
+}
+
 .items-center {
   align-items: center;
 }
@@ -2096,6 +2108,10 @@ select {
 
 .gap-8 {
   gap: 2rem;
+}
+
+.gap-3 {
+  gap: 0.75rem;
 }
 
 .space-x-1 > :not([hidden]) ~ :not([hidden]) {
@@ -2222,6 +2238,10 @@ select {
   border-top-width: 1px;
 }
 
+.border-l-4 {
+  border-left-width: 4px;
+}
+
 .border-campaign-primary\/10 {
   border-color: rgb(46 139 87 / 0.1);
 }
@@ -2256,6 +2276,20 @@ select {
 
 .border-white\/30 {
   border-color: rgb(255 255 255 / 0.3);
+}
+
+.border-campaign-primary {
+  --tw-border-opacity: 1;
+  border-color: rgb(46 139 87 / var(--tw-border-opacity, 1));
+}
+
+.border-campaign-primary\/20 {
+  border-color: rgb(46 139 87 / 0.2);
+}
+
+.border-campaign-secondary {
+  --tw-border-opacity: 1;
+  border-color: rgb(192 57 43 / var(--tw-border-opacity, 1));
 }
 
 .bg-black\/50 {
@@ -2339,12 +2373,20 @@ select {
   background-color: currentColor;
 }
 
+.bg-white\/20 {
+  background-color: rgb(255 255 255 / 0.2);
+}
+
 .bg-gradient-to-r {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
 
 .bg-gradient-to-t {
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
+}
+
+.bg-gradient-to-br {
+  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
 }
 
 .from-black\/5 {
@@ -2379,6 +2421,11 @@ select {
 .via-black\/50 {
   --tw-gradient-to: rgb(0 0 0 / 0)  var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), rgb(0 0 0 / 0.5) var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+
+.via-black\/30 {
+  --tw-gradient-to: rgb(0 0 0 / 0)  var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), rgb(0 0 0 / 0.3) var(--tw-gradient-via-position), var(--tw-gradient-to);
 }
 
 .to-black\/60 {
@@ -2523,6 +2570,10 @@ select {
   padding-bottom: 0.75rem;
 }
 
+.pb-8 {
+  padding-bottom: 2rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -2652,6 +2703,14 @@ select {
 
 .text-white\/70 {
   color: rgb(255 255 255 / 0.7);
+}
+
+.text-white\/80 {
+  color: rgb(255 255 255 / 0.8);
+}
+
+.text-white\/90 {
+  color: rgb(255 255 255 / 0.9);
 }
 
 .no-underline {
@@ -3568,6 +3627,11 @@ body {
   background-color: rgb(255 255 255 / 0.2);
 }
 
+.hover\:bg-campaign-secondary:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(192 57 43 / var(--tw-bg-opacity, 1));
+}
+
 .hover\:text-campaign-primary:hover {
   --tw-text-opacity: 1;
   color: rgb(46 139 87 / var(--tw-text-opacity, 1));
@@ -3580,6 +3644,11 @@ body {
 .hover\:text-gray-600:hover {
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity, 1));
+}
+
+.hover\:text-white:hover {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
 .hover\:opacity-80:hover {
@@ -3730,9 +3799,56 @@ body {
   font-weight: 700;
 }
 
+.prose-headings\:leading-tight :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  line-height: 1.25;
+}
+
 .prose-headings\:text-gray-900 :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity, 1));
+}
+
+.prose-h1\:mb-8 :is(:where(h1):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  margin-bottom: 2rem;
+}
+
+.prose-h1\:mt-12 :is(:where(h1):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  margin-top: 3rem;
+}
+
+.prose-h1\:text-3xl :is(:where(h1):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.prose-h2\:mb-6 :is(:where(h2):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  margin-bottom: 1.5rem;
+}
+
+.prose-h2\:mt-10 :is(:where(h2):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  margin-top: 2.5rem;
+}
+
+.prose-h2\:text-2xl :is(:where(h2):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.prose-h3\:mb-4 :is(:where(h3):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  margin-bottom: 1rem;
+}
+
+.prose-h3\:mt-8 :is(:where(h3):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  margin-top: 2rem;
+}
+
+.prose-h3\:text-xl :is(:where(h3):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.prose-p\:mb-6 :is(:where(p):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  margin-bottom: 1.5rem;
 }
 
 .prose-p\:leading-relaxed :is(:where(p):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
@@ -3742,6 +3858,10 @@ body {
 .prose-p\:text-gray-700 :is(:where(p):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity, 1));
+}
+
+.prose-a\:font-medium :is(:where(a):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  font-weight: 500;
 }
 
 .prose-a\:text-campaign-primary :is(:where(a):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
@@ -3757,14 +3877,41 @@ body {
   text-decoration-line: underline;
 }
 
+.prose-blockquote\:rounded-r-lg :is(:where(blockquote):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.prose-blockquote\:border-l-4 :is(:where(blockquote):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  border-left-width: 4px;
+}
+
 .prose-blockquote\:border-campaign-primary :is(:where(blockquote):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
   --tw-border-opacity: 1;
   border-color: rgb(46 139 87 / var(--tw-border-opacity, 1));
 }
 
+.prose-blockquote\:bg-gray-50 :is(:where(blockquote):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1));
+}
+
+.prose-blockquote\:p-6 :is(:where(blockquote):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  padding: 1.5rem;
+}
+
 .prose-blockquote\:text-gray-600 :is(:where(blockquote):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity, 1));
+}
+
+.prose-blockquote\:text-gray-700 :is(:where(blockquote):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81 / var(--tw-text-opacity, 1));
+}
+
+.prose-strong\:font-semibold :is(:where(strong):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  font-weight: 600;
 }
 
 .prose-strong\:text-gray-900 :is(:where(strong):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
@@ -3780,6 +3927,24 @@ body {
 .prose-ul\:text-gray-700 :is(:where(ul):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity, 1));
+}
+
+.prose-li\:mb-2 :is(:where(li):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  margin-bottom: 0.5rem;
+}
+
+.prose-li\:leading-relaxed :is(:where(li):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  line-height: 1.625;
+}
+
+.prose-hr\:my-12 :is(:where(hr):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.prose-hr\:border-gray-200 :is(:where(hr):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  --tw-border-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity, 1));
 }
 
 @media (min-width: 640px) {
@@ -3829,6 +3994,19 @@ body {
     margin-bottom: calc(2rem * var(--tw-space-y-reverse));
   }
 
+  .md\:p-12 {
+    padding: 3rem;
+  }
+
+  .md\:py-20 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .md\:pb-12 {
+    padding-bottom: 3rem;
+  }
+
   .md\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
@@ -3852,6 +4030,21 @@ body {
   .md\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .prose-h1\:md\:text-4xl :is(:where(h1):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  .prose-h2\:md\:text-3xl :is(:where(h2):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .prose-h3\:md\:text-2xl :is(:where(h3):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }
 
@@ -3887,6 +4080,10 @@ body {
 
   .lg\:hidden {
     display: none;
+  }
+
+  .lg\:h-96 {
+    height: 24rem;
   }
 
   .lg\:w-1\/2 {
