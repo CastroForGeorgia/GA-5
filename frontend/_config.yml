@@ -3,6 +3,9 @@
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
+# Repository settings for GitHub metadata
+repository: CastroForGeorgia/GA-5
+
 
 #-------------------------------
 # Build Settings
@@ -36,17 +39,17 @@ defaults:
     values:
       layout: "default"
   - scope:
-      path: ""
+      path: "content/pages"
       type: "pages"
     values:
       layout: "page"
   - scope:
-      path: ""
+      path: "content/posts"
       type: "posts"
     values:
       layout: "post"
   - scope:
-      path: ""
+      path: "content/projects"
       type: "projects"
     values:
       layout: "project"
@@ -54,3 +57,9 @@ defaults:
 sass:
   sass_dir: _sass
   style: compressed
+
+# Asset paths
+assets:
+  images: assets/images
+  js: assets/js
+  css: assets/css

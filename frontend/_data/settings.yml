@@ -1,8 +1,8 @@
 #-------------------------------
 # Site Settings
 title: CastroForGeorgia
-logo: '/images/logo.png' # You can add own logo. For example '/images/logo.png'.
-logo_dark: '/images/logo.png'
+logo: '/assets/images/logo.png' # You can add own logo. For example '/assets/images/logo.png'.
+logo_dark: '/assets/images/logo.png'
 description: Andres Castro, a champion for the people in Georgia's 5th Congressional District. 
 color_scheme: auto # You can choose three modes auto, light, and dark. By default, the auto mode is set, which means the user can choose the light or dark mode themself.
 
@@ -30,7 +30,7 @@ menu_settings:
 # Author Settings
 author:
   author_name: Andres Castro
-  author_avatar: '/images/about-me-photo-zoom.jpg'
+  author_avatar: '/assets/images/about-me-photo-zoom.jpg'
 
 
 #-------------------------------
@@ -62,7 +62,7 @@ blog:
 # About Section Settings
 about:
   enable: true
-  about_image: "/images/about-me-photo.jpg"
+  about_image: "/assets/images/about-me-photo.jpg"
   about_title: "Together for Change"
   about_description: "Let’s build a future where every family in Georgia’s 5th District has access to opportunity, equity, and justice. Join me in fighting for bold solutions that uplift working families, protect civil rights, and create a government that truly works for all of us."
 
