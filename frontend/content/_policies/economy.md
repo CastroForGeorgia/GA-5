@@ -4,6 +4,8 @@ description: "Strengthening local jobs, building affordable housing, and ensurin
 date: 2025-02-16 00:00:00 +0000
 label: "Policy"
 image: "/assets/images/economy-policy-header.png"
+north_star: true
+order: 3
 ---
 
 # **Building an Economy That Works for Everyone**  

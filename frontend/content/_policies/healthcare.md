@@ -4,6 +4,8 @@ description: "Affordable, high-quality healthcare for every resident—centered 
 date: 2025-02-19 00:00:00 +0000
 label: "Policy"
 image: "/assets/images/medicare-for-all-header.png"
+north_star: true
+order: 1
 ---
 
 # **Healthcare for All: A Human Right, Not a Privilege**  

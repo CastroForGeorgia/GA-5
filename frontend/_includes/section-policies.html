@@ -1,43 +1,114 @@
 {% if site.policies.size > 0 %}
-<div class="container-big">
-  <!-- begin section policies -->
-  <section class="section policies">
-    <div class="container">
-      <div class="row">
-        <div class="col col-12">
+<!-- begin policies section -->
+<section class="py-20 bg-cream">
+  <div class="container-wide">
+    
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Policy Platform</h2>
+      <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+        Building a future that works for everyone in Georgia's 5th District—focused on the issues that matter most to working families.
+      </p>
+    </div>
 
-          <div class="policies__inner splide">
-            <div class="splide__track animate">
-              <div class="splide__list">
-                {% assign sorted = site.policies | sort: 'date' | reverse %}
-                {% for policy in sorted limit:8 %}
-                <article class="policy col-3 col-d-6 col-t-12 splide__slide">
-                  <div class="policy-content">
-                    <a href="{{ policy.url }}" class="policy__image">
-                      <img class="lazy" data-src="{{ policy.image }}" alt="{{ policy.title }}">
-                    </a>
-                    <div class="policy__info">
-                      <h2 class="policy__title">
-                        <a href="{{ policy.url }}">{{ policy.title }}</a>
-                      </h2>
-                      <span>{{ policy.description }}</span>
-                    </div>
-                  </div>
-                </article>
-                {% endfor %}
+    <!-- North Star Policies - Featured -->
+    {% assign north_star_policies = site.policies | where: "north_star", true | sort: "order" %}
+    {% if north_star_policies.size > 0 %}
+    <div class="mb-20">
+      <div class="text-center mb-12">
+        <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-3">Our Three Pillars</h3>
+        <p class="text-lg text-gray-600">The core issues we're fighting for every day</p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
+        {% for policy in north_star_policies %}
+        <article class="group">
+          <div class="card card-elevated p-0 overflow-hidden hover:shadow-2xl transition-all duration-300">
+            <!-- Policy Image -->
+            <div class="relative h-48 overflow-hidden">
+              <img 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
+                src="{{ policy.image }}" 
+                alt="{{ policy.title }}"
+              >
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+              
+              <!-- Policy Badge -->
+              <div class="absolute top-4 left-4">
+                <span class="inline-block px-3 py-1 text-xs font-semibold text-white bg-campaign-primary rounded-full">
+                  Core Policy
+                </span>
               </div>
             </div>
+            
+            <!-- Policy Content -->
+            <div class="p-6">
+              <h4 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-campaign-primary transition-colors">
+                {{ policy.title }}
+              </h4>
+              <p class="text-gray-600 leading-relaxed mb-4">
+                {{ policy.description }}
+              </p>
+              <a 
+                href="{{ policy.url }}" 
+                class="inline-flex items-center space-x-2 text-campaign-primary font-semibold hover:text-campaign-primary/80 transition-colors"
+              >
+                <span>Learn More</span>
+                <i class="fa-solid fa-arrow-right text-sm"></i>
+              </a>
+            </div>
           </div>
-
-          <div class="section__info">
-            <h2 class="section__title">Policies</h2>
-            <p class="section__description">Explore our vision for a fairer, more just Georgia's 5th District. Together, we'll build a thriving, equitable future.</p>
-          </div>
-
-        </div>
+        </article>
+        {% endfor %}
       </div>
     </div>
-  </section>
-  <!-- end section policies -->
-</div>
+    {% endif %}
+
+    <!-- Other Policies - Compact Grid -->
+    {% assign other_policies = site.policies | where: "north_star", nil | sort: "date" | reverse %}
+    {% if other_policies.size > 0 %}
+    <div class="border-t border-gray-200 pt-16">
+      <div class="text-center mb-12">
+        <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-3">Additional Policy Positions</h3>
+        <p class="text-gray-600">Explore our comprehensive approach to the issues facing our district</p>
+      </div>
+      
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {% for policy in other_policies limit:8 %}
+        <article class="group">
+          <a href="{{ policy.url }}" class="block">
+            <div class="card p-4 hover:shadow-lg transition-all duration-200">
+              <!-- Small Policy Image -->
+              <div class="relative h-32 mb-4 overflow-hidden rounded-lg">
+                <img 
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
+                  src="{{ policy.image }}" 
+                  alt="{{ policy.title }}"
+                >
+              </div>
+              
+              <h5 class="font-semibold text-gray-900 mb-2 group-hover:text-campaign-primary transition-colors">
+                {{ policy.title }}
+              </h5>
+              <p class="text-sm text-gray-600 leading-relaxed">
+                {{ policy.description | truncate: 100 }}
+              </p>
+            </div>
+          </a>
+        </article>
+        {% endfor %}
+      </div>
+      
+      <!-- View All Policies Link -->
+      <div class="text-center mt-10">
+        <a href="/policies" class="btn btn-secondary">
+          View All Policy Positions
+        </a>
+      </div>
+    </div>
+    {% endif %}
+
+  </div>
+</section>
+<!-- end policies section -->
 {% endif %}
