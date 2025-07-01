@@ -1,0 +1,255 @@
+<!-- begin header -->
+<header class="sticky top-0 z-50 bg-cream/95 backdrop-blur-sm border-b border-peach">
+  <div class="container-wide">
+    <div class="flex h-16 items-center justify-between">
+      
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <a href="{{ site.baseurl }}/" class="flex items-center space-x-3 no-underline group">
+          {% if site.data.settings.logo %}
+          <img class="h-10 w-auto transition-transform group-hover:scale-105" 
+               src="/{{ site.assets.images }}/{{ site.data.settings.logo }}"
+               alt="{{ site.data.settings.title }}">
+          {% else %}
+          <span class="text-xl font-bold text-gray-900 group-hover:text-campaign-primary transition-colors">
+            {{ site.data.settings.title }}
+          </span>
+          {% endif %}
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-1" aria-label="Main navigation">
+        {% for item in site.data.settings.menu_settings.menu_items offset:1 %}
+        {% if item.submenu %}
+        <!-- Desktop Dropdown -->
+        <div class="relative group">
+          <button class="flex items-center space-x-1 px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors group">
+            <span>{{ item.title }}</span>
+            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          
+          <!-- Dropdown Panel -->
+          <div class="absolute left-0 z-10 mt-2 w-56 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 
+                      opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+            <div class="py-1">
+              {% for submenu_item in item.submenu %}
+              <a href="{{ submenu_item.url }}" 
+                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary transition-colors no-underline
+                        {% if page.url == submenu_item.url %}bg-gray-50 text-campaign-primary{% endif %}">
+                {{ submenu_item.title }}
+              </a>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        {% else %}
+        <!-- Desktop Menu Item -->
+        <a href="{{ item.url | relative_url }}" 
+           class="px-3 py-2 text-sm font-medium rounded-md transition-colors no-underline
+                  {% if page.url == item.url %}text-campaign-primary bg-campaign-primary/10{% else %}text-gray-700 hover:text-campaign-primary hover:bg-gray-50{% endif %}">
+          {{ item.title }}
+        </a>
+        {% endif %}
+        {% endfor %}
+      </nav>
+
+      <!-- Desktop Actions -->
+      <div class="hidden md:flex items-center space-x-2">
+        
+        <!-- Language Selector -->
+        <div class="relative group">
+          <button class="flex items-center space-x-1 px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors group">
+            <span>🌐</span>
+            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          
+          <div class="absolute right-0 z-10 mt-2 w-40 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5
+                      opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+            <div class="py-1">
+              {% for lang in site.data.settings.languages.supported %}
+              {% if lang.lang_code == "en" %}
+              <a href="https://castroforgeorgia.com{{ page.url | prepend: '/' | remove_first: '/' }}" 
+                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary transition-colors no-underline">
+                {{ lang.lang_name }}
+              </a>
+              {% else %}
+              <a href="https://{{ lang.lang_code }}.castroforgeorgia.com{{ page.url | prepend: '/' | remove_first: '/' }}" 
+                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary transition-colors no-underline">
+                {{ lang.lang_name }}
+              </a>
+              {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+
+        <!-- Search Button -->
+        <button id="search-toggle" 
+                class="flex items-center space-x-1 px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+          <span class="sr-only lg:not-sr-only">Search</span>
+        </button>
+
+        <!-- Donate Button -->
+        {% assign donate_item = site.data.settings.menu_settings.menu_items[0] %}
+        <a href="{{ donate_item.url | relative_url }}" 
+           class="btn btn-donate{% if page.url == donate_item.url %} opacity-80{% endif %}">
+          {{ donate_item.title }}
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden relative p-2 text-gray-700 hover:text-campaign-primary focus:outline-none focus:ring-2 focus:ring-campaign-primary rounded-md transition-colors"
+              id="mobile-menu-button"
+              aria-controls="mobile-menu"
+              aria-expanded="false">
+        <span class="sr-only">Open menu</span>
+        <!-- Hamburger Icon -->
+        <div class="w-6 h-6 flex flex-col justify-center items-center">
+          <span class="block w-5 h-0.5 bg-current transition-all duration-300 ease-in-out transform origin-center" id="hamburger-line-1"></span>
+          <span class="block w-5 h-0.5 bg-current mt-1 transition-all duration-300 ease-in-out" id="hamburger-line-2"></span>
+          <span class="block w-5 h-0.5 bg-current mt-1 transition-all duration-300 ease-in-out transform origin-center" id="hamburger-line-3"></span>
+        </div>
+      </button>
+    </div>
+
+    <!-- Mobile Menu Panel -->
+    <div class="md:hidden" id="mobile-menu" style="display: none;">
+      <div class="border-t border-gray-200 bg-white shadow-lg">
+        <div class="px-2 pt-2 pb-3 space-y-1">
+          
+          {% for item in site.data.settings.menu_settings.menu_items offset:1 %}
+          {% if item.submenu %}
+          <!-- Mobile Dropdown -->
+          <div class="mobile-dropdown">
+            <button class="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-gray-700 hover:text-campaign-primary hover:bg-gray-50 rounded-md transition-colors mobile-dropdown-trigger">
+              <span>{{ item.title }}</span>
+              <svg class="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="mobile-dropdown-content ml-4 mt-1 space-y-1" style="display: none;">
+              {% for submenu_item in item.submenu %}
+              <a href="{{ submenu_item.url }}" 
+                 class="block px-3 py-2 text-sm text-gray-600 hover:text-campaign-primary hover:bg-gray-50 rounded-md transition-colors no-underline
+                        {% if page.url == submenu_item.url %}text-campaign-primary bg-gray-50{% endif %}">
+                {{ submenu_item.title }}
+              </a>
+              {% endfor %}
+            </div>
+          </div>
+          {% else %}
+          <!-- Mobile Menu Item -->
+          <a href="{{ item.url | relative_url }}" 
+             class="block px-3 py-2 text-base font-medium rounded-md transition-colors no-underline
+                    {% if page.url == item.url %}text-campaign-primary bg-campaign-primary/10{% else %}text-gray-700 hover:text-campaign-primary hover:bg-gray-50{% endif %}">
+            {{ item.title }}
+          </a>
+          {% endif %}
+          {% endfor %}
+        </div>
+        
+        <!-- Mobile Actions -->
+        <div class="border-t border-gray-200 px-2 py-3 space-y-2">
+          <button id="mobile-search-toggle" 
+                  class="flex items-center space-x-3 w-full px-3 py-2 text-base font-medium text-gray-700 hover:text-campaign-primary hover:bg-gray-50 rounded-md transition-colors">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+            <span>Search</span>
+          </button>
+          
+          {% assign donate_item = site.data.settings.menu_settings.menu_items[0] %}
+          <a href="{{ donate_item.url | relative_url }}" 
+             class="btn btn-donate w-full text-center{% if page.url == donate_item.url %} opacity-80{% endif %}">
+            {{ donate_item.title }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- end header -->
+
+{% include search.html %}
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Mobile menu toggle
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const hamburgerLines = [
+    document.getElementById('hamburger-line-1'),
+    document.getElementById('hamburger-line-2'),
+    document.getElementById('hamburger-line-3')
+  ];
+
+  mobileMenuButton.addEventListener('click', function() {
+    const isOpen = mobileMenu.style.display !== 'none';
+    
+    if (isOpen) {
+      // Close menu
+      mobileMenu.style.display = 'none';
+      mobileMenuButton.setAttribute('aria-expanded', 'false');
+      
+      // Reset hamburger animation
+      hamburgerLines[0].style.transform = 'rotate(0deg) translateY(0)';
+      hamburgerLines[1].style.opacity = '1';
+      hamburgerLines[2].style.transform = 'rotate(0deg) translateY(0)';
+    } else {
+      // Open menu
+      mobileMenu.style.display = 'block';
+      mobileMenuButton.setAttribute('aria-expanded', 'true');
+      
+      // Animate to X
+      hamburgerLines[0].style.transform = 'rotate(45deg) translateY(6px)';
+      hamburgerLines[1].style.opacity = '0';
+      hamburgerLines[2].style.transform = 'rotate(-45deg) translateY(-6px)';
+    }
+  });
+
+  // Mobile dropdown toggles
+  document.querySelectorAll('.mobile-dropdown-trigger').forEach(button => {
+    button.addEventListener('click', function() {
+      const content = this.parentElement.querySelector('.mobile-dropdown-content');
+      const icon = this.querySelector('svg');
+      const isOpen = content.style.display !== 'none';
+      
+      if (isOpen) {
+        content.style.display = 'none';
+        icon.style.transform = 'rotate(0deg)';
+      } else {
+        content.style.display = 'block';
+        icon.style.transform = 'rotate(180deg)';
+      }
+    });
+  });
+
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', function(event) {
+    if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+      if (mobileMenu.style.display !== 'none') {
+        mobileMenuButton.click();
+      }
+    }
+  });
+
+  // Close mobile menu on window resize
+  window.addEventListener('resize', function() {
+    if (window.innerWidth >= 768) { // md breakpoint
+      mobileMenu.style.display = 'none';
+      mobileMenuButton.setAttribute('aria-expanded', 'false');
+      hamburgerLines[0].style.transform = 'rotate(0deg) translateY(0)';
+      hamburgerLines[1].style.opacity = '1';
+      hamburgerLines[2].style.transform = 'rotate(0deg) translateY(0)';
+    }
+  });
+});
+</script>

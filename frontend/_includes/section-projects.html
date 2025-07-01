@@ -1,0 +1,43 @@
+{% if site.projects.size > 0 %}
+<div class="container-big">
+  <!-- begin section projects -->
+  <section class="section projects">
+    <div class="container">
+      <div class="row">
+        <div class="col col-12">
+
+          <div class="projects__inner splide">
+            <div class="splide__track animate">
+              <div class="splide__list">
+                {% assign sorted = site.projects | sort: 'date' | reverse %}
+                {% for project in sorted limit:8 %}
+                <article class="project col-3 col-d-6 col-t-12 splide__slide">
+                  <div class="project-content">
+                    <a href="{{ project.url }}" class="project__image">
+                      <img class="lazy" data-src="{{ project.image }}" alt="{{ project.title }}">
+                    </a>
+                    <div class="project__info">
+                      <h2 class="project__title">
+                        <a href="{{ project.url }}">{{ project.title }}</a>
+                      </h2>
+                      <span>{{ project.description }}</span>
+                    </div>
+                  </div>
+                </article>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+
+          <div class="section__info">
+            <h2 class="section__title">Campaign Projects</h2>
+            <p class="section__description">See our ongoing initiatives and community projects that are making a difference in Georgia's 5th District.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end section projects -->
+</div>
+{% endif %}

@@ -1,0 +1,80 @@
+{% assign faqs = site.faqs | sort: "order" %}
+{% if faqs.size > 0 %}
+<!-- begin faq section -->
+<section class="py-12 bg-cream" id="faq" aria-labelledby="faq-heading">
+  <div class="container-wide">
+    
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 id="faq-heading" class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Frequently Asked Questions
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        Get to know Andres Castro and his commitment to creating a fairer, more inclusive community in Georgia's 5th Congressional District.
+      </p>
+    </div>
+
+    <!-- FAQ Accordion -->
+    <div class="max-w-4xl mx-auto space-y-4">
+      {% for faq in faqs %}
+      <details class="group/faq bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-200 hover:shadow-md">
+        <summary class="cursor-pointer list-none p-6 hover:bg-gray-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-campaign-primary focus:ring-offset-2">
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg md:text-xl font-semibold text-gray-900 pr-4 group-open/faq:text-campaign-primary transition-colors">
+              {{ faq.title }}
+            </h3>
+            <div class="flex-shrink-0 w-8 h-8 bg-campaign-primary/10 rounded-full flex items-center justify-center group-open/faq:bg-campaign-primary transition-all duration-200">
+              <!-- CSS-only plus/minus icon -->
+              <div class="relative w-4 h-4">
+                <!-- Horizontal line (always visible) -->
+                <div class="absolute top-1/2 left-0 w-full h-0.5 bg-campaign-primary group-open/faq:bg-white transition-colors duration-200 transform -translate-y-1/2"></div>
+                <!-- Vertical line (hidden when open) -->
+                <div class="absolute left-1/2 top-0 w-0.5 h-full bg-campaign-primary group-open/faq:bg-white group-open/faq:rotate-90 group-open/faq:opacity-0 transition-all duration-200 transform -translate-x-1/2"></div>
+              </div>
+            </div>
+          </div>
+        </summary>
+        
+        <div class="px-6 pb-6 pt-2 border-t border-gray-50 animate-fade-in">
+          <div class="prose prose-gray max-w-none">
+            <p class="text-gray-700 leading-relaxed mb-4">
+              {{ faq.content | strip_html | truncatewords: 50 }}
+            </p>
+            <a 
+              href="{{ faq.url }}" 
+              class="inline-flex items-center space-x-2 text-campaign-primary font-semibold hover:text-campaign-primary/80 transition-colors group"
+              aria-label="Read full answer for {{ faq.title }}"
+            >
+              <span>Read Full Answer</span>
+              <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </details>
+      {% endfor %}
+    </div>
+
+    <!-- Contact CTA -->
+    <div class="text-center mt-16 p-8 bg-gradient-to-r from-campaign-primary/5 to-campaign-secondary/5 rounded-2xl border border-campaign-primary/10">
+      <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-3">
+        Have More Questions?
+      </h3>
+      <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
+        Can't find what you're looking for? I'd love to hear from you directly and answer any questions about my campaign or policy positions.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="btn btn-primary">
+          Get in Touch
+        </a>
+        <a href="/about" class="btn btn-secondary">
+          Learn More About Andres
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- end faq section -->
+{% endif %}

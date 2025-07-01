@@ -1,0 +1,73 @@
+{% assign subscribe = site.sections | where: "section_type", "subscribe" | first %}
+<!-- begin subscribe -->
+<section class="py-12 campaign-gradient text-white">
+  <div class="container-narrow text-center">
+    {% if subscribe %}
+    <!-- Section Header -->
+    <div class="mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">{{ subscribe.subscribe_title }}</h2>
+      <p class="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">{{ subscribe.subscribe_description }}</p>
+    </div>
+    {% endif %}
+    
+    <!-- Newsletter Form Container -->
+    <div class="max-w-2xl mx-auto">
+      <!-- Custom styling for Action Network form -->
+      <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+        <div class="mb-6">
+          <h3 class="text-xl font-semibold mb-2">Stay Connected</h3>
+          <p class="text-blue-100">Get the latest updates on the campaign and policy positions.</p>
+        </div>
+        
+        <!-- Action Network Form -->
+        <link href='https://actionnetwork.org/css/style-embed-whitelabel-v3.css' rel='stylesheet' type='text/css' />
+        <script src='https://actionnetwork.org/widgets/v5/form/subscribe-form?format=js&source=widget'></script>
+        <div id='can-form-area-subscribe-form' class="action-network-form">
+          <!-- this div is the target for our HTML insertion -->
+        </div>
+      </div>
+      
+      <!-- Trust Indicators -->
+      <div class="mt-8 text-sm text-blue-100">
+        <p>
+          <i class="fa-solid fa-shield-halved mr-2"></i>
+          Your privacy is protected. We never share your information.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end subscribe -->
+
+<style>
+  /* Custom styling for Action Network forms in subscribe section */
+  #can-form-area-subscribe-form .can_form {
+    background: transparent !important;
+    border: none !important;
+  }
+  
+  #can-form-area-subscribe-form input[type="email"],
+  #can-form-area-subscribe-form input[type="text"] {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 0.75rem !important;
+    padding: 0.75rem 1rem !important;
+    color: #374151 !important;
+    font-size: 1rem !important;
+  }
+  
+  #can-form-area-subscribe-form input[type="submit"] {
+    background: #C0392B !important;
+    border: none !important;
+    border-radius: 0.75rem !important;
+    padding: 0.75rem 2rem !important;
+    color: white !important;
+    font-weight: 600 !important;
+    transition: all 0.2s ease !important;
+  }
+  
+  #can-form-area-subscribe-form input[type="submit"]:hover {
+    background: #A93226 !important;
+    transform: translateY(-1px) !important;
+  }
+</style>

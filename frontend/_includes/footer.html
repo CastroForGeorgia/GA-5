@@ -1,0 +1,40 @@
+<!-- begin footer -->
+<footer class="bg-peach border-t border-gray-200">
+  <div class="container-narrow py-12">
+    <!-- Action Network Form -->
+    <div class="mb-12">
+      <link href='https://actionnetwork.org/css/style-embed-v3.css' rel='stylesheet' type='text/css' />
+      <script src='https://actionnetwork.org/widgets/v5/form/join-the-fight-for-change?format=js&source=widget'></script>
+      <div id='can-form-area-join-the-fight-for-change'><!-- this div is the target for our HTML insertion --></div>
+    </div>
+
+    <div class="flex flex-col items-center text-center space-y-8">
+      <!-- Social Links -->
+      {% if site.data.settings.social %}
+      <div class="flex flex-wrap justify-center gap-6">
+        {% for social in site.data.settings.social %}
+        <a class="flex items-center space-x-2 px-4 py-2 text-gray-600 hover:text-campaign-primary transition-colors duration-200 no-underline group" 
+           href="{{ social.link }}" 
+           target="_blank" 
+           rel="noopener" 
+           aria-label="{{ social.name }} link">
+          <i class="{{ social.icon }} text-lg group-hover:scale-110 transition-transform duration-200"></i>
+          <span class="font-medium">{{ social.name }}</span>
+        </a>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      <!-- Copyright -->
+      <div class="text-sm text-gray-500 border-t border-gray-200 pt-8 w-full text-center">
+        <p>&copy; {{site.time | date: '%Y'}} <a href="/" class="text-campaign-primary hover:text-campaign-primary/80 font-medium no-underline">{{site.data.settings.title}}</a>. All rights reserved.</p>
+        <p class="mt-2">
+          <a href="/privacy" class="text-gray-500 hover:text-campaign-primary no-underline">Privacy Policy</a>
+          <span class="mx-2">•</span>
+          <a href="/terms" class="text-gray-500 hover:text-campaign-primary no-underline">Terms of Service</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- end footer -->

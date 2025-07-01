@@ -1,0 +1,43 @@
+{% if site.posts.size > 0 %}
+<div class="container-big">
+  <!-- begin section blog -->
+  <section class="section blog">
+    <div class="container">
+      <div class="row">
+        <div class="col col-12">
+
+          <div class="blog__inner splide">
+            <div class="splide__track animate">
+              <div class="splide__list">
+                {% assign sorted = site.posts | sort: 'date' | reverse %}
+                {% for post in sorted limit:3 %}
+                <article class="post col-4 col-d-6 col-t-12 splide__slide">
+                  <div class="post-content">
+                    <a href="{{ post.url }}" class="post__image">
+                      <img class="lazy" data-src="{{ post.image }}" alt="{{ post.title }}">
+                    </a>
+                    <div class="post__info">
+                      <h2 class="post__title">
+                        <a href="{{ post.url }}">{{ post.title }}</a>
+                      </h2>
+                      <span>{{ post.description }}</span>
+                    </div>
+                  </div>
+                </article>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+
+          <div class="section__info">
+            <h2 class="section__title">Blog</h2>
+            <p class="section__description">Let's build a future that works for all of us.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end section blog -->
+</div>
+{% endif %}
