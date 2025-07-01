@@ -7,9 +7,9 @@
         <div class="logo">
           <a class="logo__link" href="{{ site.baseurl }}/">
             {% if site.data.settings.logo %}
-            <img class="logo__image" src="{{ site.data.settings.logo | relative_url }}"
+            <img class="logo__image" src="/{{ site.assets.images }}/{{ site.data.settings.logo }}"
               alt="{{ site.data.settings.title }}">
-            <img class="logo__image__dark" src="{{ site.data.settings.logo_dark | relative_url }}"
+            <img class="logo__image__dark" src="/{{ site.assets.images }}/{{ site.data.settings.logo_dark }}"
               alt="{{ site.data.settings.title }}">
             {% else %}
             {{ site.data.settings.title }}

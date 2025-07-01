@@ -3,7 +3,7 @@ title: "Economy"
 description: "Strengthening local jobs, building affordable housing, and ensuring fair taxation to create a thriving and equitable economy."
 date: 2025-02-16 00:00:00 +0000
 label: "Policy"
-image: "/images/economy-policy-header.png"
+image: "/assets/images/economy-policy-header.png"
 ---
 
 # **Building an Economy That Works for Everyone**  

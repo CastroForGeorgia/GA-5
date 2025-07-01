@@ -3,7 +3,7 @@ title: "Education"
 description: "Strengthening public education by raising teacher pay, modernizing schools, and ensuring equitable funding for all students."
 date: 2024-11-28 00:00:00 +0000
 label: "Policy"
-image: "/images/education-policy-header.webp"
+image: "/assets/images/education-policy-header.webp"
 ---
 
 # **Education for All: A Stronger Future Starts in Our Schools**  

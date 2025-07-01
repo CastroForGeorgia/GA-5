@@ -3,7 +3,7 @@ title: "Housing"
 description: "Affordable, sustainable homes and creating good-paying jobs without displacement or environmental harm."
 date: 2025-02-19 00:00:00 +0000
 label: "Policy"
-image: "/images/housing-policy-header.png"
+image: "/assets/images/housing-policy-header.png"
 ---
 
 # **🏠 Build Baby Build: Housing for Georgia’s 5th District**  

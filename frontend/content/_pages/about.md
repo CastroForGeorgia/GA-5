@@ -18,9 +18,9 @@ Family has always been everything to me. I was lucky enough to buy **two side-by
 
 ## Learn More About My Vision
 - [Why I'm Running for Congress](/blog/why-im-running/)
-- [The Workers' Housing Guarantee: Affordable Homes for All](/project/housing-community/)
-- [Healthcare is a Human Right: Medicare for All](/project/healthcare/)
-- [Civil Rights and Equality: Standing Up for Justice](/project/civil-rights-equality)
-- [Technology for People: Ethical and Accessible AI](/project/ai/)
+- [The Workers' Housing Guarantee: Affordable Homes for All](/policy/housing-community/)
+- [Healthcare is a Human Right: Medicare for All](/policy/healthcare/)
+- [Civil Rights and Equality: Standing Up for Justice](/policy/civil-rights-equality)
+- [Technology for People: Ethical and Accessible AI](/policy/ai/)
 
 This campaign isn't just about policy. It's about building a government that actually puts working people first.

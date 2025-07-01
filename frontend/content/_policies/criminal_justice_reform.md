@@ -3,7 +3,7 @@ title: "Criminal Justice Reform"
 description: "Ending mass incarceration, transforming policing, and investing in opportunity-driven communities to create real justice for all."
 date: 2025-01-24 00:00:00 +0000
 label: "Policy"
-image: "/images/criminal-justice-reform.webp"
+image: "/assets/images/criminal-justice-reform.webp"
 ---
 
 # **Criminal Justice Reform: Justice Through Opportunity**  

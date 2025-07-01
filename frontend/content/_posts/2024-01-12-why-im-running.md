@@ -39,7 +39,7 @@ I’m running in **GA-05** because this fight isn’t about me—it’s about al
 
 ## Learn More About My Vision
 - [Learn about me](/about/)
-- [The Workers' Housing Guarantee: Affordable Homes for All](/project/housing-community/)
-- [Healthcare is a Human Right: Medicare for All](/project/healthcare/)
-- [Civil Rights and Equality: Standing Up for Justice](/project/civil-rights-equality)
-- [Technology for People: Ethical and Accessible AI](/project/ai/)
+- [The Workers' Housing Guarantee: Affordable Homes for All](/policy/housing-community/)
+- [Healthcare is a Human Right: Medicare for All](/policy/healthcare/)
+- [Civil Rights and Equality: Standing Up for Justice](/policy/civil-rights-equality)
+- [Technology for People: Ethical and Accessible AI](/policy/ai/)

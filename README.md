@@ -8,12 +8,17 @@ This repository contains the campaign website for Andres Castro, candidate for U
 GA-5/
 ├── frontend/           # Jekyll website
 │   ├── assets/        # Static assets (images, JS, CSS)
-│   ├── content/       # Content files (posts, projects, pages)
+│   ├── content/       # Content files
+│   │   ├── posts/     # Blog posts
+│   │   ├── policies/  # Policy positions and platforms
+│   │   ├── projects/  # Campaign initiatives and activities
+│   │   └── pages/     # Static pages (about, contact, etc.)
 │   ├── _data/         # Site configuration and data
 │   ├── _includes/     # Jekyll includes/templates
 │   ├── _layouts/      # Jekyll layouts
 │   ├── _sass/         # SCSS stylesheets
 │   ├── blog/          # Blog listing pages
+│   ├── policies/      # Policy listing pages
 │   ├── projects/      # Project listing pages
 │   ├── _config.yml    # Jekyll configuration
 │   ├── Gemfile        # Ruby dependencies
@@ -22,6 +27,20 @@ GA-5/
 ├── backend/           # Future backend services
 └── README.md          # This file
 ```
+
+## Content Organization
+
+### Policies vs Projects
+
+**Policies** (`content/policies/`): Policy positions and platforms
+- Economy, healthcare, education, etc.
+- Detailed policy proposals and positions
+- Accessible at `/policy/[name]/`
+
+**Projects** (`content/projects/`): Campaign initiatives and activities
+- Community outreach, events, volunteer activities
+- Actual campaign work and initiatives
+- Accessible at `/project/[name]/`
 
 ## Quick Start
 
@@ -71,10 +90,17 @@ GA-5/
 - Use the format: `YYYY-MM-DD-title.md`
 - Include front matter with title, description, and layout
 
-### Adding Projects
-- Create new projects in `frontend/content/projects/`
+### Adding Policies
+- Create new policies in `frontend/content/policies/`
 - Use descriptive filenames (e.g., `economy.md`)
 - Include front matter with title, description, and layout
+- Policies should contain detailed policy positions and proposals
+
+### Adding Projects
+- Create new projects in `frontend/content/projects/`
+- Use descriptive filenames (e.g., `community-outreach.md`)
+- Include front matter with title, description, and layout
+- Projects should describe actual campaign initiatives and activities
 
 ### Adding Pages
 - Create new pages in `frontend/content/pages/`

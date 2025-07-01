@@ -1,0 +1,38 @@
+---
+layout: default
+title: Policies That Put People First
+description: Explore our vision for a fairer, more just Georgia's 5th District. Together, we'll build a thriving, equitable future.
+---
+
+<div class="container">
+  <div class="page-head">
+    {% if page.title %}
+      <h1 class="page-title">{{ page.title }}</h1>
+    {% endif %}
+    {% if page.description %}
+      <p class="page-description">{{ page.description }}</p>
+    {% endif %}
+  </div>
+</div>
+
+<div class="container policies-page animate">
+  <div class="row">
+    {% if site.policies %}
+      {% for policy in site.policies reversed %}
+      <article class="policy col col-4 col-d-6 col-t-12">
+        <div class="policy-content">
+          <a href="{{ policy.url }}" class="policy__image">
+            <img class="lazy" data-src="{{ policy.image }}" alt="{{ policy.title }}">
+          </a>
+          <div class="policy__info">
+            <h2 class="policy__title">
+              <a href="{{ policy.url }}">{{ policy.title }}</a>
+            </h2>
+            <span>{{ policy.description }}</span>
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    {% endif %}
+  </div>
+</div> 

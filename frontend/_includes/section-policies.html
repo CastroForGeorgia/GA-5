@@ -1,0 +1,49 @@
+{% if site.data.settings.policies.enable == true %}
+<div class="container-big">
+  <!-- begin section policies -->
+  <section class="section policies">
+    <div class="container">
+      <div class="row">
+        <div class="col col-12">
+
+          <div class="policies__inner splide">
+            <div class="splide__track animate">
+              <div class="splide__list">
+                {% if site.policies %}
+                  {% assign sorted = site.policies | sort: 'date' | reverse %}
+                  {% for policy in sorted limit:8 %}
+                  <article class="policy col-3 col-d-6 col-t-12 splide__slide">
+                    <div class="policy-content">
+                      <a href="{{ policy.url }}" class="policy__image">
+                        <img class="lazy" data-src="{{ policy.image }}" alt="{{ policy.title }}">
+                      </a>
+                      <div class="policy__info">
+                        <h2 class="policy__title">
+                          <a href="{{ policy.url }}">{{ policy.title }}</a>
+                        </h2>
+                        <span>{{ policy.description }}</span>
+                      </div>
+                    </div>
+                  </article>
+                  {% endfor %}
+                {% endif %}
+              </div>
+            </div>
+          </div>
+
+          <div class="section__info">
+            {% if site.data.settings.policies.policies_title %}
+              <h2 class="section__title">{{ site.data.settings.policies.policies_title }}</h2>
+            {% endif %}
+            {% if site.data.settings.policies.policies_description %}
+              <p class="section__description">{{ site.data.settings.policies.policies_description }}</p>
+            {% endif %}
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end section policies -->
+</div>
+{% endif %} 

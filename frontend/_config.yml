@@ -6,6 +6,8 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # Repository settings for GitHub metadata
 repository: CastroForGeorgia/GA-5
 
+# Collections directory
+collections_dir: content
 
 #-------------------------------
 # Build Settings
@@ -31,6 +33,9 @@ collections:
   projects:
     output: true
     permalink: /project/:slug/
+  policies:
+    output: true
+    permalink: /policy/:slug/
 
 # Pages Path
 defaults:
@@ -39,20 +44,25 @@ defaults:
     values:
       layout: "default"
   - scope:
-      path: "content/pages"
+      path: "content/_pages"
       type: "pages"
     values:
       layout: "page"
   - scope:
-      path: "content/posts"
+      path: "content/_posts"
       type: "posts"
     values:
       layout: "post"
   - scope:
-      path: "content/projects"
+      path: "content/_projects"
       type: "projects"
     values:
       layout: "project"
+  - scope:
+      path: "content/_policies"
+      type: "policies"
+    values:
+      layout: "policy"
 
 sass:
   sass_dir: _sass

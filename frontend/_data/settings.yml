@@ -1,8 +1,8 @@
 #-------------------------------
 # Site Settings
 title: CastroForGeorgia
-logo: '/assets/images/logo.png' # You can add own logo. For example '/assets/images/logo.png'.
-logo_dark: '/assets/images/logo.png'
+logo: 'logo.png' # Only the filename
+logo_dark: 'logo.png'
 description: Andres Castro, a champion for the people in Georgia's 5th Congressional District. 
 color_scheme: auto # You can choose three modes auto, light, and dark. By default, the auto mode is set, which means the user can choose the light or dark mode themself.
 
@@ -18,11 +18,11 @@ menu_settings:
     - title: 'Contact'
       url: '/contact/'
     - title: 'Economy'
-      url: '/project/economy/'
+      url: '/policy/economy/'
     - title: 'Healthcare'
-      url: '/project/healthcare/'
+      url: '/policy/healthcare/'
     - title: 'Equality'
-      url: '/project/civil-rights-equality/'
+      url: '/policy/civil-rights-equality/'
 
 
 
@@ -30,7 +30,7 @@ menu_settings:
 # Author Settings
 author:
   author_name: Andres Castro
-  author_avatar: '/assets/images/about-me-photo-zoom.jpg'
+  author_avatar: 'about-me-photo-zoom.jpg'
 
 
 #-------------------------------
@@ -38,8 +38,8 @@ author:
 hero:
   enable: true
   hero_role: "Candidate for U.S. House (GA-05) ∙ Fighting for working families, affordable housing, and economic dignity"
-  hero_title: "Hi! I’m Andres <br> Fighting for Georgia's 5th District"
-  hero_description: "Together, we can build a future that works for everyone—where equity, justice, and opportunity are more than promises, they’re realities. Let’s create meaningful change for Georgia’s working families."
+  hero_title: "Hi! I'm Andres <br> Fighting for Georgia's 5th District"
+  hero_description: "Together, we can build a future that works for everyone—where equity, justice, and opportunity are more than promises, they're realities. Let's create meaningful change for Georgia's working families."
   hero_button_text: "Join the Movement"
   hero_button_link: "https://actionnetwork.org/forms/connect-with-andres-share-your-vision"
 
@@ -47,24 +47,30 @@ hero:
 # Projects Section Settings
 projects:
   enable: true
-  projects_title: Policies
-  projects_description: Explore our vision for a fairer, more just Georgia’s 5th District. Together, we’ll build a thriving, equitable future.
+  projects_title: Campaign Projects
+  projects_description: See our ongoing initiatives and community projects that are making a difference in Georgia's 5th District.
 
+#-------------------------------
+# Policies Section Settings
+policies:
+  enable: true
+  policies_title: Policies
+  policies_description: Explore our vision for a fairer, more just Georgia's 5th District. Together, we'll build a thriving, equitable future.
 
 #-------------------------------
 # Blog Section Settings
 blog:
   enable: true
   blog_title: Blog
-  blog_description: Let’s build a future that works for all of us.
+  blog_description: Let's build a future that works for all of us.
 
 #-------------------------------
 # About Section Settings
 about:
   enable: true
-  about_image: "/assets/images/about-me-photo.jpg"
+  about_image: 'about-me-photo.jpg'
   about_title: "Together for Change"
-  about_description: "Let’s build a future where every family in Georgia’s 5th District has access to opportunity, equity, and justice. Join me in fighting for bold solutions that uplift working families, protect civil rights, and create a government that truly works for all of us."
+  about_description: "Let's build a future where every family in Georgia's 5th District has access to opportunity, equity, and justice. Join me in fighting for bold solutions that uplift working families, protect civil rights, and create a government that truly works for all of us."
 
 
 #-------------------------------
@@ -75,13 +81,13 @@ faq:
   faq_description: "Get to know Andres Castro and his commitment to creating a fairer, more inclusive community in Georgia's 5th Congressional District."
   faq_items:
     - title: "What motivated Andres Castro to run for office?"
-      description: "Andres Castro was motivated to run out of frustration with the current Democratic leadership, which he believes has stopped prioritizing the needs of the people. He sees leaders unwilling to listen, slow to act, and compromising on the promises made to working-class families. Andres is stepping up to provide bold, uncompromising leadership that puts the residents of Georgia’s 5th Congressional District first."
+      description: "Andres Castro was motivated to run out of frustration with the current Democratic leadership, which he believes has stopped prioritizing the needs of the people. He sees leaders unwilling to listen, slow to act, and compromising on the promises made to working-class families. Andres is stepping up to provide bold, uncompromising leadership that puts the residents of Georgia's 5th Congressional District first."
 
     - title: "Who is Andres Castro?"
-      description: "Andres Castro is a proud son of Metro Atlanta, with deep roots in Marietta, Powder Springs, and Atlanta. Growing up in poverty, he learned firsthand the struggles of working-class families. Through determination and hard work, Andres became a Staff Software Engineer, where he honed his expertise in leveraging technology to solve complex problems. Now, as a candidate for U.S. Representative in Georgia’s 5th Congressional District, Andres is focused on creating solutions for affordable housing, economic justice, and transparent governance, ensuring opportunity and equity for all."
+      description: "Andres Castro is a proud son of Metro Atlanta, with deep roots in Marietta, Powder Springs, and Atlanta. Growing up in poverty, he learned firsthand the struggles of working-class families. Through determination and hard work, Andres became a Staff Software Engineer, where he honed his expertise in leveraging technology to solve complex problems. Now, as a candidate for U.S. Representative in Georgia's 5th Congressional District, Andres is focused on creating solutions for affordable housing, economic justice, and transparent governance, ensuring opportunity and equity for all."
 
     - title: "What are Andres Castro's main policy priorities?"
-      description: "Andres Castro’s priorities include bold solutions to address systemic inequalities: affordable housing through programs like The Workers’ Housing Guarantee, universal healthcare to ensure access for all, automation-aware job reskilling programs, and corporate accountability to hold big businesses to fair wage and tax standards. With his technical background, Andres also champions ethical AI and innovative, equitable solutions to empower workers and communities."
+      description: "Andres Castro's priorities include bold solutions to address systemic inequalities: affordable housing through programs like The Workers' Housing Guarantee, universal healthcare to ensure access for all, automation-aware job reskilling programs, and corporate accountability to hold big businesses to fair wage and tax standards. With his technical background, Andres also champions ethical AI and innovative, equitable solutions to empower workers and communities."
 
     - title: "How can supporters get involved with Andres Castro's campaign?"
       description: "Supporters can get involved by volunteering for canvassing, phone banking, and organizing events, attending town halls and community meetings, and sharing campaign messages across social media platforms. You can also subscribe to the campaign newsletter to stay informed and take action. Your support and participation are critical to driving meaningful change for Georgia's 5th Congressional District."

@@ -3,7 +3,7 @@ title: "Immigration"
 description: "Integrating immigrants, protecting families, and strengthening our communities without detention camps or mass deportations."
 date: 2024-11-28 00:00:00 +0000
 label: "Policy"
-image: "/images/immigration-policy-header.webp"
+image: "/assets/images/immigration-policy-header.webp"
 ---
 
 # **Immigration Policy: Amnesty and Humane Reform**  
