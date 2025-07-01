@@ -1,0 +1,97 @@
+#-------------------------------
+# General Site Settings
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+
+# Repository settings for GitHub metadata
+repository: CastroForGeorgia/GA-5
+
+# Collections directory
+collections_dir: content
+
+#-------------------------------
+# Build Settings
+markdown: kramdown
+permalink: /:title/
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+paginate: 7
+paginate_path: "/blog/page/:num"
+
+#-------------------------------
+# Collections
+collections:
+  pages:
+    output: true
+    permalink: /:name/
+  posts:
+    output: true
+    permalink: /blog/:slug/
+  projects:
+    output: true
+    permalink: /project/:slug/
+  policies:
+    output: true
+    permalink: /policy/:slug/
+  sections:
+    output: false  # Sections are included, not standalone pages
+  faqs:
+    output: true
+    permalink: /faq/:slug/
+  testimonials:
+    output: false  # Testimonials are included, not standalone pages
+
+# Pages Path
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+  - scope:
+      path: "content/_pages"
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: "content/_posts"
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: "content/_projects"
+      type: "projects"
+    values:
+      layout: "project"
+  - scope:
+      path: "content/_policies"
+      type: "policies"
+    values:
+      layout: "policy"
+  - scope:
+      path: "content/_sections"
+      type: "sections"
+    values:
+      layout: "section"
+  - scope:
+      path: "content/_faqs"
+      type: "faqs"
+    values:
+      layout: "faq"
+  - scope:
+      path: "content/_testimonials"
+      type: "testimonials"
+    values:
+      layout: "testimonial"
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Asset paths
+assets:
+  images: assets/images
+  js: assets/js
+  css: assets/css
