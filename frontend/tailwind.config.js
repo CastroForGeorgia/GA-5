@@ -22,7 +22,11 @@ module.exports = {
           'secondary-light': '#E74C3C', // Lighter red for accents
           'success': '#2E8B57',     // Use primary green for success
           'warning': '#D97706',     // Keep orange for warnings
-          'neutral': {
+        },
+        // Direct color overrides to ensure proper application
+        'campaign-primary': '#2E8B57',
+        'campaign-secondary': '#C0392B',
+        'neutral': {
             50: '#F8FAFC',
             100: '#F1F5F9',
             200: '#E2E8F0',
@@ -33,8 +37,7 @@ module.exports = {
             700: '#334155',
             800: '#1E293B',
             900: '#0F172A',
-          }
-        },
+          },
         // Original campaign background colors
         'cream': '#FFFDD0',      // Cream White
         'peach': '#FFDAB9',      // Peach Georgia  

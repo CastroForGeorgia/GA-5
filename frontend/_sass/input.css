@@ -68,11 +68,27 @@
 }
 
 .btn-primary {
-  @apply bg-campaign-primary text-white border-campaign-primary hover:bg-green-700 focus:ring-campaign-primary;
+  @apply text-white border-0 focus:ring-campaign-primary shadow-md hover:shadow-lg transition-all duration-200;
+  background-color: var(--campaign-primary) !important;
+  border-color: var(--campaign-primary) !important;
+}
+
+.btn-primary:hover {
+  background-color: #228B22 !important; /* Darker campaign green for hover */
+  border-color: #228B22 !important;
+  transform: translateY(-1px);
 }
 
 .btn-secondary {
-  @apply bg-white text-campaign-primary border-campaign-primary hover:bg-gray-50 focus:ring-campaign-primary;
+  @apply border-2 focus:ring-campaign-primary shadow-md hover:shadow-lg transition-all duration-200;
+  background-color: var(--campaign-cream);
+  color: var(--campaign-primary);
+  border-color: var(--campaign-primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--campaign-peach);
+  transform: translateY(-1px);
 }
 
 .btn-cta {
@@ -268,6 +284,22 @@ body {
 
 .bg-gray-50 {
   background-color: var(--campaign-peach) !important;
+}
+
+/* Override Tailwind button defaults */
+.btn-primary.btn-primary {
+  background-color: var(--campaign-primary) !important;
+  border-color: var(--campaign-primary) !important;
+}
+
+.btn-primary.btn-primary:hover {
+  background-color: #228B22 !important;
+  border-color: #228B22 !important;
+}
+
+/* Force campaign primary color for any conflicting classes */
+.bg-campaign-primary {
+  background-color: var(--campaign-primary) !important;
 }
 
 /* Search Results Styling */
