@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Field Updates Archive | Andres Castro Campaign"
+description: "Public archive of campaign field work summaries, metrics, and success stories from canvassing, voter outreach, and community organizing across Georgia's 5th District."
+---
+
 # 🚶🏽 Final Field Reports
 
 This folder contains **public summaries** of offline campaign work: canvassing, mutual aid, voter outreach, and organizing wins from the field.
@@ -45,9 +51,9 @@ field-updates/
 
 | Folder             | Example                                                                            |
 | ------------------ | ---------------------------------------------------------------------------------- |
-| `weekly-reports/`  | “Week of June 24: 314 doors knocked, 5 new leads, Mechanicsville tenant meeting”   |
+| `weekly-reports/`  | "Week of June 24: 314 doors knocked, 5 new leads, Mechanicsville tenant meeting"   |
 | `metrics/`         | One CSV per topic; headers should match `neighborhood`, `count`, `date`            |
-| `success-stories/` | “In Oakland City, a student-led flyering team turned out 12 volunteers in 2 days.” |
+| `success-stories/` | "In Oakland City, a student-led flyering team turned out 12 volunteers in 2 days." |
 
 ---
 

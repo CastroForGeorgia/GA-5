@@ -1,3 +1,9 @@
+---
+layout: welcome-hub-page
+title: "Frequently Asked Questions | Andres Castro Campaign"
+description: "Get answers to common questions about our open-source campaign approach, participation, privacy, and how to contribute to building transparent, democratic politics."
+---
+
 # Frequently Asked Questions (FAQ) 🤔
 
 Here are some common questions we've heard about our campaign and how we're using open-source practices. Don't see your question? Feel free to ask in our [Discussions](../../discussions)!
@@ -10,7 +16,7 @@ Think of it like a neighborhood potluck—everyone contributes openly, ideas are
 
 ### **Why run an open-source campaign?**
 
-We believe transparency builds trust and leads to better solutions. When everyone can contribute, we tap into our collective wisdom, creativity, and energy, making our campaign stronger and more reflective of the community’s needs.
+We believe transparency builds trust and leads to better solutions. When everyone can contribute, we tap into our collective wisdom, creativity, and energy, making our campaign stronger and more reflective of the community's needs.
 
 ## 📌 Participation & Contributions
 
@@ -30,7 +36,7 @@ Only your GitHub username will appear publicly. You can choose a username that k
 
 ### **What about voter data and privacy?**
 
-We take privacy very seriously. No personal voter data (names, addresses, phone numbers) is ever shared openly. If an issue or task involves personal details, it’s handled securely through our internal systems.
+We take privacy very seriously. No personal voter data (names, addresses, phone numbers) is ever shared openly. If an issue or task involves personal details, it's handled securely through our internal systems.
 
 ### **How do you handle disagreements or conflicts?**
 
@@ -38,11 +44,11 @@ We foster respectful, open discussions. If disagreements arise, we discuss trans
 
 ## 📌 Using GitHub
 
-### **What’s GitHub and why use it?**
+### **What's GitHub and why use it?**
 
 GitHub is an online tool originally designed for software developers to collaborate. We use it because it helps us manage documents, tasks, and discussions transparently, allowing anyone to easily contribute and follow the campaign's progress.
 
-### **What’s an Issue, Pull Request, or Merge?**
+### **What's an Issue, Pull Request, or Merge?**
 
 * **Issue:** Think of it as a note pinned on a community board—a task, suggestion, or improvement.
 * **Pull Request (PR):** A formal suggestion for changes that others review before approval.
@@ -50,7 +56,7 @@ GitHub is an online tool originally designed for software developers to collabor
 
 ## 📌 Getting More Help
 
-### **I’m stuck or confused—where do I go for help?**
+### **I'm stuck or confused—where do I go for help?**
 
 Reach out anytime:
 

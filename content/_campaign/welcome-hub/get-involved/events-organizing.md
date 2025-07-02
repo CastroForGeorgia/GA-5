@@ -1,3 +1,9 @@
+---
+layout: welcome-hub-page
+title: "Event Organizing Guide | Andres Castro Campaign"
+description: "Learn to organize community events, town halls, canvass kickoffs, and more. Build connections and mobilize your neighborhood through effective grassroots organizing."
+---
+
 # 📅 Event Organizing Guide
 
 Events are where our campaign truly comes to life — at community centers, church basements, neighborhood parks, and on porches across GA‑05. This guide walks you through organizing public events using our open-source structure on GitHub.
@@ -16,7 +22,7 @@ Whether you're hosting a neighborhood meetup, town hall, mutual aid drive, or vo
 * **Policy roundtables or workshops**
 * **Online Q\&As, Zoom teach-ins, livestreams**
 
-If it builds connection and moves people to act — it’s an event.
+If it builds connection and moves people to act — it's an event.
 
 ---
 
@@ -122,7 +128,7 @@ After the event:
 
 ---
 
-## 🧑‍🤝‍🧑 Roles You’ll Need
+## 🧑‍🤝‍🧑 Roles You'll Need
 
 | Role                    | Responsibility                      |
 | ----------------------- | ----------------------------------- |

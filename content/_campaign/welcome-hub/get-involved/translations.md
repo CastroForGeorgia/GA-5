@@ -1,3 +1,9 @@
+---
+layout: welcome-hub-page
+title: "Translations & Language Accessibility | Andres Castro Campaign"
+description: "Help make our campaign accessible to everyone by translating materials into Spanish, Vietnamese, and other languages. Build genuine community power through language inclusion."
+---
+
 # 🌎 Translations & Language Accessibility
 
 Ensuring our campaign materials are accessible to everyone in our diverse community is a core value at Castro for Georgia. **We need your help translating key resources into languages like Spanish, Vietnamese, and more.**
@@ -101,7 +107,7 @@ Nope! Check out our [Quick Start Guide](../get-involved/quick-start-guide.md) to
 No. Just do your best! Community members will help polish translations through collaborative review.
 
 **"Can I translate into other languages not listed?"**
-Yes, absolutely! Open an issue requesting a new language folder, and we’ll quickly create it.
+Yes, absolutely! Open an issue requesting a new language folder, and we'll quickly create it.
 
 ---
 

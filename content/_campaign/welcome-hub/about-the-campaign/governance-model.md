@@ -1,3 +1,9 @@
+---
+layout: welcome-hub-page
+title: "Open Governance Model | Andres Castro Campaign"
+description: "Learn how our campaign makes decisions transparently through open governance. From proposing ideas to implementation, see exactly how democracy works in practice."
+---
+
 # How Decisions Are Made — Our Open Governance Model 🗳️
 
 In our campaign, transparency and democracy aren't just slogans—they shape every decision we make. Here's exactly how our open-source governance model works, explained simply and clearly:

@@ -1,3 +1,9 @@
+---
+layout: welcome-hub-page
+title: "Policy Research Guide | Andres Castro Campaign"
+description: "Contribute to our open policy development through research, fact-checking, and writing. Help shape policies that truly represent working-class communities."
+---
+
 # 📚 Policy Research & Writing Guide
 
 At Castro for Georgia, our policies are shaped openly and collaboratively—by neighbors, students, activists, and policy experts alike. This guide will walk you through how you can contribute effectively to our policy research and writing efforts using GitHub.

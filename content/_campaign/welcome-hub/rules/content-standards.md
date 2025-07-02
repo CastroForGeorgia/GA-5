@@ -1,3 +1,9 @@
+---
+layout: welcome-hub-page
+title: "Content Standards & Style Guide | Andres Castro Campaign"
+description: "Guidelines for creating accessible, empowering campaign materials that reflect the dignity and grit of working-class communities. Plain language and accessibility standards."
+---
+
 # 🎨 Content Standards & Style Guide
 
 This guide outlines how we create campaign materials that are **accessible, empowering, and aligned with our values**.
@@ -18,7 +24,7 @@ All contributions—text, graphics, photos, videos, or code—should reflect the
 
 ## 🧑‍🦽 Accessibility Guidelines
 
-We’re committed to making this campaign accessible to all—online and offline.
+We're committed to making this campaign accessible to all—online and offline.
 
 ### For Visual Content:
 - **Alt-text** required for all images.
@@ -36,16 +42,16 @@ We’re committed to making this campaign accessible to all—online and offline
 ## 🪧 Messaging Style
 
 - **Affirmative > Negative**  
-  → “We believe 40 hours should be enough to raise a family.”  
-  ← not: “We oppose the current system.”
+  → "We believe 40 hours should be enough to raise a family."  
+  ← not: "We oppose the current system."
 
 - **People > Problems**  
-  → “Low income families in Mechanicsville are organizing for fair rent.”  
-  ← not: “Housing policy in Atlanta is broken.”
+  → "Low income families in Mechanicsville are organizing for fair rent."  
+  ← not: "Housing policy in Atlanta is broken."
 
 - **Actionable > Abstract**  
-  → “Join this week’s field training”  
-  ← not: “Stay involved over the long term”
+  → "Join this week's field training"  
+  ← not: "Stay involved over the long term"
 
 ---
 
@@ -54,7 +60,7 @@ We’re committed to making this campaign accessible to all—online and offline
 - Use **original photos** or Creative Commons–licensed images (CC0, CC-BY).
 - Include photographer credit in the image README or PR description.
 - Avoid tokenizing or exploitative imagery—show real dignity and joy.
-- Don’t upload images of minors unless you have documented consent.
+- Don't upload images of minors unless you have documented consent.
 
 ---
 
@@ -71,9 +77,9 @@ To support remixing, reuse, and shared organizing power:
 
 ---
 
-## ✍️ Copywriting Do’s & Don’ts
+## ✍️ Copywriting Do's & Don'ts
 
-| ✅ Do | ❌ Don’t |
+| ✅ Do | ❌ Don't |
 |------|----------|
 | Use short, direct sentences | Use 4-line paragraphs or academic tone |
 | Ask people to take action | Stay abstract or policy-only |
@@ -90,4 +96,4 @@ To support remixing, reuse, and shared organizing power:
 
 ---
 
-**Let’s make this campaign readable, beautiful, and powerful—for everyone.**
+**Let's make this campaign readable, beautiful, and powerful—for everyone.**

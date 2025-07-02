@@ -1,6 +1,12 @@
+---
+layout: page
+title: "Policy Review Checklist | Andres Castro Campaign"
+description: "Quality assurance checklist for policy proposals ensuring they are community-vetted, accessible, evidence-based, and privacy-protected before publication."
+---
+
 # ✅ Policy Review Checklist
 
-Before finalizing and publishing any policy proposal to `final/`, please use this checklist to ensure it’s community-vetted, accessible, and grounded in evidence.
+Before finalizing and publishing any policy proposal to `final/`, please use this checklist to ensure it's community-vetted, accessible, and grounded in evidence.
 
 ---
 
@@ -41,7 +47,7 @@ Before finalizing and publishing any policy proposal to `final/`, please use thi
 
 - [ ] No PII (personally identifiable info) included
 - [ ] Quotes or stories anonymized or consented
-- [ ] Draft doesn’t reference individuals without permission
+- [ ] Draft doesn't reference individuals without permission
 
 ---
 

@@ -1,8 +1,14 @@
+---
+layout: page
+title: "Design Hub | Andres Castro Campaign"
+description: "Visual design center for campaign materials, templates, and brand assets. Create flyers, social graphics, and accessible designs that make our movement visible."
+---
+
 # 🎨 Design Hub
 
 This is the visual design center of the campaign—where we keep all shared templates, brand assets, and design tasks for contributors.
 
-Whether you’re a graphic designer, social media volunteer, or just love making flyers, this is your space.
+Whether you're a graphic designer, social media volunteer, or just love making flyers, this is your space.
 
 ---
 
@@ -43,4 +49,4 @@ Whether you’re a graphic designer, social media volunteer, or just love making
 
 📎 For official usage rules, read [licensing-and-brand.md](../../welcome-hub/rules/licensing-and-brand.md)
 
-**Design is a form of storytelling—let’s make our movement visible.**
+**Design is a form of storytelling—let's make our movement visible.**

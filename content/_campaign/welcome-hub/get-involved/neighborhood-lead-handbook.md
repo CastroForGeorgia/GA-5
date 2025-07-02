@@ -1,3 +1,9 @@
+---
+layout: welcome-hub-page
+title: "Neighborhood Lead Handbook | Andres Castro Campaign"
+description: "Lead your community with this comprehensive guide to organizing neighbors, fostering engagement, and making local voices heard in our grassroots campaign."
+---
+
 # 🏘️ Neighborhood Lead Handbook
 
 Thank you for stepping up as a **Neighborhood Lead** for Castro for Georgia! You're playing a critical role in grassroots democracy—organizing your neighbors, fostering community engagement, and making local voices heard.
@@ -86,7 +92,7 @@ Each subfolder includes a `README.md` with clear guidance and ideas for organizi
 
 * Never post personally identifiable information (names, addresses, phone numbers) in Issues or Discussions.
 * Use internal campaign tools (e.g., secure spreadsheets, ActionNetwork, Airtable) for sensitive details.
-* Foster respectful dialogue and always uphold the campaign’s [Code of Conduct](../welcome-hub/rules/README.md).
+* Foster respectful dialogue and always uphold the campaign's [Code of Conduct](../welcome-hub/rules/README.md).
 
 ---
 

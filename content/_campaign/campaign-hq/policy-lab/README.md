@@ -1,11 +1,17 @@
+---
+layout: page
+title: "Policy Lab | Andres Castro Campaign"
+description: "Collaborative policy development for housing justice, healthcare for all, and economic dignity. Draft, refine, and approve proposals through transparent community engagement."
+---
+
 # 🧪 Policy Lab
 
 This is the collaborative engine room for campaign policy development.  
-Here, we draft, refine, and approve proposals across our campaign’s three North Stars:
+Here, we draft, refine, and approve proposals across our campaign's three North Stars:
 
 - 🏘️ Housing Justice
 - 🏥 Healthcare for All
-- 💼 Economic Dignity & Workers’ Rights
+- 💼 Economic Dignity & Workers' Rights
 
 Every folder is open. Every proposal is visible.  
 We write and debate policy the same way we intend to govern—with the people.
@@ -54,8 +60,8 @@ Each folder contains:
 ## 👥 Who Can Contribute?
 
 Everyone.  
-- You don’t need to be a lawyer or think tank researcher.  
-- If you’ve experienced the policy failures we’re trying to fix, you belong here.  
+- You don't need to be a lawyer or think tank researcher.  
+- If you've experienced the policy failures we're trying to fix, you belong here.  
 - We believe in people-led policymaking, not top-down doctrine.
 
 ---
@@ -68,4 +74,4 @@ Everyone.
 
 ---
 
-**Let’s build policy that reflects the lived reality of GA‑05—and moves all of us forward.**
+**Let's build policy that reflects the lived reality of GA‑05—and moves all of us forward.**

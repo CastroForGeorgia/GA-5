@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Policy Draft Template | Andres Castro Campaign"
+description: "Template for drafting new policy proposals in our collaborative policy lab. Structured format for clear, community-centered policy development."
+---
+
 # 📝 Policy Draft Template
 
 Use this template when drafting a new policy proposal in any `policy-lab` folder.  

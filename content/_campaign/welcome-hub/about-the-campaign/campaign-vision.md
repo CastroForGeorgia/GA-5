@@ -1,3 +1,9 @@
+---
+layout: welcome-hub-page
+title: "Our Campaign Vision | Andres Castro for Georgia"
+description: "Discover our movement's three North Stars: affordable housing for all, healthcare as a human right, and dignified work in a fair economy. Join us in building working-class prosperity."
+---
+
 # Our Campaign Vision 🌟
 
 **Castro for Georgia** isn't just a political campaign—it's a movement to build a future where every working family in Georgia's 5th District thrives. Our vision is built around three core "North Stars":

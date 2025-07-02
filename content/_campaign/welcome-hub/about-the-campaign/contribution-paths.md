@@ -1,3 +1,9 @@
+---
+layout: welcome-hub-page
+title: "Contribution Paths | Andres Castro Campaign"
+description: "Discover how you can help our campaign from 5-minute quick fixes to leadership roles. Find the perfect way to contribute your skills and time to building progressive change."
+---
+
 # Contribution Paths — How You Can Help 🌟
 
 Everyone has something valuable to offer our campaign. Whether you've got five minutes or five hours, there's a meaningful way for you to help:

@@ -1,3 +1,9 @@
+---
+layout: welcome-hub-page
+title: "Moderation Playbook | Andres Castro Campaign"
+description: "How community moderation works in our open-source campaign. Fair enforcement processes, reporting procedures, and accountability mechanisms that protect everyone."
+---
+
 # 🛡️ Moderation & Community Enforcement Playbook
 
 Our campaign is open-source and people-powered—which means everyone deserves to feel safe contributing and organizing here.
@@ -18,7 +24,7 @@ This playbook outlines how moderation works, what to expect, and how to raise co
 
 ## 🚨 What Triggers Enforcement?
 
-We act when someone’s behavior:
+We act when someone's behavior:
 - Violates the [Code of Conduct](./code-of-conduct.md)
 - Posts private or sensitive information
 - Uses exclusionary or discriminatory language
@@ -30,7 +36,7 @@ We act when someone’s behavior:
 ## 🪜 Enforcement Process (Adapted from Contributor Covenant v2.1)
 
 1. **Informal Warning**  
-   - Friendly reminder in public or private: “Hey, please review our Code of Conduct.”
+   - Friendly reminder in public or private: "Hey, please review our Code of Conduct."
 
 2. **Moderation Action**  
    - Content removed, comment hidden, or thread locked.  
@@ -60,18 +66,18 @@ All reports are handled **confidentially** and **as promptly as possible**.
 
 ## 👂 Appeals & Restoration
 
-If you’ve been warned or restricted and believe it was in error:
+If you've been warned or restricted and believe it was in error:
 
 1. Contact the moderators via email: **conduct@castroforgeorgia.com**
 2. Include a short explanation and a link to the original incident.
 3. Moderators will review as a group and reply within 5–7 days.
 
-We believe in accountability, not cancellation. If you’re learning and committed to our values, there’s room to come back stronger.
+We believe in accountability, not cancellation. If you're learning and committed to our values, there's room to come back stronger.
 
 ---
 
 ## ✨ Our Values in Action
 
-Moderation isn’t about control—it’s about **protecting the collective work** of a grassroots movement. We welcome mistakes, growth, and hard conversations—but never at the expense of someone’s dignity or safety.
+Moderation isn't about control—it's about **protecting the collective work** of a grassroots movement. We welcome mistakes, growth, and hard conversations—but never at the expense of someone's dignity or safety.
 
 Thank you for helping make this space open, safe, and rooted in community care.

@@ -1,3 +1,9 @@
+---
+layout: welcome-hub-page
+title: "Campaign Glossary | Andres Castro Campaign"
+description: "Learn the terminology of open-source campaigning. From GitHub basics to governance concepts, understand the language of transparent, collaborative politics."
+---
+
 # Campaign Glossary 📚
 
 Our open-source campaign uses some special terms. Here's a simple guide to what they all mean, so you can dive right in with confidence:
@@ -25,7 +31,7 @@ Our open-source campaign uses some special terms. Here's a simple guide to what 
 
 * **Lazy Consensus:** Decisions are made if no one objects within a certain time (usually 72 hours) after at least two approvals. This method encourages action and prevents unnecessary delays.
 * **Governance:** How decisions are made and how our campaign stays fair, transparent, and accountable to everyone involved.
-* **Conflict Resolution:** How we handle disagreements openly and respectfully, ensuring everyone’s voice is heard.
+* **Conflict Resolution:** How we handle disagreements openly and respectfully, ensuring everyone's voice is heard.
 
 ## Miscellaneous Terms
 

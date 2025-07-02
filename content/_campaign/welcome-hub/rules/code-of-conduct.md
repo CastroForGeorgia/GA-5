@@ -1,3 +1,9 @@
+---
+layout: welcome-hub-page
+title: "Code of Conduct | Andres Castro Campaign"
+description: "Our commitment to fostering a welcoming, respectful, and inclusive environment where every contributor is seen, heard, and respected in our grassroots movement."
+---
+
 # ✊ Code of Conduct
 
 We are committed to fostering a welcoming, respectful, and inclusive environment for everyone participating in the Castro for Georgia open-source campaign—regardless of age, background, race, gender, ability, or level of technical experience.

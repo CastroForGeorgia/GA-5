@@ -1,6 +1,12 @@
+---
+layout: welcome-hub-page
+title: "Design Contributions Guide | Andres Castro Campaign"
+description: "Join our creative team designing flyers, social media graphics, infographics, and more. Help make our message resonate with diverse communities through visual storytelling."
+---
+
 # 🎨 Design Contributions Guide
 
-Welcome, designers, artists, illustrators, and creative thinkers! Your visual storytelling talents will help power the Castro for Georgia campaign, making our message resonate with the diverse communities of Georgia’s 5th District.
+Welcome, designers, artists, illustrators, and creative thinkers! Your visual storytelling talents will help power the Castro for Georgia campaign, making our message resonate with the diverse communities of Georgia's 5th District.
 
 Whether you specialize in graphic design, social media graphics, print materials, or digital illustration, your contributions are valued and impactful.
 
@@ -61,7 +67,7 @@ Claim an issue by leaving a quick comment (e.g., "I'd love to design this flyer!
 * **Option A: Directly via GitHub (Recommended for quick contributions)**:
 
   * Navigate to the relevant `design-assets` subfolder.
-  * Upload your design file (use drag-and-drop on GitHub’s web interface).
+  * Upload your design file (use drag-and-drop on GitHub's web interface).
   * Open a **Pull Request** (PR) clearly describing your design.
 
 * **Option B: Via Issues for Feedback First**:

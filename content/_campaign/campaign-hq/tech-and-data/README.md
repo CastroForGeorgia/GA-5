@@ -1,6 +1,12 @@
+---
+layout: page
+title: "Tech & Data Hub | Andres Castro Campaign"
+description: "Build systems to power our open-source campaign. Contribute to apps, dashboards, data pipelines, and automation tools that serve the community, not surveil them."
+---
+
 # 🧑‍💻 Tech & Data Hub
 
-This is the home for all the campaign’s technical tools, infrastructure, and data workflows.
+This is the home for all the campaign's technical tools, infrastructure, and data workflows.
 
 Whether you're a dev, designer, data analyst, or curious volunteer—this space is where we build systems to power an open-source, community-driven campaign.
 
@@ -55,4 +61,4 @@ We treat civic data as sacred:
 
 ---
 
-**Let’s build technology that answers to the people—not the donor class.**
+**Let's build technology that answers to the people—not the donor class.**
