@@ -58,10 +58,12 @@ Parameters:
             </button>
             <div class="absolute left-0 z-50 mt-2 w-64 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
               <div class="py-1">
-                <a href="/campaign/welcome-hub/get-involved/quick-start-guide/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary no-underline">Quick Start Guide</a>
-                <a href="/campaign/welcome-hub/get-involved/volunteer-roles/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary no-underline">Volunteer Roles</a>
-                <a href="/campaign/welcome-hub/get-involved/tech-contributions/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary no-underline">Tech Contributions</a>
-                <a href="/campaign/welcome-hub/get-involved/policy-research-guide/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary no-underline">Policy Research</a>
+                {% assign gi_docs = site.campaign | where_exp: "d", "d.path contains 'welcome-hub/get-involved/'" | sort: 'title' %}
+                {% for doc in gi_docs %}
+                  {% unless doc.path contains 'README' %}
+                  <a href="{{ doc.url }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary no-underline">{{ doc.title | split: ' | ' | first }}</a>
+                  {% endunless %}
+                {% endfor %}
                 <a href="/campaign/welcome-hub/get-involved/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary no-underline border-t border-gray-100 font-medium">All Ways to Help →</a>
               </div>
             </div>
@@ -75,10 +77,12 @@ Parameters:
             </button>
             <div class="absolute left-0 z-50 mt-2 w-64 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
               <div class="py-1">
-                <a href="/campaign/welcome-hub/about-the-campaign/campaign-vision/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary no-underline">Campaign Vision</a>
-                <a href="/campaign/welcome-hub/about-the-campaign/governance-model/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary no-underline">Governance Model</a>
-                <a href="/campaign/welcome-hub/about-the-campaign/open-source-101/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary no-underline">Open Source 101</a>
-                <a href="/campaign/welcome-hub/about-the-campaign/faq/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary no-underline">Campaign FAQ</a>
+                {% assign about_docs = site.campaign | where_exp: "d", "d.path contains 'welcome-hub/about-the-campaign/'" | sort: 'title' %}
+                {% for doc in about_docs %}
+                  {% unless doc.path contains 'README' %}
+                  <a href="{{ doc.url }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary no-underline">{{ doc.title | split: ' | ' | first }}</a>
+                  {% endunless %}
+                {% endfor %}
                 <a href="/campaign/welcome-hub/about-the-campaign/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary no-underline border-t border-gray-100 font-medium">Learn More →</a>
               </div>
             </div>
@@ -103,8 +107,24 @@ Parameters:
             </div>
           </div>
 
-          <!-- Guidelines link remains -->
-          <a href="/campaign/welcome-hub/rules/" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors no-underline">📋 Guidelines</a>
+          <!-- Guidelines Dropdown -->
+          <div class="relative group">
+            <button class="flex items-center space-x-1 px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors group">
+              <span>📋 Guidelines</span>
+              <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="absolute left-0 z-50 mt-2 w-64 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <div class="py-1">
+                {% assign rule_docs = site.campaign | where_exp: "d", "d.path contains 'welcome-hub/rules/'" | sort: 'title' %}
+                {% for doc in rule_docs %}
+                  {% unless doc.path contains 'README' %}
+                  <a href="{{ doc.url }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary no-underline">{{ doc.title | split: ' | ' | first }}</a>
+                  {% endunless %}
+                {% endfor %}
+                <a href="/campaign/welcome-hub/rules/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary no-underline border-t border-gray-100 font-medium">All Guidelines →</a>
+              </div>
+            </div>
+          </div>
 
         {% elsif section == "campaign-hq" %}
           <!-- (Existing Campaign HQ dropdown/direct links copied from previous component) -->
@@ -116,9 +136,10 @@ Parameters:
             </button>
             <div class="absolute left-0 z-50 mt-2 w-64 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
               <div class="py-1">
-                <a href="/campaign-docs/campaign-hq/policy-lab/01_housing/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary no-underline">Housing Policy</a>
-                <a href="/campaign-docs/campaign-hq/policy-lab/02_healthcare/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary no-underline">Healthcare Policy</a>
-                <a href="/campaign-docs/campaign-hq/policy-lab/03_economy/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary no-underline">Economy Policy</a>
+                {% assign pl_docs = site.campaign | where_exp: "d", "d.path contains 'campaign-hq/policy-lab/' and d.path contains 'README'" | sort: 'title' %}
+                {% for doc in pl_docs %}
+                  <a href="{{ doc.url }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary no-underline">{{ doc.title | split: ' | ' | first }}</a>
+                {% endfor %}
                 <a href="/campaign-docs/campaign-hq/policy-lab/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary no-underline border-t border-gray-100 font-medium">All Research →</a>
               </div>
             </div>
@@ -137,9 +158,10 @@ Parameters:
             </button>
             <div class="absolute left-0 z-50 mt-2 w-64 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
               <div class="py-1">
-                <a href="/campaign-docs/neighborhoods/oakland_city/oakland-hub/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary no-underline">Oakland Hub</a>
-                <a href="/campaign-docs/neighborhoods/oakland_city/field-ops/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary no-underline">Field Operations</a>
-                <a href="/campaign-docs/neighborhoods/oakland_city/mutual-aid/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary no-underline">Mutual Aid</a>
+                {% assign oc_docs = site.campaign | where_exp: "d", "d.path contains 'neighborhoods/oakland_city/' and d.path contains 'README'" | sort: 'title' %}
+                {% for doc in oc_docs %}
+                  <a href="{{ doc.url }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary no-underline">{{ doc.title | split: ' | ' | first }}</a>
+                {% endfor %}
               </div>
             </div>
           </div>

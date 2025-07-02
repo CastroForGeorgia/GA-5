@@ -1,7 +1,8 @@
 ---
 layout: welcome-hub-page
-title: "Content Standards & Style Guide | Andres Castro Campaign"
-description: "Guidelines for creating accessible, empowering campaign materials that reflect the dignity and grit of working-class communities. Plain language and accessibility standards."
+title: "Content Standards | Andres Castro Campaign"
+description: "Guidelines for clear, inclusive, and respectful content across all campaign materials and community contributions."
+permalink: /campaign/welcome-hub/rules/content-standards/
 ---
 
 # 🎨 Content Standards & Style Guide

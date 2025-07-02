@@ -1,7 +1,8 @@
 ---
 layout: welcome-hub-page
 title: "Moderation Playbook | Andres Castro Campaign"
-description: "How community moderation works in our open-source campaign. Fair enforcement processes, reporting procedures, and accountability mechanisms that protect everyone."
+description: "Step-by-step guide for moderators to handle conflicts, enforce rules, and maintain a welcoming environment in our open-source community."
+permalink: /campaign/welcome-hub/rules/moderation-playbook/
 ---
 
 # 🛡️ Moderation & Community Enforcement Playbook

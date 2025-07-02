@@ -1,7 +1,8 @@
 ---
 layout: welcome-hub-page
-title: "Privacy & Safety Guidelines | Andres Castro Campaign"
-description: "Learn how we protect privacy and safety while operating openly. Guidelines for keeping personal information secure while building transparent community power."
+title: "Privacy Guidelines | Andres Castro Campaign"
+description: "How we protect personal data and ensure privacy while collaborating transparently in an open-source campaign."
+permalink: /campaign/welcome-hub/rules/privacy-guidelines/
 ---
 
 # 🔒 Privacy & Safety Guidelines
