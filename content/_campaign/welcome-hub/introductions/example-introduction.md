@@ -1,7 +1,8 @@
 ---
 layout: welcome-hub-page
-title: "How to Introduce Yourself | Andres Castro Campaign"
-description: "Simple template and guide for posting your first introduction to our campaign community. Connect with neighbors and find your place in the movement."
+title: "Example Introduction Template | Andres Castro Campaign"
+description: "Template to guide newcomers in posting introductions and connecting with the campaign community."
+permalink: /campaign/welcome-hub/introductions/example-introduction/
 ---
 
 # ✍️ How to Introduce Yourself
