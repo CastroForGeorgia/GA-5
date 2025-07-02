@@ -5,9 +5,6 @@ layout: default
 <!-- Skip Link for accessibility -->
 <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-white text-blue-700 px-4 py-2 rounded-md shadow-lg z-50">Skip to content</a>
 
-<!-- Campaign Sub-Navigation -->
-{% include campaign-subnav.html section="welcome-hub" style="dropdown" %}
-
 <!-- Welcome Hub Page Layout -->
 {% comment %}
 This layout renders any markdown document located inside content/_campaign/welcome-hub/.
@@ -48,9 +45,10 @@ and a styled main content area. Adjust colors and icons as needed to fit brand g
   </div>
 </section>
 
-<!-- ========================= BREADCRUMBS ========================= -->
-<section class="bg-white border-b border-gray-100" aria-label="Breadcrumb">
-  <div class="container mx-auto px-4 py-3">
+<!-- ========================= BREADCRUMBS & NAVIGATION ========================= -->
+<section class="bg-white border-b border-gray-100">
+  <!-- Breadcrumbs -->
+  <div class="container mx-auto px-4 py-3 border-b border-gray-100" aria-label="Breadcrumb">
     <nav class="flex items-center space-x-2 text-sm">
       <a href="/campaign/" class="text-blue-600 hover:text-blue-800 font-medium">Campaign</a>
       <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
@@ -62,7 +60,252 @@ and a styled main content area. Adjust colors and icons as needed to fit brand g
       {% endif %}
     </nav>
   </div>
+  
+  <!-- Campaign Sub-Navigation -->
+  <div class="container mx-auto">
+    <div class="flex h-14 items-center space-x-8 px-4">
+      <!-- Get Involved Dropdown -->
+      <div class="relative group">
+        <button class="flex items-center space-x-1 px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors group">
+          <span>🚀 Get Involved</span>
+          <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        
+        <div class="absolute left-0 z-10 mt-2 w-64 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 
+                    opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+          <div class="py-1">
+            <a href="/campaign/welcome-hub/get-involved/quick-start-guide/" 
+               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary transition-colors no-underline">
+              Quick Start Guide
+            </a>
+            <a href="/campaign/welcome-hub/get-involved/volunteer-roles/" 
+               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary transition-colors no-underline">
+              Volunteer Roles
+            </a>
+            <a href="/campaign/welcome-hub/get-involved/tech-contributions/" 
+               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary transition-colors no-underline">
+              Tech Contributions
+            </a>
+            <a href="/campaign/welcome-hub/get-involved/policy-research-guide/" 
+               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary transition-colors no-underline">
+              Policy Research
+            </a>
+            <a href="/campaign/welcome-hub/get-involved/" 
+               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary transition-colors no-underline border-t border-gray-100 font-medium">
+              View All Ways to Help →
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- About Campaign Dropdown -->
+      <div class="relative group">
+        <button class="flex items-center space-x-1 px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors group">
+          <span>📖 About</span>
+          <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        
+        <div class="absolute left-0 z-10 mt-2 w-64 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 
+                    opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+          <div class="py-1">
+            <a href="/campaign/welcome-hub/about-the-campaign/campaign-vision/" 
+               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary transition-colors no-underline">
+              Campaign Vision
+            </a>
+            <a href="/campaign/welcome-hub/about-the-campaign/governance-model/" 
+               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary transition-colors no-underline">
+              Governance Model
+            </a>
+            <a href="/campaign/welcome-hub/about-the-campaign/open-source-101/" 
+               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary transition-colors no-underline">
+              Open Source 101
+            </a>
+            <a href="/campaign/welcome-hub/about-the-campaign/faq/" 
+               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary transition-colors no-underline">
+              Campaign FAQ
+            </a>
+            <a href="/campaign/welcome-hub/about-the-campaign/" 
+               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary transition-colors no-underline border-t border-gray-100 font-medium">
+              Learn More →
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Community Links -->
+      <a href="/campaign/welcome-hub/introductions/" 
+         class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors no-underline">
+        👋 Introductions
+      </a>
+
+      <a href="/campaign/welcome-hub/rules/" 
+         class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors no-underline">
+        📋 Guidelines
+      </a>
+
+      <!-- External Links -->
+      <a href="https://github.com/andres-castro-ai/GA-5/discussions" target="_blank" rel="noopener"
+         class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors no-underline">
+        💬 Discussions
+      </a>
+
+             <a href="https://github.com/andres-castro-ai/GA-5/issues" target="_blank" rel="noopener"
+          class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors no-underline">
+         🔧 Tasks
+       </a>
+       
+       <!-- Mobile Toggle Button -->
+       <div class="md:hidden ml-auto">
+         <button class="flex items-center space-x-1 px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary transition-colors"
+                 id="welcome-hub-mobile-toggle">
+           <span>Menu</span>
+           <svg class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="welcome-hub-mobile-icon">
+             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+           </svg>
+         </button>
+       </div>
+     </div>
+   </div>
+   
+   <!-- Mobile Navigation -->
+   <div class="md:hidden bg-white border-t border-gray-200" id="welcome-hub-mobile-nav" style="display: none;">
+     <div class="container mx-auto px-4 py-3 space-y-1">
+       <!-- Mobile Get Involved -->
+       <div class="mobile-welcome-hub-dropdown">
+         <button class="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-gray-700 hover:text-campaign-primary hover:bg-gray-50 rounded-md transition-colors mobile-welcome-hub-dropdown-trigger">
+           <span>🚀 Get Involved</span>
+           <svg class="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+           </svg>
+         </button>
+         <div class="mobile-welcome-hub-dropdown-content ml-4 mt-1 space-y-1" style="display: none;">
+           <a href="/campaign/welcome-hub/get-involved/quick-start-guide/" 
+              class="block px-3 py-2 text-sm text-gray-600 hover:text-campaign-primary hover:bg-gray-50 rounded-md transition-colors no-underline">
+             Quick Start Guide
+           </a>
+           <a href="/campaign/welcome-hub/get-involved/volunteer-roles/" 
+              class="block px-3 py-2 text-sm text-gray-600 hover:text-campaign-primary hover:bg-gray-50 rounded-md transition-colors no-underline">
+             Volunteer Roles
+           </a>
+           <a href="/campaign/welcome-hub/get-involved/tech-contributions/" 
+              class="block px-3 py-2 text-sm text-gray-600 hover:text-campaign-primary hover:bg-gray-50 rounded-md transition-colors no-underline">
+             Tech Contributions
+           </a>
+           <a href="/campaign/welcome-hub/get-involved/policy-research-guide/" 
+              class="block px-3 py-2 text-sm text-gray-600 hover:text-campaign-primary hover:bg-gray-50 rounded-md transition-colors no-underline">
+             Policy Research
+           </a>
+         </div>
+       </div>
+
+       <!-- Mobile About Campaign -->
+       <div class="mobile-welcome-hub-dropdown">
+         <button class="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-gray-700 hover:text-campaign-primary hover:bg-gray-50 rounded-md transition-colors mobile-welcome-hub-dropdown-trigger">
+           <span>📖 About</span>
+           <svg class="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+           </svg>
+         </button>
+         <div class="mobile-welcome-hub-dropdown-content ml-4 mt-1 space-y-1" style="display: none;">
+           <a href="/campaign/welcome-hub/about-the-campaign/campaign-vision/" 
+              class="block px-3 py-2 text-sm text-gray-600 hover:text-campaign-primary hover:bg-gray-50 rounded-md transition-colors no-underline">
+             Campaign Vision
+           </a>
+           <a href="/campaign/welcome-hub/about-the-campaign/governance-model/" 
+              class="block px-3 py-2 text-sm text-gray-600 hover:text-campaign-primary hover:bg-gray-50 rounded-md transition-colors no-underline">
+             Governance Model
+           </a>
+           <a href="/campaign/welcome-hub/about-the-campaign/open-source-101/" 
+              class="block px-3 py-2 text-sm text-gray-600 hover:text-campaign-primary hover:bg-gray-50 rounded-md transition-colors no-underline">
+             Open Source 101
+           </a>
+           <a href="/campaign/welcome-hub/about-the-campaign/faq/" 
+              class="block px-3 py-2 text-sm text-gray-600 hover:text-campaign-primary hover:bg-gray-50 rounded-md transition-colors no-underline">
+             Campaign FAQ
+           </a>
+         </div>
+       </div>
+
+       <!-- Mobile Direct Links -->
+       <a href="/campaign/welcome-hub/introductions/" 
+          class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-campaign-primary hover:bg-gray-50 rounded-md transition-colors no-underline">
+         👋 Introductions
+       </a>
+
+       <a href="/campaign/welcome-hub/rules/" 
+          class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-campaign-primary hover:bg-gray-50 rounded-md transition-colors no-underline">
+         📋 Guidelines
+       </a>
+
+       <a href="https://github.com/andres-castro-ai/GA-5/discussions" target="_blank" rel="noopener"
+          class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-campaign-primary hover:bg-gray-50 rounded-md transition-colors no-underline">
+         💬 Discussions
+       </a>
+
+       <a href="https://github.com/andres-castro-ai/GA-5/issues" target="_blank" rel="noopener"
+          class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-campaign-primary hover:bg-gray-50 rounded-md transition-colors no-underline">
+         🔧 Tasks
+       </a>
+     </div>
+   </div>
 </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Mobile welcome hub navigation toggle
+  const welcomeHubMobileToggle = document.getElementById('welcome-hub-mobile-toggle');
+  const welcomeHubMobileNav = document.getElementById('welcome-hub-mobile-nav');
+  const welcomeHubMobileIcon = document.getElementById('welcome-hub-mobile-icon');
+
+  if (welcomeHubMobileToggle && welcomeHubMobileNav) {
+    welcomeHubMobileToggle.addEventListener('click', function() {
+      const isOpen = welcomeHubMobileNav.style.display !== 'none';
+      
+      if (isOpen) {
+        welcomeHubMobileNav.style.display = 'none';
+        welcomeHubMobileIcon.style.transform = 'rotate(0deg)';
+      } else {
+        welcomeHubMobileNav.style.display = 'block';
+        welcomeHubMobileIcon.style.transform = 'rotate(180deg)';
+      }
+    });
+  }
+
+  // Mobile welcome hub dropdown toggles
+  document.querySelectorAll('.mobile-welcome-hub-dropdown-trigger').forEach(button => {
+    button.addEventListener('click', function() {
+      const content = this.parentElement.querySelector('.mobile-welcome-hub-dropdown-content');
+      const icon = this.querySelector('svg');
+      const isOpen = content.style.display !== 'none';
+      
+      if (isOpen) {
+        content.style.display = 'none';
+        icon.style.transform = 'rotate(0deg)';
+      } else {
+        content.style.display = 'block';
+        icon.style.transform = 'rotate(180deg)';
+      }
+    });
+  });
+
+  // Close mobile welcome hub nav on window resize
+  window.addEventListener('resize', function() {
+    if (window.innerWidth >= 768) { // md breakpoint
+      if (welcomeHubMobileNav) {
+        welcomeHubMobileNav.style.display = 'none';
+        if (welcomeHubMobileIcon) {
+          welcomeHubMobileIcon.style.transform = 'rotate(0deg)';
+        }
+      }
+    }
+  });
+});
+</script>
+
 
 <!-- ========================= MAIN CONTENT ========================= -->
 <article class="py-12 md:py-16 bg-gray-50">
@@ -70,14 +313,6 @@ and a styled main content area. Adjust colors and icons as needed to fit brand g
     <div class="max-w-7xl mx-auto grid lg:grid-cols-4 gap-8">
       <!-- Sidebar -->
       <aside class="lg:col-span-1 space-y-6 order-last lg:order-first lg:sticky top-24 h-fit">
-        <!-- Quick Links -->
-        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-          <h2 class="text-lg font-bold text-gray-900 mb-4 flex items-center">
-            <svg class="w-5 h-5 mr-2 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-            Quick Links
-          </h2>
-          {% include campaign-subnav.html section="welcome-hub" style="sidebar" %}
-        </div>
         <!-- Community card -->
         <div class="bg-gradient-to-br from-blue-50 to-green-50 rounded-xl border border-blue-100 p-6">
           <h3 class="text-lg font-bold text-gray-900 mb-3 flex items-center"><svg class="w-5 h-5 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0"/></svg>Community</h3>
