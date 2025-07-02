@@ -5,6 +5,9 @@ layout: default
 <!-- Skip Link for accessibility -->
 <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-white text-blue-700 px-4 py-2 rounded-md shadow-lg z-50">Skip to content</a>
 
+<!-- Campaign Sub-Navigation -->
+{% include campaign-subnav.html section="welcome-hub" style="dropdown" %}
+
 <!-- Welcome Hub Page Layout -->
 {% comment %}
 This layout renders any markdown document located inside content/_campaign/welcome-hub/.
@@ -73,32 +76,7 @@ and a styled main content area. Adjust colors and icons as needed to fit brand g
             <svg class="w-5 h-5 mr-2 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
             Quick Links
           </h2>
-          <div class="space-y-2">
-            <a href="/campaign/welcome-hub/get-involved/" class="flex items-center justify-between text-sm text-gray-700 hover:text-green-600 font-medium transition-colors no-underline px-3 py-2 rounded-md hover:bg-gray-50">
-              <span>🚀 Get Started</span>
-              <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-            </a>
-            <a href="/campaign/welcome-hub/introductions/" class="flex items-center justify-between text-sm text-gray-700 hover:text-green-600 font-medium transition-colors no-underline px-3 py-2 rounded-md hover:bg-gray-50">
-              <span>👋 Introduce Yourself</span>
-              <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-            </a>
-            <a href="/campaign/welcome-hub/about-the-campaign/" class="flex items-center justify-between text-sm text-gray-700 hover:text-green-600 font-medium transition-colors no-underline px-3 py-2 rounded-md hover:bg-gray-50">
-              <span>📖 About Our Campaign</span>
-              <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-            </a>
-            <a href="/campaign/welcome-hub/rules/" class="flex items-center justify-between text-sm text-gray-700 hover:text-green-600 font-medium transition-colors no-underline px-3 py-2 rounded-md hover:bg-gray-50">
-              <span>📋 Community Rules</span>
-              <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-            </a>
-            <a href="https://github.com/CastroForGeorgia/campaign/discussions" target="_blank" class="flex items-center justify-between text-sm text-gray-700 hover:text-green-600 font-medium transition-colors no-underline px-3 py-2 rounded-md hover:bg-gray-50">
-              <span>💬 Join Discussions</span>
-              <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-            </a>
-            <a href="https://github.com/CastroForGeorgia/campaign/issues" target="_blank" class="flex items-center justify-between text-sm text-gray-700 hover:text-green-600 font-medium transition-colors no-underline px-3 py-2 rounded-md hover:bg-gray-50">
-              <span>🔧 Browse Tasks</span>
-              <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-            </a>
-          </div>
+          {% include campaign-subnav.html section="welcome-hub" style="sidebar" %}
         </div>
         <!-- Community card -->
         <div class="bg-gradient-to-br from-blue-50 to-green-50 rounded-xl border border-blue-100 p-6">
