@@ -1,7 +1,10 @@
 ---
 layout: page
-title: "Campaign HQ – Strategy, Policy, Tech & Design"
-description: "Dive into the operational center of the campaign: policy lab, design hub, tech & data, announcements, and field updates—all managed in the open."
+title: "Campaign HQ | Andres Castro Campaign"
+description: "Central hub for campaign operations, policy development, design assets, field updates, and technical infrastructure for our open-source movement."
+permalink: /campaign/campaign-hq/
 ---
+
+# 🏛️ Campaign HQ
 
 # 30_campaign-hq

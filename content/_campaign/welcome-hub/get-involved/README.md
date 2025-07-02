@@ -1,7 +1,8 @@
 ---
-layout: page
-title: "Get Involved — Volunteer Paths & Contribution Guides"
-description: "Discover quick-start checklists, role descriptions, and step-by-step guides to begin contributing to the Castro for Georgia open-source campaign."
+layout: welcome-hub-page
+title: "Get Involved | Andres Castro Campaign"
+description: "Find your place in our movement. From quick-start guides to neighborhood leadership, discover how to contribute your skills to building progressive change."
+permalink: /campaign/welcome-hub/get-involved/
 ---
 
 # 🤝 **Get Involved with Castro for Georgia!**

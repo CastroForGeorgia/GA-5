@@ -1,6 +1,13 @@
+---
+layout: welcome-hub-page
+title: "Community Rules | Andres Castro Campaign"
+description: "Guidelines for respectful participation in our open-source campaign community. Code of conduct, content standards, privacy guidelines, and moderation policies."
+permalink: /campaign/welcome-hub/rules/
+---
+
 # 🚦 Rules of the Road (Quick Overview)
 
-We’re building the first fully open-source, people-powered congressional campaign.  
+We're building the first fully open-source, people-powered congressional campaign.  
 To protect our contributors, neighbors, and communities, these rules guide how we work together.
 
 ---
@@ -11,10 +18,10 @@ To protect our contributors, neighbors, and communities, these rules guide how w
 Speak with care. Welcome newcomers. Debate ideas, not people.
 
 ### 2. Protect Privacy  
-Never share anyone’s personal or sensitive info. Use neighborhoods, not street names. Think before you post.
+Never share anyone's personal or sensitive info. Use neighborhoods, not street names. Think before you post.
 
 ### 3. Contribute in Good Faith  
-Be honest about your intentions. Share feedback that builds. Don’t derail discussions or mislead.
+Be honest about your intentions. Share feedback that builds. Don't derail discussions or mislead.
 
 ### 4. Follow the Code of Conduct  
 We use the [Contributor Covenant v2.1](./code-of-conduct.md). Harassment, hate, or abuse are not tolerated.
