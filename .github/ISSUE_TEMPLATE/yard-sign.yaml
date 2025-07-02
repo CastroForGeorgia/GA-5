@@ -1,0 +1,17 @@
+name: 🪧 Yard‑Sign Request
+description: Record a sign request (keep details private)
+title: "Yard Sign – "
+labels: ["yard-sign"]
+body:
+  - type: dropdown
+    id: neighborhood
+    attributes:
+      label: Neighborhood
+      options: ["oakland_city", "west_end", "other"]
+  - type: input
+    id: internal
+    attributes:
+      label: Internal Ticket #
+      description: Link or ID in secure field system
+    validations:
+      required: true

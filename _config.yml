@@ -17,6 +17,7 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-relative-links
 
 paginate: 7
 paginate_path: "/blog/page/:num"
@@ -43,6 +44,10 @@ collections:
     permalink: /faq/:slug/
   testimonials:
     output: false  # Testimonials are included, not standalone pages
+  # Campaign collection
+  campaign:
+    output: true
+    permalink: /campaign-docs/:path/
 
 # Pages Path
 defaults:
@@ -85,6 +90,17 @@ defaults:
       type: "testimonials"
     values:
       layout: "testimonial"
+  # Campaign collection default
+  - scope:
+      path: "content/_campaign"
+      type: "campaign"
+    values:
+      layout: "page"
+  - scope:
+      path: "content/_campaign/welcome-hub"
+      type: "campaign"
+    values:
+      layout: "welcome-hub-page"
 
 sass:
   sass_dir: _sass
@@ -95,3 +111,7 @@ assets:
   images: assets/images
   js: assets/js
   css: assets/css
+
+relative_links:
+  enabled: true
+  collections: true

@@ -1,0 +1,90 @@
+---
+layout: default
+---
+
+<!-- Skip Link for accessibility -->
+<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-white text-blue-700 px-4 py-2 rounded-md shadow-lg z-50">Skip to content</a>
+
+<!-- Campaign Breadcrumbs & Navigation -->
+{% include campaign-nav.html section="welcome-hub" current_page=page.title %}
+
+<!-- Welcome Hub Page Layout -->
+{% comment %}
+This layout renders any markdown document located inside content/_campaign/welcome-hub/.
+It provides a welcoming hero, breadcrumb navigation, sidebar with quick links and community cards, 
+and a styled main content area. Adjust colors and icons as needed to fit brand guidelines.
+{% endcomment %}
+
+<!-- ========================= HERO ========================= -->
+<section class="campaign-gradient relative overflow-hidden">
+  {% if page.image %}
+  <!-- Image-based hero with gradient overlay for accessibility -->
+  <div class="relative min-h-[18rem] md:min-h-[24rem] bg-gradient-to-br from-blue-600 to-green-500 overflow-hidden">
+    <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="absolute inset-0 w-full h-full object-cover opacity-40">
+    <div class="absolute inset-0 bg-gradient-to-t from-blue-800/80 via-blue-600/40 to-green-400/20"></div>
+  {% else %}
+  <!-- Gradient hero without image -->
+  <div class="relative h-64 md:h-80 bg-gradient-to-br from-blue-50 via-green-50 to-blue-100 overflow-hidden">
+  {% endif %}
+    <!-- Decorative blurred circles -->
+    <div class="absolute top-0 right-0 w-72 h-72 bg-green-300/30 rounded-full blur-3xl translate-x-24 -translate-y-24 pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 w-56 h-56 bg-blue-300/30 rounded-full blur-2xl -translate-x-20 translate-y-24 pointer-events-none"></div>
+
+    <!-- Hero content -->
+    <div class="relative z-10 container mx-auto px-4 h-full flex items-center">
+      <div class="max-w-4xl">
+        <div class="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white/90 text-sm font-medium mb-4">
+          <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+          </svg>
+          Welcome Hub Resource
+        </div>
+        <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold text-white drop-shadow-lg mb-4">{{ page.title | escape }}</h1>
+        {% if page.description %}
+          <p class="text-lg md:text-xl text-white/95 leading-relaxed max-w-3xl drop-shadow-md">{{ page.description }}</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- ========================= MAIN CONTENT ========================= -->
+<article class="py-12 md:py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto">
+      <main id="main-content">
+        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 md:p-12">
+          <div class="prose prose-lg prose-gray max-w-none">
+            {{ content }}
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</article>
+
+<!-- ========================= CTA ========================= -->
+<section class="relative py-20 sm:py-24 my-24 bg-gradient-to-r from-campaign-primary to-campaign-secondary text-center overflow-hidden">
+  <!-- Decorative blur circle -->
+  <div class="absolute -top-20 -left-20 w-72 h-72 bg-white/10 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="relative container-narrow">
+    <h2 class="text-3xl md:text-4xl font-heading font-extrabold text-white mb-6">Ready to contribute?</h2>
+    <p class="text-lg md:text-xl text-white/90 mb-10">Jump into our introductions thread or browse beginner-friendly issues to start your journey.</p>
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="https://github.com/CastroForGeorgia/campaign/discussions/categories/introductions" target="_blank" rel="noopener" class="btn btn-cta inline-flex items-center gap-2">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+        Introduce Yourself
+      </a>
+
+      <a href="https://github.com/CastroForGeorgia/campaign/issues" target="_blank" rel="noopener" class="btn btn-secondary inline-flex items-center gap-2 bg-white/10 text-white border-white/30 hover:bg-white/20">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 0v4m0-4h4m-4 0H8"/></svg>
+        Browse Issues
+      </a>
+    </div>
+  </div>
+</section> 

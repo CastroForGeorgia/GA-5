@@ -264,43 +264,12 @@ summary::marker {
 
 /* Override default Tailwind backgrounds with campaign colors */
 body {
-  background-color: var(--campaign-cream) !important;
+  /* Keep the page background cream for warmth but don't override utility classes. */
+  background-color: var(--campaign-cream);
   color: #111016;
 }
 
-/* Ensure hover states use campaign colors */
-.hover\:bg-gray-50:hover {
-  background-color: var(--campaign-peach) !important;
-}
-
-.hover\:bg-gray-100:hover {
-  background-color: var(--campaign-peach) !important;
-}
-
-/* Override any remaining white backgrounds */
-.bg-white {
-  background-color: var(--campaign-cream) !important;
-}
-
-.bg-gray-50 {
-  background-color: var(--campaign-peach) !important;
-}
-
-/* Override Tailwind button defaults */
-.btn-primary.btn-primary {
-  background-color: var(--campaign-primary) !important;
-  border-color: var(--campaign-primary) !important;
-}
-
-.btn-primary.btn-primary:hover {
-  background-color: #228B22 !important;
-  border-color: #228B22 !important;
-}
-
-/* Force campaign primary color for any conflicting classes */
-.bg-campaign-primary {
-  background-color: var(--campaign-primary) !important;
-}
+/* Utility classes retain Tailwind defaults; use custom classes for campaign colors instead. */
 
 /* Search Results Styling */
 .search-results__item {
@@ -343,4 +312,26 @@ body {
 
 .lazy.loaded {
   @apply opacity-100;
+}
+
+/* ==============================================
+   7. CTA Section Enhancements
+   ============================================== */
+
+.cta-section {
+  @apply pt-16 pb-24 text-center overflow-hidden relative;
+  background: linear-gradient(135deg, var(--campaign-primary) 0%, var(--campaign-secondary) 100%);
+}
+
+.cta-heading {
+  @apply text-3xl md:text-4xl font-bold text-white mb-4 drop-shadow-lg;
+}
+
+.cta-text {
+  @apply text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto;
+}
+
+/* Slight animation for CTA buttons */
+.btn-cta:hover {
+  transform: translateY(-2px) scale(1.02);
 } 

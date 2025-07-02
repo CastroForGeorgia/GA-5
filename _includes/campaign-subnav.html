@@ -1,0 +1,520 @@
+{% comment %}
+Campaign Sub-Navigation Component
+
+Usage:
+{% include campaign-subnav.html section="welcome-hub" style="dropdown" %}
+
+Parameters:
+- section: Campaign section (welcome-hub, campaign-hq, neighborhoods, community-lounge)  
+- style: Navigation style (dropdown, cards, sidebar, list)
+
+Styles:
+- dropdown: Header-style dropdown navigation with hover/click behavior
+- cards: Large gradient feature cards with emojis and descriptions
+- sidebar: Compact links with arrows for sidebars
+- list: Simple grid of all documents with truncated descriptions
+{% endcomment %}
+
+{% assign section = include.section | default: "welcome-hub" %}
+{% assign style = include.style | default: "dropdown" %}
+
+{% if style == "dropdown" %}
+<!-- Dropdown Style: Header-like navigation -->
+<nav class="border-b border-gray-200 bg-white" aria-label="Campaign navigation">
+  <div class="container-wide">
+    <div class="flex h-14 items-center space-x-8">
+      
+      {% if section == "welcome-hub" %}
+      <!-- Welcome Hub Sections -->
+      
+      <!-- Get Involved Dropdown -->
+      <div class="relative group">
+        <button class="flex items-center space-x-1 px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors group">
+          <span>🚀 Get Involved</span>
+          <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        
+        <div class="absolute left-0 z-10 mt-2 w-64 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 
+                    opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+          <div class="py-1">
+            <a href="/campaign/welcome-hub/get-involved/quick-start-guide/" 
+               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary transition-colors no-underline">
+              Quick Start Guide
+            </a>
+            <a href="/campaign/welcome-hub/get-involved/volunteer-roles/" 
+               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary transition-colors no-underline">
+              Volunteer Roles
+            </a>
+            <a href="/campaign/welcome-hub/get-involved/tech-contributions/" 
+               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary transition-colors no-underline">
+              Tech Contributions
+            </a>
+            <a href="/campaign/welcome-hub/get-involved/policy-research-guide/" 
+               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary transition-colors no-underline">
+              Policy Research
+            </a>
+            <a href="/campaign/welcome-hub/get-involved/" 
+               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary transition-colors no-underline border-t border-gray-100 font-medium">
+              View All Ways to Help →
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- About Campaign Dropdown -->
+      <div class="relative group">
+        <button class="flex items-center space-x-1 px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors group">
+          <span>📖 About</span>
+          <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        
+        <div class="absolute left-0 z-10 mt-2 w-64 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 
+                    opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+          <div class="py-1">
+            <a href="/campaign/welcome-hub/about-the-campaign/campaign-vision/" 
+               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary transition-colors no-underline">
+              Campaign Vision
+            </a>
+            <a href="/campaign/welcome-hub/about-the-campaign/governance-model/" 
+               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary transition-colors no-underline">
+              Governance Model
+            </a>
+            <a href="/campaign/welcome-hub/about-the-campaign/open-source-101/" 
+               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary transition-colors no-underline">
+              Open Source 101
+            </a>
+            <a href="/campaign/welcome-hub/about-the-campaign/faq/" 
+               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary transition-colors no-underline">
+              Campaign FAQ
+            </a>
+            <a href="/campaign/welcome-hub/about-the-campaign/" 
+               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary transition-colors no-underline border-t border-gray-100 font-medium">
+              Learn More →
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Community Links -->
+      <a href="/campaign/welcome-hub/introductions/" 
+         class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors no-underline">
+        👋 Introductions
+      </a>
+
+      <a href="/campaign/welcome-hub/rules/" 
+         class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors no-underline">
+        📋 Guidelines
+      </a>
+
+      <!-- External Links -->
+      <a href="https://github.com/andres-castro-ai/GA-5/discussions" target="_blank" rel="noopener"
+         class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors no-underline">
+        💬 Discussions
+      </a>
+
+      <a href="https://github.com/andres-castro-ai/GA-5/issues" target="_blank" rel="noopener"
+         class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors no-underline">
+        🔧 Tasks
+      </a>
+
+      {% elsif section == "campaign-hq" %}
+      <!-- Campaign HQ Sections -->
+      
+      <!-- Policy Lab -->
+      <div class="relative group">
+        <button class="flex items-center space-x-1 px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors group">
+          <span>🔬 Policy Lab</span>
+          <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        
+        <div class="absolute left-0 z-10 mt-2 w-64 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 
+                    opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+          <div class="py-1">
+            <a href="/campaign-docs/campaign-hq/policy-lab/01_housing/" 
+               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary transition-colors no-underline">
+              Housing Policy
+            </a>
+            <a href="/campaign-docs/campaign-hq/policy-lab/02_healthcare/" 
+               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary transition-colors no-underline">
+              Healthcare Policy
+            </a>
+            <a href="/campaign-docs/campaign-hq/policy-lab/03_economy/" 
+               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary transition-colors no-underline">
+              Economy Policy
+            </a>
+            <a href="/campaign-docs/campaign-hq/policy-lab/" 
+               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary transition-colors no-underline border-t border-gray-100 font-medium">
+              View All Research →
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Direct Links -->
+      <a href="/campaign-docs/campaign-hq/design-hub/" 
+         class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors no-underline">
+        🎨 Design Hub
+      </a>
+
+      <a href="/campaign-docs/campaign-hq/tech-and-data/" 
+         class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors no-underline">
+        💻 Tech & Data
+      </a>
+
+      <a href="/campaign-docs/campaign-hq/field-updates/" 
+         class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors no-underline">
+        📊 Field Updates
+      </a>
+
+      <a href="/campaign-docs/campaign-hq/announcements/" 
+         class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors no-underline">
+        📢 Announcements
+      </a>
+
+      {% elsif section == "neighborhoods" %}
+      <!-- Neighborhoods Sections -->
+      
+      <!-- Oakland City -->
+      <div class="relative group">
+        <button class="flex items-center space-x-1 px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors group">
+          <span>🏘️ Oakland City</span>
+          <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        
+        <div class="absolute left-0 z-10 mt-2 w-64 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 
+                    opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+          <div class="py-1">
+            <a href="/campaign-docs/neighborhoods/oakland_city/oakland-hub/" 
+               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary transition-colors no-underline">
+              Oakland Hub
+            </a>
+            <a href="/campaign-docs/neighborhoods/oakland_city/field-ops/" 
+               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary transition-colors no-underline">
+              Field Operations
+            </a>
+            <a href="/campaign-docs/neighborhoods/oakland_city/mutual-aid/" 
+               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary transition-colors no-underline">
+              Mutual Aid
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- External Links -->
+      <a href="https://github.com/andres-castro-ai/GA-5/discussions" target="_blank" rel="noopener"
+         class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors no-underline">
+        💬 Discussions
+      </a>
+
+      <a href="https://github.com/andres-castro-ai/GA-5/issues" target="_blank" rel="noopener"
+         class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors no-underline">
+        🔧 Tasks
+      </a>
+
+      {% elsif section == "community-lounge" %}
+      <!-- Community Lounge Sections -->
+      
+      <a href="https://github.com/andres-castro-ai/GA-5/discussions" target="_blank" rel="noopener"
+         class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors no-underline">
+        💬 Discussions
+      </a>
+
+      <a href="https://github.com/andres-castro-ai/GA-5/issues" target="_blank" rel="noopener"
+         class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors no-underline">
+        🔧 Issues
+      </a>
+
+      <a href="/campaign/welcome-hub/" 
+         class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors no-underline">
+        👋 Welcome Hub
+      </a>
+
+      <a href="/campaign/campaign-hq/" 
+         class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors no-underline">
+        🏢 Campaign HQ
+      </a>
+
+      <a href="/campaign/neighborhoods/" 
+         class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors no-underline">
+        🏘️ Neighborhoods
+      </a>
+
+      {% else %}
+      <!-- Default Campaign Navigation -->
+      
+      <a href="/campaign/welcome-hub/" 
+         class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors no-underline">
+        👋 Welcome Hub
+      </a>
+
+      <a href="/campaign/campaign-hq/" 
+         class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors no-underline">
+        🏢 Campaign HQ
+      </a>
+
+      <a href="/campaign/neighborhoods/" 
+         class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors no-underline">
+        🏘️ Neighborhoods
+      </a>
+
+      <a href="/campaign/community-lounge/" 
+         class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors no-underline">
+        💬 Community Lounge
+      </a>
+
+      <a href="https://github.com/andres-castro-ai/GA-5/discussions" target="_blank" rel="noopener"
+         class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors no-underline">
+        💬 Discussions
+      </a>
+
+      <a href="https://github.com/andres-castro-ai/GA-5/issues" target="_blank" rel="noopener"
+         class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors no-underline">
+        🔧 Tasks
+      </a>
+
+      {% endif %}
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Navigation -->
+<div class="md:hidden bg-white border-b border-gray-200" id="campaign-mobile-nav" style="display: none;">
+  <div class="px-2 pt-2 pb-3 space-y-1">
+    
+    {% if section == "welcome-hub" %}
+    <!-- Mobile Get Involved -->
+    <div class="mobile-campaign-dropdown">
+      <button class="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-gray-700 hover:text-campaign-primary hover:bg-gray-50 rounded-md transition-colors mobile-campaign-dropdown-trigger">
+        <span>🚀 Get Involved</span>
+        <svg class="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </button>
+      <div class="mobile-campaign-dropdown-content ml-4 mt-1 space-y-1" style="display: none;">
+        <a href="/campaign/welcome-hub/get-involved/quick-start-guide/" 
+           class="block px-3 py-2 text-sm text-gray-600 hover:text-campaign-primary hover:bg-gray-50 rounded-md transition-colors no-underline">
+          Quick Start Guide
+        </a>
+        <a href="/campaign/welcome-hub/get-involved/volunteer-roles/" 
+           class="block px-3 py-2 text-sm text-gray-600 hover:text-campaign-primary hover:bg-gray-50 rounded-md transition-colors no-underline">
+          Volunteer Roles
+        </a>
+        <a href="/campaign/welcome-hub/get-involved/tech-contributions/" 
+           class="block px-3 py-2 text-sm text-gray-600 hover:text-campaign-primary hover:bg-gray-50 rounded-md transition-colors no-underline">
+          Tech Contributions
+        </a>
+        <a href="/campaign/welcome-hub/get-involved/policy-research-guide/" 
+           class="block px-3 py-2 text-sm text-gray-600 hover:text-campaign-primary hover:bg-gray-50 rounded-md transition-colors no-underline">
+          Policy Research
+        </a>
+      </div>
+    </div>
+
+    <!-- Mobile About Campaign -->
+    <div class="mobile-campaign-dropdown">
+      <button class="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-gray-700 hover:text-campaign-primary hover:bg-gray-50 rounded-md transition-colors mobile-campaign-dropdown-trigger">
+        <span>📖 About</span>
+        <svg class="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </button>
+      <div class="mobile-campaign-dropdown-content ml-4 mt-1 space-y-1" style="display: none;">
+        <a href="/campaign/welcome-hub/about-the-campaign/campaign-vision/" 
+           class="block px-3 py-2 text-sm text-gray-600 hover:text-campaign-primary hover:bg-gray-50 rounded-md transition-colors no-underline">
+          Campaign Vision
+        </a>
+        <a href="/campaign/welcome-hub/about-the-campaign/governance-model/" 
+           class="block px-3 py-2 text-sm text-gray-600 hover:text-campaign-primary hover:bg-gray-50 rounded-md transition-colors no-underline">
+          Governance Model
+        </a>
+        <a href="/campaign/welcome-hub/about-the-campaign/open-source-101/" 
+           class="block px-3 py-2 text-sm text-gray-600 hover:text-campaign-primary hover:bg-gray-50 rounded-md transition-colors no-underline">
+          Open Source 101
+        </a>
+        <a href="/campaign/welcome-hub/about-the-campaign/faq/" 
+           class="block px-3 py-2 text-sm text-gray-600 hover:text-campaign-primary hover:bg-gray-50 rounded-md transition-colors no-underline">
+          Campaign FAQ
+        </a>
+      </div>
+    </div>
+
+    <!-- Mobile Direct Links -->
+    <a href="/campaign/welcome-hub/introductions/" 
+       class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-campaign-primary hover:bg-gray-50 rounded-md transition-colors no-underline">
+      👋 Introductions
+    </a>
+
+    <a href="/campaign/welcome-hub/rules/" 
+       class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-campaign-primary hover:bg-gray-50 rounded-md transition-colors no-underline">
+      📋 Guidelines
+    </a>
+
+    <a href="https://github.com/andres-castro-ai/GA-5/discussions" target="_blank" rel="noopener"
+       class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-campaign-primary hover:bg-gray-50 rounded-md transition-colors no-underline">
+      💬 Discussions
+    </a>
+
+    <a href="https://github.com/andres-castro-ai/GA-5/issues" target="_blank" rel="noopener"
+       class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-campaign-primary hover:bg-gray-50 rounded-md transition-colors no-underline">
+      🔧 Tasks
+    </a>
+    {% endif %}
+  </div>
+</div>
+
+<!-- Mobile Toggle Button -->
+<div class="md:hidden bg-white border-b border-gray-100">
+  <div class="container-wide">
+    <button class="flex items-center justify-between w-full px-4 py-3 text-sm font-medium text-gray-700 hover:text-campaign-primary transition-colors"
+            id="campaign-mobile-toggle">
+      <span>Campaign Navigation</span>
+      <svg class="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="campaign-mobile-icon">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Mobile campaign navigation toggle
+  const campaignMobileToggle = document.getElementById('campaign-mobile-toggle');
+  const campaignMobileNav = document.getElementById('campaign-mobile-nav');
+  const campaignMobileIcon = document.getElementById('campaign-mobile-icon');
+
+  if (campaignMobileToggle && campaignMobileNav) {
+    campaignMobileToggle.addEventListener('click', function() {
+      const isOpen = campaignMobileNav.style.display !== 'none';
+      
+      if (isOpen) {
+        campaignMobileNav.style.display = 'none';
+        campaignMobileIcon.style.transform = 'rotate(0deg)';
+      } else {
+        campaignMobileNav.style.display = 'block';
+        campaignMobileIcon.style.transform = 'rotate(180deg)';
+      }
+    });
+  }
+
+  // Mobile campaign dropdown toggles
+  document.querySelectorAll('.mobile-campaign-dropdown-trigger').forEach(button => {
+    button.addEventListener('click', function() {
+      const content = this.parentElement.querySelector('.mobile-campaign-dropdown-content');
+      const icon = this.querySelector('svg');
+      const isOpen = content.style.display !== 'none';
+      
+      if (isOpen) {
+        content.style.display = 'none';
+        icon.style.transform = 'rotate(0deg)';
+      } else {
+        content.style.display = 'block';
+        icon.style.transform = 'rotate(180deg)';
+      }
+    });
+  });
+
+  // Close mobile campaign nav on window resize
+  window.addEventListener('resize', function() {
+    if (window.innerWidth >= 768) { // md breakpoint
+      if (campaignMobileNav) {
+        campaignMobileNav.style.display = 'none';
+        if (campaignMobileIcon) {
+          campaignMobileIcon.style.transform = 'rotate(0deg)';
+        }
+      }
+    }
+  });
+});
+</script>
+
+{% elsif style == "cards" %}
+<!-- Cards Style: Large feature cards for main sections -->
+<div class="grid md:grid-cols-2 gap-6">
+  {% if section == "welcome-hub" %}
+    <a href="/campaign/welcome-hub/get-involved/" class="block bg-gradient-to-br from-blue-50 to-teal-50 rounded-lg p-6 hover:from-blue-100 hover:to-teal-100 transition-colors no-underline border border-blue-200">
+      <div class="flex items-center mb-3">
+        <span class="text-2xl mr-3">🚀</span>
+        <h3 class="text-lg font-semibold text-gray-900">Get Involved</h3>
+      </div>
+      <p class="text-sm text-gray-600">Find your place in our movement. From quick-start guides to neighborhood leadership.</p>
+    </a>
+    
+    <a href="/campaign/welcome-hub/about-the-campaign/" class="block bg-gradient-to-br from-green-50 to-blue-50 rounded-lg p-6 hover:from-green-100 hover:to-blue-100 transition-colors no-underline border border-green-200">
+      <div class="flex items-center mb-3">
+        <span class="text-2xl mr-3">📖</span>
+        <h3 class="text-lg font-semibold text-gray-900">About Our Campaign</h3>
+      </div>
+      <p class="text-sm text-gray-600">Learn about our open-source approach, vision, and governance model.</p>
+    </a>
+    
+    <a href="/campaign/welcome-hub/introductions/" class="block bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg p-6 hover:from-purple-100 hover:to-pink-100 transition-colors no-underline border border-purple-200">
+      <div class="flex items-center mb-3">
+        <span class="text-2xl mr-3">👋</span>
+        <h3 class="text-lg font-semibold text-gray-900">Introductions</h3>
+      </div>
+      <p class="text-sm text-gray-600">Meet our community and introduce yourself to get started.</p>
+    </a>
+    
+    <a href="/campaign/welcome-hub/rules/" class="block bg-gradient-to-br from-yellow-50 to-orange-50 rounded-lg p-6 hover:from-yellow-100 hover:to-orange-100 transition-colors no-underline border border-yellow-200">
+      <div class="flex items-center mb-3">
+        <span class="text-2xl mr-3">📋</span>
+        <h3 class="text-lg font-semibold text-gray-900">Community Rules</h3>
+      </div>
+      <p class="text-sm text-gray-600">Guidelines for respectful participation in our open-source community.</p>
+    </a>
+  {% endif %}
+</div>
+
+{% elsif style == "sidebar" %}
+<!-- Sidebar Links Style -->
+<div class="space-y-2">
+  {% if section == "welcome-hub" %}
+    <a href="/campaign/welcome-hub/get-involved/" class="flex items-center justify-between text-sm text-gray-700 hover:text-green-600 font-medium transition-colors no-underline px-3 py-2 rounded-md hover:bg-gray-50">
+      <span>🚀 Get Started</span>
+      <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+    </a>
+    <a href="/campaign/welcome-hub/introductions/" class="flex items-center justify-between text-sm text-gray-700 hover:text-green-600 font-medium transition-colors no-underline px-3 py-2 rounded-md hover:bg-gray-50">
+      <span>👋 Introduce Yourself</span>
+      <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+    </a>
+    <a href="/campaign/welcome-hub/about-the-campaign/" class="flex items-center justify-between text-sm text-gray-700 hover:text-green-600 font-medium transition-colors no-underline px-3 py-2 rounded-md hover:bg-gray-50">
+      <span>📖 About Our Campaign</span>
+      <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+    </a>
+    <a href="/campaign/welcome-hub/rules/" class="flex items-center justify-between text-sm text-gray-700 hover:text-green-600 font-medium transition-colors no-underline px-3 py-2 rounded-md hover:bg-gray-50">
+      <span>📋 Community Rules</span>
+      <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+    </a>
+    <a href="https://github.com/andres-castro-ai/GA-5/discussions" target="_blank" class="flex items-center justify-between text-sm text-gray-700 hover:text-green-600 font-medium transition-colors no-underline px-3 py-2 rounded-md hover:bg-gray-50">
+      <span>💬 Join Discussions</span>
+      <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+    </a>
+    <a href="https://github.com/andres-castro-ai/GA-5/issues" target="_blank" class="flex items-center justify-between text-sm text-gray-700 hover:text-green-600 font-medium transition-colors no-underline px-3 py-2 rounded-md hover:bg-gray-50">
+      <span>🔧 Browse Tasks</span>
+      <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+    </a>
+  {% endif %}
+</div>
+
+{% elsif style == "list" %}
+<!-- Simple List Style -->
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+  {% assign section_docs = site.campaign | where_exp: "doc", "doc.path contains section" | sort: 'title' %}
+  {% for doc in section_docs %}
+    {% unless doc.path contains 'README' %}
+    <a href="{{ doc.url }}" class="block bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors no-underline border border-gray-200">
+      <h3 class="text-base font-semibold text-gray-900 mb-1">{{ doc.title | split: ' | ' | first }}</h3>
+      <p class="text-xs text-gray-600">{{ doc.description | truncate: 80 }}</p>
+    </a>
+    {% endunless %}
+  {% endfor %}
+</div>
+{% endif %} 
