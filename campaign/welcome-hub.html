@@ -1,28 +1,48 @@
 ---
-layout: campaign_section
+layout: default
 title: "Welcome Hub"
-description: "Your first stop for joining our open source campaign. Learn the ropes, find your role, and start contributing to real change."
-section: "welcome-hub"
+description: "Start here: rules, onboarding, and contribution guides for the open-source campaign."
 permalink: /campaign/welcome-hub/
+image: /assets/images/hero.jpg
 ---
 
-## New to Our Campaign?
+{% assign hub_doc = site.campaign | where_exp: "d", "d.path contains 'welcome-hub/README'" | first %}
 
-The Welcome Hub is designed to get you oriented and involved quickly. Whether you're a first-time volunteer or an experienced organizer, we'll help you find your place in our movement.
+<!-- Hero -->
+<section class="campaign-gradient text-white py-16 md:py-20">
+  <div class="container-wide px-4">
+    <div class="max-w-4xl">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+        {{ hub_doc.title }}
+      </h1>
+      <p class="text-xl md:text-2xl leading-relaxed opacity-90 max-w-3xl">
+        {{ hub_doc.description }}
+      </p>
+    </div>
+  </div>
+</section>
 
-## Getting Started is Easy
+<!-- Main Content -->
+<article class="py-12 md:py-16 bg-white">
+  <div class="container-wide px-4">
+    <div class="max-w-4xl mx-auto prose prose-lg">
+      {{ hub_doc.content }}
+    </div>
 
-1. **Say Hello** - Introduce yourself in our community discussions
-2. **Pick Your Path** - Choose how you want to contribute based on your interests and skills  
-3. **Start Contributing** - Jump into issues, events, or ongoing projects
-4. **Build Community** - Connect with neighbors and fellow supporters
-
-## Why Open Source Campaigning?
-
-Traditional campaigns operate in silos, with decisions made behind closed doors. We believe the people deserve to see exactly how their campaign operates—and to help shape it.
-
-Every policy position, every organizational decision, every line of code that powers our digital infrastructure is developed transparently. This isn't just about accountability—it's about building a truly people-powered movement.
-
-## Ready to Get Involved?
-
-Browse the resources below to find your perfect starting point. Remember: no contribution is too small, and every voice matters in building the future we want to see. 
+    <!-- Section Resources -->
+    <div class="mt-16">
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-8">Resources</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        {% assign section_docs = site.campaign | where_exp: "doc", "doc.path contains 'welcome-hub/'" | sort: 'title' %}
+        {% for doc in section_docs %}
+          {% unless doc.path contains 'README' %}
+          <a href="{{ doc.url }}" class="block bg-gray-50 rounded-lg p-6 hover:bg-gray-100 transition-colors no-underline border border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">{{ doc.title | default: doc.name }}</h3>
+            <p class="text-sm text-gray-600">{{ doc.description }}</p>
+          </a>
+          {% endunless %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</article> 

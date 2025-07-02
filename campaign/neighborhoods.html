@@ -1,37 +1,48 @@
 ---
-layout: campaign_section
+layout: default
 title: "Neighborhoods"
-description: "Local organizing hubs connecting digital campaign work with on-the-ground community action across GA-05."
-section: "neighborhoods"
+description: "Local organizing hubs connecting digital campaign work with community action across GA-05."
 permalink: /campaign/neighborhoods/
+image: /assets/images/hero.jpg
 ---
 
-## Hyperlocal Organizing
+{% assign hub_doc = site.campaign | where_exp: "d", "d.path contains 'neighborhoods/README'" | first %}
 
-Georgia's 5th District is a collection of diverse communities, each with unique challenges and strengths. Our neighborhood-based organizing approach ensures that every community has a voice in our campaign and that our platform reflects the real experiences of constituents.
+<!-- Hero -->
+<section class="campaign-gradient text-white py-16 md:py-20">
+  <div class="container-wide px-4">
+    <div class="max-w-4xl">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+        {{ hub_doc.title }}
+      </h1>
+      <p class="text-xl md:text-2xl leading-relaxed opacity-90 max-w-3xl">
+        {{ hub_doc.description }}
+      </p>
+    </div>
+  </div>
+</section>
 
-## How Neighborhood Hubs Work
+<!-- Main Content -->
+<article class="py-12 md:py-16 bg-white">
+  <div class="container-wide px-4">
+    <div class="max-w-4xl mx-auto prose prose-lg">
+      {{ hub_doc.content }}
+    </div>
 
-Each neighborhood hub serves as a bridge between our digital campaign infrastructure and local community organizing. Hub leaders coordinate:
-
-- **Local Issue Tracking** - Identifying and documenting neighborhood-specific challenges
-- **Community Events** - House parties, canvassing events, and town halls
-- **Policy Feedback** - Ensuring local voices inform our platform development
-- **Voter Outreach** - Targeted outreach strategies for each community
-- **Mutual Aid** - Connecting campaign work with ongoing community support efforts
-
-## Current Neighborhood Hubs
-
-Our organizing model starts with established communities and grows organically based on volunteer leadership and local interest.
-
-**Oakland City** - Our pilot neighborhood hub, demonstrating how open source organizing can strengthen existing community networks.
-
-**More Coming Soon** - Interested in starting a hub in your neighborhood? We provide training, resources, and support to help you get started.
-
-## The Neighborhood Leader Handbook
-
-Becoming a neighborhood leader means taking ownership of organizing in your community while staying connected to the broader campaign. Our handbook provides everything you need to know about facilitating community conversations, organizing events, and feeding local insights back into campaign strategy.
-
-## Join Your Local Hub
-
-Local organizing is where campaigns are won. Find your neighborhood hub or help us start one in your community. 
+    <!-- Section Resources -->
+    <div class="mt-16">
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-8">Resources</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        {% assign section_docs = site.campaign | where_exp: "doc", "doc.path contains 'neighborhoods/'" | sort: 'title' %}
+        {% for doc in section_docs %}
+          {% unless doc.path contains 'README' %}
+          <a href="{{ doc.url }}" class="block bg-gray-50 rounded-lg p-6 hover:bg-gray-100 transition-colors no-underline border border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">{{ doc.title | default: doc.name }}</h3>
+            <p class="text-sm text-gray-600">{{ doc.description }}</p>
+          </a>
+          {% endunless %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</article> 

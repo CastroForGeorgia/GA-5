@@ -94,7 +94,7 @@ defaults:
       path: "content/_campaign"
       type: "campaign"
     values:
-      layout: "campaign_doc"
+      layout: "page"
 
 sass:
   sass_dir: _sass

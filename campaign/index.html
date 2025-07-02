@@ -1,22 +1,60 @@
 ---
-layout: campaign_index
+layout: default
 title: "Open Source Campaign"
-description: "Welcome to the first community-governed campaign infrastructure—where every door knock, line of code, and policy idea is contributed in public."
+description: "Building the first community-governed campaign infrastructure — every door knock, line of code, and policy idea contributed in public."
 permalink: /campaign/
+image: /assets/images/agi-header.png
 ---
 
-This is more than a campaign. It's a public infrastructure project.
+{% assign campaign_readme = site.campaign | where: "path", "_campaign/README.md" | first %}
 
-We're building the first community-governed campaign infrastructure for GA-05, where transparency isn't just a promise—it's built into every process. From policy development to field organizing, everything happens in the open.
+<!-- Hero Section -->
+<section class="relative bg-gradient-to-br from-campaign-primary via-campaign-primary/90 to-campaign-secondary py-16 md:py-24 overflow-hidden">
+  <img class="absolute inset-0 w-full h-full object-cover opacity-30" src="{{ page.image }}" alt="" loading="lazy">
+  <div class="relative container mx-auto px-4">
+    <div class="max-w-4xl">
+      <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+        {{ page.title }}
+      </h1>
+      <p class="text-lg md:text-xl text-white/90 leading-relaxed max-w-3xl">
+        {{ page.description }}
+      </p>
+    </div>
+  </div>
+</section>
 
-## Our Three North Stars
+<!-- Campaign Overview (from README) -->
+<article class="py-12 md:py-16">
+  <div class="container mx-auto px-4">
+    <div class="prose prose-lg prose-gray max-w-none mb-12">
+      {{ campaign_readme.content }}
+    </div>
 
-🏘️ **Housing** – A home should be a human right, not a hedge fund.  
-🏥 **Healthcare** – Everyone in, nobody out.  
-💼 **Workers' Rights** – 40 hours should be enough to live with dignity.
+    <!-- Campaign Hubs Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {% assign hub_slugs = "welcome-hub,campaign-hq,neighborhoods,community-lounge" | split: "," %}
+      {% for slug in hub_slugs %}
+        {% assign hub_doc = site.campaign | where_exp: "d", "d.path contains 'README'" | where_exp: "d", "d.path contains slug" | first %}
+        <a href="/campaign/{{ slug }}/" class="group block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-200 p-6 border border-gray-200 hover:border-campaign-primary no-underline">
+          <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-campaign-primary transition-colors">{{ hub_doc.title }}</h3>
+          <p class="text-gray-600 text-sm">{{ hub_doc.description }}</p>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</article>
 
-## How It Works
-
-This campaign operates like an open source software project. Contributors from across GA-05 submit ideas, improvements, and feedback through GitHub. Every proposal is reviewed transparently, and the best ideas become part of our platform.
-
-Whether you're a seasoned organizer or new to politics, there's a place for you here. 
+<!-- Call to Action -->
+<section class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4 text-center">
+    <div class="bg-white rounded-2xl shadow-sm p-8 md:p-12 inline-block">
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Join Our Open Source Campaign</h2>
+      <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+        {{ page.description }}
+      </p>
+      <a href="https://github.com/CastroForGeorgia/campaign/discussions" target="_blank" class="inline-flex items-center justify-center gap-2 bg-campaign-primary text-white px-6 py-3 rounded-full font-medium hover:bg-campaign-primary/90 transition-colors duration-200 no-underline">
+        Join the Discussion
+      </a>
+    </div>
+  </div>
+</section> 

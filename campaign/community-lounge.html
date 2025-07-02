@@ -1,45 +1,48 @@
 ---
-layout: campaign_section
+layout: default
 title: "Community Lounge"
-description: "Open discussion space for campaign feedback, ideas, and community building among supporters."
-section: "community-lounge"
+description: "Open discussion space for campaign feedback, ideas, and community building."
 permalink: /campaign/community-lounge/
+image: /assets/images/hero.jpg
 ---
 
-## Your Space for Open Dialogue
+{% assign hub_doc = site.campaign | where_exp: "d", "d.path contains 'community-lounge/README'" | first %}
 
-The Community Lounge is our campaign's open forum—a place for supporters to share ideas, ask questions, provide feedback, and connect with one another. Think of it as our campaign's virtual coffee shop where everyone has a seat at the table.
+<!-- Hero -->
+<section class="campaign-gradient text-white py-16 md:py-20">
+  <div class="container-wide px-4">
+    <div class="max-w-4xl">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+        {{ hub_doc.title }}
+      </h1>
+      <p class="text-xl md:text-2xl leading-relaxed opacity-90 max-w-3xl">
+        {{ hub_doc.description }}
+      </p>
+    </div>
+  </div>
+</section>
 
-## What Happens Here
+<!-- Main Content -->
+<article class="py-12 md:py-16 bg-white">
+  <div class="container-wide px-4">
+    <div class="max-w-4xl mx-auto prose prose-lg">
+      {{ hub_doc.content }}
+    </div>
 
-**Open Discussions** - Share your thoughts on campaign strategy, policy positions, or organizing approaches
-
-**Feedback & Ideas** - Suggest improvements to our platform, events, or campaign operations
-
-**Community Building** - Connect with fellow supporters, form working groups, or organize informal meet-ups
-
-**Q&A Sessions** - Get answers from campaign staff and volunteer leaders
-
-**Brainstorming** - Collaborate on new approaches to voter outreach, fundraising, or community engagement
-
-## Community Guidelines
-
-Our lounge operates on principles of respect, inclusivity, and constructive dialogue. We encourage:
-
-- **Thoughtful Contributions** - Take time to listen and respond meaningfully
-- **Diverse Perspectives** - Welcome voices from across our coalition
-- **Solution-Focused Discussion** - When raising concerns, suggest potential solutions
-- **Community Support** - Help newcomers feel welcome and get oriented
-
-## How Your Input Shapes the Campaign
-
-Unlike traditional campaigns where supporter feedback gets filtered through multiple layers, your contributions here directly inform campaign decisions. Ideas generated in community discussions regularly become:
-
-- New policy proposals in our Policy Lab
-- Improved organizing strategies in our neighborhoods
-- Better communication approaches from our media team
-- Enhanced tools and resources from our tech team
-
-## Join the Conversation
-
-The Community Lounge is only as vibrant as the people who participate. Your voice, perspective, and ideas help make our campaign stronger and more representative of the communities we serve. 
+    <!-- Section Resources -->
+    <div class="mt-16">
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-8">Resources</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        {% assign section_docs = site.campaign | where_exp: "doc", "doc.path contains 'community-lounge/'" | sort: 'title' %}
+        {% for doc in section_docs %}
+          {% unless doc.path contains 'README' %}
+          <a href="{{ doc.url }}" class="block bg-gray-50 rounded-lg p-6 hover:bg-gray-100 transition-colors no-underline border border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">{{ doc.title | default: doc.name }}</h3>
+            <p class="text-sm text-gray-600">{{ doc.description }}</p>
+          </a>
+          {% endunless %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</article> 
