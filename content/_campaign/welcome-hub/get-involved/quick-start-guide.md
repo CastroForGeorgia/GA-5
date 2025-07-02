@@ -1,7 +1,8 @@
 ---
-layout: page
+layout: welcome-hub-page
 title: "Quick-Start Guide – Join in 5 Minutes"
 description: "Create a GitHub account, star the campaign, and introduce yourself—three easy steps to start contributing to Castro for Georgia."
+permalink: /campaign/welcome-hub/get-involved/quick-start-guide/
 ---
 
 # 🚀 **Quick-Start Guide: Get Started in 5 Minutes**

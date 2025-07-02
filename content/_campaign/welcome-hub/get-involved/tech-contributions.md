@@ -2,6 +2,7 @@
 layout: welcome-hub-page
 title: "Tech Contributions Guide | Andres Castro Campaign"
 description: "Join our tech team building the first fully open-source congressional campaign platform. Contribute to websites, apps, dashboards, and automation tools."
+permalink: /campaign/welcome-hub/get-involved/tech-contributions/
 ---
 
 Here's a detailed, easy-to-follow markdown guide for **`tech-contributions.md`**, tailored specifically for tech volunteers and developers who want to contribute to the campaign through GitHub:

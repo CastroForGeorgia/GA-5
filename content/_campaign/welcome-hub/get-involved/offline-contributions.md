@@ -1,7 +1,8 @@
 ---
-layout: page
+layout: welcome-hub-page
 title: "Offline Contributions Guide – Support Without GitHub"
 description: "Learn practical ways to canvass, collect stories, and power Georgia's open-source campaign if you prefer pen-and-paper over online tools."
+permalink: /campaign/welcome-hub/get-involved/offline-contributions/
 ---
 
 Here's a clear and empowering markdown guide for **`offline-contributions.md`**, written to show how people can contribute meaningfully to the campaign even without being online or GitHub-savvy.

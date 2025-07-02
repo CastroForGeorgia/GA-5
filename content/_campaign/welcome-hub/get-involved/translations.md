@@ -2,6 +2,7 @@
 layout: welcome-hub-page
 title: "Translations & Language Accessibility | Andres Castro Campaign"
 description: "Help make our campaign accessible to everyone by translating materials into Spanish, Vietnamese, and other languages. Build genuine community power through language inclusion."
+permalink: /campaign/welcome-hub/get-involved/translations/
 ---
 
 # 🌎 Translations & Language Accessibility

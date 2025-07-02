@@ -2,6 +2,7 @@
 layout: welcome-hub-page
 title: "Event Organizing Guide | Andres Castro Campaign"
 description: "Learn to organize community events, town halls, canvass kickoffs, and more. Build connections and mobilize your neighborhood through effective grassroots organizing."
+permalink: /campaign/welcome-hub/get-involved/events-organizing/
 ---
 
 # 📅 Event Organizing Guide

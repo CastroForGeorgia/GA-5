@@ -2,6 +2,7 @@
 layout: welcome-hub-page
 title: "Policy Research Guide | Andres Castro Campaign"
 description: "Contribute to our open policy development through research, fact-checking, and writing. Help shape policies that truly represent working-class communities."
+permalink: /campaign/welcome-hub/get-involved/policy-research-guide/
 ---
 
 # 📚 Policy Research & Writing Guide
