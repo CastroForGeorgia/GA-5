@@ -43,6 +43,10 @@ collections:
     permalink: /faq/:slug/
   testimonials:
     output: false  # Testimonials are included, not standalone pages
+  # Campaign collection
+  campaign:
+    output: true
+    permalink: /campaign-docs/:path/
 
 # Pages Path
 defaults:
@@ -85,6 +89,12 @@ defaults:
       type: "testimonials"
     values:
       layout: "testimonial"
+  # Campaign collection default
+  - scope:
+      path: "content/_campaign"
+      type: "campaign"
+    values:
+      layout: "campaign_doc"
 
 sass:
   sass_dir: _sass

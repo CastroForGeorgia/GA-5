@@ -1,0 +1,17 @@
+name: 🗺 Field Note
+description: Log a non‑PII doorstep observation
+title: "Field Note – "
+labels: ["field-note"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: No names, no addresses—just the situation.
+    validations:
+      required: true
+  - type: input
+    id: internal
+    attributes:
+      label: Internal ref #
+      description: Ticket # in VAN / Airtable (optional)

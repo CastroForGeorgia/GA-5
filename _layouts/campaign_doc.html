@@ -1,0 +1,92 @@
+---
+layout: default
+---
+
+<!-- Campaign Doc Header -->
+<article class="campaign-doc">
+  <!-- Simple Header -->
+  <div class="bg-gray-50 py-12 md:py-16 border-b border-gray-200">
+    <div class="container-wide px-4">
+      <div class="max-w-4xl mx-auto">
+        <!-- Breadcrumb -->
+        <nav class="flex items-center space-x-2 mb-6 text-sm">
+          <a href="/campaign/" class="text-gray-600 hover:text-campaign-primary">Campaign</a>
+          <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+          </svg>
+          {% assign path_parts = page.path | split: '/' %}
+          {% if path_parts.size > 2 %}
+          <a href="/campaign/{{ path_parts[1] }}/" class="text-gray-600 hover:text-campaign-primary capitalize">{{ path_parts[1] | replace: '-', ' ' }}</a>
+          <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+          </svg>
+          {% endif %}
+          <span class="text-gray-900">{{ page.title | default: page.name }}</span>
+        </nav>
+        
+        <!-- Title -->
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight text-gray-900">
+          {{ page.title | default: page.name }}
+        </h1>
+        
+        <!-- Description -->
+        {% if page.description %}
+        <p class="text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl">
+          {{ page.description }}
+        </p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <!-- Doc Content -->
+  <div class="py-16 md:py-20 bg-white">
+    <div class="container-wide px-4">
+      <div class="max-w-4xl mx-auto">
+        
+        <!-- Main Content -->
+        <div class="prose prose-lg prose-gray max-w-none 
+                    prose-headings:text-gray-900 prose-headings:font-bold prose-headings:leading-tight
+                    prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-6
+                    prose-a:text-campaign-primary prose-a:no-underline hover:prose-a:underline prose-a:font-medium
+                    prose-strong:text-gray-900 prose-strong:font-semibold
+                    prose-blockquote:border-l-4 prose-blockquote:border-campaign-primary prose-blockquote:bg-gray-50 prose-blockquote:p-6 prose-blockquote:rounded-r-lg prose-blockquote:text-gray-700
+                    prose-ul:text-gray-700 prose-ol:text-gray-700
+                    prose-li:mb-2 prose-li:leading-relaxed
+                    prose-h1:text-3xl prose-h1:md:text-4xl prose-h1:mb-8 prose-h1:mt-12
+                    prose-h2:text-2xl prose-h2:md:text-3xl prose-h2:mb-6 prose-h2:mt-10
+                    prose-h3:text-xl prose-h3:md:text-2xl prose-h3:mb-4 prose-h3:mt-8
+                    prose-hr:border-gray-200 prose-hr:my-12">
+          
+          {{ content }}
+        </div>
+
+        <!-- Doc Actions -->
+        <div class="mt-16 p-6 md:p-8 bg-gray-50 rounded-xl border border-gray-200">
+          <div class="text-center">
+            <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-3">Improve This Document</h2>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              See something that could be better? This is an open source campaign - your contributions matter.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-3 justify-center">
+              <a href="https://github.com/CastroForGeorgia/campaign/edit/main/{{ page.path }}" target="_blank" class="inline-flex items-center justify-center gap-2 bg-campaign-primary text-white px-4 py-2 rounded-lg font-medium hover:bg-campaign-primary/90 transition-colors duration-200 no-underline text-sm">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+                </svg>
+                Edit on GitHub
+              </a>
+              
+              <a href="https://github.com/CastroForGeorgia/campaign/issues/new" target="_blank" class="inline-flex items-center justify-center gap-2 bg-white text-campaign-primary border border-campaign-primary px-4 py-2 rounded-lg font-medium hover:bg-campaign-primary hover:text-white transition-colors duration-200 no-underline text-sm">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                Report Issue
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article> 
