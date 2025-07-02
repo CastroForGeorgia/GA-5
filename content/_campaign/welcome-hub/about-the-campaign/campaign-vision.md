@@ -2,6 +2,7 @@
 layout: welcome-hub-page
 title: "Our Campaign Vision | Andres Castro for Georgia"
 description: "Discover our movement's three North Stars: affordable housing for all, healthcare as a human right, and dignified work in a fair economy. Join us in building working-class prosperity."
+permalink: /campaign/welcome-hub/about-the-campaign/campaign-vision/
 ---
 
 # Our Campaign Vision 🌟

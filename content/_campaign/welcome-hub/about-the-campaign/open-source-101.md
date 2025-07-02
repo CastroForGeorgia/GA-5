@@ -2,6 +2,7 @@
 layout: welcome-hub-page
 title: "Open Source 101 | Andres Castro Campaign"
 description: "New to open source? Learn how collaborative transparency works in politics and how you can contribute to building progressive change in your community."
+permalink: /campaign/welcome-hub/about-the-campaign/open-source-101/
 ---
 
 # Open Source 101: A Beginner's Guide 🌱

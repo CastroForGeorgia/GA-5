@@ -2,6 +2,7 @@
 layout: welcome-hub-page
 title: "Frequently Asked Questions | Andres Castro Campaign"
 description: "Get answers to common questions about our open-source campaign approach, participation, privacy, and how to contribute to building transparent, democratic politics."
+permalink: /campaign/welcome-hub/about-the-campaign/faq/
 ---
 
 # Frequently Asked Questions (FAQ) 🤔
