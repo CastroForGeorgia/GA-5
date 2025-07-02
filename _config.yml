@@ -17,6 +17,7 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-relative-links
 
 paginate: 7
 paginate_path: "/blog/page/:num"
@@ -110,3 +111,7 @@ assets:
   images: assets/images
   js: assets/js
   css: assets/css
+
+relative_links:
+  enabled: true
+  collections: true

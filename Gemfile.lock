@@ -291,6 +291,7 @@ DEPENDENCIES
   jekyll
   jekyll-paginate
   jekyll-redirect-from
+  jekyll-relative-links
   jekyll-seo-tag
   jekyll-sitemap
 
