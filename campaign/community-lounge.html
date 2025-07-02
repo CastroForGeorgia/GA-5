@@ -9,7 +9,7 @@ image: /assets/images/hero.jpg
 {% assign hub_doc = site.campaign | where_exp: "d", "d.path contains 'community-lounge/README'" | first %}
 
 <!-- Campaign Breadcrumbs & Navigation -->
-{% include campaign-breadcrumbs-nav.html section="community-lounge" %}
+{% include campaign-nav.html section="community-lounge" %}
 
 <!-- Hero -->
 <section class="campaign-gradient text-white py-16 md:py-20">

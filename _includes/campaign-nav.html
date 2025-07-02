@@ -1,0 +1,147 @@
+{% comment %}
+Unified Campaign Navigation Component
+Combines breadcrumbs hierarchy, section navigation (dropdown/header style), and community action pills.
+
+Usage examples:
+{% include campaign-nav.html %}
+{% include campaign-nav.html section="welcome-hub" %}
+{% include campaign-nav.html section="welcome-hub" current_page="Quick Start Guide" %}
+
+Parameters:
+- section (optional): welcome-hub | campaign-hq | neighborhoods | community-lounge | (blank for campaign root)
+- current_page (optional): current page title for deeper breadcrumb levels
+{% endcomment %}
+
+{% assign section = include.section %}
+{% assign current_page = include.current_page %}
+
+<section class="bg-white border-b border-gray-100">
+  <!-- Breadcrumbs Row -->
+  <div class="container mx-auto px-4 py-3 flex flex-wrap items-center space-x-2 text-sm" aria-label="Breadcrumb">
+    <a href="/campaign/" class="text-blue-600 hover:text-blue-800 font-medium whitespace-nowrap">Campaign</a>
+    {% if section %}
+      <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+      {% case section %}
+        {% when "welcome-hub" %}
+          <a href="/campaign/welcome-hub/" class="text-blue-600 hover:text-blue-800 font-medium whitespace-nowrap">Welcome Hub</a>
+        {% when "campaign-hq" %}
+          <a href="/campaign/campaign-hq/" class="text-blue-600 hover:text-blue-800 font-medium whitespace-nowrap">Campaign HQ</a>
+        {% when "neighborhoods" %}
+          <a href="/campaign/neighborhoods/" class="text-blue-600 hover:text-blue-800 font-medium whitespace-nowrap">Neighborhoods</a>
+        {% when "community-lounge" %}
+          <a href="/campaign/community-lounge/" class="text-blue-600 hover:text-blue-800 font-medium whitespace-nowrap">Community Lounge</a>
+      {% endcase %}
+      {% if current_page %}
+        <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+        <span class="text-gray-900 font-medium whitespace-nowrap">{{ current_page }}</span>
+      {% endif %}
+    {% endif %}
+
+    <!-- Community Pills align right -->
+    <span class="ml-auto flex flex-wrap gap-2">
+      <a href="https://github.com/CastroForGeorgia/campaign/discussions" target="_blank" rel="noopener" class="inline-flex items-center gap-1 bg-gray-50 hover:bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs md:text-sm font-medium no-underline whitespace-nowrap">💬 Discussions</a>
+      <a href="https://github.com/CastroForGeorgia/campaign/issues" target="_blank" rel="noopener" class="inline-flex items-center gap-1 bg-gray-50 hover:bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs md:text-sm font-medium no-underline whitespace-nowrap">🔧 Tasks</a>
+      <a href="/campaign/" class="inline-flex items-center gap-1 bg-gray-50 hover:bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs md:text-sm font-medium no-underline whitespace-nowrap">🏠 Home</a>
+    </span>
+  </div>
+
+  <!-- Section Navigation Bar (dropdown / direct links) -->
+  <nav class="border-t border-gray-100">
+    <div class="container mx-auto px-4">
+      <div class="flex h-14 items-center space-x-8 overflow-x-auto whitespace-nowrap">
+        {% if section == "welcome-hub" %}
+          <!-- Get Involved Dropdown -->
+          <div class="relative group">
+            <button class="flex items-center space-x-1 px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors group">
+              <span>🚀 Get Involved</span>
+              <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="absolute left-0 z-10 mt-2 w-64 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <div class="py-1">
+                <a href="/campaign/welcome-hub/get-involved/quick-start-guide/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary no-underline">Quick Start Guide</a>
+                <a href="/campaign/welcome-hub/get-involved/volunteer-roles/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary no-underline">Volunteer Roles</a>
+                <a href="/campaign/welcome-hub/get-involved/tech-contributions/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary no-underline">Tech Contributions</a>
+                <a href="/campaign/welcome-hub/get-involved/policy-research-guide/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary no-underline">Policy Research</a>
+                <a href="/campaign/welcome-hub/get-involved/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary no-underline border-t border-gray-100 font-medium">All Ways to Help →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- About Campaign Dropdown -->
+          <div class="relative group">
+            <button class="flex items-center space-x-1 px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors group">
+              <span>📖 About</span>
+              <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="absolute left-0 z-10 mt-2 w-64 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <div class="py-1">
+                <a href="/campaign/welcome-hub/about-the-campaign/campaign-vision/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary no-underline">Campaign Vision</a>
+                <a href="/campaign/welcome-hub/about-the-campaign/governance-model/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary no-underline">Governance Model</a>
+                <a href="/campaign/welcome-hub/about-the-campaign/open-source-101/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary no-underline">Open Source 101</a>
+                <a href="/campaign/welcome-hub/about-the-campaign/faq/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary no-underline">Campaign FAQ</a>
+                <a href="/campaign/welcome-hub/about-the-campaign/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary no-underline border-t border-gray-100 font-medium">Learn More →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Direct Links -->
+          <a href="/campaign/welcome-hub/introductions/" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors no-underline">👋 Introductions</a>
+          <a href="/campaign/welcome-hub/rules/" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors no-underline">📋 Guidelines</a>
+
+        {% elsif section == "campaign-hq" %}
+          <!-- (Existing Campaign HQ dropdown/direct links copied from previous component) -->
+          <!-- Policy Lab Dropdown -->
+          <div class="relative group">
+            <button class="flex items-center space-x-1 px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors group">
+              <span>🔬 Policy Lab</span>
+              <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="absolute left-0 z-10 mt-2 w-64 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <div class="py-1">
+                <a href="/campaign-docs/campaign-hq/policy-lab/01_housing/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary no-underline">Housing Policy</a>
+                <a href="/campaign-docs/campaign-hq/policy-lab/02_healthcare/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary no-underline">Healthcare Policy</a>
+                <a href="/campaign-docs/campaign-hq/policy-lab/03_economy/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary no-underline">Economy Policy</a>
+                <a href="/campaign-docs/campaign-hq/policy-lab/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary no-underline border-t border-gray-100 font-medium">All Research →</a>
+              </div>
+            </div>
+          </div>
+          <a href="/campaign-docs/campaign-hq/design-hub/" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors no-underline">🎨 Design Hub</a>
+          <a href="/campaign-docs/campaign-hq/tech-and-data/" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors no-underline">💻 Tech & Data</a>
+          <a href="/campaign-docs/campaign-hq/field-updates/" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors no-underline">📊 Field Updates</a>
+          <a href="/campaign-docs/campaign-hq/announcements/" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors no-underline">📢 Announcements</a>
+
+        {% elsif section == "neighborhoods" %}
+          <!-- Oakland City Dropdown -->
+          <div class="relative group">
+            <button class="flex items-center space-x-1 px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors group">
+              <span>🏘️ Oakland City</span>
+              <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="absolute left-0 z-10 mt-2 w-64 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <div class="py-1">
+                <a href="/campaign-docs/neighborhoods/oakland_city/oakland-hub/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary no-underline">Oakland Hub</a>
+                <a href="/campaign-docs/neighborhoods/oakland_city/field-ops/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary no-underline">Field Operations</a>
+                <a href="/campaign-docs/neighborhoods/oakland_city/mutual-aid/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary no-underline">Mutual Aid</a>
+              </div>
+            </div>
+          </div>
+          <a href="/campaign/welcome-hub/" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors no-underline">👋 Welcome Hub</a>
+          <a href="/campaign/campaign-hq/" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors no-underline">🏢 Campaign HQ</a>
+          <a href="/campaign/community-lounge/" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors no-underline">💬 Community Lounge</a>
+
+        {% elsif section == "community-lounge" %}
+          <a href="/campaign/welcome-hub/" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors no-underline">👋 Welcome Hub</a>
+          <a href="/campaign/campaign-hq/" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors no-underline">🏢 Campaign HQ</a>
+          <a href="/campaign/neighborhoods/" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors no-underline">🏘️ Neighborhoods</a>
+
+        {% else %}
+          <!-- Root campaign nav -->
+          <a href="/campaign/welcome-hub/" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors no-underline">👋 Welcome Hub</a>
+          <a href="/campaign/campaign-hq/" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors no-underline">🏢 Campaign HQ</a>
+          <a href="/campaign/neighborhoods/" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors no-underline">🏘️ Neighborhoods</a>
+          <a href="/campaign/community-lounge/" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors no-underline">💬 Community Lounge</a>
+        {% endif %}
+      </div>
+    </div>
+  </nav>
+</section> 
