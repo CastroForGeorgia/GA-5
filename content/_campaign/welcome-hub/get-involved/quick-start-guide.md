@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Quick-Start Guide – Join in 5 Minutes"
+description: "Create a GitHub account, star the campaign, and introduce yourself—three easy steps to start contributing to Castro for Georgia."
+---
+
 # 🚀 **Quick-Start Guide: Get Started in 5 Minutes**
 
 Welcome! Getting involved is quick and easy—no special tech skills required. Follow these three simple steps and you'll officially join the Castro for Georgia campaign team!

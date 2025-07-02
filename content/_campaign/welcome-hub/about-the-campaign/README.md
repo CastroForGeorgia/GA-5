@@ -1,3 +1,9 @@
+---
+layout: page
+title: "About the Campaign – Open-Source Politics Explained"
+description: "Understand how Castro for Georgia applies open-source principles—transparency, participation, collaboration—to grassroots campaigning and policy making."
+---
+
 # Welcome to Castro for Georgia's Open-Source Campaign 🌱
 
 **You're stepping into something special.**

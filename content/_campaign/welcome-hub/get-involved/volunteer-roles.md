@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Volunteer Roles – Ways to Help the Campaign"
+description: "Explore neighborhood leads, canvassing, tech, design, policy research, translating, and more—find the perfect volunteer role in our open-source campaign."
+---
+
 # Volunteer Roles at Castro for Georgia
 
 Welcome! Our campaign is powered by volunteers like **you**, working together openly. Whether you're knocking on doors, designing graphics, coding apps, or translating materials, there's a place here for everyone.
@@ -16,7 +22,7 @@ Welcome! Our campaign is powered by volunteers like **you**, working together op
 * Moderate local Discussions and Issues on GitHub.
 * Host regular meetups or events.
 
-**GitHub Features You’ll Use:**
+**GitHub Features You'll Use:**
 
 * **Discussions** for neighborhood chats and updates.
 * **Issues** labeled by neighborhood to track local projects.
@@ -34,7 +40,7 @@ Welcome! Our campaign is powered by volunteers like **you**, working together op
 * Log brief, non-sensitive notes from the field.
 * Coordinate yard sign or flyer requests.
 
-**GitHub Features You’ll Use:**
+**GitHub Features You'll Use:**
 
 * **Issue Forms** for quick, structured field-note logging (no private data!).
 * **GitHub Mobile App** to log notes directly on the ground.
@@ -51,7 +57,7 @@ Welcome! Our campaign is powered by volunteers like **you**, working together op
 * Design flyers, social media graphics, yard signs, and videos.
 * Translate policy ideas into visual storytelling.
 
-**GitHub Features You’ll Use:**
+**GitHub Features You'll Use:**
 
 * **Pull Requests** to propose new designs or edits.
 * **Issues** with label `design` or `help wanted` to find new tasks.
@@ -69,7 +75,7 @@ Welcome! Our campaign is powered by volunteers like **you**, working together op
 * Automate campaign workflows (welcome bots, nightly digests).
 * Ensure security and privacy compliance.
 
-**GitHub Features You’ll Use:**
+**GitHub Features You'll Use:**
 
 * **GitHub Actions** for automation.
 * **Codespaces** for instant dev environments.
@@ -88,7 +94,7 @@ Welcome! Our campaign is powered by volunteers like **you**, working together op
 * Fact-check and provide reliable sources.
 * Translate complex ideas into accessible language.
 
-**GitHub Features You’ll Use:**
+**GitHub Features You'll Use:**
 
 * **Pull Requests** for document editing.
 * **Issues** and **Discussions** to gather feedback.
@@ -105,7 +111,7 @@ Welcome! Our campaign is powered by volunteers like **you**, working together op
 * Translate campaign materials (English ↔ Spanish, Vietnamese, etc.).
 * Help non-English speakers engage meaningfully with the campaign.
 
-**GitHub Features You’ll Use:**
+**GitHub Features You'll Use:**
 
 * Dedicated translation folders (`translations/es/`, `translations/vi/`).
 * **Pull Requests** to propose translations.
@@ -119,11 +125,11 @@ Welcome! Our campaign is powered by volunteers like **you**, working together op
 
 **What you do:**
 
-* Amplify the campaign’s message across platforms.
+* Amplify the campaign's message across platforms.
 * Engage with supporters and influencers.
 * Monitor feedback and sentiment.
 
-**GitHub Features You’ll Use:**
+**GitHub Features You'll Use:**
 
 * **Discussions** for campaign announcements and outreach planning.
 * **Issues** to track media outreach tasks.
@@ -141,7 +147,7 @@ Welcome! Our campaign is powered by volunteers like **you**, working together op
 * Coordinate logistics and volunteers.
 * Ensure events are inclusive and effective.
 
-**GitHub Features You’ll Use:**
+**GitHub Features You'll Use:**
 
 * **Issues** to request materials and volunteers.
 * **Discussions** for brainstorming event ideas.
