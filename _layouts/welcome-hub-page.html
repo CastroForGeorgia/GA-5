@@ -2,6 +2,9 @@
 layout: default
 ---
 
+<!-- Skip Link for accessibility -->
+<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-white text-blue-700 px-4 py-2 rounded-md shadow-lg z-50">Skip to content</a>
+
 <!-- Welcome Hub Page Layout -->
 {% comment %}
 This layout renders any markdown document located inside content/_campaign/welcome-hub/.
@@ -13,7 +16,7 @@ and a styled main content area. Adjust colors and icons as needed to fit brand g
 <section class="campaign-gradient relative overflow-hidden">
   {% if page.image %}
   <!-- Image-based hero with gradient overlay for accessibility -->
-  <div class="relative h-72 md:h-96 bg-gradient-to-br from-blue-600 to-green-500 overflow-hidden">
+  <div class="relative min-h-[18rem] md:min-h-[24rem] bg-gradient-to-br from-blue-600 to-green-500 overflow-hidden">
     <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="absolute inset-0 w-full h-full object-cover opacity-40">
     <div class="absolute inset-0 bg-gradient-to-t from-blue-800/80 via-blue-600/40 to-green-400/20"></div>
   {% else %}
@@ -43,7 +46,7 @@ and a styled main content area. Adjust colors and icons as needed to fit brand g
 </section>
 
 <!-- ========================= BREADCRUMBS ========================= -->
-<section class="bg-white border-b border-gray-100">
+<section class="bg-white border-b border-gray-100" aria-label="Breadcrumb">
   <div class="container mx-auto px-4 py-3">
     <nav class="flex items-center space-x-2 text-sm">
       <a href="/campaign/" class="text-blue-600 hover:text-blue-800 font-medium">Campaign</a>
@@ -63,20 +66,38 @@ and a styled main content area. Adjust colors and icons as needed to fit brand g
   <div class="container mx-auto px-4">
     <div class="max-w-7xl mx-auto grid lg:grid-cols-4 gap-8">
       <!-- Sidebar -->
-      <aside class="lg:col-span-1 space-y-6 order-last lg:order-first">
+      <aside class="lg:col-span-1 space-y-6 order-last lg:order-first lg:sticky top-24 h-fit">
         <!-- Quick Links -->
         <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-          <h3 class="text-lg font-bold text-gray-900 mb-4 flex items-center">
+          <h2 class="text-lg font-bold text-gray-900 mb-4 flex items-center">
             <svg class="w-5 h-5 mr-2 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
             Quick Links
-          </h3>
-          <div class="space-y-3">
-            {% assign hub_docs = site.campaign | where_exp: "d", "d.path contains 'welcome-hub/'" | sort: 'title' %}
-            {% for doc in hub_docs limit: 7 %}
-              {% unless doc.path contains 'README' %}
-                <a href="{{ doc.url }}" class="block text-sm text-gray-700 hover:text-green-600 font-medium hover:bg-green-50 px-3 py-2 rounded-lg transition-colors no-underline">{{ doc.title | default: doc.name }}</a>
-              {% endunless %}
-            {% endfor %}
+          </h2>
+          <div class="space-y-2">
+            <a href="/campaign/welcome-hub/get-involved/" class="flex items-center justify-between text-sm text-gray-700 hover:text-green-600 font-medium transition-colors no-underline px-3 py-2 rounded-md hover:bg-gray-50">
+              <span>🚀 Get Started</span>
+              <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </a>
+            <a href="/campaign/welcome-hub/introductions/" class="flex items-center justify-between text-sm text-gray-700 hover:text-green-600 font-medium transition-colors no-underline px-3 py-2 rounded-md hover:bg-gray-50">
+              <span>👋 Introduce Yourself</span>
+              <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </a>
+            <a href="/campaign/welcome-hub/about-the-campaign/" class="flex items-center justify-between text-sm text-gray-700 hover:text-green-600 font-medium transition-colors no-underline px-3 py-2 rounded-md hover:bg-gray-50">
+              <span>📖 About Our Campaign</span>
+              <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </a>
+            <a href="/campaign/welcome-hub/rules/" class="flex items-center justify-between text-sm text-gray-700 hover:text-green-600 font-medium transition-colors no-underline px-3 py-2 rounded-md hover:bg-gray-50">
+              <span>📋 Community Rules</span>
+              <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </a>
+            <a href="https://github.com/CastroForGeorgia/campaign/discussions" target="_blank" class="flex items-center justify-between text-sm text-gray-700 hover:text-green-600 font-medium transition-colors no-underline px-3 py-2 rounded-md hover:bg-gray-50">
+              <span>💬 Join Discussions</span>
+              <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+            <a href="https://github.com/CastroForGeorgia/campaign/issues" target="_blank" class="flex items-center justify-between text-sm text-gray-700 hover:text-green-600 font-medium transition-colors no-underline px-3 py-2 rounded-md hover:bg-gray-50">
+              <span>🔧 Browse Tasks</span>
+              <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
           </div>
         </div>
         <!-- Community card -->
@@ -91,7 +112,7 @@ and a styled main content area. Adjust colors and icons as needed to fit brand g
       </aside>
 
       <!-- Content -->
-      <main class="lg:col-span-3 order-first lg:order-last">
+      <main id="main-content" class="lg:col-span-3 order-first lg:order-last">
         <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 md:p-12">
           <div class="prose prose-lg prose-gray max-w-none">
             {{ content }}

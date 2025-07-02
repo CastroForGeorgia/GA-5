@@ -264,43 +264,12 @@ summary::marker {
 
 /* Override default Tailwind backgrounds with campaign colors */
 body {
-  background-color: var(--campaign-cream) !important;
+  /* Keep the page background cream for warmth but don't override utility classes. */
+  background-color: var(--campaign-cream);
   color: #111016;
 }
 
-/* Ensure hover states use campaign colors */
-.hover\:bg-gray-50:hover {
-  background-color: var(--campaign-peach) !important;
-}
-
-.hover\:bg-gray-100:hover {
-  background-color: var(--campaign-peach) !important;
-}
-
-/* Override any remaining white backgrounds */
-.bg-white {
-  background-color: var(--campaign-cream) !important;
-}
-
-.bg-gray-50 {
-  background-color: var(--campaign-peach) !important;
-}
-
-/* Override Tailwind button defaults */
-.btn-primary.btn-primary {
-  background-color: var(--campaign-primary) !important;
-  border-color: var(--campaign-primary) !important;
-}
-
-.btn-primary.btn-primary:hover {
-  background-color: #228B22 !important;
-  border-color: #228B22 !important;
-}
-
-/* Force campaign primary color for any conflicting classes */
-.bg-campaign-primary {
-  background-color: var(--campaign-primary) !important;
-}
+/* Utility classes retain Tailwind defaults; use custom classes for campaign colors instead. */
 
 /* Search Results Styling */
 .search-results__item {
