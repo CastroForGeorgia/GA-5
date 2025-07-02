@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Policy Lab | Andres Castro Campaign"
+title: "Policy Lab"
 description: "Collaborative policy development for housing justice, healthcare for all, and economic dignity. Draft, refine, and approve proposals through transparent community engagement."
 ---
 

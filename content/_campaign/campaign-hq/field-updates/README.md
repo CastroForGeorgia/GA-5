@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Field Updates Archive | Andres Castro Campaign"
+title: "Field Updates Archive"
 description: "Public archive of campaign field work summaries, metrics, and success stories from canvassing, voter outreach, and community organizing across Georgia's 5th District."
 ---
 

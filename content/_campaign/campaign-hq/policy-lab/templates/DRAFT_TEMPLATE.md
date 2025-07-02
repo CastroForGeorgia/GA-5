@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Policy Draft Template | Andres Castro Campaign"
+title: "Policy Draft Template"
 description: "Template for drafting new policy proposals in our collaborative policy lab. Structured format for clear, community-centered policy development."
 ---
 

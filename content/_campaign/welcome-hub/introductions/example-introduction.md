@@ -1,6 +1,6 @@
 ---
 layout: welcome-hub-page
-title: "Example Introduction Template | Andres Castro Campaign"
+title: "Example Introduction Template"
 description: "Template to guide newcomers in posting introductions and connecting with the campaign community."
 permalink: /campaign/welcome-hub/introductions/example-introduction/
 ---

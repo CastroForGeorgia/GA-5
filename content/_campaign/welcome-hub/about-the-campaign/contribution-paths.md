@@ -1,6 +1,6 @@
 ---
 layout: welcome-hub-page
-title: "Contribution Paths | Andres Castro Campaign"
+title: "Contribution Paths"
 description: "Discover how you can help our campaign from 5-minute quick fixes to leadership roles. Find the perfect way to contribute your skills and time to building progressive change."
 permalink: /campaign/welcome-hub/about-the-campaign/contribution-paths/
 ---

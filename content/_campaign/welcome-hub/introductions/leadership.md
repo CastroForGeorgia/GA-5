@@ -1,6 +1,6 @@
 ---
 layout: welcome-hub-page
-title: "Campaign Leadership | Andres Castro Campaign"
+title: "Campaign Leadership"
 description: "Meet our campaign leaders and maintainers shaping our open-source movement. Learn how to join the leadership team and take ownership in the community."
 permalink: /campaign/welcome-hub/introductions/leadership/
 ---

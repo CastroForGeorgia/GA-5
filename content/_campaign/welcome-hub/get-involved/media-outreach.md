@@ -1,6 +1,6 @@
 ---
 layout: welcome-hub-page
-title: "Media & Outreach Guide | Andres Castro Campaign"
+title: "Media & Outreach Guide"
 description: "Amplify our message through social media, press outreach, storytelling, and community engagement. Help build our movement's voice across Georgia's 5th District."
 permalink: /campaign/welcome-hub/get-involved/media-outreach/
 ---

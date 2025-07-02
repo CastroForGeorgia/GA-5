@@ -1,6 +1,6 @@
 ---
 layout: welcome-hub-page
-title: "First Issue Walkthrough | Andres Castro Campaign"
+title: "First Issue Walkthrough"
 description: "Learn how to submit your first GitHub issue to our campaign. Step-by-step guide for contributing field notes, policy ideas, and community feedback."
 permalink: /campaign/welcome-hub/get-involved/first-issue-walkthrough/
 ---

@@ -1,6 +1,6 @@
 ---
 layout: welcome-hub-page
-title: "Privacy Guidelines | Andres Castro Campaign"
+title: "Privacy Guidelines"
 description: "How we protect personal data and ensure privacy while collaborating transparently in an open-source campaign."
 permalink: /campaign/welcome-hub/rules/privacy-guidelines/
 ---

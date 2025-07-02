@@ -1,6 +1,6 @@
 ---
 layout: welcome-hub-page
-title: "Campaign Glossary | Andres Castro Campaign"
+title: "Campaign Glossary"
 description: "Learn the terminology of open-source campaigning. From GitHub basics to governance concepts, understand the language of transparent, collaborative politics."
 permalink: /campaign/welcome-hub/about-the-campaign/glossary/
 ---

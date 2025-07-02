@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Policy Review Checklist | Andres Castro Campaign"
+title: "Policy Review Checklist"
 description: "Quality assurance checklist for policy proposals ensuring they are community-vetted, accessible, evidence-based, and privacy-protected before publication."
 ---
 

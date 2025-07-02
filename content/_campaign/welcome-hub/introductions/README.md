@@ -1,6 +1,6 @@
 ---
 layout: welcome-hub-page
-title: "Welcome to Introductions | Andres Castro Campaign"
+title: "Welcome to Introductions"
 description: "Starting place to meet our community and get onboarded to the open-source campaign. Post your introduction and connect with teammates."
 permalink: /campaign/welcome-hub/introductions/
 ---

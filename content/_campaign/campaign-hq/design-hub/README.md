@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Design Hub | Andres Castro Campaign"
+title: "Design Hub"
 description: "Visual design center for campaign materials, templates, and brand assets. Create flyers, social graphics, and accessible designs that make our movement visible."
 ---
 

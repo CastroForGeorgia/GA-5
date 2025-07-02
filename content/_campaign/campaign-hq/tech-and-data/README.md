@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Tech & Data Hub | Andres Castro Campaign"
+title: "Tech & Data Hub"
 description: "Build systems to power our open-source campaign. Contribute to apps, dashboards, data pipelines, and automation tools that serve the community, not surveil them."
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: welcome-hub-page
-title: "Get Involved | Andres Castro Campaign"
+title: "Get Involved"
 description: "Find your place in our movement. From quick-start guides to neighborhood leadership, discover how to contribute your skills to building progressive change."
 permalink: /campaign/welcome-hub/get-involved/
 ---

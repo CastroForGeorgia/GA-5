@@ -1,6 +1,6 @@
 ---
 layout: welcome-hub-page
-title: "Licensing & Brand Guidelines | Andres Castro Campaign"
+title: "Licensing & Brand Guidelines"
 description: "Understand our Creative Commons licensing, brand usage rules, and how to attribute campaign materials correctly."
 permalink: /campaign/welcome-hub/rules/licensing-and-brand/
 ---
