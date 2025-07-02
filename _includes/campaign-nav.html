@@ -136,7 +136,7 @@ Parameters:
             </button>
             <div class="absolute left-0 z-50 mt-2 w-64 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
               <div class="py-1">
-                {% assign pl_docs = site.campaign | where_exp: "d", "d.path contains 'campaign-hq/policy-lab/' and d.path contains 'README'" | sort: 'title' %}
+                {% assign pl_docs = site.campaign | where_exp: "d", "d.path contains 'campaign-hq/policy-lab/'" | where_exp: "d", "d.path contains 'README'" | sort: 'title' %}
                 {% for doc in pl_docs %}
                   <a href="{{ doc.url }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary no-underline">{{ doc.title | split: ' | ' | first }}</a>
                 {% endfor %}
@@ -158,7 +158,7 @@ Parameters:
             </button>
             <div class="absolute left-0 z-50 mt-2 w-64 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
               <div class="py-1">
-                {% assign oc_docs = site.campaign | where_exp: "d", "d.path contains 'neighborhoods/oakland_city/' and d.path contains 'README'" | sort: 'title' %}
+                {% assign oc_docs = site.campaign | where_exp: "d", "d.path contains 'neighborhoods/oakland_city/'" | where_exp: "d", "d.path contains 'README'" | sort: 'title' %}
                 {% for doc in oc_docs %}
                   <a href="{{ doc.url }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary no-underline">{{ doc.title | split: ' | ' | first }}</a>
                 {% endfor %}

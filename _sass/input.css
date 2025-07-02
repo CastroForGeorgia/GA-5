@@ -312,4 +312,26 @@ body {
 
 .lazy.loaded {
   @apply opacity-100;
+}
+
+/* ==============================================
+   7. CTA Section Enhancements
+   ============================================== */
+
+.cta-section {
+  @apply pt-16 pb-24 text-center overflow-hidden relative;
+  background: linear-gradient(135deg, var(--campaign-primary) 0%, var(--campaign-secondary) 100%);
+}
+
+.cta-heading {
+  @apply text-3xl md:text-4xl font-bold text-white mb-4 drop-shadow-lg;
+}
+
+.cta-text {
+  @apply text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto;
+}
+
+/* Slight animation for CTA buttons */
+.btn-cta:hover {
+  transform: translateY(-2px) scale(1.02);
 } 

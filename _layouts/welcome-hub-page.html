@@ -67,13 +67,24 @@ and a styled main content area. Adjust colors and icons as needed to fit brand g
 </article>
 
 <!-- ========================= CTA ========================= -->
-<section class="py-16 bg-gradient-to-br from-green-600 via-blue-600 to-green-700 text-center">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to contribute?</h2>
-    <p class="text-lg text-white/90 mb-8 max-w-2xl mx-auto">Jump into our introductions thread or browse beginner-friendly issues to start your journey.</p>
+<section class="relative py-20 sm:py-24 my-24 bg-gradient-to-r from-campaign-primary to-campaign-secondary text-center overflow-hidden">
+  <!-- Decorative blur circle -->
+  <div class="absolute -top-20 -left-20 w-72 h-72 bg-white/10 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="relative container-narrow">
+    <h2 class="text-3xl md:text-4xl font-heading font-extrabold text-white mb-6">Ready to contribute?</h2>
+    <p class="text-lg md:text-xl text-white/90 mb-10">Jump into our introductions thread or browse beginner-friendly issues to start your journey.</p>
+
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="https://github.com/CastroForGeorgia/campaign/discussions/categories/introductions" target="_blank" class="inline-flex items-center gap-2 bg-white text-green-700 px-6 py-3 rounded-full font-medium hover:bg-white/90 transition-colors no-underline"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>Introduce Yourself</a>
-      <a href="https://github.com/CastroForGeorgia/campaign/issues" target="_blank" class="inline-flex items-center gap-2 bg-white/20 text-white border border-white/30 px-6 py-3 rounded-full font-medium hover:bg-white/30 transition-colors no-underline"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 0v4m0-4h4m-4 0H8"/></svg>Browse Issues</a>
+      <a href="https://github.com/CastroForGeorgia/campaign/discussions/categories/introductions" target="_blank" rel="noopener" class="btn btn-cta inline-flex items-center gap-2">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+        Introduce Yourself
+      </a>
+
+      <a href="https://github.com/CastroForGeorgia/campaign/issues" target="_blank" rel="noopener" class="btn btn-secondary inline-flex items-center gap-2 bg-white/10 text-white border-white/30 hover:bg-white/20">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 0v4m0-4h4m-4 0H8"/></svg>
+        Browse Issues
+      </a>
     </div>
   </div>
 </section> 
