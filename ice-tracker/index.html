@@ -125,7 +125,7 @@ image: /assets/images/community-outreach.jpg
 <script src="https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js"></script>
 <script>
   // Ice Tracker App JavaScript
-  let map, iceVectorLayer, districtLayer, reports = [];
+  let map, iceHeatmapLayer, districtLayer, reports = [];
   let userLocation = null;
 
   // ArcGIS GeoJSON URL for Georgia Congressional Districts
@@ -162,6 +162,56 @@ image: /assets/images/community-outreach.jpg
       notes: 'Very thin ice, saw cracks',
       votes: { up: 15, down: 0 },
       timestamp: new Date(Date.now() - 1000 * 60 * 45) // 45 mins ago
+    },
+    { 
+      id: 4, 
+      coords: [-84.3900, 33.7500], 
+      status: 'unsafe', 
+      thickness: '0.5 inches', 
+      location: 'Midtown Pond',
+      notes: 'Ice breaking through, very dangerous',
+      votes: { up: 20, down: 1 },
+      timestamp: new Date(Date.now() - 1000 * 60 * 20) // 20 mins ago
+    },
+    { 
+      id: 5, 
+      coords: [-84.3850, 33.7480], 
+      status: 'unsafe', 
+      thickness: '1.5 inches', 
+      location: 'Piedmont Park East',
+      notes: 'Thin ice near shore',
+      votes: { up: 8, down: 0 },
+      timestamp: new Date(Date.now() - 1000 * 60 * 15) // 15 mins ago
+    },
+    { 
+      id: 6, 
+      coords: [-84.3950, 33.7520], 
+      status: 'caution', 
+      thickness: '3 inches', 
+      location: 'Atlantic Station Pond',
+      notes: 'Medium thickness, be careful',
+      votes: { up: 5, down: 2 },
+      timestamp: new Date(Date.now() - 1000 * 60 * 40) // 40 mins ago
+    },
+    { 
+      id: 7, 
+      coords: [-84.5500, 33.8500], 
+      status: 'safe', 
+      thickness: '5 inches', 
+      location: 'Marietta Lake',
+      notes: 'Thick ice, good for skating',
+      votes: { up: 18, down: 1 },
+      timestamp: new Date(Date.now() - 1000 * 60 * 90) // 1.5 hours ago
+    },
+    { 
+      id: 8, 
+      coords: [-84.2700, 33.6500], 
+      status: 'caution', 
+      thickness: '3 inches', 
+      location: 'Decatur Reservoir',
+      notes: 'Decent thickness but check edges',
+      votes: { up: 10, down: 3 },
+      timestamp: new Date(Date.now() - 1000 * 60 * 75) // 1.25 hours ago
     }
   ];
 
@@ -204,11 +254,30 @@ image: /assets/images/community-outreach.jpg
       layers: [osmLayer, districtLayer],
     });
 
-    // Add ice tracking layer
-    iceVectorLayer = new ol.layer.Vector({
+    // Add ice tracking heatmap layer
+    iceHeatmapLayer = new ol.layer.Heatmap({
       source: new ol.source.Vector(),
+      blur: 15,
+      radius: 25,
+      weight: function(feature) {
+        // Weight based on safety level and vote score
+        const status = feature.get('status');
+        const votes = feature.get('votes') || { up: 0, down: 0 };
+        const voteScore = (votes.up - votes.down) / Math.max(votes.up + votes.down, 1);
+        
+        // Base weight on safety (unsafe = higher heat)
+        let baseWeight = status === 'unsafe' ? 1.0 : 
+                        status === 'caution' ? 0.7 : 0.4;
+        
+        // Boost weight for highly voted reports
+        const voteBoost = Math.max(0.2, Math.min(1.0, voteScore + 0.5));
+        
+        return baseWeight * voteBoost;
+      },
+      gradient: ['#10b981', '#f59e0b', '#ef4444'], // Green -> Yellow -> Red
+      properties: { name: 'Ice Conditions Heatmap' }
     });
-    map.addLayer(iceVectorLayer);
+    map.addLayer(iceHeatmapLayer);
 
     // Load sample reports
     reports = [...sampleReports];
@@ -217,28 +286,63 @@ image: /assets/images/community-outreach.jpg
     
     // Map click handler
     map.on('click', function(evt) {
-      const feature = map.forEachFeatureAtPixel(evt.pixel, function(feature) {
-        return feature;
+      const coordinate = evt.coordinate;
+      const clickedFeatures = [];
+      
+      // Find features near the clicked point (since heatmap doesn't support pixel-based selection)
+      iceHeatmapLayer.getSource().getFeatures().forEach(function(feature) {
+        const featureCoord = feature.getGeometry().getCoordinates();
+        const distance = Math.sqrt(
+          Math.pow(coordinate[0] - featureCoord[0], 2) + 
+          Math.pow(coordinate[1] - featureCoord[1], 2)
+        );
+        
+        // If within ~1000 meters (adjust as needed)
+        if (distance < 1000) {
+          clickedFeatures.push(feature);
+        }
       });
       
-      if (feature) {
-        // Check if it's an ice report
-        const report = reports.find(r => r.id === feature.get('reportId'));
+      if (clickedFeatures.length > 0) {
+        // Show details for the closest feature
+        const closestFeature = clickedFeatures.reduce((closest, current) => {
+          const closestDist = Math.sqrt(
+            Math.pow(coordinate[0] - closest.getGeometry().getCoordinates()[0], 2) + 
+            Math.pow(coordinate[1] - closest.getGeometry().getCoordinates()[1], 2)
+          );
+          const currentDist = Math.sqrt(
+            Math.pow(coordinate[0] - current.getGeometry().getCoordinates()[0], 2) + 
+            Math.pow(coordinate[1] - current.getGeometry().getCoordinates()[1], 2)
+          );
+          return currentDist < closestDist ? current : closest;
+        });
+        
+        const report = reports.find(r => r.id === closestFeature.get('reportId'));
         if (report) {
           showReportDetails(report);
         }
       }
     });
 
-    // Add hover effect for ice reports
+    // Add hover effect for heatmap areas
     map.on('pointermove', function(evt) {
-      const feature = map.forEachFeatureAtPixel(evt.pixel, function(feature) {
-        return feature;
+      const coordinate = evt.coordinate;
+      let hasNearbyReports = false;
+      
+      // Check if there are any ice reports near the cursor
+      iceHeatmapLayer.getSource().getFeatures().forEach(function(feature) {
+        const featureCoord = feature.getGeometry().getCoordinates();
+        const distance = Math.sqrt(
+          Math.pow(coordinate[0] - featureCoord[0], 2) + 
+          Math.pow(coordinate[1] - featureCoord[1], 2)
+        );
+        
+        if (distance < 1000) {
+          hasNearbyReports = true;
+        }
       });
       
-      // Change cursor style on hover for ice reports only
-      const hasReport = feature && feature.get('reportId');
-      map.getTargetElement().style.cursor = hasReport ? 'pointer' : '';
+      map.getTargetElement().style.cursor = hasNearbyReports ? 'pointer' : '';
     });
 
     // Get user location
@@ -246,30 +350,21 @@ image: /assets/images/community-outreach.jpg
   }
 
   function renderReports() {
-    iceVectorLayer.getSource().clear();
+    iceHeatmapLayer.getSource().clear();
     
     reports.forEach(function(report) {
       const feature = new ol.Feature({
         geometry: new ol.geom.Point(ol.proj.fromLonLat(report.coords)),
-        reportId: report.id
+        reportId: report.id,
+        status: report.status,
+        votes: report.votes,
+        thickness: report.thickness,
+        location: report.location,
+        notes: report.notes,
+        timestamp: report.timestamp
       });
 
-      const style = new ol.style.Style({
-        image: new ol.style.Circle({
-          radius: 8,
-          fill: new ol.style.Fill({
-            color: report.status === 'safe' ? '#10b981' : 
-                   report.status === 'caution' ? '#f59e0b' : '#ef4444'
-          }),
-          stroke: new ol.style.Stroke({
-            color: '#ffffff',
-            width: 2
-          })
-        })
-      });
-
-      feature.setStyle(style);
-      iceVectorLayer.getSource().addFeature(feature);
+      iceHeatmapLayer.getSource().addFeature(feature);
     });
   }
 
@@ -399,6 +494,29 @@ image: /assets/images/community-outreach.jpg
     // Report FAB
     document.getElementById('report-fab').addEventListener('click', () => {
       document.getElementById('report-modal').classList.add('active');
+    });
+
+    // Layers FAB - Toggle heatmap settings
+    document.getElementById('layers-fab').addEventListener('click', () => {
+      // Cycle through different heatmap intensities
+      const currentRadius = iceHeatmapLayer.getRadius();
+      const currentBlur = iceHeatmapLayer.getBlur();
+      
+      if (currentRadius === 25 && currentBlur === 15) {
+        // High intensity
+        iceHeatmapLayer.setRadius(35);
+        iceHeatmapLayer.setBlur(25);
+        document.getElementById('layers-fab').title = 'Switch to Low Intensity';
+        document.getElementById('layers-fab').style.backgroundColor = 'var(--campaign-primary)';
+        document.getElementById('layers-fab').style.color = 'white';
+      } else {
+        // Reset to normal
+        iceHeatmapLayer.setRadius(25);
+        iceHeatmapLayer.setBlur(15);
+        document.getElementById('layers-fab').title = 'Switch to High Intensity';
+        document.getElementById('layers-fab').style.backgroundColor = 'white';
+        document.getElementById('layers-fab').style.color = 'black';
+      }
     });
 
     // Close modal
