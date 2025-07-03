@@ -3962,6 +3962,238 @@ body {
   transform: translateY(-2px) scale(1.02);
 }
 
+/* ==============================================
+   8. Ice Tracker App Styles
+   ============================================== */
+
+/* Ice Tracker App Container */
+
+.ice-tracker-app {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  max-height: calc(100vh - 80px); /* Account for header */
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.ice-tracker-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px 8px 0 0;
+}
+
+/* Map Styling */
+
+#map {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Floating Controls */
+
+.floating-controls {
+  position: absolute;
+  z-index: 500;
+}
+
+.search-bar {
+  top: 80px;
+  left: 16px;
+  right: 16px;
+}
+
+/* Floating Action Buttons */
+
+.report-fab {
+  bottom: 100px;
+  right: 16px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--campaign-primary);
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.report-fab:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.layers-fab {
+  bottom: 170px;
+  right: 16px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.locate-fab {
+  bottom: 30px;
+  right: 16px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Bottom Sheet */
+
+.bottom-sheet {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  border-radius: 16px 16px 0 0;
+  box-shadow: 0 -2px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(calc(100% - 80px));
+  transition: transform 0.3s ease;
+  z-index: 600;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.bottom-sheet.expanded {
+  transform: translateY(0);
+}
+
+.bottom-sheet-handle {
+  width: 40px;
+  height: 4px;
+  background: #ddd;
+  border-radius: 2px;
+  margin: 12px auto;
+  cursor: pointer;
+}
+
+/* Report Cards */
+
+.report-card {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 16px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.report-card:hover {
+  background: #f8f9fa;
+}
+
+/* Voting Interface */
+
+.vote-buttons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.vote-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.vote-btn.active {
+  background: var(--campaign-primary);
+  color: white;
+  border-color: var(--campaign-primary);
+}
+
+.vote-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Status Indicators */
+
+.status-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.status-safe { 
+  background: #10b981; 
+}
+
+.status-caution { 
+  background: #f59e0b; 
+}
+
+.status-unsafe { 
+  background: #ef4444; 
+}
+
+/* Modal Styling */
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: none !important;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.modal.active {
+  display: flex !important;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  width: 100%;
+  max-width: 400px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* Ice Tracker integrates with site layout */
+
 .hover\:bg-blue-700:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(29 78 216 / var(--tw-bg-opacity, 1));
