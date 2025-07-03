@@ -125,8 +125,11 @@ image: /assets/images/community-outreach.jpg
 <script src="https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js"></script>
 <script>
   // Ice Tracker App JavaScript
-  let map, iceVectorLayer, reports = [];
+  let map, iceVectorLayer, districtLayer, reports = [];
   let userLocation = null;
+
+  // ArcGIS GeoJSON URL for Georgia Congressional Districts
+  const arcGISGeoJSONUrl = 'https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/USA_119th_Congressional_Districts_no_territories/FeatureServer/0/query?where=STATE_NAME=%27Georgia%27&outFields=*&f=geojson';
 
   // Sample reports data
   const sampleReports = [
@@ -171,6 +174,23 @@ image: /assets/images/community-outreach.jpg
       source: new ol.source.OSM(),
     });
 
+    // Congressional Districts layer
+    districtLayer = new ol.layer.Vector({
+      source: new ol.source.Vector({
+        url: arcGISGeoJSONUrl,
+        format: new ol.format.GeoJSON(),
+      }),
+      style: new ol.style.Style({
+        stroke: new ol.style.Stroke({
+          color: 'rgba(46, 139, 87, 0.8)', // Campaign primary color
+          width: 2,
+        }),
+        fill: new ol.style.Fill({
+          color: 'rgba(46, 139, 87, 0.1)', // Semi-transparent fill
+        }),
+      }),
+    });
+
     // Create the map
     map = new ol.Map({
       target: 'map',
@@ -181,7 +201,7 @@ image: /assets/images/community-outreach.jpg
         maxZoom: 18,
         extent: georgiaExtent,
       }),
-      layers: [osmLayer],
+      layers: [osmLayer, districtLayer],
     });
 
     // Add ice tracking layer
@@ -202,10 +222,44 @@ image: /assets/images/community-outreach.jpg
       });
       
       if (feature) {
+        // Check if it's an ice report
         const report = reports.find(r => r.id === feature.get('reportId'));
         if (report) {
           showReportDetails(report);
         }
+        // Check if it's a congressional district
+        else if (feature.get('DISTRICT')) {
+          showDistrictInfo(feature);
+        }
+      }
+    });
+
+    // Add hover effect for districts
+    map.on('pointermove', function(evt) {
+      const feature = map.forEachFeatureAtPixel(evt.pixel, function(feature) {
+        return feature;
+      });
+      
+      // Change cursor style on hover
+      map.getTargetElement().style.cursor = feature ? 'pointer' : '';
+      
+      // Highlight district on hover
+      if (feature && feature.get('DISTRICT')) {
+        // Reset all districts to default style
+        districtLayer.getSource().getFeatures().forEach(f => {
+          f.setStyle(undefined); // Use layer's default style
+        });
+        
+        // Highlight hovered district
+        feature.setStyle(new ol.style.Style({
+          stroke: new ol.style.Stroke({
+            color: 'rgba(46, 139, 87, 1)', // Solid campaign color
+            width: 3,
+          }),
+          fill: new ol.style.Fill({
+            color: 'rgba(46, 139, 87, 0.2)', // More opaque fill
+          }),
+        }));
       }
     });
 
@@ -352,6 +406,35 @@ image: /assets/images/community-outreach.jpg
     alert(`${report.location}\nStatus: ${report.status}\nThickness: ${report.thickness}\n${report.notes || ''}`);
   }
 
+  function showDistrictInfo(feature) {
+    const districtNum = feature.get('DISTRICT') || feature.get('CD118FP');
+    const representative = getRepresentativeInfo(districtNum);
+    
+    alert(`Congressional District ${districtNum}\nRepresentative: ${representative.name}\nParty: ${representative.party}`);
+  }
+
+  function getRepresentativeInfo(district) {
+    // Georgia Congressional District Representatives (119th Congress)
+    const representatives = {
+      '01': { name: 'Buddy Carter', party: 'Republican' },
+      '02': { name: 'Sanford Bishop', party: 'Democratic' },
+      '03': { name: 'Drew Ferguson', party: 'Republican' },
+      '04': { name: 'Hank Johnson', party: 'Democratic' },
+      '05': { name: 'Nikema Williams', party: 'Democratic' }, // This is the district we're running in!
+      '06': { name: 'Rich McCormick', party: 'Republican' },
+      '07': { name: 'Lucy McBath', party: 'Democratic' },
+      '08': { name: 'Austin Scott', party: 'Republican' },
+      '09': { name: 'Andrew Clyde', party: 'Republican' },
+      '10': { name: 'Mike Collins', party: 'Republican' },
+      '11': { name: 'Barry Loudermilk', party: 'Republican' },
+      '12': { name: 'Rick Allen', party: 'Republican' },
+      '13': { name: 'David Scott', party: 'Democratic' },
+      '14': { name: 'Marjorie Taylor Greene', party: 'Republican' }
+    };
+    
+    return representatives[district] || { name: 'Unknown', party: 'Unknown' };
+  }
+
   // Event Listeners
   document.addEventListener("DOMContentLoaded", function () {
     setupMap();
@@ -367,6 +450,24 @@ image: /assets/images/community-outreach.jpg
     // Report FAB
     document.getElementById('report-fab').addEventListener('click', () => {
       document.getElementById('report-modal').classList.add('active');
+    });
+
+    // Layers FAB - Toggle district visibility
+    document.getElementById('layers-fab').addEventListener('click', () => {
+      const visible = districtLayer.getVisible();
+      districtLayer.setVisible(!visible);
+      
+      // Update button appearance based on layer visibility
+      const layersBtn = document.getElementById('layers-fab');
+      if (!visible) {
+        layersBtn.style.backgroundColor = 'var(--campaign-primary)';
+        layersBtn.style.color = 'white';
+        layersBtn.title = 'Hide Congressional Districts';
+      } else {
+        layersBtn.style.backgroundColor = 'white';
+        layersBtn.style.color = 'black';
+        layersBtn.title = 'Show Congressional Districts';
+      }
     });
 
     // Close modal
