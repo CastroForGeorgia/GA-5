@@ -215,6 +215,80 @@ image: /assets/images/community-outreach.jpg
     }
   ];
 
+  // Dynamic heatmap configuration
+  let isHighIntensity = false;
+  const baseBlur = 15;
+  const baseRadius = 25;
+  const highIntensityMultiplier = 1.8;
+
+  // Dynamic heatmap helper functions
+  function getFeatureWeight(feature, zoom) {
+    const status = feature.get('status');
+    const votes = feature.get('votes') || { up: 0, down: 0 };
+    const voteScore = (votes.up - votes.down) / Math.max(votes.up + votes.down, 1);
+    
+    // Base weight on safety (unsafe = higher heat)
+    let baseWeight = status === 'unsafe' ? 1.0 : 
+                    status === 'caution' ? 0.7 : 0.4;
+    
+    // Boost weight for highly voted reports
+    const voteBoost = Math.max(0.2, Math.min(1.0, voteScore + 0.5));
+    
+    // Zoom-based weight adjustment
+    // At lower zoom (zoomed out), reduce individual feature impact
+    // At higher zoom (zoomed in), increase individual feature impact
+    const zoomFactor = Math.max(0.3, Math.min(1.5, (zoom - 8) * 0.15 + 0.8));
+    
+    return baseWeight * voteBoost * zoomFactor;
+  }
+
+  function updateHeatmapForZoom() {
+    const zoom = map.getView().getZoom();
+    
+    // Dynamic radius and blur based on zoom level
+    // Zoomed out (zoom < 10): Larger radius for broader coverage
+    // Zoomed in (zoom > 13): Smaller radius for precision
+    let dynamicRadius, dynamicBlur, dynamicOpacity;
+    
+    if (zoom < 9) {
+      // Very zoomed out - large, soft heatmap
+      dynamicRadius = baseRadius * 2.5;
+      dynamicBlur = baseBlur * 2;
+      dynamicOpacity = 0.6;
+    } else if (zoom < 11) {
+      // Moderately zoomed out
+      dynamicRadius = baseRadius * 1.8;
+      dynamicBlur = baseBlur * 1.5;
+      dynamicOpacity = 0.7;
+    } else if (zoom < 13) {
+      // Normal zoom level
+      dynamicRadius = baseRadius;
+      dynamicBlur = baseBlur;
+      dynamicOpacity = 0.8;
+    } else if (zoom < 15) {
+      // Zoomed in - smaller, sharper
+      dynamicRadius = baseRadius * 0.7;
+      dynamicBlur = baseBlur * 0.8;
+      dynamicOpacity = 0.85;
+    } else {
+      // Very zoomed in - precise points
+      dynamicRadius = baseRadius * 0.5;
+      dynamicBlur = baseBlur * 0.6;
+      dynamicOpacity = 0.9;
+    }
+    
+    // Apply high intensity multiplier if enabled
+    if (isHighIntensity) {
+      dynamicRadius *= highIntensityMultiplier;
+      dynamicBlur *= highIntensityMultiplier;
+    }
+    
+    // Update heatmap properties
+    iceHeatmapLayer.setRadius(dynamicRadius);
+    iceHeatmapLayer.setBlur(dynamicBlur);
+    iceHeatmapLayer.setOpacity(dynamicOpacity);
+  }
+
   function setupMap() {
     // Georgia extent bounds
     const georgiaExtent = [-9542547.6, 3570998.9, -8992086.6, 4163886.7];
@@ -254,35 +328,32 @@ image: /assets/images/community-outreach.jpg
       layers: [osmLayer, districtLayer],
     });
 
-    // Add ice tracking heatmap layer
+    // Add ice tracking heatmap layer with dynamic properties
     iceHeatmapLayer = new ol.layer.Heatmap({
       source: new ol.source.Vector(),
       blur: 15,
       radius: 25,
       weight: function(feature) {
-        // Weight based on safety level and vote score
-        const status = feature.get('status');
-        const votes = feature.get('votes') || { up: 0, down: 0 };
-        const voteScore = (votes.up - votes.down) / Math.max(votes.up + votes.down, 1);
-        
-        // Base weight on safety (unsafe = higher heat)
-        let baseWeight = status === 'unsafe' ? 1.0 : 
-                        status === 'caution' ? 0.7 : 0.4;
-        
-        // Boost weight for highly voted reports
-        const voteBoost = Math.max(0.2, Math.min(1.0, voteScore + 0.5));
-        
-        return baseWeight * voteBoost;
+        return getFeatureWeight(feature, map.getView().getZoom());
       },
       gradient: ['#10b981', '#f59e0b', '#ef4444'], // Green -> Yellow -> Red
+      opacity: 0.8,
       properties: { name: 'Ice Conditions Heatmap' }
     });
     map.addLayer(iceHeatmapLayer);
+
+    // Update heatmap properties when zoom changes
+    map.getView().on('change:resolution', function() {
+      updateHeatmapForZoom();
+    });
 
     // Load sample reports
     reports = [...sampleReports];
     renderReports();
     renderReportsList();
+    
+    // Apply initial zoom-based heatmap settings
+    updateHeatmapForZoom();
     
     // Map click handler
     map.on('click', function(evt) {
@@ -496,27 +567,22 @@ image: /assets/images/community-outreach.jpg
       document.getElementById('report-modal').classList.add('active');
     });
 
-    // Layers FAB - Toggle heatmap settings
+    // Layers FAB - Toggle heatmap intensity
     document.getElementById('layers-fab').addEventListener('click', () => {
-      // Cycle through different heatmap intensities
-      const currentRadius = iceHeatmapLayer.getRadius();
-      const currentBlur = iceHeatmapLayer.getBlur();
+      isHighIntensity = !isHighIntensity;
       
-      if (currentRadius === 25 && currentBlur === 15) {
-        // High intensity
-        iceHeatmapLayer.setRadius(35);
-        iceHeatmapLayer.setBlur(25);
-        document.getElementById('layers-fab').title = 'Switch to Low Intensity';
+      if (isHighIntensity) {
+        document.getElementById('layers-fab').title = 'Switch to Normal Intensity';
         document.getElementById('layers-fab').style.backgroundColor = 'var(--campaign-primary)';
         document.getElementById('layers-fab').style.color = 'white';
       } else {
-        // Reset to normal
-        iceHeatmapLayer.setRadius(25);
-        iceHeatmapLayer.setBlur(15);
         document.getElementById('layers-fab').title = 'Switch to High Intensity';
         document.getElementById('layers-fab').style.backgroundColor = 'white';
         document.getElementById('layers-fab').style.color = 'black';
       }
+      
+      // Update heatmap with current zoom level
+      updateHeatmapForZoom();
     });
 
     // Close modal
