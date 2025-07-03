@@ -1,0 +1,624 @@
+---
+layout: default
+title: "Ice Tracker"
+description: "Track ice conditions and safety information in real-time"
+permalink: /ice-tracker/
+image: /assets/images/community-outreach.jpg
+---
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css">
+
+<style>
+  /* Mobile-first Google Maps-like styling */
+  .ice-tracker-app {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    background: #fff;
+  }
+  
+  .ice-tracker-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  #map {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+  }
+  
+  .floating-controls {
+    position: absolute;
+    z-index: 500;
+  }
+  
+  .search-bar {
+    top: 80px;
+    left: 16px;
+    right: 16px;
+  }
+  
+  .report-fab {
+    bottom: 100px;
+    right: 16px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--campaign-primary);
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .report-fab:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .layers-fab {
+    bottom: 170px;
+    right: 16px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+  
+  .locate-fab {
+    bottom: 30px;
+    right: 16px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+  
+  .bottom-sheet {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0 -2px 16px rgba(0, 0, 0, 0.1);
+    transform: translateY(calc(100% - 80px));
+    transition: transform 0.3s ease;
+    z-index: 600;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  
+  .bottom-sheet.expanded {
+    transform: translateY(0);
+  }
+  
+  .bottom-sheet-handle {
+    width: 40px;
+    height: 4px;
+    background: #ddd;
+    border-radius: 2px;
+    margin: 12px auto;
+    cursor: pointer;
+  }
+  
+  .report-card {
+    border-bottom: 1px solid #f0f0f0;
+    padding: 16px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  .report-card:hover {
+    background: #f8f9fa;
+  }
+  
+  .vote-buttons {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  
+  .vote-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+  }
+  
+  .vote-btn.active {
+    background: var(--campaign-primary);
+    color: white;
+    border-color: var(--campaign-primary);
+  }
+  
+  .vote-btn:hover {
+    transform: scale(1.1);
+  }
+  
+  .status-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+  }
+  
+  .status-safe { background: #10b981; }
+  .status-caution { background: #f59e0b; }
+  .status-unsafe { background: #ef4444; }
+  
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+  }
+  
+  .modal.active {
+    display: flex;
+  }
+  
+  .modal-content {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    width: 100%;
+    max-width: 400px;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  
+  /* Hide default Jekyll header/footer for app view */
+  .ice-tracker-page header,
+  .ice-tracker-page footer {
+    display: none;
+  }
+</style>
+
+<div class="ice-tracker-app">
+  <!-- App Header -->
+  <div class="ice-tracker-header">
+    <div class="flex items-center justify-between px-4 py-3">
+      <div class="flex items-center gap-3">
+        <button id="menu-btn" class="p-2 rounded-lg hover:bg-gray-100">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+        <h1 class="text-lg font-semibold text-gray-900">Ice Tracker</h1>
+      </div>
+      <button id="filter-btn" class="p-2 rounded-lg hover:bg-gray-100">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.707A1 1 0 013 7V4z"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Search Bar -->
+  <div class="floating-controls search-bar">
+    <div class="bg-white rounded-lg shadow-md border border-gray-200">
+      <input 
+        type="text" 
+        placeholder="Search locations..." 
+        class="w-full px-4 py-3 rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        id="search-input"
+      >
+    </div>
+  </div>
+
+  <!-- Map Container -->
+  <div id="map"></div>
+
+  <!-- Floating Action Buttons -->
+  <button class="floating-controls report-fab" id="report-fab" title="Report Ice Condition">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+    </svg>
+  </button>
+
+  <button class="floating-controls layers-fab" id="layers-fab" title="Map Layers">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+    </svg>
+  </button>
+
+  <button class="floating-controls locate-fab" id="locate-fab" title="Find My Location">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+    </svg>
+  </button>
+
+  <!-- Bottom Sheet for Reports -->
+  <div class="bottom-sheet" id="reports-sheet">
+    <div class="bottom-sheet-handle" id="sheet-handle"></div>
+    <div class="px-4 pb-2">
+      <h3 class="text-lg font-semibold text-gray-900 mb-4">Recent Reports</h3>
+      <div id="reports-list">
+        <!-- Reports will be dynamically populated -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Report Modal -->
+<div class="modal" id="report-modal">
+  <div class="modal-content">
+    <div class="flex items-center justify-between mb-4">
+      <h2 class="text-xl font-semibold">Report Ice Condition</h2>
+      <button id="close-modal" class="p-2 hover:bg-gray-100 rounded-lg">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+    
+    <form id="report-form">
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-gray-700 mb-2">Ice Condition</label>
+        <select class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" name="status" required>
+          <option value="">Select condition...</option>
+          <option value="safe">Safe - 4+ inches thick</option>
+          <option value="caution">Caution - 2-4 inches thick</option>
+          <option value="unsafe">Unsafe - Less than 2 inches</option>
+        </select>
+      </div>
+      
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-gray-700 mb-2">Ice Thickness</label>
+        <input type="text" name="thickness" placeholder="e.g., 3 inches" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+      </div>
+      
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-gray-700 mb-2">Location</label>
+        <input type="text" name="location" placeholder="e.g., Lake Lanier North" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+      </div>
+      
+      <div class="mb-6">
+        <label class="block text-sm font-medium text-gray-700 mb-2">Additional Notes</label>
+        <textarea name="notes" placeholder="Any additional observations..." class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 h-20 resize-none"></textarea>
+      </div>
+      
+      <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors">
+        Submit Report
+      </button>
+    </form>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js"></script>
+<script>
+  // Ice Tracker App JavaScript
+  let map, iceVectorLayer, reports = [];
+  let userLocation = null;
+
+  // Sample reports data
+  const sampleReports = [
+    { 
+      id: 1, 
+      coords: [-84.3880, 33.7490], 
+      status: 'safe', 
+      thickness: '4 inches', 
+      location: 'Piedmont Park Lake',
+      notes: 'Tested multiple spots, solid ice',
+      votes: { up: 12, down: 2 },
+      timestamp: new Date(Date.now() - 1000 * 60 * 30) // 30 mins ago
+    },
+    { 
+      id: 2, 
+      coords: [-84.4000, 33.7600], 
+      status: 'caution', 
+      thickness: '2.5 inches', 
+      location: 'Buckhead Pond',
+      notes: 'Ice forming but still thin in spots',
+      votes: { up: 8, down: 1 },
+      timestamp: new Date(Date.now() - 1000 * 60 * 60) // 1 hour ago
+    },
+    { 
+      id: 3, 
+      coords: [-84.3700, 33.7300], 
+      status: 'unsafe', 
+      thickness: '1 inch', 
+      location: 'Grant Park Pond',
+      notes: 'Very thin ice, saw cracks',
+      votes: { up: 15, down: 0 },
+      timestamp: new Date(Date.now() - 1000 * 60 * 45) // 45 mins ago
+    }
+  ];
+
+  function setupMap() {
+    // Georgia extent bounds
+    const georgiaExtent = [-9542547.6, 3570998.9, -8992086.6, 4163886.7];
+
+    // OSM base layer
+    const osmLayer = new ol.layer.Tile({
+      source: new ol.source.OSM(),
+    });
+
+    // Create the map
+    map = new ol.Map({
+      target: 'map',
+      view: new ol.View({
+        center: ol.proj.fromLonLat([-84.3880, 33.7490]),
+        zoom: 11,
+        minZoom: 8,
+        maxZoom: 18,
+        extent: georgiaExtent,
+      }),
+      layers: [osmLayer],
+    });
+
+    // Add ice tracking layer
+    iceVectorLayer = new ol.layer.Vector({
+      source: new ol.source.Vector(),
+    });
+    map.addLayer(iceVectorLayer);
+
+    // Load sample reports
+    reports = [...sampleReports];
+    renderReports();
+    renderReportsList();
+    
+    // Map click handler
+    map.on('click', function(evt) {
+      const feature = map.forEachFeatureAtPixel(evt.pixel, function(feature) {
+        return feature;
+      });
+      
+      if (feature) {
+        const report = reports.find(r => r.id === feature.get('reportId'));
+        if (report) {
+          showReportDetails(report);
+        }
+      }
+    });
+
+    // Get user location
+    getUserLocation();
+  }
+
+  function renderReports() {
+    iceVectorLayer.getSource().clear();
+    
+    reports.forEach(function(report) {
+      const feature = new ol.Feature({
+        geometry: new ol.geom.Point(ol.proj.fromLonLat(report.coords)),
+        reportId: report.id
+      });
+
+      const style = new ol.style.Style({
+        image: new ol.style.Circle({
+          radius: 8,
+          fill: new ol.style.Fill({
+            color: report.status === 'safe' ? '#10b981' : 
+                   report.status === 'caution' ? '#f59e0b' : '#ef4444'
+          }),
+          stroke: new ol.style.Stroke({
+            color: '#ffffff',
+            width: 2
+          })
+        })
+      });
+
+      feature.setStyle(style);
+      iceVectorLayer.getSource().addFeature(feature);
+    });
+  }
+
+  function renderReportsList() {
+    const container = document.getElementById('reports-list');
+    container.innerHTML = '';
+    
+    // Sort by timestamp, newest first
+    const sortedReports = [...reports].sort((a, b) => b.timestamp - a.timestamp);
+    
+    sortedReports.forEach(report => {
+      const timeAgo = getTimeAgo(report.timestamp);
+      const card = document.createElement('div');
+      card.className = 'report-card';
+      card.innerHTML = `
+        <div class="flex items-start justify-between">
+          <div class="flex-1">
+            <div class="flex items-center mb-1">
+              <span class="status-indicator status-${report.status}"></span>
+              <span class="font-medium text-gray-900">${report.location}</span>
+            </div>
+            <p class="text-sm text-gray-600 mb-2">${report.thickness} • ${timeAgo}</p>
+            ${report.notes ? `<p class="text-sm text-gray-700 mb-2">${report.notes}</p>` : ''}
+            <div class="vote-buttons">
+              <button class="vote-btn vote-up" data-id="${report.id}" title="Helpful">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+                </svg>
+              </button>
+              <span class="text-sm text-gray-600">${report.votes.up}</span>
+              <button class="vote-btn vote-down" data-id="${report.id}" title="Not helpful">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <span class="text-sm text-gray-600">${report.votes.down}</span>
+            </div>
+          </div>
+        </div>
+      `;
+      
+      card.addEventListener('click', (e) => {
+        if (!e.target.closest('.vote-btn')) {
+          showReportOnMap(report);
+        }
+      });
+      
+      container.appendChild(card);
+    });
+
+    // Add vote button listeners
+    container.querySelectorAll('.vote-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const reportId = parseInt(btn.dataset.id);
+        const isUpvote = btn.classList.contains('vote-up');
+        voteOnReport(reportId, isUpvote);
+      });
+    });
+  }
+
+  function showReportOnMap(report) {
+    map.getView().animate({
+      center: ol.proj.fromLonLat(report.coords),
+      zoom: 15,
+      duration: 500
+    });
+    
+    // Collapse bottom sheet
+    document.getElementById('reports-sheet').classList.remove('expanded');
+  }
+
+  function voteOnReport(reportId, isUpvote) {
+    const report = reports.find(r => r.id === reportId);
+    if (report) {
+      if (isUpvote) {
+        report.votes.up++;
+      } else {
+        report.votes.down++;
+      }
+      renderReportsList();
+    }
+  }
+
+  function getTimeAgo(timestamp) {
+    const now = new Date();
+    const diff = now - timestamp;
+    const minutes = Math.floor(diff / (1000 * 60));
+    
+    if (minutes < 60) {
+      return `${minutes}m ago`;
+    } else {
+      const hours = Math.floor(minutes / 60);
+      return `${hours}h ago`;
+    }
+  }
+
+  function getUserLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          userLocation = [position.coords.longitude, position.coords.latitude];
+        },
+        (error) => {
+          console.log('Geolocation error:', error);
+        }
+      );
+    }
+  }
+
+  function showReportDetails(report) {
+    alert(`${report.location}\nStatus: ${report.status}\nThickness: ${report.thickness}\n${report.notes || ''}`);
+  }
+
+  // Event Listeners
+  document.addEventListener("DOMContentLoaded", function () {
+    setupMap();
+    
+    // Bottom sheet toggle
+    const sheetHandle = document.getElementById('sheet-handle');
+    const reportsSheet = document.getElementById('reports-sheet');
+    
+    sheetHandle.addEventListener('click', () => {
+      reportsSheet.classList.toggle('expanded');
+    });
+
+    // Report FAB
+    document.getElementById('report-fab').addEventListener('click', () => {
+      document.getElementById('report-modal').classList.add('active');
+    });
+
+    // Close modal
+    document.getElementById('close-modal').addEventListener('click', () => {
+      document.getElementById('report-modal').classList.remove('active');
+    });
+
+    // Locate FAB
+    document.getElementById('locate-fab').addEventListener('click', () => {
+      if (userLocation) {
+        map.getView().animate({
+          center: ol.proj.fromLonLat(userLocation),
+          zoom: 15,
+          duration: 500
+        });
+      } else {
+        getUserLocation();
+        alert('Location access required. Please enable location services.');
+      }
+    });
+
+    // Report form submission
+    document.getElementById('report-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const formData = new FormData(e.target);
+      const center = ol.proj.toLonLat(map.getView().getCenter());
+      
+      const newReport = {
+        id: Date.now(),
+        coords: center,
+        status: formData.get('status'),
+        thickness: formData.get('thickness'),
+        location: formData.get('location'),
+        notes: formData.get('notes'),
+        votes: { up: 0, down: 0 },
+        timestamp: new Date()
+      };
+      
+      reports.push(newReport);
+      renderReports();
+      renderReportsList();
+      
+      // Close modal and reset form
+      document.getElementById('report-modal').classList.remove('active');
+      e.target.reset();
+      
+      // Show success message
+      alert('Report submitted successfully!');
+    });
+
+    // Modal background click to close
+    document.getElementById('report-modal').addEventListener('click', (e) => {
+      if (e.target.id === 'report-modal') {
+        e.target.classList.remove('active');
+      }
+    });
+  });
+</script> 

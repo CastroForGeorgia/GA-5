@@ -71,6 +71,7 @@
     "normalize-range": "^0.1.2",
     "object-assign": "^4.1.1",
     "object-hash": "^3.0.0",
+    "ol": "^10.6.1",
     "package-json-from-dist": "^1.0.1",
     "path-key": "^3.1.1",
     "path-parse": "^1.0.7",
