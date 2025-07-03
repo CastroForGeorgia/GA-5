@@ -246,19 +246,18 @@ image: /assets/images/community-outreach.jpg
     const zoom = map.getView().getZoom();
     
     // Dynamic radius and blur based on zoom level
-    // Zoomed out (zoom < 10): Larger radius for broader coverage
-    // Zoomed in (zoom > 13): Smaller radius for precision
+    // More conservative scaling to keep individual hotspots distinct
     let dynamicRadius, dynamicBlur, dynamicOpacity;
     
     if (zoom < 9) {
-      // Very zoomed out - large, soft heatmap
-      dynamicRadius = baseRadius * 2.5;
-      dynamicBlur = baseBlur * 2;
-      dynamicOpacity = 0.6;
+      // Very zoomed out - moderate size to avoid over-blending
+      dynamicRadius = baseRadius * 1.4;
+      dynamicBlur = baseBlur * 1.2;
+      dynamicOpacity = 0.65;
     } else if (zoom < 11) {
-      // Moderately zoomed out
-      dynamicRadius = baseRadius * 1.8;
-      dynamicBlur = baseBlur * 1.5;
+      // Moderately zoomed out - slight increase
+      dynamicRadius = baseRadius * 1.2;
+      dynamicBlur = baseBlur * 1.1;
       dynamicOpacity = 0.7;
     } else if (zoom < 13) {
       // Normal zoom level
