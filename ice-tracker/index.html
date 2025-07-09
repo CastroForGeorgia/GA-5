@@ -45,46 +45,29 @@ image: /assets/images/community-outreach.jpg
 
 <!-- Report Modal -->
 <div class="modal" id="report-modal">
-  <div class="modal-content">
-    <div class="flex items-center justify-between mb-4">
-      <h2 class="text-xl font-semibold">Report Ice Condition</h2>
-      <button id="close-modal" class="p-2 hover:bg-gray-100 rounded-lg">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
-      </button>
+  <div class="modal-content relative">
+    <button id="close-modal" class="absolute top-2 right-2 p-2 hover:bg-gray-100 rounded-lg">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+
+    <!-- Message about external secure form -->
+    <div class="p-6 text-center space-y-4">
+      <h2 class="text-xl font-semibold text-gray-900">Secure Report Submission</h2>
+      <p class="text-gray-700">
+        To protect your privacy, our ice-condition report form is hosted on a
+        secure external platform. Click the button below to open it in a new
+        tab and submit your report.
+      </p>
+      <a
+        href="https://cryptpad.fr/form/#/3/form/view/772fe74fc3da6a81b3781d72d7060b2b/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+        Open Secure Form
+      </a>
     </div>
-    
-    <form id="report-form">
-      <div class="mb-4">
-        <label class="block text-sm font-medium text-gray-700 mb-2">Ice Condition</label>
-        <select class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" name="status" required>
-          <option value="">Select condition...</option>
-          <option value="safe">Safe - 4+ inches thick</option>
-          <option value="caution">Caution - 2-4 inches thick</option>
-          <option value="unsafe">Unsafe - Less than 2 inches</option>
-        </select>
-      </div>
-      
-      <div class="mb-4">
-        <label class="block text-sm font-medium text-gray-700 mb-2">Ice Thickness</label>
-        <input type="text" name="thickness" placeholder="e.g., 3 inches" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-      </div>
-      
-      <div class="mb-4">
-        <label class="block text-sm font-medium text-gray-700 mb-2">Location</label>
-        <input type="text" name="location" placeholder="e.g., Lake Lanier North" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-      </div>
-      
-      <div class="mb-6">
-        <label class="block text-sm font-medium text-gray-700 mb-2">Additional Notes</label>
-        <textarea name="notes" placeholder="Any additional observations..." class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 h-20 resize-none"></textarea>
-      </div>
-      
-      <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors">
-        Submit Report
-      </button>
-    </form>
   </div>
 </div>
 
@@ -487,34 +470,38 @@ image: /assets/images/community-outreach.jpg
     });
 
     // Report form submission
-    document.getElementById('report-form').addEventListener('submit', (e) => {
-      e.preventDefault();
-      
-      const formData = new FormData(e.target);
-      const center = ol.proj.toLonLat(map.getView().getCenter());
-      
-      const newReport = {
-        id: Date.now(),
-        coords: center,
-        status: formData.get('status'),
-        thickness: formData.get('thickness'),
-        location: formData.get('location'),
-        notes: formData.get('notes'),
-        votes: { up: 0, down: 0 },
-        timestamp: new Date()
-      };
-      
-      reports.push(newReport);
-      renderReports();
-      renderReportsList();
-      
-      // Close modal and reset form
-      document.getElementById('report-modal').classList.remove('active');
-      e.target.reset();
-      
-      // Show success message
-      alert('Report submitted successfully!');
-    });
+    // Attach submission handler only if the internal form exists (external CryptPad form replaces it)
+    const reportForm = document.getElementById('report-form');
+    if (reportForm) {
+      reportForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const formData = new FormData(e.target);
+        const center = ol.proj.toLonLat(map.getView().getCenter());
+        
+        const newReport = {
+          id: Date.now(),
+          coords: center,
+          status: formData.get('status'),
+          thickness: formData.get('thickness'),
+          location: formData.get('location'),
+          notes: formData.get('notes'),
+          votes: { up: 0, down: 0 },
+          timestamp: new Date()
+        };
+        
+        reports.push(newReport);
+        renderReports();
+        renderReportsList();
+        
+        // Close modal and reset form
+        document.getElementById('report-modal').classList.remove('active');
+        e.target.reset();
+        
+        // Show success message
+        alert('Report submitted successfully!');
+      });
+    }
 
     // Modal background click to close
     document.getElementById('report-modal').addEventListener('click', (e) => {
