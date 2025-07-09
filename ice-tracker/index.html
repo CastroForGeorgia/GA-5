@@ -80,89 +80,74 @@ image: /assets/images/community-outreach.jpg
   // ArcGIS GeoJSON URL for Georgia Congressional Districts
   const arcGISGeoJSONUrl = 'https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/USA_119th_Congressional_Districts_no_territories/FeatureServer/0/query?where=STATE_NAME=%27Georgia%27&outFields=*&f=geojson';
 
-  // Sample reports data
+  // Sample reports data using final form structure
   const sampleReports = [
-    { 
-      id: 1, 
-      coords: [-84.3880, 33.7490], 
-      status: 'safe', 
-      thickness: '4 inches', 
-      location: 'Piedmont Park Lake',
-      notes: 'Tested multiple spots, solid ice',
+    {
+      id: 1,
+      geohash: 'dn5bpz', // Atlanta
+      link: 'https://example.com/photo1',
+      people: ['Uniformed agents wearing “ICE” or “HSI” labels', 'Local police officers'],
+      vehicles: ['Marked ICE or DHS vehicle'],
+      actions: {
+        knockingDoors: 'yes',
+        stoppingPeople: 'notSure',
+        watching: 'yes',
+        takenAway: 'yes'
+      },
       votes: { up: 12, down: 2 },
-      timestamp: new Date(Date.now() - 1000 * 60 * 30) // 30 mins ago
+      timestamp: new Date(Date.now() - 1000 * 60 * 30) // 30 min ago
     },
-    { 
-      id: 2, 
-      coords: [-84.4000, 33.7600], 
-      status: 'caution', 
-      thickness: '2.5 inches', 
-      location: 'Buckhead Pond',
-      notes: 'Ice forming but still thin in spots',
+    {
+      id: 2,
+      geohash: 'dn5bpy',
+      link: '',
+      people: ['Plain-clothes agents with visible badges'],
+      vehicles: ['Unmarked white van or SUV'],
+      actions: {
+        stoppingPeople: 'yes'
+      },
       votes: { up: 8, down: 1 },
-      timestamp: new Date(Date.now() - 1000 * 60 * 60) // 1 hour ago
+      timestamp: new Date(Date.now() - 1000 * 60 * 45)
     },
-    { 
-      id: 3, 
-      coords: [-84.3700, 33.7300], 
-      status: 'unsafe', 
-      thickness: '1 inch', 
-      location: 'Grant Park Pond',
-      notes: 'Very thin ice, saw cracks',
+    {
+      id: 3,
+      geohash: 'dn5bq3',
+      link: 'https://example.com/news',
+      people: [],
+      vehicles: [],
+      actions: {
+        raidWorkplace: 'yes',
+        presenceSensitive: 'notSure'
+      },
       votes: { up: 15, down: 0 },
-      timestamp: new Date(Date.now() - 1000 * 60 * 45) // 45 mins ago
-    },
-    { 
-      id: 4, 
-      coords: [-84.3900, 33.7500], 
-      status: 'unsafe', 
-      thickness: '0.5 inches', 
-      location: 'Midtown Pond',
-      notes: 'Ice breaking through, very dangerous',
-      votes: { up: 20, down: 1 },
-      timestamp: new Date(Date.now() - 1000 * 60 * 20) // 20 mins ago
-    },
-    { 
-      id: 5, 
-      coords: [-84.3850, 33.7480], 
-      status: 'unsafe', 
-      thickness: '1.5 inches', 
-      location: 'Piedmont Park East',
-      notes: 'Thin ice near shore',
-      votes: { up: 8, down: 0 },
-      timestamp: new Date(Date.now() - 1000 * 60 * 15) // 15 mins ago
-    },
-    { 
-      id: 6, 
-      coords: [-84.3950, 33.7520], 
-      status: 'caution', 
-      thickness: '3 inches', 
-      location: 'Atlantic Station Pond',
-      notes: 'Medium thickness, be careful',
-      votes: { up: 5, down: 2 },
-      timestamp: new Date(Date.now() - 1000 * 60 * 40) // 40 mins ago
-    },
-    { 
-      id: 7, 
-      coords: [-84.5500, 33.8500], 
-      status: 'safe', 
-      thickness: '5 inches', 
-      location: 'Marietta Lake',
-      notes: 'Thick ice, good for skating',
-      votes: { up: 18, down: 1 },
-      timestamp: new Date(Date.now() - 1000 * 60 * 90) // 1.5 hours ago
-    },
-    { 
-      id: 8, 
-      coords: [-84.2700, 33.6500], 
-      status: 'caution', 
-      thickness: '3 inches', 
-      location: 'Decatur Reservoir',
-      notes: 'Decent thickness but check edges',
-      votes: { up: 10, down: 3 },
-      timestamp: new Date(Date.now() - 1000 * 60 * 75) // 1.25 hours ago
+      timestamp: new Date(Date.now() - 1000 * 60 * 90)
     }
   ];
+
+  // Helper: decode 6-character geohash → [lon, lat]
+  function decodeGeohash(geohash) {
+    const base32 = '0123456789bcdefghjkmnpqrstuvwxyz';
+    let evenBit = true;
+    let lngMin = -180, lngMax = 180;
+    let latMin = -90, latMax = 90;
+
+    for (let i = 0; i < geohash.length; i++) {
+      const val = base32.indexOf(geohash[i]);
+      if (val === -1) return null; // invalid char
+      for (let bit = 4; bit >= 0; bit--) {
+        const bitN = (val >> bit) & 1;
+        if (evenBit) {
+          const mid = (lngMin + lngMax) / 2;
+          if (bitN) lngMin = mid; else lngMax = mid;
+        } else {
+          const mid = (latMin + latMax) / 2;
+          if (bitN) latMin = mid; else latMax = mid;
+        }
+        evenBit = !evenBit;
+      }
+    }
+    return [(lngMin + lngMax) / 2, (latMin + latMax) / 2];
+  }
 
   // Simple heatmap configuration
 
@@ -290,30 +275,24 @@ image: /assets/images/community-outreach.jpg
 
   function renderReports() {
     iceHeatmapLayer.getSource().clear();
-    
-    reports.forEach(function(report) {
-      // Calculate weight based on safety level and vote score
+
+    reports.forEach((report) => {
+      const coords = decodeGeohash(report.geohash);
+      if (!coords) return;
+
       const votes = report.votes || { up: 0, down: 0 };
       const voteScore = (votes.up - votes.down) / Math.max(votes.up + votes.down, 1);
-      
-      // Base weight on safety (unsafe = higher heat)
-      let baseWeight = report.status === 'unsafe' ? 1.0 : 
-                      report.status === 'caution' ? 0.7 : 0.4;
-      
-      // Boost weight for highly voted reports
-      const voteBoost = Math.max(0.2, Math.min(1.0, voteScore + 0.5));
-      const weight = baseWeight * voteBoost;
+
+      const yesCount = Object.values(report.actions || {}).filter(v => v === 'yes').length;
+      let baseWeight = 0.3 + yesCount * 0.15; // each confirmed action adds heat
+      baseWeight = Math.min(1, baseWeight);
+
+      const weight = Math.min(1, baseWeight + voteScore * 0.2);
 
       const feature = new ol.Feature({
-        geometry: new ol.geom.Point(ol.proj.fromLonLat(report.coords)),
+        geometry: new ol.geom.Point(ol.proj.fromLonLat(coords)),
         reportId: report.id,
-        status: report.status,
-        votes: report.votes,
-        thickness: report.thickness,
-        location: report.location,
-        notes: report.notes,
-        timestamp: report.timestamp,
-        weight: weight
+        weight
       });
 
       iceHeatmapLayer.getSource().addFeature(feature);
@@ -323,23 +302,25 @@ image: /assets/images/community-outreach.jpg
   function renderReportsList() {
     const container = document.getElementById('reports-list');
     container.innerHTML = '';
-    
-    // Sort by timestamp, newest first
+
     const sortedReports = [...reports].sort((a, b) => b.timestamp - a.timestamp);
-    
-    sortedReports.forEach(report => {
+
+    sortedReports.forEach((report) => {
       const timeAgo = getTimeAgo(report.timestamp);
+      const actionsYes = Object.keys(report.actions || {}).filter(k => report.actions[k] === 'yes');
+
       const card = document.createElement('div');
       card.className = 'report-card';
       card.innerHTML = `
         <div class="flex items-start justify-between">
           <div class="flex-1">
             <div class="flex items-center mb-1">
-              <span class="status-indicator status-${report.status}"></span>
-              <span class="font-medium text-gray-900">${report.location}</span>
+              <span class="font-medium text-gray-900">${report.geohash}</span>
             </div>
-            <p class="text-sm text-gray-600 mb-2">${report.thickness} • ${timeAgo}</p>
-            ${report.notes ? `<p class="text-sm text-gray-700 mb-2">${report.notes}</p>` : ''}
+            <p class="text-sm text-gray-600 mb-2">${timeAgo}${report.link ? ` • <a href="${report.link}" target="_blank" class="underline text-blue-600">link</a>` : ''}</p>
+            ${report.people && report.people.length ? `<p class="text-sm text-gray-700 mb-2"><strong>People:</strong> ${report.people.join(', ')}</p>` : ''}
+            ${report.vehicles && report.vehicles.length ? `<p class="text-sm text-gray-700 mb-2"><strong>Vehicles:</strong> ${report.vehicles.join(', ')}</p>` : ''}
+            ${actionsYes.length ? `<p class="text-sm text-gray-700 mb-2"><strong>Actions:</strong> ${actionsYes.join(', ')}</p>` : ''}
             <div class="vote-buttons">
               <button class="vote-btn vote-up" data-id="${report.id}" title="Helpful">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -379,8 +360,10 @@ image: /assets/images/community-outreach.jpg
   }
 
   function showReportOnMap(report) {
+    const coords = decodeGeohash(report.geohash);
+    if (!coords) return;
     map.getView().animate({
-      center: ol.proj.fromLonLat(report.coords),
+      center: ol.proj.fromLonLat(coords),
       zoom: 15,
       duration: 500
     });
@@ -428,7 +411,13 @@ image: /assets/images/community-outreach.jpg
   }
 
   function showReportDetails(report) {
-    alert(`${report.location}\nStatus: ${report.status}\nThickness: ${report.thickness}\n${report.notes || ''}`);
+    const actionsYes = Object.keys(report.actions || {}).filter(k => report.actions[k] === 'yes');
+    let details = `Location geohash: ${report.geohash}`;
+    if (report.link) details += `\nLink: ${report.link}`;
+    if (report.people && report.people.length) details += `\nPeople: ${report.people.join(', ')}`;
+    if (report.vehicles && report.vehicles.length) details += `\nVehicles: ${report.vehicles.join(', ')}`;
+    if (actionsYes.length) details += `\nActions: ${actionsYes.join(', ')}`;
+    alert(details);
   }
 
   // Event Listeners
