@@ -55,6 +55,16 @@ image: /assets/images/community-outreach.jpg
     <div class="p-6 max-h-[80vh] overflow-y-auto">
       <h2 class="text-xl font-semibold text-gray-900 mb-6">Report Activity</h2>
       
+      <!-- Error Display -->
+      <div id="modal-error" class="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm hidden">
+        <div class="flex items-center">
+          <svg class="w-4 h-4 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+          </svg>
+          <span id="modal-error-text">Error message</span>
+        </div>
+      </div>
+      
       <!-- Progress Indicator -->
       <div class="mb-6">
         <div class="flex items-center justify-between text-sm font-medium text-gray-600 mb-2">
@@ -1114,11 +1124,16 @@ image: /assets/images/community-outreach.jpg
           }
         } else {
           // Show message that zone must be adjacent
-          alert('New zones must be adjacent (touching) to already selected zones.');
+          showModalError('New zones must be adjacent (touching) to already selected zones.');
         }
       }
       
       updateGeohashDisplay();
+      
+      // Hide any errors when user successfully selects zones
+      if (selectedGeohashes.size > 0) {
+        hideModalError();
+      }
     });
 
     // Use My Location button
@@ -1160,13 +1175,33 @@ image: /assets/images/community-outreach.jpg
             updateGeohashDisplay();
           },
           (error) => {
-            alert('Unable to get your location. Please click on the map to select a location.');
+            showModalError('Unable to get your location. Please click on the map to select a location.');
           }
         );
       } else {
-        alert('Geolocation is not supported by this browser. Please click on the map to select a location.');
+        showModalError('Geolocation is not supported by this browser. Please click on the map to select a location.');
       }
     });
+  }
+
+  // Helper: show error in modal
+  function showModalError(message) {
+    const errorDiv = document.getElementById('modal-error');
+    const errorText = document.getElementById('modal-error-text');
+    errorText.textContent = message;
+    errorDiv.classList.remove('hidden');
+    
+    // Scroll to top to ensure error is visible
+    const modalContent = document.querySelector('.modal-content .overflow-y-auto');
+    if (modalContent) {
+      modalContent.scrollTop = 0;
+    }
+  }
+
+  // Helper: hide error in modal
+  function hideModalError() {
+    const errorDiv = document.getElementById('modal-error');
+    errorDiv.classList.add('hidden');
   }
 
   // Event Listeners
@@ -1204,10 +1239,13 @@ image: /assets/images/community-outreach.jpg
     
     // Next button click
     document.getElementById('next-btn').addEventListener('click', () => {
+      // Hide any previous errors
+      hideModalError();
+      
       // Validate current step
       if (currentStep === 1) {
         if (selectedGeohashes.size === 0) {
-          alert('Please select at least one zone on the map.');
+          showModalError('Please select at least one zone on the map.');
           return;
         }
       }
@@ -1237,11 +1275,14 @@ image: /assets/images/community-outreach.jpg
       reportsSheet.classList.toggle('expanded');
     });
 
-    // Report FAB
-    document.getElementById('report-fab').addEventListener('click', () => {
+         // Report FAB
+     document.getElementById('report-fab').addEventListener('click', () => {
        // Reset form to step 1
        currentStep = 1;
        updateStepDisplay();
+       
+       // Hide any errors
+       hideModalError();
        
        // Setup mini map if not already done
        if (!miniMap) {
@@ -1278,6 +1319,7 @@ image: /assets/images/community-outreach.jpg
     // Close modal
     document.getElementById('close-modal').addEventListener('click', () => {
       document.getElementById('report-modal').classList.remove('active');
+      hideModalError();
     });
 
     // Handle modal opening - resize mini map
@@ -1368,6 +1410,7 @@ image: /assets/images/community-outreach.jpg
     document.getElementById('report-modal').addEventListener('click', (e) => {
       if (e.target.id === 'report-modal') {
         e.target.classList.remove('active');
+        hideModalError();
       }
     });
   });
