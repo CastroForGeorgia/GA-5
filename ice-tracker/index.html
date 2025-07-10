@@ -52,21 +52,190 @@ image: /assets/images/community-outreach.jpg
       </svg>
     </button>
 
-    <!-- Message about external secure form -->
-    <div class="p-6 text-center space-y-4">
-      <h2 class="text-xl font-semibold text-gray-900">Secure Report Submission</h2>
-      <p class="text-gray-700">
-        To protect your privacy, our ice-condition report form is hosted on a
-        secure external platform. Click the button below to open it in a new
-        tab and submit your report.
-      </p>
-      <a
-        href="https://cryptpad.fr/form/#/3/form/view/772fe74fc3da6a81b3781d72d7060b2b/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-        Open Secure Form
-      </a>
+    <div class="p-6 max-h-[80vh] overflow-y-auto">
+      <h2 class="text-xl font-semibold text-gray-900 mb-6">Report Activity</h2>
+      
+      <!-- Progress Indicator -->
+      <div class="mb-6">
+        <div class="flex items-center justify-between text-sm font-medium text-gray-600 mb-2">
+          <span id="step-indicator">Step 1 of 4</span>
+          <span id="progress-text">Location</span>
+        </div>
+        <div class="w-full bg-gray-200 rounded-full h-2">
+          <div id="progress-bar" class="bg-blue-600 h-2 rounded-full transition-all duration-300" style="width: 25%"></div>
+        </div>
+      </div>
+      
+      <form id="report-form" class="space-y-6">
+        <!-- Step 1: Location & Link -->
+        <div id="step-1" class="form-step">
+          <div class="space-y-6">
+            <!-- Location (Geohash) -->
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">
+                📍 Where did this happen? (Enter a 6-letter geohash) *
+              </label>
+              <input 
+                type="text" 
+                name="geohash" 
+                placeholder="e.g. 9q8yyz" 
+                maxlength="6"
+                required
+                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+              <p class="text-xs text-gray-500 mt-1">
+                A geohash is a short code for a location (like a neighborhood or street corner). 
+                Tap "Get My Location" above to copy one, then paste it here.
+              </p>
+            </div>
+
+            <!-- Optional Link -->
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">
+                🌐 Do you have a link to a photo, video, or news article?
+              </label>
+              <input 
+                type="url" 
+                name="link" 
+                placeholder="https://example.com/..."
+                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: People -->
+        <div id="step-2" class="form-step hidden">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-4">
+              🧍‍♂️ Who or what did you see? (check all that apply)
+            </label>
+            <div class="grid grid-cols-1 gap-3">
+              <label class="flex items-start p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" name="people" value="Uniformed agents wearing ICE or HSI labels" class="mt-1 mr-3 text-blue-600">
+                <span class="text-sm">Uniformed agents wearing "ICE" or "HSI" labels</span>
+              </label>
+              <label class="flex items-start p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" name="people" value="Plain-clothes agents with visible badges" class="mt-1 mr-3 text-blue-600">
+                <span class="text-sm">Plain-clothes agents with visible badges</span>
+              </label>
+              <label class="flex items-start p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" name="people" value="Local police officers" class="mt-1 mr-3 text-blue-600">
+                <span class="text-sm">Local police officers</span>
+              </label>
+              <label class="flex items-start p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" name="people" value="Armed troops or National Guard" class="mt-1 mr-3 text-blue-600">
+                <span class="text-sm">Armed troops or National Guard</span>
+              </label>
+              <label class="flex items-start p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" name="people" value="People being handcuffed or detained" class="mt-1 mr-3 text-blue-600">
+                <span class="text-sm">People being handcuffed or detained</span>
+              </label>
+              <label class="flex items-start p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" name="people" value="No uniforms or badges seen" class="mt-1 mr-3 text-blue-600">
+                <span class="text-sm">No uniforms or badges seen</span>
+              </label>
+              <label class="flex items-start p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" name="people" value="Other" class="mt-1 mr-3 text-blue-600">
+                <span class="text-sm">Other (describe below)</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3: Vehicles -->
+        <div id="step-3" class="form-step hidden">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-4">
+              🚗 Vehicles or equipment you saw (check all that apply)
+            </label>
+            <div class="grid grid-cols-1 gap-3">
+              <label class="flex items-start p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" name="vehicles" value="Unmarked white van or SUV" class="mt-1 mr-3 text-blue-600">
+                <span class="text-sm">Unmarked white van or SUV</span>
+              </label>
+              <label class="flex items-start p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" name="vehicles" value="Marked ICE or DHS vehicle" class="mt-1 mr-3 text-blue-600">
+                <span class="text-sm">Marked ICE or DHS vehicle</span>
+              </label>
+              <label class="flex items-start p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" name="vehicles" value="Local police cruiser" class="mt-1 mr-3 text-blue-600">
+                <span class="text-sm">Local police cruiser</span>
+              </label>
+              <label class="flex items-start p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" name="vehicles" value="Charter bus or large transport" class="mt-1 mr-3 text-blue-600">
+                <span class="text-sm">Charter bus or large transport</span>
+              </label>
+              <label class="flex items-start p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" name="vehicles" value="Military-style or armored vehicle" class="mt-1 mr-3 text-blue-600">
+                <span class="text-sm">Military-style or armored vehicle</span>
+              </label>
+              <label class="flex items-start p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" name="vehicles" value="Drone flying overhead" class="mt-1 mr-3 text-blue-600">
+                <span class="text-sm">Drone flying overhead</span>
+              </label>
+              <label class="flex items-start p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" name="vehicles" value="None" class="mt-1 mr-3 text-blue-600">
+                <span class="text-sm">None</span>
+              </label>
+              <label class="flex items-start p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" name="vehicles" value="Other" class="mt-1 mr-3 text-blue-600">
+                <span class="text-sm">Other (describe below)</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4: Actions -->
+        <div id="step-4" class="form-step hidden">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-4">
+              🚨 What was happening? (check all that apply)
+            </label>
+            <div class="grid grid-cols-1 gap-3">
+              <label class="flex items-start p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" name="actions" value="knockingDoors" class="mt-1 mr-3 text-blue-600">
+                <span class="text-sm">Knocking on doors or entering buildings</span>
+              </label>
+              <label class="flex items-start p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" name="actions" value="stoppingPeople" class="mt-1 mr-3 text-blue-600">
+                <span class="text-sm">Stopping people on the street</span>
+              </label>
+              <label class="flex items-start p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" name="actions" value="roadblocks" class="mt-1 mr-3 text-blue-600">
+                <span class="text-sm">Roadblocks or traffic checkpoints</span>
+              </label>
+              <label class="flex items-start p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" name="actions" value="watching" class="mt-1 mr-3 text-blue-600">
+                <span class="text-sm">Watching or taking photos from a distance</span>
+              </label>
+              <label class="flex items-start p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" name="actions" value="takenAway" class="mt-1 mr-3 text-blue-600">
+                <span class="text-sm">Someone being taken away or detained</span>
+              </label>
+              <label class="flex items-start p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" name="actions" value="raidWorkplace" class="mt-1 mr-3 text-blue-600">
+                <span class="text-sm">Raid at a workplace</span>
+              </label>
+              <label class="flex items-start p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" name="actions" value="presenceSensitive" class="mt-1 mr-3 text-blue-600">
+                <span class="text-sm">Presence at church, school, or hospital</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="flex justify-between pt-6 border-t border-gray-200">
+          <button type="button" id="prev-btn" class="px-6 py-2 text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors hidden">
+            Previous
+          </button>
+          <button type="button" id="next-btn" class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors ml-auto">
+            Next
+          </button>
+          <button type="submit" id="submit-btn" class="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors ml-auto hidden">
+            Submit Report
+          </button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
@@ -592,6 +761,69 @@ image: /assets/images/community-outreach.jpg
   document.addEventListener("DOMContentLoaded", function () {
     setupMap();
     
+    // Form step navigation
+    let currentStep = 1;
+    const totalSteps = 4;
+    const stepLabels = ['Location', 'People', 'Vehicles', 'Actions'];
+    
+    function updateStepDisplay() {
+      // Hide all steps
+      for (let i = 1; i <= totalSteps; i++) {
+        document.getElementById(`step-${i}`).classList.add('hidden');
+      }
+      
+      // Show current step
+      document.getElementById(`step-${currentStep}`).classList.remove('hidden');
+      
+      // Update progress indicator
+      document.getElementById('step-indicator').textContent = `Step ${currentStep} of ${totalSteps}`;
+      document.getElementById('progress-text').textContent = stepLabels[currentStep - 1];
+      document.getElementById('progress-bar').style.width = `${(currentStep / totalSteps) * 100}%`;
+      
+      // Update button visibility
+      const prevBtn = document.getElementById('prev-btn');
+      const nextBtn = document.getElementById('next-btn');
+      const submitBtn = document.getElementById('submit-btn');
+      
+      prevBtn.classList.toggle('hidden', currentStep === 1);
+      nextBtn.classList.toggle('hidden', currentStep === totalSteps);
+      submitBtn.classList.toggle('hidden', currentStep !== totalSteps);
+    }
+    
+    // Next button click
+    document.getElementById('next-btn').addEventListener('click', () => {
+      // Validate current step
+      if (currentStep === 1) {
+        const geohashInput = document.querySelector('input[name="geohash"]');
+        if (!geohashInput.value.trim()) {
+          alert('Please enter a geohash location.');
+          geohashInput.focus();
+          return;
+        }
+        if (geohashInput.value.length !== 6) {
+          alert('Geohash must be exactly 6 characters.');
+          geohashInput.focus();
+          return;
+        }
+      }
+      
+      if (currentStep < totalSteps) {
+        currentStep++;
+        updateStepDisplay();
+      }
+    });
+    
+    // Previous button click
+    document.getElementById('prev-btn').addEventListener('click', () => {
+      if (currentStep > 1) {
+        currentStep--;
+        updateStepDisplay();
+      }
+    });
+    
+    // Initialize step display
+    updateStepDisplay();
+    
     // Bottom sheet toggle
     const sheetHandle = document.getElementById('sheet-handle');
     const reportsSheet = document.getElementById('reports-sheet');
@@ -602,6 +834,9 @@ image: /assets/images/community-outreach.jpg
 
     // Report FAB
     document.getElementById('report-fab').addEventListener('click', () => {
+       // Reset form to step 1
+       currentStep = 1;
+       updateStepDisplay();
       document.getElementById('report-modal').classList.add('active');
     });
 
@@ -634,16 +869,35 @@ image: /assets/images/community-outreach.jpg
         e.preventDefault();
         
         const formData = new FormData(e.target);
-        const center = ol.proj.toLonLat(map.getView().getCenter());
+        
+        // Get checked people values
+        const people = [];
+        const peopleCheckboxes = e.target.querySelectorAll('input[name="people"]:checked');
+        peopleCheckboxes.forEach(checkbox => {
+          people.push(checkbox.value);
+        });
+        
+        // Get checked vehicles values
+        const vehicles = [];
+        const vehicleCheckboxes = e.target.querySelectorAll('input[name="vehicles"]:checked');
+        vehicleCheckboxes.forEach(checkbox => {
+          vehicles.push(checkbox.value);
+        });
+        
+        // Get checked action values
+        const actions = {};
+        const actionCheckboxes = e.target.querySelectorAll('input[name="actions"]:checked');
+        actionCheckboxes.forEach(checkbox => {
+          actions[checkbox.value] = 'yes';
+        });
         
         const newReport = {
           id: Date.now(),
-          coords: center,
-          status: formData.get('status'),
-          thickness: formData.get('thickness'),
-          location: formData.get('location'),
-          notes: formData.get('notes'),
-          votes: { up: 0, down: 0 },
+          geohash: formData.get('geohash'),
+          link: formData.get('link') || '',
+          people: people,
+          vehicles: vehicles,
+          actions: actions,
           timestamp: new Date()
         };
         
