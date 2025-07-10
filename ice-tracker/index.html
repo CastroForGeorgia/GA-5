@@ -86,7 +86,7 @@ image: /assets/images/community-outreach.jpg
       id: 1,
       geohash: 'dn5bpz', // Atlanta
       link: 'https://example.com/photo1',
-      people: ['Uniformed agents wearing “ICE” or “HSI” labels', 'Local police officers'],
+      people: ['Uniformed agents wearing "ICE" or "HSI" labels', 'Local police officers'],
       vehicles: ['Marked ICE or DHS vehicle'],
       actions: {
         knockingDoors: 'yes',
@@ -94,19 +94,17 @@ image: /assets/images/community-outreach.jpg
         watching: 'yes',
         takenAway: 'yes'
       },
-      votes: { up: 12, down: 2 },
       timestamp: new Date(Date.now() - 1000 * 60 * 30) // 30 min ago
     },
     {
       id: 2,
-      geohash: 'dn5bpy',
+      geohash: 'dn5bpz', // Same geohash as first report
       link: '',
       people: ['Plain-clothes agents with visible badges'],
       vehicles: ['Unmarked white van or SUV'],
       actions: {
         stoppingPeople: 'yes'
       },
-      votes: { up: 8, down: 1 },
       timestamp: new Date(Date.now() - 1000 * 60 * 45)
     },
     {
@@ -119,8 +117,19 @@ image: /assets/images/community-outreach.jpg
         raidWorkplace: 'yes',
         presenceSensitive: 'notSure'
       },
-      votes: { up: 15, down: 0 },
       timestamp: new Date(Date.now() - 1000 * 60 * 90)
+    },
+    {
+      id: 4,
+      geohash: 'dn5bpz', // Same geohash as first two reports
+      link: '',
+      people: ['Armed troops or National Guard'],
+      vehicles: ['Military-style or armored vehicle'],
+      actions: {
+        knockingDoors: 'yes',
+        roadblocks: 'yes'
+      },
+      timestamp: new Date(Date.now() - 1000 * 60 * 15)
     }
   ];
 
@@ -172,6 +181,18 @@ image: /assets/images/community-outreach.jpg
       }
     }
     return [lngMin, latMin, lngMax, latMax];
+  }
+
+  // Helper: group reports by geohash
+  function groupReportsByGeohash(reports) {
+    const grouped = {};
+    reports.forEach(report => {
+      if (!grouped[report.geohash]) {
+        grouped[report.geohash] = [];
+      }
+      grouped[report.geohash].push(report);
+    });
+    return grouped;
   }
 
   // Simple heatmap configuration
@@ -255,20 +276,17 @@ image: /assets/images/community-outreach.jpg
     // Map click handler
     map.on('click', function(evt) {
       const features = map.getFeaturesAtPixel(evt.pixel);
-      const geohashFeature = features.find(f => f.get('reportId'));
+      const geohashFeature = features.find(f => f.get('geohash'));
       
       if (geohashFeature) {
-        const report = reports.find(r => r.id === geohashFeature.get('reportId'));
-        if (report) {
-          showReportDetails(report);
-        }
+        showReportDetails(geohashFeature);
       }
     });
 
     // Add hover effect for heatmap areas
     map.on('pointermove', function(evt) {
       const features = map.getFeaturesAtPixel(evt.pixel);
-      const hasGeohashFeature = features.some(f => f.get('reportId'));
+      const hasGeohashFeature = features.some(f => f.get('geohash'));
       map.getTargetElement().style.cursor = hasGeohashFeature ? 'pointer' : '';
     });
 
@@ -279,20 +297,23 @@ image: /assets/images/community-outreach.jpg
   function renderReports() {
     geohashLayer.getSource().clear();
 
-    reports.forEach((report) => {
-      const bounds = getGeohashBounds(report.geohash);
+    const groupedReports = groupReportsByGeohash(reports);
+
+    Object.keys(groupedReports).forEach((geohash) => {
+      const reportsInGeohash = groupedReports[geohash];
+      const bounds = getGeohashBounds(geohash);
       if (!bounds) return;
 
       const [minLon, minLat, maxLon, maxLat] = bounds;
 
-      const votes = report.votes || { up: 0, down: 0 };
-      const voteScore = (votes.up - votes.down) / Math.max(votes.up + votes.down, 1);
+      // Calculate weight based on report count and total confirmed actions
+      const reportCount = reportsInGeohash.length;
+      const totalYesActions = reportsInGeohash.reduce((total, report) => {
+        return total + Object.values(report.actions || {}).filter(v => v === 'yes').length;
+      }, 0);
 
-      const yesCount = Object.values(report.actions || {}).filter(v => v === 'yes').length;
-      let baseWeight = 0.3 + yesCount * 0.15; // each confirmed action adds heat
-      baseWeight = Math.min(1, baseWeight);
-
-      const weight = Math.min(1, baseWeight + voteScore * 0.2);
+      // Weight based on report count and action density
+      let weight = Math.min(1, 0.2 + (reportCount * 0.2) + (totalYesActions * 0.1));
 
       // Create a polygon for the geohash area
       const polygon = new ol.geom.Polygon([[
@@ -305,8 +326,9 @@ image: /assets/images/community-outreach.jpg
 
       const feature = new ol.Feature({
         geometry: polygon,
-        reportId: report.id,
-        geohash: report.geohash,
+        geohash: geohash,
+        reportCount: reportCount,
+        reports: reportsInGeohash,
         weight
       });
 
@@ -318,11 +340,31 @@ image: /assets/images/community-outreach.jpg
     const container = document.getElementById('reports-list');
     container.innerHTML = '';
 
-    const sortedReports = [...reports].sort((a, b) => b.timestamp - a.timestamp);
+    const groupedReports = groupReportsByGeohash(reports);
 
-    sortedReports.forEach((report) => {
-      const timeAgo = getTimeAgo(report.timestamp);
-      const actionsYes = Object.keys(report.actions || {}).filter(k => report.actions[k] === 'yes');
+    // Sort geohash groups by most recent report timestamp
+    const sortedGeohashes = Object.keys(groupedReports).sort((a, b) => {
+      const latestA = Math.max(...groupedReports[a].map(r => r.timestamp));
+      const latestB = Math.max(...groupedReports[b].map(r => r.timestamp));
+      return latestB - latestA;
+    });
+
+    sortedGeohashes.forEach((geohash) => {
+      const reportsInGeohash = groupedReports[geohash];
+      const reportCount = reportsInGeohash.length;
+      const latestReport = reportsInGeohash.reduce((latest, report) => 
+        report.timestamp > latest.timestamp ? report : latest
+      );
+      const timeAgo = getTimeAgo(latestReport.timestamp);
+      
+      // Collect all unique people, vehicles, and actions from all reports in this geohash
+      const allPeople = [...new Set(reportsInGeohash.flatMap(r => r.people || []))];
+      const allVehicles = [...new Set(reportsInGeohash.flatMap(r => r.vehicles || []))];
+      const allActionsYes = [...new Set(reportsInGeohash.flatMap(r => 
+        Object.keys(r.actions || {}).filter(k => r.actions[k] === 'yes')
+      ))];
+      
+      const hasLinks = reportsInGeohash.some(r => r.link);
 
       const card = document.createElement('div');
       card.className = 'report-card';
@@ -330,52 +372,27 @@ image: /assets/images/community-outreach.jpg
         <div class="flex items-start justify-between">
           <div class="flex-1">
             <div class="flex items-center mb-1">
-              <span class="font-medium text-gray-900">${report.geohash}</span>
+              <span class="font-medium text-gray-900">${geohash}</span>
+              <span class="ml-2 px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">${reportCount} report${reportCount > 1 ? 's' : ''}</span>
             </div>
-            <p class="text-sm text-gray-600 mb-2">${timeAgo}${report.link ? ` • <a href="${report.link}" target="_blank" class="underline text-blue-600">link</a>` : ''}</p>
-            ${report.people && report.people.length ? `<p class="text-sm text-gray-700 mb-2"><strong>People:</strong> ${report.people.join(', ')}</p>` : ''}
-            ${report.vehicles && report.vehicles.length ? `<p class="text-sm text-gray-700 mb-2"><strong>Vehicles:</strong> ${report.vehicles.join(', ')}</p>` : ''}
-            ${actionsYes.length ? `<p class="text-sm text-gray-700 mb-2"><strong>Actions:</strong> ${actionsYes.join(', ')}</p>` : ''}
-            <div class="vote-buttons">
-              <button class="vote-btn vote-up" data-id="${report.id}" title="Helpful">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
-                </svg>
-              </button>
-              <span class="text-sm text-gray-600">${report.votes.up}</span>
-              <button class="vote-btn vote-down" data-id="${report.id}" title="Not helpful">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </button>
-              <span class="text-sm text-gray-600">${report.votes.down}</span>
-            </div>
+            <p class="text-sm text-gray-600 mb-2">Latest: ${timeAgo}${hasLinks ? ' • <span class="text-blue-600">has links</span>' : ''}</p>
+            ${allPeople.length ? `<p class="text-sm text-gray-700 mb-2"><strong>People:</strong> ${allPeople.join(', ')}</p>` : ''}
+            ${allVehicles.length ? `<p class="text-sm text-gray-700 mb-2"><strong>Vehicles:</strong> ${allVehicles.join(', ')}</p>` : ''}
+            ${allActionsYes.length ? `<p class="text-sm text-gray-700 mb-2"><strong>Actions:</strong> ${allActionsYes.join(', ')}</p>` : ''}
           </div>
         </div>
       `;
       
       card.addEventListener('click', (e) => {
-        if (!e.target.closest('.vote-btn')) {
-          showReportOnMap(report);
-        }
+        showGeohashOnMap(geohash);
       });
       
       container.appendChild(card);
     });
-
-    // Add vote button listeners
-    container.querySelectorAll('.vote-btn').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const reportId = parseInt(btn.dataset.id);
-        const isUpvote = btn.classList.contains('vote-up');
-        voteOnReport(reportId, isUpvote);
-      });
-    });
   }
 
-  function showReportOnMap(report) {
-    const coords = decodeGeohash(report.geohash);
+  function showGeohashOnMap(geohash) {
+    const coords = decodeGeohash(geohash);
     if (!coords) return;
     map.getView().animate({
       center: ol.proj.fromLonLat(coords),
@@ -385,18 +402,6 @@ image: /assets/images/community-outreach.jpg
     
     // Collapse bottom sheet
     document.getElementById('reports-sheet').classList.remove('expanded');
-  }
-
-  function voteOnReport(reportId, isUpvote) {
-    const report = reports.find(r => r.id === reportId);
-    if (report) {
-      if (isUpvote) {
-        report.votes.up++;
-      } else {
-        report.votes.down++;
-      }
-      renderReportsList();
-    }
   }
 
   function getTimeAgo(timestamp) {
@@ -425,13 +430,23 @@ image: /assets/images/community-outreach.jpg
     }
   }
 
-  function showReportDetails(report) {
-    const actionsYes = Object.keys(report.actions || {}).filter(k => report.actions[k] === 'yes');
-    let details = `Location geohash: ${report.geohash}`;
-    if (report.link) details += `\nLink: ${report.link}`;
-    if (report.people && report.people.length) details += `\nPeople: ${report.people.join(', ')}`;
-    if (report.vehicles && report.vehicles.length) details += `\nVehicles: ${report.vehicles.join(', ')}`;
-    if (actionsYes.length) details += `\nActions: ${actionsYes.join(', ')}`;
+  function showReportDetails(geohashFeature) {
+    const geohash = geohashFeature.get('geohash');
+    const reportCount = geohashFeature.get('reportCount');
+    const reportsInGeohash = geohashFeature.get('reports');
+    
+    const allPeople = [...new Set(reportsInGeohash.flatMap(r => r.people || []))];
+    const allVehicles = [...new Set(reportsInGeohash.flatMap(r => r.vehicles || []))];
+    const allActionsYes = [...new Set(reportsInGeohash.flatMap(r => 
+      Object.keys(r.actions || {}).filter(k => r.actions[k] === 'yes')
+    ))];
+    const linksCount = reportsInGeohash.filter(r => r.link).length;
+    
+    let details = `Location geohash: ${geohash}\nReports: ${reportCount}`;
+    if (linksCount > 0) details += `\nReports with links: ${linksCount}`;
+    if (allPeople.length) details += `\nPeople: ${allPeople.join(', ')}`;
+    if (allVehicles.length) details += `\nVehicles: ${allVehicles.join(', ')}`;
+    if (allActionsYes.length) details += `\nActions: ${allActionsYes.join(', ')}`;
     alert(details);
   }
 
