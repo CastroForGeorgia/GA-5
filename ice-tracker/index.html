@@ -40,7 +40,153 @@ image: /assets/images/community-outreach.jpg
       </div>
     </div>
   </div>
+  </div>
 </div>
+
+<!-- Modern Bottom Sheet for Reporting -->
+<div class="report-bottom-sheet" id="report-sheet">
+  <div class="sheet-backdrop" id="sheet-backdrop"></div>
+  <div class="sheet-container">
+    <!-- Sheet Header -->
+    <div class="sheet-header">
+      <div class="sheet-handle"></div>
+      <div class="flex items-center justify-between px-4 py-3">
+        <h3 class="text-lg font-semibold text-gray-900">Report Activity</h3>
+        <button id="close-sheet" class="p-1 hover:bg-gray-100 rounded-full transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Sheet Content -->
+    <div class="sheet-content">
+      <!-- Error Display -->
+      <div id="sheet-error" class="mx-4 mb-4 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm hidden">
+        <div class="flex items-center">
+          <svg class="w-4 h-4 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+          </svg>
+          <span id="sheet-error-text">Error message</span>
+        </div>
+      </div>
+
+      <form id="quick-report-form" class="px-4 pb-6 space-y-6">
+        <!-- Step 1: Location -->
+        <div id="location-step" class="form-step">
+          <div class="form-group">
+            <label>📍 Where did this happen?</label>
+            <div class="rounded-xl overflow-hidden border-2 border-gray-200 mb-3">
+              <div id="compact-map" class="w-full h-32"></div>
+            </div>
+            <div class="flex items-center justify-between text-xs text-gray-500 mb-3">
+              <span>Tap zones • Adjacent only</span>
+              <button type="button" id="quick-location" class="text-blue-600 hover:text-blue-800 font-medium transition-colors">
+                My Location
+              </button>
+            </div>
+            <div class="zone-display">
+              <span class="text-sm text-gray-600">Selected: </span>
+              <span id="quick-selected" class="zone-count">None</span>
+            </div>
+            <input type="hidden" name="geohash" id="quick-geohash-input" required>
+          </div>
+
+          <div class="form-group">
+            <label>🌐 Link (optional)</label>
+            <input 
+              type="url" 
+              name="link" 
+              placeholder="https://..."
+              class="w-full py-3 px-4 border-2 border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+          </div>
+
+          <button type="button" id="quick-continue" class="action-btn action-btn-primary">
+            Continue
+          </button>
+        </div>
+
+        <!-- Step 2: Quick Selection -->
+        <div id="selection-step" class="form-step hidden space-y-6">
+          <div class="form-group">
+            <label>🧍‍♂️ Who did you see?</label>
+            <div class="grid grid-cols-2 gap-3">
+              <label class="quick-option">
+                <input type="checkbox" name="people" value="ICE agents" class="sr-only">
+                <span class="quick-option-content">ICE agents</span>
+              </label>
+              <label class="quick-option">
+                <input type="checkbox" name="people" value="Police" class="sr-only">
+                <span class="quick-option-content">Police</span>
+              </label>
+              <label class="quick-option">
+                <input type="checkbox" name="people" value="Plain clothes" class="sr-only">
+                <span class="quick-option-content">Plain clothes</span>
+              </label>
+              <label class="quick-option">
+                <input type="checkbox" name="people" value="Detained people" class="sr-only">
+                <span class="quick-option-content">Detained people</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>🚗 Vehicles/Equipment</label>
+            <div class="grid grid-cols-2 gap-3">
+              <label class="quick-option">
+                <input type="checkbox" name="vehicles" value="Unmarked vans" class="sr-only">
+                <span class="quick-option-content">Unmarked vans</span>
+              </label>
+              <label class="quick-option">
+                <input type="checkbox" name="vehicles" value="ICE vehicles" class="sr-only">
+                <span class="quick-option-content">ICE vehicles</span>
+              </label>
+              <label class="quick-option">
+                <input type="checkbox" name="vehicles" value="Police cars" class="sr-only">
+                <span class="quick-option-content">Police cars</span>
+              </label>
+              <label class="quick-option">
+                <input type="checkbox" name="vehicles" value="Buses" class="sr-only">
+                <span class="quick-option-content">Buses</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>🚨 What was happening?</label>
+            <div class="grid grid-cols-2 gap-3">
+              <label class="quick-option">
+                <input type="checkbox" name="actions" value="knockingDoors" class="sr-only">
+                <span class="quick-option-content">Door knocking</span>
+              </label>
+              <label class="quick-option">
+                <input type="checkbox" name="actions" value="stoppingPeople" class="sr-only">
+                <span class="quick-option-content">Stopping people</span>
+              </label>
+              <label class="quick-option">
+                <input type="checkbox" name="actions" value="roadblocks" class="sr-only">
+                <span class="quick-option-content">Roadblocks</span>
+              </label>
+              <label class="quick-option">
+                <input type="checkbox" name="actions" value="takenAway" class="sr-only">
+                <span class="quick-option-content">Detentions</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="flex gap-4 pt-2">
+            <button type="button" id="quick-back" class="flex-1 py-4 px-6 bg-gray-200 text-gray-700 rounded-xl font-semibold hover:bg-gray-300 transition-all duration-200 active:scale-95">
+              Back
+            </button>
+            <button type="submit" id="quick-submit" class="flex-[2] action-btn action-btn-danger">
+              Submit Report
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
 
 <!-- Report Modal -->
@@ -240,16 +386,18 @@ image: /assets/images/community-outreach.jpg
         </div>
 
         <!-- Navigation Buttons -->
-        <div class="flex justify-between pt-6 border-t border-gray-200">
-          <button type="button" id="prev-btn" class="px-6 py-2 text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors hidden">
+        <div class="flex justify-between items-center pt-6 border-t border-gray-200">
+          <button type="button" id="prev-btn" class="btn btn-secondary hidden">
             Previous
           </button>
-          <button type="button" id="next-btn" class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors ml-auto">
-            Next
-          </button>
-          <button type="submit" id="submit-btn" class="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors ml-auto hidden">
-            Submit Report
-          </button>
+          <div class="flex gap-3 ml-auto">
+            <button type="button" id="next-btn" class="btn btn-primary">
+              Next
+            </button>
+            <button type="submit" id="submit-btn" class="btn btn-cta hidden">
+              Submit Report
+            </button>
+          </div>
         </div>
       </form>
     </div>
@@ -1192,25 +1340,211 @@ image: /assets/images/community-outreach.jpg
     });
   }
 
-  // Helper: show error in modal
-  function showModalError(message) {
-    const errorDiv = document.getElementById('modal-error');
-    const errorText = document.getElementById('modal-error-text');
+  // Helper: show error in bottom sheet
+  function showSheetError(message) {
+    const errorDiv = document.getElementById('sheet-error');
+    const errorText = document.getElementById('sheet-error-text');
     errorText.textContent = message;
     errorDiv.classList.remove('hidden');
     
     // Scroll to top to ensure error is visible
-    const modalContent = document.querySelector('.modal-content .overflow-y-auto');
-    if (modalContent) {
-      modalContent.scrollTop = 0;
+    const sheetContent = document.querySelector('.sheet-content');
+    if (sheetContent) {
+      sheetContent.scrollTop = 0;
     }
   }
 
-  // Helper: hide error in modal
-  function hideModalError() {
-    const errorDiv = document.getElementById('modal-error');
+  // Helper: hide error in bottom sheet
+  function hideSheetError() {
+    const errorDiv = document.getElementById('sheet-error');
     errorDiv.classList.add('hidden');
   }
+
+  // Legacy functions for compatibility
+  function showModalError(message) { showSheetError(message); }
+  function hideModalError() { hideSheetError(); }
+
+  // Setup compact map for bottom sheet
+  function setupCompactMap() {
+    // Create compact mini map
+    miniMap = new ol.Map({
+      target: 'compact-map',
+      view: new ol.View({
+        center: ol.proj.fromLonLat([-84.3880, 33.7490]), // Atlanta
+        zoom: 10,
+        minZoom: 8,
+        maxZoom: 16
+      }),
+      layers: [
+        new ol.layer.Tile({
+          source: new ol.source.OSM()
+        })
+      ],
+      controls: []
+    });
+
+    // Create marker layer for selected location
+    const markerLayer = new ol.layer.Vector({
+      source: new ol.source.Vector()
+    });
+    miniMap.addLayer(markerLayer);
+
+    // Click handler for multi-zone selection (reuse existing logic)
+    miniMap.on('click', function(evt) {
+      const coordinate = evt.coordinate;
+      const lonLat = ol.proj.toLonLat(coordinate);
+      const [lng, lat] = lonLat;
+      
+      const geohash = encodeGeohash(lat, lng, 6);
+      
+      if (selectedGeohashes.has(geohash)) {
+        // Deselect and remove connected components
+        const toRemove = removeGeohashFromGraph(geohash);
+        toRemove.forEach(gh => {
+          selectedGeohashes.delete(gh);
+          const feature = selectedGeohashFeatures.get(gh);
+          if (feature) {
+            markerLayer.getSource().removeFeature(feature);
+            selectedGeohashFeatures.delete(gh);
+          }
+        });
+      } else {
+        if (canAddGeohash(geohash)) {
+          selectedGeohashes.add(geohash);
+          addGeohashToGraph(geohash);
+          
+          const feature = createGeohashFeature(geohash, true);
+          if (feature) {
+            markerLayer.getSource().addFeature(feature);
+            selectedGeohashFeatures.set(geohash, feature);
+          }
+        } else {
+          showSheetError('New zones must be adjacent (touching) to already selected zones.');
+        }
+      }
+      
+      updateQuickDisplay();
+      
+      if (selectedGeohashes.size > 0) {
+        hideSheetError();
+      }
+    });
+
+    // Quick location button
+    document.getElementById('quick-location').addEventListener('click', () => {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            const lat = position.coords.latitude;
+            const lng = position.coords.longitude;
+            const coordinate = ol.proj.fromLonLat([lng, lat]);
+            
+            miniMap.getView().animate({
+              center: coordinate,
+              zoom: 12,
+              duration: 500
+            });
+            
+            const geohash = encodeGeohash(lat, lng, 6);
+            
+            selectedGeohashes.clear();
+            selectedGeohashFeatures.clear();
+            geohashGraph.clear();
+            markerLayer.getSource().clear();
+            
+            selectedGeohashes.add(geohash);
+            addGeohashToGraph(geohash);
+            
+            const feature = createGeohashFeature(geohash, true);
+            if (feature) {
+              markerLayer.getSource().addFeature(feature);
+              selectedGeohashFeatures.set(geohash, feature);
+            }
+            
+            updateQuickDisplay();
+          },
+          (error) => {
+            showSheetError('Unable to get your location. Please tap on the map to select a location.');
+          }
+        );
+      } else {
+        showSheetError('Geolocation is not supported by this browser. Please tap on the map to select a location.');
+      }
+    });
+  }
+
+      // Helper: update quick display
+    function updateQuickDisplay() {
+      const selectedArray = Array.from(selectedGeohashes);
+      const displayText = selectedArray.length === 0 ? 'None' : 
+                         selectedArray.length === 1 ? selectedArray[0] :
+                         `${selectedArray.length} zones`;
+      
+      document.getElementById('quick-selected').textContent = displayText;
+      document.getElementById('quick-geohash-input').value = selectedArray.join(',');
+    }
+
+    // Helper: check if geohash can be added (must be adjacent to existing selection)
+    function canAddGeohash(geohash) {
+      if (selectedGeohashes.size === 0) return true;
+      
+      // Check if it's adjacent to any selected geohash
+      for (const selectedGeohash of selectedGeohashes) {
+        if (areGeohashesAdjacent(geohash, selectedGeohash)) {
+          return true;
+        }
+      }
+      return false;
+    }
+
+    // Helper: create geohash feature with styling
+    function createGeohashFeature(geohash, isSelected = true) {
+      const bounds = getGeohashBounds(geohash);
+      if (!bounds) return null;
+      
+      const [minLon, minLat, maxLon, maxLat] = bounds;
+      
+      // Create a polygon for the geohash area
+      const polygon = new ol.geom.Polygon([[
+        ol.proj.fromLonLat([minLon, minLat]),
+        ol.proj.fromLonLat([maxLon, minLat]),
+        ol.proj.fromLonLat([maxLon, maxLat]),
+        ol.proj.fromLonLat([minLon, maxLat]),
+        ol.proj.fromLonLat([minLon, minLat])
+      ]]);
+
+      const geohashFeature = new ol.Feature({
+        geometry: polygon,
+        geohash: geohash
+      });
+      
+      const fillColor = isSelected ? 'rgba(59, 130, 246, 0.3)' : 'rgba(156, 163, 175, 0.2)';
+      const strokeColor = isSelected ? '#3b82f6' : '#9ca3af';
+      const textColor = isSelected ? '#1e40af' : '#6b7280';
+      
+      geohashFeature.setStyle(new ol.style.Style({
+        fill: new ol.style.Fill({
+          color: fillColor
+        }),
+        stroke: new ol.style.Stroke({
+          color: strokeColor,
+          width: 2
+        }),
+        text: new ol.style.Text({
+          text: geohash,
+          font: '10px sans-serif',
+          fill: new ol.style.Fill({
+            color: textColor
+          }),
+          stroke: new ol.style.Stroke({
+            color: '#ffffff',
+            width: 1
+          })
+        })
+      }));
+      
+      return geohashFeature;
+    }
 
   // Event Listeners
   document.addEventListener("DOMContentLoaded", function () {
@@ -1283,43 +1617,43 @@ image: /assets/images/community-outreach.jpg
       reportsSheet.classList.toggle('expanded');
     });
 
-         // Report FAB
+         // Report FAB - Open Bottom Sheet
      document.getElementById('report-fab').addEventListener('click', () => {
-       // Reset form to step 1
-       currentStep = 1;
-       updateStepDisplay();
+       // Show the bottom sheet
+       document.getElementById('report-sheet').classList.add('active');
+       
+       // Reset to first step
+       document.getElementById('location-step').classList.remove('hidden');
+       document.getElementById('selection-step').classList.add('hidden');
        
        // Hide any errors
-       hideModalError();
+       hideSheetError();
        
-       // Setup mini map if not already done
+       // Setup compact map if not already done
        if (!miniMap) {
-         // Delay to ensure the modal is visible
          setTimeout(() => {
-           setupMiniMap();
+           setupCompactMap();
          }, 100);
-               } else {
-          // Reset mini map selection
-          selectedGeohashes.clear();
-          selectedGeohashFeatures.clear();
-          geohashGraph.clear();
-          updateGeohashDisplay();
-          
-          // Clear map features
-          const markerLayer = miniMap.getLayers().getArray()[1];
-          if (markerLayer) {
-            markerLayer.getSource().clear();
-          }
-          
-          // Re-center on Atlanta
-          miniMap.getView().animate({
-            center: ol.proj.fromLonLat([-84.3880, 33.7490]),
-            zoom: 10,
-            duration: 300
-          });
-        }
-       
-      document.getElementById('report-modal').classList.add('active');
+       } else {
+         // Reset selection
+         selectedGeohashes.clear();
+         selectedGeohashFeatures.clear();
+         geohashGraph.clear();
+         updateQuickDisplay();
+         
+         // Clear map features
+         const markerLayer = miniMap.getLayers().getArray()[1];
+         if (markerLayer) {
+           markerLayer.getSource().clear();
+         }
+         
+         // Re-center on Atlanta
+         miniMap.getView().animate({
+           center: ol.proj.fromLonLat([-84.3880, 33.7490]),
+           zoom: 10,
+           duration: 300
+         });
+       }
     });
 
 
@@ -1420,6 +1754,102 @@ image: /assets/images/community-outreach.jpg
         e.target.classList.remove('active');
         hideModalError();
       }
+    });
+
+    // Bottom Sheet Event Handlers
+    
+    // Close sheet button
+    document.getElementById('close-sheet').addEventListener('click', () => {
+      document.getElementById('report-sheet').classList.remove('active');
+      hideSheetError();
+    });
+
+    // Backdrop click to close
+    document.getElementById('sheet-backdrop').addEventListener('click', () => {
+      document.getElementById('report-sheet').classList.remove('active');
+      hideSheetError();
+    });
+
+    // Continue button (step 1 -> step 2)
+    document.getElementById('quick-continue').addEventListener('click', () => {
+      hideSheetError();
+      
+      if (selectedGeohashes.size === 0) {
+        showSheetError('Please select at least one zone on the map.');
+        return;
+      }
+      
+      // Move to step 2
+      document.getElementById('location-step').classList.add('hidden');
+      document.getElementById('selection-step').classList.remove('hidden');
+    });
+
+    // Back button (step 2 -> step 1)
+    document.getElementById('quick-back').addEventListener('click', () => {
+      document.getElementById('selection-step').classList.add('hidden');
+      document.getElementById('location-step').classList.remove('hidden');
+      hideSheetError();
+    });
+
+    // Quick form submission
+    document.getElementById('quick-report-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const formData = new FormData(e.target);
+      
+      // Get checked people values
+      const people = [];
+      const peopleCheckboxes = e.target.querySelectorAll('input[name="people"]:checked');
+      peopleCheckboxes.forEach(checkbox => {
+        people.push(checkbox.value);
+      });
+      
+      // Get checked vehicles values
+      const vehicles = [];
+      const vehicleCheckboxes = e.target.querySelectorAll('input[name="vehicles"]:checked');
+      vehicleCheckboxes.forEach(checkbox => {
+        vehicles.push(checkbox.value);
+      });
+      
+      // Get checked action values
+      const actions = {};
+      const actionCheckboxes = e.target.querySelectorAll('input[name="actions"]:checked');
+      actionCheckboxes.forEach(checkbox => {
+        actions[checkbox.value] = 'yes';
+      });
+
+      const newReport = {
+        id: Date.now(),
+        geohashes: Array.from(selectedGeohashes),
+        link: formData.get('link') || '',
+        people: people,
+        vehicles: vehicles,
+        actions: actions,
+        timestamp: new Date()
+      };
+      
+      reports.push(newReport);
+      renderReports();
+      renderReportsList();
+      
+      // Close sheet and reset form
+      document.getElementById('report-sheet').classList.remove('active');
+      e.target.reset();
+      
+      // Reset to step 1
+      document.getElementById('selection-step').classList.add('hidden');
+      document.getElementById('location-step').classList.remove('hidden');
+      
+      // Show success message temporarily
+      const originalFabText = document.querySelector('.report-fab');
+      const originalHtml = originalFabText.innerHTML;
+      originalFabText.innerHTML = '<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>';
+      originalFabText.style.background = '#10b981';
+      
+      setTimeout(() => {
+        originalFabText.innerHTML = originalHtml;
+        originalFabText.style.background = '';
+      }, 2000);
     });
   });
 </script> 
