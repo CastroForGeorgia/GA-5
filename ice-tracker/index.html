@@ -74,7 +74,7 @@ image: /assets/images/community-outreach.jpg
 <script src="https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js"></script>
 <script>
   // Ice Tracker App JavaScript
-  let map, iceHeatmapLayer, districtLayer, reports = [];
+  let map, geohashLayer, districtLayer, reports = [];
   let userLocation = null;
 
   // ArcGIS GeoJSON URL for Georgia Congressional Districts
@@ -149,6 +149,31 @@ image: /assets/images/community-outreach.jpg
     return [(lngMin + lngMax) / 2, (latMin + latMax) / 2];
   }
 
+  // Helper: get geohash bounds as [minLon, minLat, maxLon, maxLat]
+  function getGeohashBounds(geohash) {
+    const base32 = '0123456789bcdefghjkmnpqrstuvwxyz';
+    let evenBit = true;
+    let lngMin = -180, lngMax = 180;
+    let latMin = -90, latMax = 90;
+
+    for (let i = 0; i < geohash.length; i++) {
+      const val = base32.indexOf(geohash[i]);
+      if (val === -1) return null; // invalid char
+      for (let bit = 4; bit >= 0; bit--) {
+        const bitN = (val >> bit) & 1;
+        if (evenBit) {
+          const mid = (lngMin + lngMax) / 2;
+          if (bitN) lngMin = mid; else lngMax = mid;
+        } else {
+          const mid = (latMin + latMax) / 2;
+          if (bitN) latMin = mid; else latMax = mid;
+        }
+        evenBit = !evenBit;
+      }
+    }
+    return [lngMin, latMin, lngMax, latMax];
+  }
+
   // Simple heatmap configuration
 
   function setupMap() {
@@ -190,18 +215,37 @@ image: /assets/images/community-outreach.jpg
       layers: [osmLayer, districtLayer],
     });
 
-    // Add ice tracking heatmap layer
-    iceHeatmapLayer = new ol.layer.Heatmap({
+    // Add geohash visualization layer
+    geohashLayer = new ol.layer.Vector({
       source: new ol.source.Vector(),
-      blur: 5,
-      radius: 10,
-      weight: function(feature) {
-        return feature.get('weight') || 1;
-      },
-      gradient: ['#ffeb3b', '#ffc107', '#ff9800', '#ff5722', '#f44336'], // Yellow -> Red
-      properties: { name: 'Ice Conditions Heatmap' }
+      style: function(feature) {
+        const weight = feature.get('weight') || 0.3;
+        const opacity = Math.max(0.3, Math.min(0.8, weight));
+        const color = weight > 0.7 ? '#f44336' : weight > 0.5 ? '#ff9800' : '#ffc107';
+        
+        return new ol.style.Style({
+          fill: new ol.style.Fill({
+            color: color + Math.floor(opacity * 255).toString(16).padStart(2, '0')
+          }),
+          stroke: new ol.style.Stroke({
+            color: color,
+            width: 2
+          }),
+          text: new ol.style.Text({
+            text: feature.get('geohash'),
+            font: '12px sans-serif',
+            fill: new ol.style.Fill({
+              color: '#000'
+            }),
+            stroke: new ol.style.Stroke({
+              color: '#fff',
+              width: 2
+            })
+          })
+        });
+      }
     });
-    map.addLayer(iceHeatmapLayer);
+    map.addLayer(geohashLayer);
 
     // Load sample reports
     reports = [...sampleReports];
@@ -210,38 +254,11 @@ image: /assets/images/community-outreach.jpg
     
     // Map click handler
     map.on('click', function(evt) {
-      const coordinate = evt.coordinate;
-      const clickedFeatures = [];
+      const features = map.getFeaturesAtPixel(evt.pixel);
+      const geohashFeature = features.find(f => f.get('reportId'));
       
-      // Find features near the clicked point (since heatmap doesn't support pixel-based selection)
-      iceHeatmapLayer.getSource().getFeatures().forEach(function(feature) {
-        const featureCoord = feature.getGeometry().getCoordinates();
-        const distance = Math.sqrt(
-          Math.pow(coordinate[0] - featureCoord[0], 2) + 
-          Math.pow(coordinate[1] - featureCoord[1], 2)
-        );
-        
-        // If within ~1000 meters (adjust as needed)
-        if (distance < 1000) {
-          clickedFeatures.push(feature);
-        }
-      });
-      
-      if (clickedFeatures.length > 0) {
-        // Show details for the closest feature
-        const closestFeature = clickedFeatures.reduce((closest, current) => {
-          const closestDist = Math.sqrt(
-            Math.pow(coordinate[0] - closest.getGeometry().getCoordinates()[0], 2) + 
-            Math.pow(coordinate[1] - closest.getGeometry().getCoordinates()[1], 2)
-          );
-          const currentDist = Math.sqrt(
-            Math.pow(coordinate[0] - current.getGeometry().getCoordinates()[0], 2) + 
-            Math.pow(coordinate[1] - current.getGeometry().getCoordinates()[1], 2)
-          );
-          return currentDist < closestDist ? current : closest;
-        });
-        
-        const report = reports.find(r => r.id === closestFeature.get('reportId'));
+      if (geohashFeature) {
+        const report = reports.find(r => r.id === geohashFeature.get('reportId'));
         if (report) {
           showReportDetails(report);
         }
@@ -250,23 +267,9 @@ image: /assets/images/community-outreach.jpg
 
     // Add hover effect for heatmap areas
     map.on('pointermove', function(evt) {
-      const coordinate = evt.coordinate;
-      let hasNearbyReports = false;
-      
-      // Check if there are any ice reports near the cursor
-      iceHeatmapLayer.getSource().getFeatures().forEach(function(feature) {
-        const featureCoord = feature.getGeometry().getCoordinates();
-        const distance = Math.sqrt(
-          Math.pow(coordinate[0] - featureCoord[0], 2) + 
-          Math.pow(coordinate[1] - featureCoord[1], 2)
-        );
-        
-        if (distance < 1000) {
-          hasNearbyReports = true;
-        }
-      });
-      
-      map.getTargetElement().style.cursor = hasNearbyReports ? 'pointer' : '';
+      const features = map.getFeaturesAtPixel(evt.pixel);
+      const hasGeohashFeature = features.some(f => f.get('reportId'));
+      map.getTargetElement().style.cursor = hasGeohashFeature ? 'pointer' : '';
     });
 
     // Get user location
@@ -274,11 +277,13 @@ image: /assets/images/community-outreach.jpg
   }
 
   function renderReports() {
-    iceHeatmapLayer.getSource().clear();
+    geohashLayer.getSource().clear();
 
     reports.forEach((report) => {
-      const coords = decodeGeohash(report.geohash);
-      if (!coords) return;
+      const bounds = getGeohashBounds(report.geohash);
+      if (!bounds) return;
+
+      const [minLon, minLat, maxLon, maxLat] = bounds;
 
       const votes = report.votes || { up: 0, down: 0 };
       const voteScore = (votes.up - votes.down) / Math.max(votes.up + votes.down, 1);
@@ -289,13 +294,23 @@ image: /assets/images/community-outreach.jpg
 
       const weight = Math.min(1, baseWeight + voteScore * 0.2);
 
+      // Create a polygon for the geohash area
+      const polygon = new ol.geom.Polygon([[
+        ol.proj.fromLonLat([minLon, minLat]),
+        ol.proj.fromLonLat([maxLon, minLat]),
+        ol.proj.fromLonLat([maxLon, maxLat]),
+        ol.proj.fromLonLat([minLon, maxLat]),
+        ol.proj.fromLonLat([minLon, minLat])
+      ]]);
+
       const feature = new ol.Feature({
-        geometry: new ol.geom.Point(ol.proj.fromLonLat(coords)),
+        geometry: polygon,
         reportId: report.id,
+        geohash: report.geohash,
         weight
       });
 
-      iceHeatmapLayer.getSource().addFeature(feature);
+      geohashLayer.getSource().addFeature(feature);
     });
   }
 
