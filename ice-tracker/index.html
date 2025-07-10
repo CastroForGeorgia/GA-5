@@ -73,14 +73,14 @@ image: /assets/images/community-outreach.jpg
             <!-- Location (Mini Map) -->
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-2">
-                📍 Where did this happen? (Click on the map) *
+                📍 Where did this happen? (Select zones on the map) *
               </label>
               <div class="border border-gray-300 rounded-lg overflow-hidden">
                 <div id="mini-map" class="w-full h-64"></div>
               </div>
               <div class="mt-2 flex items-center justify-between">
                 <p class="text-xs text-gray-500">
-                  Click anywhere on the map to select a location. The geohash will be automatically generated.
+                  Click to select zones. Additional zones must be adjacent (touching). Click selected zones to deselect.
                 </p>
                 <button type="button" id="use-my-location" class="text-xs text-blue-600 hover:text-blue-800 underline">
                   Use My Location
@@ -88,7 +88,7 @@ image: /assets/images/community-outreach.jpg
               </div>
               <div class="mt-2">
                 <p class="text-sm text-gray-700">
-                  Selected geohash: <span id="selected-geohash" class="font-mono font-semibold text-blue-600">None selected</span>
+                  Selected: <span id="selected-geohash" class="font-mono font-semibold text-blue-600">None selected</span>
                 </p>
               </div>
               <input type="hidden" name="geohash" id="geohash-input" required>
@@ -250,17 +250,19 @@ image: /assets/images/community-outreach.jpg
 <script>
   // Ice Tracker App JavaScript
   let map, geohashLayer, districtLayer, reports = [];
-  let miniMap, selectedLocationMarker;
+  let miniMap, selectedGeohashFeatures = new Map(); // Map<geohash, feature>
+  let selectedGeohashes = new Set(); // Set of selected geohash strings
+  let geohashGraph = new Map(); // Map<geohash, Set<adjacent_geohashes>>
   let userLocation = null;
 
   // ArcGIS GeoJSON URL for Georgia Congressional Districts
   const arcGISGeoJSONUrl = 'https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/USA_119th_Congressional_Districts_no_territories/FeatureServer/0/query?where=STATE_NAME=%27Georgia%27&outFields=*&f=geojson';
 
-  // Sample reports data using final form structure
+    // Sample reports data using updated structure with multiple geohashes
   const sampleReports = [
-    {
-      id: 1,
-      geohash: 'dn5bpz', // Atlanta
+    { 
+      id: 1, 
+      geohashes: ['dn5bpz'], // Atlanta - single zone for backwards compatibility
       link: 'https://example.com/photo1',
       people: ['Uniformed agents wearing "ICE" or "HSI" labels', 'Local police officers'],
       vehicles: ['Marked ICE or DHS vehicle'],
@@ -272,9 +274,9 @@ image: /assets/images/community-outreach.jpg
       },
       timestamp: new Date(Date.now() - 1000 * 60 * 30) // 30 min ago
     },
-    {
-      id: 2,
-      geohash: 'dn5bpz', // Same geohash as first report
+    { 
+      id: 2, 
+      geohashes: ['dn5bpz', 'dn5bq0'], // Multi-zone report
       link: '',
       people: ['Plain-clothes agents with visible badges'],
       vehicles: ['Unmarked white van or SUV'],
@@ -283,9 +285,9 @@ image: /assets/images/community-outreach.jpg
       },
       timestamp: new Date(Date.now() - 1000 * 60 * 45)
     },
-    {
-      id: 3,
-      geohash: 'dn5bq3',
+    { 
+      id: 3, 
+      geohashes: ['dn5bq3'],
       link: 'https://example.com/news',
       people: [],
       vehicles: [],
@@ -295,9 +297,9 @@ image: /assets/images/community-outreach.jpg
       },
       timestamp: new Date(Date.now() - 1000 * 60 * 90)
     },
-    {
-      id: 4,
-      geohash: 'dn5bpz', // Same geohash as first two reports
+    { 
+      id: 4, 
+      geohashes: ['dn5bpz'], // Single zone
       link: '',
       people: ['Armed troops or National Guard'],
       vehicles: ['Military-style or armored vehicle'],
@@ -359,14 +361,19 @@ image: /assets/images/community-outreach.jpg
     return [lngMin, latMin, lngMax, latMax];
   }
 
-  // Helper: group reports by geohash
+  // Helper: group reports by geohash (handles both single geohash and multiple geohashes)
   function groupReportsByGeohash(reports) {
     const grouped = {};
     reports.forEach(report => {
-      if (!grouped[report.geohash]) {
-        grouped[report.geohash] = [];
-      }
-      grouped[report.geohash].push(report);
+      // Handle both old structure (geohash) and new structure (geohashes)
+      const geohashes = report.geohashes || [report.geohash];
+      
+      geohashes.forEach(geohash => {
+        if (!grouped[geohash]) {
+          grouped[geohash] = [];
+        }
+        grouped[geohash].push(report);
+      });
     });
     return grouped;
   }
@@ -472,9 +479,24 @@ image: /assets/images/community-outreach.jpg
       // 20% chance of having a link
       const link = Math.random() < 0.2 ? `https://example.com/report${i}` : '';
       
+      // 20% chance of multi-zone report (2-3 adjacent zones)
+      let geohashes = [geohash];
+      if (Math.random() < 0.2) {
+        const neighbors = getGeohashNeighbors(geohash);
+        const neighborList = Object.values(neighbors);
+        const additionalZones = Math.floor(Math.random() * 2) + 1; // 1-2 additional
+        
+        for (let k = 0; k < additionalZones && neighborList.length > 0; k++) {
+          const randomNeighbor = neighborList[Math.floor(Math.random() * neighborList.length)];
+          if (!geohashes.includes(randomNeighbor)) {
+            geohashes.push(randomNeighbor);
+          }
+        }
+      }
+
       testReports.push({
         id: 1000 + i, // Start IDs from 1000 to avoid conflicts
-        geohash,
+        geohashes,
         link,
         people,
         vehicles,
@@ -764,6 +786,157 @@ image: /assets/images/community-outreach.jpg
     alert(details);
   }
 
+  // Helper: get geohash neighbors (adjacent geohashes)
+  function getGeohashNeighbors(geohash) {
+    const base32 = '0123456789bcdefghjkmnpqrstuvwxyz';
+    const neighbors = {
+      even: {
+        right: "bc01fg45238967deuvhjyznpkmstqrwx",
+        left: "238967debc01fg45kmstqrwxuvhjyznp", 
+        top: "p0r21436x8zb9dcf5h7kjnmqesgutwvy",
+        bottom: "14365h7k9dcfesgujnmqp0r2twvyx8zb"
+      },
+      odd: {
+        right: "p0r21436x8zb9dcf5h7kjnmqesgutwvy",
+        left: "14365h7k9dcfesgujnmqp0r2twvyx8zb",
+        top: "bc01fg45238967deuvhjyznpkmstqrwx", 
+        bottom: "238967debc01fg45kmstqrwxuvhjyznp"
+      }
+    };
+    
+    const borders = {
+      even: {
+        right: "bcfguvyz",
+        left: "0145hjnp",
+        top: "prxz",
+        bottom: "028b"
+      },
+      odd: {
+        right: "prxz", 
+        left: "028b",
+        top: "bcfguvyz",
+        bottom: "0145hjnp"
+      }
+    };
+
+    function getNeighbor(geohash, direction) {
+      const lastChar = geohash.slice(-1);
+      let parent = geohash.slice(0, -1);
+      const type = geohash.length % 2 === 0 ? 'even' : 'odd';
+      
+      // Check if we're at a border
+      if (borders[type][direction].indexOf(lastChar) !== -1 && parent) {
+        parent = getNeighbor(parent, direction);
+      }
+      
+      const base = neighbors[type][direction];
+      return parent + base32[base.indexOf(lastChar)];
+    }
+
+    return {
+      top: getNeighbor(geohash, 'top'),
+      bottom: getNeighbor(geohash, 'bottom'), 
+      left: getNeighbor(geohash, 'left'),
+      right: getNeighbor(geohash, 'right'),
+      topLeft: getNeighbor(getNeighbor(geohash, 'left'), 'top'),
+      topRight: getNeighbor(getNeighbor(geohash, 'right'), 'top'),
+      bottomLeft: getNeighbor(getNeighbor(geohash, 'left'), 'bottom'),
+      bottomRight: getNeighbor(getNeighbor(geohash, 'right'), 'bottom')
+    };
+  }
+
+  // Helper: check if two geohashes are adjacent
+  function areGeohashesAdjacent(geohash1, geohash2) {
+    if (geohash1 === geohash2) return false;
+    const neighbors = getGeohashNeighbors(geohash1);
+    return Object.values(neighbors).includes(geohash2);
+  }
+
+  // Helper: add geohash to graph
+  function addGeohashToGraph(geohash) {
+    if (!geohashGraph.has(geohash)) {
+      geohashGraph.set(geohash, new Set());
+    }
+    
+    // Check adjacency with all existing geohashes
+    for (const existingGeohash of geohashGraph.keys()) {
+      if (areGeohashesAdjacent(geohash, existingGeohash)) {
+        geohashGraph.get(geohash).add(existingGeohash);
+        geohashGraph.get(existingGeohash).add(geohash);
+      }
+    }
+  }
+
+  // Helper: remove geohash and disconnected components from graph
+  function removeGeohashFromGraph(geohash) {
+    if (!geohashGraph.has(geohash)) return [];
+    
+    // Get all connected neighbors
+    const neighbors = Array.from(geohashGraph.get(geohash));
+    
+    // Remove this geohash from all neighbors
+    neighbors.forEach(neighbor => {
+      geohashGraph.get(neighbor).delete(geohash);
+    });
+    
+    // Remove the geohash itself
+    geohashGraph.delete(geohash);
+    
+    // Find connected components to remove orphaned pieces
+    const toRemove = [geohash];
+    const visited = new Set();
+    
+    // For each former neighbor, check if it's still connected to the main component
+    neighbors.forEach(neighbor => {
+      if (!visited.has(neighbor) && geohashGraph.has(neighbor)) {
+        const component = getConnectedComponent(neighbor, visited);
+        // If this component is not connected to any other selected geohash, remove it
+        const hasConnectionToOthers = component.some(gh => 
+          Array.from(geohashGraph.get(gh) || []).some(adj => 
+            selectedGeohashes.has(adj) && !component.includes(adj)
+          )
+        );
+        
+        if (!hasConnectionToOthers) {
+          component.forEach(gh => {
+            toRemove.push(gh);
+            // Remove from graph
+            Array.from(geohashGraph.get(gh) || []).forEach(adj => {
+              geohashGraph.get(adj)?.delete(gh);
+            });
+            geohashGraph.delete(gh);
+          });
+        }
+      }
+    });
+    
+    return toRemove;
+  }
+
+  // Helper: get connected component starting from a geohash
+  function getConnectedComponent(startGeohash, visited = new Set()) {
+    const component = [];
+    const stack = [startGeohash];
+    
+    while (stack.length > 0) {
+      const current = stack.pop();
+      if (visited.has(current)) continue;
+      
+      visited.add(current);
+      component.push(current);
+      
+      // Add all connected neighbors that are selected
+      const neighbors = geohashGraph.get(current) || new Set();
+      neighbors.forEach(neighbor => {
+        if (selectedGeohashes.has(neighbor) && !visited.has(neighbor)) {
+          stack.push(neighbor);
+        }
+      });
+    }
+    
+    return component;
+  }
+
   // Helper: encode coordinates to geohash (6 characters)
   function encodeGeohash(lat, lng, precision = 6) {
     const base32 = '0123456789bcdefghjkmnpqrstuvwxyz';
@@ -831,7 +1004,80 @@ image: /assets/images/community-outreach.jpg
     });
     miniMap.addLayer(markerLayer);
 
-    // Click handler for location selection
+    // Helper: create geohash feature with styling
+    function createGeohashFeature(geohash, isSelected = true) {
+      const bounds = getGeohashBounds(geohash);
+      if (!bounds) return null;
+      
+      const [minLon, minLat, maxLon, maxLat] = bounds;
+      
+      // Create a polygon for the geohash area
+      const polygon = new ol.geom.Polygon([[
+        ol.proj.fromLonLat([minLon, minLat]),
+        ol.proj.fromLonLat([maxLon, minLat]),
+        ol.proj.fromLonLat([maxLon, maxLat]),
+        ol.proj.fromLonLat([minLon, maxLat]),
+        ol.proj.fromLonLat([minLon, minLat])
+      ]]);
+
+      const geohashFeature = new ol.Feature({
+        geometry: polygon,
+        geohash: geohash
+      });
+      
+      const fillColor = isSelected ? 'rgba(59, 130, 246, 0.3)' : 'rgba(156, 163, 175, 0.2)';
+      const strokeColor = isSelected ? '#3b82f6' : '#9ca3af';
+      const textColor = isSelected ? '#1e40af' : '#6b7280';
+      
+      geohashFeature.setStyle(new ol.style.Style({
+        fill: new ol.style.Fill({
+          color: fillColor
+        }),
+        stroke: new ol.style.Stroke({
+          color: strokeColor,
+          width: 2
+        }),
+        text: new ol.style.Text({
+          text: geohash,
+          font: '10px sans-serif',
+          fill: new ol.style.Fill({
+            color: textColor
+          }),
+          stroke: new ol.style.Stroke({
+            color: '#ffffff',
+            width: 1
+          })
+        })
+      }));
+      
+      return geohashFeature;
+    }
+
+    // Helper: update UI display
+    function updateGeohashDisplay() {
+      const selectedArray = Array.from(selectedGeohashes);
+      const displayText = selectedArray.length === 0 ? 'None selected' : 
+                         selectedArray.length === 1 ? selectedArray[0] :
+                         `${selectedArray.length} zones selected`;
+      
+      document.getElementById('selected-geohash').textContent = displayText;
+      document.getElementById('geohash-input').value = selectedArray.join(',');
+    }
+
+    // Helper: check if geohash can be added (must be adjacent to existing selection)
+    function canAddGeohash(geohash) {
+      if (selectedGeohashes.size === 0) return true;
+      
+      // Check if it's adjacent to any selected geohash
+      for (const selectedGeohash of selectedGeohashes) {
+        if (areGeohashesAdjacent(geohash, selectedGeohash)) {
+          return true;
+        }
+      }
+      return false;
+    }
+
+    // Click handler for multi-zone selection
     miniMap.on('click', function(evt) {
       const coordinate = evt.coordinate;
       const lonLat = ol.proj.toLonLat(coordinate);
@@ -840,28 +1086,39 @@ image: /assets/images/community-outreach.jpg
       // Generate geohash
       const geohash = encodeGeohash(lat, lng, 6);
       
-      // Update UI
-      document.getElementById('selected-geohash').textContent = geohash;
-      document.getElementById('geohash-input').value = geohash;
+      // Check if this geohash is already selected
+      if (selectedGeohashes.has(geohash)) {
+        // Deselect and remove connected components
+        const toRemove = removeGeohashFromGraph(geohash);
+        
+        toRemove.forEach(gh => {
+          selectedGeohashes.delete(gh);
+          const feature = selectedGeohashFeatures.get(gh);
+          if (feature) {
+            markerLayer.getSource().removeFeature(feature);
+            selectedGeohashFeatures.delete(gh);
+          }
+        });
+      } else {
+        // Check if we can add this geohash (must be adjacent or first selection)
+        if (canAddGeohash(geohash)) {
+          // Add to selection
+          selectedGeohashes.add(geohash);
+          addGeohashToGraph(geohash);
+          
+          // Create and add feature
+          const feature = createGeohashFeature(geohash, true);
+          if (feature) {
+            markerLayer.getSource().addFeature(feature);
+            selectedGeohashFeatures.set(geohash, feature);
+          }
+        } else {
+          // Show message that zone must be adjacent
+          alert('New zones must be adjacent (touching) to already selected zones.');
+        }
+      }
       
-      // Clear previous marker
-      markerLayer.getSource().clear();
-      
-      // Add new marker
-      const marker = new ol.Feature({
-        geometry: new ol.geom.Point(coordinate)
-      });
-      
-      marker.setStyle(new ol.style.Style({
-        image: new ol.style.Circle({
-          radius: 8,
-          fill: new ol.style.Fill({ color: '#3b82f6' }),
-          stroke: new ol.style.Stroke({ color: '#ffffff', width: 2 })
-        })
-      }));
-      
-      markerLayer.getSource().addFeature(marker);
-      selectedLocationMarker = marker;
+      updateGeohashDisplay();
     });
 
     // Use My Location button
@@ -883,26 +1140,24 @@ image: /assets/images/community-outreach.jpg
             // Generate geohash
             const geohash = encodeGeohash(lat, lng, 6);
             
-            // Update UI
-            document.getElementById('selected-geohash').textContent = geohash;
-            document.getElementById('geohash-input').value = geohash;
-            
-            // Clear previous marker and add new one
+            // Clear all selections and start fresh
+            selectedGeohashes.clear();
+            selectedGeohashFeatures.clear();
+            geohashGraph.clear();
             markerLayer.getSource().clear();
-            const marker = new ol.Feature({
-              geometry: new ol.geom.Point(coordinate)
-            });
             
-            marker.setStyle(new ol.style.Style({
-              image: new ol.style.Circle({
-                radius: 8,
-                fill: new ol.style.Fill({ color: '#3b82f6' }),
-                stroke: new ol.style.Stroke({ color: '#ffffff', width: 2 })
-              })
-            }));
+            // Add the user's location geohash
+            selectedGeohashes.add(geohash);
+            addGeohashToGraph(geohash);
             
-            markerLayer.getSource().addFeature(marker);
-            selectedLocationMarker = marker;
+            // Create and add feature
+            const feature = createGeohashFeature(geohash, true);
+            if (feature) {
+              markerLayer.getSource().addFeature(feature);
+              selectedGeohashFeatures.set(geohash, feature);
+            }
+            
+            updateGeohashDisplay();
           },
           (error) => {
             alert('Unable to get your location. Please click on the map to select a location.');
@@ -951,9 +1206,8 @@ image: /assets/images/community-outreach.jpg
     document.getElementById('next-btn').addEventListener('click', () => {
       // Validate current step
       if (currentStep === 1) {
-        const geohashInput = document.getElementById('geohash-input');
-        if (!geohashInput.value.trim()) {
-          alert('Please select a location on the map.');
+        if (selectedGeohashes.size === 0) {
+          alert('Please select at least one zone on the map.');
           return;
         }
       }
@@ -995,20 +1249,26 @@ image: /assets/images/community-outreach.jpg
          setTimeout(() => {
            setupMiniMap();
          }, 100);
-       } else {
-         // Reset mini map
-         document.getElementById('selected-geohash').textContent = 'None selected';
-         document.getElementById('geohash-input').value = '';
-         if (selectedLocationMarker) {
-           miniMap.getLayers().getArray()[1].getSource().clear();
-         }
-         // Re-center on Atlanta
-         miniMap.getView().animate({
-           center: ol.proj.fromLonLat([-84.3880, 33.7490]),
-           zoom: 10,
-           duration: 300
-         });
-       }
+               } else {
+          // Reset mini map selection
+          selectedGeohashes.clear();
+          selectedGeohashFeatures.clear();
+          geohashGraph.clear();
+          updateGeohashDisplay();
+          
+          // Clear map features
+          const markerLayer = miniMap.getLayers().getArray()[1];
+          if (markerLayer) {
+            markerLayer.getSource().clear();
+          }
+          
+          // Re-center on Atlanta
+          miniMap.getView().animate({
+            center: ol.proj.fromLonLat([-84.3880, 33.7490]),
+            zoom: 10,
+            duration: 300
+          });
+        }
        
       document.getElementById('report-modal').classList.add('active');
     });
@@ -1081,15 +1341,15 @@ image: /assets/images/community-outreach.jpg
           actions[checkbox.value] = 'yes';
         });
         
-        const newReport = {
-          id: Date.now(),
-          geohash: formData.get('geohash'),
-          link: formData.get('link') || '',
-          people: people,
-          vehicles: vehicles,
-          actions: actions,
-          timestamp: new Date()
-        };
+              const newReport = {
+        id: Date.now(),
+        geohashes: Array.from(selectedGeohashes),
+        link: formData.get('link') || '',
+        people: people,
+        vehicles: vehicles,
+        actions: actions,
+        timestamp: new Date()
+      };
         
         reports.push(newReport);
         renderReports();
