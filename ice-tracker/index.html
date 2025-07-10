@@ -195,12 +195,151 @@ image: /assets/images/community-outreach.jpg
     return grouped;
   }
 
+  // Load test: generate 1000 random reports
+  function generateLoadTestReports(count = 1000) {
+    const base32 = '0123456789bcdefghjkmnpqrstuvwxyz';
+    
+    // Georgia geohash prefixes - these cover different regions of Georgia
+    const georgiaGeohashPrefixes = [
+      'dn5b', // Atlanta metro area
+      'dn5c', // North Atlanta
+      'dn58', // West Atlanta
+      'dn59', // Southwest Atlanta
+      'dn5d', // East Atlanta
+      'dn5e', // Northeast Atlanta
+      'dn4z', // South Georgia
+      'dn4y', // Southeast Georgia
+      'dn4x', // Southwest Georgia
+      'dn6b', // Northwest Georgia
+      'dn6c', // North Georgia mountains
+      'dn68', // West Georgia
+      'dn69', // Central Georgia
+      'dn6d', // East Georgia
+      'dn6e', // Northeast Georgia
+      'dn4w', // Far south Georgia
+      'dn4v', // Coastal Georgia
+      'dn4u', // Southeast coastal Georgia
+    ];
+    
+    const peopleOptions = [
+      'Uniformed agents wearing "ICE" or "HSI" labels',
+      'Plain-clothes agents with visible badges',
+      'Local police officers',
+      'Armed troops or National Guard',
+      'People being handcuffed or detained',
+      'No uniforms or badges seen'
+    ];
+    const vehicleOptions = [
+      'Unmarked white van or SUV',
+      'Marked ICE or DHS vehicle',
+      'Local police cruiser',
+      'Charter bus or large transport',
+      'Military-style or armored vehicle',
+      'Drone flying overhead'
+    ];
+    const actionOptions = [
+      'knockingDoors',
+      'stoppingPeople',
+      'roadblocks',
+      'watching',
+      'takenAway',
+      'raidWorkplace',
+      'presenceSensitive'
+    ];
+    
+    const testReports = [];
+    
+    for (let i = 0; i < count; i++) {
+      // Generate random 6-character geohash within Georgia boundaries
+      const prefix = georgiaGeohashPrefixes[Math.floor(Math.random() * georgiaGeohashPrefixes.length)];
+      let geohash = prefix;
+      for (let j = prefix.length; j < 6; j++) {
+        geohash += base32[Math.floor(Math.random() * base32.length)];
+      }
+      
+      // Random selection of people (0-3 types)
+      const peopleCount = Math.floor(Math.random() * 4);
+      const people = [];
+      for (let j = 0; j < peopleCount; j++) {
+        const person = peopleOptions[Math.floor(Math.random() * peopleOptions.length)];
+        if (!people.includes(person)) {
+          people.push(person);
+        }
+      }
+      
+      // Random selection of vehicles (0-2 types)
+      const vehicleCount = Math.floor(Math.random() * 3);
+      const vehicles = [];
+      for (let j = 0; j < vehicleCount; j++) {
+        const vehicle = vehicleOptions[Math.floor(Math.random() * vehicleOptions.length)];
+        if (!vehicles.includes(vehicle)) {
+          vehicles.push(vehicle);
+        }
+      }
+      
+      // Random actions (1-4 actions)
+      const actionCount = Math.floor(Math.random() * 4) + 1;
+      const actions = {};
+      const selectedActions = [];
+      for (let j = 0; j < actionCount; j++) {
+        const action = actionOptions[Math.floor(Math.random() * actionOptions.length)];
+        if (!selectedActions.includes(action)) {
+          selectedActions.push(action);
+          actions[action] = Math.random() > 0.3 ? 'yes' : 'notSure'; // 70% yes, 30% notSure
+        }
+      }
+      
+      // Random timestamp within last 7 days
+      const randomHoursAgo = Math.floor(Math.random() * 168); // 7 days * 24 hours
+      const timestamp = new Date(Date.now() - randomHoursAgo * 60 * 60 * 1000);
+      
+      // 20% chance of having a link
+      const link = Math.random() < 0.2 ? `https://example.com/report${i}` : '';
+      
+      testReports.push({
+        id: 1000 + i, // Start IDs from 1000 to avoid conflicts
+        geohash,
+        link,
+        people,
+        vehicles,
+        actions,
+        timestamp
+      });
+    }
+    
+    return testReports;
+  }
+
+  // Function to add load test reports to the map
+  function runLoadTest() {
+    console.log('Generating 1000 test reports...');
+    const startTime = performance.now();
+    
+    const testReports = generateLoadTestReports(1000);
+    reports = [...sampleReports, ...testReports];
+    
+    console.log('Rendering reports...');
+    renderReports();
+    renderReportsList();
+    
+    const endTime = performance.now();
+    console.log(`Load test completed in ${(endTime - startTime).toFixed(2)}ms`);
+    console.log(`Total reports: ${reports.length}`);
+    
+    // Show some stats
+    const groupedReports = groupReportsByGeohash(reports);
+    const uniqueGeohashes = Object.keys(groupedReports).length;
+    const avgReportsPerGeohash = (reports.length / uniqueGeohashes).toFixed(1);
+    
+    console.log(`Unique geohashes: ${uniqueGeohashes}`);
+    console.log(`Average reports per geohash: ${avgReportsPerGeohash}`);
+    
+    alert(`Load test complete!\n${reports.length} total reports\n${uniqueGeohashes} unique geohashes\nRendered in ${(endTime - startTime).toFixed(2)}ms`);
+  }
+
   // Simple heatmap configuration
 
   function setupMap() {
-    // Georgia extent bounds
-    const georgiaExtent = [-9542547.6, 3570998.9, -8992086.6, 4163886.7];
-
     // OSM base layer
     const osmLayer = new ol.layer.Tile({
       source: new ol.source.OSM(),
@@ -231,7 +370,6 @@ image: /assets/images/community-outreach.jpg
         zoom: 11,
         minZoom: 8,
         maxZoom: 18,
-        extent: georgiaExtent,
       }),
       layers: [osmLayer, districtLayer],
     });
