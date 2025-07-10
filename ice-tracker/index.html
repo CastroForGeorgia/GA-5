@@ -72,7 +72,9 @@ image: /assets/images/community-outreach.jpg
         </div>
       </div>
 
-      <form id="quick-report-form" class="px-4 pb-6 space-y-6">
+      <form id="quick-report-form">
+        <!-- Scrollable Content -->
+        <div class="px-4 space-y-6">
         <!-- Step 1: Location -->
         <div id="location-step" class="form-step">
           <div class="form-group">
@@ -102,80 +104,130 @@ image: /assets/images/community-outreach.jpg
               class="w-full py-3 px-4 border-2 border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
           </div>
 
-          <button type="button" id="quick-continue" class="action-btn action-btn-primary">
-            Continue
-          </button>
         </div>
 
-        <!-- Step 2: Quick Selection -->
+        <!-- Step 2: Detailed Selection -->
         <div id="selection-step" class="form-step hidden space-y-6">
           <div class="form-group">
-            <label>🧍‍♂️ Who did you see?</label>
-            <div class="grid grid-cols-2 gap-3">
+            <label>🧍‍♂️ Who did you see? (select all that apply)</label>
+            <div class="grid grid-cols-1 gap-2">
               <label class="quick-option">
-                <input type="checkbox" name="people" value="ICE agents" class="sr-only">
-                <span class="quick-option-content">ICE agents</span>
+                <input type="checkbox" name="people" value="Uniformed agents wearing ICE or HSI labels" class="sr-only">
+                <span class="quick-option-content text-left">Uniformed agents wearing "ICE" or "HSI" labels</span>
               </label>
               <label class="quick-option">
-                <input type="checkbox" name="people" value="Police" class="sr-only">
-                <span class="quick-option-content">Police</span>
+                <input type="checkbox" name="people" value="Plain-clothes agents with visible badges" class="sr-only">
+                <span class="quick-option-content text-left">Plain-clothes agents with visible badges</span>
               </label>
               <label class="quick-option">
-                <input type="checkbox" name="people" value="Plain clothes" class="sr-only">
-                <span class="quick-option-content">Plain clothes</span>
+                <input type="checkbox" name="people" value="Local police officers" class="sr-only">
+                <span class="quick-option-content text-left">Local police officers</span>
               </label>
               <label class="quick-option">
-                <input type="checkbox" name="people" value="Detained people" class="sr-only">
-                <span class="quick-option-content">Detained people</span>
-              </label>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label>🚗 Vehicles/Equipment</label>
-            <div class="grid grid-cols-2 gap-3">
-              <label class="quick-option">
-                <input type="checkbox" name="vehicles" value="Unmarked vans" class="sr-only">
-                <span class="quick-option-content">Unmarked vans</span>
+                <input type="checkbox" name="people" value="Armed troops or National Guard" class="sr-only">
+                <span class="quick-option-content text-left">Armed troops or National Guard</span>
               </label>
               <label class="quick-option">
-                <input type="checkbox" name="vehicles" value="ICE vehicles" class="sr-only">
-                <span class="quick-option-content">ICE vehicles</span>
+                <input type="checkbox" name="people" value="People being handcuffed or detained" class="sr-only">
+                <span class="quick-option-content text-left">People being handcuffed or detained</span>
               </label>
               <label class="quick-option">
-                <input type="checkbox" name="vehicles" value="Police cars" class="sr-only">
-                <span class="quick-option-content">Police cars</span>
+                <input type="checkbox" name="people" value="No uniforms or badges seen" class="sr-only">
+                <span class="quick-option-content text-left">No uniforms or badges seen</span>
               </label>
               <label class="quick-option">
-                <input type="checkbox" name="vehicles" value="Buses" class="sr-only">
-                <span class="quick-option-content">Buses</span>
+                <input type="checkbox" name="people" value="Other" class="sr-only">
+                <span class="quick-option-content text-left">Other</span>
               </label>
             </div>
           </div>
 
           <div class="form-group">
-            <label>🚨 What was happening?</label>
-            <div class="grid grid-cols-2 gap-3">
+            <label>🚗 Vehicles or equipment (select all that apply)</label>
+            <div class="grid grid-cols-1 gap-2">
+              <label class="quick-option">
+                <input type="checkbox" name="vehicles" value="Unmarked white van or SUV" class="sr-only">
+                <span class="quick-option-content text-left">Unmarked white van or SUV</span>
+              </label>
+              <label class="quick-option">
+                <input type="checkbox" name="vehicles" value="Marked ICE or DHS vehicle" class="sr-only">
+                <span class="quick-option-content text-left">Marked ICE or DHS vehicle</span>
+              </label>
+              <label class="quick-option">
+                <input type="checkbox" name="vehicles" value="Local police cruiser" class="sr-only">
+                <span class="quick-option-content text-left">Local police cruiser</span>
+              </label>
+              <label class="quick-option">
+                <input type="checkbox" name="vehicles" value="Charter bus or large transport" class="sr-only">
+                <span class="quick-option-content text-left">Charter bus or large transport</span>
+              </label>
+              <label class="quick-option">
+                <input type="checkbox" name="vehicles" value="Military-style or armored vehicle" class="sr-only">
+                <span class="quick-option-content text-left">Military-style or armored vehicle</span>
+              </label>
+              <label class="quick-option">
+                <input type="checkbox" name="vehicles" value="Drone flying overhead" class="sr-only">
+                <span class="quick-option-content text-left">Drone flying overhead</span>
+              </label>
+              <label class="quick-option">
+                <input type="checkbox" name="vehicles" value="None" class="sr-only">
+                <span class="quick-option-content text-left">None</span>
+              </label>
+              <label class="quick-option">
+                <input type="checkbox" name="vehicles" value="Other" class="sr-only">
+                <span class="quick-option-content text-left">Other</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>🚨 What was happening? (select all that apply)</label>
+            <div class="grid grid-cols-1 gap-2">
               <label class="quick-option">
                 <input type="checkbox" name="actions" value="knockingDoors" class="sr-only">
-                <span class="quick-option-content">Door knocking</span>
+                <span class="quick-option-content text-left">Knocking on doors or entering buildings</span>
               </label>
               <label class="quick-option">
                 <input type="checkbox" name="actions" value="stoppingPeople" class="sr-only">
-                <span class="quick-option-content">Stopping people</span>
+                <span class="quick-option-content text-left">Stopping people on the street</span>
               </label>
               <label class="quick-option">
                 <input type="checkbox" name="actions" value="roadblocks" class="sr-only">
-                <span class="quick-option-content">Roadblocks</span>
+                <span class="quick-option-content text-left">Roadblocks or traffic checkpoints</span>
+              </label>
+              <label class="quick-option">
+                <input type="checkbox" name="actions" value="watching" class="sr-only">
+                <span class="quick-option-content text-left">Watching or taking photos from a distance</span>
               </label>
               <label class="quick-option">
                 <input type="checkbox" name="actions" value="takenAway" class="sr-only">
-                <span class="quick-option-content">Detentions</span>
+                <span class="quick-option-content text-left">Someone being taken away or detained</span>
+              </label>
+              <label class="quick-option">
+                <input type="checkbox" name="actions" value="raidWorkplace" class="sr-only">
+                <span class="quick-option-content text-left">Raid at a workplace</span>
+              </label>
+              <label class="quick-option">
+                <input type="checkbox" name="actions" value="presenceSensitive" class="sr-only">
+                <span class="quick-option-content text-left">Presence at church, school, or hospital</span>
               </label>
             </div>
           </div>
 
-          <div class="flex gap-4 pt-2">
+        </div>
+        </div>
+
+        <!-- Sticky Bottom Actions -->
+        <div class="sticky-bottom-actions">
+          <!-- Step 1 Actions -->
+          <div id="step1-actions" class="flex gap-4">
+            <button type="button" id="quick-continue" class="action-btn action-btn-primary">
+              Continue
+            </button>
+          </div>
+          
+          <!-- Step 2 Actions -->
+          <div id="step2-actions" class="flex gap-4 hidden">
             <button type="button" id="quick-back" class="flex-1 py-4 px-6 bg-gray-200 text-gray-700 rounded-xl font-semibold hover:bg-gray-300 transition-all duration-200 active:scale-95">
               Back
             </button>
@@ -1473,16 +1525,23 @@ image: /assets/images/community-outreach.jpg
     });
   }
 
-      // Helper: update quick display
-    function updateQuickDisplay() {
-      const selectedArray = Array.from(selectedGeohashes);
-      const displayText = selectedArray.length === 0 ? 'None' : 
-                         selectedArray.length === 1 ? selectedArray[0] :
-                         `${selectedArray.length} zones`;
-      
-      document.getElementById('quick-selected').textContent = displayText;
-      document.getElementById('quick-geohash-input').value = selectedArray.join(',');
-    }
+        // Helper: update quick display
+  function updateQuickDisplay() {
+    const selectedArray = Array.from(selectedGeohashes);
+    const displayText = selectedArray.length === 0 ? 'None' : 
+                       selectedArray.length === 1 ? selectedArray[0] :
+                       `${selectedArray.length} zones`;
+    
+    document.getElementById('quick-selected').textContent = displayText;
+    document.getElementById('quick-geohash-input').value = selectedArray.join(',');
+  }
+
+  // Helper: close bottom sheet and unlock scroll
+  function closeBottomSheet() {
+    document.getElementById('report-sheet').classList.remove('active');
+    document.body.classList.remove('sheet-open');
+    hideSheetError();
+  }
 
     // Helper: check if geohash can be added (must be adjacent to existing selection)
     function canAddGeohash(geohash) {
@@ -1619,12 +1678,19 @@ image: /assets/images/community-outreach.jpg
 
          // Report FAB - Open Bottom Sheet
      document.getElementById('report-fab').addEventListener('click', () => {
+       // Lock body scroll
+       document.body.classList.add('sheet-open');
+       
        // Show the bottom sheet
        document.getElementById('report-sheet').classList.add('active');
        
        // Reset to first step
        document.getElementById('location-step').classList.remove('hidden');
        document.getElementById('selection-step').classList.add('hidden');
+       
+       // Reset to step 1 buttons
+       document.getElementById('step1-actions').classList.remove('hidden');
+       document.getElementById('step2-actions').classList.add('hidden');
        
        // Hide any errors
        hideSheetError();
@@ -1760,14 +1826,12 @@ image: /assets/images/community-outreach.jpg
     
     // Close sheet button
     document.getElementById('close-sheet').addEventListener('click', () => {
-      document.getElementById('report-sheet').classList.remove('active');
-      hideSheetError();
+      closeBottomSheet();
     });
 
     // Backdrop click to close
     document.getElementById('sheet-backdrop').addEventListener('click', () => {
-      document.getElementById('report-sheet').classList.remove('active');
-      hideSheetError();
+      closeBottomSheet();
     });
 
     // Continue button (step 1 -> step 2)
@@ -1782,12 +1846,21 @@ image: /assets/images/community-outreach.jpg
       // Move to step 2
       document.getElementById('location-step').classList.add('hidden');
       document.getElementById('selection-step').classList.remove('hidden');
+      
+      // Switch button sets
+      document.getElementById('step1-actions').classList.add('hidden');
+      document.getElementById('step2-actions').classList.remove('hidden');
     });
 
     // Back button (step 2 -> step 1)
     document.getElementById('quick-back').addEventListener('click', () => {
       document.getElementById('selection-step').classList.add('hidden');
       document.getElementById('location-step').classList.remove('hidden');
+      
+      // Switch button sets
+      document.getElementById('step2-actions').classList.add('hidden');
+      document.getElementById('step1-actions').classList.remove('hidden');
+      
       hideSheetError();
     });
 
@@ -1833,12 +1906,16 @@ image: /assets/images/community-outreach.jpg
       renderReportsList();
       
       // Close sheet and reset form
-      document.getElementById('report-sheet').classList.remove('active');
+      closeBottomSheet();
       e.target.reset();
       
       // Reset to step 1
       document.getElementById('selection-step').classList.add('hidden');
       document.getElementById('location-step').classList.remove('hidden');
+      
+      // Reset to step 1 buttons
+      document.getElementById('step2-actions').classList.add('hidden');
+      document.getElementById('step1-actions').classList.remove('hidden');
       
       // Show success message temporarily
       const originalFabText = document.querySelector('.report-fab');

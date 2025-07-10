@@ -398,6 +398,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 500; /* Below bottom sheet */
 }
 
 .report-fab:hover {
@@ -418,6 +419,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 500; /* Below bottom sheet */
 }
 
 .locate-fab {
@@ -433,6 +435,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 500; /* Below bottom sheet */
 }
 
 /* Bottom Sheet */
@@ -446,7 +449,7 @@ body {
   box-shadow: 0 -2px 16px rgba(0, 0, 0, 0.1);
   transform: translateY(calc(100% - 80px));
   transition: transform 0.3s ease;
-  z-index: 600;
+  z-index: 600; /* Below report bottom sheet */
   max-height: 80vh;
   overflow-y: auto;
 }
@@ -564,7 +567,8 @@ body {
 
 /* Bottom Sheet Core Animation */
 .report-bottom-sheet {
-  @apply fixed inset-0 z-50 pointer-events-none opacity-0 transition-opacity duration-300;
+  @apply fixed inset-0 pointer-events-none opacity-0 transition-opacity duration-300;
+  z-index: 9999; /* Higher than any other element */
 }
 
 .report-bottom-sheet.active {
@@ -577,6 +581,13 @@ body {
 
 .report-bottom-sheet.active .sheet-backdrop {
   @apply opacity-100;
+}
+
+/* Prevent body scroll when sheet is active */
+body.sheet-open {
+  @apply overflow-hidden;
+  position: fixed;
+  width: 100%;
 }
 
 .sheet-container {
@@ -600,13 +611,24 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
+/* Sticky Bottom Actions */
+.sticky-bottom-actions {
+  @apply sticky bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-4 py-4 mt-6;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+}
+
 /* Quick Selection Pills */
 .quick-option {
   @apply relative cursor-pointer block;
 }
 
 .quick-option-content {
-  @apply flex items-center justify-center py-3 px-3 border-2 border-gray-200 rounded-xl bg-white text-center text-sm font-medium text-gray-600 transition-all duration-200 min-h-[48px] hover:border-gray-300 hover:-translate-y-0.5 active:scale-95;
+  @apply flex items-center justify-center py-3 px-4 border-2 border-gray-200 rounded-xl bg-white text-center text-sm font-medium text-gray-600 transition-all duration-200 min-h-[48px] hover:border-gray-300 hover:-translate-y-0.5 active:scale-95;
+}
+
+.quick-option-content.text-left {
+  @apply justify-start;
+  text-align: left;
 }
 
 .quick-option input:checked + .quick-option-content {

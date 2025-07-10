@@ -4029,6 +4029,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 500; /* Below bottom sheet */
 }
 
 .report-fab:hover {
@@ -4049,6 +4050,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 500; /* Below bottom sheet */
 }
 
 .locate-fab {
@@ -4064,6 +4066,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 500; /* Below bottom sheet */
 }
 
 /* Bottom Sheet */
@@ -4078,7 +4081,7 @@ body {
   box-shadow: 0 -2px 16px rgba(0, 0, 0, 0.1);
   transform: translateY(calc(100% - 80px));
   transition: transform 0.3s ease;
-  z-index: 600;
+  z-index: 600; /* Below report bottom sheet */
   max-height: 80vh;
   overflow-y: auto;
 }
@@ -4204,11 +4207,11 @@ body {
   pointer-events: none;
   position: fixed;
   inset: 0px;
-  z-index: 50;
   opacity: 0;
   transition-property: opacity;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
+  z-index: 9999; /* Higher than any other element */
 }
 
 .report-bottom-sheet.active {
@@ -4228,6 +4231,14 @@ body {
 
 .report-bottom-sheet.active .sheet-backdrop {
   opacity: 1;
+}
+
+/* Prevent body scroll when sheet is active */
+
+body.sheet-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
 }
 
 .sheet-container {
@@ -4282,6 +4293,26 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
+/* Sticky Bottom Actions */
+
+.sticky-bottom-actions {
+  position: sticky;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin-top: 1.5rem;
+  border-top-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity, 1));
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+}
+
 /* Quick Selection Pills */
 
 .quick-option {
@@ -4303,8 +4334,8 @@ body {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   text-align: center;
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -4327,6 +4358,11 @@ body {
   --tw-scale-x: .95;
   --tw-scale-y: .95;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.quick-option-content.text-left {
+  justify-content: flex-start;
+  text-align: left;
 }
 
 .quick-option input:checked + .quick-option-content {
