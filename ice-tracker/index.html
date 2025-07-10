@@ -881,7 +881,17 @@ image: /assets/images/community-outreach.jpg
   function removeGeohashFromGraph(geohash) {
     if (!geohashGraph.has(geohash)) return [];
     
-    // Get all connected neighbors
+    // Get the root node (first selected geohash)
+    const selectedArray = Array.from(selectedGeohashes);
+    const rootGeohash = selectedArray[0];
+    
+    // If we're removing the root, promote the next node to root
+    let newRoot = rootGeohash;
+    if (geohash === rootGeohash && selectedArray.length > 1) {
+      newRoot = selectedArray[1];
+    }
+    
+    // Get all connected neighbors before removal
     const neighbors = Array.from(geohashGraph.get(geohash));
     
     // Remove this geohash from all neighbors
@@ -889,42 +899,40 @@ image: /assets/images/community-outreach.jpg
       geohashGraph.get(neighbor).delete(geohash);
     });
     
-    // Remove the geohash itself
+    // Remove the geohash itself from graph
     geohashGraph.delete(geohash);
     
-    // Find connected components to remove orphaned pieces
     const toRemove = [geohash];
-    const visited = new Set();
     
-    // For each former neighbor, check if it's still connected to the main component
-    neighbors.forEach(neighbor => {
-      if (!visited.has(neighbor) && geohashGraph.has(neighbor)) {
-        const component = getConnectedComponent(neighbor, visited);
-        // If this component is not connected to any other selected geohash, remove it
-        const hasConnectionToOthers = component.some(gh => 
-          Array.from(geohashGraph.get(gh) || []).some(adj => 
-            selectedGeohashes.has(adj) && !component.includes(adj)
-          )
-        );
-        
-        if (!hasConnectionToOthers) {
-          component.forEach(gh => {
-            toRemove.push(gh);
-            // Remove from graph
-            Array.from(geohashGraph.get(gh) || []).forEach(adj => {
-              geohashGraph.get(adj)?.delete(gh);
-            });
-            geohashGraph.delete(gh);
+    // If there are remaining nodes, check for orphaned components
+    if (selectedGeohashes.size > 1) {
+      const remainingNodes = selectedArray.filter(gh => gh !== geohash);
+      const visited = new Set();
+      
+      // Find all nodes still connected to the root
+      const connectedToRoot = getConnectedComponent(newRoot, visited);
+      
+      // Any remaining nodes not connected to root should be removed
+      remainingNodes.forEach(node => {
+        if (!connectedToRoot.includes(node)) {
+          toRemove.push(node);
+          // Remove disconnected node from graph
+          const nodeNeighbors = Array.from(geohashGraph.get(node) || []);
+          nodeNeighbors.forEach(neighbor => {
+            geohashGraph.get(neighbor)?.delete(node);
           });
+          geohashGraph.delete(node);
         }
-      }
-    });
+      });
+    }
     
     return toRemove;
   }
 
   // Helper: get connected component starting from a geohash
   function getConnectedComponent(startGeohash, visited = new Set()) {
+    if (!geohashGraph.has(startGeohash)) return [];
+    
     const component = [];
     const stack = [startGeohash];
     
@@ -935,7 +943,7 @@ image: /assets/images/community-outreach.jpg
       visited.add(current);
       component.push(current);
       
-      // Add all connected neighbors that are selected
+      // Add all connected neighbors that are still selected
       const neighbors = geohashGraph.get(current) || new Set();
       neighbors.forEach(neighbor => {
         if (selectedGeohashes.has(neighbor) && !visited.has(neighbor)) {
