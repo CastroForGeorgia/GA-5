@@ -70,22 +70,28 @@ image: /assets/images/community-outreach.jpg
         <!-- Step 1: Location & Link -->
         <div id="step-1" class="form-step">
           <div class="space-y-6">
-            <!-- Location (Geohash) -->
+            <!-- Location (Mini Map) -->
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-2">
-                📍 Where did this happen? (Enter a 6-letter geohash) *
+                📍 Where did this happen? (Click on the map) *
               </label>
-              <input 
-                type="text" 
-                name="geohash" 
-                placeholder="e.g. 9q8yyz" 
-                maxlength="6"
-                required
-                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-              <p class="text-xs text-gray-500 mt-1">
-                A geohash is a short code for a location (like a neighborhood or street corner). 
-                Tap "Get My Location" above to copy one, then paste it here.
-              </p>
+              <div class="border border-gray-300 rounded-lg overflow-hidden">
+                <div id="mini-map" class="w-full h-64"></div>
+              </div>
+              <div class="mt-2 flex items-center justify-between">
+                <p class="text-xs text-gray-500">
+                  Click anywhere on the map to select a location. The geohash will be automatically generated.
+                </p>
+                <button type="button" id="use-my-location" class="text-xs text-blue-600 hover:text-blue-800 underline">
+                  Use My Location
+                </button>
+              </div>
+              <div class="mt-2">
+                <p class="text-sm text-gray-700">
+                  Selected geohash: <span id="selected-geohash" class="font-mono font-semibold text-blue-600">None selected</span>
+                </p>
+              </div>
+              <input type="hidden" name="geohash" id="geohash-input" required>
             </div>
 
             <!-- Optional Link -->
@@ -244,6 +250,7 @@ image: /assets/images/community-outreach.jpg
 <script>
   // Ice Tracker App JavaScript
   let map, geohashLayer, districtLayer, reports = [];
+  let miniMap, selectedLocationMarker;
   let userLocation = null;
 
   // ArcGIS GeoJSON URL for Georgia Congressional Districts
@@ -757,6 +764,156 @@ image: /assets/images/community-outreach.jpg
     alert(details);
   }
 
+  // Helper: encode coordinates to geohash (6 characters)
+  function encodeGeohash(lat, lng, precision = 6) {
+    const base32 = '0123456789bcdefghjkmnpqrstuvwxyz';
+    let evenBit = true;
+    let lngMin = -180, lngMax = 180;
+    let latMin = -90, latMax = 90;
+    let geohash = '';
+    let bit = 0;
+    let ch = 0;
+
+    while (geohash.length < precision) {
+      if (evenBit) {
+        const mid = (lngMin + lngMax) / 2;
+        if (lng >= mid) {
+          ch |= (1 << (4 - bit));
+          lngMin = mid;
+        } else {
+          lngMax = mid;
+        }
+      } else {
+        const mid = (latMin + latMax) / 2;
+        if (lat >= mid) {
+          ch |= (1 << (4 - bit));
+          latMin = mid;
+        } else {
+          latMax = mid;
+        }
+      }
+      
+      evenBit = !evenBit;
+      bit++;
+      
+      if (bit === 5) {
+        geohash += base32[ch];
+        bit = 0;
+        ch = 0;
+      }
+    }
+    
+    return geohash;
+  }
+
+  // Setup mini map for location selection
+  function setupMiniMap() {
+    // Create mini map
+    miniMap = new ol.Map({
+      target: 'mini-map',
+      view: new ol.View({
+        center: ol.proj.fromLonLat([-84.3880, 33.7490]), // Atlanta
+        zoom: 10,
+        minZoom: 8,
+        maxZoom: 16
+      }),
+      layers: [
+        new ol.layer.Tile({
+          source: new ol.source.OSM()
+        })
+      ],
+      controls: []
+    });
+
+    // Create marker layer for selected location
+    const markerLayer = new ol.layer.Vector({
+      source: new ol.source.Vector()
+    });
+    miniMap.addLayer(markerLayer);
+
+    // Click handler for location selection
+    miniMap.on('click', function(evt) {
+      const coordinate = evt.coordinate;
+      const lonLat = ol.proj.toLonLat(coordinate);
+      const [lng, lat] = lonLat;
+      
+      // Generate geohash
+      const geohash = encodeGeohash(lat, lng, 6);
+      
+      // Update UI
+      document.getElementById('selected-geohash').textContent = geohash;
+      document.getElementById('geohash-input').value = geohash;
+      
+      // Clear previous marker
+      markerLayer.getSource().clear();
+      
+      // Add new marker
+      const marker = new ol.Feature({
+        geometry: new ol.geom.Point(coordinate)
+      });
+      
+      marker.setStyle(new ol.style.Style({
+        image: new ol.style.Circle({
+          radius: 8,
+          fill: new ol.style.Fill({ color: '#3b82f6' }),
+          stroke: new ol.style.Stroke({ color: '#ffffff', width: 2 })
+        })
+      }));
+      
+      markerLayer.getSource().addFeature(marker);
+      selectedLocationMarker = marker;
+    });
+
+    // Use My Location button
+    document.getElementById('use-my-location').addEventListener('click', () => {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            const lat = position.coords.latitude;
+            const lng = position.coords.longitude;
+            const coordinate = ol.proj.fromLonLat([lng, lat]);
+            
+            // Center map on user location
+            miniMap.getView().animate({
+              center: coordinate,
+              zoom: 12,
+              duration: 500
+            });
+            
+            // Generate geohash
+            const geohash = encodeGeohash(lat, lng, 6);
+            
+            // Update UI
+            document.getElementById('selected-geohash').textContent = geohash;
+            document.getElementById('geohash-input').value = geohash;
+            
+            // Clear previous marker and add new one
+            markerLayer.getSource().clear();
+            const marker = new ol.Feature({
+              geometry: new ol.geom.Point(coordinate)
+            });
+            
+            marker.setStyle(new ol.style.Style({
+              image: new ol.style.Circle({
+                radius: 8,
+                fill: new ol.style.Fill({ color: '#3b82f6' }),
+                stroke: new ol.style.Stroke({ color: '#ffffff', width: 2 })
+              })
+            }));
+            
+            markerLayer.getSource().addFeature(marker);
+            selectedLocationMarker = marker;
+          },
+          (error) => {
+            alert('Unable to get your location. Please click on the map to select a location.');
+          }
+        );
+      } else {
+        alert('Geolocation is not supported by this browser. Please click on the map to select a location.');
+      }
+    });
+  }
+
   // Event Listeners
   document.addEventListener("DOMContentLoaded", function () {
     setupMap();
@@ -794,15 +951,9 @@ image: /assets/images/community-outreach.jpg
     document.getElementById('next-btn').addEventListener('click', () => {
       // Validate current step
       if (currentStep === 1) {
-        const geohashInput = document.querySelector('input[name="geohash"]');
+        const geohashInput = document.getElementById('geohash-input');
         if (!geohashInput.value.trim()) {
-          alert('Please enter a geohash location.');
-          geohashInput.focus();
-          return;
-        }
-        if (geohashInput.value.length !== 6) {
-          alert('Geohash must be exactly 6 characters.');
-          geohashInput.focus();
+          alert('Please select a location on the map.');
           return;
         }
       }
@@ -837,6 +988,28 @@ image: /assets/images/community-outreach.jpg
        // Reset form to step 1
        currentStep = 1;
        updateStepDisplay();
+       
+       // Setup mini map if not already done
+       if (!miniMap) {
+         // Delay to ensure the modal is visible
+         setTimeout(() => {
+           setupMiniMap();
+         }, 100);
+       } else {
+         // Reset mini map
+         document.getElementById('selected-geohash').textContent = 'None selected';
+         document.getElementById('geohash-input').value = '';
+         if (selectedLocationMarker) {
+           miniMap.getLayers().getArray()[1].getSource().clear();
+         }
+         // Re-center on Atlanta
+         miniMap.getView().animate({
+           center: ol.proj.fromLonLat([-84.3880, 33.7490]),
+           zoom: 10,
+           duration: 300
+         });
+       }
+       
       document.getElementById('report-modal').classList.add('active');
     });
 
@@ -846,6 +1019,23 @@ image: /assets/images/community-outreach.jpg
     document.getElementById('close-modal').addEventListener('click', () => {
       document.getElementById('report-modal').classList.remove('active');
     });
+
+    // Handle modal opening - resize mini map
+    const reportModal = document.getElementById('report-modal');
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.attributeName === 'class') {
+          const isActive = reportModal.classList.contains('active');
+          if (isActive && miniMap) {
+            // Delay to ensure DOM is updated
+            setTimeout(() => {
+              miniMap.updateSize();
+            }, 150);
+          }
+        }
+      });
+    });
+    observer.observe(reportModal, { attributes: true });
 
     // Locate FAB
     document.getElementById('locate-fab').addEventListener('click', () => {
