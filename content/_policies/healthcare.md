@@ -8,89 +8,86 @@ north_star: true
 order: 1
 ---
 
-# **Healthcare for All: A Human Right, Not a Privilege**  
+# Healthcare for All: A Human Right
 
-Healthcare in **Georgia’s 5th Congressional District** is in crisis. Families are drowning in medical debt, prescription drug prices are skyrocketing, and too many people can’t afford to see a doctor when they need one. I am fighting for **Medicare for All**—a system where every resident gets **affordable, high-quality healthcare** without financial barriers.  
+## Universal, Affordable, and Comprehensive Healthcare
 
-By eliminating **medical debt, lowering prescription drug prices, and expanding mental health services**, we will ensure that **healthcare serves people, not corporations**. No one should have to choose between rent and life-saving treatment.  
+In Georgia’s 5th Congressional District, healthcare is a fundamental human right, not a privilege. We are committed to establishing **Medicare for All**, guaranteeing universal coverage without premiums, deductibles, or surprise bills. Our healthcare system will serve people—not profits.
 
----
+We prioritize:
 
-## **The Healthcare Crisis: What’s at Stake**  
-
-- **💰 Out-of-control costs:** Nearly **30 million Americans** lack insurance, and millions more struggle with unaffordable premiums and surprise bills.  
-- **🚑 Medical debt is crushing families:** Too many people avoid care due to cost, leading to worse health outcomes.  
-- **💊 Prescription drugs are too expensive:** Big Pharma’s greed puts life-saving medications out of reach.  
-- **🧠 Mental health care is inaccessible:** Working families can’t afford counseling or therapy when they need it most.  
-- **🏥 Hospitals in underserved areas are closing:** Communities—especially in Black and working-class neighborhoods—are losing access to care.  
-
-**This is unacceptable.** We need bold action now.  
+* Universal, comprehensive healthcare coverage, including mental health, dental, vision, prescription drugs, and long-term care.
+* Eliminating medical debt and financial barriers to treatment.
+* Lowering prescription drug prices through Medicare negotiations.
+* Strengthening local hospitals and clinics, especially in underserved areas.
+* Investing in healthcare professionals by reducing administrative burdens and increasing support.
 
 ---
 
-## **The Solution: Medicare for All**  
+## Urgent Healthcare Challenges
 
-### 🛡️ **1. Universal, Comprehensive Coverage**  
-- **Every resident covered**—no premiums, no deductibles, no surprise bills.  
-- **End medical debt**—no one should go bankrupt because they got sick.  
-- **Comprehensive care**—includes **mental health, dental, vision, prescription drugs, and long-term care**.  
+### Unaffordable and Unequal Care
 
-### 🤝 **2. Support Healthcare Workers, Not Bureaucracy**  
-- **Doctors and nurses focus on patients, not paperwork.**  
-- **Invest in healthcare professionals**—train and retain more doctors, nurses, and caregivers.  
-- **Technology assists—never replaces—human caregivers.**  
+* Nearly 30 million Americans lack insurance, and millions more face crippling medical costs.
 
-### 💊 **3. Lower Prescription Drug Prices**  
-- **Medicare negotiates drug prices** to bring down costs.  
-- **Expand access to generic medications** to ensure affordability.  
-- **End price gouging by Big Pharma.**  
+### Medical Debt Crisis
 
-### 🧠 **4. Mental Health Care for All**  
-- **Mental health care is treated as a necessity, not a luxury.**  
-- **Expand school and workplace programs** for mental health support.  
-- **Use telehealth to reach underserved communities.**  
+* Families face bankruptcy from healthcare expenses, deterring many from seeking essential care.
 
-### 🏥 **5. Strengthen Local Hospitals and Clinics**  
-- **Keep hospitals open** in underserved communities.  
-- **Invest in preventive care**—more screenings, vaccinations, and early interventions.  
-- **Close racial and economic health disparities.**  
+### High Prescription Drug Costs
+
+* Life-saving medications remain financially out of reach due to pharmaceutical greed.
+
+### Mental Health Neglect
+
+* Mental health care is inaccessible, particularly for working-class and low-income communities.
+
+### Healthcare Inequities
+
+* Racial, economic, and geographical disparities leave underserved communities with fewer healthcare options.
 
 ---
 
-## **How We Get It Done**  
+## Comprehensive Medicare for All Plan
 
-✅ **Pass Medicare for All legislation** to guarantee universal healthcare.  
-✅ **Allow Medicare to negotiate drug prices** and stop Big Pharma’s price gouging.  
-✅ **Support healthcare workers** by reducing administrative burdens and increasing pay.  
-✅ **Expand mental health services** in schools, workplaces, and communities.  
-✅ **Engage directly with residents** through town halls and grassroots organizing.  
+### 1. Universal Coverage and Elimination of Medical Debt
 
----
+* Guarantee coverage for every resident, eliminating premiums, deductibles, and out-of-pocket costs.
+* Eradicate medical debt, ensuring no one faces financial ruin from illness or injury.
 
-## **What Medicare for All Means for You**  
+### 2. Lower Prescription Drug Prices
 
-### 💪 **Better, More Compassionate Care**  
-- Healthcare professionals focus on **patients, not profits**.  
+* Empower Medicare to negotiate directly with pharmaceutical companies to reduce drug prices.
+* Expand access to affordable generic medications.
 
-### 💸 **No More Medical Debt**  
-- Families save **thousands** by eliminating premiums and high drug costs.  
+### 3. Strengthen Mental Health Services
 
-### 🏥 **Hospitals Stay Open**  
-- Community clinics and hospitals get the funding they need to serve everyone.  
+* Integrate mental healthcare into all aspects of medical coverage, ensuring accessibility for everyone.
+* Expand mental health support programs in schools and workplaces.
 
-### 🧠 **Mental Health Is Finally a Priority**  
-- Therapy, counseling, and addiction treatment are accessible to all.  
+### 4. Invest in Local Healthcare Infrastructure
 
----
+* Ensure hospitals and clinics in underserved areas remain open and financially viable.
+* Expand preventive care programs and early intervention services.
 
-## **A Healthcare System That Works for Georgia’s 5th District**  
+### 5. Support Healthcare Professionals
 
-No one in **GA-05** should struggle to afford healthcare. **Medicare for All** will guarantee coverage, control costs, and ensure that healthcare remains a **human right, not a privilege**.  
-
-Together, we can build a **people-first healthcare system** that prioritizes **compassion, dignity, and health—not corporate profits**.  
+* Reduce administrative burdens to allow doctors and nurses to focus on patient care.
+* Expand training programs and improve compensation for healthcare workers.
 
 ---
 
-## **Join the Fight for Healthcare Justice**  
+## Benefits for Georgia’s 5th District
 
-Healthcare should never be a luxury. Stand with us and demand a system that puts people over profits.  
+* **Quality Care for All**: Universal healthcare ensures comprehensive and accessible treatment for every resident.
+* **Financial Security**: Families no longer burdened by medical debt or unpredictable healthcare costs.
+* **Accessible Mental Health Support**: Expanded mental health services available to all communities.
+* **Thriving Local Hospitals**: Strong community healthcare facilities supported and sustained.
+
+---
+
+## Our Commitment
+
+Healthcare should never depend on income or zip code. We stand firmly committed to creating a healthcare system rooted in compassion, dignity, and universal access.
+
+**Join us in the fight for healthcare justice for all.**
