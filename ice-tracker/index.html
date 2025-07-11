@@ -58,6 +58,17 @@ image: /assets/images/community-outreach.jpg
           </svg>
         </button>
       </div>
+      
+      <!-- Progress Indicator -->
+      <div class="px-4 pb-3">
+        <div class="flex items-center justify-between text-sm text-gray-600 mb-2">
+          <span id="quick-step-indicator">Step 1 of 4</span>
+          <span id="quick-progress-text">Location</span>
+        </div>
+        <div class="w-full bg-gray-200 rounded-full h-1.5">
+          <div id="quick-progress-bar" class="bg-blue-600 h-1.5 rounded-full transition-all duration-300" style="width: 25%"></div>
+        </div>
+      </div>
     </div>
 
     <!-- Sheet Content -->
@@ -106,8 +117,8 @@ image: /assets/images/community-outreach.jpg
 
         </div>
 
-        <!-- Step 2: Detailed Selection -->
-        <div id="selection-step" class="form-step hidden space-y-6">
+        <!-- Step 2: People -->
+        <div id="people-step" class="form-step hidden">
           <div class="form-group">
             <label>🧍‍♂️ Who did you see? (select all that apply)</label>
             <div class="grid grid-cols-1 gap-2">
@@ -141,7 +152,10 @@ image: /assets/images/community-outreach.jpg
               </label>
             </div>
           </div>
+        </div>
 
+        <!-- Step 3: Vehicles -->
+        <div id="vehicles-step" class="form-step hidden">
           <div class="form-group">
             <label>🚗 Vehicles or equipment (select all that apply)</label>
             <div class="grid grid-cols-1 gap-2">
@@ -179,7 +193,10 @@ image: /assets/images/community-outreach.jpg
               </label>
             </div>
           </div>
+        </div>
 
+        <!-- Step 4: Actions -->
+        <div id="actions-step" class="form-step hidden">
           <div class="form-group">
             <label>🚨 What was happening? (select all that apply)</label>
             <div class="grid grid-cols-1 gap-2">
@@ -213,22 +230,41 @@ image: /assets/images/community-outreach.jpg
               </label>
             </div>
           </div>
-
         </div>
         </div>
 
         <!-- Sticky Bottom Actions -->
         <div class="sticky-bottom-actions">
-          <!-- Step 1 Actions -->
+          <!-- Step 1 Actions (Location) -->
           <div id="step1-actions" class="flex gap-4">
             <button type="button" id="quick-continue" class="action-btn action-btn-primary">
               Continue
             </button>
           </div>
           
-          <!-- Step 2 Actions -->
+          <!-- Step 2 Actions (People) -->
           <div id="step2-actions" class="flex gap-4 hidden">
-            <button type="button" id="quick-back" class="flex-1 py-4 px-6 bg-gray-200 text-gray-700 rounded-xl font-semibold hover:bg-gray-300 transition-all duration-200 active:scale-95">
+            <button type="button" id="quick-back-2" class="flex-1 py-4 px-6 bg-gray-200 text-gray-700 rounded-xl font-semibold hover:bg-gray-300 transition-all duration-200 active:scale-95">
+              Back
+            </button>
+            <button type="button" id="quick-next-2" class="flex-[2] action-btn action-btn-primary">
+              Next
+            </button>
+          </div>
+
+          <!-- Step 3 Actions (Vehicles) -->
+          <div id="step3-actions" class="flex gap-4 hidden">
+            <button type="button" id="quick-back-3" class="flex-1 py-4 px-6 bg-gray-200 text-gray-700 rounded-xl font-semibold hover:bg-gray-300 transition-all duration-200 active:scale-95">
+              Back
+            </button>
+            <button type="button" id="quick-next-3" class="flex-[2] action-btn action-btn-primary">
+              Next
+            </button>
+          </div>
+          
+          <!-- Step 4 Actions (Actions) -->
+          <div id="step4-actions" class="flex gap-4 hidden">
+            <button type="button" id="quick-back-4" class="flex-1 py-4 px-6 bg-gray-200 text-gray-700 rounded-xl font-semibold hover:bg-gray-300 transition-all duration-200 active:scale-95">
               Back
             </button>
             <button type="submit" id="quick-submit" class="flex-[2] action-btn action-btn-danger">
@@ -1685,12 +1721,8 @@ image: /assets/images/community-outreach.jpg
        document.getElementById('report-sheet').classList.add('active');
        
        // Reset to first step
-       document.getElementById('location-step').classList.remove('hidden');
-       document.getElementById('selection-step').classList.add('hidden');
-       
-       // Reset to step 1 buttons
-       document.getElementById('step1-actions').classList.remove('hidden');
-       document.getElementById('step2-actions').classList.add('hidden');
+       quickCurrentStep = 1;
+       updateQuickStepDisplay();
        
        // Hide any errors
        hideSheetError();
@@ -1834,6 +1866,34 @@ image: /assets/images/community-outreach.jpg
       closeBottomSheet();
     });
 
+    // Quick form step navigation
+    let quickCurrentStep = 1;
+    const quickTotalSteps = 4;
+    const quickStepLabels = ['Location', 'People', 'Vehicles', 'Actions'];
+    const quickStepIds = ['location-step', 'people-step', 'vehicles-step', 'actions-step'];
+    const quickActionIds = ['step1-actions', 'step2-actions', 'step3-actions', 'step4-actions'];
+
+    function updateQuickStepDisplay() {
+      // Hide all steps
+      quickStepIds.forEach(stepId => {
+        document.getElementById(stepId).classList.add('hidden');
+      });
+      
+      // Hide all action sets
+      quickActionIds.forEach(actionId => {
+        document.getElementById(actionId).classList.add('hidden');
+      });
+      
+      // Show current step
+      document.getElementById(quickStepIds[quickCurrentStep - 1]).classList.remove('hidden');
+      document.getElementById(quickActionIds[quickCurrentStep - 1]).classList.remove('hidden');
+      
+      // Update progress indicator
+      document.getElementById('quick-step-indicator').textContent = `Step ${quickCurrentStep} of ${quickTotalSteps}`;
+      document.getElementById('quick-progress-text').textContent = quickStepLabels[quickCurrentStep - 1];
+      document.getElementById('quick-progress-bar').style.width = `${(quickCurrentStep / quickTotalSteps) * 100}%`;
+    }
+
     // Continue button (step 1 -> step 2)
     document.getElementById('quick-continue').addEventListener('click', () => {
       hideSheetError();
@@ -1843,25 +1903,36 @@ image: /assets/images/community-outreach.jpg
         return;
       }
       
-      // Move to step 2
-      document.getElementById('location-step').classList.add('hidden');
-      document.getElementById('selection-step').classList.remove('hidden');
-      
-      // Switch button sets
-      document.getElementById('step1-actions').classList.add('hidden');
-      document.getElementById('step2-actions').classList.remove('hidden');
+      quickCurrentStep = 2;
+      updateQuickStepDisplay();
     });
 
-    // Back button (step 2 -> step 1)
-    document.getElementById('quick-back').addEventListener('click', () => {
-      document.getElementById('selection-step').classList.add('hidden');
-      document.getElementById('location-step').classList.remove('hidden');
-      
-      // Switch button sets
-      document.getElementById('step2-actions').classList.add('hidden');
-      document.getElementById('step1-actions').classList.remove('hidden');
-      
+    // Next buttons for steps 2 and 3
+    document.getElementById('quick-next-2').addEventListener('click', () => {
+      quickCurrentStep = 3;
+      updateQuickStepDisplay();
+    });
+
+    document.getElementById('quick-next-3').addEventListener('click', () => {
+      quickCurrentStep = 4;
+      updateQuickStepDisplay();
+    });
+
+    // Back buttons for all steps
+    document.getElementById('quick-back-2').addEventListener('click', () => {
+      quickCurrentStep = 1;
+      updateQuickStepDisplay();
       hideSheetError();
+    });
+
+    document.getElementById('quick-back-3').addEventListener('click', () => {
+      quickCurrentStep = 2;
+      updateQuickStepDisplay();
+    });
+
+    document.getElementById('quick-back-4').addEventListener('click', () => {
+      quickCurrentStep = 3;
+      updateQuickStepDisplay();
     });
 
     // Quick form submission
@@ -1910,12 +1981,8 @@ image: /assets/images/community-outreach.jpg
       e.target.reset();
       
       // Reset to step 1
-      document.getElementById('selection-step').classList.add('hidden');
-      document.getElementById('location-step').classList.remove('hidden');
-      
-      // Reset to step 1 buttons
-      document.getElementById('step2-actions').classList.add('hidden');
-      document.getElementById('step1-actions').classList.remove('hidden');
+      quickCurrentStep = 1;
+      updateQuickStepDisplay();
       
       // Show success message temporarily
       const originalFabText = document.querySelector('.report-fab');
