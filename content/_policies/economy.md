@@ -8,152 +8,80 @@ north_star: true
 order: 3
 ---
 
-# **Building an Economy That Works for Everyone**  
+# Building an Economy That Works for Everyone
 
-The economy isn’t broken—it’s rigged by a system that favors corporate donors and entrenched elites at the expense of working families. **While billionaires get tax breaks and exploit loopholes, everyday people face rising housing costs, stagnant wages, and looming threats from automation.** We’re here to flip the script: this is **our fight—an “us vs. the system” battle** for the soul of our economy.
+## Guaranteeing a \$25 Minimum Wage and Economic Fairness
 
----
+In Georgia’s 5th Congressional District, we're fighting for an economy that truly serves the working class. At the heart of this fight is guaranteeing a **\$25 minimum wage**, ensuring that working 40 hours a week is enough to raise a family and build a secure future.
 
-## **A Fair Economy Starts with the Working Class**  
+Our campaign prioritizes workers over corporate profits by:
 
-**In Georgia’s 5th Congressional District**, we’re pushing back against the forces of corporate greed. Our plan doesn’t cater to lobbyists or powerful donors—it empowers the everyday people who drive our communities forward.
-
-- We’re closing tax loopholes so **billionaires and corporations finally pay their fair share**.  
-- We’re investing in **affordable housing** to keep families stable and neighborhoods strong.  
-- We’re **raising the minimum wage** so **40 hours a week is enough to raise a family, buy a home, and build a future**.  
-- We’re **regulating automation** so jobs aren’t replaced without a plan for workers.  
-- We’re **supporting small businesses** and local entrepreneurs, keeping more wealth in our neighborhoods.  
-
-It’s time to **stop turning our backs** on the folks who built this country. Let’s build an economy that puts people over profits.
+* Raising the minimum wage to **\$25/hour**, indexed to inflation.
+* Closing tax loopholes so billionaires and corporations pay their fair share.
+* Regulating automation to protect jobs and ensure worker retraining.
+* Supporting small businesses and local entrepreneurs to build community wealth.
 
 ---
 
-## **The Challenges We Must Address**  
+## Challenges We Must Address
 
-### ❌ **Working Families Shoulder the Tax Burden While the Wealthy Pay Less**  
-- Billionaires and corporations exploit tax loopholes, offshore profits, and dodge accountability.  
-- “Stock leveraging” allows the ultra-wealthy to treat borrowed money like income—without paying income taxes.
+### Tax Inequality and Corporate Loopholes
 
-### ❌ **Housing Costs Are Out of Control**  
-- Skyrocketing rents force many to choose between **shelter, food, or healthcare**.  
-- Gentrification displaces longtime residents, destroying the fabric of our communities.  
+* Billionaires exploit loopholes, such as stock leveraging, to avoid paying fair taxes.
+* Corporations offshore profits, dodge taxes, and penalize workers through outsourcing.
 
-### ❌ **Wages Aren’t Keeping Up with the Cost of Living**  
-- The federal minimum wage hasn’t budged in years while inflation soars.  
-- Too many full-time workers are trapped in poverty despite working 40 hours a week.
+### Wage Stagnation
 
-### ❌ **Jobs Are Being Replaced by Automation Without Worker Protections**  
-- Corporations push for cost-cutting automation while **leaving workers in the dust**.  
-- Retraining and safety nets **aren’t keeping up** with sudden industry changes.
+* The federal minimum wage is drastically insufficient amid rising inflation.
+* Many full-time workers still live in poverty.
 
-### ❌ **Small Businesses Struggle While Corporate Giants Get Handouts**  
-- Local entrepreneurs can’t access capital or resources as easily as big-box stores and tech giants.  
-- Declining labor protections leave workers with **less bargaining power and stagnant wages**.
+### Unregulated Automation
+
+* Workers are displaced by AI and automation without adequate protections or retraining.
+
+### Small Businesses Under Pressure
+
+* Local businesses struggle to compete with corporate giants and face barriers to funding.
 
 ---
 
-## **A Bold Plan for Economic Justice**  
+## Our Comprehensive Economic Justice Plan
 
-### 🏛️ **1. Close Tax Loopholes and Make Corporations Pay Their Fair Share**  
-- **Tax Stock Leveraging Like Wages**  
-  - If billionaires borrow against their stocks to fund lavish lifestyles, those loans should be **taxed** like income.  
-- **End Corporate Tax Havens**  
-  - Update and expand the **Stop Tax Haven Abuse Act** to **penalize companies** that shift profits offshore.  
-- **Penalize Job Outsourcing**  
-  - Corporations moving **over 1% of their workforce overseas** annually should face higher tax rates, deterring the offshoring of good-paying jobs.
+### 1. Implement a \$25 Minimum Wage
 
-**Outcome for Working Families:** **Billions in reclaimed tax revenue** can fund public services—like better roads, schools, and healthcare—and shift the burden off working people.
+* Guarantee a living wage so families thrive on a single full-time income.
+* End the tipped minimum wage, ensuring all workers receive fair compensation.
 
----
+### 2. Close Tax Loopholes and Ensure Corporate Accountability
 
-### 🏗️ **2. Expand Affordable Housing and Combat Displacement**  
-- **Massively Invest in Affordable Housing**  
-  - Use the **Homes for All Act** or **Green New Deal for Public Housing** as models for large-scale, **energy-efficient housing** development.  
-- **Protect Longtime Residents**  
-  - Strengthen tenant rights through measures like the **Eviction Crisis Act**, **rent stabilization**, and **emergency rental assistance**.  
-- **Create Jobs Through Housing Construction**  
-  - Tie new builds to **local hiring requirements**, boosting employment in underinvested communities.
+* Tax stock leveraging and offshore profits as income.
+* Impose penalties for corporations outsourcing jobs abroad.
 
-**Outcome for Working Families:** Secure, stable homes **anchor** strong communities. **No more families forced out** by predatory landlords or skyrocketing rents.
+### 3. Regulate Automation to Protect Workers
 
----
+* Enact laws requiring transparency and oversight of AI systems impacting workers.
+* Provide comprehensive retraining and wage insurance programs for displaced workers.
+* Offer incentives to businesses that proactively retrain workers instead of replacing them.
 
-### 💵 **3. Raise the Minimum Wage and Guarantee Livable Wages**  
-- **Raise the Federal Minimum Wage to a Living Wage**  
-  - We will fight to raise the minimum wage so **40 hours of work can support a family and afford housing**—starting at **$17/hour** and indexed to inflation.  
-- **Support Stronger Local Minimum Wages**  
-  - Empower states and cities to set **even higher local minimum wages** based on their cost of living.  
-- **End Tipped Subminimum Wages**  
-  - Phase out the **tipped minimum wage** and ensure all workers receive **the full minimum wage with tips on top**, not as a substitute for fair pay.
+### 4. Empower Small Businesses and Worker Cooperatives
 
-**Outcome for Working Families:** No more full-time workers living in poverty. **A fair day’s work will guarantee a fair day’s pay**—with dignity, stability, and opportunity.
+* Expand grants and loans to worker-owned businesses and cooperatives.
+* Strengthen local economies through community infrastructure projects tied to local hiring.
+* Pass labor protections, such as the PRO Act, to support fair wages and unionization.
 
 ---
 
-### 🤖 **4. Regulate Automation to Protect Workers**  
-- **Mandate Transparency on Workplace AI**  
-  - Enact the **Algorithmic Accountability Act** to require **disclosure and oversight** of how AI systems replace or monitor workers.  
-- **Automation Transition Assistance Program**  
-  - Model new legislation on **Trade Adjustment Assistance (TAA)** so workers get **retraining, wage insurance**, and other supports when automation disrupts jobs.  
-- **Reward Ethical Automation Practices**  
-  - Offer **tax credits** to businesses that **upskill their workforce** before automating, ensuring no one is left behind.
+## How This Benefits Georgia’s 5th District
 
-**Outcome for Working Families:** We can harness technology **for the common good**, rather than letting it serve only executive profits. Workers **gain new skills** and keep the dignity of stable employment.
+* **Fair wages**: A \$25/hour minimum wage ensures economic dignity and security.
+* **Stable employment**: Protect jobs from automation and provide pathways to new skills.
+* **Thriving communities**: Local businesses and cooperatives create resilient neighborhoods.
+* **Tax fairness**: Recovered tax dollars fund vital public services like healthcare, education, and infrastructure.
 
 ---
 
-### 💼 **5. Invest in Local Jobs and Small Business Growth**  
-- **Empower Cooperative Ownership**  
-  - Expand the **Main Street Employee Ownership Act** to give **low-interest loans and grants** to worker-owned co-ops, especially in underserved areas.  
-- **Boost Community Infrastructure**  
-  - Increase **Community Development Block Grants (CDBG)** to rebuild roads, schools, and broadband in lower-income neighborhoods—**on the condition of local hiring**.  
-- **Strengthen Labor Laws**  
-  - Pass the **PRO Act** to **protect the right to organize** and ensure fair wages and benefits.
+## Standing Strong for Workers
 
-**Outcome for Working Families:** Thriving local businesses, **equitable infrastructure spending**, and **fair labor practices** mean more money stays in the community, uplifting everyone.
+Our commitment is clear: We refuse to accept an economy rigged for the wealthy. By prioritizing the working class, raising wages, and ensuring corporate accountability, we can build an economy that genuinely serves everyone.
 
----
-
-## **How This Plan Benefits Georgia’s 5th District**  
-
-1. **Reclaims Tax Dollars for Public Good**  
-   - Ending corporate loopholes channels billions back into **essential services** like **healthcare, education**, and **infrastructure**.
-
-2. **Provides Safe, Affordable Homes**  
-   - Large-scale housing investments **create jobs** and ensure working families **aren’t priced out** of their neighborhoods.
-
-3. **Guarantees Livable Wages for All**  
-   - Raising the minimum wage means **no one working 40 hours a week will be trapped in poverty** again. Families can build stability and prosperity.
-
-4. **Future-Proofs Jobs in an Automated World**  
-   - By regulating AI, mandating retraining, and ensuring fair wages, we **safeguard livelihoods** as technology evolves.
-
-5. **Strengthens Local Economies**  
-   - When small businesses and co-ops thrive, **wealth stays in the community**—not siphoned off by corporate headquarters.
-
----
-
-## **Action Plan: The People Over Profits Agenda**  
-
-1. **Close Corporate Tax Loopholes**  
-   - Implement the **Stop Tax Haven Abuse Act**, tax stock leveraging, and **penalize outsourcing**.
-
-2. **Build Sustainable, Affordable Housing**  
-   - Expand public housing initiatives, protect tenants from eviction, and **invest in local jobs** through housing projects.
-
-3. **Raise the Minimum Wage to a Living Wage**  
-   - Pass legislation to **raise the federal minimum wage to $25/hour**, end tipped subminimum wages, and **index wages to inflation**.
-
-4. **Regulate Automation & Protect Workers**  
-   - Enforce **AI transparency**, provide **training and income support**, and **reward businesses** that upskill workers.
-
-5. **Empower Small Businesses & Worker Co-ops**  
-   - Offer **grants and loans** to co-ops, invest in **community-driven infrastructure**, and pass the **PRO Act** for stronger labor rights.
-
----
-
-## **Standing Up for the Working Class**  
-
-**I refuse to be just another politician who makes empty promises and then turns a blind eye to the system’s failings.** We’re taking on the powerful interests that rig the rules against everyday people. This campaign is about **us—working families—versus a system built to enrich the wealthy few.**
-
-Together, we **can** create a fair economy that rewards hard work, ensures stable homes, **guarantees livable wages**, and protects jobs in the face of rapid change. **Join the fight**, and let’s make an economy that truly serves **everyone**—not just the donor class or the privileged elite.
+**Join us in fighting for an economy rooted in fairness, dignity, and opportunity for all.**

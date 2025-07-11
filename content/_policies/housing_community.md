@@ -8,96 +8,87 @@ north_star: true
 order: 2
 ---
 
-# **🏠 Build Baby Build: Housing for Georgia’s 5th District**  
+# Homes for All: Dignity, Stability, Community
 
-## **Housing Is a Right—Not a Commodity**  
+## Affordable Housing is a Fundamental Right
 
-Housing costs in **Georgia’s 5th Congressional District** are rising, families are being priced out of their own neighborhoods, and development too often prioritizes profit over people. Our **Workers’ Housing Guarantee**, guided by the motto **Build Baby Build**, ensures that **affordable, sustainable housing** is a right—not a privilege.  
+In Georgia’s 5th Congressional District, we're committed to ensuring that safe, sustainable, and affordable housing is accessible to everyone. Our vision centers on dignity, stability, and building strong, vibrant communities.
 
-This plan **modernizes existing buildings, builds smartly**, and creates **good-paying jobs** in the process. By focusing on **homeownership, condos, and energy-efficient redevelopment**, we will expand housing opportunities **without displacing residents or harming the environment**.  
+We prioritize:
 
----
-
-## **The Housing Crisis in Georgia’s 5th District**  
-
-- **🏠 Homeownership is out of reach**—Rising costs and stagnant wages have made it nearly impossible for working families to buy a home.  
-- **📈 Rents are skyrocketing**—Longtime residents are being pushed out by gentrification.  
-- **🔨 The housing supply is inadequate**—Developers prioritize luxury units, leaving affordable housing scarce.  
-- **💼 Housing construction should create jobs**—We need to train and employ **local workers**, not just bring in outside developers.  
-- **🌱 Sustainability matters**—New housing must be built responsibly to lower energy costs and protect our environment.  
-
-Georgia’s 5th District **has the land, the workforce, and the need.** Now, we need bold leadership to build smarter, fairer, and sustainably.  
+* Expanding affordable housing through smart, sustainable development.
+* Protecting communities from displacement and gentrification.
+* Creating good-paying local jobs through housing construction and modernization.
+* Promoting homeownership opportunities and pathways for first-time buyers.
+* Increasing and revitalizing public housing to address chronic shortages.
 
 ---
 
-## **The Workers’ Housing Guarantee: A Bold Solution**  
+## Urgent Housing Challenges
 
-### 🏗️ **1. Modernize and Expand Affordable Housing**  
-- **Revitalize underutilized buildings** into modern, energy-efficient homes.  
-- **Prioritize first-time homeownership** through affordable condos and starter homes.  
-- **Use green building materials** to reduce costs and lower utility bills.  
+### Unaffordable Housing
 
-### 💼 **2. Create Good-Paying Jobs Through Housing Works**  
-- **Hire and train local workers** to build and renovate homes.  
-- **Employment for the unhoused**—Provide job training in construction, sustainability, and property rehabilitation.  
-- **Support union labor** and fair wages for workers modernizing our housing stock.  
+* Housing costs continue to rise, pricing working families out of their neighborhoods.
 
-### 🏠 **3. Build Pathways to Homeownership**  
-- **Offer down-payment assistance** for first-time buyers.  
-- **Allow workers to earn home credits** toward purchasing properties they helped build or renovate.  
-- **Protect longtime residents** by prioritizing affordable housing within their communities.  
+### Displacement and Gentrification
 
-### 🌱 **4. Smart Growth Without Displacement**  
-- **Build in underutilized areas**—No need to bulldoze neighborhoods or green spaces.  
-- **Prioritize mixed-use developments**—Condos, townhomes, and small first-time homes instead of high-rise luxury apartments.  
-- **Ensure environmental sustainability**—Energy-efficient construction lowers costs for homeowners and renters.  
+* Longtime residents face displacement due to aggressive redevelopment and rising rents.
 
----
+### Insufficient Housing Supply
 
-## **How We Make It Happen**  
+* Affordable homes are scarce, while luxury units dominate new developments.
+* Public housing availability has stagnated, failing to meet community needs.
 
-✅ **1. Renovate and Build Smart**  
-- Identify **vacant and underused buildings** for modernization.  
-- Develop **mixed-income housing** that keeps communities diverse and thriving.  
+### Jobs and Community Stability
 
-✅ **2. Implement the Housing Works Program**  
-- Train and hire **local workers**, including those in need of housing, to build homes.  
-- **Provide skills training** in sustainable construction and energy efficiency.  
+* Housing development often neglects local employment opportunities, weakening community ties.
 
-✅ **3. Make Homeownership Possible**  
-- Down-payment assistance and financing for first-time homebuyers.  
-- Offer **work-to-own programs** that reward workers with homeownership opportunities.  
+### Environmental Sustainability
 
-✅ **4. Preserve Neighborhoods, Protect the Environment**  
-- Use **infill development** to prevent urban sprawl and environmental harm.  
-- Ensure **community-led development** that respects local history and culture.  
+* Traditional housing construction ignores sustainability, leading to higher costs and environmental harm.
 
 ---
 
-## **Why This Matters for Georgia’s 5th District**  
+## Comprehensive Housing Justice Plan
 
-### 🏠 **Affordable Homes Without Displacement**  
-- Keeps **longtime residents in their communities** instead of pushing them out.  
-- Creates **housing people can actually afford**—not just luxury units for developers.  
+### 1. Rapidly Expand Affordable Housing
 
-### 💼 **Jobs for the Community, Built by the Community**  
-- Thousands of **good-paying jobs** in construction, renovation, and sustainable energy.  
-- Training programs create **long-term employment and wealth-building opportunities**.  
+* Renovate and modernize vacant and underutilized buildings into affordable homes.
+* Build mixed-income developments that sustain diverse communities.
+* Ensure new developments include significant affordable housing components.
+* Expand and revitalize public housing stock to meet growing demand.
 
-### 🌱 **Sustainable, Future-Focused Housing**  
-- **Energy-efficient homes** lower costs for families.  
-- **Green building practices** protect the environment and reduce emissions.  
+### 2. Prevent Community Displacement
+
+* Strengthen tenant protections, including rent stabilization and anti-eviction measures.
+* Prioritize developments that protect and benefit current residents.
+* Foster community-led planning to preserve neighborhood identity and culture.
+
+### 3. Promote Homeownership and Economic Opportunity
+
+* Provide down-payment assistance and favorable financing for first-time homebuyers.
+* Establish work-to-own programs allowing workers to earn homeownership credits.
+* Support local employment through housing construction and maintenance projects.
+
+### 4. Sustainable and Smart Growth
+
+* Use environmentally friendly building materials and sustainable construction practices.
+* Implement energy-efficient design standards to reduce long-term costs.
+* Prioritize infill development to preserve green spaces and reduce sprawl.
 
 ---
 
-## **A New Vision for Housing in Georgia’s 5th District**  
+## Benefits for Georgia’s 5th District
 
-We **don’t** have to accept skyrocketing rents, corporate-driven development, and the displacement of working families. The **Workers’ Housing Guarantee** under **Build Baby Build** will **expand affordable housing, create good jobs, and build a sustainable future for everyone**.  
-
-By investing in **modernization, smart growth, and homeownership**, we will make **Georgia’s 5th District a leader in housing justice and economic opportunity**.  
+* **Affordable, dignified homes**: Every resident can access stable and sustainable housing.
+* **Strong communities**: Prevent displacement by prioritizing local residents and preserving neighborhood diversity.
+* **Economic empowerment**: Create good-paying jobs in construction, renovation, and property management.
+* **Sustainability**: Build environmentally responsible homes that reduce costs and protect our planet.
 
 ---
 
-## **Join Us: Build Baby Build for a Stronger, Fairer Future**  
+## Our Commitment
 
-Housing is the foundation of opportunity. Let’s make sure **everyone** in Georgia’s 5th District has access to a home they can afford and a community they can thrive in.  
+Housing justice is more than policy—it's about creating communities where every person can thrive. Together, we will secure homes for all, grounded in dignity, stability, and lasting community strength.
+
+**Join us in building a future where housing is truly a right for everyone.**

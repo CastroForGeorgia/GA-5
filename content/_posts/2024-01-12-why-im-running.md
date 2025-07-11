@@ -6,40 +6,62 @@ date: 2025-01-12
 image: '/assets/images/about-me-photo-zoom.jpg'
 ---
 
-## **The Democratic Party Has Lost Its Way—It’s Time to Take It Back**  
+# Why I'm Running for Congress in Georgia’s 5th District
 
-The Democratic Party has abandoned its working-class roots, succumbing to corporate influence at the expense of everyday Americans. I’m running for Congress in **Georgia’s 5th District** because I refuse to stand by while our party prioritizes profit over people. We need leadership that fights for economic justice, civil rights, and bold, transformative change—not incrementalism that keeps us struggling.  
+## Fighting for a Party that Puts People First
 
-## **A Party at a Crossroads**  
+I'm running for Congress in Georgia’s 5th District because the Democratic Party has abandoned its roots, prioritizing corporate interests over working-class people. It's time to reclaim our party and stand unapologetically for economic justice, civil rights, and transformative, meaningful change.
 
-Our bills keep rising, healthcare remains unaffordable, and wages don’t keep up—yet too many Democratic leaders accept the status quo. They talk about change but never fight for it. The party must choose: Will it stand with the people or remain a pawn of corporate America?  
+Our campaign is committed to:
 
-## **I Am Not From the Left or the Right—I’m From the Bottom**  
+* Rejecting all corporate donations to ensure loyalty only to the working class.
+* Fighting relentlessly for affordable healthcare, higher wages, and economic dignity.
+* Championing civil rights and true equity—beyond incremental change.
+* Building grassroots movements that hold leaders accountable.
 
-I know what it means to struggle. Unlike politicians who take corporate money and ignore the rest of us, I will **never** accept corporate donations. My loyalty is to the working class—renters, families, and everyone living paycheck to paycheck in **GA-05**.  
+---
 
-## **Choosing a Side**  
+## The Urgency of Real Change
 
-Democrats fall into two categories:  
+### A Party at a Crossroads
 
-- **Those who see change as essential**—because their survival depends on it.  
-- **Those who see it as a nice idea**—supporting it in theory but never feeling its urgency.  
+* Too many Democratic leaders accept the status quo while our bills rise, wages stagnate, and healthcare remains unaffordable.
 
-For working people in **GA-05**, incrementalism isn’t an option. Justice and equity can’t be empty slogans. We need action, now.  
+### Standing with the Working Class
 
-## **A Political Multiplier for Change**  
+* Unlike politicians backed by corporate donors, I stand with renters, families, and working-class residents of GA-05.
 
-This campaign isn’t just about winning—it’s about building a movement. I will be a **political multiplier**, using technology and grassroots power to make politics more accessible and inclusive. Together, we can create a coalition to hold our leaders accountable and return the Democratic Party to its rightful place: **on the side of the people**.  
+### The Need for Immediate Action
 
-## **Time for a Political Revolution**  
+* Incrementalism is inadequate—our community needs urgent, substantial change to thrive.
 
-The corporate takeover of the Democratic Party has made it disconnected and out of touch. **It’s time to clean house.** We need representatives who are unapologetically loyal to their communities, not corporate donors.  
+---
 
-I’m running in **GA-05** because this fight isn’t about me—it’s about all of us who’ve been ignored for too long. **I will not hold back. I will not be bought.** Join me, and let’s reclaim our party—and our future—together.
+## Our Vision for Transformative Politics
 
-## Learn More About My Vision
-- [Learn about me](/about/)
-- [The Workers' Housing Guarantee: Affordable Homes for All](/policy/housing-community/)
-- [Healthcare is a Human Right: Medicare for All](/policy/healthcare/)
-- [Civil Rights and Equality: Standing Up for Justice](/policy/civil-rights-equality)
-- [Technology for People: Ethical and Accessible AI](/policy/ai/)
+### Political Multiplier for Change
+
+* Leveraging technology and grassroots organizing to create a more inclusive and accessible political process.
+
+### Cleaning House
+
+* Ending corporate influence to reconnect the Democratic Party with the everyday lives of working people.
+
+### Building a Movement
+
+* Creating coalitions that demand accountability and prioritize community needs.
+
+---
+
+## Why This Fight Matters
+
+* This campaign isn't just about winning; it's about building lasting power for working-class people.
+* It's about reclaiming the Democratic Party for the people—not corporate interests.
+
+---
+
+## Join Our Fight
+
+Together, we can reclaim our future and build a party that genuinely represents all of us.
+
+**Stand with us and fight for a Democratic Party rooted in dignity, justice, and true representation.**
