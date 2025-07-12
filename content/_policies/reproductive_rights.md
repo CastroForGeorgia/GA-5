@@ -1,108 +1,72 @@
 ---
 title: "Reproductive Rights"
 description: "Defending every woman's right to make her own healthcare decisions."
-date: 2025-01-22 00:00:00 +0000
+date: 2025-07-11 00:00:00 +0000
 label: "Policy"
 image: "/assets/images/reproductive-rights-header.webp"
 ---
 
-# **Reproductive Rights: Protecting Freedom, Ensuring Access**  
+# Reproductive Rights: Protecting Freedom, Ensuring Access
 
-## **The Fight for Reproductive Freedom**  
+## Reproductive Justice is Non-Negotiable
 
-Reproductive rights are under attack across the country, and **Georgia’s 5th Congressional District** is no exception. **Georgia has one of the highest maternal mortality rates** in the nation, and restrictive laws disproportionately harm **Black women, low-income families, and rural communities**.  
+Reproductive rights are under attack across the country, and Georgia’s 5th Congressional District is no exception. We must take bold action to ensure that no one is forced to travel out of state, struggle financially, or suffer from medical neglect just to get the care they need. This fight is about more than just abortion—it’s about health, dignity, and freedom.
 
-We must take bold action to **codify abortion rights, expand reproductive healthcare, and guarantee free birthing services**. No one should be forced to **travel out of state, struggle financially, or suffer from medical neglect** just to get the care they need.  
+We prioritize:
 
-**Reproductive justice is non-negotiable.** We won’t back down.  
-
----
-
-## **Why This Matters in Georgia’s 5th District**  
-
-### 📉 **Georgia’s Maternal Mortality Crisis**  
-- **Georgia has the 2nd highest maternal mortality rate** in the nation—**33.9 deaths per 100,000 births**.  
-- Black women face **higher risks of complications** due to systemic healthcare disparities.  
-- Hospital closures and lack of funding in **Atlanta’s underserved neighborhoods** make access even worse.  
-
-**Reproductive rights are about survival. Georgia’s 5th District deserves better.**  
+* Codifying the right to choose into federal law.
+* Expanding access to reproductive healthcare, including free contraception and family planning services.
+* Making prenatal, birthing, and postnatal services free for all families.
+* Addressing the systemic health disparities that harm Black women and low-income communities.
 
 ---
 
-## **A Bold Agenda for Reproductive Justice**  
+## Urgent Challenges to Reproductive Rights
 
-### 🛡️ **1. Codify the Right to Choose**  
-- **Enshrine abortion access into federal law** to prevent restrictive state policies.  
-- **End unnecessary barriers** like waiting periods and burdensome clinic regulations.  
+### Georgia’s Maternal Mortality Crisis
 
-### 🌐 **2. Expand Access to Reproductive Healthcare**  
-- **Guarantee free contraception** and family planning services for all.  
-- **Fund local reproductive health centers** to ensure access in underserved areas.  
+Georgia has the 2nd highest maternal mortality rate in the nation, at 33.9 deaths per 100,000 births. This crisis is even more severe for Black women, who face higher risks of complications due to systemic healthcare disparities.
 
-### ✊ **3. Address Racial and Economic Health Disparities**  
-- **Invest in maternal health programs** tailored for **Black women and low-income communities**.  
-- **Train local healthcare providers** to deliver culturally competent, high-quality reproductive care.  
+### Disproportionate Harm to Vulnerable Communities
 
-### 🏥 **4. Make Birthing and Maternal Care Free**  
-- **Ensure all prenatal, birthing, and postnatal services** are free for families.  
-- **Integrate comprehensive reproductive care into Medicare for All** to remove financial barriers.  
-
-### 📚 **5. Educate and Empower**  
-- **Implement evidence-based sex education** in public schools.  
-- **Raise awareness** about reproductive rights and available healthcare resources.  
+Restrictive laws disproportionately harm Black women, low-income families, and rural communities. In Atlanta's underserved neighborhoods, hospital closures and a lack of funding make access to care even worse.
 
 ---
 
-## **How We Deliver Reproductive Justice**  
+## Our Comprehensive Plan for Reproductive Justice
 
-✅ **1. Codify Abortion Rights in Federal Law**  
-- Protect women from restrictive state laws by ensuring federal protections.  
-- Repeal the **Hyde Amendment** so Medicaid covers abortion services.  
+### 1. Codify the Right to Choose
 
-✅ **2. Fund and Expand Healthcare Access**  
-- Increase federal support for **reproductive health clinics in underserved areas**.  
-- Guarantee **free contraception and family planning services** for all.  
+* Enshrine abortion access into federal law to prevent restrictive state policies.
+* End unnecessary barriers like waiting periods and burdensome clinic regulations.
+* Repeal the Hyde Amendment so that Medicaid can cover abortion services.
 
-✅ **3. Close the Healthcare Equity Gap**  
-- Direct funding to hospitals and clinics **serving Black and low-income communities**.  
-- Expand maternal health programs and ensure **culturally competent medical training** for providers.  
+### 2. Expand Access to Reproductive Healthcare
 
-✅ **4. Guarantee Free Birthing and Hospital Care**  
-- **Ensure every mother has access to free prenatal, birthing, and postnatal care.**  
-- Include full reproductive care in **Medicare for All**.  
+* Guarantee free contraception and family planning services for all.
+* Increase federal support for local reproductive health centers to ensure access in underserved areas.
 
-✅ **5. Fight Disinformation and Stigma**  
-- Implement **evidence-based sex education in public schools**.  
-- Challenge misinformation campaigns targeting **reproductive health clinics**.  
+### 3. Address Racial and Economic Health Disparities
 
----
+* Invest in maternal health programs tailored for Black women and low-income communities.
+* Direct funding to hospitals and clinics serving these communities and ensure culturally competent medical training for providers.
 
-## **What This Means for Georgia’s 5th District**  
+### 4. Make Birthing and Maternal Care Free
 
-### ⚖️ **Legal Protections for Women’s Rights**  
-- No state should have the power to **control a woman’s body**—federal protections will ensure access in Georgia.  
-
-### 🏥 **Guaranteed Access to Reproductive Healthcare**  
-- Women in **Atlanta and surrounding communities** will have full reproductive healthcare access—**without cost or restriction**.  
-
-### ✊ **Health Equity for All Residents**  
-- Culturally competent healthcare, targeted investments, and hospital funding will close racial and economic disparities.  
-
-### 💰 **Free Birthing Services for Families**  
-- No parent should **go into debt** for bringing a child into the world.  
+* Ensure all prenatal, birthing, and postnatal services are free for families.
+* Include full reproductive care, including free birthing and hospital care, in a Medicare for All system to remove financial barriers.
 
 ---
 
-## **A Future Where Reproductive Rights Are Secure**  
+## How This Benefits Georgia’s 5th District
 
-This fight is about more than just abortion—it’s about **health, dignity, and freedom**. Women deserve the right to control their own healthcare decisions, access affordable care, and give birth without financial strain.  
-
-We **must protect reproductive freedom, expand healthcare access, and ensure that no woman is denied the care she needs**.  
-
-Together, we will build a future where **healthcare is a right, not a privilege**—no matter where you live.  
+* **Legal Protections for Women’s Rights**: Federal protections will ensure access in Georgia, preventing the state from controlling a woman’s body.
+* **Guaranteed Access to Healthcare**: Women in Atlanta and surrounding communities will have full reproductive healthcare access without cost or restriction.
+* **Health Equity for All Residents**: Targeted investments and culturally competent care will close racial and economic health disparities.
+* **Free Birthing Services for Families**: No parent will have to go into debt for bringing a child into the world.
 
 ---
 
-### **Join the Fight for Reproductive Freedom**  
+## Our Commitment
 
-**Defend choice. Protect healthcare. Demand justice.**  
+We believe that healthcare is a right, not a privilege—no matter where you live. Women deserve the right to control their own healthcare decisions, access affordable care, and give birth without financial strain. We will fight to protect reproductive freedom, expand healthcare access, and ensure that no woman is denied the care she needs.

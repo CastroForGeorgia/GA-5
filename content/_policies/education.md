@@ -1,126 +1,83 @@
 ---
 title: "Education"
 description: "Strengthening public education by raising teacher pay, modernizing schools, and ensuring equitable funding for all students."
-date: 2024-11-28 00:00:00 +0000
+date: 2025-07-11 00:00:00 +0000
 label: "Policy"
 image: "/assets/images/education-policy-header.webp"
 ---
 
-# **Education for All: A Stronger Future Starts in Our Schools**  
+# Education for All: A Strong Foundation for the Future
 
-## **Public Education is the Foundation of Opportunity**  
+## Every Child Deserves Quality Education
 
-A strong public education system is **the bedrock of democracy and economic prosperity**—but chronic underfunding, teacher burnout, and inequitable resource distribution threaten that promise. In **Georgia’s 5th Congressional District**, we are fighting to ensure **every student, no matter their zip code, has access to high-quality education**.  
+In Georgia’s 5th Congressional District, we believe that high-quality public education is essential for community success, economic stability, and personal empowerment. Our vision ensures equitable access, fully supports teachers, and modernizes schools for every student to thrive.
 
-That means **investing in teachers, modernizing schools, and prioritizing equity** so that every child gets a fair chance at success.  
+We prioritize:
 
----
-
-## **The Challenges We Must Address**  
-
-### ❌ **Teachers Are Underpaid and Overworked**  
-- Many teachers **work second jobs** to make ends meet.  
-- Out-of-pocket spending on classroom supplies is the norm.  
-- Burnout and lack of support are driving **teacher shortages**.  
-
-### ❌ **School Funding is Unequal**  
-- Wealthier districts have better resources, while lower-income schools **struggle with outdated textbooks, technology, and facilities**.  
-- Public money is being siphoned off to **private and charter schools**, leaving public schools underfunded.  
-
-### ❌ **Schools Need Mental Health and Community Support**  
-- Students face **mental health challenges**, but there aren’t enough counselors or support services.  
-- Families need access to **after-school programs, tutoring, and community-based education support**.  
+* Raising teacher pay to reflect their critical role and reduce turnover.
+* Providing equitable funding to close educational disparities.
+* Modernizing school infrastructure to ensure safe, effective learning environments.
+* Expanding access to mental health services and community support programs.
 
 ---
 
-## **A Bold Plan to Strengthen Public Education**  
+## Critical Challenges in Education
 
-### 👩‍🏫 **1. Pay and Support Teachers Like the Professionals They Are**  
-- **Raise Teacher Salaries**  
-  - Ensure teachers earn a **living wage** that reflects their expertise and dedication.  
-- **End Out-of-Pocket Expenses**  
-  - Fully fund classroom supplies so teachers don’t have to pay for essentials.  
-- **Expand Healthcare and Retirement Benefits**  
-  - Offer **comprehensive wellness programs**, including mental health resources for teachers.  
+### Underpaid and Overworked Teachers
 
----
+* Educators often hold second jobs and spend personal funds on classroom supplies.
+* Low salaries and burnout drive high turnover rates.
 
-### 🏫 **2. Fully Fund Public Schools and End Privatization Schemes**  
-- **Increase Federal and State Education Funding**  
-  - Secure **equitable funding** to support struggling schools.  
-- **Target Resources Where They’re Needed Most**  
-  - Prioritize **low-income and underfunded schools** to close the achievement gap.  
-- **Ban Public Money from Going to Private Schools**  
-  - Stop **vouchers and charter school programs** that drain resources from public education.  
+### Inequitable School Funding
 
----
+* Resource gaps between wealthy and low-income districts perpetuate achievement disparities.
+* Public funds diverted to private and charter schools exacerbate inequalities.
 
-### 🏗️ **3. Modernize Schools and Improve Learning Environments**  
-- **Renovate Aging Buildings**  
-  - Invest in **safe, modern, energy-efficient school facilities**.  
-- **Equip Classrooms with Technology**  
-  - Ensure every student has **high-speed internet access, updated computers, and STEM learning tools**.  
+### Outdated Facilities and Technology
+
+* Many schools suffer from aging infrastructure and insufficient access to essential technology.
+
+### Inadequate Mental Health Support
+
+* Limited counseling and mental health services hinder students' emotional and academic growth.
 
 ---
 
-### 💡 **4. Expand Mental Health and Community-Based Support**  
-- **Fund School Counselors and Psychologists**  
-  - Lower student-to-counselor ratios so every child has **access to mental health support**.  
-- **Develop Community Schools**  
-  - Turn schools into hubs that provide **after-school programs, tutoring, healthcare, and family resources**.  
-- **Support Anti-Discrimination and Equity Initiatives**  
-  - Ensure schools are **safe, inclusive, and culturally responsive** learning environments.  
+## Comprehensive Plan for Educational Equity
+
+### 1. Support and Value Teachers
+
+* Raise teacher salaries significantly and eliminate out-of-pocket expenses.
+* Enhance healthcare, retirement benefits, and provide comprehensive wellness programs.
+
+### 2. Equitable and Robust School Funding
+
+* Secure increased federal and state funding targeting under-resourced schools.
+* End the diversion of public funds to private and charter schools.
+
+### 3. Modernize and Improve School Facilities
+
+* Renovate outdated buildings to create safe, energy-efficient environments.
+* Provide advanced technology and reliable internet access for every classroom.
+
+### 4. Strengthen Mental Health and Community Support
+
+* Increase funding for school-based mental health professionals.
+* Develop comprehensive community school models providing after-school programs, tutoring, healthcare, and family resources.
 
 ---
 
-## **Our Action Plan: A Fair, Well-Funded Education System**  
+## How This Helps Georgia’s 5th District
 
-✅ **1. Raise Teacher Pay and Fully Fund Schools**  
-- Pass federal legislation to **increase teacher salaries and fully fund public education**.  
-- End public funding for private school voucher programs.  
-
-✅ **2. Invest in School Infrastructure and Technology**  
-- Secure funding to **modernize schools and provide state-of-the-art learning tools**.  
-- Expand access to **STEM education, trade programs, and digital literacy training**.  
-
-✅ **3. Strengthen Mental Health Support in Schools**  
-- Increase funding for **school-based counselors and social workers**.  
-- Establish **free mental health programs for students and teachers**.  
-
-✅ **4. Expand Access to Early Childhood and After-School Programs**  
-- Invest in **universal pre-K** and quality childcare for working families.  
-- Fund **after-school programs and summer learning opportunities**.  
-
-✅ **5. Ensure Community Participation in Education Policy**  
-- Hold **town halls and school forums** to engage parents, students, and teachers in decision-making.  
-- Require **public transparency in school funding allocations**.  
+* **Empowered Teachers:** Better compensation and support lead to higher retention and improved student outcomes.
+* **Equitable Opportunities:** Every student, regardless of background, receives quality education.
+* **Modern Infrastructure:** Enhanced facilities and technology ensure readiness for future careers.
+* **Healthier Communities:** Improved mental health resources build stronger, healthier, and more resilient communities.
 
 ---
 
-## **Why This Matters for Georgia’s 5th District**  
+## Our Commitment
 
-### ✅ **Higher Teacher Retention and Better Learning Outcomes**  
-- **Well-paid, well-supported teachers** create **more stable** learning environments.  
+Investing in education is investing in the future of our community. We pledge to ensure every child in Georgia’s 5th District has access to quality education, strong teachers, and supportive communities.
 
-### 📈 **Economic Growth and Workforce Development**  
-- Strong public education **prepares students for high-paying careers** and strengthens the local economy.  
-
-### 🏡 **Thriving Communities**  
-- Community schools and education investment **create safer, more engaged neighborhoods**.  
-
-### 🎓 **Education Equity for All**  
-- Every child, **no matter their background**, gets **a fair shot at success**.  
-
----
-
-## **A Future Where Every Child Thrives**  
-
-We have a **responsibility to invest in the next generation**. That starts with fully funding public education, supporting teachers, and **ensuring every student in Georgia’s 5th District has access to a high-quality education**.  
-
-Public education is **not just a policy—it’s a promise**. A promise that every child can succeed, every teacher is valued, and every community benefits from strong schools.  
-
----
-
-### **Join the Fight for Public Education**  
-
-Education should empower—not limit—our children’s futures. **Let’s fight for the schools, teachers, and students that make our communities strong.** 
+**Join us in building an educational system that empowers every child to succeed.**

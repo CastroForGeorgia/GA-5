@@ -2,7 +2,7 @@
 layout: null
 ---
 [
-  {% assign items = site.posts | concat: site.projects %}
+  {% assign items = site.posts | concat: site.policies %}
   {% for item in items %}
     {
       "title"  : "{{ item.title | escape }}",

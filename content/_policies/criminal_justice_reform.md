@@ -1,110 +1,65 @@
 ---
-title: "Criminal Justice Reform"
-description: "Ending mass incarceration, transforming policing, and investing in opportunity-driven communities to create real justice for all."
-date: 2025-01-24 00:00:00 +0000
+title: "Civil Rights and Equality"
+description: "Stopping government overreach, protecting marginalized communities, and ensuring equal rights and justice for all."
+date: 2025-07-11 00:00:00 +0000
 label: "Policy"
-image: "/assets/images/criminal-justice-reform.webp"
+image: "/assets/images/civil-rights-equality.png"
 ---
 
-# **Criminal Justice Reform: Justice Through Opportunity**  
+# Civil Rights and Equality: Justice for Georgia’s 5th District
 
-## **Our System is Broken—We Must Fix It**  
+## Equal Rights Are Non-Negotiable
 
-The criminal justice system in **Georgia’s 5th District** disproportionately harms Black, brown, and low-income communities. It over-polices neighborhoods, locks people away for non-violent offenses, and fails to address the root causes of crime. Instead of rehabilitation and prevention, our system fuels cycles of poverty and incarceration.  
+In Georgia’s 5th Congressional District, we believe that civil rights are non-negotiable. Systemic discrimination, racial injustice, and economic inequality hold back working-class families. We are committed to fighting for legislation that protects and expands civil rights for every resident.
 
-We must **end mass incarceration, transform policing, and invest in opportunity-driven solutions** that build safer, more just communities.  
+We prioritize:
 
----
-
-## **The Reality: Why Reform is Urgent**  
-
-- **🚨 Georgia’s Incarceration Crisis**: Georgia imprisons more people per capita than any other democratic nation.  
-- **⚖️ Racial Disparities**: Black residents are incarcerated at nearly five times the rate of white residents.  
-- **💰 Cash Bail Punishes Poverty**: Low-income individuals remain in jail for minor offenses simply because they can’t afford bail.  
-- **🏥 Mental Health Criminalization**: Too many people are jailed instead of getting the **mental health and addiction treatment** they need.  
-- **🔄 Recidivism Cycle**: Without rehabilitation, housing, and job opportunities, people leaving prison are set up to fail.  
-
-This **does not** make our communities safer—it makes them more unstable.  
+* Strengthening voting rights and protecting democracy.
+* Ending police violence and racial profiling.
+* Ensuring equal pay and economic opportunity for all.
+* Protecting LGBTQ+ and disability rights.
 
 ---
 
-## **A New Vision for Criminal Justice**  
+## Urgent Challenges to Civil Rights and Equality
 
-### 🛑 **1. End Mass Incarceration**  
-- **Decriminalize non-violent offenses** and expunge past records.  
-- **Abolish cash bail** and replace it with risk-based systems that don’t punish poverty.  
-- **Reform sentencing laws** to eliminate mandatory minimums and reduce excessive punishments.  
+### Key Statistics
 
-### 🤝 **2. Transform Policing Practices**  
-- **Community-led policing** that builds trust and reduces harm.  
-- **End racial profiling and discriminatory stop-and-frisk policies**.  
-- **Increase police accountability** with independent oversight and mandatory body cameras.  
+* **Voter Suppression:** Since 2020, Georgia has enacted some of the most restrictive voting laws in the nation, leading to a significant drop in voter registration among minority communities.
+* **Police Brutality:** Black Georgians are **3 times more likely** to be killed by police than their white counterparts.
+* **Wealth Gap:** The median net worth of a white family in Georgia is nearly **8 times** that of a Black family.
+* **LGBTQ+ Discrimination:** Over **60%** of LGBTQ+ Georgians report experiencing discrimination in their daily lives.
 
-### 🛠️ **3. Invest in Alternatives to Incarceration**  
-- Expand **restorative justice programs** to focus on rehabilitation, not punishment.  
-- **Fund mental health and addiction treatment** as alternatives to jail.  
-- **Create youth diversion programs** that offer education, mentorship, and job training instead of incarceration.  
+### What This Means for Georgia's 5th District
 
-### 🌟 **4. Support Reentry and Rehabilitation**  
-- **Ban discrimination against formerly incarcerated individuals** in jobs and housing.  
-- **Fund job training, education, and housing assistance** for returning citizens.  
-- **Expand mental health care and counseling** to prevent recidivism.  
-
-### 🛡️ **5. Address Community Safety Holistically**  
-- **Invest in education, job creation, and housing stability** to prevent crime at its roots.  
-- **Strengthen protections for victims of crime** through legal aid and trauma-informed care.  
-- **Promote gun safety laws** like universal background checks to keep communities safe.  
+These are not just statistics; they are the lived realities of our neighbors. Discriminatory practices in voting, policing, and employment create barriers that prevent families from thriving. When our civil rights are not protected, our communities are less safe, less prosperous, and less free.
 
 ---
 
-## **How We Deliver Justice Through Reform**  
+## Our Civil Rights Plan
 
-✅ **1. Decriminalize and Reform Sentencing**  
-- End harsh penalties for non-violent drug offenses and expunge past convictions.  
-- Eliminate **cash bail** for non-violent offenders.  
+### 1. Strengthen Voting Rights and Democracy
 
-✅ **2. Expand Mental Health and Addiction Services**  
-- Divert individuals in crisis to **treatment, not prison**.  
-- Increase funding for **community-based mental health and rehabilitation centers**.  
+* Pass the **John Lewis Voting Rights Advancement Act** to restore federal oversight and protect minority voters from suppression.
+* Implement automatic voter registration and expand early voting to ensure fair and accessible elections for all.
 
-✅ **3. Overhaul Policing and Accountability**  
-- **Mandatory body cameras** and **independent civilian review boards** for police misconduct.  
-- **Ban racial profiling** and end discriminatory stop-and-frisk policies.  
+### 2. End Police Violence and Racial Profiling
 
-✅ **4. Invest in Opportunity, Not Incarceration**  
-- Fund **job training, education, and housing programs** for returning citizens.  
-- Expand **violence prevention and community-based safety programs**.  
+* Pass the **George Floyd Justice in Policing Act** to increase accountability, ban chokeholds, and end qualified immunity for law enforcement.
+* Demilitarize local police forces and invest in community-based violence prevention programs that address the root causes of crime.
 
-✅ **5. Prevent Crime by Addressing Root Causes**  
-- **Increase funding for youth mentorship, after-school programs, and job training.**  
-- Provide mental health, addiction recovery, and housing stability programs.  
+### 3. Secure Economic and Gender Equality
 
----
+* Pass the **Paycheck Fairness Act** to close the gender and racial wage gaps.
+* Strengthen protections against workplace discrimination and expand opportunities for minority-owned businesses.
 
-## **What This Means for Georgia’s 5th District**  
+### 4. Protect LGBTQ+ and Disability Rights
 
-### ⚖️ **Fair and Equitable Justice**  
-- No one should be jailed for being poor, Black, or struggling with addiction.  
-
-### 💰 **Investing in People, Not Prisons**  
-- Redirect taxpayer money from mass incarceration to education, job training, and mental health care.  
-
-### 🚔 **Trust-Based Public Safety**  
-- Community-led policing makes neighborhoods safer without excessive force or over-policing.  
-
-### 🔄 **Breaking the Cycle**  
-- Job training and housing assistance ensure people leaving prison **have a real second chance**.  
+* Pass the **Equality Act** to guarantee federal protections for LGBTQ+ individuals in housing, employment, and public accommodations.
+* Strengthen the **Americans with Disabilities Act (ADA)** to ensure full accessibility and inclusion in all aspects of public life.
 
 ---
 
-## **A Justice System That Works for the People**  
+## Join the Fight for Justice
 
-We **cannot police our way to safety**. True public safety comes from **investing in people, addressing systemic inequities, and creating opportunities** for all.  
-
-By **ending mass incarceration, reforming policing, and funding prevention**, we will build a **fairer, safer** criminal justice system in **Georgia’s 5th District**—one that values rehabilitation over punishment, and justice over retribution.  
-
----
-
-## **Join Us in the Fight for Justice**  
-
-Stand with us to create a system that **uplifts people instead of locking them away**. **Together, we can end mass incarceration and build a future based on opportunity, fairness, and dignity.**  
+Our campaign is dedicated to building a more just and equitable future for all residents of Georgia's 5th District. By standing together, we can dismantle systemic barriers and ensure that everyone has the opportunity to succeed.

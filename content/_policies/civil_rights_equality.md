@@ -1,7 +1,7 @@
 ---
 title: "Civil Rights and Equality"
 description: "Stopping government overreach, protecting marginalized communities, and ensuring equal rights and justice for all."
-date: 2025-04-06 00:00:00 +0000
+date: 2025-07-11 00:00:00 +0000
 label: "Policy"
 image: "/assets/images/civil-rights-equality.png"
 ---
