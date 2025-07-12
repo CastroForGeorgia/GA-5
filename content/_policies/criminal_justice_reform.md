@@ -1,94 +1,65 @@
 ---
-title: "Criminal Justice Reform"
-description: "Ending mass incarceration, transforming policing, and investing in opportunity-driven communities to create real justice for all."
-date: 2025-01-24 00:00:00 +0000
+title: "Civil Rights and Equality"
+description: "Stopping government overreach, protecting marginalized communities, and ensuring equal rights and justice for all."
+date: 2025-04-06 00:00:00 +0000
 label: "Policy"
-image: "/assets/images/criminal-justice-reform.webp"
+image: "/assets/images/civil-rights-equality.png"
 ---
 
-# Criminal Justice Reform: Justice Through Opportunity
+# Civil Rights and Equality: Justice for Georgia’s 5th District
 
-## Building a Fair and Equitable Justice System
+## Equal Rights Are Non-Negotiable
 
-In Georgia’s 5th Congressional District, our criminal justice system must be reformed to emphasize rehabilitation, fairness, and community safety. We commit to ending mass incarceration, transforming policing, and investing in programs that address the root causes of crime.
+In Georgia’s 5th Congressional District, we believe that civil rights are non-negotiable. Systemic discrimination, racial injustice, and economic inequality hold back working-class families. We are committed to fighting for legislation that protects and expands civil rights for every resident.
 
 We prioritize:
 
-* Ending mass incarceration and excessive sentencing.
-* Reforming policing practices and increasing accountability.
-* Investing in community-based alternatives and rehabilitation programs.
-* Ensuring supportive reentry programs for formerly incarcerated individuals.
+* Strengthening voting rights and protecting democracy.
+* Ending police violence and racial profiling.
+* Ensuring equal pay and economic opportunity for all.
+* Protecting LGBTQ+ and disability rights.
 
 ---
 
-## Urgent Challenges Facing Our Justice System
+## Urgent Challenges to Civil Rights and Equality
 
-### Mass Incarceration
+### Key Statistics
 
-* Georgia has one of the highest incarceration rates globally, disproportionately impacting Black and brown communities.
+* **Voter Suppression:** Since 2020, Georgia has enacted some of the most restrictive voting laws in the nation, leading to a significant drop in voter registration among minority communities.
+* **Police Brutality:** Black Georgians are **3 times more likely** to be killed by police than their white counterparts.
+* **Wealth Gap:** The median net worth of a white family in Georgia is nearly **8 times** that of a Black family.
+* **LGBTQ+ Discrimination:** Over **60%** of LGBTQ+ Georgians report experiencing discrimination in their daily lives.
 
-### Racial and Economic Disparities
+### What This Means for Georgia's 5th District
 
-* Systemic biases result in higher incarceration rates for communities of color and economically disadvantaged groups.
-
-### Unfair Cash Bail System
-
-* Individuals remain incarcerated pre-trial solely due to their inability to afford bail, punishing poverty rather than criminal behavior.
-
-### Mental Health Criminalization
-
-* Lack of mental health services forces incarceration rather than providing essential treatment.
-
-### Recidivism Due to Lack of Support
-
-* Formerly incarcerated individuals lack necessary resources and opportunities for successful reintegration into society.
+These are not just statistics; they are the lived realities of our neighbors. Discriminatory practices in voting, policing, and employment create barriers that prevent families from thriving. When our civil rights are not protected, our communities are less safe, less prosperous, and less free.
 
 ---
 
-## Comprehensive Reform Plan
+## Our Civil Rights Plan
 
-### 1. End Mass Incarceration
+### 1. Strengthen Voting Rights and Democracy
 
-* Decriminalize non-violent offenses and expunge related records.
-* Eliminate cash bail and adopt fair, risk-based systems.
-* Reform sentencing laws to remove mandatory minimums and reduce harsh penalties.
+* Pass the **John Lewis Voting Rights Advancement Act** to restore federal oversight and protect minority voters from suppression.
+* Implement automatic voter registration and expand early voting to ensure fair and accessible elections for all.
 
-### 2. Transform Policing and Ensure Accountability
+### 2. End Police Violence and Racial Profiling
 
-* Promote community-led policing models.
-* Ban racial profiling and discriminatory stop-and-frisk practices.
-* Increase transparency and accountability through mandatory body cameras and independent oversight boards.
+* Pass the **George Floyd Justice in Policing Act** to increase accountability, ban chokeholds, and end qualified immunity for law enforcement.
+* Demilitarize local police forces and invest in community-based violence prevention programs that address the root causes of crime.
 
-### 3. Invest in Rehabilitation and Community-Based Alternatives
+### 3. Secure Economic and Gender Equality
 
-* Expand restorative justice initiatives and youth diversion programs.
-* Increase funding for community-based mental health and addiction treatment programs.
+* Pass the **Paycheck Fairness Act** to close the gender and racial wage gaps.
+* Strengthen protections against workplace discrimination and expand opportunities for minority-owned businesses.
 
-### 4. Support Effective Reentry Programs
+### 4. Protect LGBTQ+ and Disability Rights
 
-* Provide job training, education, and housing assistance for returning citizens.
-* Prohibit discrimination against formerly incarcerated individuals in employment and housing.
-* Enhance mental health services to prevent recidivism.
-
-### 5. Promote Holistic Community Safety
-
-* Address root causes of crime through investments in education, job creation, and housing stability.
-* Strengthen victim support services and trauma-informed care.
-* Implement sensible gun safety measures, including universal background checks.
+* Pass the **Equality Act** to guarantee federal protections for LGBTQ+ individuals in housing, employment, and public accommodations.
+* Strengthen the **Americans with Disabilities Act (ADA)** to ensure full accessibility and inclusion in all aspects of public life.
 
 ---
 
-## Benefits for Georgia’s 5th District
+## Join the Fight for Justice
 
-* **Equitable Justice:** Fair treatment and reduced incarceration rates for marginalized communities.
-* **Safer Communities:** Trust-based, community-led policing improves safety and cooperation.
-* **Economic Empowerment:** Redirect funds from incarceration toward education, employment, and social services.
-* **Reduced Recidivism:** Effective support programs enable successful community reintegration.
-
----
-
-## Our Commitment
-
-True justice requires addressing systemic inequities and providing meaningful opportunities for everyone in our community. We pledge to create a criminal justice system that prioritizes fairness, rehabilitation, and community well-being.
-
-**Join us in shaping a future of justice, equity, and opportunity for all.**
+Our campaign is dedicated to building a more just and equitable future for all residents of Georgia's 5th District. By standing together, we can dismantle systemic barriers and ensure that everyone has the opportunity to succeed.
