@@ -1,7 +1,7 @@
 ---
 title: "Housing"
 description: "Affordable, sustainable homes and creating good-paying jobs without displacement or environmental harm."
-date: 2025-02-19 00:00:00 +0000
+date: 2025-07-11 00:00:00 +0000
 label: "Policy"
 image: "/assets/images/housing-policy-header.png"
 north_star: true
