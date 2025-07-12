@@ -6,105 +6,89 @@ label: "Policy"
 image: "/assets/images/criminal-justice-reform.webp"
 ---
 
-# **Criminal Justice Reform: Justice Through Opportunity**  
+# Criminal Justice Reform: Justice Through Opportunity
 
-## **Our System is Broken—We Must Fix It**  
+## Building a Fair and Equitable Justice System
 
-The criminal justice system in **Georgia’s 5th District** disproportionately harms Black, brown, and low-income communities. It over-polices neighborhoods, locks people away for non-violent offenses, and fails to address the root causes of crime. Instead of rehabilitation and prevention, our system fuels cycles of poverty and incarceration.  
+In Georgia’s 5th Congressional District, our criminal justice system must be reformed to emphasize rehabilitation, fairness, and community safety. We commit to ending mass incarceration, transforming policing, and investing in programs that address the root causes of crime.
 
-We must **end mass incarceration, transform policing, and invest in opportunity-driven solutions** that build safer, more just communities.  
+We prioritize:
 
----
-
-## **The Reality: Why Reform is Urgent**  
-
-- **🚨 Georgia’s Incarceration Crisis**: Georgia imprisons more people per capita than any other democratic nation.  
-- **⚖️ Racial Disparities**: Black residents are incarcerated at nearly five times the rate of white residents.  
-- **💰 Cash Bail Punishes Poverty**: Low-income individuals remain in jail for minor offenses simply because they can’t afford bail.  
-- **🏥 Mental Health Criminalization**: Too many people are jailed instead of getting the **mental health and addiction treatment** they need.  
-- **🔄 Recidivism Cycle**: Without rehabilitation, housing, and job opportunities, people leaving prison are set up to fail.  
-
-This **does not** make our communities safer—it makes them more unstable.  
+* Ending mass incarceration and excessive sentencing.
+* Reforming policing practices and increasing accountability.
+* Investing in community-based alternatives and rehabilitation programs.
+* Ensuring supportive reentry programs for formerly incarcerated individuals.
 
 ---
 
-## **A New Vision for Criminal Justice**  
+## Urgent Challenges Facing Our Justice System
 
-### 🛑 **1. End Mass Incarceration**  
-- **Decriminalize non-violent offenses** and expunge past records.  
-- **Abolish cash bail** and replace it with risk-based systems that don’t punish poverty.  
-- **Reform sentencing laws** to eliminate mandatory minimums and reduce excessive punishments.  
+### Mass Incarceration
 
-### 🤝 **2. Transform Policing Practices**  
-- **Community-led policing** that builds trust and reduces harm.  
-- **End racial profiling and discriminatory stop-and-frisk policies**.  
-- **Increase police accountability** with independent oversight and mandatory body cameras.  
+* Georgia has one of the highest incarceration rates globally, disproportionately impacting Black and brown communities.
 
-### 🛠️ **3. Invest in Alternatives to Incarceration**  
-- Expand **restorative justice programs** to focus on rehabilitation, not punishment.  
-- **Fund mental health and addiction treatment** as alternatives to jail.  
-- **Create youth diversion programs** that offer education, mentorship, and job training instead of incarceration.  
+### Racial and Economic Disparities
 
-### 🌟 **4. Support Reentry and Rehabilitation**  
-- **Ban discrimination against formerly incarcerated individuals** in jobs and housing.  
-- **Fund job training, education, and housing assistance** for returning citizens.  
-- **Expand mental health care and counseling** to prevent recidivism.  
+* Systemic biases result in higher incarceration rates for communities of color and economically disadvantaged groups.
 
-### 🛡️ **5. Address Community Safety Holistically**  
-- **Invest in education, job creation, and housing stability** to prevent crime at its roots.  
-- **Strengthen protections for victims of crime** through legal aid and trauma-informed care.  
-- **Promote gun safety laws** like universal background checks to keep communities safe.  
+### Unfair Cash Bail System
+
+* Individuals remain incarcerated pre-trial solely due to their inability to afford bail, punishing poverty rather than criminal behavior.
+
+### Mental Health Criminalization
+
+* Lack of mental health services forces incarceration rather than providing essential treatment.
+
+### Recidivism Due to Lack of Support
+
+* Formerly incarcerated individuals lack necessary resources and opportunities for successful reintegration into society.
 
 ---
 
-## **How We Deliver Justice Through Reform**  
+## Comprehensive Reform Plan
 
-✅ **1. Decriminalize and Reform Sentencing**  
-- End harsh penalties for non-violent drug offenses and expunge past convictions.  
-- Eliminate **cash bail** for non-violent offenders.  
+### 1. End Mass Incarceration
 
-✅ **2. Expand Mental Health and Addiction Services**  
-- Divert individuals in crisis to **treatment, not prison**.  
-- Increase funding for **community-based mental health and rehabilitation centers**.  
+* Decriminalize non-violent offenses and expunge related records.
+* Eliminate cash bail and adopt fair, risk-based systems.
+* Reform sentencing laws to remove mandatory minimums and reduce harsh penalties.
 
-✅ **3. Overhaul Policing and Accountability**  
-- **Mandatory body cameras** and **independent civilian review boards** for police misconduct.  
-- **Ban racial profiling** and end discriminatory stop-and-frisk policies.  
+### 2. Transform Policing and Ensure Accountability
 
-✅ **4. Invest in Opportunity, Not Incarceration**  
-- Fund **job training, education, and housing programs** for returning citizens.  
-- Expand **violence prevention and community-based safety programs**.  
+* Promote community-led policing models.
+* Ban racial profiling and discriminatory stop-and-frisk practices.
+* Increase transparency and accountability through mandatory body cameras and independent oversight boards.
 
-✅ **5. Prevent Crime by Addressing Root Causes**  
-- **Increase funding for youth mentorship, after-school programs, and job training.**  
-- Provide mental health, addiction recovery, and housing stability programs.  
+### 3. Invest in Rehabilitation and Community-Based Alternatives
 
----
+* Expand restorative justice initiatives and youth diversion programs.
+* Increase funding for community-based mental health and addiction treatment programs.
 
-## **What This Means for Georgia’s 5th District**  
+### 4. Support Effective Reentry Programs
 
-### ⚖️ **Fair and Equitable Justice**  
-- No one should be jailed for being poor, Black, or struggling with addiction.  
+* Provide job training, education, and housing assistance for returning citizens.
+* Prohibit discrimination against formerly incarcerated individuals in employment and housing.
+* Enhance mental health services to prevent recidivism.
 
-### 💰 **Investing in People, Not Prisons**  
-- Redirect taxpayer money from mass incarceration to education, job training, and mental health care.  
+### 5. Promote Holistic Community Safety
 
-### 🚔 **Trust-Based Public Safety**  
-- Community-led policing makes neighborhoods safer without excessive force or over-policing.  
-
-### 🔄 **Breaking the Cycle**  
-- Job training and housing assistance ensure people leaving prison **have a real second chance**.  
+* Address root causes of crime through investments in education, job creation, and housing stability.
+* Strengthen victim support services and trauma-informed care.
+* Implement sensible gun safety measures, including universal background checks.
 
 ---
 
-## **A Justice System That Works for the People**  
+## Benefits for Georgia’s 5th District
 
-We **cannot police our way to safety**. True public safety comes from **investing in people, addressing systemic inequities, and creating opportunities** for all.  
-
-By **ending mass incarceration, reforming policing, and funding prevention**, we will build a **fairer, safer** criminal justice system in **Georgia’s 5th District**—one that values rehabilitation over punishment, and justice over retribution.  
+* **Equitable Justice:** Fair treatment and reduced incarceration rates for marginalized communities.
+* **Safer Communities:** Trust-based, community-led policing improves safety and cooperation.
+* **Economic Empowerment:** Redirect funds from incarceration toward education, employment, and social services.
+* **Reduced Recidivism:** Effective support programs enable successful community reintegration.
 
 ---
 
-## **Join Us in the Fight for Justice**  
+## Our Commitment
 
-Stand with us to create a system that **uplifts people instead of locking them away**. **Together, we can end mass incarceration and build a future based on opportunity, fairness, and dignity.**  
+True justice requires addressing systemic inequities and providing meaningful opportunities for everyone in our community. We pledge to create a criminal justice system that prioritizes fairness, rehabilitation, and community well-being.
+
+**Join us in shaping a future of justice, equity, and opportunity for all.**
