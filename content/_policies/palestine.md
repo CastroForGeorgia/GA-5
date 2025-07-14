@@ -1,7 +1,7 @@
 ---
 title: "Free Palestine"
 description: "Fighting for peace, justice, and human rights, and standing in unwavering opposition to genocide, apartheid, and Jim Crow-like oppression."
-date: 2025-07-12 00:00:00 +0000
+date: 2025-06-12 00:00:00 +0000
 label: "Policy"
 image: "/assets/images/open-government-header.webp"
 ---
