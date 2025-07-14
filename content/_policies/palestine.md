@@ -10,7 +10,7 @@ image: "/assets/images/open-government-header.webp"
 
 ## Standing with People, Not Governments
 
-Our campaign is founded on the unwavering principle that governments often do not represent the will of their people. Just as the current administration does not represent true American values, the governments of warring nations do not speak for the citizens who suffer under their rule. Our solidarity must be with the people, especially when their governments impose systems of oppression that echo the darkest parts of our own history, like [Jim Crow](https://youtu.be/ginvzPX3WJQ?feature=shared&t=43).
+Our campaign is founded on the unwavering principle that governments often do not represent the will of their people. Just as the current administration does not represent true American values, the governments of warring nations do not speak for the citizens who suffer under their rule. Our solidarity must be with the people, especially when their governments impose systems of oppression that echo the darkest parts of our own history, like [Jim Crow](https://youtu.be/ginvzPX3WJQ?feature=shared&t=43){:target="_blank" rel="noopener"}.
 
 When it comes to the genocide happening in Gaza, our position is clear: we are pro-humanity, period. This is not an abstract issue; it is a personal one, rooted in family and the fundamental belief that all people deserve dignity and freedom. We refuse to stand by while human rights are violated and will always stand with oppressed people everywhere.
 
@@ -19,7 +19,7 @@ We prioritize:
 * An immediate end to the genocide and apartheid policies victimizing the Palestinian people.
 * Standing in solidarity with the people of Palestine, recognizing that all who suffer under authoritarian regimes deserve support.
 * Rejecting campaign funding from any government or entity complicit in genocide.
-* Upholding civil rights for all and fighting systems of oppression, whether they are called [Jim Crow or apartheid](https://youtu.be/ginvzPX3WJQ?feature=shared&t=43).
+* Upholding civil rights for all and fighting systems of oppression, whether they are called [Jim Crow or apartheid](https://youtu.be/ginvzPX3WJQ?feature=shared&t=43){:target="_blank" rel="noopener"}.
 
 ---
 
@@ -51,7 +51,7 @@ I don’t trust any politician to protect my family if they are taking money fro
 
 ### 4. Supporting Humanitarian Efforts
 
-Our solidarity extends beyond words. We actively support organizations providing essential resources and political education to Palestinians, such as the Refaat Alareer Mobile Library. We believe in empowering communities and fostering hope even in the most difficult of times.
+Our solidarity extends beyond words. We actively support organizations providing essential resources and political education to Palestinians, such as the [Refaat Alareer Mobile Library](https://www.refaatlibrary.com/){:target="_blank" rel="noopener"}. We believe in empowering communities and fostering hope even in the most difficult of times.
 
 ---
 
