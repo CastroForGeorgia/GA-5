@@ -21,7 +21,7 @@ Our entire campaign is organized on **Discord**. It's our real-time hub for all 
 
 ---
 
-## 🌟 Our Vision: Three North Stars
+## 🌟 Our Vision: Three North Stars {#vision}
 
 Our campaign is a movement to build a future where every working family in Georgia's 5th District thrives. Our vision is built around three core "North Stars":
 
@@ -31,7 +31,7 @@ Our campaign is a movement to build a future where every working family in Georg
 
 ---
 
-## 🚀 Quick-Start Guide: Join the Campaign in 5 Minutes
+## 🚀 Quick-Start Guide: Join the Campaign in 5 Minutes {#quick-start}
 
 Getting involved is quick and easy, and no special tech skills are required. Follow these three steps to join the team!
 
@@ -48,7 +48,7 @@ That's it—you're now officially part of the team! Our onboarding team will rea
 
 ---
 
-## 🎯 Ways You Can Help Today
+## 🎯 Ways You Can Help Today {#ways-to-help}
 
 No contribution is too small. Every idea and every hour of your time makes a difference. All coordination for these activities happens in our Discord server.
 
@@ -84,7 +84,7 @@ You don't need to be online to make a meaningful impact.
 
 ---
 
-## 🚦 Rules of the Road: Our Community Guide
+## 🚦 Rules of the Road: Our Community Guide {#community-rules}
 
 To create a safe, respectful, and collaborative environment, we've established these guidelines for everyone participating.
 
@@ -109,7 +109,7 @@ We want our work to be shared and remixed while respecting our brand.
 
 ---
 
-### **💡 Not Sure Where to Begin?**
+### **💡 Not Sure Where to Begin?** {#getting-started}
 Head over to the **`#introductions`** channel on our Discord and simply say hello. We'll help you find the perfect spot. You belong here. Let's get to work.
 
 **Questions or need immediate help?**
@@ -118,7 +118,7 @@ Head over to the **`#introductions`** channel on our Discord and simply say hell
 
 ***
 
-### **Campaign Glossary 📚**
+### **Campaign Glossary 📚** {#campaign-glossary}
 * **Open Source:** Sharing ideas, plans, and work openly so anyone can see, use, and improve them.
 * **Repository (Repo):** Our online folder where we store all campaign materials.
 * **Issue:** A public note or task that identifies something to fix, improve, or discuss.
