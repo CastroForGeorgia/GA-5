@@ -7,63 +7,57 @@ permalink: /campaign/welcome-hub/about-the-campaign/faq/
 
 # Frequently Asked Questions (FAQ) 🤔
 
-Here are some common questions we've heard about our campaign and how we're using open-source practices. Don't see your question? Feel free to ask in our [Discussions](../../discussions)!
+Here are some common questions about our campaign. The most important thing to know is that **our team collaborates in real-time on Discord.**
 
-## 📌 General Questions
+Don't see your question answered? Join our [**Discord Community**](https://discord.gg/ep6dBqPjhG) and ask us in the `#help-desk` channel\!
 
-### **What exactly is an open-source campaign?**
+## 📌 Participation & Community
 
-Think of it like a neighborhood potluck—everyone contributes openly, ideas are shared freely, and the whole community benefits. Our campaign works similarly: all plans, policies, and materials are open for everyone to see, discuss, and improve.
+### **What is the main hub for the campaign?**
 
-### **Why run an open-source campaign?**
-
-We believe transparency builds trust and leads to better solutions. When everyone can contribute, we tap into our collective wisdom, creativity, and energy, making our campaign stronger and more reflective of the community's needs.
-
-## 📌 Participation & Contributions
-
-### **Do I need technical skills or coding experience to participate?**
-
-Not at all! Most contributions involve simple things like suggesting ideas, reviewing materials, or improving text. We welcome everyone's unique skills and perspectives.
+Our campaign's community lives on **Discord**. It's where we chat, organize, assign tasks, and welcome new volunteers. While this GitHub repository acts as our public bulletin board, all day-to-day collaboration happens on Discord.
 
 ### **How can I make my first contribution?**
 
-You can start small: fix a typo, join a discussion, or log a quick idea or issue. Check out our [Quick-Start Guide](../get-involved/quick-start-guide.md) for easy steps.
+The best way to start is to join our [**Discord Server**](https://discord.gg/ep6dBqPjhG)\! Once you're in, introduce yourself in the `#introductions` channel, and our community mentors will help you find a task that fits your skills and interests.
+
+### **Do I need technical skills or special experience to participate?**
+
+Not at all. Most of our needs are non-technical. We need help with community organizing, design, policy research, and much more. If you know how to use a chat app like Discord, you have all the technical skills you need to get started.
 
 ### **Will my name or personal information be public?**
 
-Only your GitHub username will appear publicly. You can choose a username that keeps your identity private if you prefer. We never share personal voter or community member information publicly.
+Your public-facing identity is limited to the username you choose on GitHub and Discord. You are free to use a pseudonym if you prefer privacy. We have a strict policy against sharing any private community member or voter data publicly.
 
-## 📌 Privacy & Safety
+## 📌 Open Source & The Campaign
+
+### **What exactly is an "open-source campaign"?**
+
+It means we operate with transparency. Our campaign's official policies, task lists, and plans are stored publicly here on GitHub for anyone to see. This builds trust and allows the community to see exactly what we're working on.
+
+### **What's GitHub and why do you use it?**
+
+GitHub is an online platform that we use as our campaign's public "bulletin board" or filing cabinet. It helps us transparently display our official documents, track tasks (`Issues`), and formally accept changes (`Pull Requests`) to our materials. All the active *work* and *discussion* happens on Discord.
+
+### **What are Issues and Pull Requests?**
+
+  * **Issue:** A task or to-do item listed on our public GitHub page. Think of it as a card on a "Help Wanted" board. You can find an issue here and then head to Discord to work on it.
+  * **Pull Request (PR):** A formal way to submit completed work, like a finished flyer design or a drafted policy document, to be approved and added to our official campaign materials.
+
+## 📌 Safety & Support
 
 ### **What about voter data and privacy?**
 
-We take privacy very seriously. No personal voter data (names, addresses, phone numbers) is ever shared openly. If an issue or task involves personal details, it's handled securely through our internal systems.
+We take privacy very seriously. No personal voter data (names, addresses, phone numbers) is ever stored or shared on GitHub. This information is handled securely by our core team using internal, protected systems.
 
 ### **How do you handle disagreements or conflicts?**
 
-We foster respectful, open discussions. If disagreements arise, we discuss transparently to find common ground. Our [Governance Model](./governance-model.md) explains how conflicts are resolved fairly and respectfully.
-
-## 📌 Using GitHub
-
-### **What's GitHub and why use it?**
-
-GitHub is an online tool originally designed for software developers to collaborate. We use it because it helps us manage documents, tasks, and discussions transparently, allowing anyone to easily contribute and follow the campaign's progress.
-
-### **What's an Issue, Pull Request, or Merge?**
-
-* **Issue:** Think of it as a note pinned on a community board—a task, suggestion, or improvement.
-* **Pull Request (PR):** A formal suggestion for changes that others review before approval.
-* **Merge:** Accepting someone's suggestion into our official materials.
-
-## 📌 Getting More Help
+We are committed to respectful, open discussion, which takes place on Discord. If disagreements arise, our Maintainers and Community Mentors help mediate to find common ground, following the conflict resolution process laid out in our Governance Model.
 
 ### **I'm stuck or confused—where do I go for help?**
 
-Reach out anytime:
+Join our [**Discord Server**](https://discord.gg/ep6dBqPjhG)\! We have dedicated channels like `#help-desk` and friendly Community Mentors ready to answer your questions and guide you through the process.
 
-* **Discussions:** Post questions and someone from our team will help.
-* **Community Mentor:** Connect with a mentor who can guide you personally.
-
-Your participation helps build a fairer, more transparent, and responsive campaign for Georgia's 5th District. Thanks for joining us!
+Your participation helps build a fairer, more transparent, and responsive campaign for Georgia's 5th District. Thanks for joining us\!
 
 🌱 **Castro for Georgia Team**
