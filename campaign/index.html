@@ -8,9 +8,6 @@ image: /assets/images/agi-header.png
 
 {% assign campaign_readme = site.campaign | where: "path", "_campaign/README.md" | first %}
 
-<!-- Campaign Breadcrumbs & Navigation -->
-{% include campaign-nav.html %}
-
 <!-- Hero Section -->
 <section class="relative bg-gradient-to-br from-campaign-primary via-campaign-primary/90 to-campaign-secondary py-16 md:py-24 overflow-hidden">
   <img class="absolute inset-0 w-full h-full object-cover opacity-30" src="{{ page.image }}" alt="" loading="lazy">
@@ -31,18 +28,6 @@ image: /assets/images/agi-header.png
   <div class="container mx-auto px-4">
     <div class="prose prose-lg prose-gray max-w-none mb-12">
       {{ campaign_readme.content }}
-    </div>
-
-    <!-- Campaign Hubs Grid -->
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-      {% assign hub_slugs = "welcome-hub,campaign-hq,neighborhoods,community-lounge" | split: "," %}
-      {% for slug in hub_slugs %}
-        {% assign hub_doc = site.campaign | where_exp: "d", "d.path contains 'README'" | where_exp: "d", "d.path contains slug" | first %}
-        <a href="/campaign/{{ slug }}/" class="group block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-200 p-6 border border-gray-200 hover:border-campaign-primary no-underline">
-          <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-campaign-primary transition-colors">{{ hub_doc.title }}</h3>
-          <p class="text-gray-600 text-sm">{{ hub_doc.description }}</p>
-        </a>
-      {% endfor %}
     </div>
   </div>
 </article>
