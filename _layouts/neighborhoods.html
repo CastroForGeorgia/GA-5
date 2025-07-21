@@ -746,14 +746,14 @@ description: "Building the first community-governed campaign infrastructure — 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     // --- DATA SOURCES ---
-    // GeoJSON source for All Georgia Congressional Districts (not just GA-05)
-    const districtDataSourceUrl = 'https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/USA_119th_Congressional_Districts_no_territories/FeatureServer/0/query?where=STATE_NAME=%27Georgia%27&outFields=*&f=geojson';
+    // Use local GeoJSON data for GA-05 district
+    const districtDataSourceUrl = '{{ "/assets/data/district5_filtered.geojson" | relative_url }}';
     
     // Use local GeoJSON data instead of external API
     const neighborhoodGeoJsonUrl = '{{ "/assets/data/neighborhoods.geojson" | relative_url }}';
     
     // Fallback to external if local not available
-    const neighborhoodDataSourceUrl = neighborhoodGeoJsonUrl || 'https://opendata.arcgis.com/datasets/385b359599554d9ca2697c1b8bde0455_25.geojson';
+    const neighborhoodDataSourceUrl = neighborhoodGeoJsonUrl
 
     // --- CAMPAIGN DESIGN TOKENS ---
     const campaignPrimary = '#2E8B57';   // Vibrant Verde
