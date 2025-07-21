@@ -43,7 +43,7 @@ data-pipelines/
 * Do **not** commit raw campaign data unless it’s redacted or aggregated
 * Do **not** scrape or pull data without clear licensing or terms of use
 
-If you're not sure, ask in [Discussions](https://github.com/CastroForGeorgia/campaign/discussions/categories/tech-and-data)
+If you're not sure, ask in [Discussions](https://discord.gg/ep6dBqPjhG/categories/tech-and-data)
 
 ---
 

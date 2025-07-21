@@ -158,7 +158,7 @@ Use our [Quick Start Guide](../get-involved/quick-start-guide.md), or email your
 
 ## 📞 Need Help?
 
-* Ask for feedback in the [Help Desk Discussion](https://github.com/CastroForGeorgia/campaign/discussions/categories/help-desk).
+* Ask for feedback in the [Help Desk Discussion](https://discord.gg/ep6dBqPjhG/categories/help-desk).
 * Join office hours for hands-on support from the organizing team.
 
 ---

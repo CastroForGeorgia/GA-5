@@ -53,7 +53,7 @@ Each folder contains:
 - 📝 [Draft Template](./_templates/DRAFT_TEMPLATE.md)  
 - ✅ [Review Checklist](./_templates/REVIEW_CHECKLIST.md)  
 - 📂 `data/` folders for each policy area  
-- 💬 Join our [Policy Discussions](https://github.com/CastroForGeorgia/campaign/discussions)
+- 💬 Join our [Policy Discussions](https://discord.gg/ep6dBqPjhG)
 
 ---
 
@@ -69,7 +69,7 @@ Everyone.
 ## 🗣️ Feedback or Questions?
 
 - Open a new Issue labeled `policy-feedback`
-- Ask in the [Help Desk Discussion](https://github.com/CastroForGeorgia/campaign/discussions/categories/help-desk)
+- Ask in the [Help Desk Discussion](https://discord.gg/ep6dBqPjhG/categories/help-desk)
 - Reach out to `@policy-leads` in your PR or Discussion thread
 
 ---

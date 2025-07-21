@@ -72,7 +72,7 @@ dashboards/
 
 ## 📣 Want Help?
 
-Ask in the [#tech-and-data Discussions](https://github.com/CastroForGeorgia/campaign/discussions)
+Ask in the [#tech-and-data Discussions](https://discord.gg/ep6dBqPjhG)
 Or join a weekly working session (calendar link coming soon)
 
 ---

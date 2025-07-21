@@ -5,9 +5,6 @@ layout: default
 <!-- Skip Link for accessibility -->
 <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-white text-blue-700 px-4 py-2 rounded-md shadow-lg z-50">Skip to content</a>
 
-<!-- Campaign Breadcrumbs & Navigation -->
-{% include campaign-nav.html section="welcome-hub" current_page=page.title %}
-
 <!-- Welcome Hub Page Layout -->
 {% comment %}
 This layout renders any markdown document located inside content/_campaign/welcome-hub/.
@@ -76,7 +73,7 @@ and a styled main content area. Adjust colors and icons as needed to fit brand g
     <p class="text-lg md:text-xl text-white/90 mb-10">Jump into our introductions thread or browse beginner-friendly issues to start your journey.</p>
 
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="https://github.com/CastroForGeorgia/campaign/discussions/categories/introductions" target="_blank" rel="noopener" class="btn btn-cta inline-flex items-center gap-2">
+      <a href="https://discord.gg/ep6dBqPjhG/categories/introductions" target="_blank" rel="noopener" class="btn btn-cta inline-flex items-center gap-2">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
         Introduce Yourself
       </a>

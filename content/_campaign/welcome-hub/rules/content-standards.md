@@ -92,7 +92,7 @@ To support remixing, reuse, and shared organizing power:
 
 ## 🧭 Need Help?
 
-- Ask in the [Design & Content Discussion](https://github.com/CastroForGeorgia/campaign/discussions/categories/help-desk).
+- Ask in the [Design & Content Discussion](https://discord.gg/ep6dBqPjhG/categories/help-desk).
 - Tag `@design-leads` on your Pull Request if you want content review.
 
 ---

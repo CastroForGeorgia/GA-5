@@ -51,7 +51,7 @@ This guide outlines **what should never be shared publicly** on GitHub.
 - Reference the internal ticket number in GitHub (e.g., `Request #204`).
 - Never upload sensitive PDFs or photos directly to the repo.
 
-If you're unsure, tag a moderator or ask in the [Help Desk Discussion](https://github.com/CastroForGeorgia/campaign/discussions/categories/help-desk).
+If you're unsure, tag a moderator or ask in the [Help Desk Discussion](https://discord.gg/ep6dBqPjhG/categories/help-desk).
 
 ---
 

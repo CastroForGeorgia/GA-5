@@ -51,7 +51,7 @@ Each subfolder includes a `README.md` with clear guidance and ideas for organizi
 
 ### Step 2: Start a Neighborhood Discussion Thread
 
-* Navigate to our [GitHub Discussions](https://github.com/CastroForGeorgia/campaign/discussions).
+* Navigate to our [GitHub Discussions](https://discord.gg/ep6dBqPjhG).
 * Create a new discussion titled: "\[Your Neighborhood] – Welcome & Introductions."
 * Pin this discussion to the top for easy access by neighbors.
 
@@ -130,7 +130,7 @@ Absolutely. Open an issue labeled `event-support` anytime.
 
 ## 📞 Support & Resources
 
-* Post questions or ask for support in the [Help Desk Discussion](https://github.com/CastroForGeorgia/campaign/discussions/categories/help-desk).
+* Post questions or ask for support in the [Help Desk Discussion](https://discord.gg/ep6dBqPjhG/categories/help-desk).
 * Join weekly office hours via Zoom to collaborate directly with campaign maintainers and other neighborhood leads.
 
 ---

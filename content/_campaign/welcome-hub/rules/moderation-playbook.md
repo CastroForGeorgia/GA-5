@@ -59,7 +59,7 @@ You can report violations in any of these ways:
 
 - Tag `@moderators` in an Issue or Discussion (public, for minor issues)
 - Email **conduct@castroforgeorgia.com** (private, for serious cases)
-- Use the [Help Desk Discussion](https://github.com/CastroForGeorgia/campaign/discussions/categories/help-desk) to ask questions or seek support
+- Use the [Help Desk Discussion](https://discord.gg/ep6dBqPjhG/categories/help-desk) to ask questions or seek support
 
 All reports are handled **confidentially** and **as promptly as possible**.
 

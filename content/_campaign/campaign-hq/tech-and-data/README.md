@@ -55,7 +55,7 @@ We treat civic data as sacred:
 
 ## 📣 Get Involved
 
-- Open a [Discussion](https://github.com/CastroForGeorgia/campaign/discussions) in the `tech-and-data` category
+- Open a [Discussion](https://discord.gg/ep6dBqPjhG) in the `tech-and-data` category
 - Join a weekly Zoom co-working session (calendar link coming soon)
 - Propose new tools using an Issue template
 

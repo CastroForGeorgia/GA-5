@@ -143,7 +143,7 @@ Definitely! Many tasks like writing a single social media post or reviewing cont
 
 ## 🚨 Need Support or Have Questions?
 
-* Visit our [Help Desk Discussion](https://github.com/CastroForGeorgia/campaign/discussions/categories/help-desk).
+* Visit our [Help Desk Discussion](https://discord.gg/ep6dBqPjhG/categories/help-desk).
 * Attend our weekly Zoom office hours for personalized guidance.
 
 ---

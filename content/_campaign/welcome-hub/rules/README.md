@@ -27,7 +27,7 @@ Be honest about your intentions. Share feedback that builds. Don't derail discus
 We use the [Contributor Covenant v2.1](./code-of-conduct.md). Harassment, hate, or abuse are not tolerated.
 
 ### 5. Ask When in Doubt  
-Use the [Help Desk Discussion](https://github.com/CastroForGeorgia/campaign/discussions/categories/help-desk) for questions. Tag `@moderators` to flag issues.
+Use the [Help Desk Discussion](https://discord.gg/ep6dBqPjhG/categories/help-desk) for questions. Tag `@moderators` to flag issues.
 
 ---
 

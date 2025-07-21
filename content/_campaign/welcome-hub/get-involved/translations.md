@@ -124,4 +124,4 @@ Thank you for making our campaign accessible to everyone—your work helps build
 
 ## ❓ Need Help?
 
-Ask questions in our [Help Desk Discussion](https://github.com/CastroForGeorgia/campaign/discussions/categories/help-desk), or join weekly office hours to get hands-on guidance.
+Ask questions in our [Help Desk Discussion](https://discord.gg/ep6dBqPjhG/categories/help-desk), or join weekly office hours to get hands-on guidance.

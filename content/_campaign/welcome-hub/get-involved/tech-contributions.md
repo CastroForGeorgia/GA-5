@@ -142,7 +142,7 @@ We prioritize community safety and data privacy:
 
 ## 📞 Need Support?
 
-* Post in our [Help Desk Discussion](https://github.com/CastroForGeorgia/campaign/discussions/categories/help-desk).
+* Post in our [Help Desk Discussion](https://discord.gg/ep6dBqPjhG/categories/help-desk).
 * Join weekly Zoom office hours to collaborate directly with maintainers.
 
 ---

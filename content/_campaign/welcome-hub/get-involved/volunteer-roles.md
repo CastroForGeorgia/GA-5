@@ -9,7 +9,7 @@ permalink: /campaign/welcome-hub/get-involved/volunteer-roles/
 
 Welcome! Our campaign is powered by volunteers like **you**, working together openly. Whether you're knocking on doors, designing graphics, coding apps, or translating materials, there's a place here for everyone.
 
-> 📌 **Tip**: All roles interact transparently through our [GitHub Discussions](https://github.com/CastroForGeorgia/campaign/discussions), [Issues](https://github.com/CastroForGeorgia/campaign/issues), and [Project boards](https://github.com/orgs/CastroForGeorgia/projects).
+> 📌 **Tip**: All roles interact transparently through our [GitHub Discussions](https://discord.gg/ep6dBqPjhG), [Issues](https://github.com/CastroForGeorgia/campaign/issues), and [Project boards](https://github.com/orgs/CastroForGeorgia/projects).
 
 ---
 
@@ -160,7 +160,7 @@ Welcome! Our campaign is powered by volunteers like **you**, working together op
 
 1. **Introduce Yourself**
 
-   * Visit our [👋 Introductions Discussion](https://github.com/CastroForGeorgia/campaign/discussions) and say hello.
+   * Visit our [👋 Introductions Discussion](https://discord.gg/ep6dBqPjhG) and say hello.
 
 2. **Find a Task**
 
@@ -174,7 +174,7 @@ Welcome! Our campaign is powered by volunteers like **you**, working together op
 
 ## 💬 Have Questions or Need Help?
 
-* Post questions in our [❓ Help Desk Discussion](https://github.com/CastroForGeorgia/campaign/discussions).
+* Post questions in our [❓ Help Desk Discussion](https://discord.gg/ep6dBqPjhG).
 * Join our **weekly Zoom office hours** (link available in Discussions).
 
 ---

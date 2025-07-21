@@ -139,7 +139,7 @@ Yes! Open an Issue or start a Discussion to pitch your ideas.
 
 ## 📞 Need Support or Feedback?
 
-* Visit our [Help Desk Discussion](https://github.com/CastroForGeorgia/campaign/discussions/categories/help-desk).
+* Visit our [Help Desk Discussion](https://discord.gg/ep6dBqPjhG/categories/help-desk).
 * Join weekly office hours via Zoom for direct guidance.
 
 ---

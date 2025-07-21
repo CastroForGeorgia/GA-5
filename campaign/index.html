@@ -8,9 +8,6 @@ image: /assets/images/agi-header.png
 
 {% assign campaign_readme = site.campaign | where: "path", "_campaign/README.md" | first %}
 
-<!-- Campaign Breadcrumbs & Navigation -->
-{% include campaign-nav.html %}
-
 <!-- Hero Section -->
 <section class="relative bg-gradient-to-br from-campaign-primary via-campaign-primary/90 to-campaign-secondary py-16 md:py-24 overflow-hidden">
   <img class="absolute inset-0 w-full h-full object-cover opacity-30" src="{{ page.image }}" alt="" loading="lazy">
@@ -55,7 +52,7 @@ image: /assets/images/agi-header.png
       <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
         {{ page.description }}
       </p>
-      <a href="https://github.com/CastroForGeorgia/campaign/discussions" target="_blank" class="inline-flex items-center justify-center gap-2 bg-campaign-primary text-white px-6 py-3 rounded-full font-medium hover:bg-campaign-primary/90 transition-colors duration-200 no-underline">
+      <a href="https://discord.gg/ep6dBqPjhG" target="_blank" class="inline-flex items-center justify-center gap-2 bg-campaign-primary text-white px-6 py-3 rounded-full font-medium hover:bg-campaign-primary/90 transition-colors duration-200 no-underline">
         Join the Discussion
       </a>
     </div>

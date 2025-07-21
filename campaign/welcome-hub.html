@@ -8,9 +8,6 @@ image: /assets/images/hero.jpg
 
 {% assign hub_doc = site.campaign | where_exp: "d", "d.path contains 'welcome-hub/README'" | first %}
 
-<!-- Campaign Breadcrumbs & Navigation -->
-{% include campaign-nav.html section="welcome-hub" %}
-
 <!-- Hero -->
 <section class="campaign-gradient text-white py-16 md:py-20">
   <div class="container-wide px-4">
@@ -31,19 +28,4 @@ image: /assets/images/hero.jpg
     <div class="max-w-4xl mx-auto prose prose-lg">
       {{ hub_doc.content }}
     </div>
-
-    <!-- Main Sections -->
-    <div class="mt-16">
-      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-8">Welcome Hub Sections</h2>
-      <div class="mb-12">
-        {% include campaign-subnav.html section="welcome-hub" style="cards" %}
-      </div>
-    </div>
-
-    <!-- All Other Resources -->
-    <div class="mt-8">
-      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-8">All Resources</h2>
-      {% include campaign-subnav.html section="welcome-hub" style="list" %}
-    </div>
-  </div>
 </article> 

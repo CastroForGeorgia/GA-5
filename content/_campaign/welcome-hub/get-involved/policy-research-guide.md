@@ -145,7 +145,7 @@ Absolutely. Open an Issue labeled `policy-suggestion` and describe your idea.
 
 ## 🚨 Need Help or Have Questions?
 
-* Visit our [Help Desk Discussion](https://github.com/CastroForGeorgia/campaign/discussions/categories/help-desk).
+* Visit our [Help Desk Discussion](https://discord.gg/ep6dBqPjhG/categories/help-desk).
 * Join weekly office hours via Zoom (link provided in Discussions).
 
 ---
