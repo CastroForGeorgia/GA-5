@@ -1,4 +1,0 @@
----
-layout: null
----
-{{ site.data.neighborhoods.Official_Neighborhoods | jsonify }} 

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Neighborhoods"
-description: "An interactive map of neighborhoods within Georgia's 5th Congressional District."
+title: "Open Source Campaign"
+description: "Building the first community-governed campaign infrastructure — every door knock, line of code, and policy idea contributed in public."
 ---
 
 <!-- OpenLayers CSS -->
@@ -116,6 +116,33 @@ description: "An interactive map of neighborhoods within Georgia's 5th Congressi
     background: #f8f9fa;
   }
 
+  /* Neighborhood list styles */
+  .neighborhood-list {
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    background: white;
+  }
+
+  .neighborhood-item {
+    padding: 12px 16px;
+    border-bottom: 1px solid #f3f4f6;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .neighborhood-item:hover {
+    background: #f8f9fa;
+  }
+
+  .neighborhood-item:last-child {
+    border-bottom: none;
+  }
+
   .prose {
     max-width: 100%;
   }
@@ -138,15 +165,14 @@ description: "An interactive map of neighborhoods within Georgia's 5th Congressi
 </style>
 
 <!-- Hero Section -->
-{% assign hub_doc = site.campaign | where_exp: "d", "d.path contains 'neighborhoods/README'" | first %}
 <section class="campaign-gradient text-white py-16 md:py-20">
   <div class="container-wide px-4">
     <div class="max-w-4xl">
       <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-        {{ hub_doc.title | default: "Neighborhood Map" }}
+        {{ page.title | default: "Neighborhood Map" }}
       </h1>
       <p class="text-xl md:text-2xl leading-relaxed opacity-90 max-w-3xl">
-        {{ hub_doc.description | default: "Explore the neighborhoods of GA-05 and discover local campaign activities." }}
+        {{ page.description | default: "Explore the neighborhoods of GA-05 and discover local campaign activities." }}
       </p>
     </div>
   </div>
@@ -183,12 +209,32 @@ description: "An interactive map of neighborhoods within Georgia's 5th Congressi
       </div>
     </div>
 
-    <!-- Additional content section -->
-    {% if hub_doc.content %}
+    <!-- Neighborhood List Section -->
+    <div class="mt-12">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">All Neighborhoods</h2>
+      <div class="neighborhood-list">
+        {% for neighborhood in site.data.neighborhoods.Official_Neighborhoods %}
+        <div class="neighborhood-item" data-name="{{ neighborhood.NAME }}" data-npu="{{ neighborhood.NPU }}" data-acres="{{ neighborhood.ACRES }}">
+          <div>
+            <h3 class="font-semibold text-gray-900">{{ neighborhood.NAME }}</h3>
+            <p class="text-sm text-gray-600">NPU {{ neighborhood.NPU }} • {{ neighborhood.ACRES }} acres</p>
+          </div>
+          <div class="text-campaign-primary">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Page content section -->
+    {% if content and content != "" %}
     <article class="py-12 md:py-16 campaign-bg-cream">
       <div class="container-wide px-4">
-        <div class="prose prose-lg">
-          {{ hub_doc.content }}
+        <div class="prose prose-lg max-w-none">
+          {{ content }}
         </div>
       </div>
     </article>
@@ -359,14 +405,33 @@ document.addEventListener("DOMContentLoaded", function () {
             const npu = localData.NPU || feature.get('NPU') || 'Unknown';
             const acres = localData.ACRES || feature.get('ACRES') || 'Unknown';
             
-            // Update neighborhood info in bottom sheet
+            // Create a URL-friendly version of the neighborhood name
+            const neighborhoodSlug = name.toLowerCase()
+                .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
+                .replace(/\s+/g, '-') // Replace spaces with hyphens
+                .replace(/-+/g, '-') // Replace multiple hyphens with single
+                .replace(/^-|-$/g, ''); // Remove leading/trailing hyphens
+            
+            // Check if we have a specific neighborhood page
+            const neighborhoodPageUrl = `/neighborhoods/${neighborhoodSlug}/`;
+            
+            // Update neighborhood info in bottom sheet with navigation option
             neighborhoodInfo.innerHTML = `
                 <div class="neighborhood-card">
                     <h4 class="text-lg font-semibold text-gray-900 mb-2">${name}</h4>
                     <div class="space-y-2 text-sm text-gray-600">
                         <p><strong>NPU:</strong> ${npu}</p>
                         <p><strong>Area:</strong> ${acres} acres</p>
-                        <p class="mt-3 text-campaign-primary">Click to explore campaign activities in this neighborhood</p>
+                        <div class="mt-4 flex gap-2">
+                            <a href="${neighborhoodPageUrl}" 
+                               class="inline-block px-4 py-2 bg-campaign-primary text-white rounded-lg hover:bg-opacity-90 transition-colors text-sm font-medium">
+                                View Neighborhood Page
+                            </a>
+                            <button onclick="this.closest('.bottom-sheet').classList.remove('expanded')" 
+                                    class="inline-block px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors text-sm font-medium">
+                                Close
+                            </button>
+                        </div>
                     </div>
                 </div>
             `;
@@ -387,6 +452,60 @@ document.addEventListener("DOMContentLoaded", function () {
             center: ol.proj.fromLonLat([-84.3880, 33.7490]),
             zoom: 11,
             duration: 500
+        });
+    });
+
+    // Neighborhood list click handlers
+    document.querySelectorAll('.neighborhood-item').forEach(item => {
+        item.addEventListener('click', () => {
+            const name = item.dataset.name;
+            
+            // Find the neighborhood feature and zoom to it
+            const features = neighborhoodsLayer.getSource().getFeatures();
+            const targetFeature = features.find(f => f.get('NAME') === name);
+            
+            if (targetFeature) {
+                const geometry = targetFeature.getGeometry();
+                const extent = geometry.getExtent();
+                
+                map.getView().fit(extent, {
+                    padding: [50, 50, 50, 50],
+                    duration: 1000
+                });
+                
+                                 // Show details
+                 const localData = getNeighborhoodData(name);
+                 
+                 // Create a URL-friendly version of the neighborhood name
+                 const neighborhoodSlug = name.toLowerCase()
+                     .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
+                     .replace(/\s+/g, '-') // Replace spaces with hyphens
+                     .replace(/-+/g, '-') // Replace multiple hyphens with single
+                     .replace(/^-|-$/g, ''); // Remove leading/trailing hyphens
+                 
+                 const neighborhoodPageUrl = `/neighborhoods/${neighborhoodSlug}/`;
+                 
+                 neighborhoodInfo.innerHTML = `
+                     <div class="neighborhood-card">
+                         <h4 class="text-lg font-semibold text-gray-900 mb-2">${name}</h4>
+                         <div class="space-y-2 text-sm text-gray-600">
+                             <p><strong>NPU:</strong> ${localData.NPU || 'Unknown'}</p>
+                             <p><strong>Area:</strong> ${localData.ACRES || 'Unknown'} acres</p>
+                             <div class="mt-4 flex gap-2">
+                                 <a href="${neighborhoodPageUrl}" 
+                                    class="inline-block px-4 py-2 bg-campaign-primary text-white rounded-lg hover:bg-opacity-90 transition-colors text-sm font-medium">
+                                     View Neighborhood Page
+                                 </a>
+                                 <button onclick="this.closest('.bottom-sheet').classList.remove('expanded')" 
+                                         class="inline-block px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors text-sm font-medium">
+                                     Close
+                                 </button>
+                             </div>
+                         </div>
+                     </div>
+                 `;
+                neighborhoodSheet.classList.add('expanded');
+            }
         });
     });
 

@@ -101,6 +101,7 @@ defaults:
       type: "campaign"
     values:
       layout: "welcome-hub"
+  # Neighborhoods collection defaults
   - scope:
       path: "content/_campaign/neighborhoods"
       type: "campaign"
