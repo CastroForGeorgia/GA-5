@@ -1,5 +1,5 @@
 ---
-layout: welcome-hub
+layout: page
 title: "Volunteer Roles – Ways to Help the Campaign"
 description: "Explore neighborhood leads, canvassing, tech, design, policy research, translating, and more—find the perfect volunteer role in our open-source campaign."
 permalink: /campaign/welcome-hub/get-involved/volunteer-roles/

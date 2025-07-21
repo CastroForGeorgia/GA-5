@@ -1,5 +1,5 @@
 ---
-layout: welcome-hub
+layout: page
 title: "Community Rules"
 description: "Guidelines for respectful participation in our open-source campaign community. Code of conduct, content standards, privacy guidelines, and moderation policies."
 permalink: /campaign/welcome-hub/rules/
