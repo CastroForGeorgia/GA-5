@@ -1,56 +1,66 @@
 ---
 layout: welcome-hub-page
 title: "Contribution Paths"
-description: "Discover how you can help our campaign from 5-minute quick fixes to leadership roles. Find the perfect way to contribute your skills and time to building progressive change."
+description: "Discover how you can help our campaign. Find the perfect way to contribute your skills and time by joining a team on our Discord server."
 permalink: /campaign/welcome-hub/about-the-campaign/contribution-paths/
 ---
 
 # Contribution Paths — How You Can Help 🌟
 
-Everyone has something valuable to offer our campaign. Whether you've got five minutes or five hours, there's a meaningful way for you to help:
+Everyone has something valuable to offer our campaign. No contribution is too small, and every hour of your time makes a difference. All of our work is coordinated through our campaign's Discord server.
 
-## 🕐 Quick Contributions (5-15 minutes)
+Below are the different ways you can join the team.
 
-**Perfect if you're short on time or new to volunteering:**
+---
 
-* **Fix a Typo**: Spot an error or unclear wording? Click the edit icon and suggest a quick fix.
-* **Star & Share the Repo**: Help more people find us by starring ⭐ our GitHub repository and sharing it on social media.
-* **Log a Quick Issue**: Notice something we should address or improve? Open a new issue with a brief description.
+### **🏘️ Neighborhood Organizing & Events**
+You are the heart of our grassroots movement. You can help organize your community or assist with individual events.
+* **What you can do:** Organize local campaign events like canvass kickoffs and house meetings, distribute flyers, help with event logistics, and deliver yard signs.
+* **Get Involved:** Join the `#neighborhood-general` and `#field-ops` channels on Discord.
 
-## 🕒 Medium Contributions (30-60 minutes)
+### **🎨 Design Contributions**
+Your visual storytelling talents can power our campaign's message.
+* **What you can do:** Create social media graphics, flyers, posters, infographics, and yard signs.
+* **Get Involved:** Head to the `#media` channel to see our current design needs and connect with the social media and press teams.
 
-**Ideal for an evening or weekend:**
+### **📢 Media & Outreach**
+Amplify our campaign's message through social media, press outreach, and storytelling.
+* **What you can do:** Draft social media content, assist with press outreach, promote events, and help create videos, blogs, or podcasts.
+* **Get Involved:** Join the `#media` channel on Discord to collaborate with the communications team.
 
-* **Write a Field Note**: Share insights or feedback from your community without sharing any personal details.
-* **Translate Content**: Help us reach more neighbors by translating campaign materials into Spanish or other languages.
-* **Design a Graphic**: Create a flyer or social media graphic using our templates.
+### **📚 Policy Research**
+Our policies are shaped openly and collaboratively.
+* **What you can do:** Research and find credible sources to support our policy platforms, fact-check documents, and help draft policy proposals in clear language.
+* **Get Involved:** Join the `#hq-general` channel to contribute to policy discussions.
 
-## 🕔 Deeper Contributions (1-3 hours)
+### **🛠️ Tech Contributions**
+Help build the first fully open-source congressional campaign platform.
+* **What you can do:** Contribute to our campaign website, volunteer app, data dashboards, and automation tools.
+* **Get Involved:** Join the `#tech-and-data` channel on Discord to connect with the tech team.
 
-**Great if you're passionate about an issue or skill:**
+## 🌟 Leadership Contributions (Ongoing Involvement)
 
-* **Draft a Policy Proposal**: Suggest improvements or new ideas on housing, healthcare, or economic policies.
-* **Review Proposals**: Read and provide feedback on others' proposals, helping improve our collective plans.
-* **Create Educational Materials**: Develop guides, tutorials, or explainer materials to help new participants join the campaign.
+For those looking to take an active and ongoing role in the campaign:
+* **Neighborhood Lead**: Coordinate local activities, facilitate discussions in your neighborhood's channel, and help onboard new participants.
+* **Community Mentor**: Offer guidance to new volunteers, help others get started on Discord, and maintain a welcoming environment in the community channels.
+* **Maintainer**: Help review and accept contributions, facilitate discussions, and keep the project organized.
 
-## 🌟 Leadership Contributions (Ongoing involvement)
+## 🚀 How to Get Started Right Now:
 
-**For those looking to take an active role in their neighborhood or issue area:**
+Getting involved is quick and easy. Follow these three steps to join the team!
 
-* **Neighborhood Lead**: Coordinate activities, facilitate local discussions, and help new participants.
-* **Issue Area Champion**: Take ownership of a key issue (housing, healthcare, economy), helping drive conversations and improvements.
-* **Community Mentor**: Offer guidance to new volunteers, help others get started, and maintain a welcoming environment.
-
-## 🛠 How to Get Started Right Now:
-
-1. **Pick an Issue**: Visit our [Issues Page](../../issues) and choose one labeled "good first issue."
-2. **Join a Discussion**: Visit our [Discussions Page](../../discussions) and join a conversation that's important to you.
-3. **Edit & Submit**: Edit any document directly from your browser and submit a Pull Request for review.
+1.  🖱️ **Join our Discord Server**
+    * This is where all campaign communication and coordination happens. Click here to join: [**Castro for Georgia Discord**](https://discord.gg/ep6dBqPjhG).
+2.  ⭐ **Introduce Yourself**
+    * Head over to the `#introductions` channel.
+    * Tell us your name, your neighborhood, and what skills or interests you'd like to share.
+3.  🙋 **Find a Team & a Task**
+    * Explore the channels on our Discord server, starting with `#get-involved`, to find a team that interests you.
 
 ## 📖 Need Help?
 
-Check our [Quick-Start Guide](../get-involved/quick-start-guide.md) or reach out in our [Discussions](../../discussions). Someone from our team will be there to help!
+**Questions or need immediate help?**
+* 📧 Email: [volunteer@castroforgeorgia.com](mailto:volunteer@castroforgeorgia.com)
+* 💬 Ask away in the `#community-general` channel on our Discord!
 
 Your contribution, no matter the size, moves us closer to a more fair, transparent, and democratic Georgia.
-
-🌱 **Castro for Georgia Team**
