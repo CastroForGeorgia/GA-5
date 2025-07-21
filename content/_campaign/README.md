@@ -31,7 +31,6 @@ This repository provides a transparent overview of our campaign's structure and 
 | [`welcome-hub/`](./welcome-hub/) | New here? Read these guides to understand how we operate.    |
 | [`campaign-hq/`](./campaign-hq/) | Explore our official policy, design, and tech resources.     |
 | [`neighborhoods/`](./neighborhoods/) | See organizing plans and materials for specific neighborhoods. |
-| [`community-lounge/`](./community-lounge/) | Find archives of past community discussions and feedback.    |
 
 -----
 
