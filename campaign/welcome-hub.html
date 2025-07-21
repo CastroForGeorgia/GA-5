@@ -1,0 +1,31 @@
+---
+layout: default
+title: "Welcome Hub"
+description: "Start here: rules, onboarding, and contribution guides for the open-source campaign."
+permalink: /campaign/welcome-hub/
+image: /assets/images/hero.jpg
+---
+
+{% assign hub_doc = site.campaign | where_exp: "d", "d.path contains 'welcome-hub/README'" | first %}
+
+<!-- Hero -->
+<section class="campaign-gradient text-white py-16 md:py-20">
+  <div class="container-wide px-4">
+    <div class="max-w-4xl">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+        {{ hub_doc.title }}
+      </h1>
+      <p class="text-xl md:text-2xl leading-relaxed opacity-90 max-w-3xl">
+        {{ hub_doc.description }}
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Main Content -->
+<article class="py-12 md:py-16 bg-white">
+  <div class="container-wide px-4">
+    <div class="max-w-4xl mx-auto prose prose-lg">
+      {{ hub_doc.content }}
+    </div>
+</article> 
