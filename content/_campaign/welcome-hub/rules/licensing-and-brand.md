@@ -1,5 +1,5 @@
 ---
-layout: welcome-hub-page
+layout: welcome-hub
 title: "Licensing & Brand Guidelines"
 description: "Understand our Creative Commons licensing, brand usage rules, and how to attribute campaign materials correctly."
 permalink: /campaign/welcome-hub/rules/licensing-and-brand/

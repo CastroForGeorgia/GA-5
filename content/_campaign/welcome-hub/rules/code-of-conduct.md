@@ -1,5 +1,5 @@
 ---
-layout: welcome-hub-page
+layout: welcome-hub
 title: "Code of Conduct"
 description: "Our commitment to fostering a welcoming, respectful, and inclusive environment where every contributor is seen, heard, and respected in our grassroots movement."
 permalink: /campaign/welcome-hub/rules/code-of-conduct/

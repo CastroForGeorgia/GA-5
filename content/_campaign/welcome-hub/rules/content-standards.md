@@ -1,5 +1,5 @@
 ---
-layout: welcome-hub-page
+layout: welcome-hub
 title: "Content Standards"
 description: "Guidelines for clear, inclusive, and respectful content across all campaign materials and community contributions."
 permalink: /campaign/welcome-hub/rules/content-standards/

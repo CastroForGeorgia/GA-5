@@ -1,5 +1,5 @@
 ---
-layout: welcome-hub-page
+layout: welcome-hub
 title: "Translations & Language Accessibility"
 description: "Help make our campaign accessible to everyone by translating materials into Spanish, Vietnamese, and other languages. Build genuine community power through language inclusion."
 permalink: /campaign/welcome-hub/get-involved/translations/

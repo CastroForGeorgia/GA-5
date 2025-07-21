@@ -100,7 +100,12 @@ defaults:
       path: "content/_campaign/welcome-hub"
       type: "campaign"
     values:
-      layout: "welcome-hub-page"
+      layout: "welcome-hub"
+  - scope:
+      path: "content/_campaign/neighborhoods"
+      type: "campaign"
+    values:
+      layout: "neighborhoods"
 
 sass:
   sass_dir: _sass

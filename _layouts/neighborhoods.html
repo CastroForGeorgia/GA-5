@@ -1,8 +1,7 @@
 ---
 layout: default
-title: "Open Source Campaign"
-description: "Building the first community-governed campaign infrastructure — every door knock, line of code, and policy idea contributed in public."
-permalink: /neighborhoods/
+title: "Neighborhoods"
+description: "An interactive map of neighborhoods within Georgia's 5th Congressional District."
 ---
 
 <!-- OpenLayers CSS -->
@@ -117,33 +116,6 @@ permalink: /neighborhoods/
     background: #f8f9fa;
   }
 
-  /* Neighborhood list styles */
-  .neighborhood-list {
-    max-height: 400px;
-    overflow-y: auto;
-    border: 1px solid #e5e7eb;
-    border-radius: 0.75rem;
-    background: white;
-  }
-
-  .neighborhood-item {
-    padding: 12px 16px;
-    border-bottom: 1px solid #f3f4f6;
-    cursor: pointer;
-    transition: background 0.2s ease;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .neighborhood-item:hover {
-    background: #f8f9fa;
-  }
-
-  .neighborhood-item:last-child {
-    border-bottom: none;
-  }
-
   .prose {
     max-width: 100%;
   }
@@ -208,26 +180,6 @@ permalink: /neighborhoods/
             <p class="text-gray-600">Click on a neighborhood to see details</p>
           </div>
         </div>
-      </div>
-    </div>
-
-    <!-- Neighborhood List Section -->
-    <div class="mt-12">
-      <h2 class="text-2xl font-bold text-gray-900 mb-6">All Neighborhoods</h2>
-      <div class="neighborhood-list">
-        {% for neighborhood in site.data.neighborhoods.Official_Neighborhoods %}
-        <div class="neighborhood-item" data-name="{{ neighborhood.NAME }}" data-npu="{{ neighborhood.NPU }}" data-acres="{{ neighborhood.ACRES }}">
-          <div>
-            <h3 class="font-semibold text-gray-900">{{ neighborhood.NAME }}</h3>
-            <p class="text-sm text-gray-600">NPU {{ neighborhood.NPU }} • {{ neighborhood.ACRES }} acres</p>
-          </div>
-          <div class="text-campaign-primary">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-            </svg>
-          </div>
-        </div>
-        {% endfor %}
       </div>
     </div>
 
@@ -435,41 +387,6 @@ document.addEventListener("DOMContentLoaded", function () {
             center: ol.proj.fromLonLat([-84.3880, 33.7490]),
             zoom: 11,
             duration: 500
-        });
-    });
-
-    // Neighborhood list click handlers
-    document.querySelectorAll('.neighborhood-item').forEach(item => {
-        item.addEventListener('click', () => {
-            const name = item.dataset.name;
-            
-            // Find the neighborhood feature and zoom to it
-            const features = neighborhoodsLayer.getSource().getFeatures();
-            const targetFeature = features.find(f => f.get('NAME') === name);
-            
-            if (targetFeature) {
-                const geometry = targetFeature.getGeometry();
-                const extent = geometry.getExtent();
-                
-                map.getView().fit(extent, {
-                    padding: [50, 50, 50, 50],
-                    duration: 1000
-                });
-                
-                                 // Show details
-                 const localData = getNeighborhoodData(name);
-                 neighborhoodInfo.innerHTML = `
-                     <div class="neighborhood-card">
-                         <h4 class="text-lg font-semibold text-gray-900 mb-2">${name}</h4>
-                         <div class="space-y-2 text-sm text-gray-600">
-                             <p><strong>NPU:</strong> ${localData.NPU || 'Unknown'}</p>
-                             <p><strong>Area:</strong> ${localData.ACRES || 'Unknown'} acres</p>
-                             <p class="mt-3 text-campaign-primary">Explore campaign activities in this neighborhood</p>
-                         </div>
-                     </div>
-                 `;
-                neighborhoodSheet.classList.add('expanded');
-            }
         });
     });
 

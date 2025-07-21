@@ -1,5 +1,5 @@
 ---
-layout: welcome-hub-page
+layout: welcome-hub
 title: "Open Source 101"
 description: "New to open source? Learn how collaborative transparency works in politics and how you can contribute to building progressive change in your community."
 permalink: /campaign/welcome-hub/about-the-campaign/open-source-101/

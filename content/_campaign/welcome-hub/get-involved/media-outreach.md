@@ -1,5 +1,5 @@
 ---
-layout: welcome-hub-page
+layout: welcome-hub
 title: "Media & Outreach Guide"
 description: "Amplify our message through social media, press outreach, storytelling, and community engagement. Help build our movement's voice across Georgia's 5th District."
 permalink: /campaign/welcome-hub/get-involved/media-outreach/
