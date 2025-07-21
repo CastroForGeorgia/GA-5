@@ -504,70 +504,7 @@ description: "Building the first community-governed campaign infrastructure — 
     max-width: 100%;
   }
 
-  /* District legend styling */
-  .district-legend {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    background: rgba(255, 255, 255, 0.96);
-    backdrop-filter: blur(6px);
-    padding: 0.75rem;
-    border-radius: 0.75rem;
-    border: 1px solid #e5e7eb;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-    z-index: 100;
-    max-width: 220px;
-    font-size: 0.75rem;
-    transition: all 0.2s ease;
-    user-select: none;
-  }
 
-  .district-legend:hover {
-    background: rgba(255, 255, 255, 0.98);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  }
-
-  /* Mobile-first approach for legend */
-  .legend-toggle-mobile {
-    position: absolute;
-    top: 0.75rem;
-    right: 0.75rem;
-    background: rgba(255, 255, 255, 0.96);
-    backdrop-filter: blur(6px);
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    border: 1px solid #e5e7eb;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    z-index: 101;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    display: none;
-  }
-
-  .legend-content {
-    display: block;
-  }
-
-  /* Mobile legend styles */
-  .mobile-legend-panel {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(8px);
-    padding: 1rem;
-    border-bottom: 1px solid #e5e7eb;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    z-index: 200;
-    transform: translateY(-100%);
-    transition: transform 0.3s ease;
-    display: none;
-  }
-
-  .mobile-legend-panel.active {
-    transform: translateY(0);
-  }
 
   /* Mobile-first responsive design */
   @media (max-width: 768px) {
@@ -585,51 +522,6 @@ description: "Building the first community-governed campaign infrastructure — 
       font-size: 0.8rem;
       padding: 0.75rem;
       border-radius: 0.75rem;
-    }
-    
-    /* Hide desktop legend on mobile */
-    .district-legend {
-      display: none;
-    }
-    
-    /* Show mobile toggle button */
-    .legend-toggle-mobile {
-      display: block;
-    }
-    
-    /* Show mobile legend panel */
-    .mobile-legend-panel {
-      display: block;
-    }
-    
-    /* Better spacing for mobile touches */
-    .mobile-legend-panel label {
-      padding: 1rem 0;
-      border-bottom: 1px solid #f3f4f6;
-      margin: 0;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      cursor: pointer;
-      -webkit-tap-highlight-color: transparent;
-    }
-    
-    .mobile-legend-panel label:last-of-type {
-      border-bottom: none;
-    }
-    
-    .mobile-legend-panel input[type="checkbox"] {
-      width: 1.25rem;
-      height: 1.25rem;
-      cursor: pointer;
-    }
-    
-    .mobile-legend-panel h4 {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-      color: #1f2937;
-      text-align: center;
     }
     
     /* Better touch targets for floating buttons */
@@ -751,76 +643,6 @@ description: "Building the first community-governed campaign infrastructure — 
         
         <!-- Floating info display -->
         <div id="info">Click a neighborhood to learn more</div>
-        
-        <!-- Desktop Layer Controls -->
-        <div class="district-legend">
-          <h4 style="font-weight: 600; margin-bottom: 0.75rem; color: #1f2937;">Map Layers</h4>
-          <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-            <!-- GA-05 District (always visible) -->
-            <div style="display: flex; align-items: center; gap: 0.5rem;">
-              <div style="width: 1rem; height: 0.75rem; border: 3px solid #DC2626; background: rgba(220, 38, 38, 0.25); border-radius: 0.125rem;"></div>
-              <span style="color: #374151; font-weight: 600; font-size: 0.8rem;">GA-05 (Our District)</span>
-            </div>
-            
-            <!-- Toggle for Other Districts -->
-            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-              <input type="checkbox" id="toggle-districts" checked style="width: 1rem; height: 1rem;">
-              <div style="width: 1rem; height: 0.75rem; border: 2px dashed #1D4ED8; background: rgba(29, 78, 216, 0.08); border-radius: 0.125rem;"></div>
-              <span style="color: #374151; font-size: 0.8rem;">Other GA Districts</span>
-            </label>
-            
-            <!-- Toggle for Neighborhoods -->
-            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-              <input type="checkbox" id="toggle-neighborhoods" style="width: 1rem; height: 1rem;">
-              <div style="width: 1rem; height: 0.75rem; border: 2px solid #F59E0B; background: rgba(251, 146, 60, 0.12); border-radius: 0.125rem;"></div>
-              <span style="color: #374151; font-size: 0.8rem;">Atlanta Neighborhoods</span>
-            </label>
-            
-            <!-- Zoom hint -->
-            <div style="font-size: 0.7rem; color: #6b7280; font-style: italic; margin-top: 0.25rem;">
-              💡 Neighborhoods auto-show when zoomed in
-            </div>
-          </div>
-        </div>
-
-        <!-- Mobile Layer Toggle Button -->
-        <button class="legend-toggle-mobile" id="mobile-legend-toggle" title="Toggle Map Layers">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
-
-        <!-- Mobile Layer Controls Panel -->
-        <div class="mobile-legend-panel" id="mobile-legend-panel">
-          <h4>Map Layers</h4>
-          
-          <!-- GA-05 District (always visible) -->
-          <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem 0; border-bottom: 1px solid #f3f4f6;">
-            <div style="width: 1.25rem; height: 1rem; border: 3px solid #DC2626; background: rgba(220, 38, 38, 0.25); border-radius: 0.125rem;"></div>
-            <span style="color: #374151; font-weight: 600;">GA-05 (Our District)</span>
-          </div>
-          
-          <!-- Toggle for Other Districts -->
-          <label>
-            <input type="checkbox" id="toggle-districts-mobile" checked>
-            <div style="width: 1.25rem; height: 1rem; border: 2px dashed #1D4ED8; background: rgba(29, 78, 216, 0.08); border-radius: 0.125rem;"></div>
-            <span style="color: #374151;">Other GA Districts</span>
-          </label>
-          
-          <!-- Toggle for Neighborhoods -->
-          <label>
-            <input type="checkbox" id="toggle-neighborhoods-mobile">
-            <div style="width: 1.25rem; height: 1rem; border: 2px solid #F59E0B; background: rgba(251, 146, 60, 0.12); border-radius: 0.125rem;"></div>
-            <span style="color: #374151;">Atlanta Neighborhoods</span>
-          </label>
-          
-          <!-- Close button -->
-          <div style="text-align: center; margin-top: 1rem;">
-            <button id="close-mobile-legend" style="background: #f3f4f6; border: none; padding: 0.5rem 1rem; border-radius: 0.5rem; font-size: 0.875rem; color: #374151;">
-              Close
-            </button>
-          </div>
-        </div>
         
         <!-- Mobile Search Button -->
         <button class="floating-controls search-fab" id="mobile-search-btn" title="Search Neighborhoods">
@@ -1018,10 +840,7 @@ document.addEventListener("DOMContentLoaded", function () {
         style: neighborhoodStyle,
     });
 
-    // --- LAYER VISIBILITY CONTROLS ---
-    let showDistricts = true;
-    let showNeighborhoods = false;
-    const MIN_NEIGHBORHOOD_ZOOM = 12; // Auto-show neighborhoods at zoom 12+
+    // All layers visible by default - no need for visibility variables
 
     // --- MAP INITIALIZATION ---
     const map = new ol.Map({
@@ -1033,94 +852,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }),
     });
 
-    // Initially hide neighborhoods layer
-    neighborhoodsLayer.setVisible(false);
-
-    // --- LAYER CONTROL FUNCTIONS ---
-    function updateLayerVisibility() {
-        const currentZoom = map.getView().getZoom();
-        const autoShowNeighborhoods = currentZoom >= MIN_NEIGHBORHOOD_ZOOM;
-        
-        // Update neighborhood visibility based on toggle AND zoom level
-        const shouldShowNeighborhoods = showNeighborhoods || autoShowNeighborhoods;
-        neighborhoodsLayer.setVisible(shouldShowNeighborhoods);
-        
-        // Update districts visibility
-        districtLayer.setVisible(showDistricts);
-        
-        // Update checkbox states to reflect auto-showing (both desktop and mobile)
-        const neighborhoodCheckbox = document.getElementById('toggle-neighborhoods');
-        const neighborhoodCheckboxMobile = document.getElementById('toggle-neighborhoods-mobile');
-        if (neighborhoodCheckbox) {
-            neighborhoodCheckbox.checked = shouldShowNeighborhoods;
-        }
-        if (neighborhoodCheckboxMobile) {
-            neighborhoodCheckboxMobile.checked = shouldShowNeighborhoods;
-        }
-    }
-
-    // --- EVENT LISTENERS ---
-    // Desktop layer toggle event listeners
-    document.getElementById('toggle-districts').addEventListener('change', function(e) {
-        showDistricts = e.target.checked;
-        // Sync mobile checkbox
-        const mobileCheckbox = document.getElementById('toggle-districts-mobile');
-        if (mobileCheckbox) mobileCheckbox.checked = e.target.checked;
-        updateLayerVisibility();
-    });
-
-    document.getElementById('toggle-neighborhoods').addEventListener('change', function(e) {
-        showNeighborhoods = e.target.checked;
-        // Sync mobile checkbox
-        const mobileCheckbox = document.getElementById('toggle-neighborhoods-mobile');
-        if (mobileCheckbox) mobileCheckbox.checked = e.target.checked;
-        updateLayerVisibility();
-    });
-
-    // Mobile layer toggle event listeners
-    document.getElementById('toggle-districts-mobile').addEventListener('change', function(e) {
-        showDistricts = e.target.checked;
-        // Sync desktop checkbox
-        const desktopCheckbox = document.getElementById('toggle-districts');
-        if (desktopCheckbox) desktopCheckbox.checked = e.target.checked;
-        updateLayerVisibility();
-    });
-
-    document.getElementById('toggle-neighborhoods-mobile').addEventListener('change', function(e) {
-        showNeighborhoods = e.target.checked;
-        // Sync desktop checkbox
-        const desktopCheckbox = document.getElementById('toggle-neighborhoods');
-        if (desktopCheckbox) desktopCheckbox.checked = e.target.checked;
-        updateLayerVisibility();
-    });
-
-    // Mobile legend panel toggle
-    const mobileToggleBtn = document.getElementById('mobile-legend-toggle');
-    const mobileLegendPanel = document.getElementById('mobile-legend-panel');
-    const closeMobileLegend = document.getElementById('close-mobile-legend');
-
-    mobileToggleBtn.addEventListener('click', function() {
-        mobileLegendPanel.classList.add('active');
-    });
-
-    closeMobileLegend.addEventListener('click', function() {
-        mobileLegendPanel.classList.remove('active');
-    });
-
-    // Close mobile legend when tapping outside
-    mobileLegendPanel.addEventListener('click', function(e) {
-        if (e.target === mobileLegendPanel) {
-            mobileLegendPanel.classList.remove('active');
-        }
-    });
-
-    // Zoom change listener
-    map.getView().on('change:resolution', function() {
-        updateLayerVisibility();
-    });
-
-    // Initial layer visibility update
-    updateLayerVisibility();
+    // Show all layers by default
+    districtLayer.setVisible(true);
+    neighborhoodsLayer.setVisible(true);
 
     // --- INTERACTIVITY ---
     const infoBox = document.getElementById('info');
@@ -1222,11 +956,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const geometry = targetFeature.getGeometry();
                 const extent = geometry.getExtent();
                 
-                // Show neighborhoods layer if not visible
-                if (!showNeighborhoods) {
-                    showNeighborhoods = true;
-                    updateLayerVisibility();
-                }
+                // Neighborhoods are always visible now
                 
                 // Zoom to the neighborhood
                 map.getView().fit(extent, {
@@ -1390,11 +1120,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const geometry = targetFeature.getGeometry();
                 const extent = geometry.getExtent();
                 
-                // Show neighborhoods layer if not visible
-                if (!showNeighborhoods) {
-                    showNeighborhoods = true;
-                    updateLayerVisibility();
-                }
+                // Neighborhoods are always visible now
                 
                 // Zoom to the neighborhood
                 map.getView().fit(extent, {
@@ -1453,26 +1179,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Debug: Log number of neighborhood cards found
-    console.log('Neighborhood cards found:', document.querySelectorAll('.neighborhood-card').length);
-    console.log('Search input found:', document.getElementById('neighborhood-search') ? 'Yes' : 'No');
-    
-    // Ensure neighborhood cards are visible on mobile
-    function ensureMobileVisibility() {
-        if (window.innerWidth <= 768) {
-            const cards = document.querySelectorAll('.neighborhood-card');
-            console.log('Mobile mode: Ensuring', cards.length, 'cards are visible');
-            cards.forEach((card, index) => {
-                if (card.style.display === 'none') {
-                    console.log('Card', index, 'was hidden, making visible');
-                    card.style.display = 'block';
-                }
-            });
-        }
-    }
-    
-    // Run on load and resize
-    ensureMobileVisibility();
-    window.addEventListener('resize', ensureMobileVisibility);
+    // All layers are now visible by default - no layer controls needed
 });
 </script>
