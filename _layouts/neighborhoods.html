@@ -55,6 +55,29 @@ description: "Building the first community-governed campaign infrastructure — 
     z-index: 500;
   }
 
+  .search-fab {
+    bottom: 100px;
+    right: 16px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--campaign-primary, #2E8B57);
+    color: white;
+    box-shadow: 0 4px 12px rgba(46, 139, 87, 0.3);
+    border: none;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    z-index: 500;
+  }
+
+  .search-fab:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(46, 139, 87, 0.4);
+  }
+
   .locate-fab {
     bottom: 30px;
     right: 16px;
@@ -74,6 +97,156 @@ description: "Building the first community-governed campaign infrastructure — 
   .locate-fab:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Mobile search modal styles */
+  .search-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .search-modal.active {
+    display: flex;
+    opacity: 1;
+  }
+
+  .modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+  }
+
+  .modal-content {
+    position: relative;
+    background: white;
+    margin: auto;
+    width: 90%;
+    max-width: 500px;
+    max-height: 80vh;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+    background: var(--campaign-cream, #FFFDD0);
+  }
+
+  .close-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: background 0.2s ease;
+  }
+
+  .close-btn:hover {
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  .modal-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .search-section {
+    padding: 1.5rem;
+    border-bottom: 1px solid #f3f4f6;
+  }
+
+  .results-section {
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .neighborhood-results {
+    height: 100%;
+    overflow-y: auto;
+    padding: 1rem;
+  }
+
+  .result-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    margin-bottom: 0.75rem;
+    background: white;
+    transition: all 0.2s ease;
+  }
+
+  .result-item:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-color: var(--campaign-primary, #2E8B57);
+  }
+
+  .result-info h3 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .result-actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .result-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.5rem 0.75rem;
+    border: 2px solid;
+    border-radius: 0.5rem;
+    background: white;
+    font-size: 0.75rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-height: 36px;
+  }
+
+  .result-btn.view-on-map {
+    border-color: var(--campaign-secondary, #C0392B);
+    color: var(--campaign-secondary, #C0392B);
+  }
+
+  .result-btn.view-on-map:hover {
+    background: var(--campaign-secondary, #C0392B);
+    color: white;
+  }
+
+  .result-btn.learn-more {
+    border-color: var(--campaign-primary, #2E8B57);
+    color: var(--campaign-primary, #2E8B57);
+  }
+
+  .result-btn.learn-more:hover {
+    background: var(--campaign-primary, #2E8B57);
+    color: white;
   }
 
   /* Sidebar layout for neighborhoods */
@@ -96,6 +269,13 @@ description: "Building the first community-governed campaign infrastructure — 
     overflow: hidden;
   }
 
+  /* Ensure visibility on mobile */
+  @media (max-width: 768px) {
+    .neighborhoods-sidebar {
+      overflow: visible;
+    }
+  }
+
   .sidebar-header {
     padding: 1.5rem;
     border-bottom: 1px solid #e5e7eb;
@@ -108,27 +288,66 @@ description: "Building the first community-governed campaign infrastructure — 
     padding: 1rem;
   }
 
-  /* Mobile: stack vertically */
+  /* Mobile sidebar content fixes */
+  @media (max-width: 768px) {
+    .sidebar-content {
+      overflow-y: visible;
+      flex: none;
+      height: auto;
+    }
+  }
+
+  /* Mobile: hide sidebar, show search button instead */
   @media (max-width: 768px) {
     .neighborhoods-container {
       grid-template-columns: 1fr;
-      grid-template-rows: auto 1fr;
+      grid-template-rows: 1fr;
       height: 80vh;
+      min-height: 500px;
     }
     
     .neighborhoods-sidebar {
-      border-right: none;
-      border-bottom: 2px solid var(--campaign-peach, #FFDAB9);
-      max-height: 250px;
+      display: none;
     }
     
-    .sidebar-header {
-      padding: 1rem;
+    /* Map takes full space on mobile */
+    #map {
+      height: 100%;
+      min-height: 500px;
     }
-    
-    .sidebar-content {
+
+    /* Show search button on mobile */
+    .search-fab {
+      display: flex;
+    }
+
+    /* Mobile modal optimizations */
+    .modal-content {
+      width: 95%;
+      margin: 20px auto;
+      max-height: 85vh;
+    }
+
+    .result-item {
       padding: 0.75rem;
-      max-height: 180px;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.75rem;
+    }
+
+    .result-info {
+      text-align: center;
+    }
+
+    .result-actions {
+      justify-content: center;
+      gap: 0.75rem;
+    }
+
+    .result-btn {
+      flex: 1;
+      justify-content: center;
+      min-height: 44px;
     }
   }
 
@@ -233,12 +452,15 @@ description: "Building the first community-governed campaign infrastructure — 
   /* Mobile optimizations - larger touch targets */
   @media (max-width: 768px) {
     .neighborhood-list {
-      max-height: 300px;
+      max-height: none;
+      height: auto;
+      overflow-y: visible;
     }
     
     .neighborhood-card {
       margin-bottom: 1rem !important;
       padding: 1.25rem !important;
+      display: block !important;
     }
     
     .neighborhood-info h3 {
@@ -484,9 +706,9 @@ description: "Building the first community-governed campaign infrastructure — 
         </div>
         
         <div class="sidebar-content">
-          <div class="neighborhood-list" style="max-height: none; border: none; border-radius: 0; background: transparent;">
+          <div class="neighborhood-list" style="max-height: none; border: none; border-radius: 0; background: transparent; overflow: visible;">
             {% for neighborhood in site.data.neighborhoods.Official_Neighborhoods %}
-            <div class="neighborhood-card" data-name="{{ neighborhood.NAME }}" data-npu="{{ neighborhood.NPU }}" data-acres="{{ neighborhood.ACRES }}" style="border-radius: 0.75rem; margin-bottom: 0.75rem; border: 1px solid #e5e7eb; background: white; padding: 1rem;">
+            <div class="neighborhood-card" data-name="{{ neighborhood.NAME }}" data-npu="{{ neighborhood.NPU }}" data-acres="{{ neighborhood.ACRES }}" style="border-radius: 0.75rem; margin-bottom: 0.75rem; border: 1px solid #e5e7eb; background: white; padding: 1rem; display: block;">
               <div class="neighborhood-info">
                 <h3 class="font-semibold text-gray-900 text-lg mb-1">{{ neighborhood.NAME }}</h3>
                 <p class="text-sm text-gray-600 mb-3">NPU {{ neighborhood.NPU }} • {{ neighborhood.ACRES }} acres</p>
@@ -600,6 +822,13 @@ description: "Building the first community-governed campaign infrastructure — 
           </div>
         </div>
         
+        <!-- Mobile Search Button -->
+        <button class="floating-controls search-fab" id="mobile-search-btn" title="Search Neighborhoods">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+        </button>
+
         <!-- Floating locate button -->
         <button class="floating-controls locate-fab" id="locate-btn" title="Center on Atlanta">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -609,6 +838,66 @@ description: "Building the first community-governed campaign infrastructure — 
         </button>
       </div>
       
+    </div>
+
+    <!-- Mobile Search Modal -->
+    <div id="mobile-search-modal" class="search-modal">
+      <div class="modal-backdrop"></div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="text-xl font-bold text-gray-900">Find Your Neighborhood</h2>
+          <button id="close-search-modal" class="close-btn" title="Close search">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        
+        <div class="modal-body">
+          <div class="search-section">
+            <label for="modal-neighborhood-search" class="block text-sm font-medium text-gray-700 mb-2">Search neighborhoods</label>
+            <input type="text" id="modal-neighborhood-search" placeholder="Type neighborhood name..." class="w-full py-3 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-campaign-primary text-base" aria-label="Search neighborhoods">
+          </div>
+          
+          <div class="results-section">
+            <div id="modal-neighborhood-results" class="neighborhood-results">
+              {% for neighborhood in site.data.neighborhoods.Official_Neighborhoods %}
+              <div class="result-item" data-name="{{ neighborhood.NAME }}" data-npu="{{ neighborhood.NPU }}" data-acres="{{ neighborhood.ACRES }}">
+                <div class="result-info">
+                  <h3 class="font-semibold text-gray-900">{{ neighborhood.NAME }}</h3>
+                  <p class="text-sm text-gray-600">NPU {{ neighborhood.NPU }} • {{ neighborhood.ACRES }} acres</p>
+                </div>
+                <div class="result-actions">
+                  <button class="result-btn view-on-map" data-name="{{ neighborhood.NAME }}" title="Show {{ neighborhood.NAME }} on map">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                    Map
+                  </button>
+                  
+                  <button class="result-btn learn-more" data-name="{{ neighborhood.NAME }}" title="Learn more about {{ neighborhood.NAME }}">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    Info
+                  </button>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+            
+            <!-- No results message for modal -->
+            <div id="modal-no-results" style="display: none; text-align: center; padding: 3rem 1rem; color: #6b7280;">
+              <svg class="w-12 h-12 mx-auto mb-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+              <p class="font-medium">No neighborhoods found</p>
+              <p class="text-sm mt-1">Try a different search term</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Page content section -->
@@ -985,7 +1274,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Neighborhood search filtering for accessibility
+    // Desktop neighborhood search filtering
     const searchInput = document.getElementById('neighborhood-search');
     const noResultsDiv = document.getElementById('no-results');
     
@@ -1012,6 +1301,147 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    // Mobile search modal functionality
+    const mobileSearchBtn = document.getElementById('mobile-search-btn');
+    const searchModal = document.getElementById('mobile-search-modal');
+    const closeModalBtn = document.getElementById('close-search-modal');
+    const modalSearchInput = document.getElementById('modal-neighborhood-search');
+    const modalNoResults = document.getElementById('modal-no-results');
+
+    // Open modal
+    if (mobileSearchBtn && searchModal) {
+        mobileSearchBtn.addEventListener('click', () => {
+            searchModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            // Focus search input for better UX
+            setTimeout(() => {
+                if (modalSearchInput) modalSearchInput.focus();
+            }, 100);
+        });
+    }
+
+    // Close modal
+    function closeModal() {
+        if (searchModal) {
+            searchModal.classList.remove('active');
+            document.body.style.overflow = '';
+            // Clear search when closing
+            if (modalSearchInput) {
+                modalSearchInput.value = '';
+                filterModalResults('');
+            }
+        }
+    }
+
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', closeModal);
+    }
+
+    // Close modal when clicking backdrop
+    if (searchModal) {
+        searchModal.addEventListener('click', (e) => {
+            if (e.target === searchModal || e.target.classList.contains('modal-backdrop')) {
+                closeModal();
+            }
+        });
+    }
+
+    // Modal search filtering
+    function filterModalResults(query) {
+        let visibleCount = 0;
+        
+        document.querySelectorAll('.result-item').forEach(item => {
+            const name = item.dataset.name.toLowerCase();
+            const shouldShow = name.includes(query.toLowerCase());
+            item.style.display = shouldShow ? 'flex' : 'none';
+            if (shouldShow) visibleCount++;
+        });
+        
+        // Show/hide no results message
+        if (modalNoResults) {
+            if (query && visibleCount === 0) {
+                modalNoResults.style.display = 'block';
+            } else {
+                modalNoResults.style.display = 'none';
+            }
+        }
+    }
+
+    if (modalSearchInput) {
+        modalSearchInput.addEventListener('input', function(e) {
+            filterModalResults(e.target.value.trim());
+        });
+    }
+
+    // Modal button handlers
+    document.querySelectorAll('.result-item .view-on-map').forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const name = button.dataset.name;
+            
+            // Close modal first
+            closeModal();
+            
+            // Find and zoom to neighborhood (same logic as sidebar)
+            const features = neighborhoodsLayer.getSource().getFeatures();
+            const targetFeature = features.find(f => f.get('NAME') === name);
+            
+            if (targetFeature) {
+                const geometry = targetFeature.getGeometry();
+                const extent = geometry.getExtent();
+                
+                // Show neighborhoods layer if not visible
+                if (!showNeighborhoods) {
+                    showNeighborhoods = true;
+                    updateLayerVisibility();
+                }
+                
+                // Zoom to the neighborhood
+                map.getView().fit(extent, {
+                    padding: [50, 50, 50, 50],
+                    duration: 1000,
+                    maxZoom: 15
+                });
+                
+                // Update info box
+                infoBox.innerHTML = `Showing: ${name}`;
+                
+                // Highlight the feature temporarily
+                if (highlightedFeature) {
+                    highlightedFeature.setStyle(undefined);
+                }
+                highlightedFeature = targetFeature;
+                highlightedFeature.setStyle(highlightStyle);
+                
+                // Remove highlight after 3 seconds
+                setTimeout(() => {
+                    if (highlightedFeature === targetFeature) {
+                        highlightedFeature.setStyle(undefined);
+                        highlightedFeature = null;
+                        infoBox.innerHTML = 'Click a neighborhood to learn more';
+                    }
+                }, 3000);
+            }
+        });
+    });
+
+    document.querySelectorAll('.result-item .learn-more').forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const name = button.dataset.name;
+            
+            // Navigate to neighborhood page
+            const neighborhoodSlug = name.toLowerCase()
+                .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
+                .replace(/\s+/g, '-') // Replace spaces with hyphens
+                .replace(/-+/g, '-') // Replace multiple hyphens with single
+                .replace(/^-|-$/g, ''); // Remove leading/trailing hyphens
+            
+            const neighborhoodPageUrl = `/neighborhoods/${neighborhoodSlug}/`;
+            window.location.href = neighborhoodPageUrl;
+        });
+    });
+
     // When the district data is loaded, zoom to fit
     districtLayer.getSource().once('featuresloadend', function(event) {
         const extent = event.target.getExtent();
@@ -1022,5 +1452,27 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
     });
+
+    // Debug: Log number of neighborhood cards found
+    console.log('Neighborhood cards found:', document.querySelectorAll('.neighborhood-card').length);
+    console.log('Search input found:', document.getElementById('neighborhood-search') ? 'Yes' : 'No');
+    
+    // Ensure neighborhood cards are visible on mobile
+    function ensureMobileVisibility() {
+        if (window.innerWidth <= 768) {
+            const cards = document.querySelectorAll('.neighborhood-card');
+            console.log('Mobile mode: Ensuring', cards.length, 'cards are visible');
+            cards.forEach((card, index) => {
+                if (card.style.display === 'none') {
+                    console.log('Card', index, 'was hidden, making visible');
+                    card.style.display = 'block';
+                }
+            });
+        }
+    }
+    
+    // Run on load and resize
+    ensureMobileVisibility();
+    window.addEventListener('resize', ensureMobileVisibility);
 });
 </script>
