@@ -147,6 +147,22 @@ description: "Building the first community-governed campaign infrastructure — 
     max-width: 100%;
   }
 
+  /* District legend styling */
+  .district-legend {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(4px);
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+    max-width: 200px;
+    font-size: 0.75rem;
+  }
+
   /* Responsive adjustments */
   @media (max-width: 768px) {
     #map {
@@ -160,6 +176,14 @@ description: "Building the first community-governed campaign infrastructure — 
       left: 0.5rem;
       max-width: none;
       text-align: center;
+    }
+    
+    .district-legend {
+      top: 4rem;
+      left: 0.5rem;
+      right: 0.5rem;
+      max-width: none;
+      font-size: 0.7rem;
     }
   }
 </style>
@@ -188,6 +212,25 @@ description: "Building the first community-governed campaign infrastructure — 
       
       <!-- Floating info display -->
       <div id="info">Hover over a neighborhood</div>
+      
+      <!-- District Legend -->
+      <div class="district-legend">
+        <h4 style="font-weight: 600; margin-bottom: 0.5rem; color: #1f2937;">Congressional Districts</h4>
+        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <div style="width: 1rem; height: 0.75rem; border: 2px solid #dc2626; background: rgba(239, 68, 68, 0.2); border-radius: 0.125rem;"></div>
+            <span style="color: #374151;">GA-05 (Our District)</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <div style="width: 1rem; height: 0.75rem; border: 1px solid #16a34a; background: rgba(34, 197, 94, 0.1); border-radius: 0.125rem;"></div>
+            <span style="color: #374151;">Other GA Districts</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <div style="width: 1rem; height: 0.75rem; border: 1px solid rgba(46, 139, 87, 0.6); background: rgba(46, 139, 87, 0.15); border-radius: 0.125rem;"></div>
+            <span style="color: #374151;">Atlanta Neighborhoods</span>
+          </div>
+        </div>
+      </div>
       
       <!-- Floating locate button -->
       <button class="floating-controls locate-fab" id="locate-btn" title="Center on Atlanta">
@@ -253,8 +296,8 @@ description: "Building the first community-governed campaign infrastructure — 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     // --- DATA SOURCES ---
-    // GeoJSON source for GA Congressional Districts
-    const districtDataSourceUrl = 'https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/USA_119th_Congressional_Districts_no_territories/FeatureServer/0/query?where=STATE_NAME=%27Georgia%27%20AND%20DISTRICT=%2705%27&outFields=*&f=geojson';
+    // GeoJSON source for All Georgia Congressional Districts (not just GA-05)
+    const districtDataSourceUrl = 'https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/USA_119th_Congressional_Districts_no_territories/FeatureServer/0/query?where=STATE_NAME=%27Georgia%27&outFields=*&f=geojson';
     
     // Use local GeoJSON data instead of external API
     const neighborhoodGeoJsonUrl = '{{ "/assets/data/neighborhoods.geojson" | relative_url }}';
@@ -267,16 +310,32 @@ document.addEventListener("DOMContentLoaded", function () {
     const campaignSecondary = '#C0392B';  // Bold Rojo
 
     // --- STYLES ---
-    // Style for the GA-05 district boundary
-    const districtStyle = new ol.style.Style({
-        stroke: new ol.style.Stroke({
-            color: campaignSecondary,
-            width: 3,
-        }),
-        fill: new ol.style.Fill({
-            color: 'rgba(192, 57, 43, 0.1)',
-        }),
-    });
+    // Style for Georgia Congressional Districts with GA-05 highlighted
+    const districtStyle = function(feature) {
+        const district = feature.get('DISTRICT');
+        const isGA05 = district === '05';
+        
+        return new ol.style.Style({
+            stroke: new ol.style.Stroke({
+                color: isGA05 ? campaignSecondary : 'rgba(46, 139, 87, 0.8)',
+                width: isGA05 ? 4 : 2,
+            }),
+            fill: new ol.style.Fill({
+                color: isGA05 ? 'rgba(192, 57, 43, 0.15)' : 'rgba(46, 139, 87, 0.05)',
+            }),
+            text: isGA05 ? new ol.style.Text({
+                text: 'GA-05',
+                font: 'bold 14px sans-serif',
+                fill: new ol.style.Fill({
+                    color: campaignSecondary,
+                }),
+                stroke: new ol.style.Stroke({
+                    color: '#ffffff',
+                    width: 3,
+                }),
+            }) : null
+        });
+    };
 
     // Default style for neighborhoods
     const neighborhoodStyle = new ol.style.Style({
