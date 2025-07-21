@@ -30,22 +30,23 @@ description: "Building the first community-governed campaign infrastructure — 
   /* Floating info box with ice-tracker styling */
   #info {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
     background: rgba(255, 253, 208, 0.95);
-    padding: 0.75rem 1rem;
-    border-radius: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
     border: 1px solid var(--campaign-peach, #FFDAB9);
     font-family: var(--font-family-sans, 'Lato', sans-serif);
-    font-size: 0.875rem;
+    font-size: 0.8rem;
     font-weight: 600;
     color: var(--gray-800, #1F2937);
     z-index: 100;
     pointer-events: none;
     backdrop-filter: blur(4px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: all 150ms ease-in-out;
-    max-width: 200px;
+    max-width: 180px;
+    opacity: 0.9;
   }
 
   /* Floating controls similar to ice-tracker */
@@ -75,33 +76,60 @@ description: "Building the first community-governed campaign infrastructure — 
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 
-  /* Bottom sheet for neighborhood details */
-  .bottom-sheet {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+  /* Sidebar layout for neighborhoods */
+  .neighborhoods-container {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 0;
+    height: 70vh;
+    min-height: 500px;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .neighborhoods-sidebar {
     background: white;
-    border-radius: 16px 16px 0 0;
-    box-shadow: 0 -2px 16px rgba(0, 0, 0, 0.1);
-    transform: translateY(calc(100% - 80px));
-    transition: transform 0.3s ease;
-    z-index: 600;
-    max-height: 60vh;
+    border-right: 2px solid var(--campaign-peach, #FFDAB9);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .sidebar-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+    background: var(--campaign-cream, #FFFDD0);
+  }
+
+  .sidebar-content {
+    flex: 1;
     overflow-y: auto;
+    padding: 1rem;
   }
 
-  .bottom-sheet.expanded {
-    transform: translateY(0);
-  }
-
-  .bottom-sheet-handle {
-    width: 40px;
-    height: 4px;
-    background: #ddd;
-    border-radius: 2px;
-    margin: 12px auto;
-    cursor: pointer;
+  /* Mobile: stack vertically */
+  @media (max-width: 768px) {
+    .neighborhoods-container {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto 1fr;
+      height: 80vh;
+    }
+    
+    .neighborhoods-sidebar {
+      border-right: none;
+      border-bottom: 2px solid var(--campaign-peach, #FFDAB9);
+      max-height: 250px;
+    }
+    
+    .sidebar-header {
+      padding: 1rem;
+    }
+    
+    .sidebar-content {
+      padding: 0.75rem;
+      max-height: 180px;
+    }
   }
 
   /* Neighborhood info cards */
@@ -116,7 +144,7 @@ description: "Building the first community-governed campaign infrastructure — 
     background: #f8f9fa;
   }
 
-  /* Neighborhood list styles */
+  /* Neighborhood list styles - optimized for sidebar */
   .neighborhood-list {
     max-height: 400px;
     overflow-y: auto;
@@ -126,21 +154,76 @@ description: "Building the first community-governed campaign infrastructure — 
   }
 
   .neighborhood-item {
-    padding: 12px 16px;
+    padding: 16px 20px;
     border-bottom: 1px solid #f3f4f6;
     cursor: pointer;
-    transition: background 0.2s ease;
+    transition: all 0.2s ease;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    -webkit-tap-highlight-color: transparent;
+    min-height: 60px;
+    position: relative;
   }
 
   .neighborhood-item:hover {
-    background: #f8f9fa;
+    background: var(--campaign-cream, #FFFDD0);
+    border-color: var(--campaign-primary, #2E8B57);
+    transform: translateX(2px);
+    box-shadow: 0 2px 8px rgba(46, 139, 87, 0.15);
+  }
+
+  .neighborhood-item:hover h3 {
+    color: var(--campaign-primary, #2E8B57);
+  }
+
+  .neighborhood-item:active {
+    background: var(--campaign-peach, #FFDAB9);
+    transform: scale(0.98);
   }
 
   .neighborhood-item:last-child {
     border-bottom: none;
+  }
+
+  /* Add visual indicator for interactivity */
+  .neighborhood-item::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--campaign-primary, #2E8B57);
+    transform: scaleY(0);
+    transition: transform 0.2s ease;
+  }
+
+  .neighborhood-item:hover::after {
+    transform: scaleY(1);
+  }
+
+  /* Mobile optimizations for neighborhood list */
+  @media (max-width: 768px) {
+    .neighborhood-list {
+      max-height: 300px;
+      border-radius: 1rem;
+    }
+    
+    .neighborhood-item {
+      padding: 20px 16px;
+      min-height: 70px;
+    }
+    
+    .neighborhood-item h3 {
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+    
+    .neighborhood-item p {
+      font-size: 0.875rem;
+      line-height: 1.3;
+    }
   }
 
   .prose {
@@ -152,38 +235,167 @@ description: "Building the first community-governed campaign infrastructure — 
     position: absolute;
     top: 1rem;
     left: 1rem;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(4px);
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(6px);
     padding: 0.75rem;
-    border-radius: 0.5rem;
+    border-radius: 0.75rem;
     border: 1px solid #e5e7eb;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
     z-index: 100;
-    max-width: 200px;
+    max-width: 220px;
     font-size: 0.75rem;
+    transition: all 0.2s ease;
+    user-select: none;
   }
 
-  /* Responsive adjustments */
+  .district-legend:hover {
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Mobile-first approach for legend */
+  .legend-toggle-mobile {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(6px);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 101;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: none;
+  }
+
+  .legend-content {
+    display: block;
+  }
+
+  /* Mobile legend styles */
+  .mobile-legend-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(8px);
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 200;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    display: none;
+  }
+
+  .mobile-legend-panel.active {
+    transform: translateY(0);
+  }
+
+  /* Mobile-first responsive design */
   @media (max-width: 768px) {
     #map {
-      height: 60vh;
-      min-height: 400px;
+      height: 65vh;
+      min-height: 350px;
     }
     
     #info {
-      top: 0.5rem;
-      right: 0.5rem;
-      left: 0.5rem;
+      bottom: 1rem;
+      left: 0.75rem;
+      right: 0.75rem;
       max-width: none;
+      text-align: center;
+      font-size: 0.8rem;
+      padding: 0.75rem;
+      border-radius: 0.75rem;
+    }
+    
+    /* Hide desktop legend on mobile */
+    .district-legend {
+      display: none;
+    }
+    
+    /* Show mobile toggle button */
+    .legend-toggle-mobile {
+      display: block;
+    }
+    
+    /* Show mobile legend panel */
+    .mobile-legend-panel {
+      display: block;
+    }
+    
+    /* Better spacing for mobile touches */
+    .mobile-legend-panel label {
+      padding: 1rem 0;
+      border-bottom: 1px solid #f3f4f6;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    .mobile-legend-panel label:last-of-type {
+      border-bottom: none;
+    }
+    
+    .mobile-legend-panel input[type="checkbox"] {
+      width: 1.25rem;
+      height: 1.25rem;
+      cursor: pointer;
+    }
+    
+    .mobile-legend-panel h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #1f2937;
       text-align: center;
     }
     
-    .district-legend {
-      top: 4rem;
-      left: 0.5rem;
-      right: 0.5rem;
-      max-width: none;
-      font-size: 0.7rem;
+    /* Better touch targets for floating buttons */
+    .floating-controls {
+      width: 52px;
+      height: 52px;
+    }
+    
+    .locate-fab {
+      width: 52px;
+      height: 52px;
+      bottom: 1.5rem;
+      right: 1rem;
+    }
+  }
+
+  /* Extra small devices */
+  @media (max-width: 480px) {
+    #map {
+      height: 70vh;
+      min-height: 300px;
+    }
+    
+    .mobile-legend-panel {
+      padding: 0.75rem;
+    }
+    
+    .mobile-legend-panel h4 {
+      font-size: 0.9rem;
+      margin-bottom: 0.75rem;
+    }
+    
+    .mobile-legend-panel label {
+      padding: 0.75rem 0;
+      font-size: 0.85rem;
+    }
+    
+    #info {
+      font-size: 0.75rem;
+      padding: 0.5rem 0.75rem;
     }
   }
 </style>
@@ -206,70 +418,125 @@ description: "Building the first community-governed campaign infrastructure — 
 <div class="container mx-auto px-4 py-8">
   <div class="neighborhoods-app">
     
-    <!-- Map Container -->
-    <div class="relative">
-      <div id="map"></div>
+    <!-- Sidebar + Map Layout -->
+    <div class="neighborhoods-container">
       
-      <!-- Floating info display -->
-      <div id="info">Hover over a neighborhood</div>
+      <!-- Neighborhoods Sidebar -->
+      <div class="neighborhoods-sidebar">
+        <div class="sidebar-header">
+          <h2 class="text-xl font-bold text-gray-900 mb-3">Find Your Neighborhood</h2>
+          <div>
+            <label for="neighborhood-search" class="block text-sm font-medium text-gray-700 mb-2">Search neighborhoods</label>
+            <input type="text" id="neighborhood-search" placeholder="Type to search..." class="w-full py-2.5 px-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-campaign-primary text-base" aria-label="Search neighborhoods">
+          </div>
+        </div>
+        
+        <div class="sidebar-content">
+          <div class="neighborhood-list" style="max-height: none; border: none; border-radius: 0; background: transparent;">
+            {% for neighborhood in site.data.neighborhoods.Official_Neighborhoods %}
+            <div class="neighborhood-item" data-name="{{ neighborhood.NAME }}" data-npu="{{ neighborhood.NPU }}" data-acres="{{ neighborhood.ACRES }}" style="border-radius: 0.5rem; margin-bottom: 0.5rem; border: 1px solid #e5e7eb;">
+              <div>
+                <h3 class="font-semibold text-gray-900 text-lg">{{ neighborhood.NAME }}</h3>
+                <p class="text-sm text-gray-600">NPU {{ neighborhood.NPU }} • {{ neighborhood.ACRES }} acres</p>
+              </div>
+              <div class="text-campaign-primary">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
       
-      <!-- District Legend -->
-      <div class="district-legend">
-        <h4 style="font-weight: 600; margin-bottom: 0.5rem; color: #1f2937;">Map Layers</h4>
-        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-          <div style="display: flex; align-items: center; gap: 0.5rem;">
-            <div style="width: 1rem; height: 0.75rem; border: 3px solid #DC2626; background: rgba(220, 38, 38, 0.25); border-radius: 0.125rem;"></div>
+      <!-- Map Container -->
+      <div class="relative">
+        <div id="map"></div>
+        
+        <!-- Floating info display -->
+        <div id="info">Click a neighborhood to learn more</div>
+        
+        <!-- Desktop Layer Controls -->
+        <div class="district-legend">
+          <h4 style="font-weight: 600; margin-bottom: 0.75rem; color: #1f2937;">Map Layers</h4>
+          <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <!-- GA-05 District (always visible) -->
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <div style="width: 1rem; height: 0.75rem; border: 3px solid #DC2626; background: rgba(220, 38, 38, 0.25); border-radius: 0.125rem;"></div>
+              <span style="color: #374151; font-weight: 600; font-size: 0.8rem;">GA-05 (Our District)</span>
+            </div>
+            
+            <!-- Toggle for Other Districts -->
+            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+              <input type="checkbox" id="toggle-districts" checked style="width: 1rem; height: 1rem;">
+              <div style="width: 1rem; height: 0.75rem; border: 2px dashed #1D4ED8; background: rgba(29, 78, 216, 0.08); border-radius: 0.125rem;"></div>
+              <span style="color: #374151; font-size: 0.8rem;">Other GA Districts</span>
+            </label>
+            
+            <!-- Toggle for Neighborhoods -->
+            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+              <input type="checkbox" id="toggle-neighborhoods" style="width: 1rem; height: 1rem;">
+              <div style="width: 1rem; height: 0.75rem; border: 2px solid #F59E0B; background: rgba(251, 146, 60, 0.12); border-radius: 0.125rem;"></div>
+              <span style="color: #374151; font-size: 0.8rem;">Atlanta Neighborhoods</span>
+            </label>
+            
+            <!-- Zoom hint -->
+            <div style="font-size: 0.7rem; color: #6b7280; font-style: italic; margin-top: 0.25rem;">
+              💡 Neighborhoods auto-show when zoomed in
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Layer Toggle Button -->
+        <button class="legend-toggle-mobile" id="mobile-legend-toggle" title="Toggle Map Layers">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+
+        <!-- Mobile Layer Controls Panel -->
+        <div class="mobile-legend-panel" id="mobile-legend-panel">
+          <h4>Map Layers</h4>
+          
+          <!-- GA-05 District (always visible) -->
+          <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem 0; border-bottom: 1px solid #f3f4f6;">
+            <div style="width: 1.25rem; height: 1rem; border: 3px solid #DC2626; background: rgba(220, 38, 38, 0.25); border-radius: 0.125rem;"></div>
             <span style="color: #374151; font-weight: 600;">GA-05 (Our District)</span>
           </div>
-          <div style="display: flex; align-items: center; gap: 0.5rem;">
-            <div style="width: 1rem; height: 0.75rem; border: 2px dashed #1D4ED8; background: rgba(29, 78, 216, 0.08); border-radius: 0.125rem;"></div>
+          
+          <!-- Toggle for Other Districts -->
+          <label>
+            <input type="checkbox" id="toggle-districts-mobile" checked>
+            <div style="width: 1.25rem; height: 1rem; border: 2px dashed #1D4ED8; background: rgba(29, 78, 216, 0.08); border-radius: 0.125rem;"></div>
             <span style="color: #374151;">Other GA Districts</span>
-          </div>
-          <div style="display: flex; align-items: center; gap: 0.5rem;">
-            <div style="width: 1rem; height: 0.75rem; border: 2px solid #F59E0B; background: rgba(251, 146, 60, 0.12); border-radius: 0.125rem;"></div>
+          </label>
+          
+          <!-- Toggle for Neighborhoods -->
+          <label>
+            <input type="checkbox" id="toggle-neighborhoods-mobile">
+            <div style="width: 1.25rem; height: 1rem; border: 2px solid #F59E0B; background: rgba(251, 146, 60, 0.12); border-radius: 0.125rem;"></div>
             <span style="color: #374151;">Atlanta Neighborhoods</span>
+          </label>
+          
+          <!-- Close button -->
+          <div style="text-align: center; margin-top: 1rem;">
+            <button id="close-mobile-legend" style="background: #f3f4f6; border: none; padding: 0.5rem 1rem; border-radius: 0.5rem; font-size: 0.875rem; color: #374151;">
+              Close
+            </button>
           </div>
         </div>
+        
+        <!-- Floating locate button -->
+        <button class="floating-controls locate-fab" id="locate-btn" title="Center on Atlanta">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+          </svg>
+        </button>
       </div>
       
-      <!-- Floating locate button -->
-      <button class="floating-controls locate-fab" id="locate-btn" title="Center on Atlanta">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-        </svg>
-      </button>
-      
-      <!-- Bottom sheet for neighborhood details -->
-      <div class="bottom-sheet" id="neighborhood-sheet">
-        <div class="bottom-sheet-handle" id="sheet-handle"></div>
-        <div class="px-4 pb-2">
-          <h3 class="text-lg font-semibold text-gray-900 mb-4">Neighborhood Details</h3>
-          <div id="neighborhood-info">
-            <p class="text-gray-600">Click on a neighborhood to see details</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Neighborhood List Section -->
-    <div class="mt-12">
-      <h2 class="text-2xl font-bold text-gray-900 mb-6">All Neighborhoods</h2>
-      <div class="neighborhood-list">
-        {% for neighborhood in site.data.neighborhoods.Official_Neighborhoods %}
-        <div class="neighborhood-item" data-name="{{ neighborhood.NAME }}" data-npu="{{ neighborhood.NPU }}" data-acres="{{ neighborhood.ACRES }}">
-          <div>
-            <h3 class="font-semibold text-gray-900">{{ neighborhood.NAME }}</h3>
-            <p class="text-sm text-gray-600">NPU {{ neighborhood.NPU }} • {{ neighborhood.ACRES }} acres</p>
-          </div>
-          <div class="text-campaign-primary">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-            </svg>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
     </div>
 
     <!-- Page content section -->
@@ -319,11 +586,11 @@ document.addEventListener("DOMContentLoaded", function () {
         return new ol.style.Style({
             stroke: new ol.style.Stroke({
                 color: isGA05 ? campaignSecondary : campaignAccent,
-                width: isGA05 ? 5 : 3,
-                lineDash: isGA05 ? [] : [8, 4], // Solid line for GA-05, dashed for others
+                width: isGA05 ? 5 : 2,
+                lineDash: isGA05 ? [] : [10, 5], // Solid line for GA-05, dashed for others
             }),
             fill: new ol.style.Fill({
-                color: isGA05 ? 'rgba(220, 38, 38, 0.25)' : 'rgba(29, 78, 216, 0.08)',
+                color: isGA05 ? 'rgba(220, 38, 38, 0.25)' : 'rgba(29, 78, 216, 0.03)',
             }),
             text: isGA05 ? new ol.style.Text({
                 text: 'GA-05',
@@ -339,21 +606,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     color: 'rgba(220, 38, 38, 0.9)',
                 }),
                 padding: [4, 8, 4, 8],
-            }) : new ol.style.Text({
-                text: `GA-${district}`,
-                font: '12px sans-serif',
-                fill: new ol.style.Fill({
-                    color: '#ffffff',
-                }),
-                stroke: new ol.style.Stroke({
-                    color: campaignAccent,
-                    width: 3,
-                }),
-                backgroundFill: new ol.style.Fill({
-                    color: 'rgba(29, 78, 216, 0.8)',
-                }),
-                padding: [2, 6, 2, 6],
-            })
+            }) : null // Remove labels for other districts to reduce clutter
         });
     };
 
@@ -404,6 +657,11 @@ document.addEventListener("DOMContentLoaded", function () {
         style: neighborhoodStyle,
     });
 
+    // --- LAYER VISIBILITY CONTROLS ---
+    let showDistricts = true;
+    let showNeighborhoods = false;
+    const MIN_NEIGHBORHOOD_ZOOM = 12; // Auto-show neighborhoods at zoom 12+
+
     // --- MAP INITIALIZATION ---
     const map = new ol.Map({
         target: 'map',
@@ -414,11 +672,97 @@ document.addEventListener("DOMContentLoaded", function () {
         }),
     });
 
+    // Initially hide neighborhoods layer
+    neighborhoodsLayer.setVisible(false);
+
+    // --- LAYER CONTROL FUNCTIONS ---
+    function updateLayerVisibility() {
+        const currentZoom = map.getView().getZoom();
+        const autoShowNeighborhoods = currentZoom >= MIN_NEIGHBORHOOD_ZOOM;
+        
+        // Update neighborhood visibility based on toggle AND zoom level
+        const shouldShowNeighborhoods = showNeighborhoods || autoShowNeighborhoods;
+        neighborhoodsLayer.setVisible(shouldShowNeighborhoods);
+        
+        // Update districts visibility
+        districtLayer.setVisible(showDistricts);
+        
+        // Update checkbox states to reflect auto-showing (both desktop and mobile)
+        const neighborhoodCheckbox = document.getElementById('toggle-neighborhoods');
+        const neighborhoodCheckboxMobile = document.getElementById('toggle-neighborhoods-mobile');
+        if (neighborhoodCheckbox) {
+            neighborhoodCheckbox.checked = shouldShowNeighborhoods;
+        }
+        if (neighborhoodCheckboxMobile) {
+            neighborhoodCheckboxMobile.checked = shouldShowNeighborhoods;
+        }
+    }
+
+    // --- EVENT LISTENERS ---
+    // Desktop layer toggle event listeners
+    document.getElementById('toggle-districts').addEventListener('change', function(e) {
+        showDistricts = e.target.checked;
+        // Sync mobile checkbox
+        const mobileCheckbox = document.getElementById('toggle-districts-mobile');
+        if (mobileCheckbox) mobileCheckbox.checked = e.target.checked;
+        updateLayerVisibility();
+    });
+
+    document.getElementById('toggle-neighborhoods').addEventListener('change', function(e) {
+        showNeighborhoods = e.target.checked;
+        // Sync mobile checkbox
+        const mobileCheckbox = document.getElementById('toggle-neighborhoods-mobile');
+        if (mobileCheckbox) mobileCheckbox.checked = e.target.checked;
+        updateLayerVisibility();
+    });
+
+    // Mobile layer toggle event listeners
+    document.getElementById('toggle-districts-mobile').addEventListener('change', function(e) {
+        showDistricts = e.target.checked;
+        // Sync desktop checkbox
+        const desktopCheckbox = document.getElementById('toggle-districts');
+        if (desktopCheckbox) desktopCheckbox.checked = e.target.checked;
+        updateLayerVisibility();
+    });
+
+    document.getElementById('toggle-neighborhoods-mobile').addEventListener('change', function(e) {
+        showNeighborhoods = e.target.checked;
+        // Sync desktop checkbox
+        const desktopCheckbox = document.getElementById('toggle-neighborhoods');
+        if (desktopCheckbox) desktopCheckbox.checked = e.target.checked;
+        updateLayerVisibility();
+    });
+
+    // Mobile legend panel toggle
+    const mobileToggleBtn = document.getElementById('mobile-legend-toggle');
+    const mobileLegendPanel = document.getElementById('mobile-legend-panel');
+    const closeMobileLegend = document.getElementById('close-mobile-legend');
+
+    mobileToggleBtn.addEventListener('click', function() {
+        mobileLegendPanel.classList.add('active');
+    });
+
+    closeMobileLegend.addEventListener('click', function() {
+        mobileLegendPanel.classList.remove('active');
+    });
+
+    // Close mobile legend when tapping outside
+    mobileLegendPanel.addEventListener('click', function(e) {
+        if (e.target === mobileLegendPanel) {
+            mobileLegendPanel.classList.remove('active');
+        }
+    });
+
+    // Zoom change listener
+    map.getView().on('change:resolution', function() {
+        updateLayerVisibility();
+    });
+
+    // Initial layer visibility update
+    updateLayerVisibility();
+
     // --- INTERACTIVITY ---
     const infoBox = document.getElementById('info');
-    const neighborhoodSheet = document.getElementById('neighborhood-sheet');
-    const neighborhoodInfo = document.getElementById('neighborhood-info');
-    const sheetHandle = document.getElementById('sheet-handle');
     let highlightedFeature = null;
 
     // Load neighborhood data from Jekyll
@@ -466,7 +810,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Click interaction
+    // Click interaction - navigate directly to neighborhood page
     map.on('click', function (e) {
         const featuresAtPixel = [];
         map.forEachFeatureAtPixel(e.pixel, function (feature, layer) {
@@ -478,11 +822,6 @@ document.addEventListener("DOMContentLoaded", function () {
         if (featuresAtPixel.length > 0) {
             const feature = featuresAtPixel[0];
             const name = feature.get('NAME') || 'Unknown';
-            const localData = getNeighborhoodData(name);
-            
-            // Use local data if available, fallback to feature properties
-            const npu = localData.NPU || feature.get('NPU') || 'Unknown';
-            const acres = localData.ACRES || feature.get('ACRES') || 'Unknown';
             
             // Create a URL-friendly version of the neighborhood name
             const neighborhoodSlug = name.toLowerCase()
@@ -491,39 +830,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 .replace(/-+/g, '-') // Replace multiple hyphens with single
                 .replace(/^-|-$/g, ''); // Remove leading/trailing hyphens
             
-            // Check if we have a specific neighborhood page
+            // Navigate to neighborhood page
             const neighborhoodPageUrl = `/neighborhoods/${neighborhoodSlug}/`;
-            
-            // Update neighborhood info in bottom sheet with navigation option
-            neighborhoodInfo.innerHTML = `
-                <div class="neighborhood-card">
-                    <h4 class="text-lg font-semibold text-gray-900 mb-2">${name}</h4>
-                    <div class="space-y-2 text-sm text-gray-600">
-                        <p><strong>NPU:</strong> ${npu}</p>
-                        <p><strong>Area:</strong> ${acres} acres</p>
-                        <div class="mt-4 flex gap-2">
-                            <a href="${neighborhoodPageUrl}" 
-                               class="inline-block px-4 py-2 bg-campaign-primary text-white rounded-lg hover:bg-opacity-90 transition-colors text-sm font-medium">
-                                View Neighborhood Page
-                            </a>
-                            <button onclick="this.closest('.bottom-sheet').classList.remove('expanded')" 
-                                    class="inline-block px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors text-sm font-medium">
-                                Close
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            `;
-            
-            // Expand bottom sheet
-            neighborhoodSheet.classList.add('expanded');
+            window.location.href = neighborhoodPageUrl;
         }
     });
 
-    // Bottom sheet toggle
-    sheetHandle.addEventListener('click', () => {
-        neighborhoodSheet.classList.toggle('expanded');
-    });
+    // No bottom sheet - removed
 
     // Locate button
     document.getElementById('locate-btn').addEventListener('click', () => {
@@ -552,10 +865,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     duration: 1000
                 });
                 
-                                 // Show details
-                 const localData = getNeighborhoodData(name);
-                 
-                 // Create a URL-friendly version of the neighborhood name
+                                 // Navigate to neighborhood page
                  const neighborhoodSlug = name.toLowerCase()
                      .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
                      .replace(/\s+/g, '-') // Replace spaces with hyphens
@@ -563,30 +873,22 @@ document.addEventListener("DOMContentLoaded", function () {
                      .replace(/^-|-$/g, ''); // Remove leading/trailing hyphens
                  
                  const neighborhoodPageUrl = `/neighborhoods/${neighborhoodSlug}/`;
-                 
-                 neighborhoodInfo.innerHTML = `
-                     <div class="neighborhood-card">
-                         <h4 class="text-lg font-semibold text-gray-900 mb-2">${name}</h4>
-                         <div class="space-y-2 text-sm text-gray-600">
-                             <p><strong>NPU:</strong> ${localData.NPU || 'Unknown'}</p>
-                             <p><strong>Area:</strong> ${localData.ACRES || 'Unknown'} acres</p>
-                             <div class="mt-4 flex gap-2">
-                                 <a href="${neighborhoodPageUrl}" 
-                                    class="inline-block px-4 py-2 bg-campaign-primary text-white rounded-lg hover:bg-opacity-90 transition-colors text-sm font-medium">
-                                     View Neighborhood Page
-                                 </a>
-                                 <button onclick="this.closest('.bottom-sheet').classList.remove('expanded')" 
-                                         class="inline-block px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors text-sm font-medium">
-                                     Close
-                                 </button>
-                             </div>
-                         </div>
-                     </div>
-                 `;
-                neighborhoodSheet.classList.add('expanded');
+                 window.location.href = neighborhoodPageUrl;
             }
         });
     });
+
+    // Neighborhood search filtering for accessibility
+    const searchInput = document.getElementById('neighborhood-search');
+    if (searchInput) {
+        searchInput.addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase().trim();
+            document.querySelectorAll('.neighborhood-item').forEach(item => {
+                const name = item.dataset.name.toLowerCase();
+                item.style.display = name.includes(query) ? 'flex' : 'none';
+            });
+        });
+    }
 
     // When the district data is loaded, zoom to fit
     districtLayer.getSource().once('featuresloadend', function(event) {
