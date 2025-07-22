@@ -15,7 +15,7 @@ oldname: "Oakland City"
 
 ### **Oakland City: A Community Snapshot**
 
-  * **Neighborhood Planning Unit:** [NPU-S](https://www.google.com/search?q=https://www.atlantaga.gov/government/departments/city-planning/neighborhood-planning-units-npu/npu-s)
+  * **Neighborhood Planning Unit:** [NPU-S](https://www.atlantaga.gov/government/departments/city-planning/neighborhood-planning-units/neighborhood-and-npu-contacts)
   * **City Council District:** [District 4](https://citycouncil.atlantaga.gov/council-members/jason-s-dozier)
   * **ZIP Code:** 30310
 
