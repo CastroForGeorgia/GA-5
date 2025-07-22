@@ -16,7 +16,7 @@ oldname: "Underwood Hills"
 ### **Underwood Hills: A Community Snapshot**
 
   * **Neighborhood Planning Unit:** [NPU-D](https://www.atlantaga.gov/government/departments/city-planning/neighborhood-planning-units/neighborhood-and-npu-contacts)
-  * **City Council District:** [District 5](https://citycouncil.atlantaga.gov/council-members/antonio-lewis)
+  * **City Council District:** [District 5](https://citycouncil.atlantaga.gov/council-members)
   * **Area:** 718.32 acres (1.12 sq. miles)
 
 - 🚧 **Coming soon — this hub is still under construction.**

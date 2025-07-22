@@ -16,7 +16,7 @@ oldname: "Swallow Circle/Baywood"
 ### **Swallow Circle/Baywood: A Community Snapshot**
 
   * **Neighborhood Planning Unit:** [NPU-Z](https://www.atlantaga.gov/government/departments/city-planning/neighborhood-planning-units/neighborhood-and-npu-contacts)
-  * **City Council District:** [District 5](https://citycouncil.atlantaga.gov/council-members/antonio-lewis)
+  * **City Council District:** [District 5](https://citycouncil.atlantaga.gov/council-members)
   * **Area:** 199.5 acres (0.31 sq. miles)
 
 - 🚧 **Coming soon — this hub is still under construction.**

@@ -16,7 +16,7 @@ oldname: "Almond Park/Carey Park"
 ### **Almond Park: A Community Snapshot**
 
   * **Neighborhood Planning Unit:** [NPU-G](https://www.atlantaga.gov/government/departments/city-planning/neighborhood-planning-units/neighborhood-and-npu-contacts)
-  * **City Council District:** [District 5](https://citycouncil.atlantaga.gov/council-members/antonio-lewis)
+  * **City Council District:** [District 5](https://citycouncil.atlantaga.gov/council-members)
   * **Area:** 337.31 acres (0.53 sq. miles)
 
 - 🚧 **Coming soon — this hub is still under construction.**

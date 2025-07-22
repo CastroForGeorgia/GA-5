@@ -16,7 +16,7 @@ oldname: "Morningside-Lenox Park"
 ### **Morningside/Lenox Park: A Community Snapshot**
 
   * **Neighborhood Planning Unit:** [NPU-F](https://www.atlantaga.gov/government/departments/city-planning/neighborhood-planning-units/neighborhood-and-npu-contacts
-  * **City Council District:** [District 5](https://citycouncil.atlantaga.gov/council-members/antonio-lewis)
+  * **City Council District:** [District 5](https://citycouncil.atlantaga.gov/council-members)
   * **Area:** 1445.95 acres (2.26 sq. miles)
 
 - 🚧 **Coming soon — this hub is still under construction.**

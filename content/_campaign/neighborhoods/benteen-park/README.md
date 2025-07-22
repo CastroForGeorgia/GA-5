@@ -16,7 +16,7 @@ oldname: "Benteen"
 ### **Benteen Park: A Community Snapshot**
 
   * **Neighborhood Planning Unit:** [NPU-W](https://www.atlantaga.gov/government/departments/city-planning/neighborhood-planning-units/neighborhood-and-npu-contacts)
-  * **City Council District:** [District 5](https://citycouncil.atlantaga.gov/council-members/antonio-lewis)
+  * **City Council District:** [District 5](https://citycouncil.atlantaga.gov/council-members)
   * **Area:** 180.54 acres (0.28 sq. miles)
 
 - 🚧 **Coming soon — this hub is still under construction.**

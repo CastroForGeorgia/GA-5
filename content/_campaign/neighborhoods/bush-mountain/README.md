@@ -16,7 +16,7 @@ oldname: "Bush Mountain"
 ### **Bush Mountain: A Community Snapshot**
 
   * **Neighborhood Planning Unit:** [NPU-S](https://www.atlantaga.gov/government/departments/city-planning/neighborhood-planning-units/neighborhood-and-npu-contacts)
-  * **City Council District:** [District 5](https://citycouncil.atlantaga.gov/council-members/antonio-lewis)
+  * **City Council District:** [District 5](https://citycouncil.atlantaga.gov/council-members)
   * **Area:** 49.8 acres (0.08 sq. miles)
 
 - 🚧 **Coming soon — this hub is still under construction.**

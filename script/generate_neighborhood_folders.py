@@ -74,7 +74,7 @@ oldname: "{oldname}"
 ### **{neighborhood_name}: A Community Snapshot**
 
   * **Neighborhood Planning Unit:** {get_npu_link(npu)}
-  * **City Council District:** [District 5](https://citycouncil.atlantaga.gov/council-members/antonio-lewis)
+  * **City Council District:** [District 5](https://citycouncil.atlantaga.gov/council-members)
   * **Area:** {acres} acres ({square_miles} sq. miles)
 
 - 🚧 **Coming soon — this hub is still under construction.**

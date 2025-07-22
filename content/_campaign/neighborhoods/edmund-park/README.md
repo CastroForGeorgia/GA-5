@@ -16,7 +16,7 @@ oldname: "Edmund Park"
 ### **Edmund Park: A Community Snapshot**
 
   * **Neighborhood Planning Unit:** [NPU-F](https://www.atlantaga.gov/government/departments/city-planning/neighborhood-planning-units/neighborhood-and-npu-contacts
-  * **City Council District:** [District 5](https://citycouncil.atlantaga.gov/council-members/antonio-lewis)
+  * **City Council District:** [District 5](https://citycouncil.atlantaga.gov/council-members)
   * **Area:** 19.27 acres (0.03 sq. miles)
 
 - 🚧 **Coming soon — this hub is still under construction.**

@@ -16,7 +16,7 @@ oldname: "Greenbriar"
 ### **Greenbriar: A Community Snapshot**
 
   * **Neighborhood Planning Unit:** [NPU-R](https://www.atlantaga.gov/government/departments/city-planning/neighborhood-planning-units/neighborhood-and-npu-contacts)
-  * **City Council District:** [District 5](https://citycouncil.atlantaga.gov/council-members/antonio-lewis)
+  * **City Council District:** [District 5](https://citycouncil.atlantaga.gov/council-members)
   * **Area:** 655.27 acres (1.02 sq. miles)
 
 - 🚧 **Coming soon — this hub is still under construction.**

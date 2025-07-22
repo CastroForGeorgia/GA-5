@@ -16,7 +16,7 @@ oldname: "Bankhead"
 ### **Historic Westin Heights/Bankhead: A Community Snapshot**
 
   * **Neighborhood Planning Unit:** [NPU-K](https://www.atlantaga.gov/government/departments/city-planning/neighborhood-planning-units/neighborhood-and-npu-contacts)
-  * **City Council District:** [District 5](https://citycouncil.atlantaga.gov/council-members/antonio-lewis)
+  * **City Council District:** [District 5](https://citycouncil.atlantaga.gov/council-members)
   * **Area:** 416.09 acres (0.65 sq. miles)
 
 - 🚧 **Coming soon — this hub is still under construction.**

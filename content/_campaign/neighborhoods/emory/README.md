@@ -16,7 +16,7 @@ oldname: "Emory"
 ### **Emory: A Community Snapshot**
 
   * **Neighborhood Planning Unit:** [NPU-F](https://www.atlantaga.gov/government/departments/city-planning/neighborhood-planning-units/neighborhood-and-npu-contacts
-  * **City Council District:** [District 5](https://citycouncil.atlantaga.gov/council-members/antonio-lewis)
+  * **City Council District:** [District 5](https://citycouncil.atlantaga.gov/council-members)
   * **Area:** unknown acres (unknown sq. miles)
 
 - 🚧 **Coming soon — this hub is still under construction.**

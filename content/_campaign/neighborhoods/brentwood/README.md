@@ -16,7 +16,7 @@ oldname: "Brentwood"
 ### **Brentwood: A Community Snapshot**
 
   * **Neighborhood Planning Unit:** [NPU-P](https://www.atlantaga.gov/government/departments/city-planning/neighborhood-planning-units/neighborhood-and-npu-contacts)
-  * **City Council District:** [District 5](https://citycouncil.atlantaga.gov/council-members/antonio-lewis)
+  * **City Council District:** [District 5](https://citycouncil.atlantaga.gov/council-members)
   * **Area:** 46.45 acres (0.07 sq. miles)
 
 - 🚧 **Coming soon — this hub is still under construction.**
