@@ -277,6 +277,12 @@ document.addEventListener("DOMContentLoaded", function () {
             // Clear inline display so Tailwind classes take precedence
             card.style.display = '';
         });
+        // Ensure placeholder spinner/no-results div is at the TOP of the list
+        const list = document.querySelector('.neighborhood-list');
+        const placeholder = document.getElementById('no-results');
+        if (list && placeholder) {
+            list.insertBefore(placeholder, list.firstChild);
+        }
     }
 
     // Run immediately after script load
