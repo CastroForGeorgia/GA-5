@@ -1,5 +1,5 @@
 ---
-layout: welcome-hub-page
+layout: page
 title: "Design Contributions Guide"
 description: "Join our creative team designing flyers, social media graphics, infographics, and more. Help make our message resonate with diverse communities through visual storytelling."
 permalink: /campaign/welcome-hub/get-involved/design-contributions/

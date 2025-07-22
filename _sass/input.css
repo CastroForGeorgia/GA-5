@@ -213,6 +213,15 @@ summary::marker {
   }
 }
 
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 /* ==============================================
    5. Campaign-Specific Utilities
    ============================================== */
@@ -334,4 +343,927 @@ body {
 /* Slight animation for CTA buttons */
 .btn-cta:hover {
   transform: translateY(-2px) scale(1.02);
+}
+
+/* ==============================================
+   8. Ice Tracker App Styles
+   ============================================== */
+
+/* Ice Tracker App Container */
+.ice-tracker-app {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  max-height: calc(100vh - 80px); /* Account for header */
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.ice-tracker-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px 8px 0 0;
+}
+
+/* Map Styling */
+#map {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Floating Controls */
+.floating-controls {
+  position: absolute;
+  z-index: 500;
+}
+
+.search-bar {
+  top: 80px;
+  left: 16px;
+  right: 16px;
+}
+
+/* Floating Action Buttons */
+.report-fab {
+  bottom: 100px;
+  right: 16px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--campaign-primary);
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 500; /* Below bottom sheet */
+}
+
+.report-fab:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.layers-fab {
+  bottom: 170px;
+  right: 16px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 500; /* Below bottom sheet */
+}
+
+.locate-fab {
+  bottom: 30px;
+  right: 16px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 500; /* Below bottom sheet */
+}
+
+/* Bottom Sheet */
+.bottom-sheet {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  border-radius: 16px 16px 0 0;
+  box-shadow: 0 -2px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(calc(100% - 80px));
+  transition: transform 0.3s ease;
+  z-index: 600; /* Below report bottom sheet */
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.bottom-sheet.expanded {
+  transform: translateY(0);
+}
+
+.bottom-sheet-handle {
+  width: 40px;
+  height: 4px;
+  background: #ddd;
+  border-radius: 2px;
+  margin: 12px auto;
+  cursor: pointer;
+}
+
+/* Report Cards */
+.report-card {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 16px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.report-card:hover {
+  background: #f8f9fa;
+}
+
+/* Voting Interface */
+.vote-buttons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.vote-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.vote-btn.active {
+  background: var(--campaign-primary);
+  color: white;
+  border-color: var(--campaign-primary);
+}
+
+.vote-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Status Indicators */
+.status-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.status-safe { 
+  background: #10b981; 
+}
+
+.status-caution { 
+  background: #f59e0b; 
+}
+
+.status-unsafe { 
+  background: #ef4444; 
+}
+
+/* Modal Styling */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: none !important;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.modal.active {
+  display: flex !important;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  width: 100%;
+  max-width: 400px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* Ice Tracker integrates with site layout */ 
+
+/* ==============================================
+   9. Modern Bottom Sheet & Quick Selection
+   ============================================== */
+
+/* Bottom Sheet Core Animation */
+.report-bottom-sheet {
+  @apply fixed inset-0 pointer-events-none opacity-0 transition-opacity duration-300;
+  z-index: 9999; /* Higher than any other element */
+}
+
+.report-bottom-sheet.active {
+  @apply pointer-events-auto opacity-100;
+}
+
+.sheet-backdrop {
+  @apply absolute inset-0 bg-black/30 opacity-0 transition-opacity duration-300;
+}
+
+.report-bottom-sheet.active .sheet-backdrop {
+  @apply opacity-100;
+}
+
+/* Prevent body scroll when sheet is active */
+body.sheet-open {
+  @apply overflow-hidden;
+  position: fixed;
+  width: 100%;
+}
+
+.sheet-container {
+  @apply absolute bottom-0 left-0 right-0 bg-white rounded-t-2xl max-h-[85vh] transform translate-y-full transition-transform duration-300 ease-out shadow-2xl;
+}
+
+.report-bottom-sheet.active .sheet-container {
+  @apply translate-y-0;
+}
+
+.sheet-header {
+  @apply flex-shrink-0 border-b border-gray-100;
+}
+
+.sheet-handle {
+  @apply w-9 h-1 bg-gray-300 rounded-full mx-auto my-2;
+}
+
+.sheet-content {
+  @apply overflow-y-auto max-h-[calc(85vh-60px)] overscroll-contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Sticky Bottom Actions */
+.sticky-bottom-actions {
+  @apply sticky bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-4 py-4 mt-6;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Quick Selection Pills */
+.quick-option {
+  @apply relative cursor-pointer block;
+}
+
+.quick-option-content {
+  @apply flex items-center justify-center py-3 px-4 border-2 border-gray-200 rounded-xl bg-white text-center text-sm font-medium text-gray-600 transition-all duration-200 min-h-[48px] hover:border-gray-300 hover:-translate-y-0.5 active:scale-95;
+}
+
+.quick-option-content.text-left {
+  @apply justify-start;
+  text-align: left;
+}
+
+.quick-option input:checked + .quick-option-content {
+  @apply bg-blue-600 border-blue-600 text-white transform scale-105 shadow-lg;
+}
+
+.quick-option input:checked + .quick-option-content:hover {
+  @apply bg-blue-700 border-blue-700;
+}
+
+/* Form Group Spacing */
+.form-group {
+  @apply mb-6;
+}
+
+.form-group label {
+  @apply block text-sm font-semibold text-gray-700 mb-3;
+}
+
+/* Zone Display Card */
+.zone-display {
+  @apply bg-blue-50 border border-blue-200 rounded-xl p-4 text-center;
+}
+
+.zone-count {
+  @apply font-mono font-bold text-blue-700;
+}
+
+/* Action Buttons with Proper Tailwind */
+.action-btn {
+  @apply w-full py-4 px-6 rounded-xl font-semibold text-base border-0 cursor-pointer transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-offset-2 active:scale-95;
+  touch-action: manipulation;
+}
+
+.action-btn-primary {
+  @apply bg-blue-600 text-white hover:bg-blue-700 hover:-translate-y-0.5 hover:shadow-lg focus:ring-blue-500;
+}
+
+.action-btn-danger {
+  @apply bg-red-600 text-white hover:bg-red-700 hover:-translate-y-0.5 hover:shadow-lg focus:ring-red-500;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 640px) {
+  .sheet-container {
+    @apply max-h-[90vh];
+  }
+  
+  .sheet-content {
+    @apply max-h-[calc(90vh-60px)];
+  }
+  
+  .quick-option-content {
+    @apply py-2.5 px-2 text-xs min-h-[44px];
+  }
+  
+  .action-btn {
+    @apply py-4 text-base;
+  }
+  
+  .form-group {
+    @apply mb-5;
+  }
+}
+
+/* Floating Report Button Enhancement */
+.report-fab {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.3);
+}
+
+.report-fab:hover {
+  box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+  transform: scale(1.05) translateY(-1px);
+}
+
+.report-fab:active {
+  transform: scale(0.95);
+} 
+
+/* ==============================================
+   10. Neighborhoods App Styles
+   ============================================== */
+
+/* Neighborhoods App Container */
+.neighborhoods-app {
+  position: relative;
+  width: 100%;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Neighborhoods Map Styling */
+.neighborhoods-app #map {
+  width: 100%;
+  height: 70vh;
+  min-height: 500px;
+  border-radius: 0.75rem;
+  border: 2px solid var(--campaign-peach, #FFDAB9);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Floating info box with ice-tracker styling */
+.neighborhoods-app #info {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  background: rgba(255, 253, 208, 0.95);
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--campaign-peach, #FFDAB9);
+  font-family: var(--font-family-sans, 'Lato', sans-serif);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--gray-800, #1F2937);
+  z-index: 100;
+  pointer-events: none;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 150ms ease-in-out;
+  max-width: 180px;
+  opacity: 0.9;
+}
+
+/* Floating controls similar to ice-tracker */
+.neighborhoods-app .floating-controls {
+  position: absolute;
+  z-index: 500;
+}
+
+.neighborhoods-app .search-fab {
+  bottom: 100px;
+  right: 16px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--campaign-primary, #2E8B57);
+  color: white;
+  box-shadow: 0 4px 12px rgba(46, 139, 87, 0.3);
+  border: none;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 500;
+}
+
+.neighborhoods-app .search-fab:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(46, 139, 87, 0.4);
+}
+
+.neighborhoods-app .locate-fab {
+  bottom: 30px;
+  right: 16px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.neighborhoods-app .locate-fab:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile search modal styles */
+.neighborhoods-app .search-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.neighborhoods-app .search-modal.active {
+  display: flex;
+  opacity: 1;
+}
+
+.neighborhoods-app .modal-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.neighborhoods-app .modal-content {
+  position: relative;
+  background: white;
+  margin: auto;
+  width: 90%;
+  max-width: 500px;
+  max-height: 80vh;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.neighborhoods-app .modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  background: var(--campaign-cream, #FFFDD0);
+}
+
+.neighborhoods-app .close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: background 0.2s ease;
+}
+
+.neighborhoods-app .close-btn:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.neighborhoods-app .modal-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.neighborhoods-app .search-section {
+  padding: 1.5rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.neighborhoods-app .results-section {
+  flex: 1;
+  overflow: hidden;
+}
+
+.neighborhoods-app .neighborhood-results {
+  height: 100%;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.neighborhoods-app .result-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  margin-bottom: 0.75rem;
+  background: white;
+  transition: all 0.2s ease;
+}
+
+.neighborhoods-app .result-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-color: var(--campaign-primary, #2E8B57);
+}
+
+.neighborhoods-app .result-info h3 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.neighborhoods-app .result-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.neighborhoods-app .result-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem 0.75rem;
+  border: 2px solid;
+  border-radius: 0.5rem;
+  background: white;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 36px;
+}
+
+.neighborhoods-app .result-btn.view-on-map {
+  border-color: var(--campaign-secondary, #C0392B);
+  color: var(--campaign-secondary, #C0392B);
+}
+
+.neighborhoods-app .result-btn.view-on-map:hover {
+  background: var(--campaign-secondary, #C0392B);
+  color: white;
+}
+
+.neighborhoods-app .result-btn.learn-more {
+  border-color: var(--campaign-primary, #2E8B57);
+  color: var(--campaign-primary, #2E8B57);
+}
+
+.neighborhoods-app .result-btn.learn-more:hover {
+  background: var(--campaign-primary, #2E8B57);
+  color: white;
+}
+
+/* Sidebar layout for neighborhoods */
+.neighborhoods-app .neighborhoods-container {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 0;
+  height: 70vh;
+  min-height: 500px;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.neighborhoods-app .neighborhoods-sidebar {
+  background: white;
+  border-right: 2px solid var(--campaign-peach, #FFDAB9);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.neighborhoods-app .sidebar-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  background: var(--campaign-cream, #FFFDD0);
+}
+
+.neighborhoods-app .sidebar-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+/* Neighborhood info cards */
+.neighborhoods-app .neighborhood-card {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 16px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.neighborhoods-app .neighborhood-card:hover {
+  background: #f8f9fa;
+}
+
+/* Neighborhood list styles - card-based with explicit buttons */
+.neighborhoods-app .neighborhood-list {
+  max-height: 400px;
+  overflow-y: auto;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+}
+
+.neighborhoods-app .neighborhood-card {
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.neighborhoods-app .neighborhood-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(46, 139, 87, 0.15);
+}
+
+.neighborhoods-app .neighborhood-info h3 {
+  transition: color 0.2s ease;
+}
+
+.neighborhoods-app .neighborhood-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* Explicit action buttons for accessibility */
+.neighborhoods-app .neighborhood-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 0.75rem;
+  border: 2px solid var(--campaign-primary, #2E8B57);
+  border-radius: 0.5rem;
+  background: white;
+  color: var(--campaign-primary, #2E8B57);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  min-height: 40px;
+  white-space: nowrap;
+}
+
+.neighborhoods-app .neighborhood-btn:hover {
+  background: var(--campaign-primary, #2E8B57);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(46, 139, 87, 0.3);
+}
+
+.neighborhoods-app .neighborhood-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 4px rgba(46, 139, 87, 0.3);
+}
+
+/* Learn More button - primary action */
+.neighborhoods-app .neighborhood-btn.learn-more {
+  background: var(--campaign-primary, #2E8B57);
+  color: white;
+  font-weight: 600;
+}
+
+.neighborhoods-app .neighborhood-btn.learn-more:hover {
+  background: #228B22;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(46, 139, 87, 0.4);
+}
+
+/* View on Map button - secondary action */
+.neighborhoods-app .neighborhood-btn.view-on-map {
+  border-color: var(--campaign-secondary, #C0392B);
+  color: var(--campaign-secondary, #C0392B);
+}
+
+.neighborhoods-app .neighborhood-btn.view-on-map:hover {
+  background: var(--campaign-secondary, #C0392B);
+  border-color: var(--campaign-secondary, #C0392B);
+  color: white;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+  /* Ensure visibility on mobile */
+  .neighborhoods-app .neighborhoods-sidebar {
+    overflow: visible;
+  }
+
+  /* Mobile sidebar content fixes */
+  .neighborhoods-app .sidebar-content {
+    overflow-y: visible;
+    flex: none;
+    height: auto;
+  }
+
+  /* Mobile: hide sidebar, show search button instead */
+  .neighborhoods-app .neighborhoods-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    height: 80vh;
+    min-height: 500px;
+  }
+  
+  .neighborhoods-app .neighborhoods-sidebar {
+    display: none;
+  }
+  
+  /* Map takes full space on mobile */
+  .neighborhoods-app #map {
+    height: 100%;
+    min-height: 500px;
+  }
+
+  /* Show search button on mobile */
+  .neighborhoods-app .search-fab {
+    display: flex;
+  }
+
+  /* Mobile modal optimizations */
+  .neighborhoods-app .modal-content {
+    width: 95%;
+    margin: 20px auto;
+    max-height: 85vh;
+  }
+
+  .neighborhoods-app .result-item {
+    padding: 0.75rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .neighborhoods-app .result-info {
+    text-align: center;
+  }
+
+  .neighborhoods-app .result-actions {
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .neighborhoods-app .result-btn {
+    flex: 1;
+    justify-content: center;
+    min-height: 44px;
+  }
+
+  /* Mobile optimizations - larger touch targets */
+  .neighborhoods-app .neighborhood-list {
+    max-height: none;
+    height: auto;
+    overflow-y: visible;
+  }
+  
+  .neighborhoods-app .neighborhood-card {
+    margin-bottom: 1rem !important;
+    padding: 1.25rem !important;
+    display: block !important;
+  }
+  
+  .neighborhoods-app .neighborhood-info h3 {
+    font-size: 1.125rem;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+  }
+  
+  .neighborhoods-app .neighborhood-info p {
+    font-size: 0.875rem;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+  }
+
+  .neighborhoods-app .neighborhood-actions {
+    gap: 0.75rem;
+  }
+  
+  .neighborhoods-app .neighborhood-btn {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    min-height: 48px;
+    flex: 1;
+    justify-content: center;
+  }
+
+  /* Mobile-first responsive design */
+  .neighborhoods-app #map {
+    height: 65vh;
+    min-height: 350px;
+  }
+  
+  .neighborhoods-app #info {
+    bottom: 1rem;
+    left: 0.75rem;
+    right: 0.75rem;
+    max-width: none;
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 0.75rem;
+    border-radius: 0.75rem;
+  }
+  
+  /* Better touch targets for floating buttons */
+  .neighborhoods-app .floating-controls {
+    width: 52px;
+    height: 52px;
+  }
+  
+  .neighborhoods-app .locate-fab {
+    width: 52px;
+    height: 52px;
+    bottom: 1.5rem;
+    right: 1rem;
+  }
+}
+
+/* Extra small devices - stack buttons vertically */
+@media (max-width: 480px) {
+  .neighborhoods-app .neighborhood-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .neighborhoods-app .neighborhood-btn {
+    width: 100%;
+  }
+
+  .neighborhoods-app #map {
+    height: 70vh;
+    min-height: 300px;
+  }
+  
+  .neighborhoods-app .mobile-legend-panel {
+    padding: 0.75rem;
+  }
+  
+  .neighborhoods-app .mobile-legend-panel h4 {
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .neighborhoods-app .mobile-legend-panel label {
+    padding: 0.75rem 0;
+    font-size: 0.85rem;
+  }
+  
+  .neighborhoods-app #info {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+.neighborhoods-app .prose {
+  max-width: 100%;
 } 

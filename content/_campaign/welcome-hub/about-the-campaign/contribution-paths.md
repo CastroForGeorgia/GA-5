@@ -1,5 +1,5 @@
 ---
-layout: welcome-hub-page
+layout: page
 title: "Contribution Paths"
 description: "Discover how you can help our campaign. Find the perfect way to contribute your skills and time by joining a team on our Discord server."
 permalink: /campaign/welcome-hub/about-the-campaign/contribution-paths/

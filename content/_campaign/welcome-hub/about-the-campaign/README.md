@@ -1,5 +1,5 @@
 ---
-layout: welcome-hub-page
+layout: page
 title: "About the Campaign"
 description: "Learn about our open-source campaign approach, vision, governance model, and how transparent collaborative politics works in practice."
 permalink: /campaign/welcome-hub/about-the-campaign/

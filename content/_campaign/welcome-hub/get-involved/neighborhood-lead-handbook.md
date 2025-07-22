@@ -1,5 +1,5 @@
 ---
-layout: welcome-hub-page
+layout: page
 title: "Neighborhood Lead Handbook"
 description: "Lead your community with this comprehensive guide to organizing neighbors, fostering engagement, and making local voices heard in our grassroots campaign."
 permalink: /campaign/welcome-hub/get-involved/neighborhood-lead-handbook/

@@ -1,5 +1,5 @@
 ---
-layout: welcome-hub-page
+layout: page
 title: "Campaign Glossary"
 description: "Learn the key terms for our open-source campaign. This simple guide will help you understand how we work together on Discord and GitHub."
 permalink: /campaign/welcome-hub/about-the-campaign/glossary/

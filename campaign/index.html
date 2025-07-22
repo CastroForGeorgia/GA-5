@@ -31,15 +31,24 @@ image: /assets/images/agi-header.png
     </div>
 
     <!-- Campaign Hubs Grid -->
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-      {% assign hub_slugs = "welcome-hub,campaign-hq,neighborhoods,community-lounge" | split: "," %}
-      {% for slug in hub_slugs %}
-        {% assign hub_doc = site.campaign | where_exp: "d", "d.path contains 'README'" | where_exp: "d", "d.path contains slug" | first %}
-        <a href="/campaign/{{ slug }}/" class="group block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-200 p-6 border border-gray-200 hover:border-campaign-primary no-underline">
-          <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-campaign-primary transition-colors">{{ hub_doc.title }}</h3>
-          <p class="text-gray-600 text-sm">{{ hub_doc.description }}</p>
-        </a>
-      {% endfor %}
+    <div class="grid md:grid-cols-3 gap-6">
+      <!-- Welcome Hub -->
+      <a href="/campaign/welcome-hub/" class="group block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-200 p-6 border border-gray-200 hover:border-campaign-primary no-underline">
+        <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-campaign-primary transition-colors">Welcome Hub</h3>
+        <p class="text-gray-600 text-sm">New here? Read these guides to understand how we operate.</p>
+      </a>
+
+      <!-- Campaign HQ -->
+      <a href="/campaign/campaign-hq/" class="group block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-200 p-6 border border-gray-200 hover:border-campaign-primary no-underline">
+        <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-campaign-primary transition-colors">Campaign HQ</h3>
+        <p class="text-gray-600 text-sm">Explore our official policy, design, and tech resources.</p>
+      </a>
+
+      <!-- Neighborhoods -->
+      <a href="/neighborhoods/" class="group block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-200 p-6 border border-gray-200 hover:border-campaign-primary no-underline">
+        <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-campaign-primary transition-colors">Neighborhoods</h3>
+        <p class="text-gray-600 text-sm">See organizing plans and materials for specific neighborhoods.</p>
+      </a>
     </div>
   </div>
 </article>

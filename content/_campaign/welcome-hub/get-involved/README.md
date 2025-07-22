@@ -1,5 +1,5 @@
 ---
-layout: welcome-hub-page
+layout: page
 title: "Get Involved"
 description: "Find your place in our movement. From quick-start guides to neighborhood leadership, discover how to contribute your skills to building progressive change."
 permalink: /campaign/welcome-hub/get-involved/

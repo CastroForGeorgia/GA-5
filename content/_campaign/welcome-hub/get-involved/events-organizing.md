@@ -1,5 +1,5 @@
 ---
-layout: welcome-hub-page
+layout: page
 title: "Event Organizing Guide"
 description: "Learn to organize community events, town halls, canvass kickoffs, and more. Build connections and mobilize your neighborhood through effective grassroots organizing."
 permalink: /campaign/welcome-hub/get-involved/events-organizing/

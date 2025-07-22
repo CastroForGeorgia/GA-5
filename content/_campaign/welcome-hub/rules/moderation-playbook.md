@@ -1,5 +1,5 @@
 ---
-layout: welcome-hub-page
+layout: page
 title: "Moderation Playbook"
 description: "Step-by-step guide for moderators to handle conflicts, enforce rules, and maintain a welcoming environment in our open-source community."
 permalink: /campaign/welcome-hub/rules/moderation-playbook/
