@@ -428,50 +428,44 @@ document.addEventListener("DOMContentLoaded", function () {
         container.style.display = 'block';
     }
 
+    // Modern card visibility management using CSS classes
     function showCards(features) {
-        const allCards = document.querySelectorAll('.neighborhood-card');
-        const noResultsDivId = 'no-results';
-        
-        // Reset all cards
-        allCards.forEach(card => {
-            card.style.display = 'none';
-            card.style.border = '';
-            card.style.backgroundColor = '';
-        });
-        
+        const cards = document.querySelectorAll('.neighborhood-card');
+        const placeholderId = 'no-results';
+
+        // 1. Empty → show error placeholder and hide every card
         if (features.length === 0) {
-            renderPlaceholder({ targetId: noResultsDivId, state: 'error', message: 'No neighborhoods found' });
+            cards.forEach(c => c.classList.add('hidden'));
+            renderPlaceholder({ targetId: placeholderId, state: 'error', message: 'No neighborhoods found' });
             return;
         }
-        
-        // Show matching cards
-        features.forEach(feature => {
-            const name = feature.properties.NAME || feature.properties.name;
-            const matchingCard = Array.from(allCards).find(card => card.dataset.name === name);
-            if (matchingCard) {
-                matchingCard.style.display = 'block';
-                // Add emphasis for single result
-                if (features.length === 1) {
-                    matchingCard.style.border = '2px solid var(--campaign-primary, #2E8B57)';
-                    matchingCard.style.backgroundColor = 'rgba(46, 139, 87, 0.05)';
-                }
+
+        hidePlaceholder(placeholderId);
+
+        const highlightSingle = features.length === 1;
+        const allowed = new Set(features.map(f => (f.properties.NAME || f.properties.name)));
+
+        Array.from(cards).forEach(card => {
+            if (!card.classList.contains('neighborhood-card')) return; // guard
+            const inResults = allowed.has(card.dataset.name);
+
+            // Toggle visibility
+            card.classList.toggle('hidden', !inResults);
+
+            // Toggle highlight for single result
+            if (inResults && highlightSingle) {
+                card.classList.add('ring-2', 'ring-green-500', 'bg-green-50');
+            } else {
+                card.classList.remove('ring-2', 'ring-green-500', 'bg-green-50');
             }
         });
-        
-        hidePlaceholder(noResultsDivId);
     }
-    
+
     function showAll() {
-        const allCards = document.querySelectorAll('.neighborhood-card');
-        const noResultsDivId = 'no-results';
-        
-        allCards.forEach(card => {
-            card.style.display = 'block';
-            card.style.border = '';
-            card.style.backgroundColor = '';
+        document.querySelectorAll('.neighborhood-card').forEach(card => {
+            card.classList.remove('hidden', 'ring-2', 'ring-green-500', 'bg-green-50');
         });
-        
-        hidePlaceholder(noResultsDivId);
+        hidePlaceholder('no-results');
     }
     
     function showSpinner() {
@@ -542,11 +536,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
     // Function to reset neighborhood display to show all
     function resetNeighborhoodDisplay() {
-        document.querySelectorAll('.neighborhood-card').forEach(card => {
-            card.style.display = 'block';
-            card.style.border = '';
-            card.style.backgroundColor = '';
-        });
+        showAll(); // Use the refactored function
     }
 
     // Hover interaction
