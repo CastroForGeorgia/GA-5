@@ -2,6 +2,7 @@
 layout: page
 title: "Welcome Hub – Your First Stop"
 description: "Orientation center for new volunteers: learn how our open-source campaign works and join our community on Discord to get involved."
+permalink: /campaign/welcome-hub/
 ---
 
 # 🌟 Welcome to the Castro for Georgia Open-Source Campaign!

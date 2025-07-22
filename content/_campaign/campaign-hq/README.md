@@ -7,4 +7,5 @@ permalink: /campaign/campaign-hq/
 
 # 🏛️ Campaign HQ
 
-# 30_campaign-hq
+- 🚧 **Coming soon — this hub is still under construction.**
+- Check back shortly for updates, resources, and ways to get involved.
