@@ -5,4 +5,4 @@ description: "Connect with your local neighborhood organizing efforts. Building 
 permalink: /neighborhoods/
 ---
 
-# neighborhoodss
+# neighborhoods

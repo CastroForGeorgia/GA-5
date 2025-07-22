@@ -15,14 +15,14 @@
         <div class="sidebar-header">
           <h2 class="text-xl font-bold text-gray-900 mb-3">Find Your Neighborhood</h2>
           <div>
-            <label for="neighborhood-search" class="block text-sm font-medium text-gray-700 mb-2">Search neighborhoods</label>
-            <input type="text" id="neighborhood-search" placeholder="Type to search..." class="w-full py-2.5 px-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-campaign-primary text-base" aria-label="Search neighborhoods">
+            <label for="neighborhood-search" class="block text-sm font-medium text-gray-700 mb-2">Search neighborhoods or addresses</label>
+            <input type="text" id="neighborhood-search" placeholder="Type neighborhood name or address..." class="w-full py-2.5 px-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-campaign-primary text-base" aria-label="Search neighborhoods or addresses">
           </div>
         </div>
         
         <div class="sidebar-content">
           <div class="neighborhood-list" style="max-height: none; border: none; border-radius: 0; background: transparent; overflow: visible;">
-            {% for neighborhood in site.data.neighborhoods.Official_Neighborhoods %}
+            {% for neighborhood in site.data.neighborhoods.neighborhoods_info %}
             <div class="neighborhood-card" data-name="{{ neighborhood.NAME }}" data-npu="{{ neighborhood.NPU }}" data-acres="{{ neighborhood.ACRES }}" style="border-radius: 0.75rem; margin-bottom: 0.75rem; border: 1px solid #e5e7eb; background: white; padding: 1rem; display: block;">
               <div class="neighborhood-info">
                 <h3 class="font-semibold text-gray-900 text-lg mb-1">{{ neighborhood.NAME }}</h3>
@@ -100,13 +100,13 @@
         
         <div class="modal-body">
           <div class="search-section">
-            <label for="modal-neighborhood-search" class="block text-sm font-medium text-gray-700 mb-2">Search neighborhoods</label>
-            <input type="text" id="modal-neighborhood-search" placeholder="Type neighborhood name..." class="w-full py-3 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-campaign-primary text-base" aria-label="Search neighborhoods">
+            <label for="modal-neighborhood-search" class="block text-sm font-medium text-gray-700 mb-2">Search neighborhoods or addresses</label>
+            <input type="text" id="modal-neighborhood-search" placeholder="Type neighborhood name or address..." class="w-full py-3 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-campaign-primary text-base" aria-label="Search neighborhoods or addresses">
           </div>
           
           <div class="results-section">
             <div id="modal-neighborhood-results" class="neighborhood-results">
-              {% for neighborhood in site.data.neighborhoods.Official_Neighborhoods %}
+              {% for neighborhood in site.data.neighborhoods.neighborhoods_info %}
               <div class="result-item" data-name="{{ neighborhood.NAME }}" data-npu="{{ neighborhood.NPU }}" data-acres="{{ neighborhood.ACRES }}">
                 <div class="result-info">
                   <h3 class="font-semibold text-gray-900">{{ neighborhood.NAME }}</h3>
@@ -150,22 +150,27 @@
 
 <!-- Jekyll Data for JavaScript -->
 <script type="application/json" id="neighborhood-data">
-{{ site.data.neighborhoods.Official_Neighborhoods | jsonify }}
+{{ site.data.neighborhoods.neighborhoods_info | jsonify }}
+</script>
+
+<!-- Embedded GeoJSON Data -->
+<script type="application/json" id="neighborhoods-geodata">
+{{ site.data.neighborhoods.neighborhoods_geo | jsonify }}
+</script>
+
+<!-- Embedded District Data -->
+<script type="application/json" id="district-geodata">
+{{ site.data.district.district5_filtered | jsonify }}
 </script>
 
 <!-- OpenLayers JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js"></script>
+<!-- Turf.js for robust geometry operations -->
+<script src="https://cdn.jsdelivr.net/npm/@turf/turf@6.5.0/turf.min.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     // --- DATA SOURCES ---
-    // Use local GeoJSON data for GA-05 district
-    const districtDataSourceUrl = '{{ "/assets/data/district5_filtered.geojson" | relative_url }}';
-    
-    // Use local GeoJSON data instead of external API
-    const neighborhoodGeoJsonUrl = '{{ "/assets/data/neighborhoods.geojson" | relative_url }}';
-    
-    // Fallback to external if local not available
-    const neighborhoodDataSourceUrl = neighborhoodGeoJsonUrl
+    // All data is now embedded in the page
 
     // --- CAMPAIGN DESIGN TOKENS ---
     const campaignPrimary = '#2E8B57';   // Vibrant Verde
@@ -234,21 +239,15 @@ document.addEventListener("DOMContentLoaded", function () {
         source: new ol.source.OSM(),
     });
 
-    // 2. Congressional District Layer
+    // 2. Congressional District Layer (will be populated after data loads)
     const districtLayer = new ol.layer.Vector({
-        source: new ol.source.Vector({
-            url: districtDataSourceUrl,
-            format: new ol.format.GeoJSON(),
-        }),
+        source: new ol.source.Vector(),
         style: districtStyle,
     });
 
-    // 3. Neighborhoods Layer
+    // 3. Neighborhoods Layer (will be populated after data loads)
     const neighborhoodsLayer = new ol.layer.Vector({
-        source: new ol.source.Vector({
-            url: neighborhoodDataSourceUrl,
-            format: new ol.format.GeoJSON(),
-        }),
+        source: new ol.source.Vector(),
         style: neighborhoodStyle,
     });
 
@@ -268,6 +267,238 @@ document.addEventListener("DOMContentLoaded", function () {
     districtLayer.setVisible(true);
     neighborhoodsLayer.setVisible(true);
 
+    // --- CLEAN SEARCH API ---
+    // Data cache
+    let neighborhoodsData = null;
+    let districtData = null;
+    
+    // 1. Load & cache data
+    function loadNeighborhoods() {
+        if (neighborhoodsData) return neighborhoodsData;
+        
+        // Use embedded GeoJSON data directly from Jekyll
+        const geoDataElement = document.getElementById('neighborhoods-geodata');
+        if (geoDataElement) {
+            try {
+                neighborhoodsData = JSON.parse(geoDataElement.textContent);
+                return neighborhoodsData;
+            } catch (error) {
+                console.warn('Failed to parse embedded neighborhoods data:', error);
+            }
+        }
+        
+        console.warn('No embedded neighborhoods geodata found');
+        return null;
+    }
+    
+    function loadDistrictGa05() {
+        if (districtData) return districtData;
+        
+        // Use embedded district data directly from Jekyll
+        const districtDataElement = document.getElementById('district-geodata');
+        if (districtDataElement) {
+            try {
+                districtData = JSON.parse(districtDataElement.textContent);
+                return districtData;
+            } catch (error) {
+                console.warn('Failed to parse embedded district data:', error);
+            }
+        }
+        
+        console.warn('No embedded district geodata found');
+        return null;
+    }
+    
+    // 2. Text search
+    function filterNeighborhoodsByName(query) {
+        const neighborhoods = neighborhoodsData?.features || [];
+        const lowerQuery = query.toLowerCase();
+        
+        return neighborhoods.filter(feature => {
+            const name = (feature.properties.NAME || feature.properties.name || '').toLowerCase();
+            return name.includes(lowerQuery);
+        });
+    }
+    
+    // 3. Address search
+    async function geocodeAddress(query) {
+        try {
+            // Bounded to Atlanta metro area
+            const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query + ' Atlanta GA')}&limit=1&addressdetails=1&bounded=1&viewbox=-84.6,33.6,-84.2,33.9`;
+            
+            const response = await fetch(url);
+            const results = await response.json();
+            
+            if (results && results.length > 0) {
+                const result = results[0];
+                return {
+                    lon: parseFloat(result.lon),
+                    lat: parseFloat(result.lat)
+                };
+            }
+            return null;
+        } catch (error) {
+            console.warn('Geocoding error:', error);
+            return null;
+        }
+    }
+    
+    // 4. Spatial search
+    function neighborhoodFromPoint(lon, lat) {
+        loadNeighborhoods(); // Synchronous
+        loadDistrictGa05(); // Now synchronous too
+        
+        if (!neighborhoodsData || !districtData) {
+            return { feature: null, inDistrict: false };
+        }
+        
+        const point = turf.point([lon, lat]);
+        
+        // Check if in GA-05 district first
+        let inDistrict = false;
+        for (const feature of districtData.features) {
+            if (feature.properties.DISTRICT === '05') {
+                if (turf.booleanPointInPolygon(point, feature)) {
+                    inDistrict = true;
+                    break;
+                }
+            }
+        }
+        
+        if (!inDistrict) {
+            return { feature: null, inDistrict: false };
+        }
+        
+        // Find containing neighborhood
+        for (const feature of neighborhoodsData.features) {
+            if (turf.booleanPointInPolygon(point, feature)) {
+                return { feature, inDistrict: true };
+            }
+        }
+        
+        // In district but no neighborhood
+        return { feature: null, inDistrict: true };
+    }
+    
+    // --- UI HELPER FUNCTIONS ---
+    function showCards(features) {
+        const allCards = document.querySelectorAll('.neighborhood-card');
+        const noResultsDiv = document.getElementById('no-results');
+        
+        // Reset all cards
+        allCards.forEach(card => {
+            card.style.display = 'none';
+            card.style.border = '';
+            card.style.backgroundColor = '';
+        });
+        
+        if (features.length === 0) {
+            if (noResultsDiv) noResultsDiv.style.display = 'block';
+            return;
+        }
+        
+        // Show matching cards
+        features.forEach(feature => {
+            const name = feature.properties.NAME || feature.properties.name;
+            const matchingCard = Array.from(allCards).find(card => card.dataset.name === name);
+            if (matchingCard) {
+                matchingCard.style.display = 'block';
+                // Add emphasis for single result
+                if (features.length === 1) {
+                    matchingCard.style.border = '2px solid var(--campaign-primary, #2E8B57)';
+                    matchingCard.style.backgroundColor = 'rgba(46, 139, 87, 0.05)';
+                }
+            }
+        });
+        
+        if (noResultsDiv) noResultsDiv.style.display = 'none';
+    }
+    
+    function showAll() {
+        const allCards = document.querySelectorAll('.neighborhood-card');
+        const noResultsDiv = document.getElementById('no-results');
+        
+        allCards.forEach(card => {
+            card.style.display = 'block';
+            card.style.border = '';
+            card.style.backgroundColor = '';
+        });
+        
+        if (noResultsDiv) noResultsDiv.style.display = 'none';
+    }
+    
+    function showSpinner() {
+        const noResultsDiv = document.getElementById('no-results');
+        if (noResultsDiv) {
+            noResultsDiv.innerHTML = `
+                <div style="text-align: center; padding: 2rem 1rem; color: #6b7280;">
+                    <div style="display: inline-block; width: 20px; height: 20px; border: 2px solid #e5e7eb; border-top: 2px solid #2E8B57; border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 1rem;"></div>
+                    <p class="text-sm font-medium">Searching address...</p>
+                </div>
+            `;
+            noResultsDiv.style.display = 'block';
+        }
+    }
+    
+    function showNoResults(message) {
+        const noResultsDiv = document.getElementById('no-results');
+        if (noResultsDiv) {
+            noResultsDiv.innerHTML = `
+                <svg class="w-8 h-8 mx-auto mb-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+                <p class="text-sm font-medium">${message}</p>
+                <p class="text-xs mt-1">Try a different search term</p>
+            `;
+            noResultsDiv.style.display = 'block';
+        }
+    }
+    
+    function flashHighlightOnMap(feature) {
+        // Wait for OpenLayers features to load then highlight
+        const highlightOnMap = () => {
+            const olFeatures = neighborhoodsLayer.getSource().getFeatures();
+            const name = feature.properties.NAME || feature.properties.name;
+            const olFeature = olFeatures.find(f => f.get('NAME') === name);
+            
+            if (olFeature) {
+                // Remove previous highlight
+                if (highlightedFeature) {
+                    highlightedFeature.setStyle(undefined);
+                }
+                
+                // Highlight new feature
+                highlightedFeature = olFeature;
+                highlightedFeature.setStyle(highlightStyle);
+                
+                // Zoom to feature
+                const extent = olFeature.getGeometry().getExtent();
+                map.getView().fit(extent, {
+                    padding: [50, 50, 50, 50],
+                    duration: 1000,
+                    maxZoom: 15
+                });
+                
+                // Auto-remove highlight after 5 seconds
+                setTimeout(() => {
+                    if (highlightedFeature === olFeature) {
+                        highlightedFeature.setStyle(undefined);
+                        highlightedFeature = null;
+                    }
+                }, 5000);
+            }
+        };
+        
+        // Try immediately, or wait for features to load
+        if (neighborhoodsLayer.getSource().getFeatures().length > 0) {
+            highlightOnMap();
+        } else {
+            setTimeout(highlightOnMap, 500);
+        }
+    }
+    
+
+
     // --- INTERACTIVITY ---
     const infoBox = document.getElementById('info');
     let highlightedFeature = null;
@@ -279,6 +510,15 @@ document.addEventListener("DOMContentLoaded", function () {
     // Helper function to get neighborhood data by name
     function getNeighborhoodData(name) {
         return neighborhoodData.find(n => n.NAME === name) || {};
+    }
+    
+    // Function to reset neighborhood display to show all
+    function resetNeighborhoodDisplay() {
+        document.querySelectorAll('.neighborhood-card').forEach(card => {
+            card.style.display = 'block';
+            card.style.border = '';
+            card.style.backgroundColor = '';
+        });
     }
 
     // Hover interaction
@@ -416,31 +656,104 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Desktop neighborhood search filtering
+    // --- CLEAN SEARCH STATE MACHINE ---
     const searchInput = document.getElementById('neighborhood-search');
-    const noResultsDiv = document.getElementById('no-results');
+    let searchTimeout;
+    
+    // Preload data and populate map layers
+    const geoData = loadNeighborhoods();
+    if (geoData) {
+        const features = new ol.format.GeoJSON().readFeatures(geoData, {
+            dataProjection: 'EPSG:4326',    // Input projection (WGS84)
+            featureProjection: 'EPSG:3857'  // Output projection (Web Mercator)
+        });
+        neighborhoodsLayer.getSource().addFeatures(features);
+    }
+    
+    const districtGeoData = loadDistrictGa05();
+    if (districtGeoData) {
+        const districtFeatures = new ol.format.GeoJSON().readFeatures(districtGeoData, {
+            dataProjection: 'EPSG:4326',    // Input projection (WGS84)
+            featureProjection: 'EPSG:3857'  // Output projection (Web Mercator)
+        });
+        districtLayer.getSource().addFeatures(districtFeatures);
+    }
     
     if (searchInput) {
         searchInput.addEventListener('input', function(e) {
-            const query = e.target.value.toLowerCase().trim();
-            let visibleCount = 0;
+            const query = e.target.value.trim();
             
-            document.querySelectorAll('.neighborhood-card').forEach(card => {
-                const name = card.dataset.name.toLowerCase();
-                const shouldShow = name.includes(query);
-                card.style.display = shouldShow ? 'block' : 'none';
-                if (shouldShow) visibleCount++;
-            });
+            // Clear previous timeout
+            if (searchTimeout) {
+                clearTimeout(searchTimeout);
+            }
             
-            // Show/hide "no results" message
-            if (noResultsDiv) {
-                if (query && visibleCount === 0) {
-                    noResultsDiv.style.display = 'block';
-                } else {
-                    noResultsDiv.style.display = 'none';
+            // Early exit: show all if query is too short
+            if (query.length < 3) {
+                showAll();
+                return;
+            }
+            
+            // Try neighborhood name search first
+            loadNeighborhoods(); // Load data if not already loaded
+            const matches = filterNeighborhoodsByName(query);
+            
+            if (matches.length > 0) {
+                showCards(matches);
+                return;
+            }
+            
+            // No name match → try address search
+            showSpinner();
+            searchTimeout = setTimeout(async () => {
+                await handleAddressGeocode(query);
+            }, 800);
+        });
+        
+        // Handle Enter key for immediate search
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const query = e.target.value.trim();
+                if (query.length >= 3) {
+                    if (searchTimeout) clearTimeout(searchTimeout);
+                    showSpinner();
+                    handleAddressGeocode(query);
                 }
             }
         });
+    }
+    
+    // Address geocoding handler
+    async function handleAddressGeocode(query) {
+        const location = await geocodeAddress(query);
+        
+        if (!location) {
+            showNoResults("Address not found");
+            return;
+        }
+        
+        const result = neighborhoodFromPoint(location.lon, location.lat);
+        
+        if (!result.inDistrict) {
+            showNoResults("Outside GA-05");
+            return;
+        }
+        
+        if (!result.feature) {
+            showNoResults("In GA-05, no neighborhood");
+            return;
+        }
+        
+        // Found a neighborhood!
+        showCards([result.feature]);
+        flashHighlightOnMap(result.feature);
+        
+        // Update info box
+        const name = result.feature.properties.NAME || result.feature.properties.name;
+        infoBox.innerHTML = `Address mapped to: ${name}`;
+        setTimeout(() => {
+            infoBox.innerHTML = 'Click a neighborhood to learn more';
+        }, 4000);
     }
 
     // Mobile search modal functionality
@@ -470,7 +783,6 @@ document.addEventListener("DOMContentLoaded", function () {
             // Clear search when closing
             if (modalSearchInput) {
                 modalSearchInput.value = '';
-                filterModalResults('');
             }
         }
     }
@@ -488,30 +800,33 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Modal search filtering
-    function filterModalResults(query) {
-        let visibleCount = 0;
-        
-        document.querySelectorAll('.result-item').forEach(item => {
-            const name = item.dataset.name.toLowerCase();
-            const shouldShow = name.includes(query.toLowerCase());
-            item.style.display = shouldShow ? 'flex' : 'none';
-            if (shouldShow) visibleCount++;
-        });
-        
-        // Show/hide no results message
-        if (modalNoResults) {
-            if (query && visibleCount === 0) {
-                modalNoResults.style.display = 'block';
-            } else {
-                modalNoResults.style.display = 'none';
-            }
-        }
-    }
+    // Modal search with same clean logic
+    let modalSearchTimeout;
 
     if (modalSearchInput) {
         modalSearchInput.addEventListener('input', function(e) {
-            filterModalResults(e.target.value.trim());
+            const query = e.target.value.trim();
+            
+            // Clear previous timeout
+            if (modalSearchTimeout) {
+                clearTimeout(modalSearchTimeout);
+            }
+            
+            // Simple text filtering of modal results
+            document.querySelectorAll('.result-item').forEach(item => {
+                const name = item.dataset.name.toLowerCase();
+                const shouldShow = !query || name.includes(query.toLowerCase());
+                item.style.display = shouldShow ? 'flex' : 'none';
+            });
+            
+            // If nothing matches, try address search
+            const visibleItems = document.querySelectorAll('.result-item[style*="flex"]').length;
+            if (query.length >= 3 && visibleItems === 0) {
+                modalSearchTimeout = setTimeout(async () => {
+                    await handleAddressGeocode(query);
+                    closeModal(); // Close modal and show result in main UI
+                }, 800);
+            }
         });
     }
 
