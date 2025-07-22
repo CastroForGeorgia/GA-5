@@ -1,437 +1,596 @@
-
 <!-- OpenLayers CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css">
 
-<style>
-  /* Campaign-themed styles aligned with ice-tracker design patterns */
-  .neighborhoods-app {
-    position: relative;
-    width: 100%;
-    background: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-  }
 
-  #map {
-    width: 100%;
-    height: 70vh;
-    min-height: 500px;
-    border-radius: 0.75rem;
-    border: 2px solid var(--campaign-peach, #FFDAB9);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    position: relative;
-  }
 
-  /* Floating info box with ice-tracker styling */
-  #info {
-    position: absolute;
-    bottom: 1rem;
-    left: 1rem;
-    background: rgba(255, 253, 208, 0.95);
-    padding: 0.5rem 0.75rem;
-    border-radius: 0.5rem;
-    border: 1px solid var(--campaign-peach, #FFDAB9);
-    font-family: var(--font-family-sans, 'Lato', sans-serif);
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--gray-800, #1F2937);
-    z-index: 100;
-    pointer-events: none;
-    backdrop-filter: blur(4px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: all 150ms ease-in-out;
-    max-width: 180px;
-    opacity: 0.9;
-  }
-
-  /* Floating controls similar to ice-tracker */
-  .floating-controls {
-    position: absolute;
-    z-index: 500;
-  }
-
-  .search-fab {
-    bottom: 100px;
-    right: 16px;
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background: var(--campaign-primary, #2E8B57);
-    color: white;
-    box-shadow: 0 4px 12px rgba(46, 139, 87, 0.3);
-    border: none;
-    cursor: pointer;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s ease;
-    z-index: 500;
-  }
-
-  .search-fab:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 16px rgba(46, 139, 87, 0.4);
-  }
-
-  .locate-fab {
-    bottom: 30px;
-    right: 16px;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: white;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s ease;
-  }
-
-  .locate-fab:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  }
-
-  /* Mobile search modal styles */
-  .search-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1000;
-    display: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  .search-modal.active {
-    display: flex;
-    opacity: 1;
-  }
-
-  .modal-backdrop {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(4px);
-  }
-
-  .modal-content {
-    position: relative;
-    background: white;
-    margin: auto;
-    width: 90%;
-    max-width: 500px;
-    max-height: 80vh;
-    border-radius: 1rem;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-  }
-
-  .modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem;
-    border-bottom: 1px solid #e5e7eb;
-    background: var(--campaign-cream, #FFFDD0);
-  }
-
-  .close-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    transition: background 0.2s ease;
-  }
-
-  .close-btn:hover {
-    background: rgba(0, 0, 0, 0.1);
-  }
-
-  .modal-body {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-  }
-
-  .search-section {
-    padding: 1.5rem;
-    border-bottom: 1px solid #f3f4f6;
-  }
-
-  .results-section {
-    flex: 1;
-    overflow: hidden;
-  }
-
-  .neighborhood-results {
-    height: 100%;
-    overflow-y: auto;
-    padding: 1rem;
-  }
-
-  .result-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    border: 1px solid #e5e7eb;
-    border-radius: 0.75rem;
-    margin-bottom: 0.75rem;
-    background: white;
-    transition: all 0.2s ease;
-  }
-
-  .result-item:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    border-color: var(--campaign-primary, #2E8B57);
-  }
-
-  .result-info h3 {
-    font-size: 1rem;
-    margin-bottom: 0.25rem;
-  }
-
-  .result-actions {
-    display: flex;
-    gap: 0.5rem;
-  }
-
-  .result-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.25rem;
-    padding: 0.5rem 0.75rem;
-    border: 2px solid;
-    border-radius: 0.5rem;
-    background: white;
-    font-size: 0.75rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    min-height: 36px;
-  }
-
-  .result-btn.view-on-map {
-    border-color: var(--campaign-secondary, #C0392B);
-    color: var(--campaign-secondary, #C0392B);
-  }
-
-  .result-btn.view-on-map:hover {
-    background: var(--campaign-secondary, #C0392B);
-    color: white;
-  }
-
-  .result-btn.learn-more {
-    border-color: var(--campaign-primary, #2E8B57);
-    color: var(--campaign-primary, #2E8B57);
-  }
-
-  .result-btn.learn-more:hover {
-    background: var(--campaign-primary, #2E8B57);
-    color: white;
-  }
-
-  /* Sidebar layout for neighborhoods */
-  .neighborhoods-container {
-    display: grid;
-    grid-template-columns: 400px 1fr;
-    gap: 0;
-    height: 70vh;
-    min-height: 500px;
-    border-radius: 0.75rem;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
-
-  .neighborhoods-sidebar {
-    background: white;
-    border-right: 2px solid var(--campaign-peach, #FFDAB9);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-  }
-
-  /* Ensure visibility on mobile */
-  @media (max-width: 768px) {
-    .neighborhoods-sidebar {
-      overflow: visible;
-    }
-  }
-
-  .sidebar-header {
-    padding: 1.5rem;
-    border-bottom: 1px solid #e5e7eb;
-    background: var(--campaign-cream, #FFFDD0);
-  }
-
-  .sidebar-content {
-    flex: 1;
-    overflow-y: auto;
-    padding: 1rem;
-  }
-
-  /* Mobile sidebar content fixes */
-  @media (max-width: 768px) {
-    .sidebar-content {
-      overflow-y: visible;
-      flex: none;
-      height: auto;
-    }
-  }
-
-  /* Mobile: hide sidebar, show search button instead */
-  @media (max-width: 768px) {
-    .neighborhoods-container {
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr;
-      height: 80vh;
-      min-height: 500px;
-    }
+<!-- Main Content Area -->
+<div class="container mx-auto px-4 py-8">
+  <div class="neighborhoods-app">
     
-    .neighborhoods-sidebar {
-      display: none;
-    }
+    <!-- Sidebar + Map Layout -->
+    <div class="neighborhoods-container">
+      
+      <!-- Neighborhoods Sidebar -->
+      <div class="neighborhoods-sidebar">
+        <div class="sidebar-header">
+          <h2 class="text-xl font-bold text-gray-900 mb-3">Find Your Neighborhood</h2>
+          <div>
+            <label for="neighborhood-search" class="block text-sm font-medium text-gray-700 mb-2">Search neighborhoods</label>
+            <input type="text" id="neighborhood-search" placeholder="Type to search..." class="w-full py-2.5 px-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-campaign-primary text-base" aria-label="Search neighborhoods">
+          </div>
+        </div>
+        
+        <div class="sidebar-content">
+          <div class="neighborhood-list" style="max-height: none; border: none; border-radius: 0; background: transparent; overflow: visible;">
+            {% for neighborhood in site.data.neighborhoods.Official_Neighborhoods %}
+            <div class="neighborhood-card" data-name="{{ neighborhood.NAME }}" data-npu="{{ neighborhood.NPU }}" data-acres="{{ neighborhood.ACRES }}" style="border-radius: 0.75rem; margin-bottom: 0.75rem; border: 1px solid #e5e7eb; background: white; padding: 1rem; display: block;">
+              <div class="neighborhood-info">
+                <h3 class="font-semibold text-gray-900 text-lg mb-1">{{ neighborhood.NAME }}</h3>
+                <p class="text-sm text-gray-600 mb-3">NPU {{ neighborhood.NPU }} • {{ neighborhood.ACRES }} acres</p>
+                
+                <div class="neighborhood-actions">
+                  <button class="neighborhood-btn view-on-map" data-name="{{ neighborhood.NAME }}" title="Show {{ neighborhood.NAME }} on map">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                    <span>Show on Map</span>
+                  </button>
+                  
+                  <button class="neighborhood-btn learn-more" data-name="{{ neighborhood.NAME }}" title="Learn more about {{ neighborhood.NAME }}">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <span>Learn More</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+            
+            <!-- No results message -->
+            <div id="no-results" style="display: none; text-align: center; padding: 2rem 1rem; color: #6b7280;">
+              <svg class="w-8 h-8 mx-auto mb-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+              <p class="text-sm font-medium">No neighborhoods found</p>
+              <p class="text-xs mt-1">Try a different search term</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Map Container -->
+      <div class="relative">
+        <div id="map"></div>
+        
+        <!-- Floating info display -->
+        <div id="info">Click a neighborhood to learn more</div>
+        
+        <!-- Mobile Search Button -->
+        <button class="floating-controls search-fab" id="mobile-search-btn" title="Search Neighborhoods">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+        </button>
+
+        <!-- Floating locate button -->
+        <button class="floating-controls locate-fab" id="locate-btn" title="Center on Atlanta">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+          </svg>
+        </button>
+      </div>
+      
+    </div>
+
+    <!-- Mobile Search Modal -->
+    <div id="mobile-search-modal" class="search-modal">
+      <div class="modal-backdrop"></div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="text-xl font-bold text-gray-900">Find Your Neighborhood</h2>
+          <button id="close-search-modal" class="close-btn" title="Close search">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        
+        <div class="modal-body">
+          <div class="search-section">
+            <label for="modal-neighborhood-search" class="block text-sm font-medium text-gray-700 mb-2">Search neighborhoods</label>
+            <input type="text" id="modal-neighborhood-search" placeholder="Type neighborhood name..." class="w-full py-3 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-campaign-primary text-base" aria-label="Search neighborhoods">
+          </div>
+          
+          <div class="results-section">
+            <div id="modal-neighborhood-results" class="neighborhood-results">
+              {% for neighborhood in site.data.neighborhoods.Official_Neighborhoods %}
+              <div class="result-item" data-name="{{ neighborhood.NAME }}" data-npu="{{ neighborhood.NPU }}" data-acres="{{ neighborhood.ACRES }}">
+                <div class="result-info">
+                  <h3 class="font-semibold text-gray-900">{{ neighborhood.NAME }}</h3>
+                  <p class="text-sm text-gray-600">NPU {{ neighborhood.NPU }} • {{ neighborhood.ACRES }} acres</p>
+                </div>
+                <div class="result-actions">
+                  <button class="result-btn view-on-map" data-name="{{ neighborhood.NAME }}" title="Show {{ neighborhood.NAME }} on map">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 616 0z"></path>
+                    </svg>
+                    Map
+                  </button>
+                  
+                  <button class="result-btn learn-more" data-name="{{ neighborhood.NAME }}" title="Learn more about {{ neighborhood.NAME }}">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    Info
+                  </button>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+            
+            <!-- No results message for modal -->
+            <div id="modal-no-results" style="display: none; text-align: center; padding: 3rem 1rem; color: #6b7280;">
+              <svg class="w-12 h-12 mx-auto mb-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+              <p class="font-medium">No neighborhoods found</p>
+              <p class="text-sm mt-1">Try a different search term</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Jekyll Data for JavaScript -->
+<script type="application/json" id="neighborhood-data">
+{{ site.data.neighborhoods.Official_Neighborhoods | jsonify }}
+</script>
+
+<!-- OpenLayers JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // --- DATA SOURCES ---
+    // Use local GeoJSON data for GA-05 district
+    const districtDataSourceUrl = '{{ "/assets/data/district5_filtered.geojson" | relative_url }}';
     
-    /* Map takes full space on mobile */
-    #map {
-      height: 100%;
-      min-height: 500px;
+    // Use local GeoJSON data instead of external API
+    const neighborhoodGeoJsonUrl = '{{ "/assets/data/neighborhoods.geojson" | relative_url }}';
+    
+    // Fallback to external if local not available
+    const neighborhoodDataSourceUrl = neighborhoodGeoJsonUrl
+
+    // --- CAMPAIGN DESIGN TOKENS ---
+    const campaignPrimary = '#2E8B57';   // Vibrant Verde
+    const campaignSecondary = '#DC2626';  // Bold Red
+    const campaignAccent = '#1D4ED8';    // Bright Blue
+
+    // --- STYLES ---
+    // Style for Georgia Congressional Districts with GA-05 highlighted
+    const districtStyle = function(feature) {
+        const district = feature.get('DISTRICT');
+        const isGA05 = district === '05';
+        
+        return new ol.style.Style({
+            stroke: new ol.style.Stroke({
+                color: isGA05 ? campaignSecondary : campaignAccent,
+                width: isGA05 ? 5 : 2,
+                lineDash: isGA05 ? [] : [10, 5], // Solid line for GA-05, dashed for others
+            }),
+            fill: new ol.style.Fill({
+                color: isGA05 ? 'rgba(220, 38, 38, 0.25)' : 'rgba(29, 78, 216, 0.03)',
+            }),
+            text: isGA05 ? new ol.style.Text({
+                text: 'GA-05',
+                font: 'bold 16px sans-serif',
+                fill: new ol.style.Fill({
+                    color: '#ffffff',
+                }),
+                stroke: new ol.style.Stroke({
+                    color: campaignSecondary,
+                    width: 4,
+                }),
+                backgroundFill: new ol.style.Fill({
+                    color: 'rgba(220, 38, 38, 0.9)',
+                }),
+                padding: [4, 8, 4, 8],
+            }) : null // Remove labels for other districts to reduce clutter
+        });
+    };
+
+    // Default style for neighborhoods
+    const neighborhoodStyle = new ol.style.Style({
+        fill: new ol.style.Fill({
+            color: 'rgba(251, 146, 60, 0.12)', // Orange with transparency
+        }),
+        stroke: new ol.style.Stroke({
+            color: '#F59E0B', // Bright orange
+            width: 2,
+        }),
+    });
+
+    // Style for neighborhood on hover
+    const highlightStyle = new ol.style.Style({
+        stroke: new ol.style.Stroke({
+            color: '#EA580C', // Bright orange-red
+            width: 4,
+        }),
+        fill: new ol.style.Fill({
+            color: 'rgba(251, 146, 60, 0.4)', // Orange with higher opacity
+        }),
+        zIndex: 10
+    });
+
+    // --- LAYERS ---
+    // 1. Base Map Layer (OpenStreetMap)
+    const osmLayer = new ol.layer.Tile({
+        source: new ol.source.OSM(),
+    });
+
+    // 2. Congressional District Layer
+    const districtLayer = new ol.layer.Vector({
+        source: new ol.source.Vector({
+            url: districtDataSourceUrl,
+            format: new ol.format.GeoJSON(),
+        }),
+        style: districtStyle,
+    });
+
+    // 3. Neighborhoods Layer
+    const neighborhoodsLayer = new ol.layer.Vector({
+        source: new ol.source.Vector({
+            url: neighborhoodDataSourceUrl,
+            format: new ol.format.GeoJSON(),
+        }),
+        style: neighborhoodStyle,
+    });
+
+    // All layers visible by default - no need for visibility variables
+
+    // --- MAP INITIALIZATION ---
+    const map = new ol.Map({
+        target: 'map',
+        layers: [osmLayer, districtLayer, neighborhoodsLayer],
+        view: new ol.View({
+            center: ol.proj.fromLonLat([-84.3880, 33.7490]), // Center of Atlanta
+            zoom: 11,
+        }),
+    });
+
+    // Show all layers by default
+    districtLayer.setVisible(true);
+    neighborhoodsLayer.setVisible(true);
+
+    // --- INTERACTIVITY ---
+    const infoBox = document.getElementById('info');
+    let highlightedFeature = null;
+
+    // Load neighborhood data from Jekyll
+    const neighborhoodDataElement = document.getElementById('neighborhood-data');
+    const neighborhoodData = neighborhoodDataElement ? JSON.parse(neighborhoodDataElement.textContent) : [];
+
+    // Helper function to get neighborhood data by name
+    function getNeighborhoodData(name) {
+        return neighborhoodData.find(n => n.NAME === name) || {};
     }
 
-    /* Show search button on mobile */
-    .search-fab {
-      display: flex;
+    // Hover interaction
+    map.on('pointermove', function (e) {
+        if (e.dragging) {
+            return;
+        }
+
+        const featuresAtPixel = [];
+        map.forEachFeatureAtPixel(e.pixel, function (feature, layer) {
+            if (layer === neighborhoodsLayer) {
+                featuresAtPixel.push(feature);
+            }
+        });
+
+        const hit = featuresAtPixel.length > 0 ? featuresAtPixel[0] : undefined;
+
+        // Remove highlight from previously hovered feature
+        if (highlightedFeature) {
+            highlightedFeature.setStyle(undefined);
+            highlightedFeature = null;
+        }
+
+        if (hit) {
+            // Highlight the new feature
+            highlightedFeature = hit;
+            highlightedFeature.setStyle(highlightStyle);
+            
+            // Update the info box
+            const neighborhoodName = hit.get('NAME') || 'Unknown';
+            infoBox.innerHTML = neighborhoodName;
+            map.getTargetElement().style.cursor = 'pointer';
+        } else {
+            infoBox.innerHTML = 'Hover over a neighborhood';
+            map.getTargetElement().style.cursor = '';
+        }
+    });
+
+    // Click interaction - navigate directly to neighborhood page
+    map.on('click', function (e) {
+        const featuresAtPixel = [];
+        map.forEachFeatureAtPixel(e.pixel, function (feature, layer) {
+            if (layer === neighborhoodsLayer) {
+                featuresAtPixel.push(feature);
+            }
+        });
+
+        if (featuresAtPixel.length > 0) {
+            const feature = featuresAtPixel[0];
+            const name = feature.get('NAME') || 'Unknown';
+            
+            // Create a URL-friendly version of the neighborhood name
+            const neighborhoodSlug = name.toLowerCase()
+                .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
+                .replace(/\s+/g, '-') // Replace spaces with hyphens
+                .replace(/-+/g, '-') // Replace multiple hyphens with single
+                .replace(/^-|-$/g, ''); // Remove leading/trailing hyphens
+            
+            // Navigate to neighborhood page
+            const neighborhoodPageUrl = `/neighborhoods/${neighborhoodSlug}/`;
+            window.location.href = neighborhoodPageUrl;
+        }
+    });
+
+    // No bottom sheet - removed
+
+    // Locate button
+    document.getElementById('locate-btn').addEventListener('click', () => {
+        map.getView().animate({
+            center: ol.proj.fromLonLat([-84.3880, 33.7490]),
+            zoom: 11,
+            duration: 500
+        });
+    });
+
+    // Button click handlers for explicit actions
+    document.querySelectorAll('.view-on-map').forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const name = button.dataset.name;
+            
+            // Find the neighborhood feature and zoom to it
+            const features = neighborhoodsLayer.getSource().getFeatures();
+            const targetFeature = features.find(f => f.get('NAME') === name);
+            
+            if (targetFeature) {
+                const geometry = targetFeature.getGeometry();
+                const extent = geometry.getExtent();
+                
+                // Neighborhoods are always visible now
+                
+                // Zoom to the neighborhood
+                map.getView().fit(extent, {
+                    padding: [50, 50, 50, 50],
+                    duration: 1000,
+                    maxZoom: 15
+                });
+                
+                // Update info box
+                infoBox.innerHTML = `Showing: ${name}`;
+                
+                // Highlight the feature temporarily
+                if (highlightedFeature) {
+                    highlightedFeature.setStyle(undefined);
+                }
+                highlightedFeature = targetFeature;
+                highlightedFeature.setStyle(highlightStyle);
+                
+                // Remove highlight after 3 seconds
+                setTimeout(() => {
+                    if (highlightedFeature === targetFeature) {
+                        highlightedFeature.setStyle(undefined);
+                        highlightedFeature = null;
+                        infoBox.innerHTML = 'Click a neighborhood to learn more';
+                    }
+                }, 3000);
+            }
+        });
+    });
+
+    document.querySelectorAll('.learn-more').forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const name = button.dataset.name;
+            
+            // Navigate to neighborhood page
+            const neighborhoodSlug = name.toLowerCase()
+                .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
+                .replace(/\s+/g, '-') // Replace spaces with hyphens
+                .replace(/-+/g, '-') // Replace multiple hyphens with single
+                .replace(/^-|-$/g, ''); // Remove leading/trailing hyphens
+            
+            const neighborhoodPageUrl = `/neighborhoods/${neighborhoodSlug}/`;
+            window.location.href = neighborhoodPageUrl;
+        });
+    });
+
+    // Desktop neighborhood search filtering
+    const searchInput = document.getElementById('neighborhood-search');
+    const noResultsDiv = document.getElementById('no-results');
+    
+    if (searchInput) {
+        searchInput.addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase().trim();
+            let visibleCount = 0;
+            
+            document.querySelectorAll('.neighborhood-card').forEach(card => {
+                const name = card.dataset.name.toLowerCase();
+                const shouldShow = name.includes(query);
+                card.style.display = shouldShow ? 'block' : 'none';
+                if (shouldShow) visibleCount++;
+            });
+            
+            // Show/hide "no results" message
+            if (noResultsDiv) {
+                if (query && visibleCount === 0) {
+                    noResultsDiv.style.display = 'block';
+                } else {
+                    noResultsDiv.style.display = 'none';
+                }
+            }
+        });
     }
 
-    /* Mobile modal optimizations */
-    .modal-content {
-      width: 95%;
-      margin: 20px auto;
-      max-height: 85vh;
+    // Mobile search modal functionality
+    const mobileSearchBtn = document.getElementById('mobile-search-btn');
+    const searchModal = document.getElementById('mobile-search-modal');
+    const closeModalBtn = document.getElementById('close-search-modal');
+    const modalSearchInput = document.getElementById('modal-neighborhood-search');
+    const modalNoResults = document.getElementById('modal-no-results');
+
+    // Open modal
+    if (mobileSearchBtn && searchModal) {
+        mobileSearchBtn.addEventListener('click', () => {
+            searchModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            // Focus search input for better UX
+            setTimeout(() => {
+                if (modalSearchInput) modalSearchInput.focus();
+            }, 100);
+        });
     }
 
-    .result-item {
-      padding: 0.75rem;
-      flex-direction: column;
-      align-items: stretch;
-      gap: 0.75rem;
+    // Close modal
+    function closeModal() {
+        if (searchModal) {
+            searchModal.classList.remove('active');
+            document.body.style.overflow = '';
+            // Clear search when closing
+            if (modalSearchInput) {
+                modalSearchInput.value = '';
+                filterModalResults('');
+            }
+        }
     }
 
-    .result-info {
-      text_align: center;
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', closeModal);
     }
 
-    .result-actions {
-      justify-content: center;
-      gap: 0.75rem;
+    // Close modal when clicking backdrop
+    if (searchModal) {
+        searchModal.addEventListener('click', (e) => {
+            if (e.target === searchModal || e.target.classList.contains('modal-backdrop')) {
+                closeModal();
+            }
+        });
     }
 
-    .result-btn {
-      flex: 1;
-      justify-content: center;
-      min-height: 44px;
+    // Modal search filtering
+    function filterModalResults(query) {
+        let visibleCount = 0;
+        
+        document.querySelectorAll('.result-item').forEach(item => {
+            const name = item.dataset.name.toLowerCase();
+            const shouldShow = name.includes(query.toLowerCase());
+            item.style.display = shouldShow ? 'flex' : 'none';
+            if (shouldShow) visibleCount++;
+        });
+        
+        // Show/hide no results message
+        if (modalNoResults) {
+            if (query && visibleCount === 0) {
+                modalNoResults.style.display = 'block';
+            } else {
+                modalNoResults.style.display = 'none';
+            }
+        }
     }
-  }
 
-  /* Neighborhood info cards */
-  .neighborhood-card {
-    border-bottom: 1px solid #f0f0f0;
-    padding: 16px;
-    cursor: pointer;
-    transition: background 0.2s ease;
-  }
+    if (modalSearchInput) {
+        modalSearchInput.addEventListener('input', function(e) {
+            filterModalResults(e.target.value.trim());
+        });
+    }
 
-  .neighborhood-card:hover {
-    background: #f8f9fa;
-  }
+    // Modal button handlers
+    document.querySelectorAll('.result-item .view-on-map').forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const name = button.dataset.name;
+            
+            // Close modal first
+            closeModal();
+            
+            // Find and zoom to neighborhood (same logic as sidebar)
+            const features = neighborhoodsLayer.getSource().getFeatures();
+            const targetFeature = features.find(f => f.get('NAME') === name);
+            
+            if (targetFeature) {
+                const geometry = targetFeature.getGeometry();
+                const extent = geometry.getExtent();
+                
+                // Neighborhoods are always visible now
+                
+                // Zoom to the neighborhood
+                map.getView().fit(extent, {
+                    padding: [50, 50, 50, 50],
+                    duration: 1000,
+                    maxZoom: 15
+                });
+                
+                // Update info box
+                infoBox.innerHTML = `Showing: ${name}`;
+                
+                // Highlight the feature temporarily
+                if (highlightedFeature) {
+                    highlightedFeature.setStyle(undefined);
+                }
+                highlightedFeature = targetFeature;
+                highlightedFeature.setStyle(highlightStyle);
+                
+                // Remove highlight after 3 seconds
+                setTimeout(() => {
+                    if (highlightedFeature === targetFeature) {
+                        highlightedFeature.setStyle(undefined);
+                        highlightedFeature = null;
+                        infoBox.innerHTML = 'Click a neighborhood to learn more';
+                    }
+                }, 3000);
+            }
+        });
+    });
 
-  /* Neighborhood list styles - card-based with explicit buttons */
-  .neighborhood-list {
-    max-height: 400px;
-    overflow-y: auto;
-    border: none;
-    border-radius: 0;
-    background: transparent;
-  }
+    document.querySelectorAll('.result-item .learn-more').forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const name = button.dataset.name;
+            
+            // Navigate to neighborhood page
+            const neighborhoodSlug = name.toLowerCase()
+                .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
+                .replace(/\s+/g, '-') // Replace spaces with hyphens
+                .replace(/-+/g, '-') // Replace multiple hyphens with single
+                .replace(/^-|-$/g, ''); // Remove leading/trailing hyphens
+            
+            const neighborhoodPageUrl = `/neighborhoods/${neighborhoodSlug}/`;
+            window.location.href = neighborhoodPageUrl;
+        });
+    });
 
-  .neighborhood-card {
-    transition: all 0.2s ease;
-    position: relative;
-  }
+    // When the district data is loaded, zoom to fit
+    districtLayer.getSource().once('featuresloadend', function(event) {
+        const extent = event.target.getExtent();
+        if (extent) {
+            map.getView().fit(extent, {
+                padding: [50, 50, 50, 50],
+                duration: 1000
+            });
+        }
+    });
 
-  .neighborhood-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(46, 139, 87, 0.15);
-  }
-
-  .neighborhood-info h3 {
-    transition: color 0.2s ease;
-  }
-
-  .neighborhood-actions {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-  }
-
-  /* Explicit action buttons for accessibility */
-  .neighborhood-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.375rem;
-    padding: 0.5rem 0.75rem;
-    border: 2px solid var(--campaign-primary, #2E8B57);
-    border-radius: 0.5rem;
-    background: white;
-    color: var(--campaign-primary, #2E8B57);
-    font-size: 0.875rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    text-decoration: none;
-    -webkit-tap-highlight-color: transparent;
-    min-height: 40px;
-    white-space: nowrap;
-  }
-
-  .neighborhood-btn:hover {
-    background: var(--campaign-primary, #2E8B57);
-    color: white;
-    transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(46, 139, 87, 0.3);
-  }
-
-  .neighborhood-btn:active {
-    transform: translateY(0);
-    box-shadow: 0 1px 4px rgba(46, 139, 87, 0.3);
-  }
-
-  /* Learn More button - primary action */
-  .neighborhood-btn.learn-more {
-    background: var(--campaign-primary, #2E8B57);
-    color: white;
-    font-weight: 600;
-  }
-
-  .neighborhood-btn.learn-more:hover {
-    background: #228B22;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(46, 139, 87, 0.4);
-  }
-
-  /* View on Map button - secondary action */
-  .neighborhood-btn.view-on-map {
-```}롞}ભ
+    // All layers are now visible by default - no layer controls needed
+});
+</script>
