@@ -260,6 +260,8 @@ document.addEventListener("DOMContentLoaded", function () {
         view: new ol.View({
             center: ol.proj.fromLonLat([-84.3880, 33.7490]), // Center of Atlanta
             zoom: 11,
+            minZoom: 11, // Prevent zooming out beyond default zoom
+            maxZoom: 18, // Allow reasonable zoom in for detail
         }),
     });
 
