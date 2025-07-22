@@ -267,6 +267,21 @@ document.addEventListener("DOMContentLoaded", function () {
     districtLayer.setVisible(true);
     neighborhoodsLayer.setVisible(true);
 
+    /**
+     * Prepare neighborhood cards for Tailwind-based visibility control.
+     * Removes the hard-coded inline style "display: block" so that the
+     * `hidden` utility class can properly toggle visibility.
+     */
+    function initCardStyles() {
+        document.querySelectorAll('.neighborhood-card').forEach(card => {
+            // Clear inline display so Tailwind classes take precedence
+            card.style.display = '';
+        });
+    }
+
+    // Run immediately after script load
+    initCardStyles();
+
     // --- CLEAN SEARCH API ---
     // Data cache
     let neighborhoodsData = null;
@@ -443,14 +458,16 @@ document.addEventListener("DOMContentLoaded", function () {
         hidePlaceholder(placeholderId);
 
         const highlightSingle = features.length === 1;
-        const allowed = new Set(features.map(f => (f.properties.NAME || f.properties.name)));
+        const allowed = new Set(features.map(f => (f.properties.NAME || f.properties.name || '').toLowerCase()));
 
         Array.from(cards).forEach(card => {
-            if (!card.classList.contains('neighborhood-card')) return; // guard
-            const inResults = allowed.has(card.dataset.name);
+            const cardName = (card.dataset.name || '').toLowerCase();
+            const inResults = allowed.has(cardName);
 
             // Toggle visibility
             card.classList.toggle('hidden', !inResults);
+            // Clear/override inline display for robustness
+            card.style.display = inResults ? '' : 'none';
 
             // Toggle highlight for single result
             if (inResults && highlightSingle) {
@@ -464,6 +481,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function showAll() {
         document.querySelectorAll('.neighborhood-card').forEach(card => {
             card.classList.remove('hidden', 'ring-2', 'ring-green-500', 'bg-green-50');
+            card.style.display = '';
         });
         hidePlaceholder('no-results');
     }
