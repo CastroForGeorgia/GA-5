@@ -153,6 +153,14 @@
 {{ site.data.neighborhoods.neighborhoods_info | jsonify }}
 </script>
 
+<!-- Current Page Data for Auto-Navigation -->
+<script type="application/json" id="current-page-data">
+{
+  "isNeighborhoodPage": {% if page.neighborhood_name %}true{% else %}false{% endif %},
+  "neighborhoodName": {% if page.neighborhood_name %}"{{ page.neighborhood_name }}"{% else %}null{% endif %}
+}
+</script>
+
 <!-- Embedded GeoJSON Data -->
 <script type="application/json" id="neighborhoods-geodata">
 {{ site.data.neighborhoods.neighborhoods_geo | jsonify }}
@@ -722,6 +730,81 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         districtLayer.getSource().addFeatures(districtFeatures);
     }
+    
+    // --- AUTO-NAVIGATION FOR NEIGHBORHOOD PAGES ---
+    function handleAutoNavigation() {
+        const pageDataElement = document.getElementById('current-page-data');
+        if (!pageDataElement) return;
+        
+        try {
+            const pageData = JSON.parse(pageDataElement.textContent);
+            
+            if (pageData.isNeighborhoodPage && pageData.neighborhoodName) {
+                const neighborhoodName = pageData.neighborhoodName;
+                console.log('Auto-navigating to neighborhood:', neighborhoodName);
+                
+                // Auto-populate search bars (both desktop and mobile)
+                if (searchInput) {
+                    searchInput.value = neighborhoodName;
+                }
+                const modalSearchInput = document.getElementById('modal-neighborhood-search');
+                if (modalSearchInput) {
+                    modalSearchInput.value = neighborhoodName;
+                }
+                
+                // Find and zoom to the neighborhood
+                setTimeout(() => {
+                    const features = neighborhoodsLayer.getSource().getFeatures();
+                    const targetFeature = features.find(f => f.get('NAME') === neighborhoodName);
+                    
+                    if (targetFeature) {
+                        const geometry = targetFeature.getGeometry();
+                        const extent = geometry.getExtent();
+                        
+                        // Zoom to the neighborhood
+                        map.getView().fit(extent, {
+                            padding: [50, 50, 50, 50],
+                            duration: 1500,
+                            maxZoom: 15
+                        });
+                        
+                        // Highlight the feature
+                        if (highlightedFeature) {
+                            highlightedFeature.setStyle(undefined);
+                        }
+                        highlightedFeature = targetFeature;
+                        highlightedFeature.setStyle(highlightStyle);
+                        
+                        // Update info box
+                        infoBox.innerHTML = `Showing: ${neighborhoodName}`;
+                        
+                        // Filter to show only this neighborhood in the sidebar
+                        const geoFeatures = filterNeighborhoodsByName(neighborhoodName);
+                        if (geoFeatures.length > 0) {
+                            showCards(geoFeatures);
+                        }
+                        
+                        // Keep highlight for longer on auto-navigation
+                        setTimeout(() => {
+                            if (highlightedFeature === targetFeature) {
+                                highlightedFeature.setStyle(undefined);
+                                highlightedFeature = null;
+                                infoBox.innerHTML = 'Click a neighborhood to learn more';
+                            }
+                        }, 8000);
+                        
+                    } else {
+                        console.warn('Neighborhood not found on map:', neighborhoodName);
+                    }
+                }, 1000); // Wait for features to be fully loaded
+            }
+        } catch (error) {
+            console.error('Error in auto-navigation:', error);
+        }
+    }
+    
+    // Execute auto-navigation after a short delay to ensure everything is loaded
+    setTimeout(handleAutoNavigation, 0);
     
     if (searchInput) {
         searchInput.addEventListener('input', function(e) {
