@@ -721,10 +721,18 @@ select {
   width: 100%;
 }
 
+.\!container {
+  width: 100% !important;
+}
+
 @media (min-width: 640px) {
 
   .container {
     max-width: 640px;
+  }
+
+  .\!container {
+    max-width: 640px !important;
   }
 }
 
@@ -733,12 +741,20 @@ select {
   .container {
     max-width: 768px;
   }
+
+  .\!container {
+    max-width: 768px !important;
+  }
 }
 
 @media (min-width: 1024px) {
 
   .container {
     max-width: 1024px;
+  }
+
+  .\!container {
+    max-width: 1024px !important;
   }
 }
 
@@ -747,12 +763,20 @@ select {
   .container {
     max-width: 1280px;
   }
+
+  .\!container {
+    max-width: 1280px !important;
+  }
 }
 
 @media (min-width: 1536px) {
 
   .container {
     max-width: 1536px;
+  }
+
+  .\!container {
+    max-width: 1536px !important;
   }
 }
 
@@ -2114,6 +2138,17 @@ select {
   animation: slideUp 0.6s ease-out;
 }
 
+@keyframes spin {
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -2240,6 +2275,12 @@ select {
   margin-bottom: calc(2rem * var(--tw-space-y-reverse));
 }
 
+.space-y-3 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
+}
+
 .overflow-hidden {
   overflow: hidden;
 }
@@ -2288,6 +2329,10 @@ select {
 
 .border-2 {
   border-width: 2px;
+}
+
+.border-4 {
+  border-width: 4px;
 }
 
 .border-b {

@@ -311,7 +311,11 @@ document.addEventListener("DOMContentLoaded", function () {
     
     // 2. Text search
     function filterNeighborhoodsByName(query) {
-        const neighborhoods = neighborhoodsData?.features || [];
+        // Ensure data is loaded
+        const geoData = loadNeighborhoods();
+        if (!geoData) return [];
+        
+        const neighborhoods = geoData.features || [];
         const lowerQuery = query.toLowerCase();
         
         return neighborhoods.filter(feature => {
@@ -325,65 +329,108 @@ document.addEventListener("DOMContentLoaded", function () {
         try {
             // Bounded to Atlanta metro area
             const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query + ' Atlanta GA')}&limit=1&addressdetails=1&bounded=1&viewbox=-84.6,33.6,-84.2,33.9`;
+            console.log('Geocoding URL:', url);
             
             const response = await fetch(url);
+            console.log('Geocoding response status:', response.status);
+            
             const results = await response.json();
+            console.log('Geocoding raw results:', results);
             
             if (results && results.length > 0) {
                 const result = results[0];
-                return {
+                const location = {
                     lon: parseFloat(result.lon),
                     lat: parseFloat(result.lat)
                 };
+                console.log('Parsed location:', location);
+                return location;
             }
+            console.log('No geocoding results found');
             return null;
         } catch (error) {
-            console.warn('Geocoding error:', error);
+            console.error('Geocoding error:', error);
             return null;
         }
     }
     
-    // 4. Spatial search
+    // 4. Spatial search - Check neighborhoods directly (they're all in GA-05)
     function neighborhoodFromPoint(lon, lat) {
-        loadNeighborhoods(); // Synchronous
-        loadDistrictGa05(); // Now synchronous too
+        console.log('Starting spatial search for point:', lon, lat);
         
-        if (!neighborhoodsData || !districtData) {
+        const geoData = loadNeighborhoods();
+        
+        if (!geoData) {
+            console.log('Missing neighborhoods geo data');
             return { feature: null, inDistrict: false };
         }
         
         const point = turf.point([lon, lat]);
+        console.log('Created turf point:', point);
         
-        // Check if in GA-05 district first
-        let inDistrict = false;
-        for (const feature of districtData.features) {
-            if (feature.properties.DISTRICT === '05') {
-                if (turf.booleanPointInPolygon(point, feature)) {
-                    inDistrict = true;
-                    break;
-                }
-            }
-        }
-        
-        if (!inDistrict) {
-            return { feature: null, inDistrict: false };
-        }
-        
-        // Find containing neighborhood
-        for (const feature of neighborhoodsData.features) {
+        // Check neighborhoods directly - if we find one, it's automatically in GA-05
+        console.log('Checking neighborhood features:', geoData.features?.length);
+        for (const feature of geoData.features) {
             if (turf.booleanPointInPolygon(point, feature)) {
+                console.log('Found containing neighborhood:', feature.properties.NAME);
                 return { feature, inDistrict: true };
             }
         }
         
-        // In district but no neighborhood
-        return { feature: null, inDistrict: true };
+        // No neighborhood found - check if it's at least near GA-05 area
+        const distData = loadDistrictGa05();
+        if (distData) {
+            for (const feature of distData.features) {
+                if (feature.properties.DISTRICT === '05') {
+                    if (turf.booleanPointInPolygon(point, feature)) {
+                        console.log('Point in GA-05 but no specific neighborhood');
+                        return { feature: null, inDistrict: true };
+                    }
+                }
+            }
+        }
+        
+        console.log('Point not in GA-05 area');
+        return { feature: null, inDistrict: false };
     }
     
     // --- UI HELPER FUNCTIONS ---
+    // Utility to hide the generic "no-results / loader" placeholder
+    function hidePlaceholder(divId) {
+        const el = document.getElementById(divId);
+        if (el) {
+            el.style.display = 'none';
+        }
+    }
+
+    // Desktop + mobile placeholder with Tailwind spinner / messages
+    function renderPlaceholder({ targetId, state, message }) {
+        /* state: 'loading' | 'error' */
+        const container = document.getElementById(targetId);
+        if (!container) return;
+
+        if (state === 'loading') {
+            container.innerHTML = `
+                <div class="flex flex-col items-center py-6 space-y-3 text-gray-600">
+                  <div class="w-8 h-8 border-4 border-gray-300 rounded-full animate-spin" style="border-top-color: var(--campaign-primary, #2E8B57);"></div>
+                  <p class="text-sm font-medium">${message || 'Searching...'}</p>
+                </div>`;
+        } else if (state === 'error') {
+            container.innerHTML = `
+                <div class="flex flex-col items-center py-6 space-y-2 text-gray-600">
+                  <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                  </svg>
+                  <p class="text-sm font-medium">${message}</p>
+                  <p class="text-xs">Try a different search term</p>
+                </div>`;
+        }
+        container.style.display = 'block';
+    }
+
     function showCards(features) {
         const allCards = document.querySelectorAll('.neighborhood-card');
-        const noResultsDiv = document.getElementById('no-results');
+        const noResultsDivId = 'no-results';
         
         // Reset all cards
         allCards.forEach(card => {
@@ -393,7 +440,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         
         if (features.length === 0) {
-            if (noResultsDiv) noResultsDiv.style.display = 'block';
+            renderPlaceholder({ targetId: noResultsDivId, state: 'error', message: 'No neighborhoods found' });
             return;
         }
         
@@ -411,12 +458,12 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
         
-        if (noResultsDiv) noResultsDiv.style.display = 'none';
+        hidePlaceholder(noResultsDivId);
     }
     
     function showAll() {
         const allCards = document.querySelectorAll('.neighborhood-card');
-        const noResultsDiv = document.getElementById('no-results');
+        const noResultsDivId = 'no-results';
         
         allCards.forEach(card => {
             card.style.display = 'block';
@@ -424,34 +471,15 @@ document.addEventListener("DOMContentLoaded", function () {
             card.style.backgroundColor = '';
         });
         
-        if (noResultsDiv) noResultsDiv.style.display = 'none';
+        hidePlaceholder(noResultsDivId);
     }
     
     function showSpinner() {
-        const noResultsDiv = document.getElementById('no-results');
-        if (noResultsDiv) {
-            noResultsDiv.innerHTML = `
-                <div style="text-align: center; padding: 2rem 1rem; color: #6b7280;">
-                    <div style="display: inline-block; width: 20px; height: 20px; border: 2px solid #e5e7eb; border-top: 2px solid #2E8B57; border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 1rem;"></div>
-                    <p class="text-sm font-medium">Searching address...</p>
-                </div>
-            `;
-            noResultsDiv.style.display = 'block';
-        }
+        renderPlaceholder({ targetId: 'no-results', state: 'loading', message: 'Searching...' });
     }
-    
+
     function showNoResults(message) {
-        const noResultsDiv = document.getElementById('no-results');
-        if (noResultsDiv) {
-            noResultsDiv.innerHTML = `
-                <svg class="w-8 h-8 mx-auto mb-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                </svg>
-                <p class="text-sm font-medium">${message}</p>
-                <p class="text-xs mt-1">Try a different search term</p>
-            `;
-            noResultsDiv.style.display = 'block';
-        }
+        renderPlaceholder({ targetId: 'no-results', state: 'error', message });
     }
     
     function flashHighlightOnMap(feature) {
@@ -694,16 +722,23 @@ document.addEventListener("DOMContentLoaded", function () {
                 return;
             }
             
-            // Try neighborhood name search first
-            loadNeighborhoods(); // Load data if not already loaded
+            // Stage 1: Try neighborhood name search first
             const matches = filterNeighborhoodsByName(query);
             
             if (matches.length > 0) {
+                // Found neighborhood matches - show them immediately
                 showCards(matches);
+                
+                // Also try enhanced address search within those neighborhoods for refinement
+                if (query.length >= 5) {
+                    searchTimeout = setTimeout(async () => {
+                        await handleEnhancedAddressSearch(query, matches);
+                    }, 1000);
+                }
                 return;
             }
             
-            // No name match → try address search
+            // Stage 2: No neighborhood name matches → try address search
             showSpinner();
             searchTimeout = setTimeout(async () => {
                 await handleAddressGeocode(query);
@@ -716,8 +751,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 const query = e.target.value.trim();
                 if (query.length >= 3) {
                     if (searchTimeout) clearTimeout(searchTimeout);
-                    showSpinner();
-                    handleAddressGeocode(query);
+                    
+                    // First try neighborhood search
+                    const matches = filterNeighborhoodsByName(query);
+                    if (matches.length > 0) {
+                        showCards(matches);
+                        // Try enhanced search too
+                        handleEnhancedAddressSearch(query, matches);
+                    } else {
+                        // No neighborhood matches, try address
+                        showSpinner();
+                        handleAddressGeocode(query);
+                    }
                 }
             }
         });
@@ -725,35 +770,88 @@ document.addEventListener("DOMContentLoaded", function () {
     
     // Address geocoding handler
     async function handleAddressGeocode(query) {
+        try {
+            console.log('Starting address geocode for:', query);
+            
+            const location = await geocodeAddress(query);
+            console.log('Geocoding result:', location);
+            
+            if (!location) {
+                console.log('No geocoding result found');
+                showNoResults("Address not found");
+                return;
+            }
+            
+            const result = neighborhoodFromPoint(location.lon, location.lat);
+            console.log('Spatial lookup result:', result);
+            
+            if (!result.inDistrict) {
+                console.log('Address outside GA-05');
+                showNoResults("Outside GA-05");
+                return;
+            }
+            
+            if (!result.feature) {
+                console.log('Address in GA-05 but no neighborhood found');
+                showNoResults("In GA-05, no neighborhood");
+                return;
+            }
+            
+            // Found a neighborhood!
+            console.log('Found neighborhood:', result.feature.properties.NAME);
+            showCards([result.feature]);
+            flashHighlightOnMap(result.feature);
+            
+            // Update info box
+            const name = result.feature.properties.NAME || result.feature.properties.name;
+            infoBox.innerHTML = `Address mapped to: ${name}`;
+            setTimeout(() => {
+                infoBox.innerHTML = 'Click a neighborhood to learn more';
+            }, 4000);
+            
+        } catch (error) {
+            console.error('Error in handleAddressGeocode:', error);
+            showNoResults("Search error occurred");
+        }
+    }
+    
+    // Enhanced address search within neighborhood matches using geographic bounds
+    async function handleEnhancedAddressSearch(query, neighborhoodMatches) {
+        // Geocode the original query without neighborhood context first
         const location = await geocodeAddress(query);
         
         if (!location) {
-            showNoResults("Address not found");
+            // Fallback to regular search
             return;
         }
         
-        const result = neighborhoodFromPoint(location.lon, location.lat);
+        // Check if the geocoded point falls within any of the matched neighborhood boundaries
+        const point = turf.point([location.lon, location.lat]);
         
-        if (!result.inDistrict) {
-            showNoResults("Outside GA-05");
-            return;
+        for (const neighborhood of neighborhoodMatches) {
+            try {
+                // Use Turf.js to check if point is within this neighborhood's geometry
+                if (turf.booleanPointInPolygon(point, neighborhood)) {
+                    // Found an address within one of the searched neighborhoods!
+                    showCards([neighborhood]);
+                    flashHighlightOnMap(neighborhood);
+                    
+                    // Update info box to indicate address + neighborhood match
+                    const neighborhoodName = neighborhood.properties.NAME || neighborhood.properties.name;
+                    infoBox.innerHTML = `Found address in: ${neighborhoodName}`;
+                    setTimeout(() => {
+                        infoBox.innerHTML = 'Click a neighborhood to learn more';
+                    }, 4000);
+                    return; // Exit early once we find a match
+                }
+            } catch (error) {
+                console.warn('Error checking point in polygon:', error);
+                continue; // Try next neighborhood
+            }
         }
         
-        if (!result.feature) {
-            showNoResults("In GA-05, no neighborhood");
-            return;
-        }
-        
-        // Found a neighborhood!
-        showCards([result.feature]);
-        flashHighlightOnMap(result.feature);
-        
-        // Update info box
-        const name = result.feature.properties.NAME || result.feature.properties.name;
-        infoBox.innerHTML = `Address mapped to: ${name}`;
-        setTimeout(() => {
-            infoBox.innerHTML = 'Click a neighborhood to learn more';
-        }, 4000);
+        // If no geographic match found in the name-matched neighborhoods,
+        // the original neighborhood name results remain displayed
     }
 
     // Mobile search modal functionality
@@ -802,6 +900,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Modal search with same clean logic
     let modalSearchTimeout;
+    // Helper render for modal
+    function showModalSpinner() {
+        renderPlaceholder({ targetId: 'modal-no-results', state: 'loading', message: 'Searching...' });
+    }
+    function showModalNoResults(msg) {
+        renderPlaceholder({ targetId: 'modal-no-results', state: 'error', message: msg });
+    }
 
     if (modalSearchInput) {
         modalSearchInput.addEventListener('input', function(e) {
@@ -813,15 +918,27 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             
             // Simple text filtering of modal results
+            const visibleItems = [];
             document.querySelectorAll('.result-item').forEach(item => {
                 const name = item.dataset.name.toLowerCase();
                 const shouldShow = !query || name.includes(query.toLowerCase());
                 item.style.display = shouldShow ? 'flex' : 'none';
+                if (shouldShow) visibleItems.push(item);
             });
             
-            // If nothing matches, try address search
-            const visibleItems = document.querySelectorAll('.result-item[style*="flex"]').length;
-            if (query.length >= 3 && visibleItems === 0) {
+            // If we have neighborhood matches and the query is long enough, try enhanced address search
+            if (query.length >= 5 && visibleItems.length > 0) {
+                modalSearchTimeout = setTimeout(async () => {
+                    // Get the matching neighborhoods for enhanced search
+                    const matches = filterNeighborhoodsByName(query);
+                    if (matches.length > 0) {
+                        await handleEnhancedAddressSearch(query, matches);
+                        closeModal(); // Close modal and show result in main UI
+                    }
+                }, 1000);
+            }
+            // If nothing matches, try regular address search
+            else if (query.length >= 3 && visibleItems.length === 0) {
                 modalSearchTimeout = setTimeout(async () => {
                     await handleAddressGeocode(query);
                     closeModal(); // Close modal and show result in main UI
