@@ -19,11 +19,8 @@ oldname: "Oakland City"
   * **City Council District:** [District 4](https://citycouncil.atlantaga.gov/council-members/jason-s-dozier)
   * **ZIP Code:** 30310
 
-### **Standing with Oakland City**
-
-My belief in the power of community is the reason I am running for Congress. I see that power in Oakland City every day—in the historic character of your homes, from Queen Anne Victorians to Craftsman bungalows, and in the dedication of neighbors who have been here for generations.
-
-I also understand the challenges you face. From rising housing costs that threaten to displace longtime residents to the need for more accessible healthcare and equitable economic growth that serves everyone, we must fight to ensure that the progress in our city lifts up the families who have long called this neighborhood home. My commitment is to be your champion in Congress, fighting for the resources and policies that will help Oakland City flourish.
+- 🚧 **Coming soon — this hub is still under construction.**
+- Check back shortly for updates, resources, and ways to get involved.
 
 ## Quick Links
 
