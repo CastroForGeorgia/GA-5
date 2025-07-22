@@ -262,15 +262,69 @@ document.addEventListener("DOMContentLoaded", function () {
     // All layers visible by default - no need for visibility variables
 
     // --- MAP INITIALIZATION ---
+    // Check if we're on a neighborhood page to set initial view
+    function getInitialMapView() {
+        const pageDataElement = document.getElementById('current-page-data');
+        if (pageDataElement) {
+            try {
+                const pageData = JSON.parse(pageDataElement.textContent);
+                console.log('Page data:', pageData);
+                
+                if (pageData.isNeighborhoodPage && pageData.neighborhoodName) {
+                    console.log('On neighborhood page for:', pageData.neighborhoodName);
+                    
+                    // We're on a neighborhood page - find the neighborhood extent
+                    const geoData = loadNeighborhoods();
+                    console.log('Geo data loaded:', geoData ? 'success' : 'failed');
+                    
+                    if (geoData) {
+                        const features = geoData.features || [];
+                        console.log('Number of features:', features.length);
+                        
+                        const neighborhoodFeature = features.find(f => {
+                            const name = (f.properties.NAME || f.properties.name || '').trim();
+                            const targetName = pageData.neighborhoodName.trim();
+                            console.log('Checking feature:', name, 'vs target:', targetName);
+                            return name.toLowerCase() === targetName.toLowerCase();
+                        });
+                        
+                        console.log('Found neighborhood feature:', neighborhoodFeature ? 'yes' : 'no');
+                        
+                        if (neighborhoodFeature) {
+                            // Calculate center of the neighborhood
+                            const center = turf.centroid(neighborhoodFeature);
+                            const [lon, lat] = center.geometry.coordinates;
+                            
+                            console.log('Calculated center:', lon, lat);
+                            
+                            return {
+                                center: ol.proj.fromLonLat([lon, lat]),
+                                zoom: 14, // Zoomed in view for neighborhood
+                                minZoom: 11,
+                                maxZoom: 18
+                            };
+                        }
+                    }
+                }
+            } catch (error) {
+                console.error('Error determining initial view:', error);
+            }
+        }
+        
+        // Default Atlanta view
+        console.log('Using default Atlanta view');
+        return {
+            center: ol.proj.fromLonLat([-84.3880, 33.7490]),
+            zoom: 11,
+            minZoom: 11,
+            maxZoom: 18
+        };
+    }
+    
     const map = new ol.Map({
         target: 'map',
         layers: [osmLayer, districtLayer, neighborhoodsLayer],
-        view: new ol.View({
-            center: ol.proj.fromLonLat([-84.3880, 33.7490]), // Center of Atlanta
-            zoom: 11,
-            minZoom: 11, // Prevent zooming out beyond default zoom
-            maxZoom: 18, // Allow reasonable zoom in for detail
-        }),
+        view: new ol.View(getInitialMapView()),
     });
 
     // Show all layers by default
@@ -752,51 +806,49 @@ document.addEventListener("DOMContentLoaded", function () {
                     modalSearchInput.value = neighborhoodName;
                 }
                 
-                // Find and zoom to the neighborhood
-                setTimeout(() => {
-                    const features = neighborhoodsLayer.getSource().getFeatures();
-                    const targetFeature = features.find(f => f.get('NAME') === neighborhoodName);
+                // Find and highlight the neighborhood, set view immediately
+                const features = neighborhoodsLayer.getSource().getFeatures();
+                const targetFeature = features.find(f => f.get('NAME') === neighborhoodName);
+                
+                if (targetFeature) {
+                    // Set the view immediately to the neighborhood (no animation)
+                    const geometry = targetFeature.getGeometry();
+                    const extent = geometry.getExtent();
                     
-                    if (targetFeature) {
-                        const geometry = targetFeature.getGeometry();
-                        const extent = geometry.getExtent();
-                        
-                        // Zoom to the neighborhood
-                        map.getView().fit(extent, {
-                            padding: [50, 50, 50, 50],
-                            duration: 1500,
-                            maxZoom: 15
-                        });
-                        
-                        // Highlight the feature
-                        if (highlightedFeature) {
-                            highlightedFeature.setStyle(undefined);
-                        }
-                        highlightedFeature = targetFeature;
-                        highlightedFeature.setStyle(highlightStyle);
-                        
-                        // Update info box
-                        infoBox.innerHTML = `Showing: ${neighborhoodName}`;
-                        
-                        // Filter to show only this neighborhood in the sidebar
-                        const geoFeatures = filterNeighborhoodsByName(neighborhoodName);
-                        if (geoFeatures.length > 0) {
-                            showCards(geoFeatures);
-                        }
-                        
-                        // Keep highlight for longer on auto-navigation
-                        setTimeout(() => {
-                            if (highlightedFeature === targetFeature) {
-                                highlightedFeature.setStyle(undefined);
-                                highlightedFeature = null;
-                                infoBox.innerHTML = 'Click a neighborhood to learn more';
-                            }
-                        }, 8000);
-                        
-                    } else {
-                        console.warn('Neighborhood not found on map:', neighborhoodName);
+                    map.getView().fit(extent, {
+                        padding: [50, 50, 50, 50],
+                        duration: 0, // No animation
+                        maxZoom: 14
+                    });
+                    
+                    // Highlight the feature immediately
+                    if (highlightedFeature) {
+                        highlightedFeature.setStyle(undefined);
                     }
-                }, 1000); // Wait for features to be fully loaded
+                    highlightedFeature = targetFeature;
+                    highlightedFeature.setStyle(highlightStyle);
+                    
+                    // Update info box
+                    infoBox.innerHTML = `Showing: ${neighborhoodName}`;
+                    
+                    // Filter to show only this neighborhood in the sidebar
+                    const geoFeatures = filterNeighborhoodsByName(neighborhoodName);
+                    if (geoFeatures.length > 0) {
+                        showCards(geoFeatures);
+                    }
+                    
+                    // Keep highlight for longer on auto-navigation
+                    setTimeout(() => {
+                        if (highlightedFeature === targetFeature) {
+                            highlightedFeature.setStyle(undefined);
+                            highlightedFeature = null;
+                            infoBox.innerHTML = 'Click a neighborhood to learn more';
+                        }
+                    }, 8000);
+                    
+                } else {
+                    console.warn('Neighborhood not found on map:', neighborhoodName);
+                }
             }
         } catch (error) {
             console.error('Error in auto-navigation:', error);
