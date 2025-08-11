@@ -1,0 +1,5 @@
+    User-agent: *
+    Disallow: /draft/
+    Disallow: /private/
+    Disallow: /admin/
+    Sitemap: https://castroforgeorgia.com/sitemap.xml
