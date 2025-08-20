@@ -18,6 +18,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-relative-links
+  - jekyll-redirect-from
 
 paginate: 7
 paginate_path: "/blog/page/:num"
