@@ -73,12 +73,12 @@
             <div class="py-1">
               {% for lang in site.data.settings.languages.supported %}
               {% if lang.lang_code == "en" %}
-              <a href="https://castroforgeorgia.com{{ page.url | prepend: '/' | remove_first: '/' }}" 
+              <a href="{{ site.url }}{{ page.url | prepend: '/' | remove_first: '/' }}"
                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary transition-colors no-underline">
                 {{ lang.lang_name }}
               </a>
               {% else %}
-              <a href="https://{{ lang.lang_code }}.castroforgeorgia.com{{ page.url | prepend: '/' | remove_first: '/' }}" 
+              <a href="{{ site.url }}/{{ lang.lang_code }}{{ page.url | prepend: '/' | remove_first: '/' }}"
                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary transition-colors no-underline">
                 {{ lang.lang_name }}
               </a>
