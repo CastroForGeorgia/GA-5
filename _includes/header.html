@@ -72,17 +72,17 @@
                       opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
             <div class="py-1">
               {% for lang in site.data.settings.languages.supported %}
-              {% if lang.lang_code == "en" %}
-              <a href="{{ site.url }}{{ page.url | prepend: '/' | remove_first: '/' }}"
-                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary transition-colors no-underline">
-                {{ lang.lang_name }}
-              </a>
-              {% else %}
-              <a href="{{ site.url }}/{{ lang.lang_code }}{{ page.url | prepend: '/' | remove_first: '/' }}"
-                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary transition-colors no-underline">
-                {{ lang.lang_name }}
-              </a>
-              {% endif %}
+                {% if lang.lang_code == "en" %}
+                  <a href="{{ site.url }}"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary transition-colors no-underline">
+                    {{ lang.lang_name }}
+                  </a>
+                {% else %}
+                  <a href="{{ site.url }}/{{ lang.lang_code }}{{ page.url | prepend: '/' | remove_first: '/' }}"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-campaign-primary transition-colors no-underline">
+                    {{ lang.lang_name }}
+                  </a>
+                {% endif %}
               {% endfor %}
             </div>
           </div>
