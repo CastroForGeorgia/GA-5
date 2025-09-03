@@ -55,16 +55,28 @@
 
   <!-- Jekyll SEO Plugin -->
   {% seo %}
-  
+
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-  
+  {% if jekyll.environment == "production" %}
+    <!-- Production: Use hashed assets -->
+    {% assign manifest = site.data.manifest %}
+    {% if manifest["css/main.css"] %}
+      <link rel="stylesheet" href="{{ '/assets/dist/' | append: manifest['css/main.css']['file'] | relative_url }}">
+    {% else %}
+      <!-- Fallback if manifest not found -->
+      <link rel="stylesheet" href="{{ '/assets/dist/css/main.css' | relative_url }}">
+    {% endif %}
+  {% else %}
+    <!-- Development: Use Vite dev server -->
+    <link rel="stylesheet" href="{{ site.vite_dev_server_url }}/css/main.css">
+  {% endif %}
+
   <!-- Critical CSS Inline (for above-the-fold content) -->
   <style>
     /* Critical path CSS - loaded immediately */
-    body { 
-      font-family: 'Lato', system-ui, -apple-system, sans-serif; 
-      line-height: 1.6; 
+    body {
+      font-family: 'Lato', system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
       color: #111827;
       background-color: #ffffff;
     }
