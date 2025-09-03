@@ -130,17 +130,21 @@
     "postcss-cli": "^11.0.1",
     "postcss-import": "^16.1.1",
     "postcss-scss": "^4.0.9",
-    "tailwindcss": "^3.4.17"
+    "tailwindcss": "^3.4.17",
+    "vite": "^5.4.19"
   },
   "scripts": {
+    "setup": "npm install && bundle install",
     "build-css": "postcss ./_sass/input.css -o ./assets/css/main.css --watch",
     "build-css-prod": "postcss ./_sass/input.css -o ./assets/css/main.css",
-    "dev": "npm run build-css & bundle exec jekyll serve --host 0.0.0.0",
-    "build": "npm run build-css-prod && bundle exec jekyll build",
+    "vite:dev": "vite --config vite.config.js",
+    "vite:build": "vite build --config vite.config.js",
+    "dev": "concurrently \"npm run vite:dev\" \"bundle exec jekyll serve\"",
+    "build": "npm run vite:build && bundle exec jekyll build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "module"
 }
