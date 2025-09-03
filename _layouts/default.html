@@ -25,8 +25,19 @@
   <!-- end global wrap -->
 
   {% if jekyll.environment == "production" %}
-    <script src="{{ '/assets/js/scripts.[hash].js' | relative_url }}"></script>
-    <script src="{{ '/assets/js/common.[hash].js' | relative_url }}"></script>
+    {% assign manifest = site.data.manifest %}
+    {% if manifest["js/scripts.js"] %}
+      <script src="{{ '/assets/dist/' | append: manifest['js/scripts.js']['file'] | relative_url }}"></script>
+    {% else %}
+      <!-- Fallback if manifest not found -->
+      <script src="{{ '/assets/dist/js/scripts.js' | relative_url }}"></script>
+    {% endif %}
+    {% if manifest["js/common.js"] %}
+      <script src="{{ '/assets/dist/' | append: manifest['js/common.js']['file'] | relative_url }}"></script>
+    {% else %}
+      <!-- Fallback if manifest not found -->
+      <script src="{{ '/assets/dist/js/common.js' | relative_url }}"></script>
+    {% endif %}
   {% else %}
     <script type="module" src="http://localhost:5173/@vite/client"></script>
     <script src="http://localhost:5173/js/scripts.js"></script>

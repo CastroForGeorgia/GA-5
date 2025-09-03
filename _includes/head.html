@@ -59,7 +59,13 @@
   <!-- Main Stylesheet -->
   {% if jekyll.environment == "production" %}
     <!-- Production: Use hashed assets -->
-    <link rel="stylesheet" href="{{ '/assets/css/main.[hash].css' | relative_url }}">
+    {% assign manifest = site.data.manifest %}
+    {% if manifest["css/main.css"] %}
+      <link rel="stylesheet" href="{{ '/assets/dist/' | append: manifest['css/main.css']['file'] | relative_url }}">
+    {% else %}
+      <!-- Fallback if manifest not found -->
+      <link rel="stylesheet" href="{{ '/assets/dist/css/main.css' | relative_url }}">
+    {% endif %}
   {% else %}
     <!-- Development: Use Vite dev server -->
     <link rel="stylesheet" href="http://localhost:5173/css/main.css">
