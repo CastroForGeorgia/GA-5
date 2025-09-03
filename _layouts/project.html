@@ -8,7 +8,7 @@ layout: default
     <div class="order-2 lg:order-1">
       {% if page.image %}
       <div class="project-page__image mb-6">
-        <img class="w-full h-64 md:h-80 object-cover rounded-2xl shadow-lg lazy" data-src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+        {% include image.html data-src=page.image alt=page.title class="w-full h-64 md:h-80 object-cover rounded-2xl shadow-lg lazy" loading="lazy" %}
       </div>
       {% endif %}
       {% if page.image_caption %}

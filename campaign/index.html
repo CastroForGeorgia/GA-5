@@ -3,14 +3,14 @@ layout: default
 title: "Open Source Campaign"
 description: "Building the first community-governed campaign infrastructure — every door knock, line of code, and policy idea contributed in public."
 permalink: /campaign/
-image: /assets/images/agi-header.png
+image: agi-header.png
 ---
 
 {% assign campaign_readme = site.campaign | where: "path", "_campaign/README.md" | first %}
 
 <!-- Hero Section -->
 <section class="relative bg-gradient-to-br from-campaign-primary via-campaign-primary/90 to-campaign-secondary py-16 md:py-24 overflow-hidden">
-  <img class="absolute inset-0 w-full h-full object-cover opacity-30" src="{{ page.image }}" alt="" loading="lazy">
+  {% include image.html src=page.image alt="" class="absolute inset-0 w-full h-full object-cover opacity-30" loading="lazy" %}
   <div class="relative container mx-auto px-4">
     <div class="max-w-4xl">
       <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
@@ -66,4 +66,4 @@ image: /assets/images/agi-header.png
       </a>
     </div>
   </div>
-</section> 
+</section>

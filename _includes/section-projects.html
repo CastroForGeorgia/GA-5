@@ -14,7 +14,7 @@
                 <article class="project col-3 col-d-6 col-t-12 splide__slide">
                   <div class="project-content">
                     <a href="{{ project.url }}" class="project__image">
-                      <img class="lazy" data-src="{{ project.image }}" alt="{{ project.title }}">
+                      {% include image.html data-src=project.image alt=project.title class="lazy" loading="lazy" %}
                     </a>
                     <div class="project__info">
                       <h2 class="project__title">
