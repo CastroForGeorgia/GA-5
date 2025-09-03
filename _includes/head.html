@@ -68,7 +68,7 @@
     {% endif %}
   {% else %}
     <!-- Development: Use Vite dev server -->
-    <link rel="stylesheet" href="http://localhost:5173/css/main.css">
+    <link rel="stylesheet" href="{{ site.vite_dev_server_url }}/css/main.css">
   {% endif %}
 
   <!-- Critical CSS Inline (for above-the-fold content) -->

@@ -18,6 +18,9 @@ exclude_from_localization:
 parallel_localization: true
 lang_from_path: true
 
+# Other
+vite_dev_server_url: http://localhost:5173
+
 #-------------------------------
 # Build Settings
 markdown: kramdown

@@ -12,7 +12,6 @@ export default defineConfig({
         common: resolve(__dirname, "assets/js/common.js"),
         scripts: resolve(__dirname, "assets/js/scripts.js"),
         main: resolve(__dirname, "assets/css/main.css"),
-        // style: resolve(__dirname, "_sass/input.css"),
       },
       output: {
         entryFileNames: "js/[name].[hash].js",

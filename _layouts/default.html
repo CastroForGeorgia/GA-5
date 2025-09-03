@@ -39,9 +39,9 @@
       <script src="{{ '/assets/dist/js/common.js' | relative_url }}"></script>
     {% endif %}
   {% else %}
-    <script type="module" src="http://localhost:5173/@vite/client"></script>
-    <script src="http://localhost:5173/js/scripts.js"></script>
-    <script src="http://localhost:5173/js/common.js"></script>
+    <script type="module" src="{{ site.vite_dev_server_url }}/@vite/client"></script>
+    <script src="{{ site.vite_dev_server_url }}/js/scripts.js"></script>
+    <script src="{{ site.vite_dev_server_url }}/js/common.js"></script>
   {% endif %}
   <script>
     SimpleJekyllSearch({
