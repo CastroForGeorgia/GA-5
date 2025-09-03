@@ -4,8 +4,9 @@ import { resolve } from "path";
 export default defineConfig({
   root: "assets",
   build: {
-    outDir: "../_site/assets",
+    outDir: "../assets/dist",
     emptyOutDir: false,
+    manifest: true,
     rollupOptions: {
       input: {
         common: resolve(__dirname, "assets/js/common.js"),
@@ -14,9 +15,9 @@ export default defineConfig({
         // style: resolve(__dirname, "_sass/input.css"),
       },
       output: {
-        entryFileNames: "assets/js/[name].[hash].js",
-        chunkFileNames: "assets/js/[name].[hash].js",
-        assetFileNames: "assets/css/[name].[hash].[ext]",
+        entryFileNames: "js/[name].[hash].js",
+        chunkFileNames: "js/[name].[hash].js",
+        assetFileNames: "css/[name].[hash].[ext]",
       },
     },
   },
