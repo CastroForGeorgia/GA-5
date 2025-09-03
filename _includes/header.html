@@ -7,7 +7,7 @@
       <div class="flex-shrink-0">
         <a href="{{ site.baseurl }}/" class="flex items-center space-x-3 no-underline group">
           {% if site.data.settings.logo %}
-            {% include image.html src=site.data.settings.logo alt=site.data.settings.title class="h-10 w-auto transition-transform group-hover:scale-105" loading="lazy" %}
+            {% include image.html src=site.data.settings.logo alt=site.data.settings.title class="h-10 w-auto transition-transform group-hover:scale-105" %}
           {% else %}
           <span class="text-xl font-bold text-gray-900 group-hover:text-campaign-primary transition-colors">
             {{ site.data.settings.title }}
