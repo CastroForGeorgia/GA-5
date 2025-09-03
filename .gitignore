@@ -6,3 +6,9 @@ vendor
 .DS_Store
 /frontend/node_modules
 /node_modules
+.env
+
+# Vite build artifacts
+_data/manifest.json
+assets/dist/
+dist/
