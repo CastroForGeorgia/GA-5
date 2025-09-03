@@ -3,7 +3,7 @@ title: "Education"
 description: "Strengthening public education by raising teacher pay, modernizing schools, and ensuring equitable funding for all students."
 date: 2025-07-11 00:00:00 +0000
 label: "Policy"
-image: "/assets/images/education-policy-header.webp"
+image: "education-policy-header.webp"
 ---
 
 # Education for All: A Strong Foundation for the Future

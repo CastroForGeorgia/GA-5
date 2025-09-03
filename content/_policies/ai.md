@@ -3,7 +3,7 @@ title: "Artificial Intelligence (AI)"
 description: "Ensuring AI and automation empower workers, protect jobs, and promote ethical, people-first development."
 date: 2025-07-11 00:00:00 +0000
 label: "Policy"
-image: "/assets/images/agi-header.png"
+image: "agi-header.png"
 ---
 
 # Artificial Intelligence: Technology That Works for Workers

@@ -3,7 +3,7 @@ title: "ICE Activity Tracker"
 description: "Empowering our communities to stay safe from ICE raids."
 date: 2025-01-15 00:00:00 +0000
 label: "Project"
-image: "/assets/images/criminal-justice-reform.webp"
+image: "criminal-justice-reform.webp"
 ---
 
 # ICE Activity Tracker

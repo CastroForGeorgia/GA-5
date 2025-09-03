@@ -3,7 +3,7 @@ title: "Medicare for All"
 description: "Affordable, high-quality healthcare for every resident—centered on people, not profits."
 date: 2025-07-11 00:00:00 +0000
 label: "Policy"
-image: "/assets/images/medicare-for-all-header.png"
+image: "medicare-for-all-header.png"
 north_star: true
 order: 1
 ---
