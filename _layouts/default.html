@@ -24,8 +24,14 @@
   </div>
   <!-- end global wrap -->
 
-  <script src="{{ '/assets/js/scripts.js' | relative_url }}"></script>
-  <script src="{{ '/assets/js/common.js' | relative_url }}"></script>
+  {% if jekyll.environment == "production" %}
+    <script src="{{ '/assets/js/scripts.[hash].js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/common.[hash].js' | relative_url }}"></script>
+  {% else %}
+    <script type="module" src="http://localhost:5173/@vite/client"></script>
+    <script src="http://localhost:5173/js/scripts.js"></script>
+    <script src="http://localhost:5173/js/common.js"></script>
+  {% endif %}
   <script>
     SimpleJekyllSearch({
       searchInput: document.getElementById("js-search-input"),

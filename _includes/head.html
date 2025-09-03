@@ -55,16 +55,22 @@
 
   <!-- Jekyll SEO Plugin -->
   {% seo %}
-  
+
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-  
+  {% if jekyll.environment == "production" %}
+    <!-- Production: Use hashed assets -->
+    <link rel="stylesheet" href="{{ '/assets/css/main.[hash].css' | relative_url }}">
+  {% else %}
+    <!-- Development: Use Vite dev server -->
+    <link rel="stylesheet" href="http://localhost:5173/css/main.css">
+  {% endif %}
+
   <!-- Critical CSS Inline (for above-the-fold content) -->
   <style>
     /* Critical path CSS - loaded immediately */
-    body { 
-      font-family: 'Lato', system-ui, -apple-system, sans-serif; 
-      line-height: 1.6; 
+    body {
+      font-family: 'Lato', system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
       color: #111827;
       background-color: #ffffff;
     }
