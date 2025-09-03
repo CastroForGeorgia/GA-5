@@ -1,0 +1,23 @@
+{% if jekyll.environment == "production" %}
+  {% if include.src %}
+    {% assign image_path = '/assets/dist/images/' | append: include.src %}
+  {% else %}
+    {% assign image_path = '/assets/dist/images/' | append: include.data-src %}
+  {% endif %}
+{%- else -%}
+  {% if include.src %}
+    {% assign image_path = '/assets/images/' | append: include.src %}
+  {% else %}
+    {% assign image_path = '/assets/images/' | append: include.data-src %}
+  {% endif %}
+{%- endif -%}
+<img
+  alt="{{ include.alt | default: '' }}"
+  {% if include.src %}src="{{ image_path | relative_url }}" {% endif %}
+  {% if include.data-src %}data-src="{{ image_path | relative_url }}" {% endif %}
+  {% if include.class %}class="{{ include.class }}" {% endif %}
+  {% if include.loading %}loading="{{ include.loading }}" {% endif %}
+  {% if include.decoding %}decoding="{{ include.decoding }}" {% endif %}
+  {% if include.width %}width="{{ include.width }}" {% endif %}
+  {% if include.height %}height="{{ include.height }}" {% endif %}
+  {% if include.aria-hidden %}aria-hidden="{{ include.aria-hidden }}" {% endif %}>

@@ -126,12 +126,19 @@
     "@tailwindcss/typography": "^0.5.16",
     "autoprefixer": "^10.4.21",
     "concurrently": "^9.2.1",
+    "imagemin": "^9.0.1",
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^10.0.0",
+    "imagemin-svgo": "^11.0.1",
     "postcss": "^8.5.6",
     "postcss-cli": "^11.0.1",
     "postcss-import": "^16.1.1",
     "postcss-scss": "^4.0.9",
     "tailwindcss": "^3.4.17",
-    "vite": "^5.4.19"
+    "vite": "^5.4.19",
+    "vite-plugin-image-optimizer": "^2.0.2",
+    "vite-plugin-static-copy": "^3.1.2"
   },
   "scripts": {
     "setup": "npm install && bundle install",
@@ -139,8 +146,9 @@
     "build-css-prod": "postcss ./_sass/input.css -o ./assets/css/main.css",
     "vite:dev": "vite --config vite.config.js",
     "vite:build": "vite build --config vite.config.js",
+    "optimize-images": "node scripts/optimize-images.js",
     "dev": "concurrently \"npm run vite:dev\" \"bundle exec jekyll serve\"",
-    "build": "npm run vite:build && cp assets/dist/.vite/manifest.json _data/manifest.json && JEKYLL_ENV=production bundle exec jekyll build",
+    "build": "npm run vite:build && npm run optimize-images && cp assets/dist/.vite/manifest.json _data/manifest.json && JEKYLL_ENV=production bundle exec jekyll build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

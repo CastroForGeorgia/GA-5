@@ -3,7 +3,7 @@ title: "Reproductive Rights"
 description: "Defending every woman's right to make her own healthcare decisions."
 date: 2025-07-11 00:00:00 +0000
 label: "Policy"
-image: "/assets/images/reproductive-rights-header.webp"
+image: "reproductive-rights-header.webp"
 ---
 
 # Reproductive Rights: Protecting Freedom, Ensuring Access
