@@ -27,7 +27,6 @@ markdown: kramdown
 permalink: /:title/
 plugins:
   - jekyll-paginate
-  - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-relative-links
   - jekyll-redirect-from
