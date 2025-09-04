@@ -24,14 +24,11 @@
   </div>
   <!-- end global wrap -->
 
+  <!-- Jekyll scripts should not be handled as modules  -->
+  <script src="/assets/js/scripts.js"></script>
+
   {% if jekyll.environment == "production" %}
     {% assign manifest = site.data.manifest %}
-    {% if manifest["js/scripts.js"] %}
-      <script src="{{ '/assets/dist/' | append: manifest['js/scripts.js']['file'] | relative_url }}"></script>
-    {% else %}
-      <!-- Fallback if manifest not found -->
-      <script src="{{ '/assets/dist/js/scripts.js' | relative_url }}"></script>
-    {% endif %}
     {% if manifest["js/common.js"] %}
       <script src="{{ '/assets/dist/' | append: manifest['js/common.js']['file'] | relative_url }}"></script>
     {% else %}
@@ -40,7 +37,6 @@
     {% endif %}
   {% else %}
     <script type="module" src="{{ site.vite_dev_server_url }}/@vite/client"></script>
-    <script src="{{ site.vite_dev_server_url }}/js/scripts.js"></script>
     <script src="{{ site.vite_dev_server_url }}/js/common.js"></script>
   {% endif %}
 

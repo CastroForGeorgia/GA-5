@@ -12,7 +12,7 @@ export default defineConfig(({ mode }) => ({
     rollupOptions: {
       input: {
         common: resolve(__dirname, "assets/js/common.js"),
-        scripts: resolve(__dirname, "assets/js/scripts.js"),
+        // scripts: resolve(__dirname, "assets/js/scripts.js"),
         main: resolve(__dirname, "assets/css/main.css"),
       },
       output: {
