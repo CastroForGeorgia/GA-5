@@ -1,6 +1,5 @@
 import { defineConfig } from "vite";
 import { resolve } from "path";
-import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 import { viteStaticCopy } from "vite-plugin-static-copy";
 
 export default defineConfig(({ mode }) => ({
@@ -12,7 +11,6 @@ export default defineConfig(({ mode }) => ({
     rollupOptions: {
       input: {
         common: resolve(__dirname, "assets/js/common.js"),
-        // scripts: resolve(__dirname, "assets/js/scripts.js"),
         main: resolve(__dirname, "assets/css/main.css"),
       },
       output: {
@@ -45,26 +43,6 @@ export default defineConfig(({ mode }) => ({
                 dest: "images",
               },
             ],
-          }),
-          ViteImageOptimizer({
-            test: /\.(jpe?g|png|gif|tiff|webp|svg|avif)$/i,
-            gifsicle: { optimizationLevel: 7 },
-            mozjpeg: { quality: 85, progressive: true },
-            pngquant: { quality: [0.8, 0.9], speed: 4 },
-            svgo: {
-              plugins: [
-                {
-                  name: "preset-default",
-                  params: { overrides: { removeViewBox: false } },
-                },
-              ],
-            },
-            webp: { quality: 85 },
-            avif: { quality: 85 },
-            cache: true,
-            cacheLocation: ".vite-image-optimizer-cache",
-            // Configure to optimize files in the output directory
-            logStats: true,
           }),
         ]
       : []),
