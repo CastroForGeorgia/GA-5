@@ -7,9 +7,9 @@ layout: default
   {% if page.image %}
   <!-- Image Hero -->
   <div class="relative h-64 md:h-96 bg-gray-900 overflow-hidden">
-    <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="absolute inset-0 w-full h-full object-cover">
+    {% include image.html src=page.image alt=page.title class="absolute inset-0 w-full h-full object-cover" loading="lazy" %}
     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
-    
+
     <!-- Hero Content Overlay -->
     <div class="absolute inset-0 flex items-end">
       <div class="container mx-auto px-4 pb-8 md:pb-12">
@@ -21,9 +21,9 @@ layout: default
             {% endfor %}
           </div>
           {% endif %}
-          
+
           <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">{{ page.title | escape }}</h1>
-          
+
           {% if page.description %}
             <p class="text-lg md:text-xl text-white/90 leading-relaxed max-w-3xl">{{ page.description }}</p>
           {% endif %}
@@ -35,7 +35,7 @@ layout: default
   <!-- Gradient Hero -->
   <div class="relative bg-gradient-to-br from-campaign-primary via-campaign-primary/90 to-campaign-secondary py-16 md:py-24">
     <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
-    
+
     <div class="relative container mx-auto px-4">
       <div class="max-w-4xl">
         {% if page.tags.size >= 1 %}
@@ -45,9 +45,9 @@ layout: default
           {% endfor %}
         </div>
         {% endif %}
-        
+
         <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">{{ page.title | escape }}</h1>
-        
+
         {% if page.description %}
           <p class="text-lg md:text-xl text-white/90 leading-relaxed max-w-3xl">{{ page.description }}</p>
         {% endif %}
@@ -55,7 +55,7 @@ layout: default
     </div>
   </div>
   {% endif %}
-  
+
   <!-- Post Meta -->
   <div class="bg-white border-b border-gray-100">
     <div class="container mx-auto px-4 py-6">
@@ -114,7 +114,7 @@ layout: default
 <article class="py-12 md:py-16">
   <div class="container mx-auto px-4">
     <div class="max-w-4xl mx-auto">
-      <div class="prose prose-lg prose-gray max-w-none 
+      <div class="prose prose-lg prose-gray max-w-none
                   prose-headings:text-gray-900 prose-headings:font-bold prose-headings:leading-tight
                   prose-h1:text-3xl prose-h1:md:text-4xl prose-h1:mb-6
                   prose-h2:text-2xl prose-h2:md:text-3xl prose-h2:mb-4 prose-h2:mt-8
@@ -171,14 +171,14 @@ layout: default
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Related Articles</h2>
         <p class="text-lg text-gray-600 max-w-2xl mx-auto">Continue reading about the issues that matter to our campaign and community.</p>
       </div>
-      
+
       <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {% for post in relatedPosts limit: maxRelated %}
         <article class="group">
           <a href="{{ post.url | relative_url }}" class="block bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden no-underline">
             {% if post.image %}
             <div class="aspect-video bg-gray-200 overflow-hidden">
-              <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+              {% include image.html src=post.image alt=post.title class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" %}
             </div>
             {% else %}
             <div class="aspect-video bg-gradient-to-br from-campaign-primary to-campaign-secondary flex items-center justify-center">
@@ -187,7 +187,7 @@ layout: default
               </svg>
             </div>
             {% endif %}
-            
+
             <div class="p-6">
               {% if post.tags.size > 0 %}
               <div class="flex flex-wrap gap-2 mb-3">
@@ -196,13 +196,13 @@ layout: default
                 {% endfor %}
               </div>
               {% endif %}
-              
+
               <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-campaign-primary transition-colors duration-200 line-clamp-2">{{ post.title }}</h3>
-              
+
               {% if post.description %}
                 <p class="text-gray-600 text-sm mb-4 line-clamp-3">{{ post.description }}</p>
               {% endif %}
-              
+
               <div class="flex items-center text-sm text-gray-500">
                 <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
                 <span class="mx-2">•</span>
@@ -216,7 +216,7 @@ layout: default
         </article>
         {% endfor %}
       </div>
-      
+
       <div class="text-center mt-12">
         <a href="{{ '/blog/' | relative_url }}" class="inline-flex items-center gap-2 bg-campaign-primary text-white px-6 py-3 rounded-full font-medium hover:bg-campaign-primary/90 transition-colors duration-200 no-underline">
           View All Articles

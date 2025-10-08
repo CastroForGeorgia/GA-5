@@ -24,14 +24,33 @@
   </div>
   <!-- end global wrap -->
 
-  <script src="{{ '/assets/js/scripts.js' | relative_url }}"></script>
-  <script src="{{ '/assets/js/common.js' | relative_url }}"></script>
+  <!-- Jekyll scripts should not be handled as modules  -->
+  <script src="/assets/js/scripts.js"></script>
+
+  {% if jekyll.environment == "production" %}
+    {% assign manifest = site.data.manifest %}
+    {% if manifest["js/common.js"] %}
+      <script src="{{ '/assets/dist/' | append: manifest['js/common.js']['file'] | relative_url }}"></script>
+    {% else %}
+      <!-- Fallback if manifest not found -->
+      <script src="{{ '/assets/dist/js/common.js' | relative_url }}"></script>
+    {% endif %}
+  {% else %}
+    <script type="module" src="{{ site.vite_dev_server_url }}/@vite/client"></script>
+    <script src="{{ site.vite_dev_server_url }}/js/common.js"></script>
+  {% endif %}
+
+  {% if jekyll.environment == "production" %}
+    {% assign image_path = "/assets/dist/images/" %}
+  {% else %}
+    {% assign image_path = "/assets/images/" %}
+  {% endif %}
   <script>
     SimpleJekyllSearch({
       searchInput: document.getElementById("js-search-input"),
       resultsContainer: document.getElementById("js-results-container"),
       json: "{{ '/search.json' | relative_url }}",
-      searchResultTemplate: '<div class="search-results__item"><a href="{url}" class="search-results__image" style="background-image: url({image})"></a> <a href="{url}" class="search-results__link"><time class="search-results-date" datetime="{date}">{date}</time><div class="search-results-title">{title}</div></a></div>',
+      searchResultTemplate: '<div class="search-results__item"><a href="{url}" class="search-results__image" style="background-image: url({{ image_path }}{image})"></a> <a href="{url}" class="search-results__link"><time class="search-results-date" datetime="{date}">{date}</time><div class="search-results-title">{title}</div></a></div>',
       noResultsText: '<div class="no-results">No matches found</div>'
     });
   </script>

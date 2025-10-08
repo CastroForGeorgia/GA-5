@@ -1,3 +1,4 @@
+---
 #-------------------------------
 # General Site Settings
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -9,16 +10,27 @@ repository: CastroForGeorgia/GA-5
 # Collections directory
 collections_dir: content
 
+# Polyglot configuration
+languages: ["en", "es", "vi", "ko"]
+default_lang: "en"
+exclude_from_localization:
+  ["javascript", "js", "images", "css", "assets", "feed.xml", "sitemap.xml"]
+parallel_localization: true
+lang_from_path: true
+
+# Other
+vite_dev_server_url: http://localhost:5173
+
 #-------------------------------
 # Build Settings
 markdown: kramdown
 permalink: /:title/
 plugins:
   - jekyll-paginate
-  - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-relative-links
   - jekyll-redirect-from
+  - jekyll-polyglot
 
 paginate: 7
 paginate_path: "/blog/page/:num"
@@ -39,12 +51,12 @@ collections:
     output: true
     permalink: /policy/:slug/
   sections:
-    output: false  # Sections are included, not standalone pages
+    output: false # Sections are included, not standalone pages
   faqs:
     output: true
     permalink: /faq/:slug/
   testimonials:
-    output: false  # Testimonials are included, not standalone pages
+    output: false # Testimonials are included, not standalone pages
   # Campaign collection
   campaign:
     output: true
@@ -122,3 +134,7 @@ assets:
 relative_links:
   enabled: true
   collections: true
+
+# Include Vite build output in Jekyll processing
+include:
+  - assets/dist

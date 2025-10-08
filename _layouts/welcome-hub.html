@@ -3,7 +3,7 @@ layout: default
 title: "Welcome Hub"
 description: "Start here: rules, onboarding, and contribution guides for the open-source campaign."
 permalink: /campaign/welcome-hub/
-image: /assets/images/hero.jpg
+image: hero.jpg
 ---
 
 {% assign hub_doc = site.campaign | where_exp: "d", "d.path contains 'welcome-hub/README'" | first %}
@@ -28,4 +28,4 @@ image: /assets/images/hero.jpg
     <div class="max-w-4xl mx-auto prose prose-lg">
       {{ hub_doc.content }}
     </div>
-</article> 
+</article>

@@ -1,9 +1,9 @@
-module.exports = {
-  parser: 'postcss-scss',
+export default {
+  parser: "postcss-scss",
   plugins: {
-    'postcss-import': {},
-    'tailwindcss/nesting': {},
+    "postcss-import": {},
+    "tailwindcss/nesting": {},
     tailwindcss: {},
     autoprefixer: {},
-  }
-} 
+  },
+};

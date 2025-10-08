@@ -11,7 +11,7 @@
         </svg>
       </div>
       {% endif %}
-      <img class="lazy" data-src="{{ page.previous.image | relative_url }}" alt="{{ page.title }}">
+      {% include image.html data-src=page.previous.image alt=page.title class="lazy" loading="lazy" %}
     </a>
     {% endif %}
     <div class="prev__box">
@@ -36,7 +36,7 @@
         </svg>
       </div>
       {% endif %}
-      <img class="lazy" data-src="{{ page.next.image | relative_url }}" alt="{{ page.title }}">
+      {% include image.html data-src=page.next.image alt=page.title class="lazy" loading="lazy" %}
     </a>
     {% endif %}
   </div>

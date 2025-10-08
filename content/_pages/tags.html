@@ -21,7 +21,7 @@ permalink: /tags/
           {% for post in tag_name %}
           {% if forloop.index==1 and post.image %}
           <div class="tag__image">
-            <img class="lazy" data-src="{{ post.image | relative_url }}" alt="{{ this_word }}">
+            {% include image.html data-src=post.image alt=this_word class="lazy" loading="lazy" %}
           </div>
           {% endif %}
           {% endfor %}

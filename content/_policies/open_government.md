@@ -3,7 +3,7 @@ title: "Open Government"
 description: "Creating a transparent, accountable, and collaborative government that puts power in the hands of the people."
 date: 2025-07-11 00:00:00 +0000
 label: "Policy"
-image: "/assets/images/open-government-header.webp"
+image: "open-government-header.webp"
 ---
 
 # Open Government: A Transparent, Accountable Future
