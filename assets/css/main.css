@@ -2781,6 +2781,10 @@ select {
   font-weight: 600;
 }
 
+.uppercase {
+  text-transform: uppercase;
+}
+
 .capitalize {
   text-transform: capitalize;
 }
@@ -4984,6 +4988,534 @@ body.sheet-open {
   max-width: 100%;
 }
 
+/* ==============================================
+   11. Qomon Form Styling
+   ============================================== */
+
+.qomon-form {
+  font-family: var(--font-family-sans);
+  color: #111016;
+}
+
+.qomon-form .main-container,
+.qomon-form .form-container,
+.qomon-form .fields-container,
+.qomon-form .input,
+.qomon-form .select,
+.qomon-form .address,
+.qomon-form .radio,
+.qomon-form .legal {
+  border-radius: 1.25rem;
+}
+
+.qomon-form .main-container {
+  background: linear-gradient(135deg, rgba(255, 253, 208, 0.82), rgba(255, 218, 185, 0.82));
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 30px 120px rgba(15, 23, 42, 0.2);
+  padding: 2.5rem 2rem;
+}
+
+.qomon-form .form-container {
+  max-width: 760px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(192, 57, 43, 0.18);
+  box-shadow: 0 22px 55px rgba(192, 57, 43, 0.18);
+  padding: clamp(1.75rem, 2vw, 2.5rem);
+}
+
+.qomon-form .fields-container {
+  display: grid !important;
+  gap: clamp(1rem, 1.5vw, 1.5rem);
+  grid-auto-flow: row dense;
+}
+
+.qomon-form .input,
+.qomon-form .select,
+.qomon-form .address {
+  background: rgba(248, 250, 252, 0.75);
+  border: 1px solid rgba(46, 139, 87, 0.15);
+  padding: clamp(1rem, 1.25vw, 1.35rem);
+  transition: transform var(--transition-medium), box-shadow var(--transition-medium), border-color var(--transition-fast);
+}
+
+.qomon-form .input:hover,
+.qomon-form .select:hover,
+.qomon-form .address:hover {
+  border-color: rgba(46, 139, 87, 0.45);
+  transform: translateY(-2px);
+  box-shadow: 0 20px 45px rgba(46, 139, 87, 0.18);
+}
+
+.qomon-form .input__label,
+.qomon-form .select__label,
+.qomon-form .radio__legend,
+.qomon-form .legal__label {
+  display: block;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.01em;
+}
+
+.qomon-form .input__desc,
+.qomon-form .select__desc,
+.qomon-form .radio__input__label,
+.qomon-form .legal__text {
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.qomon-form .input__inner,
+.qomon-form .select__inner,
+.qomon-form .address__row input {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 0.85rem;
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  padding: 0.875rem 1rem;
+  color: #1f2937;
+  font-size: 1rem;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.qomon-form .input__inner:focus,
+.qomon-form .select__inner:focus,
+.qomon-form .address__row input:focus {
+  outline: none;
+  border-color: var(--campaign-primary);
+  box-shadow: 0 0 0 4px rgba(46, 139, 87, 0.25);
+}
+
+.qomon-form .input__inner__date-formatted {
+  color: #1f2937;
+}
+
+.qomon-form .input__length {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-top: 0.35rem;
+  display: block;
+  text-align: right;
+}
+
+.qomon-form .select__placeholder {
+  color: #94a3b8;
+}
+
+.qomon-form .select__arrow {
+  color: var(--campaign-secondary);
+}
+
+.qomon-form .select__option {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.qomon-form .radio__input {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.85rem;
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  background: #ffffff;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.qomon-form .radio__input:hover {
+  border-color: rgba(46, 139, 87, 0.4);
+  box-shadow: 0 10px 24px rgba(46, 139, 87, 0.12);
+}
+
+.qomon-form .radio__input__inner {
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 9999px;
+  border: 2px solid rgba(148, 163, 184, 0.7);
+  position: relative;
+}
+
+.qomon-form .radio__input__inner::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  background: var(--campaign-primary);
+  border-radius: inherit;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.qomon-form .radio__input input:checked + .radio__input__inner::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.qomon-form .legal {
+  border: 1px dashed rgba(46, 139, 87, 0.35);
+  background: rgba(46, 139, 87, 0.05);
+  border-radius: 1rem;
+  padding: 1rem 1.25rem;
+}
+
+.qomon-form .legal__input {
+  margin-right: 0.75rem;
+  accent-color: var(--campaign-primary);
+}
+
+.qomon-form .sign-cta {
+  margin-top: 2.5rem;
+}
+
+.qomon-form .sign-cta__container {
+  text-align: center;
+}
+
+.qomon-form .sign-cta button,
+.qomon-form .sign-cta button[type="submit"] {
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.95rem 1.5rem;
+  border-radius: 9999px;
+  border: none;
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--campaign-secondary) 0%, #a93226 100%);
+  box-shadow: 0 20px 40px rgba(192, 57, 43, 0.25);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), filter var(--transition-fast);
+}
+
+.qomon-form .sign-cta button:hover,
+.qomon-form .sign-cta button:focus {
+  filter: brightness(0.95);
+  transform: translateY(-2px);
+  box-shadow: 0 28px 55px rgba(192, 57, 43, 0.3);
+}
+
+.qomon-form .privacy {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.qomon-form .privacy__link {
+  color: var(--campaign-secondary);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.qomon-form .confirmation {
+  background: #ffffff;
+  border-radius: 1.5rem;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 16px 36px rgba(46, 139, 87, 0.18);
+}
+
+.qomon-form .confirmation__title {
+  font-family: var(--font-family-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--campaign-primary);
+}
+
+.qomon-form .confirmation__body {
+  margin-top: 1rem;
+  color: #334155;
+  line-height: 1.6;
+}
+
+.qomon-form .social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  padding: 0.65rem 1.25rem;
+  background: rgba(46, 139, 87, 0.1);
+  color: var(--campaign-primary);
+  font-weight: 600;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.qomon-form .social-btn:hover {
+  transform: translateY(-2px);
+  background: rgba(46, 139, 87, 0.18);
+}
+
+.qomon-form .social-btn__inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.qomon-form .social-btn.--instagram {
+  background: linear-gradient(135deg, #f58529, #dd2a7b, #515bd4);
+  color: #ffffff;
+}
+
+.qomon-form .social-btn:not(.--color) {
+  background: rgba(148, 163, 184, 0.15);
+  color: #334155;
+}
+
+.qomon-form .social-btn:not(.--full) {
+  width: auto;
+}
+
+@media (min-width: 768px) {
+  .qomon-form .fields-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .qomon-form .input--firstname,
+  .qomon-form .input--surname,
+  .qomon-form .address--postalcode,
+  .qomon-form .address--city {
+    grid-column: span 1;
+  }
+
+  .qomon-form .input,
+  .qomon-form .select,
+  .qomon-form .address,
+  .qomon-form .radio,
+  .qomon-form .legal {
+    grid-column: span 2;
+  }
+
+  .qomon-form .sign-cta button,
+  .qomon-form .sign-cta button[type="submit"] {
+    width: auto;
+    min-width: 280px;
+  }
+}
+
+/* ================================
+   Qomon — Compact Mode for Embeds
+   ================================ */
+
+/* Toggle compact mode by adding `--compact` to .qomon-form
+   (or wrap with .qomon-embed if you can't touch Qomon's root) */
+
+.qomon-form.--compact,
+  .qomon-embed .qomon-form {
+    --q-gap: 12px;
+    --q-pad: 8px;
+    --q-radius: 8px;
+    --q-font: 14px;
+    --q-label: 12px;
+    --q-input-h: 38px;
+    font-size: var(--q-font);
+    line-height: 1.3;
+  }
+
+/* Shell / chrome */
+
+.qomon-form.--compact .main-container,
+   .qomon-embed .qomon-form .main-container {
+     padding: 0;
+     background: transparent;
+     border: 0;
+     box-shadow: none;
+   }
+
+.qomon-form.--compact .form-container,
+  .qomon-embed .qomon-form .form-container {
+    max-width: 520px;
+    margin: 0 auto;
+    padding: clamp(14px, 3vw, 20px);
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+
+/* Grid & spacing */
+
+.qomon-form.--compact .fields-container,
+  .qomon-embed .qomon-form .fields-container {
+    gap: var(--q-gap);
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    align-items: start;
+  }
+
+/* Field blocks */
+
+.qomon-form.--compact .input,
+  .qomon-form.--compact .select,
+  .qomon-form.--compact .address,
+  .qomon-form.--compact .radio,
+  .qomon-form.--compact .legal,
+  .qomon-form.--compact .group,
+  .qomon-embed .qomon-form .input,
+  .qomon-embed .qomon-form .select,
+  .qomon-embed .qomon-form .address,
+  .qomon-embed .qomon-form .radio,
+  .qomon-embed .qomon-form .legal,
+  .qomon-embed .qomon-form .group {
+    padding: calc(var(--q-pad) * 1.15);
+    border-radius: var(--q-radius);
+    background: #fff;
+    border: 1px solid rgba(229, 231, 235, 0.9);
+    box-shadow: none;
+    transform: none;
+  }
+
+.qomon-form.--compact .input--firstname,
+  .qomon-form.--compact .input--lastname,
+  .qomon-form.--compact .input--surname,
+  .qomon-form.--compact .address--postalcode,
+  .qomon-form.--compact .address--city,
+  .qomon-embed .qomon-form .input--firstname,
+  .qomon-embed .qomon-form .input--lastname,
+  .qomon-embed .qomon-form .input--surname,
+  .qomon-embed .qomon-form .address--postalcode,
+  .qomon-embed .qomon-form .address--city {
+    grid-column: span 1;
+  }
+
+.qomon-form.--compact .input--email,
+  .qomon-form.--compact .input--mail,
+  .qomon-form.--compact .input--primary,
+  .qomon-form.--compact .input--phone,
+  .qomon-form.--compact .input--mobile,
+  .qomon-form.--compact .input--address,
+  .qomon-form.--compact .input--street,
+  .qomon-form.--compact .select--country,
+  .qomon-form.--compact .address,
+  .qomon-form.--compact .radio,
+  .qomon-form.--compact .legal,
+  .qomon-form.--compact .sign-cta,
+  .qomon-embed .qomon-form .input--email,
+  .qomon-embed .qomon-form .input--mail,
+  .qomon-embed .qomon-form .input--primary,
+  .qomon-embed .qomon-form .input--phone,
+  .qomon-embed .qomon-form .input--mobile,
+  .qomon-embed .qomon-form .input--address,
+  .qomon-embed .qomon-form .input--street,
+  .qomon-embed .qomon-form .select--country,
+  .qomon-embed .qomon-form .address,
+  .qomon-embed .qomon-form .radio,
+  .qomon-embed .qomon-form .legal,
+  .qomon-embed .qomon-form .sign-cta {
+    grid-column: 1 / -1;
+  }
+
+/* Labels & helper text */
+
+.qomon-form.--compact .input__label,
+  .qomon-form.--compact .select__label,
+  .qomon-form.--compact .radio__legend,
+  .qomon-form.--compact .legal__label,
+  .qomon-embed .qomon-form .input__label,
+  .qomon-embed .qomon-form .select__label,
+  .qomon-embed .qomon-form .radio__legend,
+  .qomon-embed .qomon-form .legal__label {
+    font-size: var(--q-label);
+    margin-bottom: 2px;
+    font-weight: 600;
+  }
+
+.qomon-form.--compact .input__desc,
+  .qomon-form.--compact .legal__text,
+  .qomon-form.--compact .input__length,
+  .qomon-embed .qomon-form .input__desc,
+  .qomon-embed .qomon-form .legal__text,
+  .qomon-embed .qomon-form .input__length {
+    font-size: 11.5px;
+    margin-top: 2px;
+  }
+
+/* Inputs */
+
+.qomon-form.--compact .input__inner,
+  .qomon-form.--compact .select__inner,
+  .qomon-form.--compact .address__row input,
+  .qomon-embed .qomon-form .input__inner,
+  .qomon-embed .qomon-form .select__inner,
+  .qomon-embed .qomon-form .address__row input {
+    min-height: var(--q-input-h);
+    padding: 6px 10px;
+    border-radius: calc(var(--q-radius) - 2px);
+  }
+
+/* Radios */
+
+.qomon-form.--compact .radio__input,
+  .qomon-embed .qomon-form .radio__input {
+    padding: 6px 8px;
+  }
+
+/* Legal box */
+
+.qomon-form.--compact .legal,
+  .qomon-embed .qomon-form .legal {
+    padding: calc(var(--q-pad) * 1.5);
+    border-style: solid;
+  }
+
+/* CTA */
+
+.qomon-form.--compact .sign-cta { margin-top: 10px; }
+
+.qomon-form.--compact .sign-cta button,
+  .qomon-form.--compact .sign-cta button[type="submit"],
+  .qomon-embed .qomon-form .sign-cta button,
+  .qomon-embed .qomon-form .sign-cta button[type="submit"] {
+    width: 100%;
+    min-width: 0;
+    padding: 10px 16px;
+    font-size: 15px;
+    box-shadow: none;
+  }
+
+/* Confirmation view */
+
+.qomon-form.--compact .confirmation,
+  .qomon-embed .qomon-form .confirmation { padding: 12px; }
+
+.qomon-form.--compact .confirmation__title,
+  .qomon-embed .qomon-form .confirmation__title { font-size: 1.15rem; }
+
+/* Responsive: single column on phones, two on sm+ */
+
+@media (max-width: 640px) {
+    .qomon-form.--compact .form-container,
+    .qomon-embed .qomon-form .form-container { max-width: 100%; }
+   .qomon-form.--compact .fields-container,
+   .qomon-embed .qomon-form .fields-container { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+   .qomon-form.--compact .input--email,
+   .qomon-form.--compact .input--mail,
+   .qomon-form.--compact .input--primary,
+   .qomon-embed .qomon-form .input--email,
+   .qomon-embed .qomon-form .input--mail,
+   .qomon-embed .qomon-form .input--primary {
+     grid-column: 1 / -1;
+   }
+  }
+
+@media (min-width: 640px) {
+    .qomon-form.--compact .fields-container,
+    .qomon-embed .qomon-form .fields-container {
+      grid-template-columns: repeat(2, minmax(240px, 1fr));
+      gap: 12px;
+    }
+    .qomon-form.--compact .sign-cta button,
+    .qomon-form.--compact .sign-cta button[type="submit"],
+    .qomon-embed .qomon-form .sign-cta button,
+    .qomon-embed .qomon-form .sign-cta button[type="submit"] {
+      width: auto;
+      min-width: 160px;
+    }
+   }
+
 .hover\:bg-blue-700:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(29 78 216 / var(--tw-bg-opacity, 1));
@@ -5682,4 +6214,5 @@ body.sheet-open {
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
-} 
+}
+   

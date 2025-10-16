@@ -12,21 +12,20 @@
     
     <!-- Newsletter Form Container -->
     <div class="max-w-2xl mx-auto">
-      <!-- Custom styling for Action Network form -->
       <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
         <div class="mb-6">
           <h3 class="text-xl font-semibold mb-2">Stay Connected</h3>
           <p class="text-blue-100">Get the latest updates on the campaign and policy positions.</p>
         </div>
-        
-        <!-- Action Network Form -->
-        <link href='https://actionnetwork.org/css/style-embed-whitelabel-v3.css' rel='stylesheet' type='text/css' />
-        <script src='https://actionnetwork.org/widgets/v5/form/subscribe-form?format=js&source=widget'></script>
-        <div id='can-form-area-subscribe-form' class="action-network-form">
-          <!-- this div is the target for our HTML insertion -->
+
+        <!-- Qomon Form -->
+        <div class="subscribe-form-card">
+          <div class="qomon-embed qomon-embed--subscribe">
+            <div class="qomon-form --compact" data-base_id="5af00e9c-2536-40ef-a946-01de2ef092e4"></div>
+          </div>
         </div>
       </div>
-      
+
       <!-- Trust Indicators -->
       <div class="mt-8 text-sm text-blue-100">
         <p>
@@ -40,34 +39,114 @@
 <!-- end subscribe -->
 
 <style>
-  /* Custom styling for Action Network forms in subscribe section */
-  #can-form-area-subscribe-form .can_form {
-    background: transparent !important;
-    border: none !important;
+  .subscribe-form-card {
+    position: relative;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.65));
+    border-radius: 1.75rem;
+    padding: clamp(24px, 4vw, 32px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow:
+      0 1px 1px rgba(255, 255, 255, 0.7) inset,
+      0 35px 80px rgba(15, 23, 42, 0.25);
   }
-  
-  #can-form-area-subscribe-form input[type="email"],
-  #can-form-area-subscribe-form input[type="text"] {
-    background: rgba(255, 255, 255, 0.9) !important;
-    border: 1px solid rgba(255, 255, 255, 0.3) !important;
-    border-radius: 0.75rem !important;
-    padding: 0.75rem 1rem !important;
-    color: #374151 !important;
-    font-size: 1rem !important;
+
+  .subscribe-form-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+    pointer-events: none;
   }
-  
-  #can-form-area-subscribe-form input[type="submit"] {
-    background: #C0392B !important;
-    border: none !important;
-    border-radius: 0.75rem !important;
-    padding: 0.75rem 2rem !important;
-    color: white !important;
-    font-weight: 600 !important;
-    transition: all 0.2s ease !important;
+
+  .subscribe-form-card .qomon-form.--compact {
+    color: #0f172a;
   }
-  
-  #can-form-area-subscribe-form input[type="submit"]:hover {
-    background: #A93226 !important;
-    transform: translateY(-1px) !important;
+
+  .subscribe-form-card .qomon-form.--compact .main-container,
+  .subscribe-form-card .qomon-form.--compact .form-container {
+    padding: 0;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .subscribe-form-card .qomon-form.--compact .fields-container {
+    gap: 18px;
+  }
+
+  .subscribe-form-card .qomon-form.--compact .input,
+  .subscribe-form-card .qomon-form.--compact .select,
+  .subscribe-form-card .qomon-form.--compact .address,
+  .subscribe-form-card .qomon-form.--compact .radio,
+  .subscribe-form-card .qomon-form.--compact .legal {
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(209, 213, 219, 0.55);
+    border-radius: 1.1rem;
+    padding: 16px;
+    box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
+  }
+
+  .subscribe-form-card .qomon-form.--compact .input__label,
+  .subscribe-form-card .qomon-form.--compact .radio__legend,
+  .subscribe-form-card .qomon-form.--compact .legal__label {
+    color: #0f172a;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+  }
+
+  .subscribe-form-card .qomon-form.--compact .input__inner,
+  .subscribe-form-card .qomon-form.--compact .select__inner,
+  .subscribe-form-card .qomon-form.--compact .address__row input {
+    border-radius: 0.85rem;
+    border: 1px solid rgba(148, 163, 184, 0.5);
+    background: rgba(255, 255, 255, 0.98);
+    padding: 0.85rem 1rem;
+  }
+
+  .subscribe-form-card .qomon-form.--compact .input__inner:focus,
+  .subscribe-form-card .qomon-form.--compact .select__inner:focus,
+  .subscribe-form-card .qomon-form.--compact .address__row input:focus {
+    border-color: #2E8B57;
+    box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.25);
+  }
+
+  .subscribe-form-card .qomon-form.--compact .legal {
+    background: rgba(255, 255, 255, 0.88);
+  }
+
+  .subscribe-form-card .qomon-form.--compact .sign-cta {
+    margin-top: 20px;
+  }
+
+  .subscribe-form-card .qomon-form.--compact .sign-cta__container {
+    text-align: center;
+  }
+
+  .subscribe-form-card .qomon-form.--compact .sign-cta button,
+  .subscribe-form-card .qomon-form.--compact .sign-cta button[type="submit"] {
+    background: linear-gradient(135deg, #C0392B 0%, #A93226 100%);
+    border-radius: 9999px;
+    padding: 0.85rem 3rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    box-shadow: 0 16px 30px rgba(192, 57, 43, 0.35);
+  }
+
+  .subscribe-form-card .qomon-form.--compact .sign-cta button:hover,
+  .subscribe-form-card .qomon-form.--compact .sign-cta button:focus {
+    filter: brightness(0.95);
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 640px) {
+    .subscribe-form-card {
+      padding: 22px;
+    }
+
+    .subscribe-form-card .qomon-form.--compact .fields-container {
+      gap: 16px;
+    }
   }
 </style>
