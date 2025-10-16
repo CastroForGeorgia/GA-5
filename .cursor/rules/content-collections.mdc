@@ -1,0 +1,9 @@
+---
+globs: content/**/*.md
+---
+# Content Collection Guidelines
+- Maintain YAML frontmatter: include `title`, unique `slug`, and `order` when sections need deterministic sorting.
+- Keep slugs kebab-cased to match permalink structures in [`_config.yml`](mdc:_config.yml).
+- Reference images by filename only; place new assets in [`assets/images/`](mdc:assets/images).
+- Localized content mirrors English structure—ensure corresponding files exist under each language directory when adding pages.
+- Avoid embedding inline scripts or styles; use includes or assets instead so builds stay deterministic.
