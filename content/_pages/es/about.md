@@ -26,4 +26,4 @@ Mantener a la familia cerca siempre ha sido una de mis mayores prioridades—tan
 
 Creo que **nosotros** tenemos el poder de exigir algo mejor—mejores salarios, mejor atención médica, mejores escuelas y un mejor futuro para todos. Unámonos para crear un Congreso que defienda a la clase trabajadora y proteja el derecho de cada familia a prosperar.
 
-**Pongámonos a trabajar. [Únete a Nosotros Hoy](https://actionnetwork.org/forms/subscribe-form)**
+**Pongámonos a trabajar. [Únete a Nosotros Hoy](https://form.qomon.org/450eadb7-subscription-form/)**

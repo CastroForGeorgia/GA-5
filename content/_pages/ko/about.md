@@ -26,4 +26,4 @@ image: '/images/about-me.jpg'
 
 저는 **우리**가 더 나은 것을 요구할 수 있는 힘이 있다고 믿습니다—더 나은 임금, 더 나은 의료, 더 나은 학교, 그리고 모두를 위한 더 나은 미래를 위해. 노동계급을 지지하고 모든 가족의 번영할 권리를 보호하는 의회를 만들기 위해 함께 서립시다.
 
-**일을 시작합시다. [오늘 저희와 함께하세요](https://actionnetwork.org/forms/subscribe-form)**
+**일을 시작합시다. [오늘 저희와 함께하세요](https://form.qomon.org/450eadb7-subscription-form/)**
