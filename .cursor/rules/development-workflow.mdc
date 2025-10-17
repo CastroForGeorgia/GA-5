@@ -1,0 +1,9 @@
+---
+description: development workflow
+---
+# Local Development Workflow
+- Install dependencies once with `npm install` and `bundle install`; `npm run setup` runs both.
+- For active development, run `npm run dev` to start the Vite dev server (`localhost:5173`) alongside `bundle exec jekyll serve` (`localhost:4000`).
+- Run `npm run build` before production deploys; it builds hashed assets, runs image optimization, and executes a production Jekyll build into `_site/`.
+- Never edit `_site/`; it is regenerated on each build.
+- Use `npm run build-css` during styling work when you only need PostCSS/Tailwind output without the full dev stack.

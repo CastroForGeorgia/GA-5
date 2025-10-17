@@ -26,4 +26,4 @@ Giữ cho gia đình gần gũi luôn là một trong những ưu tiên lớn nh
 
 Tôi tin rằng **chúng ta** có sức mạnh để yêu cầu những điều tốt hơn—mức lương tốt hơn, chăm sóc sức khỏe tốt hơn, trường học tốt hơn và một tương lai tốt đẹp hơn cho tất cả mọi người. Hãy cùng nhau đứng lên để tạo ra một Quốc hội bảo vệ tầng lớp lao động và bảo vệ quyền của mỗi gia đình để phát triển.
 
-**Hãy bắt tay vào công việc. [Tham Gia Ngay Hôm Nay](https://actionnetwork.org/forms/subscribe-form)**
+**Hãy bắt tay vào công việc. [Tham Gia Ngay Hôm Nay](https://form.qomon.org/450eadb7-subscription-form/)**
