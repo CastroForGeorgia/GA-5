@@ -114,6 +114,22 @@
         </a>
       </div>
 
+      <!-- Mobile Actions -->
+      <div class="flex md:hidden items-center space-x-2">
+        {% if volunteer_item %}
+        <a href="{{ volunteer_item.url | relative_url }}"
+           class="btn btn-volunteer btn-sm{% if page.url == volunteer_item.url %} opacity-80{% endif %}">
+          {{ volunteer_item.title }}
+        </a>
+        {% endif %}
+
+        {% assign donate_item = site.data.settings.menu_settings.menu_items[0] %}
+        <a href="{{ donate_item.url | relative_url }}"
+           class="btn btn-donate btn-sm{% if page.url == donate_item.url %} opacity-80{% endif %}">
+          {{ donate_item.title }}
+        </a>
+      </div>
+
       <!-- Mobile Menu Button -->
       <button class="md:hidden relative p-2 text-gray-700 hover:text-campaign-primary focus:outline-none focus:ring-2 focus:ring-campaign-primary rounded-md transition-colors"
               id="mobile-menu-button"
@@ -168,7 +184,7 @@
         </div>
 
         <!-- Mobile Actions -->
-        <div class="border-t border-gray-200 px-2 py-3 space-y-2">
+        <div class="border-t border-gray-200 px-2 py-3">
           <button id="mobile-search-toggle"
                   class="flex items-center space-x-3 w-full px-3 py-2 text-base font-medium text-gray-700 hover:text-campaign-primary hover:bg-gray-50 rounded-md transition-colors">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -176,19 +192,6 @@
             </svg>
             <span>Search</span>
           </button>
-
-          {% if volunteer_item %}
-          <a href="{{ volunteer_item.url | relative_url }}"
-             class="btn btn-volunteer w-full text-center{% if page.url == volunteer_item.url %} opacity-80{% endif %}">
-            {{ volunteer_item.title }}
-          </a>
-          {% endif %}
-
-          {% assign donate_item = site.data.settings.menu_settings.menu_items[0] %}
-          <a href="{{ donate_item.url | relative_url }}"
-             class="btn btn-donate w-full text-center{% if page.url == donate_item.url %} opacity-80{% endif %}">
-            {{ donate_item.title }}
-          </a>
         </div>
       </div>
     </div>
