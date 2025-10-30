@@ -19,10 +19,6 @@ Whether you're a volunteer, a voter with questions, or someone who's ready to or
 ## 🧰 Media & Press
 **Media Requests:** [press@castroforgeorgia.com](mailto:press@castroforgeorgia.com)
 
-## ✊ Ready to Volunteer?
-Fill out our quick volunteer form and join the movement:  
-👉 [Volunteer with Castro for Georgia](https://actionnetwork.org/forms/volunteer-form-castro-for-georgia)
-
 ---
 
 **This is your movement. Let’s stay connected, stay organized, and stay bold.**

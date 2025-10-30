@@ -16,10 +16,13 @@
         </a>
       </div>
 
+      {% assign volunteer_item = nil %}
       <!-- Desktop Navigation -->
       <nav class="hidden md:flex items-center space-x-1" aria-label="Main navigation">
         {% for item in site.data.settings.menu_settings.menu_items offset:1 %}
-        {% if item.submenu %}
+        {% if item.title == 'Volunteer' %}
+        {% assign volunteer_item = item %}
+        {% elsif item.submenu %}
         <!-- Desktop Dropdown -->
         <div class="relative group">
           <button class="flex items-center space-x-1 px-3 py-2 text-sm font-medium text-gray-700 hover:text-campaign-primary rounded-md transition-colors group">
@@ -95,10 +98,34 @@
           <span class="sr-only lg:not-sr-only">Search</span>
         </button>
 
+        {% if volunteer_item %}
+        <!-- Volunteer Button -->
+        <a href="{{ volunteer_item.url | relative_url }}"
+           class="btn btn-volunteer{% if page.url == volunteer_item.url %} opacity-80{% endif %}">
+          {{ volunteer_item.title }}
+        </a>
+        {% endif %}
+
         <!-- Donate Button -->
         {% assign donate_item = site.data.settings.menu_settings.menu_items[0] %}
         <a href="{{ donate_item.url | relative_url }}"
            class="btn btn-donate{% if page.url == donate_item.url %} opacity-80{% endif %}">
+          {{ donate_item.title }}
+        </a>
+      </div>
+
+      <!-- Mobile Actions -->
+      <div class="flex md:hidden items-center space-x-2">
+        {% if volunteer_item %}
+        <a href="{{ volunteer_item.url | relative_url }}"
+           class="btn btn-volunteer btn-sm{% if page.url == volunteer_item.url %} opacity-80{% endif %}">
+          {{ volunteer_item.title }}
+        </a>
+        {% endif %}
+
+        {% assign donate_item = site.data.settings.menu_settings.menu_items[0] %}
+        <a href="{{ donate_item.url | relative_url }}"
+           class="btn btn-donate btn-sm{% if page.url == donate_item.url %} opacity-80{% endif %}">
           {{ donate_item.title }}
         </a>
       </div>
@@ -124,7 +151,9 @@
         <div class="px-2 pt-2 pb-3 space-y-1">
 
           {% for item in site.data.settings.menu_settings.menu_items offset:1 %}
-          {% if item.submenu %}
+          {% if item.title == 'Volunteer' %}
+          {% assign volunteer_item = item %}
+          {% elsif item.submenu %}
           <!-- Mobile Dropdown -->
           <div class="mobile-dropdown">
             <button class="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-gray-700 hover:text-campaign-primary hover:bg-gray-50 rounded-md transition-colors mobile-dropdown-trigger">
@@ -155,7 +184,7 @@
         </div>
 
         <!-- Mobile Actions -->
-        <div class="border-t border-gray-200 px-2 py-3 space-y-2">
+        <div class="border-t border-gray-200 px-2 py-3">
           <button id="mobile-search-toggle"
                   class="flex items-center space-x-3 w-full px-3 py-2 text-base font-medium text-gray-700 hover:text-campaign-primary hover:bg-gray-50 rounded-md transition-colors">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -163,12 +192,6 @@
             </svg>
             <span>Search</span>
           </button>
-
-          {% assign donate_item = site.data.settings.menu_settings.menu_items[0] %}
-          <a href="{{ donate_item.url | relative_url }}"
-             class="btn btn-donate w-full text-center{% if page.url == donate_item.url %} opacity-80{% endif %}">
-            {{ donate_item.title }}
-          </a>
         </div>
       </div>
     </div>
