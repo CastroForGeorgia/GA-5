@@ -17,8 +17,8 @@
         {% if site.data.settings.social %}
         <div class="flex flex-wrap gap-3">
           {% for social in site.data.settings.social %}
-          <a class="inline-flex items-center justify-center h-10 w-10 rounded-full bg-white/70 hover:bg-white text-campaign-primary hover:text-campaign-secondary shadow-sm hover:shadow transition-all duration-200" href="{{ social.link }}" target="_blank" rel="noopener" aria-label="{{ social.name }}">
-            <i class="{{ social.name }} text-lg"></i>
+          <a class="inline-flex items-center justify-center h-10 w-10 rounded-full bg-white/80 hover:bg-white shadow-sm hover:shadow transition-all duration-200" href="{{ social.link }}" target="_blank" rel="noopener" aria-label="{{ social.name }}">
+            <img src="{{ '/assets/icons/' | append: social.icon | append: '.svg' | relative_url }}" alt="{{ social.name }}" class="h-5 w-5" loading="lazy" />
           </a>
           {% endfor %}
         </div>

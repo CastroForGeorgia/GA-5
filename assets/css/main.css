@@ -2520,6 +2520,10 @@ select {
   background-color: rgb(255 255 255 / 0.7);
 }
 
+.bg-white\/80 {
+  background-color: rgb(255 255 255 / 0.8);
+}
+
 .bg-gradient-to-br {
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
 }
