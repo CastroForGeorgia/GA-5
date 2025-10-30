@@ -101,6 +101,15 @@
   filter: brightness(0.9);
 }
 
+.btn-volunteer {
+  @apply text-white border-0 focus:ring-campaign-primary shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+  background: linear-gradient(135deg, var(--campaign-primary) 0%, #256D4D 100%);
+}
+
+.btn-volunteer:hover {
+  background: linear-gradient(135deg, #256D4D 0%, #1B5738 100%);
+}
+
 .btn-donate {
   @apply text-white border-0 focus:ring-campaign-secondary shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
   background: linear-gradient(135deg, var(--campaign-secondary) 0%, #A93226 100%);
