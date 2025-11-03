@@ -1,7 +1,8 @@
 ---
-title: "Medicare for All"
-description: "Affordable, high-quality healthcare for every resident—centered on people, not profits."
-date: 2025-07-11 00:00:00 +0000
+
+title: "Universal Public Health"
+description: "A single-payer system with a hard 10% wage cap, one fair price list tied to middle-class wages, and zero-cost prenatal and birth care."
+date: 2025-11-02 00:00:00 +0000
 label: "Policy"
 image: "medicare-for-all-header.png"
 north_star: true
@@ -10,17 +11,20 @@ order: 1
 
 # Healthcare for All: A Human Right
 
-## Universal, Affordable, and Comprehensive Healthcare
+## A Universal, People-First Public System
 
-In Georgia’s 5th Congressional District, healthcare is a fundamental human right, not a privilege. We are committed to establishing **Medicare for All**, guaranteeing universal coverage without premiums, deductibles, or surprise bills. Our healthcare system will serve people—not profits.
+In Georgia’s 5th District, I’m fighting to replace a profit-driven maze with a **universal, individual state-run, single-payer system** that guarantees care—no gatekeeping by insurers, no games with networks, no “gotcha” bills. We will set clear rules, cap what families can ever pay, and put doctors and patients back at the center of care.
 
-We prioritize:
+We will fight for:
 
-* Universal, comprehensive healthcare coverage, including mental health, dental, vision, prescription drugs, and long-term care.
-* Eliminating medical debt and financial barriers to treatment.
-* Lowering prescription drug prices through Medicare negotiations.
-* Strengthening local hospitals and clinics, especially in underserved areas.
-* Investing in healthcare professionals by reducing administrative burdens and increasing support.
+* **Guarantee coverage for every resident** through public plan administered by each individual state.
+* **Cap out-of-pocket costs at 10% of household wages**—a hard ceiling that ends medical debt traps.
+* **Use one transparent, statewide price list tied to middle-class wages**, so care stays affordable and providers are paid fairly.
+* **Cover prenatal, birth, and postpartum care at 100%**—no bills, no exceptions—so families can plan with confidence.
+* **Include mental health care** alongside medical care with the same access standards.
+* **Ban direct-to-consumer medical advertising** for prescription drugs and devices, and end hospital/insurer ad games that confuse patients.
+* **Strengthen local hospitals and clinics**, especially in underserved neighborhoods.
+* **Reduce administrative burdens** so clinicians spend time healing people, not chasing codes.
 
 ---
 
@@ -28,66 +32,76 @@ We prioritize:
 
 ### Unaffordable and Unequal Care
 
-* Nearly 30 million Americans lack insurance, and millions more face crippling medical costs.
+Working families are priced out by premiums, deductibles. Care should be based on need—not on a credit score.
 
 ### Medical Debt Crisis
 
-* Families face bankruptcy from healthcare expenses, deterring many from seeking essential care.
+Medical debt is a poverty machine. A hard **10% of wages cap** ends the cycle and gives families a real budget line for health.
 
-### High Prescription Drug Costs
+### Prescription Drug Prices
 
-* Life-saving medications remain financially out of reach due to pharmaceutical greed.
+Pharma hikes and glossy ads drain wallets. We’ll negotiate prices and ban direct-to-consumer ads that drive up costs.
 
 ### Mental Health Neglect
 
-* Mental health care is inaccessible, particularly for working-class and low-income communities.
+The system still treats mental health like a sidecar. We won’t. Care will be fully included and timely.
 
 ### Healthcare Inequities
 
-* Racial, economic, and geographical disparities leave underserved communities with fewer healthcare options.
+Black, brown, immigrant, rural, and low-income communities face worse access and outcomes. Our plan bakes equity into prices, access standards, and funding.
 
 ---
 
-## Comprehensive Medicare for All Plan
+## The Universal Public Health
 
-### 1. Universal Coverage and Elimination of Medical Debt
+### 1) Automatic, Universal Coverage
 
-* Guarantee coverage for every resident, eliminating premiums, deductibles, and out-of-pocket costs.
-* Eradicate medical debt, ensuring no one faces financial ruin from illness or injury.
+* Every resident is **automatically enrolled** in a single, state-run public plan.
 
-### 2. Lower Prescription Drug Prices
+### 2) A Hard 10% of Wages Cap on Out-of-Pocket Costs
 
-* Empower Medicare to negotiate directly with pharmaceutical companies to reduce drug prices.
-* Expand access to affordable generic medications.
+* Copays and coinsurance—where used—**can never push a family over 10% of annual wages.**
+* After the cap, the plan pays 100% for the rest of the year.
 
-### 3. Strengthen Mental Health Services
+### 3) Zero-Cost Prenatal, Birth, and Postpartum Care
 
-* Integrate mental healthcare into all aspects of medical coverage, ensuring accessibility for everyone.
-* Expand mental health support programs in schools and workplaces.
+* Prenatal visits, delivery (including C-sections), doulas, lactation support, postpartum checkups, and newborn care are **covered at 100%**. Healthy moms and healthy babies are non-negotiable.
 
-### 4. Invest in Local Healthcare Infrastructure
+### 4) Mental Health, Substance-Use, and Crisis Services Included
 
-* Ensure hospitals and clinics in underserved areas remain open and financially viable.
-* Expand preventive care programs and early intervention services.
+* Therapy, psychiatry, peer support, mobile crisis, and evidence-based substance-use treatment are **in the core benefit**, with the same access standards as any other medical service.
 
-### 5. Support Healthcare Professionals
+### 5) One Fair Price List, Tied to Middle-Class Wages
 
-* Reduce administrative burdens to allow doctors and nurses to focus on patient care.
-* Expand training programs and improve compensation for healthcare workers.
+* We adopt a single, statewide **Public Health Fee Schedule** with **prices anchored to median wage growth**—and targeted boosts for primary care, mental health, and rural access. Prices are public and simple to understand.
+
+### 6) Ban Medical Advertising
+
+* **No direct-to-consumer advertising** for prescription drugs and medical devices.
+* Hospital and insurer communications must be standardized, factual disclosures on quality and price.
+
+### 7) Strong Local Care
+
+* Keep community hospitals openexpand primary care and urgent care, and fund language access, disability access, and culturally competent care.
+
+### 8) Fewer Hoops for Clinicians
+
+* Slash redundant authorizations and billing red tape. Let nurses, doctors, therapists, and midwives do their jobs.
+
+### 9) Lower Prescription Drug Costs
+
+* Use public bargaining power, automatic generic/biosimilar substitution, and transparent pricing to stop price-gouging.
 
 ---
 
 ## Benefits for Georgia’s 5th District
 
-* **Quality Care for All**: Universal healthcare ensures comprehensive and accessible treatment for every resident.
-* **Financial Security**: Families no longer burdened by medical debt or unpredictable healthcare costs.
-* **Accessible Mental Health Support**: Expanded mental health services available to all communities.
-* **Thriving Local Hospitals**: Strong community healthcare facilities supported and sustained.
+* **Security you can plan around:** Your family’s health costs **cannot exceed 10% of wages.**
+* **Freedom to change jobs:** Health care is no longer tied to an employer’s whims.
+* **Stronger neighborhood care:** Stable funding for community clinics and essential hospitals.
 
 ---
 
 ## Our Commitment
 
-Healthcare should never depend on income or zip code. We stand firmly committed to creating a healthcare system rooted in compassion, dignity, and universal access.
-
-**Join us in the fight for healthcare justice for all.**
+Healthcare should never depend on income or zip code. Together, we will build an public system that treats care as a right, ends medical debt, and invests in the health workforce that keeps our communities alive. **Join us in this fight—and let’s win a system that puts people over profits.**
