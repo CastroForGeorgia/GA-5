@@ -22,18 +22,6 @@ Everything we do is in service of three core goals:
 
 -----
 
-## 🧭 How This Repository Works
-
-This repository provides a transparent overview of our campaign's structure and activities. It's where we document our official policies and track tasks.
-
-| Folder                  | What You Can See Here                                        |
-| ----------------------- | ------------------------------------------------------------ |
-| [`welcome-hub/`](./welcome-hub/) | New here? Read these guides to understand how we operate.    |
-| [`campaign-hq/`](./campaign-hq/) | Explore our official policy, design, and tech resources.     |
-| [`neighborhoods/`](/neighborhoods/) | See organizing plans and materials for specific neighborhoods. |
-
------
-
 ## ✍️ How to Contribute
 
 You don't need to be a tech person or a political expert. You just need a commitment to your community. **All active work is coordinated through Discord.**
@@ -56,15 +44,12 @@ You can browse open tasks and needs on our [**GitHub Issues page**](https://gith
   - All content (docs, flyers, etc): **CC BY 4.0**
   - Official logos, candidate likeness, and branding: **All rights reserved**
 
-See [licensing-and-brand.md](./welcome-hub/rules/licensing-and-brand.md) for full details.
-
 -----
 
 ## 📬 Stay Connected
 
   - **Discord (Primary Hub):** [**Join the Conversation**](https://discord.gg/ep6dBqPjhG)
   - [Website](https://castroforgeorgia.com)
-  - [Volunteer](./welcome-hub/get-involved/README.md)
 
 -----
 
