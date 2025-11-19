@@ -4,7 +4,6 @@ title: "Universal Public Health"
 description: "A single-payer system with a hard 10% wage cap, one fair price list tied to middle-class wages, and zero-cost prenatal and birth care."
 date: 2025-11-02 00:00:00 +0000
 label: "Policy"
-image: "medicare-for-all-header.png"
 north_star: true
 order: 1
 ---

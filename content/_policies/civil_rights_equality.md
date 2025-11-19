@@ -3,7 +3,6 @@ title: "Civil Rights and Equality"
 description: "Stopping government overreach, protecting marginalized communities, and ensuring equal rights and justice for all."
 date: 2025-07-11 00:00:00 +0000
 label: "Policy"
-image: "civil-rights-equality.png"
 ---
 
 # **Civil Rights and Equality: Justice for Georgia’s 5th District**

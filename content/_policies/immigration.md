@@ -3,7 +3,6 @@ title: "Immigration"
 description: "Integrating immigrants, protecting families, and strengthening our communities without detention camps or mass deportations."
 date: 2025-07-11 00:00:00 +0000
 label: "Policy"
-image: "immigration-policy-header.webp"
 ---
 
 # Immigration: A Just and Practical Approach to Reform
