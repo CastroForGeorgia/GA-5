@@ -1,94 +1,45 @@
 ---
 title: "Housing"
 description: "Affordable, sustainable homes and creating good-paying jobs without displacement or environmental harm."
-date: 2025-07-11 00:00:00 +0000
+date: 2025-11-19 00:00:00 +0000
 label: "Policy"
 image: "housing-policy-header.png"
 north_star: true
 order: 2
 ---
 
-# Homes for All: Dignity, Stability, Community
+# Housing: Dignity, Stability, Community
 
-## Affordable Housing is a Fundamental Right
+## Affordable Housing Is a Fundamental Right
 
-In Georgia’s 5th Congressional District, we're committed to ensuring that safe, sustainable, and affordable housing is accessible to everyone. Our vision centers on dignity, stability, and building strong, vibrant communities.
-
-We prioritize:
-
-* Expanding affordable housing through smart, sustainable development.
-* Protecting communities from displacement and gentrification.
-* Creating good-paying local jobs through housing construction and modernization.
-* Promoting homeownership opportunities and pathways for first-time buyers.
-* Increasing and revitalizing public housing to address chronic shortages.
+Housing should be a guarantee, not a gamble. Our campaign is fighting to build and protect homes that are affordable, healthy, and rooted in community—because people come before profits.
 
 ---
 
-## Urgent Housing Challenges
+## Full Support: The Green New Deal for Public Housing Act
 
-### Unaffordable Housing
+We fully support the **Green New Deal for Public Housing Act** (Ocasio‑Cortez/Sanders/Ramirez). This bill is the bold federal partner Atlanta needs—and I will champion it in Congress. Here’s what it means for GA‑05:
 
-* Housing costs continue to rise, pricing working families out of their neighborhoods.
+* **Build and Repair at Scale:** Modernize and decarbonize nearly a million public housing homes nationwide; fix mold, lead, and failing systems; and build *net‑new* homes by **repealing the Faircloth Amendment** so we can finally grow the supply of deeply affordable housing.
+* **Lower Bills, Healthier Homes:** Deep energy retrofits, full electrification, air quality and water upgrades, on‑site renewables, and heat resilience—cutting utility costs for families and improving health outcomes.
+* **Union Jobs, Local Work:** Up to hundreds of thousands of good‑paying, union jobs with project labor agreements, Buy American, and anti‑misclassification safeguards. Training and hiring pipelines focused on residents and local workers.
+* **Tenant Power and Protections:** One‑for‑one replacement, a guaranteed **right to return**, expanded resident councils.
+* **Stronger Public Housing Agencies:** Tools to generate and retain revenue (e.g., community solar) so housing authorities can maintain homes at high standards.
 
-### Displacement and Gentrification
-
-* Longtime residents face displacement due to aggressive redevelopment and rising rents.
-
-### Insufficient Housing Supply
-
-* Affordable homes are scarce, while luxury units dominate new developments.
-* Public housing availability has stagnated, failing to meet community needs.
-
-### Jobs and Community Stability
-
-* Housing development often neglects local employment opportunities, weakening community ties.
-
-### Environmental Sustainability
-
-* Traditional housing construction ignores sustainability, leading to higher costs and environmental harm.
+**Our commitment:** I will fight to pass this bill, repeal Faircloth, and bring these investments to Atlanta so our public housing communities are safer, greener, and bigger—meeting the real demand for homes people can afford.
 
 ---
 
-## Comprehensive Housing Justice Plan
+## What This Delivers for GA‑05
 
-### 1. Rapidly Expand Affordable Housing
-
-* Renovate and modernize vacant and underutilized buildings into affordable homes.
-* Build mixed-income developments that sustain diverse communities.
-* Ensure new developments include significant affordable housing components.
-* Expand and revitalize public housing stock to meet growing demand.
-
-### 2. Prevent Community Displacement
-
-* Strengthen tenant protections, including rent stabilization and anti-eviction measures.
-* Prioritize developments that protect and benefit current residents.
-* Foster community-led planning to preserve neighborhood identity and culture.
-
-### 3. Promote Homeownership and Economic Opportunity
-
-* Provide down-payment assistance and favorable financing for first-time homebuyers.
-* Establish work-to-own programs allowing workers to earn homeownership credits.
-* Support local employment through housing construction and maintenance projects.
-
-### 4. Sustainable and Smart Growth
-
-* Use environmentally friendly building materials and sustainable construction practices.
-* Implement energy-efficient design standards to reduce long-term costs.
-* Prioritize infill development to preserve green spaces and reduce sprawl.
+* **More deeply affordable homes:** Repealing Faircloth and fully funding modernization means *adding* public housing units—not just replacing them.
+* **Healthier, safer housing:** Mold and lead abatement, better ventilation, and comfortable indoor temperatures.
+* **Lower household costs:** Efficient buildings and on‑site renewables shrink monthly bills.
+* **Real careers, not temp gigs:** Union construction and maintenance jobs that build wealth in our communities.
+* **Stronger neighborhoods:** Rooting new housing near transit and jobs to cut commute times and keep families together.
 
 ---
 
-## Benefits for Georgia’s 5th District
+## Our Promise
 
-* **Affordable, dignified homes**: Every resident can access stable and sustainable housing.
-* **Strong communities**: Prevent displacement by prioritizing local residents and preserving neighborhood diversity.
-* **Economic empowerment**: Create good-paying jobs in construction, renovation, and property management.
-* **Sustainability**: Build environmentally responsible homes that reduce costs and protect our planet.
-
----
-
-## Our Commitment
-
-Housing justice is more than policy—it's about creating communities where every person can thrive. Together, we will secure homes for all, grounded in dignity, stability, and lasting community strength.
-
-**Join us in building a future where housing is truly a right for everyone.**
+We’re building a movement that treats housing as a human right. We will modernize what exists, build what’s missing, and guarantee that families are not pushed out of the communities they’ve sustained for generations. Together, we can deliver homes, health, and dignity for every neighbor in Georgia’s 5th District.
