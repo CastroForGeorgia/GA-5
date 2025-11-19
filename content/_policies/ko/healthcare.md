@@ -4,6 +4,8 @@ description: "모든 주민을 위한 저렴하고 고품질의 의료 서비스
 date: 2025-02-19 00:00:00 +0000
 label: "정책"
 image: "/images/medicare-for-all-header.webp"
+north_star: true
+order: 1
 ---
 
 # **모두를 위한 의료: 특권이 아닌 인권**  

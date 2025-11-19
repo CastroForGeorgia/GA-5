@@ -4,6 +4,8 @@ description: "Tăng cường việc làm địa phương, xây dựng nhà ở g
 date: 2025-02-16 00:00:00 +0000
 label: "Chính sách"
 image: "/images/economy-policy-header.webp"
+north_star: true
+order: 3
 ---
 
 # **Xây Dựng Một Nền Kinh Tế Phục Vụ Mọi Người**  

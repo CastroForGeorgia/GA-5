@@ -4,6 +4,8 @@ description: "Hogares asequibles y sostenibles, y la creación de empleos bien r
 date: 2025-02-19 00:00:00 +0000
 label: "Política"
 image: "/images/housing-policy-header.webp"
+north_star: true
+order: 2
 ---
 
 # **🏠 Construir, Baby, Construir: Vivienda para el 5to Distrito de Georgia**  

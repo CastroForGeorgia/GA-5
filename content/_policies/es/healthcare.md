@@ -4,6 +4,8 @@ description: "Atención médica asequible y de alta calidad para cada residente�
 date: 2025-02-19 00:00:00 +0000
 label: "Política"
 image: "/images/medicare-for-all-header.webp"
+north_star: true
+order: 1
 ---
 
 # **Atención Médica para Todos: Un Derecho Humano, No un Privilegio**  

@@ -4,6 +4,8 @@ description: "Chăm sóc sức khỏe chất lượng cao, giá cả phải chă
 date: 2025-02-19 00:00:00 +0000
 label: "Chính sách"
 image: "/images/medicare-for-all-header.webp"
+north_star: true
+order: 1
 ---
 
 # **Chăm sóc sức khỏe cho Tất cả: Một Quyền con Người, Không phải Đặc quyền**  
