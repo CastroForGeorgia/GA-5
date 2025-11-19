@@ -3,7 +3,8 @@ title: "Economía"
 description: "Fortaleciendo empleos locales, construyendo vivienda asequible y asegurando una tributación justa para crear una economía próspera y equitativa."
 date: 2025-02-16 00:00:00 +0000
 label: "Política"
-image: "/images/economy-policy-header.webp"
+north_star: true
+order: 3
 ---
 
 # **Construyendo una Economía que Funcione para Todos**  

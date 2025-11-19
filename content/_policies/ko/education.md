@@ -3,7 +3,6 @@ title: "교육"
 description: "교사 급여 인상, 학교 현대화, 모든 학생을 위한 공정한 자금 지원을 통해 공교육을 강화합니다."
 date: 2024-11-28 00:00:00 +0000
 label: "정책"
-image: "/images/education-policy-header.webp"
 ---
 
 # **모두를 위한 교육: 더 강한 미래는 우리의 학교에서 시작됩니다**  

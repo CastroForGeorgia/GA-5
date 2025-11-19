@@ -3,7 +3,6 @@ title: "Educación"
 description: "Fortaleciendo la educación pública mediante el aumento de salarios a los maestros, la modernización de escuelas y asegurando financiamiento equitativo para todos los estudiantes."
 date: 2024-11-28 00:00:00 +0000
 label: "Política"
-image: "/images/education-policy-header.webp"
 ---
 
 # **Educación para Todos: Un Futuro Más Fuerte Comienza en Nuestras Escuelas**  

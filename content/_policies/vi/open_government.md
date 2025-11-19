@@ -3,7 +3,7 @@ title: "Chính Phủ Mở"
 description: "Tạo ra một chính phủ minh bạch, có trách nhiệm và hợp tác, đặt quyền lực vào tay người dân."
 date: 2024-11-28 00:00:00 +0000
 label: "Chính sách"
-image: "/images/open-government-header.webp"
+
 ---
 
 # **Chính Phủ Mở: Một Tương Lai Minh Bạch và Có Trách Nhiệm**  

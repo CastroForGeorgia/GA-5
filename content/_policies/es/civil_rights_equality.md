@@ -3,7 +3,6 @@ title: "Derechos Civiles e Igualdad"
 description: "Detener el abuso de poder del gobierno, proteger a las comunidades marginadas y garantizar derechos y justicia iguales para todos."
 date: 2025-02-17 00:00:00 +0000
 label: "Política"
-image: "/images/civil-rights-equality.webp"
 ---
 
 # **Derechos Civiles e Igualdad: Justicia para el 5to Distrito de Georgia**  

@@ -3,7 +3,7 @@ title: "열린 정부"
 description: "권력을 국민의 손에 쥐어주는 투명하고 책임감 있으며 협력적인 정부를 만드는 것."
 date: 2024-11-28 00:00:00 +0000
 label: "정책"
-image: "/images/open-government-header.webp"
+
 ---
 
 # **열린 정부: 투명하고 책임 있는 미래**  

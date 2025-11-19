@@ -3,7 +3,6 @@ title: "이민"
 description: "이민자 통합, 가족 보호, 구금소나 대규모 추방 없이 지역 사회 강화."
 date: 2024-11-28 00:00:00 +0000
 label: "정책"
-image: "/images/immigration-policy-header.webp"
 ---
 
 # **이민 정책: 사면과 인도적 개혁**  

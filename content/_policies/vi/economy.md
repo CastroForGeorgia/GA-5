@@ -3,7 +3,8 @@ title: "Kinh Tế"
 description: "Tăng cường việc làm địa phương, xây dựng nhà ở giá cả phải chăng và đảm bảo thuế công bằng để tạo ra một nền kinh tế thịnh vượng và công bằng."
 date: 2025-02-16 00:00:00 +0000
 label: "Chính sách"
-image: "/images/economy-policy-header.webp"
+north_star: true
+order: 3
 ---
 
 # **Xây Dựng Một Nền Kinh Tế Phục Vụ Mọi Người**  

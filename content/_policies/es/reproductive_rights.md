@@ -3,7 +3,7 @@ title: "Derechos Reproductivos"
 description: "Defendiendo el derecho de cada mujer a tomar sus propias decisiones de salud."
 date: 2025-01-22 00:00:00 +0000
 label: "Política"
-image: "/images/reproductive-rights-header.webp"
+
 ---
 
 # **Derechos Reproductivos: Protegiendo la Libertad, Asegurando el Acceso**  

@@ -3,7 +3,6 @@ title: "Quyền Công Dân và Bình Đẳng"
 description: "Ngăn chặn sự can thiệp của chính phủ, bảo vệ các cộng đồng bị thiệt thòi, và đảm bảo quyền lợi và công lý cho tất cả mọi người."
 date: 2025-02-17 00:00:00 +0000
 label: "Chính sách"
-image: "/images/civil-rights-equality.webp"
 ---
 
 # **Quyền Công Dân và Bình Đẳng: Công Lý cho Quận 5 của Georgia**  

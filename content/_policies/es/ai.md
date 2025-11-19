@@ -3,7 +3,6 @@ title: "Inteligencia Artificial General (IAG)"
 description: "Asegurando que la IA y la automatización empoderen a los trabajadores, protejan empleos y promuevan un desarrollo ético y centrado en las personas."
 date: 2024-12-09 00:00:00 +0000
 label: "Política"
-image: "/images/agi-header.webp"
 ---
 
 # **Inteligencia Artificial: Tecnología que Trabaja para los Trabajadores**  

@@ -3,7 +3,8 @@ title: "경제"
 description: "지역 일자리 강화, 저렴한 주택 건설, 공정한 세금 부과를 통해 번영하고 공정한 경제를 창출합니다."
 date: 2025-02-16 00:00:00 +0000
 label: "정책"
-image: "/images/economy-policy-header.webp"
+north_star: true
+order: 3
 ---
 
 # **모두를 위한 경제 구축**  

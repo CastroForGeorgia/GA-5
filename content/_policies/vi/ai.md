@@ -3,7 +3,6 @@ title: "Trí Tuệ Nhân Tạo Tổng Quát (AGI)"
 description: "Đảm bảo AI và tự động hóa nâng cao sức mạnh cho người lao động, bảo vệ việc làm và thúc đẩy phát triển đạo đức, lấy con người làm trung tâm."
 date: 2024-12-09 00:00:00 +0000
 label: "Chính sách"
-image: "/images/agi-header.webp"
 ---
 
 # **Trí Tuệ Nhân Tạo: Công Nghệ Phục Vụ Người Lao Động**  
