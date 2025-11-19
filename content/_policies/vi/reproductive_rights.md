@@ -3,7 +3,7 @@ title: "Quyền sinh sản"
 description: "Bảo vệ quyền của mỗi phụ nữ trong việc đưa ra quyết định về chăm sóc sức khỏe của bản thân."
 date: 2025-01-22 00:00:00 +0000
 label: "Chính sách"
-image: "/images/reproductive-rights-header.webp"
+
 ---
 
 # **Quyền Sinh Sản: Bảo Vệ Tự Do, Đảm Bảo Tiếp Cận**  

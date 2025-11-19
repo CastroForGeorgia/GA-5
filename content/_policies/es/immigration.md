@@ -3,7 +3,6 @@ title: "Inmigración"
 description: "Integrando a los inmigrantes, protegiendo a las familias y fortaleciendo nuestras comunidades sin campamentos de detención ni deportaciones masivas."
 date: 2024-11-28 00:00:00 +0000
 label: "Política"
-image: "/images/immigration-policy-header.webp"
 ---
 
 # **Política de Inmigración: Amnistía y Reforma Humana**  

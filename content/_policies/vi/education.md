@@ -3,7 +3,6 @@ title: "Giáo Dục"
 description: "Tăng cường giáo dục công cộng bằng cách nâng cao lương giáo viên, hiện đại hóa trường học và đảm bảo nguồn tài chính công bằng cho tất cả học sinh."
 date: 2024-11-28 00:00:00 +0000
 label: "Chính sách"
-image: "/images/education-policy-header.webp"
 ---
 
 # **Giáo Dục Cho Tất Cả: Một Tương Lai Mạnh Mẽ Bắt Đầu Từ Các Trường Học Của Chúng Ta**  

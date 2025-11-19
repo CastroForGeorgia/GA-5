@@ -3,7 +3,6 @@ title: "Nhập cư"
 description: "Hòa nhập người nhập cư, bảo vệ gia đình và củng cố cộng đồng của chúng ta mà không cần trại giam hay trục xuất hàng loạt."
 date: 2024-11-28 00:00:00 +0000
 label: "Chính sách"
-image: "/images/immigration-policy-header.webp"
 ---
 
 # **Chính Sách Nhập Cư: Ân Xá và Cải Cách Nhân Đạo**  

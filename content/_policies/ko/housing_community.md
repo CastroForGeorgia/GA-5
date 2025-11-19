@@ -3,7 +3,6 @@ title: "주택"
 description: "저렴하고 지속 가능한 주택과 이주나 환경 피해 없이 좋은 일자리를 창출합니다."
 date: 2025-02-19 00:00:00 +0000
 label: "정책"
-image: "/images/housing-policy-header.webp"
 north_star: true
 order: 2
 ---

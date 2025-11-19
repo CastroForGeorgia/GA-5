@@ -3,7 +3,7 @@ title: "재생산 권리"
 description: "모든 여성이 자신의 건강 관리 결정을 내릴 권리를 옹호합니다."
 date: 2025-01-22 00:00:00 +0000
 label: "정책"
-image: "/images/reproductive-rights-header.webp"
+
 ---
 
 # **재생산 권리: 자유를 보호하고 접근성을 보장하기**  

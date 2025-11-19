@@ -3,7 +3,6 @@ title: "시민권과 평등"
 description: "정부의 과도한 권력 행사를 막고, 소외된 공동체를 보호하며, 모든 사람에게 동등한 권리와 정의를 보장합니다."
 date: 2025-02-17 00:00:00 +0000
 label: "정책"
-image: "/images/civil-rights-equality.webp"
 ---
 
 # **시민권과 평등: 조지아 5지구의 정의**  

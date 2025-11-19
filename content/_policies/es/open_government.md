@@ -3,7 +3,7 @@ title: "Gobierno Abierto"
 description: "Creando un gobierno transparente, responsable y colaborativo que pone el poder en manos del pueblo."
 date: 2024-11-28 00:00:00 +0000
 label: "Política"
-image: "/images/open-government-header.webp"
+
 ---
 
 # **Gobierno Abierto: Un Futuro Transparente y Responsable**  

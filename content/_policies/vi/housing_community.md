@@ -3,7 +3,6 @@ title: "Nhà ở"
 description: "Nhà ở bền vững, giá cả phải chăng và tạo ra việc làm với mức lương tốt mà không gây di dời hay tổn hại môi trường."
 date: 2025-02-19 00:00:00 +0000
 label: "Chính sách"
-image: "/images/housing-policy-header.webp"
 north_star: true
 order: 2
 ---

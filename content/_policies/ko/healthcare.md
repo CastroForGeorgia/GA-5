@@ -3,7 +3,6 @@ title: "모두를 위한 메디케어"
 description: "모든 주민을 위한 저렴하고 고품질의 의료 서비스—이익이 아닌 사람 중심으로."
 date: 2025-02-19 00:00:00 +0000
 label: "정책"
-image: "/images/medicare-for-all-header.webp"
 north_star: true
 order: 1
 ---
