@@ -3239,6 +3239,22 @@ select {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.\[oaicite\:1\] {
+  oaicite: 1;
+}
+
+.\[oaicite\:2\] {
+  oaicite: 2;
+}
+
+.\[oaicite\:4\] {
+  oaicite: 4;
+}
+
+.\[oaicite\:5\] {
+  oaicite: 5;
+}
+
 /* ==============================================
    2. Custom Design Tokens & Variables
    UFW-Inspired "Castro for Georgia" Brand System
