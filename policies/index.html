@@ -4,14 +4,14 @@ title: Policies That Put People First
 description: Explore our vision for a fairer, more just Georgia's 5th District. Together, we'll build a thriving, equitable future.
 ---
 
-<!-- Page Header -->
-<div class="campaign-gradient-subtle text-white py-16 md:py-20">
+<!-- Page Header - UFW Style: Solid color block -->
+<div class="bg-[#396727] py-16 md:py-20 border-b-4 border-[#197B50]">
   <div class="container-wide px-4">
     <div class="text-center max-w-4xl mx-auto">
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-none text-cream uppercase tracking-wide font-heading">
         {{ page.title }}
       </h1>
-      <p class="text-xl md:text-2xl leading-relaxed opacity-90">
+      <p class="text-xl md:text-2xl leading-relaxed text-cream/95">
         {{ page.description }}
       </p>
     </div>
@@ -24,36 +24,36 @@ description: Explore our vision for a fairer, more just Georgia's 5th District. 
 <section class="py-16 md:py-20 bg-cream">
   <div class="container-wide px-4">
 
-    <!-- Section Header -->
+    <!-- Section Header - UFW Style -->
     <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Three Pillars</h2>
-      <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+      <h2 class="text-3xl md:text-4xl font-bold text-[#396727] mb-4 uppercase tracking-wide font-heading">Our Three Pillars</h2>
+      <p class="text-lg md:text-xl text-neutral-700 max-w-3xl mx-auto leading-relaxed">
         The core issues we're fighting for every day in Georgia's 5th District
       </p>
-      <div class="w-24 h-1 bg-campaign-primary rounded-full mx-auto mt-6"></div>
+      <div class="w-24 h-1 bg-[#197B50] mx-auto mt-6"></div>
     </div>
 
-    <!-- North Star Policies Grid -->
+    <!-- North Star Policies Grid - UFW Style Cards -->
     <div class="grid md:grid-cols-3 gap-8 lg:gap-12 mb-16">
       {% for policy in north_star_policies %}
       <article class="group">
         <a href="{{ policy.url }}" class="block no-underline">
-          <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden h-full cursor-pointer">
+          <div class="bg-cream border-2 border-[#396727] hover:border-[#197B50] transition-colors h-full">
 
             <!-- Policy Content -->
             <div class="p-6 flex flex-col h-full">
               <div class="flex-grow">
-                <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-3 group-hover:text-campaign-primary transition-colors">
+                <h3 class="text-xl md:text-2xl font-bold text-[#396727] mb-3 uppercase tracking-wide font-heading group-hover:text-[#197B50] transition-colors">
                   {{ policy.title }}
                 </h3>
-                <p class="text-gray-600 leading-relaxed mb-6">
+                <p class="text-neutral-700 leading-relaxed mb-6">
                   {{ policy.description }}
                 </p>
               </div>
 
-              <!-- Call to Action Visual Indicator -->
+              <!-- Call to Action - UFW Style -->
               <div class="mt-auto">
-                <div class="inline-flex items-center space-x-2 text-campaign-primary font-semibold group-hover:text-campaign-primary/80 transition-colors">
+                <div class="inline-flex items-center space-x-2 text-[#197B50] font-bold uppercase tracking-wide text-sm group-hover:text-[#BE4703] transition-colors">
                   <span>Read Full Policy</span>
                   <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
@@ -74,39 +74,39 @@ description: Explore our vision for a fairer, more just Georgia's 5th District. 
 {% assign all_other_policies = site.policies | where_exp: "policy", "policy.north_star != true" | sort: "date" | reverse %}
 
 {% if all_other_policies.size > 0 %}
-<section id="all-policies" class="py-16 md:py-20 bg-white">
+<section id="all-policies" class="py-16 md:py-20 bg-cream border-t-2 border-[#396727]/20">
   <div class="container-wide px-4">
 
-    <!-- Section Header -->
+    <!-- Section Header - UFW Style -->
     <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Additional Policy Positions</h2>
-      <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+      <h2 class="text-3xl md:text-4xl font-bold text-[#396727] mb-4 uppercase tracking-wide font-heading">Additional Policy Positions</h2>
+      <p class="text-lg md:text-xl text-neutral-700 max-w-3xl mx-auto leading-relaxed">
         Comprehensive positions on the issues that matter to working families
       </p>
-      <div class="w-24 h-1 bg-campaign-secondary rounded-full mx-auto mt-6"></div>
+      <div class="w-24 h-1 bg-[#BE4703] mx-auto mt-6"></div>
     </div>
 
-    <!-- Policies Grid -->
+    <!-- Policies Grid - UFW Style Cards -->
     <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
       {% for policy in all_other_policies %}
       <article class="group">
         <a href="{{ policy.url }}" class="block no-underline">
-          <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden h-full cursor-pointer">
+          <div class="bg-cream border-2 border-[#396727] hover:border-[#BE4703] transition-colors h-full">
 
             <!-- Policy Content -->
             <div class="p-6 flex flex-col h-full">
               <div class="flex-grow">
-                <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-3 group-hover:text-campaign-primary transition-colors">
+                <h3 class="text-xl md:text-2xl font-bold text-[#396727] mb-3 uppercase tracking-wide font-heading group-hover:text-[#BE4703] transition-colors">
                   {{ policy.title }}
                 </h3>
-                <p class="text-gray-600 leading-relaxed mb-6">
+                <p class="text-neutral-700 leading-relaxed mb-6">
                   {{ policy.description }}
                 </p>
               </div>
 
-              <!-- Call to Action Visual Indicator -->
+              <!-- Call to Action - UFW Style -->
               <div class="mt-auto">
-                <div class="inline-flex items-center space-x-2 text-campaign-primary font-semibold group-hover:text-campaign-primary/80 transition-colors">
+                <div class="inline-flex items-center space-x-2 text-[#197B50] font-bold uppercase tracking-wide text-sm group-hover:text-[#BE4703] transition-colors">
                   <span>Read Full Policy</span>
                   <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
