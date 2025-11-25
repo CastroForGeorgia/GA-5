@@ -3,7 +3,6 @@ layout: page
 title: About Andres Castro
 description: Meet Andres Castro, a working-class advocate running for Congress in Georgia’s 5th District to fight for economic justice, healthcare, and real solutions for everyday people.
 permalink: /about/
-image: 'about-me.jpg'
 ---
 
 # About Andres Castro
