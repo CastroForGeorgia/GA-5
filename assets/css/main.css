@@ -2578,6 +2578,10 @@ select {
   background-color: rgb(255 255 255 / 0.8);
 }
 
+.bg-\[\#396727\]\/70 {
+  background-color: rgb(57 103 39 / 0.7);
+}
+
 .bg-gradient-to-b {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
@@ -2783,6 +2787,16 @@ select {
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .pb-3 {
@@ -6624,6 +6638,11 @@ body.sheet-open {
   border-color: rgb(156 58 2 / var(--tw-border-opacity, 1));
 }
 
+.hover\:border-\[\#197B50\]:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(25 123 80 / var(--tw-border-opacity, 1));
+}
+
 .hover\:bg-\[\#9C3A02\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(156 58 2 / var(--tw-bg-opacity, 1));
@@ -6711,6 +6730,11 @@ body.sheet-open {
 .hover\:text-gray-600:hover {
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity, 1));
+}
+
+.hover\:text-\[\#BE4703\]:hover {
+  --tw-text-opacity: 1;
+  color: rgb(190 71 3 / var(--tw-text-opacity, 1));
 }
 
 .hover\:shadow:hover {
@@ -6819,6 +6843,11 @@ body.sheet-open {
 }
 
 .group:hover .group-hover\:text-campaign-primary {
+  --tw-text-opacity: 1;
+  color: rgb(25 123 80 / var(--tw-text-opacity, 1));
+}
+
+.group:hover .group-hover\:text-\[\#197B50\] {
   --tw-text-opacity: 1;
   color: rgb(25 123 80 / var(--tw-text-opacity, 1));
 }
