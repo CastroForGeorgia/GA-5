@@ -16,53 +16,10 @@ When it comes to the genocide happening in Gaza, our position is clear: we are p
 We prioritize:
 
 * An immediate end to the genocide and apartheid policies victimizing the Palestinian people.
+* Supporting "[H.R.3565](https://www.blockthebombs.org/) - Block the Bombs" bill to block the following weapons to Israel: BLU-109 bunker busting bombs, MK80 series bombs, GBU-39 small diameter bomb variants, Joint Direct Attack Munitions (JDAMs), SPICE gliding bomb assemblies, 120mm tank ammunition, and 155mm artillery ammunition, including white phosphorus munitions.
 * Standing in solidarity with the people of Palestine, recognizing that all who suffer under authoritarian regimes deserve support.
 * Rejecting campaign funding from any government or entity complicit in genocide.
 * Upholding civil rights for all and fighting systems of oppression, whether they are called [Jim Crow or apartheid](https://youtu.be/ginvzPX3WJQ?feature=shared&t=43){:target="_blank" rel="noopener"}.
-
----
-
-## The Urgent Challenges We Face
-
-### Echoes of Historical Injustice
-
-The policies of apartheid and ethnic cleansing being enacted are not new; they are a modern manifestation of the same evil that fueled Jim Crow in America. We have been through this before and know the devastating end result. When we see a system that strips people of their rights and humanity based on their identity, we have a moral obligation to call it what it is and fight it.
-
-### Complicity in Government
-
-Too many politicians, including those in the Democratic party, refuse to call out the genocide and apartheid being committed. They take money from the very governments enacting these policies, proving their loyalty is not with human rights. This moral decay within our political leadership cannot continue.
-
----
-
-## Our Unwavering Stance
-
-### 1. A Clear Stand Against Genocide
-
-Our campaign is unequivocal: We do not support the genocide in Palestine. This is a deeply personal issue, as members of my own family have been directly impacted. My niece is half-Palestinian, and her family was fortunate to escape the war. This is not a political game; it is a matter of life and death, and our stance will always be pro-humanity.
-
-### 2. Justice Has No Exceptions
-
-You cannot claim to fight for civil rights while supporting apartheid. We recognize the rhetoric used to justify these atrocities because we have heard similar things in our own country after the Civil War. Justice must be applied universally. Standing with Palestine is standing with oppressed people everywhere. Our fight is against oppressive systems, and we will fight Jim Crow no matter where it rears its ugly head.
-
-### 3. Rejecting Corrupting Influence
-
-I don’t trust any politician to protect my family if they are taking money from a country committing genocide and apartheid. Our campaign will never accept such funding. We cannot allow our representatives to be bought by interests that are actively causing human suffering.
-
-### 4. Supporting Humanitarian Efforts
-
-Our solidarity extends beyond words. We actively support organizations providing essential resources and political education to Palestinians, such as the [Refaat Alareer Mobile Library](https://www.refaatlibrary.com/){:target="_blank" rel="noopener"}. We believe in empowering communities and fostering hope even in the most difficult of times.
-
----
-
-## Why This Matters for Georgia’s 5th District
-
-### Upholding Our Shared Values
-
-What has happened to the Atlanta that fights for human rights? This district has a legacy of standing up for justice. Our campaign reflects that spirit by refusing to look away from oppression, no matter where it occurs.
-
-### A Representative You Can Trust
-
-The people of GA-05 deserve a representative who is not compromised by foreign money or special interests. My refusal to take funds from entities committing atrocities ensures that my only loyalty is to the people and to the cause of human rights.
 
 ---
 
