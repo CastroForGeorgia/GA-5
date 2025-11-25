@@ -3,8 +3,6 @@ layout: page
 title: Về Andres Castro
 description: Gặp gỡ Andres Castro, một nhà lãnh đạo tầng lớp lao động và kỹ sư phần mềm đang tranh cử vào Quốc hội tại Khu vực 5 của Georgia để đấu tranh cho các gia đình, bình đẳng và những giải pháp mạnh mẽ do nhân dân tạo ra.
 permalink: /about/
-image: '/images/about-me.jpg'
-
 ---
 
 # Về Tôi

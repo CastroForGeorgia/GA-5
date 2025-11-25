@@ -3,8 +3,6 @@ layout: page
 title: Acerca de Andres Castro
 description: Conoce a Andres Castro, un líder de clase trabajadora y ingeniero de software que se postula para el Congreso en el 5to Distrito de Georgia para luchar por las familias, la igualdad y soluciones audaces impulsadas por la gente.
 permalink: /about/
-image: '/images/about-me.jpg'
-
 ---
 
 # Acerca de Mí
