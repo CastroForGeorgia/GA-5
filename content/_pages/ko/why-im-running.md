@@ -1,9 +1,8 @@
 ---
-layout: post
+layout: page
 title: "왜 제가 조지아 5지구에서 의회에 출마하는가"
 description: "기업의 영향으로 부패한 민주당의 실패는 제가 그 뿌리로 돌아가도록 싸우게 만들었습니다."
 date: 2025-01-12
-image: '/images/about-me-photo-zoom.jpg'
 ---
 
 ## **민주당은 길을 잃었다—우리가 되찾아야 할 때입니다**  

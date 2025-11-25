@@ -1,9 +1,8 @@
 ---
-layout: post
+layout: page
 title: "Por qué me postulo para el Congreso en el 5to Distrito de Georgia"
 description: "Los fracasos del Partido Demócrata, corrompido por la influencia corporativa, me han empujado a luchar por su regreso a sus raíces."
 date: 2025-01-12
-image: '/images/about-me-photo-zoom.jpg'
 ---
 
 ## **El Partido Demócrata Ha Perdido Su Camino—Es Hora de Recuperarlo**  
