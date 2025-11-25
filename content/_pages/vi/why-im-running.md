@@ -1,9 +1,8 @@
 ---
-layout: post
+layout: page
 title: "Tại Sao Tôi Chạy Ứng Cử Vào Quốc Hội Khu Vực 5 Georgia"
 description: "Những thất bại của Đảng Dân Chủ, bị ảnh hưởng bởi các tập đoàn, đã thúc đẩy tôi đấu tranh để đưa đảng trở về với cội nguồn của nó."
 date: 2025-01-12
-image: '/images/about-me-photo-zoom.jpg'
 ---
 
 ## **Đảng Dân Chủ Đã Lạc Lối—Đã Đến Lúc Để Đưa Nó Về**  

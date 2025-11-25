@@ -1,12 +1,12 @@
 {% if site.policies.size > 0 %}
 <!-- begin policies section -->
-<section class="py-12 bg-cream">
+<section class="py-12 bg-cream border-y-4 border-campaign-primary">
   <div class="container-wide">
 
     <!-- Section Header -->
     <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Policy Platform</h2>
-      <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+      <h2 class="text-3xl md:text-4xl font-bold text-campaign-primary-dark mb-4 uppercase tracking-wide font-heading">Our Policy Platform</h2>
+      <p class="text-xl text-neutral-700 max-w-4xl mx-auto leading-relaxed">
         Building a future that works for everyone in Georgia's 5th District—focused on the issues that matter most to working families.
       </p>
     </div>
@@ -16,22 +16,21 @@
     {% if north_star_policies.size > 0 %}
     <div class="mb-20">
       <div class="text-center mb-12">
-        <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-3">Our Three Pillars</h3>
-        <p class="text-lg text-gray-600">The core issues we're fighting for every day</p>
+        <h3 class="text-2xl md:text-3xl font-bold text-campaign-primary-dark mb-3 uppercase tracking-wide font-heading">Our Three Pillars</h3>
+        <p class="text-lg text-neutral-700">The core issues we're fighting for every day</p>
       </div>
 
       <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
         {% for policy in north_star_policies %}
         <article class="group">
-          <div class="card card-elevated p-0 overflow-hidden hover:shadow-2xl transition-all duration-300">
+          <div class="bg-cream border-2 border-campaign-primary-dark p-0 overflow-hidden hover:border-campaign-primary transition-colors duration-200">
             <!-- Policy Image -->
-            <div class="relative h-48 overflow-hidden">
-              {% include image.html src=policy.image alt=policy.title class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" %}
-              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+            <div class="relative overflow-hidden">
+              <div class="absolute inset-0 bg-campaign-primary-dark/70"></div>
 
               <!-- Policy Badge -->
               <div class="absolute top-4 left-4">
-                <span class="inline-block px-3 py-1 text-xs font-semibold text-white bg-campaign-primary rounded-full">
+                <span class="inline-block px-3 py-1 text-xs font-bold text-cream bg-campaign-secondary border-2 border-campaign-secondary uppercase tracking-wide">
                   Core Policy
                 </span>
               </div>
@@ -39,15 +38,15 @@
 
             <!-- Policy Content -->
             <div class="p-6">
-              <h4 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-campaign-primary transition-colors">
+              <h4 class="text-xl font-bold text-campaign-primary-dark mb-3 group-hover:text-campaign-primary transition-colors uppercase tracking-wide font-heading">
                 {{ policy.title }}
               </h4>
-              <p class="text-gray-600 leading-relaxed mb-4">
+              <p class="text-neutral-700 leading-relaxed mb-4">
                 {{ policy.description }}
               </p>
               <a
                 href="{{ policy.url }}"
-                class="inline-flex items-center space-x-2 text-campaign-primary font-semibold hover:text-campaign-primary/80 transition-colors"
+                class="inline-flex items-center space-x-2 text-campaign-primary font-bold uppercase tracking-wide hover:text-campaign-secondary transition-colors"
               >
                 <span>Learn More</span>
                 <i class="fa-solid fa-arrow-right text-sm"></i>

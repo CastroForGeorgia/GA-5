@@ -3,8 +3,6 @@ layout: page
 title: 안드레스 카스트로에 대하여
 description: 가족, 평등, 그리고 대담한 사람 중심의 해결책을 위해 조지아 5지구에서 의회에 출마하는 노동계급 리더이자 소프트웨어 엔지니어인 안드레스 카스트로를 만나보세요.
 permalink: /about/
-image: '/images/about-me.jpg'
-
 ---
 
 # 나에 대하여

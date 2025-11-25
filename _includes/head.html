@@ -43,17 +43,17 @@
   <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
   {% endif %}
 
-  <!-- Campaign-specific Meta -->
-  <meta name="theme-color" content="#1D4ED8">
-  <meta name="msapplication-TileColor" content="#1D4ED8">
+  <!-- Campaign-specific Meta - UFW Brand Colors -->
+  <meta name="theme-color" content="#197B50">
+  <meta name="msapplication-TileColor" content="#197B50">
   <meta name="google-adsense-account" content="ca-pub-7236889724551024">
 
   <!-- Qomon Forms Loader -->
   <script defer src="https://scripts.qomon.org/forms/v1/setup.js"></script>
 
-  <!-- Font Loading Optimization -->
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400&family=Outfit:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400&family=Outfit:wght@400;500;600;700;800&display=swap"></noscript>
+  <!-- Font Loading Optimization - UFW Typography: Bebas Neue + Open Sans -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap"></noscript>
   <!-- Meta Pixel Code --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js'); fbq('init', '1393075405124579'); fbq('track', 'PageView');</script><noscript> <img height="1" width="1" src="https://www.facebook.com/tr?id=1393075405124579&ev=PageView&noscript=1"/></noscript><!-- End Meta Pixel Code -->
 
   <!-- Jekyll SEO Plugin -->
@@ -75,32 +75,43 @@
   {% endif %}
 
   <!-- Critical CSS Inline (for above-the-fold content) -->
+  <!-- UFW-Inspired Brand: High contrast, crisp edges, bold typography -->
   <style>
-    /* Critical path CSS - loaded immediately */
+    /* Critical path CSS - UFW Brand System */
     body {
-      font-family: 'Lato', system-ui, -apple-system, sans-serif;
+      font-family: 'Open Sans', Arial, system-ui, -apple-system, sans-serif;
       line-height: 1.6;
-      color: #111827;
-      background-color: #ffffff;
+      color: #1A1A15;
+      background-color: #FFFDD0;
+    }
+    h1, h2, h3 {
+      font-family: 'Bebas Neue', 'Arial Black', Impact, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: #396727;
     }
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       padding: 0.75rem 1.5rem;
-      font-weight: 500;
-      border-radius: 9999px;
-      border: 1px solid;
-      transition: all 200ms ease-in-out;
+      font-family: 'Bebas Neue', 'Arial Black', sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-radius: 4px;
+      border: 2px solid;
+      transition: all 100ms ease-out;
       text-decoration: none;
     }
     .btn-primary {
-      background-color: #1D4ED8;
-      color: white;
-      border-color: #1D4ED8;
+      background-color: #197B50;
+      color: #FFFDD0;
+      border-color: #197B50;
     }
     .btn-primary:hover {
-      background-color: #1D40AF;
+      background-color: #396727;
+      border-color: #396727;
     }
   </style>
 </head>

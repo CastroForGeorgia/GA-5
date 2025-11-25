@@ -2,47 +2,48 @@
 layout: default
 ---
 
-<!-- Policy Hero Section -->
+<!-- Policy Hero Section - UFW Style: Bold, crisp, high contrast -->
 <article class="policy-article">
   <!-- Hero Header with Image Background -->
   {% if page.image %}
   <div class="relative h-64 md:h-80 lg:h-96 overflow-hidden">
     {% include image.html src=page.image alt=page.title class="absolute inset-0 w-full h-full object-cover" loading="eager" %}
-    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+    <!-- Solid overlay instead of gradient -->
+    <div class="absolute inset-0 bg-campaign-primary-dark/85"></div>
 
     <!-- Hero Content Overlay -->
     <div class="relative z-10 container-wide px-4 h-full flex items-end">
-      <div class="pb-8 md:pb-12 text-white max-w-4xl">
-        <!-- Policy Meta -->
+      <div class="pb-8 md:pb-12 max-w-4xl">
+        <!-- Policy Meta - UFW badge style -->
         <div class="flex flex-wrap items-center gap-3 mb-4">
           {% if page.label %}
-          <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-white/20 backdrop-blur-sm text-white">
+          <span class="inline-flex items-center px-4 py-1.5 text-sm font-bold uppercase tracking-wide bg-cream text-campaign-primary-dark border-2 border-cream">
             {{ page.label }}
           </span>
           {% endif %}
 
           {% if page.north_star %}
-          <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-campaign-primary text-white">
-            <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+          <span class="inline-flex items-center px-4 py-1.5 text-sm font-bold uppercase tracking-wide bg-campaign-secondary text-cream border-2 border-campaign-secondary">
+            <svg class="w-3 h-3 mr-1.5" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
             </svg>
-            Core Policy
+            CORE POLICY
           </span>
           {% endif %}
 
-          <time class="text-white/80 text-sm" datetime="{{ page.date | date_to_xmlschema }}">
+          <time class="text-cream/90 text-sm font-semibold uppercase tracking-wide" datetime="{{ page.date | date_to_xmlschema }}">
             {{ page.date | date: "%B %d, %Y" }}
           </time>
         </div>
 
-        <!-- Title -->
-        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight text-white">
+        <!-- Title - UFW poster style -->
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-none text-cream uppercase tracking-wide font-heading">
           {{ page.title }}
         </h1>
 
         <!-- Description -->
         {% if page.description %}
-        <p class="text-lg md:text-xl text-white/90 leading-relaxed max-w-3xl">
+        <p class="text-lg md:text-xl text-cream/95 leading-relaxed max-w-3xl">
           {{ page.description }}
         </p>
         {% endif %}
@@ -50,40 +51,37 @@ layout: default
     </div>
   </div>
   {% else %}
-  <!-- Fallback Header without Image -->
-  <div class="campaign-gradient text-white py-16 md:py-20">
+  <!-- Fallback Header without Image - Solid color block -->
+  <div class="bg-campaign-primary-dark text-cream py-16 md:py-20 border-b-4 border-campaign-primary">
     <div class="container-wide px-4">
       <div class="max-w-4xl">
-        <!-- Policy Meta -->
+        <!-- Policy Meta - UFW badge style -->
         <div class="flex flex-wrap items-center gap-3 mb-6">
           {% if page.label %}
-          <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-white/20 backdrop-blur-sm text-white">
+          <span class="inline-flex items-center px-4 py-1.5 text-sm font-bold uppercase tracking-wide bg-cream text-campaign-primary-dark border-2 border-cream">
             {{ page.label }}
           </span>
           {% endif %}
 
           {% if page.north_star %}
-          <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-white text-campaign-primary">
-            <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+          <span class="inline-flex items-center px-4 py-1.5 text-sm font-bold uppercase tracking-wide bg-campaign-secondary text-cream border-2 border-campaign-secondary">
+            <svg class="w-3 h-3 mr-1.5" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
             </svg>
-            Core Policy
+            CORE POLICY
           </span>
           {% endif %}
 
-          <time class="text-white/80 text-sm" datetime="{{ page.date | date_to_xmlschema }}">
-            {{ page.date | date: "%B %d, %Y" }}
-          </time>
         </div>
 
-        <!-- Title -->
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+        <!-- Title - UFW poster style -->
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-none text-cream uppercase tracking-wide font-heading">
           {{ page.title }}
         </h1>
 
         <!-- Description -->
         {% if page.description %}
-        <p class="text-xl md:text-2xl text-white/90 leading-relaxed">
+        <p class="text-xl md:text-2xl text-cream/95 leading-relaxed">
           {{ page.description }}
         </p>
         {% endif %}
@@ -92,71 +90,60 @@ layout: default
   </div>
   {% endif %}
 
-  <!-- Policy Content -->
-  <div class="py-16 md:py-20 bg-white">
+  <!-- Policy Content - UFW Style: Clean, high contrast -->
+  <div class="py-16 md:py-20 bg-cream">
     <div class="container-wide px-4">
       <div class="max-w-4xl mx-auto">
 
-        <!-- Table of Contents (for long policies) -->
-        <div class="mb-12 p-6 bg-gray-50 rounded-2xl border-l-4 border-campaign-primary">
-          <h2 class="text-lg font-bold text-gray-900 mb-4 flex items-center">
+        <!-- Table of Contents - UFW Style: Solid border, no rounded corners -->
+        <div class="mb-12 p-6 bg-cream border-l-4 border-campaign-primary border-y-2 border-r-2 border-y-campaign-primary-dark/20 border-r-campaign-primary-dark/20">
+          <h2 class="text-lg font-bold text-campaign-primary-dark mb-4 flex items-center uppercase tracking-wide font-heading">
             <svg class="w-5 h-5 mr-2 text-campaign-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
             </svg>
             Policy Overview
           </h2>
-          <p class="text-gray-600 leading-relaxed">
+          <p class="text-neutral-700 leading-relaxed">
             This comprehensive policy position outlines our approach to addressing the challenges facing Georgia's 5th Congressional District.
             Jump to specific sections or read the full policy below.
           </p>
         </div>
 
-        <!-- Main Content -->
-        <div class="prose prose-lg prose-gray max-w-none
-                    prose-headings:text-gray-900 prose-headings:font-bold prose-headings:leading-tight
-                    prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-6
-                    prose-a:text-campaign-primary prose-a:no-underline hover:prose-a:underline prose-a:font-medium
-                    prose-strong:text-gray-900 prose-strong:font-semibold
-                    prose-blockquote:border-l-4 prose-blockquote:border-campaign-primary prose-blockquote:bg-gray-50 prose-blockquote:p-6 prose-blockquote:rounded-r-lg prose-blockquote:text-gray-700
-                    prose-ul:text-gray-700 prose-ol:text-gray-700
-                    prose-li:mb-2 prose-li:leading-relaxed
-                    prose-h1:text-3xl prose-h1:md:text-4xl prose-h1:mb-8 prose-h1:mt-12
-                    prose-h2:text-2xl prose-h2:md:text-3xl prose-h2:mb-6 prose-h2:mt-10
-                    prose-h3:text-xl prose-h3:md:text-2xl prose-h3:mb-4 prose-h3:mt-8
-                    prose-hr:border-gray-200 prose-hr:my-12">
-
+        <!-- Main Content - UFW Typography -->
+        <!-- Using simplified prose-campaign class (defined in input.css) -->
+        <div class="prose-campaign">
           {{ content }}
         </div>
 
-        <!-- Policy Actions/Next Steps -->
-        <div class="mt-16 p-8 md:p-12 bg-gradient-to-br from-campaign-primary/5 to-campaign-secondary/5 rounded-2xl border border-campaign-primary/20">
+        <!-- Policy Actions/Next Steps - UFW Style: Solid color block -->
+        <div class="mt-16 p-8 md:p-12 bg-campaign-primary border-2 border-campaign-primary-dark">
           <div class="text-center">
-            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Ready to Take Action?</h2>
-            <p class="text-lg text-gray-600 mb-8 leading-relaxed max-w-2xl mx-auto">
+            <h2 class="text-2xl md:text-3xl font-bold text-cream mb-4 uppercase tracking-wide font-heading">Ready to Take Action?</h2>
+            <p class="text-lg text-cream/90 mb-8 leading-relaxed max-w-2xl mx-auto">
               This policy is part of our comprehensive platform for change. Learn more about our campaign or get involved today.
             </p>
 
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/policies" class="btn btn-primary">
+              <a href="/policies" class="btn bg-cream text-campaign-primary-dark border-2 border-cream hover:bg-transparent hover:text-cream">
                 <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                 </svg>
-                View All Policies
+                VIEW ALL POLICIES
               </a>
 
-              <a href="/about" class="btn btn-secondary">
+              <a href="/about" class="btn bg-transparent text-cream border-2 border-cream hover:bg-cream hover:text-campaign-primary-dark">
                 <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
                 </svg>
-                About Andres
+                ABOUT ANDRES
               </a>
 
               {% if page.north_star %}
-              <a href="/#policies" class="btn btn-secondary border-campaign-secondary text-campaign-secondary hover:bg-campaign-secondary hover:text-white">
+              <a href="/policies" class="btn btn-cta">
                 <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
                 </svg>
-                Our Three Pillars
+                OUR THREE PILLARS
               </a>
               {% endif %}
             </div>
