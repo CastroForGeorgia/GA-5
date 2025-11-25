@@ -2376,6 +2376,10 @@ select {
   border-left-width: 2px;
 }
 
+.border-t-4 {
+  border-top-width: 4px;
+}
+
 .border-\[\#197B50\] {
   --tw-border-opacity: 1;
   border-color: rgb(25 123 80 / var(--tw-border-opacity, 1));
@@ -3057,6 +3061,19 @@ select {
 
 .text-white\/90 {
   color: rgb(255 255 255 / 0.9);
+}
+
+.text-campaign-accent {
+  --tw-text-opacity: 1;
+  color: rgb(223 90 60 / var(--tw-text-opacity, 1));
+}
+
+.text-cream\/60 {
+  color: rgb(255 253 208 / 0.6);
+}
+
+.text-cream\/80 {
+  color: rgb(255 253 208 / 0.8);
 }
 
 .no-underline {
@@ -6683,6 +6700,11 @@ body.sheet-open {
   border-color: rgb(25 123 80 / var(--tw-border-opacity, 1));
 }
 
+.hover\:border-campaign-secondary:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(190 71 3 / var(--tw-border-opacity, 1));
+}
+
 .hover\:bg-\[\#9C3A02\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(156 58 2 / var(--tw-bg-opacity, 1));
@@ -6753,6 +6775,11 @@ body.sheet-open {
   background-color: rgb(245 240 196 / var(--tw-bg-opacity, 1));
 }
 
+.hover\:bg-campaign-secondary:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(190 71 3 / var(--tw-bg-opacity, 1));
+}
+
 .hover\:text-\[\#396727\]:hover {
   --tw-text-opacity: 1;
   color: rgb(57 103 39 / var(--tw-text-opacity, 1));
@@ -6785,6 +6812,11 @@ body.sheet-open {
 .hover\:text-campaign-primary-dark:hover {
   --tw-text-opacity: 1;
   color: rgb(57 103 39 / var(--tw-text-opacity, 1));
+}
+
+.hover\:text-campaign-accent:hover {
+  --tw-text-opacity: 1;
+  color: rgb(223 90 60 / var(--tw-text-opacity, 1));
 }
 
 .hover\:shadow:hover {

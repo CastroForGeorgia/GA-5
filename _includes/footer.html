@@ -1,23 +1,23 @@
-<!-- begin footer -->
-<footer class="bg-gradient-to-b from-peach/70 via-peach to-cream border-t border-peach/40">
+<!-- begin footer - UFW Style: Solid colors, crisp, functional -->
+<footer class="bg-campaign-primary-dark border-t-4 border-campaign-primary">
   <div class="container-wide py-14 lg:py-20">
     <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-4 text-left">
 
       <!-- Campaign Overview -->
       <div class="space-y-5">
-        <a href="{{ site.baseurl }}/" class="flex items-center space-x-3 no-underline group">
+        <a href="{{ site.baseurl }}/" class="flex items-center space-x-3 no-underline">
           {% if site.data.settings.logo %}
-            {% include image.html src=site.data.settings.logo alt=site.data.settings.title class="h-12 w-auto transition-transform group-hover:scale-105" %}
+            {% include image.html src=site.data.settings.logo alt=site.data.settings.title class="h-12 w-auto" %}
           {% else %}
-            <span class="text-2xl font-bold text-gray-900 group-hover:text-campaign-primary transition-colors">{{ site.data.settings.title }}</span>
+            <span class="text-2xl font-bold text-cream hover:text-campaign-accent transition-colors uppercase tracking-wide font-heading">{{ site.data.settings.title }}</span>
           {% endif %}
         </a>
-        <p class="text-gray-700 leading-relaxed max-w-sm">People-powered leadership for Georgia&apos;s 5th Congressional District. We&apos;re organizing block by block to deliver a dignified future for every family.</p>
+        <p class="text-cream/90 leading-relaxed max-w-sm">People-powered leadership for Georgia&apos;s 5th Congressional District. We&apos;re organizing block by block to deliver a dignified future for every family.</p>
 
         {% if site.data.settings.social %}
         <div class="flex flex-wrap gap-3">
           {% for social in site.data.settings.social %}
-          <a class="inline-flex items-center justify-center h-10 w-10 rounded-full bg-white/80 hover:bg-white shadow-sm hover:shadow transition-all duration-200" href="{{ social.link }}" target="_blank" rel="noopener" aria-label="{{ social.name }}">
+          <a class="inline-flex items-center justify-center h-10 w-10 bg-cream border-2 border-cream hover:bg-campaign-secondary hover:border-campaign-secondary transition-colors" href="{{ social.link }}" target="_blank" rel="noopener" aria-label="{{ social.name }}">
             <img src="{{ '/assets/icons/' | append: social.icon | append: '.svg' | relative_url }}" alt="{{ social.name }}" class="h-5 w-5" loading="lazy" />
           </a>
           {% endfor %}
@@ -27,43 +27,43 @@
 
       <!-- Quick Links -->
       <div class="space-y-4">
-        <h3 class="text-base font-semibold text-gray-900 uppercase tracking-wide">Explore</h3>
+        <h3 class="text-base font-bold text-cream uppercase tracking-wide font-heading">Explore</h3>
         <ul class="space-y-3 text-sm">
           {% for item in site.data.settings.menu_settings.menu_items %}
             {% unless item.title == "Donate" %}
-            <li><a href="{{ item.url | relative_url }}" class="text-gray-700 hover:text-campaign-primary transition-colors no-underline">{{ item.title }}</a></li>
+            <li><a href="{{ item.url | relative_url }}" class="text-cream/90 hover:text-campaign-accent transition-colors no-underline font-semibold">{{ item.title }}</a></li>
             {% endunless %}
           {% endfor %}
-          <li><a href="/contact/" class="text-gray-700 hover:text-campaign-primary transition-colors no-underline">Contact</a></li>
+          <li><a href="/contact/" class="text-cream/90 hover:text-campaign-accent transition-colors no-underline font-semibold">Contact</a></li>
         </ul>
       </div>
 
       <!-- Get Involved -->
       <div class="space-y-4">
-        <h3 class="text-base font-semibold text-gray-900 uppercase tracking-wide">Get Involved</h3>
-        <p class="text-gray-700 text-sm leading-relaxed">Campaigns are won by neighbors who show up for each other. Join the organizing team, share your story, and help power this movement.</p>
+        <h3 class="text-base font-bold text-cream uppercase tracking-wide font-heading">Get Involved</h3>
+        <p class="text-cream/90 text-sm leading-relaxed">Campaigns are won by neighbors who show up for each other. Join the organizing team, share your story, and help power this movement.</p>
         <div class="space-y-3">
-          <a href="https://secure.actblue.com/donate/castroforgeorgia" class="btn btn-donate w-full justify-center">Donate</a>
-          <a href="/volunteer/" class="btn btn-volunteer w-full justify-center">Volunteer</a>
-          <a href="/policies/" class="btn btn-secondary w-full justify-center">Read the Platform</a>
+          <a href="https://secure.actblue.com/donate/castroforgeorgia" class="btn btn-cta w-full justify-center">Donate</a>
+          <a href="/volunteer/" class="btn btn-primary w-full justify-center">Volunteer</a>
+          <a href="/policies/" class="btn w-full justify-center bg-transparent border-2 border-cream text-cream hover:bg-cream hover:text-campaign-primary-dark">Read the Platform</a>
         </div>
       </div>
 
       <!-- Contact -->
       <div class="space-y-5">
-        <h3 class="text-base font-semibold text-gray-900 uppercase tracking-wide">Stay Connected</h3>
-        <div class="space-y-4 text-sm text-gray-700">
+        <h3 class="text-base font-bold text-cream uppercase tracking-wide font-heading">Stay Connected</h3>
+        <div class="space-y-4 text-sm text-cream/90">
           <div>
-            <p class="font-medium text-gray-900">Campaign HQ</p>
+            <p class="font-bold text-cream">Campaign HQ</p>
             <p class="mt-1">Atlanta, Georgia<br/>Serving GA-05 with heart and grit.</p>
           </div>
           <div>
-            <p class="font-medium text-gray-900">General Inquiries</p>
-            <a href="mailto:hello@castroforgeorgia.com" class="text-gray-700 hover:text-campaign-primary transition-colors no-underline">hello@castroforgeorgia.com</a>
+            <p class="font-bold text-cream">General Inquiries</p>
+            <a href="mailto:hello@castroforgeorgia.com" class="text-cream/90 hover:text-campaign-accent transition-colors no-underline">hello@castroforgeorgia.com</a>
           </div>
           <div>
-            <p class="font-medium text-gray-900">Press & Media</p>
-            <a href="mailto:press@castroforgeorgia.com" class="text-gray-700 hover:text-campaign-primary transition-colors no-underline">press@castroforgeorgia.com</a>
+            <p class="font-bold text-cream">Press & Media</p>
+            <a href="mailto:press@castroforgeorgia.com" class="text-cream/90 hover:text-campaign-accent transition-colors no-underline">press@castroforgeorgia.com</a>
           </div>
         </div>
       </div>
@@ -71,11 +71,11 @@
     </div>
 
     <!-- Footer Base -->
-    <div class="mt-12 border-t border-white/60 pt-8">
-      <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between text-sm text-gray-600">
-        <p>&copy; {{ site.time | date: '%Y' }} <a href="/" class="text-campaign-primary hover:text-campaign-primary/80 font-medium no-underline">{{ site.data.settings.title }}</a>. All rights reserved.</p>
+    <div class="mt-12 border-t-2 border-campaign-primary pt-8">
+      <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between text-sm text-cream/80">
+        <p>&copy; {{ site.time | date: '%Y' }} <a href="/" class="text-campaign-accent hover:text-cream font-bold no-underline">{{ site.data.settings.title }}</a>. All rights reserved.</p>
         <div class="flex flex-wrap items-center gap-3">
-          <span class="hidden md:inline-block">•</span>
+          <span class="hidden md:inline-block text-cream/60">•</span>
         </div>
       </div>
     </div>
