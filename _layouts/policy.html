@@ -9,7 +9,7 @@ layout: default
   <div class="relative h-64 md:h-80 lg:h-96 overflow-hidden">
     {% include image.html src=page.image alt=page.title class="absolute inset-0 w-full h-full object-cover" loading="eager" %}
     <!-- Solid overlay instead of gradient -->
-    <div class="absolute inset-0 bg-[#396727]/85"></div>
+    <div class="absolute inset-0 bg-campaign-primary-dark/85"></div>
 
     <!-- Hero Content Overlay -->
     <div class="relative z-10 container-wide px-4 h-full flex items-end">
@@ -23,7 +23,7 @@ layout: default
           {% endif %}
 
           {% if page.north_star %}
-          <span class="inline-flex items-center px-4 py-1.5 text-sm font-bold uppercase tracking-wide bg-[#BE4703] text-cream border-2 border-[#BE4703]">
+          <span class="inline-flex items-center px-4 py-1.5 text-sm font-bold uppercase tracking-wide bg-campaign-secondary text-cream border-2 border-campaign-secondary">
             <svg class="w-3 h-3 mr-1.5" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
             </svg>
@@ -52,19 +52,19 @@ layout: default
   </div>
   {% else %}
   <!-- Fallback Header without Image - Solid color block -->
-  <div class="bg-[#396727] text-cream py-16 md:py-20 border-b-4 border-[#197B50]">
+  <div class="bg-campaign-primary-dark text-cream py-16 md:py-20 border-b-4 border-campaign-primary">
     <div class="container-wide px-4">
       <div class="max-w-4xl">
         <!-- Policy Meta - UFW badge style -->
         <div class="flex flex-wrap items-center gap-3 mb-6">
           {% if page.label %}
-          <span class="inline-flex items-center px-4 py-1.5 text-sm font-bold uppercase tracking-wide bg-cream text-[#396727] border-2 border-cream">
+          <span class="inline-flex items-center px-4 py-1.5 text-sm font-bold uppercase tracking-wide bg-cream text-campaign-primary-dark border-2 border-cream">
             {{ page.label }}
           </span>
           {% endif %}
 
           {% if page.north_star %}
-          <span class="inline-flex items-center px-4 py-1.5 text-sm font-bold uppercase tracking-wide bg-[#BE4703] text-cream border-2 border-[#BE4703]">
+          <span class="inline-flex items-center px-4 py-1.5 text-sm font-bold uppercase tracking-wide bg-campaign-secondary text-cream border-2 border-campaign-secondary">
             <svg class="w-3 h-3 mr-1.5" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
             </svg>
@@ -96,9 +96,9 @@ layout: default
       <div class="max-w-4xl mx-auto">
 
         <!-- Table of Contents - UFW Style: Solid border, no rounded corners -->
-        <div class="mb-12 p-6 bg-cream border-l-4 border-[#197B50] border-y-2 border-r-2 border-y-[#396727]/20 border-r-[#396727]/20">
-          <h2 class="text-lg font-bold text-[#396727] mb-4 flex items-center uppercase tracking-wide font-heading">
-            <svg class="w-5 h-5 mr-2 text-[#197B50]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="mb-12 p-6 bg-cream border-l-4 border-campaign-primary border-y-2 border-r-2 border-y-campaign-primary-dark/20 border-r-campaign-primary-dark/20">
+          <h2 class="text-lg font-bold text-campaign-primary-dark mb-4 flex items-center uppercase tracking-wide font-heading">
+            <svg class="w-5 h-5 mr-2 text-campaign-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
             </svg>
             Policy Overview
@@ -116,7 +116,7 @@ layout: default
         </div>
 
         <!-- Policy Actions/Next Steps - UFW Style: Solid color block -->
-        <div class="mt-16 p-8 md:p-12 bg-[#197B50] border-2 border-[#396727]">
+        <div class="mt-16 p-8 md:p-12 bg-campaign-primary border-2 border-campaign-primary-dark">
           <div class="text-center">
             <h2 class="text-2xl md:text-3xl font-bold text-cream mb-4 uppercase tracking-wide font-heading">Ready to Take Action?</h2>
             <p class="text-lg text-cream/90 mb-8 leading-relaxed max-w-2xl mx-auto">
@@ -124,14 +124,14 @@ layout: default
             </p>
 
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/policies" class="btn bg-cream text-[#396727] border-2 border-cream hover:bg-transparent hover:text-cream">
+              <a href="/policies" class="btn bg-cream text-campaign-primary-dark border-2 border-cream hover:bg-transparent hover:text-cream">
                 <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                 </svg>
                 VIEW ALL POLICIES
               </a>
 
-              <a href="/about" class="btn bg-transparent text-cream border-2 border-cream hover:bg-cream hover:text-[#396727]">
+              <a href="/about" class="btn bg-transparent text-cream border-2 border-cream hover:bg-cream hover:text-campaign-primary-dark">
                 <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
                 </svg>
@@ -139,7 +139,7 @@ layout: default
               </a>
 
               {% if page.north_star %}
-              <a href="/#policies" class="btn bg-[#BE4703] text-cream border-2 border-[#BE4703] hover:bg-[#9C3A02] hover:border-[#9C3A02]">
+              <a href="/policies" class="btn btn-cta">
                 <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
                 </svg>

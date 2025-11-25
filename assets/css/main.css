@@ -2477,7 +2477,16 @@ select {
   border-bottom-color: rgb(57 103 39 / 0.2);
 }
 
+.border-y-campaign-primary-dark\/20 {
+  border-top-color: rgb(57 103 39 / 0.2);
+  border-bottom-color: rgb(57 103 39 / 0.2);
+}
+
 .border-r-\[\#396727\]\/20 {
+  border-right-color: rgb(57 103 39 / 0.2);
+}
+
+.border-r-campaign-primary-dark\/20 {
   border-right-color: rgb(57 103 39 / 0.2);
 }
 
