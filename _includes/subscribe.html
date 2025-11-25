@@ -1,6 +1,6 @@
 {% assign subscribe = site.sections | where: "section_type", "subscribe" | first %}
 <!-- begin subscribe - UFW Style: Solid colors, crisp edges -->
-<section class="py-12 bg-[#197B50] border-y-4 border-[#396727]">
+<section class="py-12 bg-campaign-primary border-y-4 border-campaign-primary-dark">
   <div class="container-narrow text-center">
     {% if subscribe %}
     <!-- Section Header - UFW Style -->
@@ -12,9 +12,9 @@
     
     <!-- Newsletter Form Container - UFW Style: Solid border, no blur -->
     <div class="max-w-2xl mx-auto">
-      <div class="bg-cream border-2 border-[#396727] p-8">
+      <div class="bg-cream border-2 border-campaign-primary-dark p-8">
         <div class="mb-6">
-          <h3 class="text-xl font-bold mb-2 text-[#396727] uppercase tracking-wide font-heading">Stay Connected</h3>
+          <h3 class="text-xl font-bold mb-2 text-campaign-primary-dark uppercase tracking-wide font-heading">Stay Connected</h3>
           <p class="text-neutral-700">Get the latest updates on the campaign and policy positions.</p>
         </div>
 
@@ -41,7 +41,7 @@
 <style>
   /* UFW Subscribe Form Overrides - Crisp, no gradients */
   .qomon-embed--subscribe .qomon-form.--compact {
-    color: var(--gray-900, #1A1A15);
+    color: var(--gray-900);
   }
 
   .qomon-embed--subscribe .qomon-form.--compact .main-container,
@@ -62,8 +62,8 @@
   .qomon-embed--subscribe .qomon-form.--compact .radio,
   .qomon-embed--subscribe .qomon-form.--compact .legal {
     background: #fff;
-    border: 2px solid #396727;
-    border-radius: 4px;
+    border: 2px solid var(--campaign-primary-dark);
+    border-radius: var(--radius-md);
     padding: 14px;
     box-shadow: none;
   }
@@ -71,14 +71,14 @@
   .qomon-embed--subscribe .qomon-form.--compact .input:hover,
   .qomon-embed--subscribe .qomon-form.--compact .select:hover,
   .qomon-embed--subscribe .qomon-form.--compact .address:hover {
-    border-color: #197B50;
+    border-color: var(--campaign-primary);
   }
 
   .qomon-embed--subscribe .qomon-form.--compact .input__label,
   .qomon-embed--subscribe .qomon-form.--compact .radio__legend,
   .qomon-embed--subscribe .qomon-form.--compact .legal__label {
-    color: #396727;
-    font-family: 'Bebas Neue', 'Arial Black', Impact, sans-serif;
+    color: var(--campaign-primary-dark);
+    font-family: var(--font-family-heading);
     font-weight: 700;
     font-size: 0.875rem;
     text-transform: uppercase;
@@ -88,8 +88,8 @@
   .qomon-embed--subscribe .qomon-form.--compact .input__inner,
   .qomon-embed--subscribe .qomon-form.--compact .select__inner,
   .qomon-embed--subscribe .qomon-form.--compact .address__row input {
-    border-radius: 4px;
-    border: 2px solid #D4D4C8;
+    border-radius: var(--radius-md);
+    border: 2px solid var(--gray-300);
     background: #fff;
     padding: 0.75rem 1rem;
   }
@@ -97,14 +97,14 @@
   .qomon-embed--subscribe .qomon-form.--compact .input__inner:focus,
   .qomon-embed--subscribe .qomon-form.--compact .select__inner:focus,
   .qomon-embed--subscribe .qomon-form.--compact .address__row input:focus {
-    border-color: #197B50;
+    border-color: var(--campaign-primary);
     box-shadow: none;
     outline: none;
   }
 
   .qomon-embed--subscribe .qomon-form.--compact .legal {
-    background: #F5F0C4;
-    border: 2px solid #197B50;
+    background: var(--campaign-cream-dark);
+    border: 2px solid var(--campaign-primary);
   }
 
   .qomon-embed--subscribe .qomon-form.--compact .sign-cta {
@@ -118,23 +118,23 @@
   /* UFW Button Style - Solid, no gradient */
   .qomon-embed--subscribe .qomon-form.--compact .sign-cta button,
   .qomon-embed--subscribe .qomon-form.--compact .sign-cta button[type="submit"] {
-    background: #BE4703;
-    border: 2px solid #BE4703;
-    border-radius: 4px;
+    background: var(--campaign-secondary);
+    border: 2px solid var(--campaign-secondary);
+    border-radius: var(--radius-md);
     padding: 0.875rem 2.5rem;
-    font-family: 'Bebas Neue', 'Arial Black', Impact, sans-serif;
+    font-family: var(--font-family-heading);
     font-weight: 700;
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: #FFFDD0;
+    color: var(--campaign-cream);
     box-shadow: none;
   }
 
   .qomon-embed--subscribe .qomon-form.--compact .sign-cta button:hover,
   .qomon-embed--subscribe .qomon-form.--compact .sign-cta button:focus {
-    background: #9C3A02;
-    border-color: #9C3A02;
+    background: var(--campaign-secondary-dark);
+    border-color: var(--campaign-secondary-dark);
     transform: none;
     filter: none;
   }

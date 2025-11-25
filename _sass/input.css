@@ -33,6 +33,7 @@
   
   /* Accent Oranges/Reds - Energy, urgency, action */
   --campaign-secondary: #BE4703;    /* Dark Orange/Rust - CTA, action */
+  --campaign-secondary-dark: #9C3A02; /* Darker rust for hover states */
   --campaign-accent: #DF5A3C;       /* Bright Orange/Red - highlights */
   --campaign-warning: #BE4703;      /* Use rust for warnings */
   

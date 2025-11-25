@@ -1,11 +1,11 @@
 {% if site.policies.size > 0 %}
 <!-- begin policies section -->
-<section class="py-12 bg-cream border-y-4 border-[#197B50]">
+<section class="py-12 bg-cream border-y-4 border-campaign-primary">
   <div class="container-wide">
 
     <!-- Section Header -->
     <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold text-[#396727] mb-4 uppercase tracking-wide font-heading">Our Policy Platform</h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-campaign-primary-dark mb-4 uppercase tracking-wide font-heading">Our Policy Platform</h2>
       <p class="text-xl text-neutral-700 max-w-4xl mx-auto leading-relaxed">
         Building a future that works for everyone in Georgia's 5th District—focused on the issues that matter most to working families.
       </p>
@@ -16,21 +16,21 @@
     {% if north_star_policies.size > 0 %}
     <div class="mb-20">
       <div class="text-center mb-12">
-        <h3 class="text-2xl md:text-3xl font-bold text-[#396727] mb-3 uppercase tracking-wide font-heading">Our Three Pillars</h3>
+        <h3 class="text-2xl md:text-3xl font-bold text-campaign-primary-dark mb-3 uppercase tracking-wide font-heading">Our Three Pillars</h3>
         <p class="text-lg text-neutral-700">The core issues we're fighting for every day</p>
       </div>
 
       <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
         {% for policy in north_star_policies %}
         <article class="group">
-          <div class="bg-cream border-2 border-[#396727] p-0 overflow-hidden hover:border-[#197B50] transition-colors duration-200">
+          <div class="bg-cream border-2 border-campaign-primary-dark p-0 overflow-hidden hover:border-campaign-primary transition-colors duration-200">
             <!-- Policy Image -->
             <div class="relative overflow-hidden">
-              <div class="absolute inset-0 bg-[#396727]/70"></div>
+              <div class="absolute inset-0 bg-campaign-primary-dark/70"></div>
 
               <!-- Policy Badge -->
               <div class="absolute top-4 left-4">
-                <span class="inline-block px-3 py-1 text-xs font-bold text-cream bg-[#BE4703] border-2 border-[#BE4703] uppercase tracking-wide">
+                <span class="inline-block px-3 py-1 text-xs font-bold text-cream bg-campaign-secondary border-2 border-campaign-secondary uppercase tracking-wide">
                   Core Policy
                 </span>
               </div>
@@ -38,7 +38,7 @@
 
             <!-- Policy Content -->
             <div class="p-6">
-              <h4 class="text-xl font-bold text-[#396727] mb-3 group-hover:text-[#197B50] transition-colors uppercase tracking-wide font-heading">
+              <h4 class="text-xl font-bold text-campaign-primary-dark mb-3 group-hover:text-campaign-primary transition-colors uppercase tracking-wide font-heading">
                 {{ policy.title }}
               </h4>
               <p class="text-neutral-700 leading-relaxed mb-4">
@@ -46,7 +46,7 @@
               </p>
               <a
                 href="{{ policy.url }}"
-                class="inline-flex items-center space-x-2 text-[#197B50] font-bold uppercase tracking-wide hover:text-[#BE4703] transition-colors"
+                class="inline-flex items-center space-x-2 text-campaign-primary font-bold uppercase tracking-wide hover:text-campaign-secondary transition-colors"
               >
                 <span>Learn More</span>
                 <i class="fa-solid fa-arrow-right text-sm"></i>
@@ -59,7 +59,7 @@
 
       <!-- View All Policies Link -->
       <div class="text-center mt-12">
-        <a href="/policies" class="inline-flex items-center justify-center px-8 py-4 font-bold border-2 bg-[#BE4703] text-cream border-[#BE4703] hover:bg-[#9C3A02] hover:border-[#9C3A02] transition-colors uppercase tracking-wide font-heading">
+        <a href="/policies" class="btn btn-secondary">
           View All Policy Positions
         </a>
       </div>
