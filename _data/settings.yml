@@ -14,7 +14,7 @@ menu_settings:
     - title: "Donate"
       url: 'https://secure.actblue.com/donate/castroforgeorgia'
     - title: "Why I'm Running"
-      url: '/blog/why-im-running/'
+      url: '/why-im-running/'
     - title: 'About Me'
       url: '/about/'
     - title: 'Volunteer'
