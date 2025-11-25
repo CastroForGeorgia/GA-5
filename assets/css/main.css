@@ -2364,6 +2364,10 @@ select {
   border-top-width: 1px;
 }
 
+.border-t-2 {
+  border-top-width: 2px;
+}
+
 .border-\[\#197B50\] {
   --tw-border-opacity: 1;
   border-color: rgb(25 123 80 / var(--tw-border-opacity, 1));
@@ -2450,6 +2454,10 @@ select {
 
 .border-white\/60 {
   border-color: rgb(255 255 255 / 0.6);
+}
+
+.border-campaign-primary-dark\/20 {
+  border-color: rgb(57 103 39 / 0.2);
 }
 
 .border-y-\[\#396727\]\/20 {
