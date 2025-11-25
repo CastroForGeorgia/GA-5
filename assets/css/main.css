@@ -2611,6 +2611,18 @@ select {
   background-color: rgb(57 103 39 / var(--tw-bg-opacity, 1));
 }
 
+.bg-campaign-primary-dark\/85 {
+  background-color: rgb(57 103 39 / 0.85);
+}
+
+.bg-campaign-primary-dark\/40 {
+  background-color: rgb(57 103 39 / 0.4);
+}
+
+.bg-campaign-primary-dark\/25 {
+  background-color: rgb(57 103 39 / 0.25);
+}
+
 .bg-gradient-to-b {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
@@ -6749,6 +6761,11 @@ body.sheet-open {
 .hover\:text-gray-600:hover {
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity, 1));
+}
+
+.hover\:text-campaign-primary-dark:hover {
+  --tw-text-opacity: 1;
+  color: rgb(57 103 39 / var(--tw-text-opacity, 1));
 }
 
 .hover\:shadow:hover {
