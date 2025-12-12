@@ -21,6 +21,8 @@ menu_settings:
       url: '/volunteer/'
     - title: 'Policies'
       url: '/policies/'
+    - title: 'Events'
+      url: '/events'
 
 
 
