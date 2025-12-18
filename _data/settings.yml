@@ -45,9 +45,9 @@ social:
   - name: "Instagram"
     icon: "instagram"
     link: "https://www.instagram.com/castroforgeorgia/"
-  - name: "GitHub"
-    icon: "github"
-    link: "https://github.com/CastroForGeorgia"
+  - name: "Facebook"
+    icon: "facebook"
+    link: "https://www.facebook.com/castroforgeorgia"
   - name: "Bluesky"
     icon: "bluesky"
     link: "https://bsky.app/profile/castroforgeorgia.com"
@@ -57,6 +57,10 @@ social:
   - name: "Twitch"
     icon: "twitch"
     link: "https://www.twitch.tv/castroforgeorgia"
+  - name: "GitHub"
+    icon: "github"
+    link: "https://github.com/CastroForGeorgia"
+
 
 # To add another social link, drop a matching SVG icon into assets/icons/
 # and set the `icon` value above to that filename (without the .svg extension).
