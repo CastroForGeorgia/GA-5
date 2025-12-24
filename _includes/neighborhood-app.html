@@ -16,7 +16,14 @@
           <h2 class="text-xl font-bold text-gray-900 mb-3">Find Your Neighborhood</h2>
           <div>
             <label for="neighborhood-search" class="block text-sm font-medium text-gray-700 mb-2">Search neighborhoods or addresses</label>
-            <input type="text" id="neighborhood-search" placeholder="Type neighborhood name or address..." class="w-full py-2.5 px-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-campaign-primary text-base" aria-label="Search neighborhoods or addresses">
+            <div class="relative">
+              <input type="text" id="neighborhood-search" placeholder="Type neighborhood name or address..." class="w-full py-2.5 px-3 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-campaign-primary text-base" aria-label="Search neighborhoods or addresses">
+              <button id="clear-search-btn" class="absolute right-2 top-1/2 -translate-y-1/2 p-1 text-gray-400 hover:text-gray-600 hidden" title="Clear search and reset view" type="button">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
         
@@ -74,11 +81,10 @@
           </svg>
         </button>
 
-        <!-- Floating locate button -->
-        <button class="floating-controls locate-fab" id="locate-btn" title="Center on Atlanta">
+        <!-- Floating reset button -->
+        <button class="floating-controls locate-fab" id="locate-btn" title="Reset View - Show All Neighborhoods">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
           </svg>
         </button>
       </div>
@@ -154,10 +160,10 @@
 </script>
 
 <!-- Current Page Data for Auto-Navigation -->
+<!-- Note: Auto-navigation now uses URL query params (?n=neighborhood-slug) instead of page.neighborhood_name -->
 <script type="application/json" id="current-page-data">
 {
-  "isNeighborhoodPage": {% if page.neighborhood_name %}true{% else %}false{% endif %},
-  "neighborhoodName": {% if page.neighborhood_name %}"{{ page.neighborhood_name }}"{% else %}null{% endif %}
+  "basePath": "{{ page.url | default: '/neighborhoods/' }}"
 }
 </script>
 
@@ -184,6 +190,97 @@ document.addEventListener("DOMContentLoaded", function () {
     const campaignPrimary = '#2E8B57';   // Vibrant Verde
     const campaignSecondary = '#DC2626';  // Bold Red
     const campaignAccent = '#1D4ED8';    // Bright Blue
+
+    // --- URL ROUTING HELPERS ---
+    /**
+     * Convert a neighborhood name to a URL-friendly slug
+     * e.g., "Inman Park" -> "inman-park"
+     */
+    function nameToSlug(name) {
+        if (!name) return '';
+        return name.toLowerCase()
+            .replace(/[^a-z0-9\s-]/g, '')  // Remove special characters
+            .replace(/\s+/g, '-')           // Replace spaces with hyphens
+            .replace(/-+/g, '-')            // Replace multiple hyphens with single
+            .replace(/^-|-$/g, '');         // Remove leading/trailing hyphens
+    }
+
+    /**
+     * Convert a slug back to a neighborhood name by finding it in the data
+     * e.g., "inman-park" -> "Inman Park"
+     */
+    function slugToName(slug) {
+        if (!slug) return null;
+        const geoData = loadNeighborhoods();
+        if (!geoData) return null;
+        
+        const features = geoData.features || [];
+        const feature = features.find(f => {
+            const name = f.properties.NAME || f.properties.name || '';
+            return nameToSlug(name) === slug.toLowerCase();
+        });
+        
+        return feature ? (feature.properties.NAME || feature.properties.name) : null;
+    }
+
+    /**
+     * Get the neighborhood slug from the current URL query params
+     */
+    function getNeighborhoodFromURL() {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get('n');
+    }
+
+    /**
+     * Update the URL with a neighborhood slug (or clear it)
+     * Uses history.pushState for smooth navigation without page reload
+     */
+    function updateURLWithNeighborhood(slug, replace = false) {
+        const url = new URL(window.location);
+        
+        if (slug) {
+            url.searchParams.set('n', slug);
+        } else {
+            url.searchParams.delete('n');
+        }
+        
+        if (replace) {
+            window.history.replaceState({ neighborhood: slug }, '', url);
+        } else {
+            window.history.pushState({ neighborhood: slug }, '', url);
+        }
+    }
+
+    /**
+     * Clear the URL parameter and reset the view
+     */
+    function clearNeighborhoodURL() {
+        updateURLWithNeighborhood(null);
+        resetNeighborhoodDisplay();
+        
+        // Reset map view to default
+        map.getView().animate({
+            center: ol.proj.fromLonLat([-84.3880, 33.7490]),
+            zoom: 11,
+            duration: 500
+        });
+        
+        // Clear search inputs
+        if (searchInput) searchInput.value = '';
+        const modalSearchInput = document.getElementById('modal-neighborhood-search');
+        if (modalSearchInput) modalSearchInput.value = '';
+        
+        // Clear highlight
+        if (highlightedFeature) {
+            highlightedFeature.setStyle(undefined);
+            highlightedFeature = null;
+        }
+        
+        infoBox.innerHTML = 'Click a neighborhood to learn more';
+        
+        // Update clear button visibility
+        updateClearButtonVisibility();
+    }
 
     // --- STYLES ---
     // Style for Georgia Congressional Districts with GA-05 highlighted
@@ -262,52 +359,44 @@ document.addEventListener("DOMContentLoaded", function () {
     // All layers visible by default - no need for visibility variables
 
     // --- MAP INITIALIZATION ---
-    // Check if we're on a neighborhood page to set initial view
+    // Check if we have a neighborhood in the URL to set initial view
     function getInitialMapView() {
-        const pageDataElement = document.getElementById('current-page-data');
-        if (pageDataElement) {
-            try {
-                const pageData = JSON.parse(pageDataElement.textContent);
-                console.log('Page data:', pageData);
+        const slug = getNeighborhoodFromURL();
+        
+        if (slug) {
+            console.log('URL contains neighborhood slug:', slug);
+            
+            // Find the neighborhood from the slug
+            const geoData = loadNeighborhoods();
+            console.log('Geo data loaded:', geoData ? 'success' : 'failed');
+            
+            if (geoData) {
+                const features = geoData.features || [];
+                console.log('Number of features:', features.length);
                 
-                if (pageData.isNeighborhoodPage && pageData.neighborhoodName) {
-                    console.log('On neighborhood page for:', pageData.neighborhoodName);
+                const neighborhoodFeature = features.find(f => {
+                    const name = (f.properties.NAME || f.properties.name || '').trim();
+                    const featureSlug = nameToSlug(name);
+                    console.log('Checking feature:', name, '(slug:', featureSlug, ') vs target:', slug);
+                    return featureSlug === slug.toLowerCase();
+                });
+                
+                console.log('Found neighborhood feature:', neighborhoodFeature ? 'yes' : 'no');
+                
+                if (neighborhoodFeature) {
+                    // Calculate center of the neighborhood
+                    const center = turf.centroid(neighborhoodFeature);
+                    const [lon, lat] = center.geometry.coordinates;
                     
-                    // We're on a neighborhood page - find the neighborhood extent
-                    const geoData = loadNeighborhoods();
-                    console.log('Geo data loaded:', geoData ? 'success' : 'failed');
+                    console.log('Calculated center:', lon, lat);
                     
-                    if (geoData) {
-                        const features = geoData.features || [];
-                        console.log('Number of features:', features.length);
-                        
-                        const neighborhoodFeature = features.find(f => {
-                            const name = (f.properties.NAME || f.properties.name || '').trim();
-                            const targetName = pageData.neighborhoodName.trim();
-                            console.log('Checking feature:', name, 'vs target:', targetName);
-                            return name.toLowerCase() === targetName.toLowerCase();
-                        });
-                        
-                        console.log('Found neighborhood feature:', neighborhoodFeature ? 'yes' : 'no');
-                        
-                        if (neighborhoodFeature) {
-                            // Calculate center of the neighborhood
-                            const center = turf.centroid(neighborhoodFeature);
-                            const [lon, lat] = center.geometry.coordinates;
-                            
-                            console.log('Calculated center:', lon, lat);
-                            
-                            return {
-                                center: ol.proj.fromLonLat([lon, lat]),
-                                zoom: 14, // Zoomed in view for neighborhood
-                                minZoom: 11,
-                                maxZoom: 18
-                            };
-                        }
-                    }
+                    return {
+                        center: ol.proj.fromLonLat([lon, lat]),
+                        zoom: 14, // Zoomed in view for neighborhood
+                        minZoom: 11,
+                        maxZoom: 18
+                    };
                 }
-            } catch (error) {
-                console.error('Error determining initial view:', error);
             }
         }
         
@@ -663,7 +752,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Click interaction - navigate directly to neighborhood page
+    // Click interaction - navigate to neighborhood via URL param
     map.on('click', function (e) {
         const featuresAtPixel = [];
         map.forEachFeatureAtPixel(e.pixel, function (feature, layer) {
@@ -675,29 +764,18 @@ document.addEventListener("DOMContentLoaded", function () {
         if (featuresAtPixel.length > 0) {
             const feature = featuresAtPixel[0];
             const name = feature.get('NAME') || 'Unknown';
+            const slug = nameToSlug(name);
             
-            // Create a URL-friendly version of the neighborhood name
-            const neighborhoodSlug = name.toLowerCase()
-                .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
-                .replace(/\s+/g, '-') // Replace spaces with hyphens
-                .replace(/-+/g, '-') // Replace multiple hyphens with single
-                .replace(/^-|-$/g, ''); // Remove leading/trailing hyphens
-            
-            // Navigate to neighborhood page
-            const neighborhoodPageUrl = `/neighborhoods/${neighborhoodSlug}/`;
-            window.location.href = neighborhoodPageUrl;
+            // Navigate to neighborhood using URL param (no page reload)
+            navigateToNeighborhood(slug, true, true);
         }
     });
 
     // No bottom sheet - removed
 
-    // Locate button
+    // Locate button - reset view and clear URL param
     document.getElementById('locate-btn').addEventListener('click', () => {
-        map.getView().animate({
-            center: ol.proj.fromLonLat([-84.3880, 33.7490]),
-            zoom: 11,
-            duration: 500
-        });
+        clearNeighborhoodURL();
     });
 
     // Button click handlers for explicit actions
@@ -705,43 +783,10 @@ document.addEventListener("DOMContentLoaded", function () {
         button.addEventListener('click', (e) => {
             e.preventDefault();
             const name = button.dataset.name;
+            const slug = nameToSlug(name);
             
-            // Find the neighborhood feature and zoom to it
-            const features = neighborhoodsLayer.getSource().getFeatures();
-            const targetFeature = features.find(f => f.get('NAME') === name);
-            
-            if (targetFeature) {
-                const geometry = targetFeature.getGeometry();
-                const extent = geometry.getExtent();
-                
-                // Neighborhoods are always visible now
-                
-                // Zoom to the neighborhood
-                map.getView().fit(extent, {
-                    padding: [50, 50, 50, 50],
-                    duration: 1000,
-                    maxZoom: 15
-                });
-                
-                // Update info box
-                infoBox.innerHTML = `Showing: ${name}`;
-                
-                // Highlight the feature temporarily
-                if (highlightedFeature) {
-                    highlightedFeature.setStyle(undefined);
-                }
-                highlightedFeature = targetFeature;
-                highlightedFeature.setStyle(highlightStyle);
-                
-                // Remove highlight after 3 seconds
-                setTimeout(() => {
-                    if (highlightedFeature === targetFeature) {
-                        highlightedFeature.setStyle(undefined);
-                        highlightedFeature = null;
-                        infoBox.innerHTML = 'Click a neighborhood to learn more';
-                    }
-                }, 3000);
-            }
+            // Navigate to neighborhood using URL param (no page reload)
+            navigateToNeighborhood(slug, true, true);
         });
     });
 
@@ -749,22 +794,37 @@ document.addEventListener("DOMContentLoaded", function () {
         button.addEventListener('click', (e) => {
             e.preventDefault();
             const name = button.dataset.name;
+            const slug = nameToSlug(name);
             
-            // Navigate to neighborhood page
-            const neighborhoodSlug = name.toLowerCase()
-                .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
-                .replace(/\s+/g, '-') // Replace spaces with hyphens
-                .replace(/-+/g, '-') // Replace multiple hyphens with single
-                .replace(/^-|-$/g, ''); // Remove leading/trailing hyphens
-            
-            const neighborhoodPageUrl = `/neighborhoods/${neighborhoodSlug}/`;
-            window.location.href = neighborhoodPageUrl;
+            // Navigate to neighborhood using URL param (no page reload)
+            navigateToNeighborhood(slug, true, true);
         });
     });
 
     // --- CLEAN SEARCH STATE MACHINE ---
     const searchInput = document.getElementById('neighborhood-search');
+    const clearSearchBtn = document.getElementById('clear-search-btn');
     let searchTimeout;
+
+    // Clear button functionality
+    if (clearSearchBtn) {
+        clearSearchBtn.addEventListener('click', () => {
+            clearNeighborhoodURL();
+        });
+    }
+
+    // Show/hide clear button based on search input and URL state
+    function updateClearButtonVisibility() {
+        if (!clearSearchBtn) return;
+        const hasInput = searchInput && searchInput.value.trim().length > 0;
+        const hasURLParam = !!getNeighborhoodFromURL();
+        
+        if (hasInput || hasURLParam) {
+            clearSearchBtn.classList.remove('hidden');
+        } else {
+            clearSearchBtn.classList.add('hidden');
+        }
+    }
     
     // Preload data and populate map layers
     const geoData = loadNeighborhoods();
@@ -785,82 +845,152 @@ document.addEventListener("DOMContentLoaded", function () {
         districtLayer.getSource().addFeatures(districtFeatures);
     }
     
-    // --- AUTO-NAVIGATION FOR NEIGHBORHOOD PAGES ---
-    function handleAutoNavigation() {
-        const pageDataElement = document.getElementById('current-page-data');
-        if (!pageDataElement) return;
+    // --- AUTO-NAVIGATION FOR URL-BASED ROUTING ---
+    /**
+     * Navigate to a neighborhood by slug (updates URL and map)
+     * @param {string} slug - The neighborhood slug (e.g., "inman-park")
+     * @param {boolean} animate - Whether to animate the map transition
+     * @param {boolean} updateURL - Whether to update the browser URL
+     */
+    function navigateToNeighborhood(slug, animate = true, updateURL = true) {
+        if (!slug) {
+            clearNeighborhoodURL();
+            return;
+        }
         
-        try {
-            const pageData = JSON.parse(pageDataElement.textContent);
+        const neighborhoodName = slugToName(slug);
+        if (!neighborhoodName) {
+            console.warn('Neighborhood not found for slug:', slug);
+            return;
+        }
+        
+        console.log('Navigating to neighborhood:', neighborhoodName, '(slug:', slug, ')');
+        
+        // Update URL if requested
+        if (updateURL) {
+            updateURLWithNeighborhood(slug);
+        }
+        
+        // Auto-populate search bars (both desktop and mobile)
+        if (searchInput) {
+            searchInput.value = neighborhoodName;
+        }
+        const modalSearchInput = document.getElementById('modal-neighborhood-search');
+        if (modalSearchInput) {
+            modalSearchInput.value = neighborhoodName;
+        }
+        
+        // Find and highlight the neighborhood
+        const features = neighborhoodsLayer.getSource().getFeatures();
+        const targetFeature = features.find(f => f.get('NAME') === neighborhoodName);
+        
+        if (targetFeature) {
+            // Set the view to the neighborhood
+            const geometry = targetFeature.getGeometry();
+            const extent = geometry.getExtent();
             
-            if (pageData.isNeighborhoodPage && pageData.neighborhoodName) {
-                const neighborhoodName = pageData.neighborhoodName;
-                console.log('Auto-navigating to neighborhood:', neighborhoodName);
-                
-                // Auto-populate search bars (both desktop and mobile)
-                if (searchInput) {
-                    searchInput.value = neighborhoodName;
-                }
-                const modalSearchInput = document.getElementById('modal-neighborhood-search');
-                if (modalSearchInput) {
-                    modalSearchInput.value = neighborhoodName;
-                }
-                
-                // Find and highlight the neighborhood, set view immediately
-                const features = neighborhoodsLayer.getSource().getFeatures();
-                const targetFeature = features.find(f => f.get('NAME') === neighborhoodName);
-                
-                if (targetFeature) {
-                    // Set the view immediately to the neighborhood (no animation)
-                    const geometry = targetFeature.getGeometry();
-                    const extent = geometry.getExtent();
-                    
-                    map.getView().fit(extent, {
-                        padding: [50, 50, 50, 50],
-                        duration: 0, // No animation
-                        maxZoom: 14
-                    });
-                    
-                    // Highlight the feature immediately
-                    if (highlightedFeature) {
-                        highlightedFeature.setStyle(undefined);
-                    }
-                    highlightedFeature = targetFeature;
-                    highlightedFeature.setStyle(highlightStyle);
-                    
-                    // Update info box
-                    infoBox.innerHTML = `Showing: ${neighborhoodName}`;
-                    
-                    // Filter to show only this neighborhood in the sidebar
-                    const geoFeatures = filterNeighborhoodsByName(neighborhoodName);
-                    if (geoFeatures.length > 0) {
-                        showCards(geoFeatures);
-                    }
-                    
-                    // Keep highlight for longer on auto-navigation
-                    setTimeout(() => {
-                        if (highlightedFeature === targetFeature) {
-                            highlightedFeature.setStyle(undefined);
-                            highlightedFeature = null;
-                            infoBox.innerHTML = 'Click a neighborhood to learn more';
-                        }
-                    }, 8000);
-                    
-                } else {
-                    console.warn('Neighborhood not found on map:', neighborhoodName);
-                }
+            map.getView().fit(extent, {
+                padding: [50, 50, 50, 50],
+                duration: animate ? 1000 : 0,
+                maxZoom: 14
+            });
+            
+            // Highlight the feature
+            if (highlightedFeature) {
+                highlightedFeature.setStyle(undefined);
             }
-        } catch (error) {
-            console.error('Error in auto-navigation:', error);
+            highlightedFeature = targetFeature;
+            highlightedFeature.setStyle(highlightStyle);
+            
+            // Update info box
+            infoBox.innerHTML = `Showing: ${neighborhoodName}`;
+            
+            // Filter to show only this neighborhood in the sidebar
+            const geoFeatures = filterNeighborhoodsByName(neighborhoodName);
+            if (geoFeatures.length > 0) {
+                showCards(geoFeatures);
+            }
+            
+            // Keep highlight for longer on navigation
+            setTimeout(() => {
+                if (highlightedFeature === targetFeature) {
+                    highlightedFeature.setStyle(undefined);
+                    highlightedFeature = null;
+                    infoBox.innerHTML = 'Click a neighborhood to learn more';
+                }
+            }, 8000);
+            
+        } else {
+            console.warn('Neighborhood feature not found on map:', neighborhoodName);
+        }
+        
+        // Update clear button visibility
+        updateClearButtonVisibility();
+    }
+
+    /**
+     * Handle initial page load - check URL for neighborhood param
+     */
+    function handleAutoNavigation() {
+        const slug = getNeighborhoodFromURL();
+        
+        if (slug) {
+            console.log('Auto-navigating from URL param:', slug);
+            // Don't update URL since we're reading from it, don't animate for initial load
+            navigateToNeighborhood(slug, false, false);
         }
     }
+
+    /**
+     * Handle browser back/forward navigation
+     */
+    window.addEventListener('popstate', function(event) {
+        const slug = getNeighborhoodFromURL();
+        
+        if (slug) {
+            // Navigate to the neighborhood without updating URL (already updated by browser)
+            navigateToNeighborhood(slug, true, false);
+        } else {
+            // No neighborhood in URL - reset to default view
+            resetNeighborhoodDisplay();
+            
+            map.getView().animate({
+                center: ol.proj.fromLonLat([-84.3880, 33.7490]),
+                zoom: 11,
+                duration: 500
+            });
+            
+            // Clear search inputs
+            if (searchInput) searchInput.value = '';
+            const modalSearchInput = document.getElementById('modal-neighborhood-search');
+            if (modalSearchInput) modalSearchInput.value = '';
+            
+            // Clear highlight
+            if (highlightedFeature) {
+                highlightedFeature.setStyle(undefined);
+                highlightedFeature = null;
+            }
+            
+            infoBox.innerHTML = 'Click a neighborhood to learn more';
+        }
+        
+        // Update clear button visibility
+        updateClearButtonVisibility();
+    });
     
     // Execute auto-navigation after a short delay to ensure everything is loaded
-    setTimeout(handleAutoNavigation, 0);
+    setTimeout(() => {
+        handleAutoNavigation();
+        // Initialize clear button visibility based on URL state
+        updateClearButtonVisibility();
+    }, 0);
     
     if (searchInput) {
         searchInput.addEventListener('input', function(e) {
             const query = e.target.value.trim();
+            
+            // Update clear button visibility
+            updateClearButtonVisibility();
             
             // Clear previous timeout
             if (searchTimeout) {
@@ -870,6 +1000,10 @@ document.addEventListener("DOMContentLoaded", function () {
             // Early exit: show all if query is too short
             if (query.length < 3) {
                 showAll();
+                // Clear URL param if search is cleared
+                if (query.length === 0 && getNeighborhoodFromURL()) {
+                    clearNeighborhoodURL();
+                }
                 return;
             }
             
@@ -949,12 +1083,14 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             
             // Found a neighborhood!
-            console.log('Found neighborhood:', result.feature.properties.NAME);
-            showCards([result.feature]);
-            flashHighlightOnMap(result.feature);
-            
-            // Update info box
             const name = result.feature.properties.NAME || result.feature.properties.name;
+            const slug = nameToSlug(name);
+            console.log('Found neighborhood:', name);
+            
+            // Update URL and navigate
+            navigateToNeighborhood(slug, true, true);
+            
+            // Update info box with address context
             infoBox.innerHTML = `Address mapped to: ${name}`;
             setTimeout(() => {
                 infoBox.innerHTML = 'Click a neighborhood to learn more';
@@ -984,11 +1120,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Use Turf.js to check if point is within this neighborhood's geometry
                 if (turf.booleanPointInPolygon(point, neighborhood)) {
                     // Found an address within one of the searched neighborhoods!
-                    showCards([neighborhood]);
-                    flashHighlightOnMap(neighborhood);
+                    const neighborhoodName = neighborhood.properties.NAME || neighborhood.properties.name;
+                    const slug = nameToSlug(neighborhoodName);
+                    
+                    // Update URL and navigate
+                    navigateToNeighborhood(slug, true, true);
                     
                     // Update info box to indicate address + neighborhood match
-                    const neighborhoodName = neighborhood.properties.NAME || neighborhood.properties.name;
                     infoBox.innerHTML = `Found address in: ${neighborhoodName}`;
                     setTimeout(() => {
                         infoBox.innerHTML = 'Click a neighborhood to learn more';
@@ -1103,46 +1241,13 @@ document.addEventListener("DOMContentLoaded", function () {
         button.addEventListener('click', (e) => {
             e.preventDefault();
             const name = button.dataset.name;
+            const slug = nameToSlug(name);
             
             // Close modal first
             closeModal();
             
-            // Find and zoom to neighborhood (same logic as sidebar)
-            const features = neighborhoodsLayer.getSource().getFeatures();
-            const targetFeature = features.find(f => f.get('NAME') === name);
-            
-            if (targetFeature) {
-                const geometry = targetFeature.getGeometry();
-                const extent = geometry.getExtent();
-                
-                // Neighborhoods are always visible now
-                
-                // Zoom to the neighborhood
-                map.getView().fit(extent, {
-                    padding: [50, 50, 50, 50],
-                    duration: 1000,
-                    maxZoom: 15
-                });
-                
-                // Update info box
-                infoBox.innerHTML = `Showing: ${name}`;
-                
-                // Highlight the feature temporarily
-                if (highlightedFeature) {
-                    highlightedFeature.setStyle(undefined);
-                }
-                highlightedFeature = targetFeature;
-                highlightedFeature.setStyle(highlightStyle);
-                
-                // Remove highlight after 3 seconds
-                setTimeout(() => {
-                    if (highlightedFeature === targetFeature) {
-                        highlightedFeature.setStyle(undefined);
-                        highlightedFeature = null;
-                        infoBox.innerHTML = 'Click a neighborhood to learn more';
-                    }
-                }, 3000);
-            }
+            // Navigate to neighborhood using URL param (no page reload)
+            navigateToNeighborhood(slug, true, true);
         });
     });
 
@@ -1150,16 +1255,13 @@ document.addEventListener("DOMContentLoaded", function () {
         button.addEventListener('click', (e) => {
             e.preventDefault();
             const name = button.dataset.name;
+            const slug = nameToSlug(name);
             
-            // Navigate to neighborhood page
-            const neighborhoodSlug = name.toLowerCase()
-                .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
-                .replace(/\s+/g, '-') // Replace spaces with hyphens
-                .replace(/-+/g, '-') // Replace multiple hyphens with single
-                .replace(/^-|-$/g, ''); // Remove leading/trailing hyphens
+            // Close modal first
+            closeModal();
             
-            const neighborhoodPageUrl = `/neighborhoods/${neighborhoodSlug}/`;
-            window.location.href = neighborhoodPageUrl;
+            // Navigate to neighborhood using URL param (no page reload)
+            navigateToNeighborhood(slug, true, true);
         });
     });
 
