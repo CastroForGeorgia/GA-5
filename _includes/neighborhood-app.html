@@ -29,7 +29,7 @@
         
         <div class="sidebar-content">
           <div class="neighborhood-list" style="max-height: none; border: none; border-radius: 0; background: transparent; overflow: visible;">
-            {% for neighborhood in site.data.neighborhoods.neighborhoods_info %}
+            {% for neighborhood in site.data.atlanta.neighborhoods_info %}
             <div class="neighborhood-card" data-name="{{ neighborhood.NAME }}" data-npu="{{ neighborhood.NPU }}" data-acres="{{ neighborhood.ACRES }}" style="border-radius: 0.75rem; margin-bottom: 0.75rem; border: 1px solid #e5e7eb; background: white; padding: 1rem; display: block;">
               <div class="neighborhood-info">
                 <h3 class="font-semibold text-gray-900 text-lg mb-1">{{ neighborhood.NAME }}</h3>
@@ -182,7 +182,7 @@
           
           <div class="results-section">
             <div id="modal-neighborhood-results" class="neighborhood-results">
-              {% for neighborhood in site.data.neighborhoods.neighborhoods_info %}
+              {% for neighborhood in site.data.atlanta.neighborhoods_info %}
               <div class="result-item" data-name="{{ neighborhood.NAME }}" data-npu="{{ neighborhood.NPU }}" data-acres="{{ neighborhood.ACRES }}">
                 <div class="result-info">
                   <h3 class="font-semibold text-gray-900">{{ neighborhood.NAME }}</h3>
@@ -219,7 +219,7 @@
 
 <!-- Jekyll Data for JavaScript -->
 <script type="application/json" id="neighborhood-data">
-{{ site.data.neighborhoods.neighborhoods_info | jsonify }}
+{{ site.data.atlanta.neighborhoods_info | jsonify }}
 </script>
 
 <!-- Current Page Data for Auto-Navigation -->
@@ -232,7 +232,7 @@
 
 <!-- Embedded GeoJSON Data -->
 <script type="application/json" id="neighborhoods-geodata">
-{{ site.data.neighborhoods.neighborhoods_geo | jsonify }}
+{{ site.data.atlanta.neighborhoods_geo | jsonify }}
 </script>
 
 <!-- Embedded District Data -->
