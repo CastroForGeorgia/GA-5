@@ -1641,6 +1641,10 @@ select {
   border-width: 0;
 }
 
+.pointer-events-none {
+  pointer-events: none;
+}
+
 .visible {
   visibility: visible;
 }
@@ -1683,6 +1687,10 @@ select {
 
 .right-0 {
   right: 0px;
+}
+
+.right-2 {
+  right: 0.5rem;
 }
 
 .top-0 {
@@ -2225,6 +2233,11 @@ select {
   border-radius: 8px;
 }
 
+.rounded-r-lg {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
 .border {
   border-width: 1px;
 }
@@ -2258,6 +2271,10 @@ select {
   border-left-width: 2px;
 }
 
+.border-l-4 {
+  border-left-width: 4px;
+}
+
 .border-t {
   border-top-width: 1px;
 }
@@ -2278,6 +2295,11 @@ select {
 .border-\[\#396727\] {
   --tw-border-opacity: 1;
   border-color: rgb(57 103 39 / var(--tw-border-opacity, 1));
+}
+
+.border-amber-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(251 191 36 / var(--tw-border-opacity, 1));
 }
 
 .border-campaign-primary {
@@ -2334,6 +2356,11 @@ select {
 
 .bg-\[\#396727\]\/85 {
   background-color: rgb(57 103 39 / 0.85);
+}
+
+.bg-amber-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 251 235 / var(--tw-bg-opacity, 1));
 }
 
 .bg-black {
@@ -2514,6 +2541,10 @@ select {
   padding: 0px;
 }
 
+.p-1 {
+  padding: 0.25rem;
+}
+
 .p-2 {
   padding: 0.5rem;
 }
@@ -2619,6 +2650,10 @@ select {
 
 .pl-12 {
   padding-left: 3rem;
+}
+
+.pr-10 {
+  padding-right: 2.5rem;
 }
 
 .pr-4 {
@@ -2737,6 +2772,16 @@ select {
   letter-spacing: 0.025em;
 }
 
+.text-amber-700 {
+  --tw-text-opacity: 1;
+  color: rgb(180 83 9 / var(--tw-text-opacity, 1));
+}
+
+.text-amber-800 {
+  --tw-text-opacity: 1;
+  color: rgb(146 64 14 / var(--tw-text-opacity, 1));
+}
+
 .text-campaign-accent {
   --tw-text-opacity: 1;
   color: rgb(223 90 60 / var(--tw-text-opacity, 1));
@@ -2850,6 +2895,10 @@ select {
 
 .opacity-20 {
   opacity: 0.2;
+}
+
+.opacity-50 {
+  opacity: 0.5;
 }
 
 .opacity-80 {
@@ -5863,6 +5912,190 @@ body.sheet-open {
   max-width: 100%;
 }
 
+/* Neighborhood Detail Panel */
+
+.neighborhood-detail-panel {
+  background: var(--campaign-cream);
+  border: 2px solid var(--campaign-primary);
+  border-radius: 1rem;
+  margin-top: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(46, 139, 87, 0.15);
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.neighborhood-detail-panel.hidden {
+  display: none;
+}
+
+.detail-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  background: var(--campaign-cream-dark);
+  border-bottom: 2px solid var(--campaign-primary);
+}
+
+.detail-panel-header h2 {
+  color: var(--campaign-primary-dark);
+  margin: 0;
+}
+
+.close-detail-btn {
+  background: var(--campaign-cream);
+  border: 2px solid var(--campaign-primary);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: var(--campaign-primary);
+  transition: all 0.2s ease;
+}
+
+.close-detail-btn:hover {
+  background: var(--campaign-secondary);
+  border-color: var(--campaign-secondary);
+  color: var(--campaign-cream);
+}
+
+.detail-panel-content {
+  padding: 1.5rem;
+}
+
+.detail-panel-content h3 {
+  color: var(--campaign-primary-dark);
+  border-bottom: 2px solid var(--campaign-primary);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.detail-panel-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.detail-panel-content a {
+  color: var(--campaign-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.detail-panel-content a:hover {
+  text-decoration: underline;
+}
+
+.quick-link-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1.25rem 1rem;
+  background: var(--campaign-cream);
+  border: 2px solid var(--campaign-primary);
+  border-radius: 0.75rem;
+  color: var(--campaign-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.quick-link-btn:hover:not(.opacity-50) {
+  background: var(--campaign-primary);
+  color: var(--campaign-cream);
+  text-decoration: none;
+}
+
+.get-involved-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  flex: 1;
+  text-align: center;
+}
+
+.get-involved-btn.primary {
+  background: var(--campaign-primary);
+  color: var(--campaign-cream);
+  border: 2px solid var(--campaign-primary);
+}
+
+.get-involved-btn.primary:hover {
+  background: var(--campaign-primary-dark);
+  border-color: var(--campaign-primary-dark);
+  text-decoration: none;
+}
+
+.get-involved-btn.secondary {
+  background: var(--campaign-cream);
+  color: #5865F2;
+  border: 2px solid #5865F2;
+}
+
+.get-involved-btn.secondary:hover {
+  background: #5865F2;
+  color: var(--campaign-cream);
+  text-decoration: none;
+}
+
+/* Desktop: Detail panel shows below map */
+
+@media (min-width: 769px) {
+  .neighborhood-detail-panel {
+    margin-top: 1.5rem;
+  }
+}
+
+/* Mobile: Detail panel adjustments */
+
+@media (max-width: 768px) {
+  .neighborhood-detail-panel {
+    margin-top: 1rem;
+    border-radius: 0.75rem;
+  }
+  
+  .detail-panel-header {
+    padding: 1rem;
+  }
+  
+  .detail-panel-header h2 {
+    font-size: 1.25rem;
+  }
+  
+  .detail-panel-content {
+    padding: 1rem;
+  }
+  
+  .quick-link-btn {
+    padding: 1rem 0.75rem;
+    font-size: 0.875rem;
+  }
+  
+  .get-involved-btn {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+  }
+}
+
 /* ==============================================
    11. Qomon Form Styling
    UFW Style: Solid colors, crisp borders
@@ -6527,6 +6760,10 @@ body.sheet-open {
 .hover\:text-gray-600:hover {
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity, 1));
+}
+
+.hover\:underline:hover {
+  text-decoration-line: underline;
 }
 
 .hover\:shadow-lg:hover {
