@@ -27,9 +27,9 @@
           </div>
         </div>
         
-        <div class="sidebar-content">
-          <div class="neighborhood-list" style="max-height: none; border: none; border-radius: 0; background: transparent; overflow: visible;">
-            {% for neighborhood in site.data.atlanta.neighborhoods_info %}
+          <div class="sidebar-content">
+            <div class="neighborhood-list" style="max-height: none; border: none; border-radius: 0; background: transparent; overflow: visible;">
+              {% for neighborhood in site.data.atlanta.neighborhoods_info %}
             <div class="neighborhood-card" data-name="{{ neighborhood.NAME }}" data-npu="{{ neighborhood.NPU }}" data-acres="{{ neighborhood.ACRES }}" style="border-radius: 0.75rem; margin-bottom: 0.75rem; border: 1px solid #e5e7eb; background: white; padding: 1rem; display: block;">
               <div class="neighborhood-info">
                 <h3 class="font-semibold text-gray-900 text-lg mb-1">{{ neighborhood.NAME }}</h3>
@@ -230,9 +230,14 @@
 }
 </script>
 
-<!-- Embedded GeoJSON Data -->
-<script type="application/json" id="neighborhoods-geodata">
+<!-- Embedded GeoJSON Data - Atlanta Neighborhoods -->
+<script type="application/json" id="atlanta-geodata">
 {{ site.data.atlanta.neighborhoods_geo | jsonify }}
+</script>
+
+<!-- Embedded GeoJSON Data - Brookhaven -->
+<script type="application/json" id="brookhaven-geodata">
+{{ site.data.brookhaven.brookhaven_geo | jsonify }}
 </script>
 
 <!-- Embedded District Data -->
@@ -429,23 +434,50 @@ document.addEventListener("DOMContentLoaded", function () {
     let neighborhoodsData = null;
     let districtData = null;
     
-    // Load & cache neighborhoods data
+    // Load & cache neighborhoods data (merges Atlanta + Brookhaven)
     function loadNeighborhoods() {
         if (neighborhoodsData) return neighborhoodsData;
         
-        // Use embedded GeoJSON data directly from Jekyll
-        const geoDataElement = document.getElementById('neighborhoods-geodata');
-        if (geoDataElement) {
+        // Start with empty feature collection
+        neighborhoodsData = { type: 'FeatureCollection', features: [] };
+        
+        // Load Atlanta neighborhoods
+        const atlantaElement = document.getElementById('atlanta-geodata');
+        if (atlantaElement) {
             try {
-                neighborhoodsData = JSON.parse(geoDataElement.textContent);
-                return neighborhoodsData;
+                const atlantaData = JSON.parse(atlantaElement.textContent);
+                if (atlantaData && atlantaData.features) {
+                    neighborhoodsData.features.push(...atlantaData.features);
+                }
             } catch (error) {
-                console.warn('Failed to parse embedded neighborhoods data:', error);
+                console.warn('Failed to parse Atlanta neighborhoods data:', error);
             }
         }
         
-        console.warn('No embedded neighborhoods geodata found');
-        return null;
+        // Load Brookhaven neighborhoods
+        const brookhavenElement = document.getElementById('brookhaven-geodata');
+        if (brookhavenElement) {
+            try {
+                const brookhavenData = JSON.parse(brookhavenElement.textContent);
+                if (brookhavenData && brookhavenData.features) {
+                    // Normalize Brookhaven properties to match Atlanta format
+                    brookhavenData.features.forEach(feature => {
+                        if (feature.properties) {
+                            // Add missing fields for consistency
+                            feature.properties.NPU = feature.properties.NPU || 'Brookhaven';
+                            feature.properties.ACRES = feature.properties.ACRES || (feature.properties.MUNIAREA ? (feature.properties.MUNIAREA * 640).toFixed(2) : 0);
+                            feature.properties.SQMILES = feature.properties.SQMILES || feature.properties.MUNIAREA || 0;
+                        }
+                    });
+                    neighborhoodsData.features.push(...brookhavenData.features);
+                }
+            } catch (error) {
+                console.warn('Failed to parse Brookhaven neighborhoods data:', error);
+            }
+        }
+        
+        console.log('Loaded neighborhoods:', neighborhoodsData.features.length);
+        return neighborhoodsData;
     }
     
     // Load & cache district data
