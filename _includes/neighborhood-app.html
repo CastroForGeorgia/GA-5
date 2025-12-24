@@ -91,6 +91,83 @@
       
     </div>
 
+    <!-- Neighborhood Detail Panel -->
+    <div id="neighborhood-detail-panel" class="neighborhood-detail-panel hidden">
+      <div class="detail-panel-header">
+        <h2 id="detail-neighborhood-name" class="text-2xl font-bold text-gray-900"></h2>
+        <button id="close-detail-panel" class="close-detail-btn" title="Close details">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      
+      <div class="detail-panel-content">
+        <p class="text-gray-600 mb-6">Local organizing hub for <span id="detail-neighborhood-name-inline"></span> neighborhood. Connect with field operations, mutual aid, and community organizing efforts.</p>
+        
+        <h3 class="text-lg font-semibold text-gray-900 mb-3">Community Snapshot</h3>
+        <ul class="space-y-2 mb-6">
+          <li class="flex items-start gap-2">
+            <span class="font-medium text-gray-700">Neighborhood Planning Unit:</span>
+            <a id="detail-npu-link" href="#" target="_blank" class="text-campaign-primary hover:underline"></a>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="font-medium text-gray-700">City Council District:</span>
+            <a href="https://citycouncil.atlantaga.gov/council-members" target="_blank" class="text-campaign-primary hover:underline">District 5</a>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="font-medium text-gray-700">Area:</span>
+            <span id="detail-area" class="text-gray-600"></span>
+          </li>
+        </ul>
+
+        <div class="bg-amber-50 border-l-4 border-amber-400 p-4 mb-6 rounded-r-lg">
+          <div class="flex items-center gap-2">
+            <span class="text-xl">🚧</span>
+            <p class="text-amber-800 font-medium">Coming soon — this hub is still under construction.</p>
+          </div>
+          <p class="text-amber-700 text-sm mt-1">Check back shortly for updates, resources, and ways to get involved.</p>
+        </div>
+
+        <h3 class="text-lg font-semibold text-gray-900 mb-3">Quick Links</h3>
+        <div class="grid grid-cols-2 gap-3 mb-6">
+          <a href="#" class="quick-link-btn opacity-50 pointer-events-none">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+            <span>Field Operations</span>
+            <span class="text-xs text-gray-400">(Coming Soon)</span>
+          </a>
+          <a href="#" class="quick-link-btn opacity-50 pointer-events-none">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+            </svg>
+            <span>Mutual Aid</span>
+            <span class="text-xs text-gray-400">(Coming Soon)</span>
+          </a>
+        </div>
+
+        <h3 class="text-lg font-semibold text-gray-900 mb-3">Get Involved</h3>
+        <p class="text-gray-600 mb-4">Interested in volunteering or sharing feedback? Reach out to the campaign and help shape the future of <span id="detail-neighborhood-name-cta"></span>.</p>
+        
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="/volunteer/" class="get-involved-btn primary">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path>
+            </svg>
+            <span>Volunteer</span>
+          </a>
+          <a href="https://discord.gg/ep6dBqPjhG" target="_blank" class="get-involved-btn secondary">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+            </svg>
+            <span>Join Discord</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
     <!-- Mobile Search Modal -->
     <div id="mobile-search-modal" class="search-modal">
       <div class="modal-backdrop"></div>
@@ -277,6 +354,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         
         infoBox.innerHTML = 'Click a neighborhood to learn more';
+        
+        // Hide detail panel
+        hideDetailPanel();
         
         // Update clear button visibility
         updateClearButtonVisibility();
@@ -710,6 +790,61 @@ document.addEventListener("DOMContentLoaded", function () {
     function getNeighborhoodData(name) {
         return neighborhoodData.find(n => n.NAME === name) || {};
     }
+
+    // --- NEIGHBORHOOD DETAIL PANEL ---
+    const detailPanel = document.getElementById('neighborhood-detail-panel');
+    const closeDetailBtn = document.getElementById('close-detail-panel');
+    
+    /**
+     * Show the neighborhood detail panel with data
+     */
+    function showDetailPanel(neighborhoodName) {
+        if (!detailPanel) return;
+        
+        const data = getNeighborhoodData(neighborhoodName);
+        
+        // Update neighborhood name in all locations
+        document.getElementById('detail-neighborhood-name').textContent = `${neighborhoodName} Organizing`;
+        document.getElementById('detail-neighborhood-name-inline').textContent = neighborhoodName;
+        document.getElementById('detail-neighborhood-name-cta').textContent = neighborhoodName;
+        
+        // Update NPU link
+        const npuLink = document.getElementById('detail-npu-link');
+        const npu = data.NPU || 'Unknown';
+        npuLink.textContent = `NPU-${npu}`;
+        npuLink.href = `https://www.atlantaga.gov/government/departments/city-planning/neighborhood-planning-units/neighborhood-and-npu-contacts`;
+        
+        // Update area
+        const acres = data.ACRES || data.acres || 0;
+        const sqMiles = data.SQMILES || data.sqmiles || (acres / 640).toFixed(2);
+        document.getElementById('detail-area').textContent = `${acres} acres (${sqMiles} sq. miles)`;
+        
+        // Show the panel
+        detailPanel.classList.remove('hidden');
+        
+        // Scroll to panel on mobile
+        if (window.innerWidth <= 768) {
+            setTimeout(() => {
+                detailPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+        }
+    }
+    
+    /**
+     * Hide the neighborhood detail panel
+     */
+    function hideDetailPanel() {
+        if (detailPanel) {
+            detailPanel.classList.add('hidden');
+        }
+    }
+    
+    // Close detail panel button
+    if (closeDetailBtn) {
+        closeDetailBtn.addEventListener('click', () => {
+            clearNeighborhoodURL();
+        });
+    }
     
     // Function to reset neighborhood display to show all
     function resetNeighborhoodDisplay() {
@@ -924,6 +1059,9 @@ document.addEventListener("DOMContentLoaded", function () {
             console.warn('Neighborhood feature not found on map:', neighborhoodName);
         }
         
+        // Show the detail panel with neighborhood info
+        showDetailPanel(neighborhoodName);
+        
         // Update clear button visibility
         updateClearButtonVisibility();
     }
@@ -972,6 +1110,9 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             
             infoBox.innerHTML = 'Click a neighborhood to learn more';
+            
+            // Hide detail panel
+            hideDetailPanel();
         }
         
         // Update clear button visibility
