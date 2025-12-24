@@ -240,6 +240,21 @@
 {{ site.data.brookhaven.brookhaven_geo | jsonify }}
 </script>
 
+<!-- Embedded GeoJSON Data - College Park -->
+<script type="application/json" id="college-park-geodata">
+{{ site.data.college_park.college_park_geo | jsonify }}
+</script>
+
+<!-- Embedded GeoJSON Data - East Point -->
+<script type="application/json" id="east-point-geodata">
+{{ site.data.east_point.east_point_geo | jsonify }}
+</script>
+
+<!-- Embedded GeoJSON Data - Hapeville -->
+<script type="application/json" id="hapeville-geodata">
+{{ site.data.hapeville.hapeville_geo | jsonify }}
+</script>
+
 <!-- Embedded District Data -->
 <script type="application/json" id="district-geodata">
 {{ site.data.district.district5_filtered | jsonify }}
@@ -434,7 +449,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let neighborhoodsData = null;
     let districtData = null;
     
-    // Load & cache neighborhoods data (merges Atlanta + Brookhaven)
+    // Load & cache neighborhoods data (merges Atlanta + all cities)
     function loadNeighborhoods() {
         if (neighborhoodsData) return neighborhoodsData;
         
@@ -454,29 +469,44 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
         
-        // Load Brookhaven neighborhoods
-        const brookhavenElement = document.getElementById('brookhaven-geodata');
-        if (brookhavenElement) {
-            try {
-                const brookhavenData = JSON.parse(brookhavenElement.textContent);
-                if (brookhavenData && brookhavenData.features) {
-                    // Normalize Brookhaven properties to match Atlanta format
-                    brookhavenData.features.forEach(feature => {
-                        if (feature.properties) {
-                            // Add missing fields for consistency
-                            feature.properties.NPU = feature.properties.NPU || 'Brookhaven';
-                            feature.properties.ACRES = feature.properties.ACRES || (feature.properties.MUNIAREA ? (feature.properties.MUNIAREA * 640).toFixed(2) : 0);
-                            feature.properties.SQMILES = feature.properties.SQMILES || feature.properties.MUNIAREA || 0;
-                        }
-                    });
-                    neighborhoodsData.features.push(...brookhavenData.features);
+        // Helper function to load and normalize city data
+        function loadCityData(elementId, cityName) {
+            const element = document.getElementById(elementId);
+            if (element) {
+                try {
+                    const data = JSON.parse(element.textContent);
+                    if (data && data.features) {
+                        // Normalize properties to match Atlanta format
+                        data.features.forEach(feature => {
+                            if (feature.properties) {
+                                // Use city Name as the NAME if not present
+                                feature.properties.NAME = feature.properties.Name || feature.properties.NAME || cityName;
+                                // Use city name as NPU equivalent
+                                feature.properties.NPU = feature.properties.NPU || cityName;
+                                // Calculate sq miles from various possible sources
+                                const sqMiles = feature.properties.SQMILES || feature.properties.AreaSqMi || feature.properties.MUNIAREA || 0;
+                                feature.properties.SQMILES = sqMiles;
+                                // Calculate acres from AreaAc or from sq miles
+                                feature.properties.ACRES = feature.properties.ACRES || feature.properties.AreaAc || 
+                                    (sqMiles ? (sqMiles * 640).toFixed(2) : 0);
+                            }
+                        });
+                        neighborhoodsData.features.push(...data.features);
+                        console.log(`Loaded ${cityName}:`, data.features.length, 'features');
+                    }
+                } catch (error) {
+                    console.warn(`Failed to parse ${cityName} data:`, error);
                 }
-            } catch (error) {
-                console.warn('Failed to parse Brookhaven neighborhoods data:', error);
             }
         }
         
-        console.log('Loaded neighborhoods:', neighborhoodsData.features.length);
+        // Load all cities
+        loadCityData('brookhaven-geodata', 'Brookhaven');
+        loadCityData('college-park-geodata', 'College Park');
+        loadCityData('east-point-geodata', 'East Point');
+        loadCityData('hapeville-geodata', 'Hapeville');
+        
+        console.log('Total neighborhoods loaded:', neighborhoodsData.features.length);
         return neighborhoodsData;
     }
     
