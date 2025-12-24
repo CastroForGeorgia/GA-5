@@ -424,6 +424,49 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // All layers visible by default - no need for visibility variables
 
+    // --- DATA LOADING (must be before map initialization) ---
+    // Data cache
+    let neighborhoodsData = null;
+    let districtData = null;
+    
+    // Load & cache neighborhoods data
+    function loadNeighborhoods() {
+        if (neighborhoodsData) return neighborhoodsData;
+        
+        // Use embedded GeoJSON data directly from Jekyll
+        const geoDataElement = document.getElementById('neighborhoods-geodata');
+        if (geoDataElement) {
+            try {
+                neighborhoodsData = JSON.parse(geoDataElement.textContent);
+                return neighborhoodsData;
+            } catch (error) {
+                console.warn('Failed to parse embedded neighborhoods data:', error);
+            }
+        }
+        
+        console.warn('No embedded neighborhoods geodata found');
+        return null;
+    }
+    
+    // Load & cache district data
+    function loadDistrictGa05() {
+        if (districtData) return districtData;
+        
+        // Use embedded district data directly from Jekyll
+        const districtDataElement = document.getElementById('district-geodata');
+        if (districtDataElement) {
+            try {
+                districtData = JSON.parse(districtDataElement.textContent);
+                return districtData;
+            } catch (error) {
+                console.warn('Failed to parse embedded district data:', error);
+            }
+        }
+        
+        console.warn('No embedded district geodata found');
+        return null;
+    }
+
     // --- MAP INITIALIZATION ---
     // Check if we have a neighborhood in the URL to set initial view
     function getInitialMapView() {
@@ -508,48 +551,7 @@ document.addEventListener("DOMContentLoaded", function () {
     initCardStyles();
 
     // --- CLEAN SEARCH API ---
-    // Data cache
-    let neighborhoodsData = null;
-    let districtData = null;
-    
-    // 1. Load & cache data
-    function loadNeighborhoods() {
-        if (neighborhoodsData) return neighborhoodsData;
-        
-        // Use embedded GeoJSON data directly from Jekyll
-        const geoDataElement = document.getElementById('neighborhoods-geodata');
-        if (geoDataElement) {
-            try {
-                neighborhoodsData = JSON.parse(geoDataElement.textContent);
-                return neighborhoodsData;
-            } catch (error) {
-                console.warn('Failed to parse embedded neighborhoods data:', error);
-            }
-        }
-        
-        console.warn('No embedded neighborhoods geodata found');
-        return null;
-    }
-    
-    function loadDistrictGa05() {
-        if (districtData) return districtData;
-        
-        // Use embedded district data directly from Jekyll
-        const districtDataElement = document.getElementById('district-geodata');
-        if (districtDataElement) {
-            try {
-                districtData = JSON.parse(districtDataElement.textContent);
-                return districtData;
-            } catch (error) {
-                console.warn('Failed to parse embedded district data:', error);
-            }
-        }
-        
-        console.warn('No embedded district geodata found');
-        return null;
-    }
-    
-    // 2. Text search
+    // Text search
     function filterNeighborhoodsByName(query) {
         // Ensure data is loaded
         const geoData = loadNeighborhoods();
