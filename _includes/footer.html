@@ -29,11 +29,6 @@
       <div class="space-y-4">
         <h3 class="text-base font-bold text-cream uppercase tracking-wide font-heading">Explore</h3>
         <ul class="space-y-3 text-sm">
-          {% for item in site.data.settings.menu_settings.menu_items %}
-            {% unless item.title == "Donate" %}
-            <li><a href="{{ item.url | relative_url }}" class="text-cream/90 hover:text-campaign-accent transition-colors no-underline font-semibold">{{ item.title }}</a></li>
-            {% endunless %}
-          {% endfor %}
           <li><a href="/contact/" class="text-cream/90 hover:text-campaign-accent transition-colors no-underline font-semibold">Contact</a></li>
         </ul>
       </div>
@@ -43,8 +38,6 @@
         <h3 class="text-base font-bold text-cream uppercase tracking-wide font-heading">Get Involved</h3>
         <p class="text-cream/90 text-sm leading-relaxed">Campaigns are won by neighbors who show up for each other. Join the organizing team, share your story, and help power this movement.</p>
         <div class="space-y-3">
-          <a href="https://secure.actblue.com/donate/castroforgeorgia" class="btn btn-cta w-full justify-center">Donate</a>
-          <a href="/volunteer/" class="btn btn-primary w-full justify-center">Volunteer</a>
           <a href="/policies/" class="btn w-full justify-center bg-transparent border-2 border-cream text-cream hover:bg-cream hover:text-campaign-primary-dark">Read the Platform</a>
         </div>
       </div>
