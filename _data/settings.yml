@@ -11,12 +11,6 @@ color_scheme: auto # You can choose three modes auto, light, and dark. By defaul
 # Navigation Settings
 menu_settings:
   menu_items:
-    - title: "Why I'm Running"
-      url: '/why-im-running/'
-    - title: 'About Me'
-      url: '/about/'
-    - title: 'Policies'
-      url: '/policies/'
 
 
 
